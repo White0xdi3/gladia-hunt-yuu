@@ -8,7 +8,7 @@ on:
     # 4 seconds apart on 2026-08-31) that got fixed by removing the trigger
     # entirely -- which silently left this workflow with NOTHING dispatching
     # it for 26 days. Schedule is the safe replacement.
-    - cron: "10,40 * * * *"
+    - cron: "10 * * * *"
   workflow_dispatch:
 permissions:
   contents: write
