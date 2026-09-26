@@ -1,8 +1,8 @@
-===== TRIAGE 2026-09-26 17:16:54 UTC =====
+===== TRIAGE 2026-09-26 19:57:21 UTC =====
 [91m[1mError: [0m{
   "name": "UnknownError",
   "data": {
     "message": "Unexpected server error. Check server logs for details.",
-    "ref": "err_81334a6e"
+    "ref": "err_94014ddc"
   }
 }
