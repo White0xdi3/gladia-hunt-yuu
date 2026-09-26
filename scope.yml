@@ -41,6 +41,7 @@ rules:
   manual_validation_required: true  # scanner output alone is REJECTED per scope; every finding must be manually validated
   redact_secrets_in_commits: true   # commit sha256 of secrets, never raw values
 
-# Multi-model ensemble: every hunt run picks a rotation of the 5 models.
+# Single-model setup (migrated off multi-model ensemble after free-tier
+# rate-limit/reliability issues -- see git log on this file and hunt.yml).
 models:
-  - { id: opencode/mimo-v2.5-free, name: mimo }
+  - { id: opencode/muse-spark-1.2-contributor-free, name: mimo }

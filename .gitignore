@@ -1,9 +1,14 @@
 # Ephemeral per-model analyst logs (append-only, regenerated every cycle)
 reports/*.log
 
-# Local state / probe artifacts that change every cycle
+# Local probe artifacts that change every cycle
 probe-results.md
-state_*.json
+probe-results.txt
+new-leads.txt
+
+# NOTE: state_*.json (per-model phase/target rotation) is intentionally
+# tracked, not ignored -- it's the only persistence mechanism between
+# cycles. Ignoring it silently broke target rotation for weeks.
 
 # OS / editor cruft
 .DS_Store
