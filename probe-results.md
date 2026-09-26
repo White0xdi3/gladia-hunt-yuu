@@ -2831,3 +2831,13 @@ https://gladia.io/bug-bounty-report -> HTTP 401
 
 ## 2026-08-27 10:40:27 UTC
 
+
+## 2026-09-26 13:44:09 UTC
+
+### GraphQL introspection probe
+https://api.gladia.io/graphql -> HTTP 404
+https://api.gladia.io/v2/graphql -> HTTP 404
+https://api.gladia.io/api/graphql -> HTTP 404
+https://app.gladia.io/graphql -> HTTP 405
+https://app.gladia.io/v2/graphql -> 200 introspection_live=False
+https://app.gladia.io/api/graphql -> HTTP 405
