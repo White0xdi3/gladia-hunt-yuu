@@ -1,5 +1,14 @@
 name: Senior Hunter - Analyst Pipeline
 on:
+  schedule:
+    # Offset from reposcan (*/15) and triage (23,53) to spread load.
+    # NOTE: intentionally NOT triggered on push -- reposcan/triage/this
+    # workflow's own aggregate job all auto-commit every cycle, and a push
+    # trigger here previously caused a self-retriggering cascade (3 runs
+    # 4 seconds apart on 2026-08-31) that got fixed by removing the trigger
+    # entirely -- which silently left this workflow with NOTHING dispatching
+    # it for 26 days. Schedule is the safe replacement.
+    - cron: "10,40 * * * *"
   workflow_dispatch:
 permissions:
   contents: write
@@ -56,7 +65,19 @@ jobs:
           [ -f state_${MODEL_NAME}.json ] || echo '{"phase":"RECON","target":"api"}' > state_${MODEL_NAME}.json
           TARGET=$(python3 -c "import json;print(json.load(open('state_${MODEL_NAME}.json')).get('target','api'))")
           echo "TARGET=$TARGET" >> $GITHUB_ENV
-          echo "TARGET_NEXT=$(python3 -c "import json;t=json.load(open('state_${MODEL_NAME}.json')).get('target','api');print({'api':'app','app':'sdk','sdk':'api'}[t])")" >> $GITHUB_ENV
+          # Advance the rotation NOW and persist it to the state file that
+          # gets uploaded as this job's artifact -- the aggregate job copies
+          # it back to the repo root and commits it, so next cycle actually
+          # sees the new target (previously computed as TARGET_NEXT and then
+          # discarded: never written anywhere, never uploaded, never committed).
+          python3 -c "
+          import json
+          rotation = {'api': 'app', 'app': 'sdk', 'sdk': 'gladia', 'gladia': 'api'}
+          p = 'state_${MODEL_NAME}.json'
+          st = json.load(open(p))
+          st['target'] = rotation.get(st.get('target', 'api'), 'api')
+          json.dump(st, open(p, 'w'))
+          "
           {
             echo "=== KNOWLEDGE BASE ==="
             cat knowledge/index.md
@@ -69,6 +90,51 @@ jobs:
             echo "=== INVENTORY gladia ==="
             tail -50 inventory/gladia.md 2>/dev/null || echo none
           } > ctx.txt
+
+      - name: OpenAPI structural diff (deterministic, feeds analyst prompt)
+        run: |
+          curl -s --max-time 20 https://api.gladia.io/openapi.json -o openapi-live.json || echo '{}' > openapi-live.json
+          python3 << 'PY_EOF'
+          import json
+          def load(path):
+              try:
+                  return json.load(open(path))
+              except Exception:
+                  return {}
+          live = load('openapi-live.json')
+          snap = load('knowledge/openapi-snapshot.json')
+          def summarize(spec):
+              paths = set((spec.get('paths') or {}).keys())
+              webhooks = set((spec.get('webhooks') or {}).keys())
+              params = {}
+              for p, methods in (spec.get('paths') or {}).items():
+                  if not isinstance(methods, dict): continue
+                  for m, op in methods.items():
+                      if not isinstance(op, dict): continue
+                      names = tuple(sorted(pr.get('name', '') for pr in op.get('parameters', []) if isinstance(pr, dict)))
+                      params[f'{m.upper()} {p}'] = names
+              return paths, webhooks, params
+          lp, lw, lpar = summarize(live)
+          sp, sw, spar = summarize(snap)
+          lines = []
+          for p in sorted(lp - sp): lines.append(f'[+PATH] {p}')
+          for p in sorted(sp - lp): lines.append(f'[-PATH] {p}')
+          for w in sorted(lw - sw): lines.append(f'[+WEBHOOK] {w}')
+          for w in sorted(sw - lw): lines.append(f'[-WEBHOOK] {w}')
+          for k in sorted(set(lpar) & set(spar)):
+              if lpar[k] != spar[k]:
+                  lines.append(f'[~PARAMS] {k}: {spar[k]} -> {lpar[k]}')
+          with open('openapi-delta.txt', 'w') as f:
+              if lines:
+                  f.write('=== OPENAPI SPEC DELTA (structural, machine-diffed) ===\n')
+                  f.write('OPENAPI SPEC CHANGED since last committed snapshot:\n' + '\n'.join(lines) + '\n')
+              elif not lp:
+                  f.write('=== OPENAPI SPEC DELTA (structural, machine-diffed) ===\nOPENAPI SPEC: fetch failed or empty this cycle, no diff possible\n')
+              else:
+                  f.write('=== OPENAPI SPEC DELTA (structural, machine-diffed) ===\n')
+                  f.write(f'OPENAPI SPEC: NO_DRIFT (structurally identical to last snapshot: {len(lp)} paths, {len(lw)} webhooks)\n')
+          PY_EOF
+          cat openapi-delta.txt >> ctx.txt
 
       - name: Analyst run (8-step methodology)
         run: |
@@ -88,13 +154,13 @@ jobs:
           automated-scanner output without manual validation. Your job is NOT to
           invent vulnerabilities. Run these 8 steps and output ONLY the structured blocks.
 
-          STEP 1 — DELTA: Compare the inventory + knowledge + your last leads against the current known surface. List only NEW or CHANGED surface items as [NEW]/[CHANGED] (one line each). If nothing is new, state "NO_DELTA".
+          STEP 1 — DELTA: Compare the inventory + knowledge + your last leads against the current known surface (including the OPENAPI SPEC DELTA block below, which is machine-diffed -- trust it over your own byte-counting). List only NEW or CHANGED surface items as [NEW]/[CHANGED] (one line each). If nothing is new, state "NO_DELTA".
 
           STEP 2 — PRIORITIZE: Score the top new assets (or top existing if no delta) on 6 axes 0-10: attack_surface, business_value, tech_exposure (GraphQL/OAuth/JWT/upload/admin/uncommon stacks), gate_ease (10 = no auth needed), cloud_surface (cloud APIs/storage/metadata), freshness. priority = 0.25*attack + 0.25*business + 0.15*tech + 0.15*gate + 0.10*cloud + 0.10*fresh. Emit [PRIO] lines: asset, score, axis breakdown.
 
           STEP 3 — HYPOTHESES: For the top 3 prioritized assets emit max 1 hypothesis each, strictly this schema:
           [HYP] <title>
-          class: <IDOR|SSRF|AUTH|XSS|BUSLOGIC|MISCONFIG|OATH|OTHER>
+          class: <IDOR|SSRF|AUTH|XSS|BUSLOGIC|MISCONFIG|OAUTH|OTHER>
           asset: <host/endpoint>
           confidence: <0-100>
           reasoning: <facts only, 2-3 lines>
@@ -107,7 +173,10 @@ jobs:
           inside the [HYP] title line (e.g. no "[HYP] foo: confidence 96, class MISCONFIG").
           Every field MUST be on its own line as 'key: value' directly under the [HYP] line.
           If you only have a partial hypothesis, still emit the [HYP] line with whatever
-          fields you have on separate lines — never inline.
+          fields you have on separate lines — never inline. Always spell class as OAUTH,
+          never OATH, and spell asset as the full hostname (api.gladia.io / app.gladia.io),
+          never a bare short form -- these get merged into a shared knowledge base by exact
+          key match, and inconsistent spelling breaks that dedup.
 
           STEP 4 — SELF-CRITIQUE: Re-read your own hypotheses. Drop any that: confidence < 40, or class on the knowledge REJECTED list, or no concrete verify_steps. For dropped ones emit [PARKED] <title>: <why dropped>. Emit [FINAL] with the surviving hypotheses re-ranked (top first).
 
@@ -119,6 +188,8 @@ jobs:
 
           RULES: facts vs hypotheses strictly separated; no endpoint-map-only output; no class on the REJECTED list; never mention secrets in full (hash them with sha256sum); all claims must trace to the context provided or your own read-only probes; passive-first only (≤1 rps, GET/HEAD); any scanner output requires manual validation before it becomes a lead.
           PROMPT_EOF
+          echo "" >> analyst-prompt.txt
+          echo "ROTATION FOCUS THIS CYCLE: $TARGET — at least one of your top-3 STEP 3 hypotheses must concretely target ${TARGET}'s surface (api=api.gladia.io / app=app.gladia.io / sdk=npm+PyPI SDKs / gladia=gladia.io marketing site) even if the STEP 1 breadth pass surfaces other anomalies elsewhere. Rotation exists so every asset gets deliberate deep-dive attention over time instead of always the same familiar surface. If $TARGET truly has nothing new to add beyond what's already ACCEPTED/REJECTED in the knowledge base, say so explicitly with [LEARN] ACCEPTED OTHER @ $TARGET: no new surface this cycle, re-confirmed static." >> analyst-prompt.txt
           export PATH="$HOME/.opencode/bin:$HOME/.local/bin:$HOME/.npm-global/bin:$PATH"
           timeout -k 15 20m opencode run --model "$MODEL_ID" < analyst-prompt.txt > analyst-out.txt 2>&1 || true
           cp analyst-out.txt analyst-${MODEL_NAME}.out
@@ -137,6 +208,8 @@ jobs:
             lead_${{ matrix.model.name }}.txt
             analyst-${{ matrix.model.name }}.out
             ctx.txt
+            state_${{ matrix.model.name }}.json
+            openapi-live.json
           if-no-files-found: warn
 
   aggregate:
@@ -158,6 +231,18 @@ jobs:
           path: art
           merge-multiple: true
 
+      - name: Promote per-model state + OpenAPI snapshot from artifacts
+        run: |
+          mkdir -p knowledge
+          # This is the fix for the target-rotation persistence bug: the
+          # analyst job already advanced state_<model>.json's target field,
+          # but that only exists in its ephemeral runner unless copied here
+          # and committed below.
+          cp art/state_*.json . 2>/dev/null || true
+          if [ -s art/openapi-live.json ] && [ "$(cat art/openapi-live.json)" != "{}" ]; then
+            cp art/openapi-live.json knowledge/openapi-snapshot.json
+          fi
+
       - name: Merge + rank + inventory + knowledge update (single committer)
         run: |
           mkdir -p leads reports knowledge inventory
@@ -166,7 +251,7 @@ jobs:
             cat "$f" >> leads/lead-$(basename "$f" | sed -E 's/lead_([a-z0-9]+)\.txt/\1/').md
           done
           python3 << 'PY_EOF'
-          import re, glob, json, os, datetime
+          import re, glob, json, os, datetime, hashlib, subprocess
           stamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
           # per-model structured files for the aggregator
           for f in glob.glob('art/lead_*.txt'):
@@ -183,30 +268,44 @@ jobs:
               a = re.search(r'^asset:\s*(\S+)', text, re.M)
               all_h.append((int(c.group(1)) if c else 0, a.group(1) if a else '?', title, f))
           all_h.sort(reverse=True)
-          with open('reports/hypotheses.md', 'a') as out:
-              out.write(f"\n## RANKED HYPOTHESES {stamp}\n")
-              seen = set()
-              for conf, asset, title, f in all_h[:8]:
-                  key = title.lower()[:60]
-                  if key in seen: continue
-                  seen.add(key)
-                  out.write(f"- [{conf}] {asset}: {title} (from {f})\n")
-              for f in glob.glob('reports/hypotheses-*.txt'):
-                  n = re.search(r'^\[NEXT\] (.*)$', open(f).read(), re.M)
-                  if n: out.write(f"- NEXT({os.path.basename(f)}): {n.group(1).strip()[:160]}\n")
-              for f in glob.glob('reports/hypotheses-*.txt'):
-                  for l in re.findall(r'^\[LEARN\] (.*)$', open(f).read(), re.M):
-                      out.write(f"- LEARN: {l.strip()[:160]}\n")
-          # knowledge append (dedupe)
-          kpath = 'knowledge/index.md'
-          os.makedirs('knowledge', exist_ok=True)
-          ktext = open(kpath).read() if os.path.exists(kpath) else ''
-          with open(kpath, 'a') as k:
-              for f in glob.glob('reports/hypotheses-*.txt'):
-                  for l in re.findall(r'^\[LEARN\] (.*)$', open(f).read(), re.M):
-                      line = f"- {stamp[:10]} {l.strip()}"
-                      if line not in ktext:
-                          k.write(line + "\n")
+
+          # Ranked hypotheses: only append a new block if the ranked set
+          # actually changed since last cycle (previously appended
+          # unconditionally every cycle, which is how this file hit 1.6MB
+          # of near-identical restatements -- see reports/hypotheses.archive-2026-09.md).
+          seen = set()
+          body_lines = []
+          for conf, asset, title, f in all_h[:8]:
+              key = title.lower()[:60]
+              if key in seen: continue
+              seen.add(key)
+              body_lines.append(f"- [{conf}] {asset}: {title}")
+          for f in glob.glob('reports/hypotheses-*.txt'):
+              n = re.search(r'^\[NEXT\] (.*)$', open(f).read(), re.M)
+              if n: body_lines.append(f"- NEXT({os.path.basename(f)}): {n.group(1).strip()[:160]}")
+          for f in glob.glob('reports/hypotheses-*.txt'):
+              for l in re.findall(r'^\[LEARN\] (.*)$', open(f).read(), re.M):
+                  body_lines.append(f"- LEARN: {l.strip()[:160]}")
+          block_body = '\n'.join(body_lines)
+          hash_path = 'reports/.hypotheses-last-hash'
+          prior_hash = open(hash_path).read().strip() if os.path.exists(hash_path) else ''
+          cur_hash = hashlib.sha1(block_body.encode()).hexdigest()
+          if block_body and cur_hash != prior_hash:
+              with open('reports/hypotheses.md', 'a') as out:
+                  out.write(f"\n## RANKED HYPOTHESES {stamp}\n{block_body}\n")
+              open(hash_path, 'w').write(cur_hash)
+
+          # knowledge upsert (structured facts.json, deduped by class@asset --
+          # see scripts/knowledge_upsert.py for why the old naive
+          # "if line not in ktext: append" approach was replaced)
+          learn_text = '\n'.join(
+              f'[LEARN] {l}'
+              for f in glob.glob('reports/hypotheses-*.txt')
+              for l in re.findall(r'^\[LEARN\] (.*)$', open(f).read(), re.M)
+          )
+          if learn_text:
+              subprocess.run(['python3', 'scripts/knowledge_upsert.py'], input=learn_text, text=True)
+
           # inventory update
           inv = 'inventory/gladia.md'
           with open(inv, 'a') as io:
@@ -214,16 +313,19 @@ jobs:
               for f in glob.glob('reports/hypotheses-*.txt'):
                   for l in re.findall(r'^\[(NEW|CHANGED)\] (.*)$', open(f).read(), re.M):
                       io.write(f"- {l[0]} {l[1].strip()[:200]}\n")
-          # state advance per model (approximate: each model got its own target)
+
+          # phase advance per model (target rotation already advanced by the
+          # analyst job itself; this only progresses the RECON->POC phase)
           for sp in glob.glob('state_*.json'):
               try:
                   st = json.load(open(sp))
               except Exception:
                   st = {}
-              phases = ['RECON','SURFACE','HYPOTHESIS','POC']
+              phases = ['RECON', 'SURFACE', 'HYPOTHESIS', 'POC']
               if st.get('phase') in phases:
-                  st['phase'] = phases[min(phases.index(st['phase'])+1, 3)]
+                  st['phase'] = phases[min(phases.index(st['phase']) + 1, 3)]
               json.dump(st, open(sp, 'w'))
+
           # archive raw logs
           for f in glob.glob('art/analyst-*.out'):
               model = re.search(r'art/analyst-([a-z0-9]+)\.out$', f)
@@ -239,7 +341,8 @@ jobs:
         shell: bash
         run: |
           python3 << 'ROBOT_PY'
-          import re, glob, ssl, urllib.request, os, time
+          import re, glob, ssl, urllib.request, os, time, json, base64
+
           allow = os.environ.get('PROBE_ALLOW', '').lower()
           pat = re.compile(r'https://[^\s"\)\]\}]+')
           urls, seen = [], set()
@@ -252,20 +355,79 @@ jobs:
               seen.add(u)
               if allow and not any(a in u.lower() for a in allow.split('|')): continue
               urls.append(u[:300])
+
           ctx = ssl.create_default_context()
           rows = []
+          bodies = []
           for u in urls[:12]:
             try:
               req = urllib.request.Request(u, method='GET', headers={'User-Agent': 'Mozilla/5.0 (passive verifier)'})
               with urllib.request.urlopen(req, timeout=12, context=ctx) as r:
+                body = r.read(20000)
+                bodies.append(body.decode('utf-8', 'ignore'))
                 rows.append('%s -> %s len=%s type=%s' % (u, r.status, r.headers.get('Content-Length', '?'), r.headers.get('Content-Type', '')[:40]))
             except urllib.error.HTTPError as e:
               rows.append('%s -> HTTP %s' % (u, e.code))
+              try:
+                bodies.append(e.read(20000).decode('utf-8', 'ignore'))
+              except Exception:
+                pass
             except Exception as e:
               rows.append('%s -> ERR %s' % (u, str(e)[:50]))
           print('\n'.join(rows) if rows else 'no probes (allow=%s)' % allow)
+
+          # --- GraphQL introspection probe: single passive schema-name-only
+          # query per candidate path, 1 rps, read-only (no mutations sent) ---
+          gql_rows = []
+          gql_query = json.dumps({'query': '{__schema{queryType{name}}}'}).encode()
+          for host in ('api.gladia.io', 'app.gladia.io'):
+            for path in ('/graphql', '/v2/graphql', '/api/graphql'):
+              u = f'https://{host}{path}'
+              try:
+                req = urllib.request.Request(u, data=gql_query, method='POST',
+                                              headers={'User-Agent': 'Mozilla/5.0 (passive verifier)', 'Content-Type': 'application/json'})
+                with urllib.request.urlopen(req, timeout=8, context=ctx) as r:
+                  body = r.read(2000).decode('utf-8', 'ignore')
+                  live = '__schema' in body or 'queryType' in body
+                  gql_rows.append('%s -> %s introspection_live=%s' % (u, r.status, live))
+              except urllib.error.HTTPError as e:
+                gql_rows.append('%s -> HTTP %s' % (u, e.code))
+              except Exception as e:
+                gql_rows.append('%s -> ERR %s' % (u, str(e)[:50]))
+              time.sleep(1)
+
+          # --- JWT structural check: decode only (never verify/forge) ---
+          jwt_rows = []
+          jwt_pat = re.compile(r'eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}')
+          extra_text = '\n'.join(open(f, errors='ignore').read() for f in glob.glob('art/lead_*.txt') + glob.glob('art/analyst-*.out'))
+          corpus = '\n'.join(bodies) + '\n' + extra_text
+          seen_jwt = set()
+          for tok in jwt_pat.findall(corpus):
+            if tok in seen_jwt: continue
+            seen_jwt.add(tok)
+            try:
+              header_b64 = tok.split('.')[0]
+              header_b64 += '=' * (-len(header_b64) % 4)
+              header = json.loads(base64.urlsafe_b64decode(header_b64))
+              alg = str(header.get('alg', '')).lower()
+              if alg in ('none', ''):
+                flag = ' <== CRITICAL: alg=none (unsigned token, likely auth bypass)'
+              elif alg == 'hs256':
+                flag = ' <== verify this issuer never also signs RS256 (HS256/RS256 key-confusion candidate)'
+              else:
+                flag = ''
+              jwt_rows.append('JWT header %s%s' % (header, flag))
+            except Exception as e:
+              jwt_rows.append('JWT decode failed: %s' % str(e)[:50])
+
           with open('probe-results.md', 'a') as fo:
             fo.write('\n## %s\n%s\n' % (time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime()), '\n'.join(rows)))
+            if gql_rows:
+              fo.write('### GraphQL introspection probe\n%s\n' % '\n'.join(gql_rows))
+            if jwt_rows:
+              fo.write('### JWT structural findings\n%s\n' % '\n'.join(jwt_rows))
+          print('\n'.join(gql_rows))
+          print('\n'.join(jwt_rows) if jwt_rows else 'no JWTs observed this cycle')
           ROBOT_PY
 
       - name: Commit (single push, no race)
