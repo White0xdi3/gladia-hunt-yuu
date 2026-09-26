@@ -1,5 +1,4 @@
-api.malwarebytes.org
-acorns.com
-amexgbt.com
-api.range.org
-explorer.money
+# High-value confirmed-live Gladia assets go here (curated, in-scope only).
+# Previously contained 5 unrelated hostnames (malwarebytes.org, acorns.com,
+# amexgbt.com, api.range.org, explorer.money) from a stray seed commit --
+# none are Gladia assets or in scope.yml. Removed 2026-09-26.
