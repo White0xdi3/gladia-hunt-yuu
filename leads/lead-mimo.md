@@ -983,3 +983,4 @@ testability: PASSIVE
 [LEARN] ACCEPTED MISCONFIG @ api.gladia.io: /v2/live/health undocumented not in 14-path OpenAPI spec, 401 key-gated informational only re-confirmed
 [LEARN] REJECTED AUTH @ api.gladia.io: no-key POST /v2/pre-recorded still 401/144 NestJS no bypass this cycle
 [RISK] api.gladia.io: 72 reason: frozen spec no drift but high-value SSRF-by-design requires stolen/bought key (AUTH_HELPED) to reach 169.254.169.254 -> cloud credential theft critical if key obtained | app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap is live and chainable to OAuth code theft -> ATO via HUMAN_ONLY post-auth step, highest gate_ease | sdk: 68 reason: orphaned maintainer 404 with "Official" description + WebSocket query key leakage = supply-chain hijack risk medium-high but requires GitHub namespace claim and npm publish, passive verifiable
+## 2026-09-26 23:34:46 UTC [gladia] (model mimo)
