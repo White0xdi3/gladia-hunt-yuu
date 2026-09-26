@@ -140,6 +140,11 @@ jobs:
               print('no VALID verdicts this cycle')
           PY
 
+      - name: File confirmed bugs (one record per finding under triage/)
+        run: |
+          mkdir -p triage
+          python3 scripts/triage_confirm.py < triage-output.txt
+
       - name: Append learnings to knowledge base
         run: |
           # Was: hand-rolled regex that literally hardcoded the strings

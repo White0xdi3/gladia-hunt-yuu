@@ -1,4 +1,11 @@
-# Gladia Bounty Submission — Impersonated `gladia` npm package (0.1.3, dist-tag latest) with API-key-in-URL leak
+# Confirmed finding: gladia-0-1-3
+
+_Seeded 2026-09-26 from reports/SUBMISSION_gladia_npm_impersonation.md -- the
+first entry under the new one-file-per-confirmed-bug convention
+(scripts/triage_confirm.py). Future re-confirmations from triage.yml get
+appended below as dated "## Re-confirmed" sections._
+
+## Gladia Bounty Submission — Impersonated `gladia` npm package (0.1.3, dist-tag latest) with API-key-in-URL leak
 
 ## METADATA
 
