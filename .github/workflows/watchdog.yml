@@ -1,0 +1,50 @@
+name: Watchdog - Follow-up & Valid-Finding Alerts
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: write
+
+concurrency:
+  group: watchdog
+  cancel-in-progress: false
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install PyGithub
+        run: pip install PyGithub
+
+      - name: Run watchdog
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python scripts/watchdog.py
+
+      - name: Commit offset state
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add reports/.watchdog-state.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "watchdog: advance valid-bugs offset $(date -u +'%Y-%m-%d-%H-%M')"
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push origin main && break
+              echo "watchdog commit push attempt $i failed, retrying in 15s..."
+              sleep 15
+            done
+          fi
