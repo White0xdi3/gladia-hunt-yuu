@@ -121,6 +121,7 @@ jobs:
           verdict_lines = [l.strip() for l in txt.split('\n')
                            if re.search(r'(?<!IN)\bVALID\b', l, re.I)
                            and not re.search(r'\bINVALID\b', l, re.I)
+                           and not re.search(r'\bNO\s+(NEW\s+)?VALID\b', l, re.I)
                            and re.search(r'verdict|^\||^\s*\*\*VALID|^\s*VALID', l, re.I)]
           if verdict_lines:
               with open('reports/valid-bugs.md', 'a') as f:
@@ -136,30 +137,15 @@ jobs:
 
       - name: Append learnings to knowledge base
         run: |
-          python3 << 'PY'
-          import re, os, datetime, glob
-          stamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
-          kpath = 'knowledge/index.md'
-          os.makedirs('knowledge', exist_ok=True)
-          if not os.path.exists(kpath):
-              open(kpath, 'w').write('# Knowledge Base (seed)\n')
-          ktext = open(kpath).read()
-          learnings = []
-          try:
-              txt = open('triage-output.txt', errors='ignore').read()
-          except Exception:
-              txt = ''
-          for m in re.finditer(r'(?im)^\s*(INVALID|HOLD|VALID)\b.*?[-:]\s*(.{10,220})', txt):
-              verdict, why = m.group(1).upper(), m.group(2).strip()
-              if verdict in ('INVALID', 'HOLD'):
-                  line = f"- {stamp[:10]} REJECTED class @ lead: {why}"
-                  if line not in ktext:
-                      learnings.append(line)
-          with open(kpath, 'a') as k:
-              for line in learnings:
-                  k.write(line + '\n')
-          print(f'appended {len(learnings)} learnings to knowledge/index.md')
-          PY
+          # Was: hand-rolled regex that literally hardcoded the strings
+          # "class" and "lead" into every line ("REJECTED class @ lead: ..."),
+          # so every triage learning collapsed to one useless unsearchable
+          # key, and exact-string dedup against ever-changing LLM prose meant
+          # the file only ever grew. scripts/knowledge_upsert.py replaces
+          # this with a shared, structured, actually-deduped knowledge store
+          # (also used by hunt.yml's aggregate job).
+          mkdir -p knowledge
+          python3 scripts/knowledge_upsert.py < triage-output.txt
 
       - name: Commit
         run: |
