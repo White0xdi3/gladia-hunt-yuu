@@ -107,11 +107,16 @@ jobs:
       - name: Update valid-bugs counter
         run: |
           mkdir -p triage reports
+          # One file, overwritten each cycle (same convention as
+          # leads/reposcan-latest.md) -- previously a new dated file every
+          # cycle (triage/run-<timestamp>.md), which accumulated to 700+
+          # files/4.9MB with zero consumers: the useful signal (VALID
+          # verdicts, learnings) was already being distilled separately into
+          # reports/valid-bugs.md and knowledge/facts.json.
           {
-            echo ""
             echo "===== TRIAGE $(date -u +'%Y-%m-%d %H:%M:%S UTC') ====="
             cat triage-output.txt
-          } >> triage/run-$(date -u +'%Y-%m-%d-%H-%M').md
+          } > triage/latest.md
           python3 << 'PY'
           import re
           try:

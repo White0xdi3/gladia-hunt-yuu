@@ -280,7 +280,6 @@ jobs:
             echo "## Model analysis:"
             cat reposcan-raw/analysis.txt 2>/dev/null | head -120
           } > leads/reposcan-latest.md
-          cp leads/reposcan-latest.md leads/reposcan-$(date -u +'%Y-%m-%d-%H-%M').md 2>/dev/null || true
 
       - name: Commit
         run: |
