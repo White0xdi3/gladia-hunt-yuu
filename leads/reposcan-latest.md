@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-09-27 12:01:48 UTC =====
+===== REPOSCAN 2026-09-27 12:11:51 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5688 code/config files scanned, 652 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,7 +46,7 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
@@ -68,7 +68,7 @@ reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "sk-" reposcan-raw/gladiaio/ --include="*.yaml" --include="*.yml" --include="*.json" --include="*.ts" --include="*.js" 2>/dev/null | head -20
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "sk-" reposcan-raw/ --include="*.yaml" --include="*.yml" --include="*.json" --include="*.ts" --include="*.js" 2>/dev/null | head -20
 reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/generate-image/google/vertex-edit-outpaint.ts:  const mask = readFileSync('data/comic-cat-mask-2.png');
 reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/telemetry/console/tool-loop-agent-stream.ts:    secretApiKey: 'sk-secret',
 reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/telemetry/console/stream-text.ts:      secretApiKey: 'sk-secret',
@@ -90,52 +90,76 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-image-model.t
 reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.ts:        'Gemini image models do not support mask-based image editing.',
 reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.test.ts:      const maskData = 'base64-mask-image';
 [0m
-### Classification Tables
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml | head -300
+lockfileVersion: '9.0'
 
-#### REAL_SECRET
-| File | Line | SHA256(prefix) | Notes |
-|------|------|----------------|-------|
-| *(none)* | — | — | No live credentials found |
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
-#### TEST_OR_EXAMPLE
-| File | Line | Pattern | Context |
-|------|------|---------|---------|
-| `packages/mcp/src/tool/oauth.test.ts` | 740 | `client_secret: 'secret123'` | Test fixture |
-| `packages/mcp/src/tool/oauth.test.ts` | 905 | `access_token: 'access123'` | Test fixture |
-| `packages/mcp/src/tool/oauth.test.ts` | 908 | `refresh_token: 'refresh123'` | Test fixture |
-| `packages/mcp/src/tool/mcp-http-transport.test.ts` | 409 | `access_token: 'expired-access-token'` | Test fixture |
-| `packages/mcp/src/tool/mcp-http-transport.test.ts` | 411 | `refresh_token: 'rotating-refresh-token'` | Test fixture |
-| `packages/openai/src/**/*.test.ts` | 30+ occurrences | `apiKey: 'test-api-key'` | Test fixtures (OpenAI provider) |
-| `packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13,277 | `apiKey: 'test-api-key'` | Test fixtures |
-| `packages/togetherai/src/**/*.test.ts` | 4 occurrences | `apiKey: 'custom-key'`, `'explicit-key'`, `'test-api-key'` | Test fixtures |
-| `packages/google-vertex/src/**/*.test.ts` | 10+ occurrences | `apiKey: 'test-api-key'`, `token: 'mocked-token'`, `access_token: 'mock.jwt.token'`, `private_key: 'invalid-key'` | Test fixtures/mocks |
-| `packages/amazon-bedrock/src/**/*.test.ts` | 8+ occurrences | `sessionToken: 'dynamic-session-token'`, `'static-session-token'`, `'test-session-token'`, `'async-session-token'`, `apiKey: 'test-api-key-123'`, `nextToken: 'test-token'` | Test fixtures |
-| `packages/amazon-bedrock/src/amazon-bedrock-provider.ts` | 48 | `apiKey: 'your-api-key-here'` | Doc example in JSDoc |
-| `examples/ai-functions/src/telemetry/**/*.ts` | 7 occurrences | `secretApiKey: 'sk-secret'` | Example code with fake `sk-` prefix |
-| `examples/ai-functions/src/generate-text/anthropic-aws/basic.ts` | comment | `ANTHROPIC_AWS_API_KEY=sk-…` | Commented placeholder |
-| `packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | 36 | `encrypted_content: "gAAAAABplLP..."` | Test fixture (encrypted payload) |
+overrides:
+  tinyexec: 1.0.2
+  oxlint: 1.56.0
 
-#### ENDPOINT_LEAK
-| File | Line | Leak | Notes |
-|------|------|------|-------|
-| *(none)* | — | — | No internal/staging URLs exposed |
+importers:
 
-#### INTERESTING
-| File | Line | Finding | Why It Matters |
-|------|------|---------|----------------|
-| `packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166,171 | `deniedCIDRs: ['169.254.169.254/32']`, `subnets: { deny: ['169.254.169.254/32'] }` | **SSRF defense test** — explicitly blocks AWS/GCP/Azure metadata endpoint; confirms sandbox enforces egress controls |
-| `pnpm-lock.yaml` / `tsconfig.json` / `analyze-providers.ts` / `.github/tigent.yml` | multiple | `@ai-sdk/gladia` package references | Official Vercel AI SDK integration for Gladia (confirmed in RAG); `packages/gladia` is a local workspace package |
-| `examples/ai-functions/src/telemetry/**/*.ts` | 7 files | `secretApiKey: 'sk-secret'` pattern | Example telemetry code uses fake `sk-` prefixed keys — could mislead grep but clearly test data |
+  .:
+    devDependencies:
+      '@changesets/cli':
+        specifier: 2.27.10
+        version: 2.27.10
+      '@playwright/test':
+        specifier: ^1.60.0
+        version: 1.60.0
+      del-cli:
+        specifier: ^5.1.0
+        version: 5.1.0
+      husky:
+        specifier: ^9.1.7
+        version: 9.1.7
+      konsistent:
+        specifier: 0.0.1-alpha.20
+        version: 0.0.1-alpha.20
+      konsistent-provider:
+        specifier: workspace:*
+        version: link:tools/konsistent-provider
+      lint-staged:
+        specifier: ^15.5.1
+        version: 15.5.2
+      next:
+        specifier: 15.0.7
+        version: 15.0.7(@opentelemetry/api@1.9.1)(@playwright/test@1.60.0)(react-dom@19.0.0-rc-cc1ec60d0d-20240607(react@19.0.0-rc-cc1ec60d0d-20240607))(react@19.0.0-rc-cc1ec60d0d-20240607)(sass@1.90.0)
+      oxfmt:
+        specifier: ^0.41.0
+        version: 0.41.0
+      oxlint:
+        specifier: 1.56.0
+        version: 1.56.0
+      playwright:
+        specifier: ^1.60.0
+        version: 1.60.0
+      publint:
+        specifier: 0.2.12
+        version: 0.2.12
+      react:
+        specifier: 19.0.0-rc-cc1ec60d0d-20240607
+        version: 19.0.0-rc-cc1ec60d0d-20240607
+      react-dom:
+        specifier: 19.0.0-rc-cc1ec60d0d-20240607
+        version: 19.0.0-rc-cc1ec60d0d-20240607(react@19.0.0-rc-cc1ec60d0d-20240607)
+      turbo:
+        specifier: 2.4.4
+        version: 2.4.4
+      typescript:
+        specifier: 5.8.3
+        version: 5.8.3
+      ultracite:
+        specifier: 7.3.2
+        version: 7.3.2(oxlint@1.56.0)
+      update-ts-references:
+        specifier: ^3.6.0
+        version: 3.6.2
+      vitest:
+        specifier: 4.1.5
+        version: 4.1.5(@edge-runtime/vm@5.0.0)(@opentelemetry/api@1.9.1)(@types/node@22.19.19)(jsdom@26.1.0)(msw@2.14.6(@types/node@22.19.19)(typescript@5.8.3))(vite@7.3.3(@types/node@22.19.19)(jiti@2.7.0)(less@4.4.0)(lightningcss@1.32.0)(sass@1.90.0)(terser@5.47.1)(tsx@4.22.0)(yaml@2.9.0))
 
----
-
-### Verdict List
-
-| Candidate | REPORT_CANDIDATE | Reason |
-|-----------|------------------|--------|
-| All `test-api-key`, `secret123`, `access123`, `mocked-token`, `sk-secret`, `your-api-key-here` | **no** | Obvious test fixtures / examples / mocks — no signs of life |
-| `encrypted_content` fixture | **no** | Test fixture for OpenAI responses API compaction feature |
-| `169.254.169.254/32` deny rules | **no** | **Positive signal** — SSRF protection test confirming sandbox blocks cloud metadata |
-| `@ai-sdk/gladia` package references | **no** | Official Gladia + Vercel AI SDK integration (known, in scope as MEDIUM) |
-
-**No reportable secrets or vulnerabilities found in this scan delta.** The `vercel-ai` repo is a fork of the Vercel AI SDK with Gladia provider added — all hits are test infrastructure or documented examples.

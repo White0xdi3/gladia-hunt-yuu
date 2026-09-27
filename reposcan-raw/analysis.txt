@@ -1,7 +1,7 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
@@ -23,7 +23,7 @@ reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "sk-" reposcan-raw/gladiaio/ --include="*.yaml" --include="*.yml" --include="*.json" --include="*.ts" --include="*.js" 2>/dev/null | head -20
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "sk-" reposcan-raw/ --include="*.yaml" --include="*.yml" --include="*.json" --include="*.ts" --include="*.js" 2>/dev/null | head -20
 reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/generate-image/google/vertex-edit-outpaint.ts:  const mask = readFileSync('data/comic-cat-mask-2.png');
 reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/telemetry/console/tool-loop-agent-stream.ts:    secretApiKey: 'sk-secret',
 reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/telemetry/console/stream-text.ts:      secretApiKey: 'sk-secret',
@@ -45,52 +45,442 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-image-model.t
 reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.ts:        'Gemini image models do not support mask-based image editing.',
 reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.test.ts:      const maskData = 'base64-mask-image';
 [0m
-### Classification Tables
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml | head -300
+lockfileVersion: '9.0'
 
-#### REAL_SECRET
-| File | Line | SHA256(prefix) | Notes |
-|------|------|----------------|-------|
-| *(none)* | — | — | No live credentials found |
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
-#### TEST_OR_EXAMPLE
-| File | Line | Pattern | Context |
-|------|------|---------|---------|
-| `packages/mcp/src/tool/oauth.test.ts` | 740 | `client_secret: 'secret123'` | Test fixture |
-| `packages/mcp/src/tool/oauth.test.ts` | 905 | `access_token: 'access123'` | Test fixture |
-| `packages/mcp/src/tool/oauth.test.ts` | 908 | `refresh_token: 'refresh123'` | Test fixture |
-| `packages/mcp/src/tool/mcp-http-transport.test.ts` | 409 | `access_token: 'expired-access-token'` | Test fixture |
-| `packages/mcp/src/tool/mcp-http-transport.test.ts` | 411 | `refresh_token: 'rotating-refresh-token'` | Test fixture |
-| `packages/openai/src/**/*.test.ts` | 30+ occurrences | `apiKey: 'test-api-key'` | Test fixtures (OpenAI provider) |
-| `packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13,277 | `apiKey: 'test-api-key'` | Test fixtures |
-| `packages/togetherai/src/**/*.test.ts` | 4 occurrences | `apiKey: 'custom-key'`, `'explicit-key'`, `'test-api-key'` | Test fixtures |
-| `packages/google-vertex/src/**/*.test.ts` | 10+ occurrences | `apiKey: 'test-api-key'`, `token: 'mocked-token'`, `access_token: 'mock.jwt.token'`, `private_key: 'invalid-key'` | Test fixtures/mocks |
-| `packages/amazon-bedrock/src/**/*.test.ts` | 8+ occurrences | `sessionToken: 'dynamic-session-token'`, `'static-session-token'`, `'test-session-token'`, `'async-session-token'`, `apiKey: 'test-api-key-123'`, `nextToken: 'test-token'` | Test fixtures |
-| `packages/amazon-bedrock/src/amazon-bedrock-provider.ts` | 48 | `apiKey: 'your-api-key-here'` | Doc example in JSDoc |
-| `examples/ai-functions/src/telemetry/**/*.ts` | 7 occurrences | `secretApiKey: 'sk-secret'` | Example code with fake `sk-` prefix |
-| `examples/ai-functions/src/generate-text/anthropic-aws/basic.ts` | comment | `ANTHROPIC_AWS_API_KEY=sk-…` | Commented placeholder |
-| `packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | 36 | `encrypted_content: "gAAAAABplLP..."` | Test fixture (encrypted payload) |
+overrides:
+  tinyexec: 1.0.2
+  oxlint: 1.56.0
 
-#### ENDPOINT_LEAK
-| File | Line | Leak | Notes |
-|------|------|------|-------|
-| *(none)* | — | — | No internal/staging URLs exposed |
+importers:
 
-#### INTERESTING
-| File | Line | Finding | Why It Matters |
-|------|------|---------|----------------|
-| `packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166,171 | `deniedCIDRs: ['169.254.169.254/32']`, `subnets: { deny: ['169.254.169.254/32'] }` | **SSRF defense test** — explicitly blocks AWS/GCP/Azure metadata endpoint; confirms sandbox enforces egress controls |
-| `pnpm-lock.yaml` / `tsconfig.json` / `analyze-providers.ts` / `.github/tigent.yml` | multiple | `@ai-sdk/gladia` package references | Official Vercel AI SDK integration for Gladia (confirmed in RAG); `packages/gladia` is a local workspace package |
-| `examples/ai-functions/src/telemetry/**/*.ts` | 7 files | `secretApiKey: 'sk-secret'` pattern | Example telemetry code uses fake `sk-` prefixed keys — could mislead grep but clearly test data |
+  .:
+    devDependencies:
+      '@changesets/cli':
+        specifier: 2.27.10
+        version: 2.27.10
+      '@playwright/test':
+        specifier: ^1.60.0
+        version: 1.60.0
+      del-cli:
+        specifier: ^5.1.0
+        version: 5.1.0
+      husky:
+        specifier: ^9.1.7
+        version: 9.1.7
+      konsistent:
+        specifier: 0.0.1-alpha.20
+        version: 0.0.1-alpha.20
+      konsistent-provider:
+        specifier: workspace:*
+        version: link:tools/konsistent-provider
+      lint-staged:
+        specifier: ^15.5.1
+        version: 15.5.2
+      next:
+        specifier: 15.0.7
+        version: 15.0.7(@opentelemetry/api@1.9.1)(@playwright/test@1.60.0)(react-dom@19.0.0-rc-cc1ec60d0d-20240607(react@19.0.0-rc-cc1ec60d0d-20240607))(react@19.0.0-rc-cc1ec60d0d-20240607)(sass@1.90.0)
+      oxfmt:
+        specifier: ^0.41.0
+        version: 0.41.0
+      oxlint:
+        specifier: 1.56.0
+        version: 1.56.0
+      playwright:
+        specifier: ^1.60.0
+        version: 1.60.0
+      publint:
+        specifier: 0.2.12
+        version: 0.2.12
+      react:
+        specifier: 19.0.0-rc-cc1ec60d0d-20240607
+        version: 19.0.0-rc-cc1ec60d0d-20240607
+      react-dom:
+        specifier: 19.0.0-rc-cc1ec60d0d-20240607
+        version: 19.0.0-rc-cc1ec60d0d-20240607(react@19.0.0-rc-cc1ec60d0d-20240607)
+      turbo:
+        specifier: 2.4.4
+        version: 2.4.4
+      typescript:
+        specifier: 5.8.3
+        version: 5.8.3
+      ultracite:
+        specifier: 7.3.2
+        version: 7.3.2(oxlint@1.56.0)
+      update-ts-references:
+        specifier: ^3.6.0
+        version: 3.6.2
+      vitest:
+        specifier: 4.1.5
+        version: 4.1.5(@edge-runtime/vm@5.0.0)(@opentelemetry/api@1.9.1)(@types/node@22.19.19)(jsdom@26.1.0)(msw@2.14.6(@types/node@22.19.19)(typescript@5.8.3))(vite@7.3.3(@types/node@22.19.19)(jiti@2.7.0)(less@4.4.0)(lightningcss@1.32.0)(sass@1.90.0)(terser@5.47.1)(tsx@4.22.0)(yaml@2.9.0))
+
+  examples/ai-e2e-next:
+    dependencies:
+      '@ai-sdk/amazon-bedrock':
+        specifier: workspace:*
+        version: link:../../packages/amazon-bedrock
+      '@ai-sdk/anthropic':
+        specifier: workspace:*
+        version: link:../../packages/anthropic
+      '@ai-sdk/azure':
+        specifier: workspace:*
+        version: link:../../packages/azure
+      '@ai-sdk/cohere':
+        specifier: workspace:*
+        version: link:../../packages/cohere
+      '@ai-sdk/deepseek':
+        specifier: workspace:*
+        version: link:../../packages/deepseek
+      '@ai-sdk/fireworks':
+        specifier: workspace:*
+        version: link:../../packages/fireworks
+      '@ai-sdk/google':
+        specifier: workspace:*
+        version: link:../../packages/google
+      '@ai-sdk/google-vertex':
+        specifier: workspace:*
+        version: link:../../packages/google-vertex
+      '@ai-sdk/groq':
+        specifier: workspace:*
+        version: link:../../packages/groq
+      '@ai-sdk/mcp':
+        specifier: workspace:*
+        version: link:../../packages/mcp
+      '@ai-sdk/mistral':
+        specifier: workspace:*
+        version: link:../../packages/mistral
+      '@ai-sdk/openai':
+        specifier: workspace:*
+        version: link:../../packages/openai
+      '@ai-sdk/otel':
+        specifier: workspace:*
+        version: link:../../packages/otel
+      '@ai-sdk/perplexity':
+        specifier: workspace:*
+        version: link:../../packages/perplexity
+      '@ai-sdk/provider':
+        specifier: workspace:*
+        version: link:../../packages/provider
+      '@ai-sdk/provider-utils':
+        specifier: workspace:*
+        version: link:../../packages/provider-utils
+      '@ai-sdk/react':
+        specifier: workspace:*
+        version: link:../../packages/react
+      '@ai-sdk/rsc':
+        specifier: workspace:*
+        version: link:../../packages/rsc
+      '@ai-sdk/valibot':
+        specifier: workspace:*
+        version: link:../../packages/valibot
+      '@ai-sdk/xai':
+        specifier: workspace:*
+        version: link:../../packages/xai
+      '@langfuse/otel':
+        specifier: ^4.6.1
+        version: 4.6.1(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.211.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.7.1(@opentelemetry/api@1.9.1))
+      '@langfuse/tracing':
+        specifier: ^5.3.0
+        version: 5.3.0(@opentelemetry/api@1.9.1)
+      '@modelcontextprotocol/sdk':
+        specifier: ^1.29.0
+        version: 1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
+      '@opentelemetry/sdk-trace-node':
+        specifier: ^2.7.1
+        version: 2.7.1(@opentelemetry/api@1.9.1)
+      '@radix-ui/react-collapsible':
+        specifier: ^1.1.12
+        version: 1.1.12(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-use-controllable-state':
+        specifier: ^1.2.2
+        version: 1.2.2(@types/react@18.3.28)(react@18.3.1)
+      '@valibot/to-json-schema':
+        specifier: ^1.7.0
+        version: 1.7.0(valibot@1.1.0(typescript@5.8.3))
+      '@vercel/blob':
+        specifier: ^0.26.0
+        version: 0.26.0
+      '@vercel/sandbox':
+        specifier: ^2.0.1
+        version: 2.1.1
+      ai:
+        specifier: workspace:*
+        version: link:../../packages/ai
+      class-variance-authority:
+        specifier: ^0.7.1
+        version: 0.7.1
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      lucide-react:
+        specifier: ^0.545.0
+        version: 0.545.0(react@18.3.1)
+      next:
+        specifier: ^15.5.18
+        version: 15.5.18(@opentelemetry/api@1.9.1)(@playwright/test@1.60.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.90.0)
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-markdown:
+        specifier: 9.0.1
+        version: 9.0.1(@types/react@18.3.28)(react@18.3.1)
+      redis:
+        specifier: ^4.7.1
+        version: 4.7.1
+      resumable-stream:
+        specifier: ^2.2.12
+        version: 2.2.12
+      streamdown:
+        specifier: ^1.6.11
+        version: 1.6.11(@types/mdast@4.0.4)(micromark-util-types@2.0.2)(micromark@4.0.2)(react@18.3.1)
+      tailwind-merge:
+        specifier: ^3.6.0
+        version: 3.6.0
+      tailwindcss-animate:
+        specifier: ^1.0.7
+        version: 1.0.7(tailwindcss@3.4.19(tsx@4.22.0)(yaml@2.9.0))
+      valibot:
+        specifier: 1.1.0
+        version: 1.1.0(typescript@5.8.3)
+      zod:
+        specifier: 3.25.76
+        version: 3.25.76
+    devDependencies:
+      '@types/node':
+        specifier: 22.19.19
+        version: 22.19.19
+      '@types/react':
+        specifier: ^18.3.28
+        version: 18.3.28
+      '@types/react-dom':
+        specifier: ^18.3.7
+        version: 18.3.7(@types/react@18.3.28)
+      autoprefixer:
+        specifier: ^10.5.0
+        version: 10.5.0(postcss@8.5.14)
+      postcss:
+        specifier: ^8.5.14
+        version: 8.5.14
+      tailwindcss:
+        specifier: ^3.4.19
+        version: 3.4.19(tsx@4.22.0)(yaml@2.9.0)
+      typescript:
+        specifier: 5.8.3
+        version: 5.8.3
+
+  examples/ai-functions:
+    dependencies:
+      '@ai-sdk/alibaba':
+        specifier: workspace:*
+        version: link:../../packages/alibaba
+      '@ai-sdk/amazon-bedrock':
+        specifier: workspace:*
+        version: link:../../packages/amazon-bedrock
+      '@ai-sdk/anthropic':
+        specifier: workspace:*
+        version: link:../../packages/anthropic
+      '@ai-sdk/anthropic-aws':
+        specifier: workspace:*
+        version: link:../../packages/anthropic-aws
+      '@ai-sdk/assemblyai':
+        specifier: workspace:*
+        version: link:../../packages/assemblyai
+      '@ai-sdk/azure':
+        specifier: workspace:*
+        version: link:../../packages/azure
+      '@ai-sdk/baseten':
+        specifier: workspace:*
+        version: link:../../packages/baseten
+      '@ai-sdk/black-forest-labs':
+        specifier: workspace:*
+        version: link:../../packages/black-forest-labs
+      '@ai-sdk/bytedance':
+        specifier: workspace:*
+        version: link:../../packages/bytedance
+      '@ai-sdk/cerebras':
+        specifier: workspace:*
+        version: link:../../packages/cerebras
+      '@ai-sdk/cohere':
+        specifier: workspace:*
+        version: link:../../packages/cohere
+      '@ai-sdk/deepgram':
+        specifier: workspace:*
+        version: link:../../packages/deepgram
+      '@ai-sdk/deepinfra':
+        specifier: workspace:*
+        version: link:../../packages/deepinfra
+      '@ai-sdk/deepseek':
+        specifier: workspace:*
+        version: link:../../packages/deepseek
+      '@ai-sdk/devtools':
+        specifier: workspace:^
+        version: link:../../packages/devtools
+      '@ai-sdk/elevenlabs':
+        specifier: workspace:*
+        version: link:../../packages/elevenlabs
+      '@ai-sdk/fal':
+        specifier: workspace:*
+        version: link:../../packages/fal
+      '@ai-sdk/fireworks':
+        specifier: workspace:*
+        version: link:../../packages/fireworks
+      '@ai-sdk/gateway':
+        specifier: workspace:*
+        version: link:../../packages/gateway
+      '@ai-sdk/gladia':
+        specifier: workspace:*
+        version: link:../../packages/gladia
+      '@ai-sdk/google':
+        specifier: workspace:*
+        version: link:../../packages/google
+      '@ai-sdk/google-vertex':
+        specifier: workspace:*
+        version: link:../../packages/google-vertex
+      '@ai-sdk/groq':
+        specifier: workspace:*
+        version: link:../../packages/groq
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -n "sk-secret" reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/telemetry/console/stream-text.ts
+15:      secretApiKey: 'sk-secret',
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/telemetry/console/stream-text.ts
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [offset=160, limit=30][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts[90m [offset=735, limit=30][0m
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && head -50 reposcan-raw/gladiaio/vercel-ai/packages/openai/src/chat/openai-chat-language-model.test.ts | grep -A5 -B5 "apiKey"
+(no output)
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/openai/src/chat/openai-chat-language-model.test.ts[90m [offset=70, limit=50][0m
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -name "package.json" -path "*/packages/gladia/*" 2>/dev/null
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/sdk -name "*.ts" -o -name "*.js" -o -name "*.json" | head -30
+reposcan-raw/gladiaio/sdk/.cursor/mcp.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/project.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/vitest.config.ts
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_session.test.ts
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/prerecorded_v2_async.test.ts
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_job_management.test.ts
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/tsconfig.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/package.json
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/tsdown.config.ts
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/project.json
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/tsconfig.json
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/src/index.ts
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/package.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/project.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/package.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-python/project.json
+reposcan-raw/gladiaio/sdk/nx.json
+reposcan-raw/gladiaio/sdk/packages/sdk-js/tsdown.config.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/tsconfig.spec.json
+reposcan-raw/gladiaio/sdk/packages/sdk-js/project.json
+reposcan-raw/gladiaio/sdk/packages/sdk-js/vitest.config.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/tsconfig.json
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/version.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/internal_types.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/helpers.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/wsClient.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/types.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "sk-\|api[_-]?key\|secret\|token" reposcan-raw/gladiaio/sdk --include="*.ts" --include="*.js" --include="*.json" 2>/dev/null | grep -v ".test.ts" | grep -v "test" | head -30
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:  /** The websocket url to connect to for sending audio data. The url will contain the temporary token to authenticate the session. */
+[0m
+Now I have a complete picture. Let me produce the classification tables and verdict.
 
 ---
 
-### Verdict List
+## CLASSIFICATION TABLES
+
+### TEST_OR_EXAMPLE (test fixtures / example code — NOT reportable)
+
+| File | Line | Pattern | Context |
+|------|------|---------|---------|
+| `vercel-ai/examples/ai-functions/src/telemetry/console/stream-text.ts` | 15 | `sk-secret` | Example telemetry demo — placeholder in `runtimeContext` |
+| `vercel-ai/examples/ai-functions/src/telemetry/console/tool-loop-agent-stream.ts` | — | `sk-secret` | Example telemetry demo |
+| `vercel-ai/examples/ai-functions/src/telemetry/console/generate-text.ts` | — | `sk-secret` | Example telemetry demo |
+| `vercel-ai/examples/ai-functions/src/telemetry/otel/*.ts` | — | `sk-secret` | Example telemetry demo |
+| `vercel-ai/examples/ai-functions/src/generate-text/anthropic-aws/basic.ts` | — | `sk-…` (comment) | Commented placeholder `ANTHROPIC_AWS_API_KEY=sk-…` |
+| `vercel-ai/packages/openai/src/chat/openai-chat-language-model.test.ts` | 113 | `test-api-key` | Vitest fixture for `createOpenAI()` |
+| `vercel-ai/packages/openai/src/completion/openai-completion-language-model.test.ts` | 45, 246, 381 | `test-api-key` | Vitest fixtures |
+| `vercel-ai/packages/openai/src/embedding/openai-embedding-model.test.ts` | 13, 137 | `test-api-key` | Vitest fixtures |
+| `vercel-ai/packages/openai/src/speech/openai-speech-model.test.ts` | 10, 54 | `test-api-key` | Vitest fixtures |
+| `vercel-ai/packages/openai/src/image/openai-image-model.test.ts` | 14, 114 | `test-api-key` | Vitest fixtures |
+| `vercel-ai/packages/openai/src/files/openai-files.test.ts` | 40, 61, 78 | `test-api-key` | Vitest fixtures |
+| `vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | 36 | `encrypted_content` (long base64) | Test fixture — encrypted OpenAI response blob |
+| `vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | `test-api-key` | Vitest fixtures |
+| `vercel-ai/packages/togetherai/src/togetherai-provider.test.ts` | 99, 112, 165 | `custom-key`, `explicit-key`, `test-api-key` | Vitest fixtures |
+| `vercel-ai/packages/togetherai/src/reranking/togetherai-reranking-model.test.ts` | 7 | `test-api-key` | Vitest fixture |
+| `vercel-ai/packages/google-vertex/src/google-vertex-provider.test.ts` | 120 | `test-api-key` | Vitest fixture |
+| `vercel-ai/packages/google-vertex/src/google-vertex-provider-base.test.ts` | 187, 405, 419 | `test-api-key` | Vitest fixtures |
+| `vercel-ai/packages/google-vertex/src/google-vertex-auth-google-auth-library.test.ts` | 5, 21 | `mocked-token` | Mocked OAuth token |
+| `vercel-ai/packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts` | 68, 150 | `mock.jwt.token`, `invalid-key` | Mocked JWT / negative test |
+| `vercel-ai/packages/google-vertex/src/edge/google-vertex-provider-edge.test.ts` | 95 | `test-api-key` | Vitest fixture |
+| `vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.test.ts` | 128, 152, 158 | `dynamic-session-token`, `static-session-token` | Mocked STS session tokens |
+| `vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-sigv4-fetch.test.ts` | 100, 331, 442 | `test-session-token`, `async-session-token`, `test-api-key-123` | Test fixtures |
+| `vercel-ai/packages/amazon-bedrock/src/mantle/bedrock-mantle-provider.test.ts` | 209 | `test-api-key` | Vitest fixture |
+| `vercel-ai/packages/amazon-bedrock/src/reranking/amazon-bedrock-reranking-model.test.ts` | 55 | `test-token` | Vitest fixture |
+| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 740, 905, 908 | `secret123`, `access123`, `refresh123` | OAuth test client fixtures |
+| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 409, 411 | `expired-access-token`, `rotating-refresh-token` | Token rotation test fixtures |
+
+---
+
+### INTERESTING (anomalies worth noting)
+
+| File | Line | Finding | Why It Matters |
+|------|------|---------|----------------|
+| `vercel-ai/pnpm-lock.yaml` | 289, 291, 2368 | `@ai-sdk/gladia` workspace package | Official Vercel AI SDK integration for Gladia (v3.0.0-canary.48) — confirms Gladia is a supported provider in the Vercel ecosystem |
+| `vercel-ai/tsconfig.json` | 70 | `"path": "packages/gladia"` | TypeScript project reference to the Gladia provider package |
+| `vercel-ai/tools/analyze-downloads/src/analyze-providers.ts` | 21 | `'@ai-sdk/gladia',` | Provider listed in download analytics — telemetry visibility |
+| `vercel-ai/.github/tigent.yml` | 30 | Provider list includes `provider/gladia` (implicit via `@ai-sdk/gladia`) | CI/CD matrix includes Gladia provider |
+| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | `deniedCIDRs: ['169.254.169.254/32']` | **SSRF protection test** — explicitly blocks cloud metadata IP (AWS/GCP/Azure IMDS). Confirms defense-in-depth for sandbox network policy. |
+| `vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts` | 48 | `* apiKey: 'your-api-key-here'` | JSDoc example — not a secret |
+| **External (knowledge base)** | — | `npm: gladia@0.1.3` — "Official TypeScript SDK" but README says "Unofficial"; maintainer `softwarecitadel`; source `alexisbouchez/gladia.ts` (personal repo, 404) | **Supply-chain risk** — typo-squat / impersonation package on npm. Not in scanned repos but in program scope. |
+
+---
+
+### ENDPOINT_LEAK
+| File | Line | Finding |
+|------|------|---------|
+| *(none in this scan)* | — | No internal/dev/staging URLs or API endpoints leaked beyond test fixtures (`api.example.com`, `auth.example.com`, `https://api.openai.com`, etc.) |
+
+---
+
+### REAL_SECRET
+| File | Line | SHA256(prefix) | Verdict |
+|------|------|----------------|---------|
+| *(none in this scan)* | — | — | **No live credentials found** |
+
+---
+
+## VERDICT LIST
 
 | Candidate | REPORT_CANDIDATE | Reason |
 |-----------|------------------|--------|
-| All `test-api-key`, `secret123`, `access123`, `mocked-token`, `sk-secret`, `your-api-key-here` | **no** | Obvious test fixtures / examples / mocks — no signs of life |
-| `encrypted_content` fixture | **no** | Test fixture for OpenAI responses API compaction feature |
-| `169.254.169.254/32` deny rules | **no** | **Positive signal** — SSRF protection test confirming sandbox blocks cloud metadata |
-| `@ai-sdk/gladia` package references | **no** | Official Gladia + Vercel AI SDK integration (known, in scope as MEDIUM) |
+| `sk-secret` in examples | **no** | Example placeholder in telemetry demo code |
+| `test-api-key` / `secret123` / `mocked-token` / etc. in `*.test.ts` | **no** | Vitest fixtures — all clearly test scaffolding |
+| `encrypted_content` in `openai-compaction.1.json` | **no** | Test fixture (encrypted OpenAI response blob) |
+| `deniedCIDRs: 169.254.169.254/32` in sandbox test | **no** | **Positive signal** — SSRF protection test confirming cloud metadata IP is blocked |
+| `@ai-sdk/gladia` workspace package | **no** | Legitimate official Vercel AI SDK provider integration |
+| `gladia@0.1.3` on npm (unofficial masquerading as official) | **yes** | **Supply-chain impersonation** — package claims "Official TypeScript SDK" but is published from personal repo `alexisbouchez/gladia.ts` (now 404) by `softwarecitadel`. Report via npm security / Gladia disclosure channel. |
 
-**No reportable secrets or vulnerabilities found in this scan delta.** The `vercel-ai` repo is a fork of the Vercel AI SDK with Gladia provider added — all hits are test infrastructure or documented examples.
+---
+
+## NEXT ACTIONS
+
+1. **[NEXT] PROBE** — Verify `gladia@0.1.3` npm package ownership and request takedown/transfer via npm security (`security@npmjs.com`) and Gladia disclosure channel.
+2. Monitor `@ai-sdk/gladia` for stable release (currently `3.0.0-canary.48`) — when published, it becomes the **official** SDK path for Vercel AI SDK users.
+3. No live secrets or endpoint leaks in this scan cycle — all hits are test fixtures or positive security controls.
