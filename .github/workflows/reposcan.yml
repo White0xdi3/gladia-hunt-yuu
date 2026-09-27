@@ -19,7 +19,7 @@ jobs:
       group: reposcan
       cancel-in-progress: true
     env:
-      MODEL_ID: opencode/muse-spark-1.2-contributor-free
+      MODEL_ID: opencode/nemotron-3-ultra-free
       OPENCODE_REASONING: xhigh
 
     steps:
@@ -228,7 +228,7 @@ jobs:
           export PATH="$HOME/.opencode/bin:$HOME/.local/bin:$HOME/.npm-global/bin:$PATH"
           cat > scan-prompt.txt << 'PROMPT_START'
           You are triaging a static scan of public repos from the gladiaio/ GitHub
-          MAX MODE (ox-alpha-free 1M ctx): dig DEEPER + FASTER. Directives:
+          MAX MODE (1M ctx): dig DEEPER + FASTER. Directives:
           - Hunt HIGH-VALUE classes first: broken auth/session handling, IDOR/BOLA, SSRF-to-cloud-metadata (169.254.169.254), mass assignment, JWT alg/key confusion, OAuth redirect_uri/state flaws, business logic on money/auth flows, file upload, GraphQL introspection+mutations.
           - CHAIN primitives aggressively: open redirect -> OAuth code theft -> ATO; XSS -> session theft -> ATO; IDOR -> cross-tenant PII dump; SSRF -> metadata -> keys. One chained lead beats ten weak ones.
           - Request-level reasoning only: exact METHOD path + params + headers + body, expected vs actual status codes. No prose filler, no restating context.
@@ -267,6 +267,12 @@ jobs:
           PROMPT_END
           timeout -k 15 15m opencode run --model "$MODEL_ID" < scan-prompt.txt > reposcan-raw/analysis.txt 2>&1 || true
           echo "=== analysis preview ==="; head -30 reposcan-raw/analysis.txt
+          # Model-error guard: opencode masks backend failures behind exit 0 (|| true above),
+          # so a deprecated/unavailable model silently produces an empty analysis while the job
+          # stays green (this is exactly how muse-spark-1.2 broke unnoticed). Surface it loudly.
+          if grep -qiE '"name":[[:space:]]*"UnknownError"|Unexpected server error|Internal server error|FreeTierError|Model .* (is not supported|is unavailable)' reposcan-raw/analysis.txt; then
+            echo "::warning title=opencode model error::MODEL_ID=$MODEL_ID returned a gateway error; analysis is empty this cycle. Check the model is a live, non-deprecated free model at https://opencode.ai/zen/v1/models"
+          fi
 
       - name: Store leads
         run: |
