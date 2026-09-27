@@ -1104,3 +1104,8 @@
   - | Q4 | **NO** — `scope.yml:35,39` `passive_first`+`no_data_modification`. Spec `openapi.json:125kb 14 paths` `format:uri` confirms *design* only. Proof needs `POST https://api.gladia.io/v2/pre-recorde
   - | Q5 | YES — hypothesis tracked `reports/valid-bugs.md:17` unproven |
   - | Q6 | YES — SSRF valid class |
+
+- 3 lead(s) marked VALID at 2026-09-27 01:35:10 UTC
+  - valid-bugs.md
+  - * **Verdict: HOLD (VALID DUPLICATE)** — one-line: orphaned impersonation locked passive, Gladia-venue impact conditional until `WSS ?x-gladia-key` accepted server-side proven.
+  - * **Verdict: HOLD (AUTH_HELPED)** — one-line: design confirmed `spec format:uri no allowlist 14paths 7webhooks`, proof gated on valid `x-gladia-key`.
