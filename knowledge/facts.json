@@ -43,8 +43,8 @@
  },
  "OTHER@api.gladia.io": {
   "first_seen": "2026-08-08",
-  "last_seen": "2026-08-08",
-  "reason": "recorded structural-hash baseline `9a326c92\u2026` is not reproducible without the original strip recipe \u2014 my normalization yields `a7fa3286\u2026`; size+path count remain the robust drift check until the recipe is pinned",
+  "last_seen": "2026-09-27",
+  "reason": "no new surface this cycle beyond ACCEPTED SSRF + MISCONFIG, re-confirmed static via NO_DRIFT OpenAPI spec",
   "verdict": "ACCEPTED"
  },
  "OTHER@gladia.io": {
