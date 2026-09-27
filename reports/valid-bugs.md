@@ -1109,3 +1109,13 @@
   - valid-bugs.md
   - * **Verdict: HOLD (VALID DUPLICATE)** — one-line: orphaned impersonation locked passive, Gladia-venue impact conditional until `WSS ?x-gladia-key` accepted server-side proven.
   - * **Verdict: HOLD (AUTH_HELPED)** — one-line: design confirmed `spec format:uri no allowlist 14paths 7webhooks`, proof gated on valid `x-gladia-key`.
+
+- 8 lead(s) marked VALID at 2026-09-27 08:23:51 UTC
+  - **VERDICT**: **VALID** (but **DUPLICATE** — already reported). Minimal proof: registry metadata (description="Official", maintainer=softwarecitadel@gmail.com, repo=alexisbouchez/gladia.ts 404), tarbal
+  - **VERDICT**: **HOLD** — Design flaw confirmed by spec, but Q2/Q4 require valid key to prove exploitability. Minimal proof: `POST /v2/live -H "x-gladia-key: <KEY>"` → observe response `url` with `token
+  - **VERDICT**: **HOLD** — High impact if proven, but Q2/Q4 require two valid API keys. Minimal proof: with two accounts (A, B), A creates transcription → gets ID; B uses own key to `GET /v2/transcriptio
+  - **VERDICT**: **HOLD** — Low impact, key-gated, unproven. Minimal proof: `GET /v1/history?custom_metadata[__proto__][x]=1` with valid key → observe 500 vs baseline. CVSS 3.1: 3.1 (AV:N/AC:L/PR:L/UI:N/S
+  - | SSRF via audio_url/video_url/callback_url | **HOLD** | High value, needs valid API key (AUTH_HELPED) |
+  - | npm gladia@0.1.3 impersonation + key leak | **VALID (DUPLICATE)** | Already reported 2026-08-12, awaiting vendor response |
+  - | WS token in URL query param | **HOLD** | Design flaw confirmed, needs valid key (AUTH_HELPED) |
+  - | IDOR on /{id}/file endpoints | **HOLD** | High impact if proven, needs two valid keys (AUTH_HELPED) |
