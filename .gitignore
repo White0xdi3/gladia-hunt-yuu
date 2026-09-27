@@ -10,6 +10,13 @@ new-leads.txt
 # tracked, not ignored -- it's the only persistence mechanism between
 # cycles. Ignoring it silently broke target rotation for weeks.
 
+# Recon clones of target repos under reposcan-raw/<org>/<repo>/ -- these have
+# their own nested .git, so a plain `git add -A` silently records them as
+# gitlinks (mode 160000) with no .gitmodules entry. That broke actions/checkout's
+# post-job cleanup (`git submodule foreach` -> exit 128) on every CI run once
+# 13 of them had snuck in this way; see the watchdog.yml fix on 2026-09-27.
+reposcan-raw/*/*/
+
 # OS / editor cruft
 .DS_Store
 *.swp
