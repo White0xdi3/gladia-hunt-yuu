@@ -1,4 +1,4 @@
-## 2026-09-27 07:29:45 UTC [app] (model mimo)
+## 2026-09-27 07:49:23 UTC [sdk] (model mimo)
 [PRIO] app.gladia.io: 7.7 (attack_surface:8 business_value:8 tech_exposure:9 gate_ease:9 cloud_surface:2 freshness:8) reason: /signin?redirect_to reflection byte-fresh 200/27448B + 0 form-action CSP gap = unauthed open-redirect surface post-auth HUMAN_ONLY
 [PRIO] api.gladia.io: 7.3 (attack_surface:9 business_value:9 tech_exposure:8 gate_ease:2 cloud_surface:7 freshness:6) reason: 14-path spec frozen but SSRF-by-design audio_url surface persists AUTH_HELPED, high business value transcription API, key-gated
 [PRIO] sdk: 6.5 (attack_surface:7 business_value:6 tech_exposure:6 gate_ease:10 cloud_surface:1 freshness:7) reason: npm gladia@0.1.3 dist-tag latest orphaned (shasum cc96f84a, GitHub alexisbouchez 404), public registry gate_ease 10, supply-chain hijack surface
@@ -36,7 +36,7 @@ testability: PASSIVE
 [PARKED] none: all 3 hypotheses confidence >=40, class not on REJECTED list (AUTH@api.gladia.io, AUTH@app.gladia.io return-to, MISCONFIG@reposcan are rejected but not used), each has concrete verify_steps
 [NEXT] PROBE: GET https://app.gladia.io/signin?redirect_to=https%3A%2F%2Fevil.example.com — observe form action reflection and response headers (CSP, Set-Cookie), confirm byte-fresh 200/27448B with action="/signin?redirect_to=https%3A%2F%2Fevil.example.com"; ≤1 rps, read-only
 [LEARN] ACCEPTED OAUTH @ app.gladia.io: /signin?redirect_to reflection alive byte-fresh 2026-09-26, 0 CSP form-action directives, post-auth honoring sole unverified gate remains HUMAN_ONLY chain surface
-[LEARN] ACCEPTED SSRF @ api.gladia.io: spec frozen NO_DRIFT 14 paths/7 webhooks, POST /v2/pre-recorded 401 NestJS key-gated, SSRF-by-design via audio_url persists AUTH_HELPED
+[LEARN] ACCEPTED SSRF @ api.gladia.io: spec frozen NO_DRIFT 14 paths/7 webhooks, POST /v2/pre-recorded 401/144B NestJS key-gated, SSRF-by-design via audio_url persists AUTH_HELPED
 [LEARN] ACCEPTED OTHER @ sdk: gladia@0.1.3 dist-tag latest re-verified 2026-09-26 shasum cc96f84a unchanged, GitHub API alexisbouchez 404 orphaned/irrevocable, static no new version this cycle
 [LEARN] ACCEPTED MISCONFIG @ app.gladia.io: CSP 0 form-action directives re-confirmed fresh, gap confirmed not oversight
 [LEARN] ACCEPTED MISCONFIG @ api.gladia.io: /v2/live/health undocumented not in 14-path OpenAPI spec, 401 key-gated informational only re-confirmed
