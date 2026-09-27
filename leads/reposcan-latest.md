@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-09-27 17:05:40 UTC =====
+===== REPOSCAN 2026-09-27 20:12:08 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5688 code/config files scanned, 652 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,120 +46,43 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mls -la reposcan-raw/gladiaio/
-total 60
-drwxr-xr-x 15 runner runner 4096 Sep 27 17:01 .
-drwxr-xr-x  4 runner runner 4096 Sep 27 17:01 ..
-drwxr-xr-x  9 runner runner 4096 Sep 27 17:01 compare-stt
-drwxr-xr-x  9 runner runner 4096 Sep 27 17:01 docs
-drwxr-xr-x  7 runner runner 4096 Sep 27 17:01 gladia-cli
-drwxr-xr-x 11 runner runner 4096 Sep 27 17:01 gladia-quiz-app
-drwxr-xr-x 11 runner runner 4096 Sep 27 17:01 gladia-samples
-drwxr-xr-x  9 runner runner 4096 Sep 27 17:01 gladiaflow
-drwxr-xr-x  7 runner runner 4096 Sep 27 17:01 n8n-nodes-gladia
-drwxr-xr-x  8 runner runner 4096 Sep 27 17:01 normalization
-drwxr-xr-x 12 runner runner 4096 Sep 27 17:01 num2words2
-drwxr-xr-x  9 runner runner 4096 Sep 27 17:01 realtime-multilingual-asr-router
-drwxr-xr-x 10 runner runner 4096 Sep 27 17:01 sdk
-drwxr-xr-x  7 runner runner 4096 Sep 27 17:01 skills
-drwxr-xr-x 18 runner runner 4096 Sep 27 17:01 vercel-ai
-[0m
-[0m✱ [0mGrep "(sk-|ghp_|gladia_key|x-gladia-key|Bearer|api[_-]?key|secret|token|password)"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(sk-|ghp_|gladia_key|x-gladia-key|Bearer|api[_-]?key|secret|token|password)"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(sk-|ghp_|gladia_key|x-gladia-key|Bearer|api[_-]?key|secret|token|password)"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(sk-|ghp_|gladia_key|x-gladia-key|Bearer|api[_-]?key|secret|token|password)"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(sk-|ghp_|gladia_key|x-gladia-key|Bearer|api[_-]?key|secret|token|password)"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(sk-|ghp_|gladia[_-]?key|x-gladia-key|Bearer|api[_-]?key|secret|token|password)"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(sk-|ghp_|gladia[_-]?key|x-gladia-key|Bearer|api[_-]?key|secret|token|password)"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(sk-|ghp_|gladia[_-]?key|x-gladia-key|Bearer|api[_-]?key|secret|token|password)"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(sk-|ghp_|gladia[_-]?key|x-gladia-key|Bearer|api[_-]?key|secret|token|password)"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(debug|test|staging|dev|internal|beta|localhost|127\.0\.0\.1|169\.254\.169\.254)"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(debug|test|staging|dev|internal|beta|localhost|127\.0\.0\.1|169\.254\.169\.254)"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(debug|test|staging|dev|internal|beta|localhost|127\.0\.0\.1|169\.254\.169\.254)"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m→ [0mRead reposcan-raw/gladiaio/sdk/package.json
-[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/package.json
-[0m
-[0m$ [0mcat /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json 2>/dev/null || echo "NOT FOUND"
-{
-  "name": "@ai-sdk/gladia",
-  "version": "3.0.0-canary.48",
-  "type": "module",
-  "license": "Apache-2.0",
-  "sideEffects": false,
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist/**/*",
-    "docs/**/*",
-    "src",
-    "!src/**/*.test.ts",
-    "!src/**/*.test-d.ts",
-    "!src/**/__snapshots__",
-    "!src/**/__fixtures__",
-    "CHANGELOG.md",
-    "README.md"
-  ],
-  "directories": {
-    "doc": "./docs"
-  },
-  "scripts": {
-    "build": "tsup --tsconfig tsconfig.build.json",
-    "build:watch": "tsup --tsconfig tsconfig.build.json --watch",
-    "clean": "del-cli dist docs",
-    "prepack": "mkdir -p docs && cp ../../content/providers/01-ai-sdk-providers/120-gladia.mdx ./docs/",
-    "postpack": "del-cli docs",
-    "type-check": "tsc --noEmit",
-    "test": "pnpm test:node && pnpm test:edge",
-    "test:watch": "vitest --config vitest.node.config.js",
-    "test:edge": "vitest --config vitest.edge.config.js --run",
-    "test:node": "vitest --config vitest.node.config.js --run",
-    "test:node:watch": "vitest --config vitest.node.config.js --watch"
-  },
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
-    }
-  },
-  "dependencies": {
-    "@ai-sdk/provider": "workspace:*",
-    "@ai-sdk/provider-utils": "workspace:*"
-  },
-  "devDependencies": {
-    "@ai-sdk/test-server": "workspace:*",
-    "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
-    "tsup": "^8.5.1",
-    "typescript": "5.6.3",
-    "zod": "3.25.76"
-  },
-  "peerDependencies": {
-    "zod": "^3.25.76 || ^4.1.8"
-  },
-  "engines": {
-    "node": ">=22"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  },
-  "homepage": "https://ai-sdk.dev/docs",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vercel/ai",
-    "directory": "packages/gladia"
-  },
-  "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
-  },
-  "keywords": [
-    "ai"
-  ]
-}
-[0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [offset=160, limit=30][0m
-[0m
-[0m$ [0msha256sum <<< "secret123" | cut -d' ' -f1
-e037daaf131045d87cfc764f23bd3eb0ebdcbb9ac09519ccbd9df70519b8a9f0
+Looking at the delta - 0 new hits. All hits are from the `vercel-ai` repo (a fork/integration repo under gladiaio). Let me classify each:
+
+### Classification Tables
+
+#### TEST_OR_EXAMPLE (all hits - test fixtures, placeholders, local config)
+
+| File | Line | Pattern | Classification |
+|------|------|---------|----------------|
+| `vercel-ai/pnpm-lock.yaml` | 289, 291, 2368 | `@ai-sdk/gladia`, local link | TEST_OR_EXAMPLE (dependency lockfile) |
+| `vercel-ai/tsconfig.json` | 70 | path mapping | TEST_OR_EXAMPLE (build config) |
+| `vercel-ai/tools/analyze-downloads/src/analyze-providers.ts` | 21 | import | TEST_OR_EXAMPLE (source code) |
+| `vercel-ai/.github/tigent.yml` | 30 | provider list | TEST_OR_EXAMPLE (CI config) |
+| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | `169.254.169.254/32` | TEST_OR_EXAMPLE (SSRF **protection** test - denies metadata) |
+| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 740, 905, 908 | `secret123`, `access123`, `refresh123` | TEST_OR_EXAMPLE (obvious test fixtures) |
+| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 409, 411 | `expired-access-token`, `rotating-refresh-token` | TEST_OR_EXAMPLE (test fixtures) |
+| `vercel-ai/packages/openai/src/**/*.test.ts` | multiple | `test-api-key` | TEST_OR_EXAMPLE (15+ files, all `test-api-key`) |
+| `vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | 36 | `gAAAAABplLP7...` | TEST_OR_EXAMPLE (Fernet-encrypted test fixture) |
+| `vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | `test-api-key` | TEST_OR_EXAMPLE |
+| `vercel-ai/packages/togetherai/src/**/*.test.ts` | 99, 112, 165, 7 | `custom-key`, `explicit-key`, `test-api-key` | TEST_OR_EXAMPLE |
+| `vercel-ai/packages/google-vertex/src/**/*.test.ts` | multiple | `mocked-token`, `mock.jwt.token`, `invalid-key`, `test-api-key` | TEST_OR_EXAMPLE |
+| `vercel-ai/packages/amazon-bedrock/src/**/*.test.ts` | multiple | `test-session-token`, `dynamic-session-token`, `test-api-key-123` | TEST_OR_EXAMPLE |
+
+#### INTERESTING (non-secret, but notable)
+
+| File | Line | Note |
+|------|------|------|
+| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | **SSRF defense confirmed** - tests explicitly deny `169.254.169.254/32` (AWS/GCP/Azure metadata) |
+| `vercel-ai/pnpm-lock.yaml` | 289-291 | `@ai-sdk/gladia` linked as local package `../../packages/gladia` - confirms official integration |
+
+---
+
+### Verdict
+
+| Candidate | REPORT_CANDIDATE | Reason |
+|-----------|------------------|--------|
+| Any hardcoded secret | **no** | All hits are test fixtures (`test-api-key`, `secret123`, `mocked-token`, Fernet test vectors) or config |
+| SSRF exposure | **no** | Sandbox tests **deny** metadata endpoint - this is a defense, not a vuln |
+| Supply chain / misleading pkg | **no** | `@ai-sdk/gladia` is official Vercel AI SDK integration (in gladiaio org), not the orphaned `gladia` 0.1.3 on npm |
+
+**Summary**: Zero reportable findings this scan. The `vercel-ai` repo is a clean fork/integration with proper SSRF defenses in its sandbox. No LIVE credentials, no new attack surface.
