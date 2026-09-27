@@ -1,4 +1,4 @@
-## 2026-09-27 07:49:23 UTC [sdk] (model mimo)
+## 2026-09-27 11:58:23 UTC [gladia] (model mimo)
 [PRIO] app.gladia.io: 7.7 (attack_surface:8 business_value:8 tech_exposure:9 gate_ease:9 cloud_surface:2 freshness:8) reason: /signin?redirect_to reflection byte-fresh 200/27448B + 0 form-action CSP gap = unauthed open-redirect surface post-auth HUMAN_ONLY
 [PRIO] api.gladia.io: 7.3 (attack_surface:9 business_value:9 tech_exposure:8 gate_ease:2 cloud_surface:7 freshness:6) reason: 14-path spec frozen but SSRF-by-design audio_url surface persists AUTH_HELPED, high business value transcription API, key-gated
 [PRIO] sdk: 6.5 (attack_surface:7 business_value:6 tech_exposure:6 gate_ease:10 cloud_surface:1 freshness:7) reason: npm gladia@0.1.3 dist-tag latest orphaned (shasum cc96f84a, GitHub alexisbouchez 404), public registry gate_ease 10, supply-chain hijack surface
@@ -34,7 +34,7 @@ testability: PASSIVE
 [FINAL] Authenticated SSRF via audio_url to cloud metadata exfiltration: confidence 78, SSRF not on REJECTED (ACCEPTED SSRF @ api.gladia.io AUTH_HELPED), concrete AUTH_HELPED verify_steps, retained rank 2
 [FINAL] Orphaned npm package gladia@0.1.3 enables repo hijack and API key leakage via WebSocket query: confidence 72, OTHER not on REJECTED (ACCEPTED OTHER @ sdk), concrete PASSIVE registry + GitHub verify_steps, retained rank 3
 [PARKED] none: all 3 hypotheses confidence >=40, class not on REJECTED list (AUTH@api.gladia.io, AUTH@app.gladia.io return-to, MISCONFIG@reposcan are rejected but not used), each has concrete verify_steps
-[NEXT] PROBE: GET https://app.gladia.io/signin?redirect_to=https%3A%2F%2Fevil.example.com — observe form action reflection and response headers (CSP, Set-Cookie), confirm byte-fresh 200/27448B with action="/signin?redirect_to=https%3A%2F%2Fevil.example.com"; ≤1 rps, read-only
+[NEXT] HUMAN: With authorized test account, complete login via https://app.gladia.io/signin?redirect_to=https%3A%2F%2Fevil.example.com and intercept post-auth 302 Location header to confirm redirect_to honored
 [LEARN] ACCEPTED OAUTH @ app.gladia.io: /signin?redirect_to reflection alive byte-fresh 2026-09-26, 0 CSP form-action directives, post-auth honoring sole unverified gate remains HUMAN_ONLY chain surface
 [LEARN] ACCEPTED SSRF @ api.gladia.io: spec frozen NO_DRIFT 14 paths/7 webhooks, POST /v2/pre-recorded 401/144B NestJS key-gated, SSRF-by-design via audio_url persists AUTH_HELPED
 [LEARN] ACCEPTED OTHER @ sdk: gladia@0.1.3 dist-tag latest re-verified 2026-09-26 shasum cc96f84a unchanged, GitHub API alexisbouchez 404 orphaned/irrevocable, static no new version this cycle
