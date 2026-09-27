@@ -1,7 +1,698 @@
-[91m[1mError: [0m{
-  "name": "UnknownError",
-  "data": {
-    "message": "Unexpected server error. Check server logs for details.",
-    "ref": "err_3c1d41ca"
-  }
+[0m
+> build · nemotron-3-ultra-free
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/shopify-mcp/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/repro-test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/image-content/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-ui/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/
+total 60
+drwxr-xr-x 15 runner runner 4096 Sep 27 07:23 .
+drwxr-xr-x  4 runner runner 4096 Sep 27 07:23 ..
+drwxr-xr-x  9 runner runner 4096 Sep 27 07:23 compare-stt
+drwxr-xr-x  9 runner runner 4096 Sep 27 07:23 docs
+drwxr-xr-x  7 runner runner 4096 Sep 27 07:23 gladia-cli
+drwxr-xr-x 11 runner runner 4096 Sep 27 07:23 gladia-quiz-app
+drwxr-xr-x 11 runner runner 4096 Sep 27 07:23 gladia-samples
+drwxr-xr-x  9 runner runner 4096 Sep 27 07:23 gladiaflow
+drwxr-xr-x  7 runner runner 4096 Sep 27 07:23 n8n-nodes-gladia
+drwxr-xr-x  8 runner runner 4096 Sep 27 07:23 normalization
+drwxr-xr-x 12 runner runner 4096 Sep 27 07:23 num2words2
+drwxr-xr-x  9 runner runner 4096 Sep 27 07:23 realtime-multilingual-asr-router
+drwxr-xr-x 10 runner runner 4096 Sep 27 07:23 sdk
+drwxr-xr-x  7 runner runner 4096 Sep 27 07:23 skills
+drwxr-xr-x 18 runner runner 4096 Sep 27 07:23 vercel-ai
+[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password)\s*[:=]\s*['\"]"[90m in reposcan-raw · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password)\s*[:=]\s*['\"]"[90m in reposcan-raw · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password)\s*[:=]\s*['\"]"[90m in reposcan-raw · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password)\s*[:=]\s*['\"]"[90m in reposcan-raw · 0 matches[0m
+[0m✱ [0mGrep "sk-[a-zA-Z0-9]{32,}"[90m in reposcan-raw · 0 matches[0m
+[0m✱ [0mGrep "gh[pousr]_[a-zA-Z0-9]{36,}"[90m in reposcan-raw · 0 matches[0m
+[0m✱ [0mGrep "gladia[_-]?key"[90m in reposcan-raw · 4 matches[0m
+[0m✱ [0mGrep "169\.254\.169\.254"[90m in reposcan-raw · 4 matches[0m
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/vercel-ai/packages/
+total 272
+drwxr-xr-x 68 runner runner 4096 Sep 27 07:23 .
+drwxr-xr-x 18 runner runner 4096 Sep 27 07:23 ..
+drwxr-xr-x  6 runner runner 4096 Sep 27 07:23 ai
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 alibaba
+drwxr-xr-x  5 runner runner 4096 Sep 27 07:23 amazon-bedrock
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 angular
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 anthropic
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 anthropic-aws
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 assemblyai
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 azure
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 baseten
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 black-forest-labs
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 bytedance
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 cerebras
+drwxr-xr-x  4 runner runner 4096 Sep 27 07:23 codemod
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 cohere
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 deepgram
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 deepinfra
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 deepseek
+drwxr-xr-x  5 runner runner 4096 Sep 27 07:23 devtools
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 elevenlabs
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 fal
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 fireworks
+drwxr-xr-x  4 runner runner 4096 Sep 27 07:23 gateway
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 gladia
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 google
+drwxr-xr-x  6 runner runner 4096 Sep 27 07:23 google-vertex
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 groq
+drwxr-xr-x  6 runner runner 4096 Sep 27 07:23 harness
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 harness-claude-code
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 harness-codex
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 harness-pi
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 huggingface
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 hume
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 klingai
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 langchain
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 llamaindex
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 lmnt
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 luma
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 mcp
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 mistral
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 moonshotai
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 open-responses
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 openai
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 openai-compatible
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 otel
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 perplexity
+drwxr-xr-x  4 runner runner 4096 Sep 27 07:23 policy-opa
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 prodia
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 provider
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 provider-utils
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 quiverai
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 react
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 replicate
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 revai
+drwxr-xr-x  5 runner runner 4096 Sep 27 07:23 rsc
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 sandbox-just-bash
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 sandbox-vercel
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 svelte
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 test-server
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 togetherai
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 tui
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 valibot
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 vercel
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 voyage
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 vue
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 workflow
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 xai
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/vercel-ai/packages/gladia/
+total 72
+drwxr-xr-x  3 runner runner  4096 Sep 27 07:23 .
+drwxr-xr-x 68 runner runner  4096 Sep 27 07:23 ..
+-rw-r--r--  1 runner runner 26407 Sep 27 07:23 CHANGELOG.md
+-rw-r--r--  1 runner runner  1376 Sep 27 07:23 README.md
+-rw-r--r--  1 runner runner  2030 Sep 27 07:23 package.json
+drwxr-xr-x  4 runner runner  4096 Sep 27 07:23 src
+-rw-r--r--  1 runner runner   139 Sep 27 07:23 tsconfig.build.json
+-rw-r--r--  1 runner runner   404 Sep 27 07:23 tsconfig.json
+-rw-r--r--  1 runner runner   337 Sep 27 07:23 tsup.config.ts
+-rw-r--r--  1 runner runner   119 Sep 27 07:23 turbo.json
+-rw-r--r--  1 runner runner   328 Sep 27 07:23 vitest.edge.config.js
+-rw-r--r--  1 runner runner   320 Sep 27 07:23 vitest.node.config.js
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/
+total 120
+drwxr-xr-x 4 runner runner  4096 Sep 27 07:23 .
+drwxr-xr-x 3 runner runner  4096 Sep 27 07:23 ..
+drwxr-xr-x 2 runner runner  4096 Sep 27 07:23 __fixtures__
+drwxr-xr-x 2 runner runner  4096 Sep 27 07:23 __snapshots__
+-rw-r--r-- 1 runner runner  5100 Sep 27 07:23 gladia-api-types.ts
+-rw-r--r-- 1 runner runner   285 Sep 27 07:23 gladia-config.ts
+-rw-r--r-- 1 runner runner  1197 Sep 27 07:23 gladia-error.test.ts
+-rw-r--r-- 1 runner runner   462 Sep 27 07:23 gladia-error.ts
+-rw-r--r-- 1 runner runner  2841 Sep 27 07:23 gladia-provider.ts
+-rw-r--r-- 1 runner runner  7021 Sep 27 07:23 gladia-transcription-model-options.ts
+-rw-r--r-- 1 runner runner  6112 Sep 27 07:23 gladia-transcription-model.test.ts
+-rw-r--r-- 1 runner runner 12356 Sep 27 07:23 gladia-transcription-model.ts
+-rw-r--r-- 1 runner runner   269 Sep 27 07:23 index.ts
+-rw-r--r-- 1 runner runner 40169 Sep 27 07:23 transcript-test.mp3
+-rw-r--r-- 1 runner runner   235 Sep 27 07:23 version.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/sdk/
+total 328
+drwxr-xr-x 10 runner runner   4096 Sep 27 07:23 .
+drwxr-xr-x 15 runner runner   4096 Sep 27 07:23 ..
+drwxr-xr-x  3 runner runner   4096 Sep 27 07:23 .cursor
+-rw-r--r--  1 runner runner    135 Sep 27 07:23 .editorconfig
+drwxr-xr-x  8 runner runner   4096 Sep 27 07:23 .git
+-rw-r--r--  1 runner runner    212 Sep 27 07:23 .gitattributes
+drwxr-xr-x  3 runner runner   4096 Sep 27 07:23 .github
+-rw-r--r--  1 runner runner    191 Sep 27 07:23 .gitignore
+-rw-r--r--  1 runner runner    113 Sep 27 07:23 .npmrc
+-rw-r--r--  1 runner runner    103 Sep 27 07:23 .prettierignore
+-rw-r--r--  1 runner runner    127 Sep 27 07:23 .prettierrc
+drwxr-xr-x  2 runner runner   4096 Sep 27 07:23 .vscode
+-rw-r--r--  1 runner runner   3032 Sep 27 07:23 CONTRIBUTING.md
+-rw-r--r--  1 runner runner   1063 Sep 27 07:23 LICENSE
+-rw-r--r--  1 runner runner  10963 Sep 27 07:23 README.md
+-rw-r--r--  1 runner runner     98 Sep 27 07:23 audit-ci.jsonc
+-rw-r--r--  1 runner runner 219285 Sep 27 07:23 bun.lock
+-rw-r--r--  1 runner runner     29 Sep 27 07:23 bunfig.toml
+-rw-r--r--  1 runner runner    239 Sep 27 07:23 commitlint.config.cts
+drwxr-xr-x  2 runner runner   4096 Sep 27 07:23 data
+drwxr-xr-x  6 runner runner   4096 Sep 27 07:23 e2e
+-rw-r--r--  1 runner runner   1358 Sep 27 07:23 eslint.config.mjs
+-rw-r--r--  1 runner runner   3525 Sep 27 07:23 nx.json
+-rw-r--r--  1 runner runner   1062 Sep 27 07:23 package.json
+drwxr-xr-x  5 runner runner   4096 Sep 27 07:23 packages
+drwxr-xr-x  3 runner runner   4096 Sep 27 07:23 tools
+-rw-r--r--  1 runner runner     86 Sep 27 07:23 vitest.workspace.mjs
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/sdk/packages/
+total 20
+drwxr-xr-x  5 runner runner 4096 Sep 27 07:23 .
+drwxr-xr-x 10 runner runner 4096 Sep 27 07:23 ..
+drwxr-xr-x  3 runner runner 4096 Sep 27 07:23 generator
+drwxr-xr-x  4 runner runner 4096 Sep 27 07:23 sdk-js
+drwxr-xr-x  5 runner runner 4096 Sep 27 07:23 sdk-python
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/sdk/packages/sdk-js/
+total 52
+drwxr-xr-x 4 runner runner 4096 Sep 27 07:23 .
+drwxr-xr-x 5 runner runner 4096 Sep 27 07:23 ..
+-rw-r--r-- 1 runner runner 2418 Sep 27 07:23 CHANGELOG.md
+-rw-r--r-- 1 runner runner 4607 Sep 27 07:23 README.md
+-rw-r--r-- 1 runner runner 1107 Sep 27 07:23 package.json
+-rw-r--r-- 1 runner runner  882 Sep 27 07:23 project.json
+drwxr-xr-x 2 runner runner 4096 Sep 27 07:23 scripts
+drwxr-xr-x 4 runner runner 4096 Sep 27 07:23 src
+-rw-r--r-- 1 runner runner  574 Sep 27 07:23 tsconfig.json
+-rw-r--r-- 1 runner runner  515 Sep 27 07:23 tsconfig.spec.json
+-rw-r--r-- 1 runner runner  496 Sep 27 07:23 tsdown.config.ts
+-rw-r--r-- 1 runner runner  720 Sep 27 07:23 vitest.config.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/sdk/packages/sdk-js/src/
+total 52
+drwxr-xr-x 4 runner runner 4096 Sep 27 07:23 .
+drwxr-xr-x 4 runner runner 4096 Sep 27 07:23 ..
+-rw-r--r-- 1 runner runner 3054 Sep 27 07:23 client.test.ts
+-rw-r--r-- 1 runner runner 4450 Sep 27 07:23 client.ts
+-rw-r--r-- 1 runner runner 2002 Sep 27 07:23 helpers.ts
+-rw-r--r-- 1 runner runner  163 Sep 27 07:23 index.ts
+-rw-r--r-- 1 runner runner  995 Sep 27 07:23 internal_types.ts
+drwxr-xr-x 2 runner runner 4096 Sep 27 07:23 network
+-rw-r--r-- 1 runner runner 4981 Sep 27 07:23 types.ts
+drwxr-xr-x 4 runner runner 4096 Sep 27 07:23 v2
+-rw-r--r-- 1 runner runner  111 Sep 27 07:23 version.ts
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/helpers.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/
+total 24
+drwxr-xr-x 4 runner runner 4096 Sep 27 07:23 .
+drwxr-xr-x 4 runner runner 4096 Sep 27 07:23 ..
+-rw-r--r-- 1 runner runner 2332 Sep 27 07:23 build-list-url.test.ts
+-rw-r--r-- 1 runner runner 1542 Sep 27 07:23 build-list-url.ts
+drwxr-xr-x 2 runner runner 4096 Sep 27 07:23 live
+drwxr-xr-x 2 runner runner 4096 Sep 27 07:23 prerecorded
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/
+total 120
+drwxr-xr-x 4 runner runner  4096 Sep 27 07:23 .
+drwxr-xr-x 3 runner runner  4096 Sep 27 07:23 ..
+drwxr-xr-x 2 runner runner  4096 Sep 27 07:23 __fixtures__
+drwxr-xr-x 2 runner runner  4096 Sep 27 07:23 __snapshots__
+-rw-r--r-- 1 runner runner  5100 Sep 27 07:23 gladia-api-types.ts
+-rw-r--r-- 1 runner runner   285 Sep 27 07:23 gladia-config.ts
+-rw-r--r-- 1 runner runner  1197 Sep 27 07:23 gladia-error.test.ts
+-rw-r--r-- 1 runner runner   462 Sep 27 07:23 gladia-error.ts
+-rw-r--r-- 1 runner runner  2841 Sep 27 07:23 gladia-provider.ts
+-rw-r--r-- 1 runner runner  7021 Sep 27 07:23 gladia-transcription-model-options.ts
+-rw-r--r-- 1 runner runner  6112 Sep 27 07:23 gladia-transcription-model.test.ts
+-rw-r--r-- 1 runner runner 12356 Sep 27 07:23 gladia-transcription-model.ts
+-rw-r--r-- 1 runner runner   269 Sep 27 07:23 index.ts
+-rw-r--r-- 1 runner runner 40169 Sep 27 07:23 transcript-test.mp3
+-rw-r--r-- 1 runner runner   235 Sep 27 07:23 version.ts
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-config.ts
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [limit=50, offset=150][0m
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/
+total 92
+drwxr-xr-x 2 runner runner  4096 Sep 27 07:23 .
+drwxr-xr-x 4 runner runner  4096 Sep 27 07:23 ..
+-rw-r--r-- 1 runner runner  3701 Sep 27 07:23 client.list.test.ts
+-rw-r--r-- 1 runner runner  3133 Sep 27 07:23 client.start-session.test.ts
+-rw-r--r-- 1 runner runner  4406 Sep 27 07:23 client.ts
+-rw-r--r-- 1 runner runner 35692 Sep 27 07:23 generated-types.ts
+-rw-r--r-- 1 runner runner   131 Sep 27 07:23 index.ts
+-rw-r--r-- 1 runner runner  5924 Sep 27 07:23 session.test.ts
+-rw-r--r-- 1 runner runner 15406 Sep 27 07:23 session.ts
+-rw-r--r-- 1 runner runner   327 Sep 27 07:23 types.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/
+total 64
+drwxr-xr-x 2 runner runner  4096 Sep 27 07:23 .
+drwxr-xr-x 4 runner runner  4096 Sep 27 07:23 ..
+-rw-r--r-- 1 runner runner  3259 Sep 27 07:23 client.list.test.ts
+-rw-r--r-- 1 runner runner 13279 Sep 27 07:23 client.ts
+-rw-r--r-- 1 runner runner 30358 Sep 27 07:23 generated-types.ts
+-rw-r--r-- 1 runner runner    70 Sep 27 07:23 index.ts
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.ts
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.ts
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -name "*.ts" -o -name "*.js" -o -name "*.py" -o -name "*.go" | xargs grep -l "callback\|webhook\|redirect" 2>/dev/null | head -20
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/next.config.js
+reposcan-raw/gladiaio/vercel-ai/examples/next-workflow/lib/telemetry-store.ts
+reposcan-raw/gladiaio/vercel-ai/examples/next-workflow/app/api/devtools-telemetry/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/next-workflow/workflow/agent-chat.ts
+reposcan-raw/gladiaio/vercel-ai/examples/next-workflow/workflow/telemetry-agent.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/feature-test-suite.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/lib/mcp-oauth.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-e2e-next/app/api/files/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-e2e-next/app/api/chat/mcp-with-auth/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-e2e-next/app/api/chat/resilient-persistence/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/next-openai-kasada-bot-protection/app/149e9513-01fa-4fb0-aad4-566afd725d1b/2d206a39-8ed7-437e-a3be-862e0f06eea3/[[...restpath]]/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/next-langchain/app/api/stream-events/route.ts
+reposcan-raw/gladiaio/vercel-ai/.github/workflows/actions/verify-changesets/index.js
+reposcan-raw/gladiaio/vercel-ai/packages/policy-opa/examples/git-in-bash/parse-git-invocation.ts
+reposcan-raw/gladiaio/vercel-ai/packages/policy-opa/src/opa/evaluate-policy.ts
+reposcan-raw/gladiaio/vercel-ai/packages/policy-opa/src/opa/opa-policy.ts
+reposcan-raw/gladiaio/vercel-ai/packages/policy-opa/src/shadow.test.ts
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-sse-transport.test.ts
+[0m
+[0m✱ [0mGrep "callback.*url"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "audio_url"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "callback"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "callback"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "callback" reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts
+body.callback = gladiaOptions.callback ?? undefined;
+      // Handle callback config
+      if (gladiaOptions.callbackConfig) {
+        body.callback_config = {
+          url: gladiaOptions.callbackConfig.url,
+          method: gladiaOptions.callbackConfig.method ?? undefined,
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "callback" reposcan-raw/gladiaio/sdk/
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:  /** If true, partial transcript will be sent to the defined callback. */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:  /** If true, final transcript will be sent to the defined callback. */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:  /** If true, begin and end speech events will be sent to the defined callback. */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:  /** If true, pre-processing events will be sent to the defined callback. */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:  /** If true, realtime processing events will be sent to the defined callback. */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:  /** If true, post-processing events will be sent to the defined callback. */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:  /** If true, acknowledgments will be sent to the defined callback. */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:  /** If true, errors will be sent to the defined callback. */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:  /** If true, lifecycle events will be sent to the defined callback. */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:  callback?: boolean
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:  /** Specify the callback configuration */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:  callback_config?: LiveV2CallbackConfig
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:  callback?: boolean
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:  /** Specify the callback configuration */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:  callback_config?: LiveV2CallbackConfig
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:// Union of all callback messages
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts:  /** **[Deprecated]** Use `callback`/`callback_config` instead. Callback URL we will do a `POST` request to with the result of the transcription */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts:  callback_url?: string
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts:  /** Enable callback for this transcription. If true, the `callback_config` property will be used to customize the callback behaviour */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts:  callback?: boolean
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts:  /** Customize the callback behaviour (url and http method) */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts:  callback_config?: PreRecordedV2CallbackConfig
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts:  /** **[Deprecated]** Use `callback`/`callback_config` instead. Callback URL we will do a `POST` request to with the result of the transcription */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts:  callback_url?: string
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts:  /** Enable callback for this transcription. If true, the `callback_config` property will be used to customize the callback behaviour */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts:  callback?: boolean
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts:  /** Customize the callback behaviour (url and http method) */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts:  callback_config?: PreRecordedV2CallbackConfig
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:  # If true, partial transcript will be sent to the defined callback.
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:  # If true, final transcript will be sent to the defined callback.
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:  # If true, begin and end speech events will be sent to the defined callback.
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:  # If true, pre-processing events will be sent to the defined callback.
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:  # If true, realtime processing events will be sent to the defined callback.
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:  # If true, post-processing events will be sent to the defined callback.
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:  # If true, acknowledgments will be sent to the defined callback.
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:  # If true, errors will be sent to the defined callback.
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:  # If true, lifecycle events will be sent to the defined callback.
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:  callback: bool | None = None
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:  # Specify the callback configuration
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:  callback_config: LiveV2CallbackConfig | None = None
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:  callback: bool | None = None
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:  # Specify the callback configuration
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:  callback_config: LiveV2CallbackConfig | None = None
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:# Union of all callback messages
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:def create_live_v2_callback_message_from_dict(payload: dict[str, Any]) -> LiveV2CallbackMessage:
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:    raise ValueError("Missing or invalid 'event' field in callback message payload")
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:    raise ValueError(f"Unsupported callback message event: {message_key}") from exc
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:def create_live_v2_callback_message_from_json(
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:    raise ValueError("callback message JSON must represent an object")
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py:  return create_live_v2_callback_message_from_dict(parsed)
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py:  # **[Deprecated]** Use `callback`/`callback_config` instead. Callback URL we will do a `POST`
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py:  callback_url: str | None = None
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py:  # Enable callback for this transcription. If true, the `callback_config` property will be used
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py:  # to customize the callback behaviour
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py:  callback: bool | None = None
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py:  # Customize the callback behaviour (url and http method)
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py:  callback_config: PreRecordedV2CallbackConfig | None = None
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py:  # **[Deprecated]** Use `callback`/`callback_config` instead. Callback URL we will do a `POST`
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py:  callback_url: str | None = None
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py:  # Enable callback for this transcription. If true, the `callback_config` property will be used
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py:  # to customize the callback behaviour
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py:  callback: bool | None = None
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py:  # Customize the callback behaviour (url and http method)
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py:  callback_config: PreRecordedV2CallbackConfig | None = None
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/core.py:  ``audio_url`` argument to ``transcribe()``), and without deprecated ``callback_url`` — use
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/core.py:  ``callback`` with ``callback_config`` instead.
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/core.py:  # Enable callback for this transcription. If true, the `callback_config` property will be used
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/core.py:  # to customize the callback behaviour
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/core.py:  callback: bool | None = None
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/core.py:  # Customize the callback behaviour (url and http method)
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/core.py:  callback_config: PreRecordedV2CallbackConfig | None = None
+reposcan-raw/gladiaio/sdk/packages/generator/src/types.ts:  callbackMessages: ReferencedSchemaObject[]
+reposcan-raw/gladiaio/sdk/packages/generator/src/generators/python.ts:          sectionTitle: 'callback',
+reposcan-raw/gladiaio/sdk/packages/generator/src/generators/python.ts:          helperPrefix: 'callback',
+reposcan-raw/gladiaio/sdk/packages/generator/src/generators/base.ts:    const callbackMessagesContent =
+reposcan-raw/gladiaio/sdk/packages/generator/src/generators/base.ts:      (await this.generateTypes(schemas.callbackMessages, 'Callback Messages')) +
+reposcan-raw/gladiaio/sdk/packages/generator/src/generators/base.ts:        schemas.callbackMessages,
+reposcan-raw/gladiaio/sdk/packages/generator/src/generators/base.ts:        'Union of all callback messages'
+reposcan-raw/gladiaio/sdk/packages/generator/src/generators/base.ts:      callbackMessagesContent,
+reposcan-raw/gladiaio/sdk/packages/generator/src/generator.ts:    const callbackMessagesRef: string[] = []
+reposcan-raw/gladiaio/sdk/packages/generator/src/generator.ts:        callbackMessagesRef.push(ref)
+reposcan-raw/gladiaio/sdk/packages/generator/src/generator.ts:        } else if (callbackMessagesRef.includes(ref)) {
+reposcan-raw/gladiaio/sdk/packages/generator/src/generator.ts:          acc.callbackMessages.push(refObject)
+reposcan-raw/gladiaio/sdk/packages/generator/src/generator.ts:        callbackMessages: [],
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -A 20 "callback_config" reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts | head -40
+/** **[Deprecated]** Use `callback`/`callback_config` instead. Callback URL we will do a `POST` request to with the result of the transcription */
+  callback_url?: string
+  /** Enable callback for this transcription. If true, the `callback_config` property will be used to customize the callback behaviour */
+  callback?: boolean
+  /** Customize the callback behaviour (url and http method) */
+  callback_config?: PreRecordedV2CallbackConfig
+  /** Enable subtitles generation for this transcription */
+  subtitles?: boolean
+  /** Configuration for subtitles generation if `subtitles` is enabled */
+  subtitles_config?: PreRecordedV2SubtitlesConfig
+  /** Enable speaker recognition (diarization) for this audio */
+  diarization?: boolean
+  /** Speaker recognition configuration, if `diarization` is enabled */
+  diarization_config?: PreRecordedV2DiarizationConfig
+  /** **[Beta]** Enable translation for this audio */
+  translation?: boolean
+  /** **[Beta]** Translation configuration, if `translation` is enabled */
+  translation_config?: PreRecordedV2TranslationConfig
+  /** Enable summarization for this audio */
+  summarization?: boolean
+  /** Summarization configuration, if `summarization` is enabled */
+  summarization_config?: PreRecordedV2SummarizationConfig
+  /** **[Alpha]** Enable named entity recognition for this audio */
+  named_entity_recognition?: boolean
+  /** **[Alpha]** Enable custom spelling for this audio */
+  custom_spelling?: boolean
+--
+  /** **[Deprecated]** Use `callback`/`callback_config` instead. Callback URL we will do a `POST` request to with the result of the transcription */
+  callback_url?: string
+  /** Enable callback for this transcription. If true, the `callback_config` property will be used to customize the callback behaviour */
+  callback?: boolean
+  /** Customize the callback behaviour (url and http method) */
+  callback_config?: PreRecordedV2CallbackConfig
+  /** Enable subtitles generation for this transcription */
+  subtitles?: boolean
+  /** Configuration for subtitles generation if `subtitles` is enabled */
+  subtitles_config?: PreRecordedV2SubtitlesConfig
+  /** Enable speaker recognition (diarization) for this audio */
+  diarization?: boolean
+  /** Speaker recognition configuration, if `diarization` is enabled */
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -B 5 -A 15 "PreRecordedV2CallbackConfig" reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts
+default_intensity?: number
 }
+
+export type PreRecordedV2CallbackMethod = 'POST' | 'PUT'
+
+export interface PreRecordedV2CallbackConfig {
+  /** The URL to be called with the result of the transcription */
+  url: string
+  /** The HTTP method to be used. Allowed values are `POST` or `PUT` (default: `POST`) */
+  method?: PreRecordedV2CallbackMethod
+}
+
+export type PreRecordedV2SubtitlesFormat = 'srt' | 'vtt'
+
+export type PreRecordedV2SubtitlesStyle = 'default' | 'compliance'
+
+export interface PreRecordedV2SubtitlesConfig {
+  /** Subtitles formats you want your transcription to be formatted to */
+  formats?: Array<PreRecordedV2SubtitlesFormat>
+  /** Minimum duration of a subtitle in seconds */
+  minimum_duration?: number
+--
+  /** **[Deprecated]** Use `callback`/`callback_config` instead. Callback URL we will do a `POST` request to with the result of the transcription */
+  callback_url?: string
+  /** Enable callback for this transcription. If true, the `callback_config` property will be used to customize the callback behaviour */
+  callback?: boolean
+  /** Customize the callback behaviour (url and http method) */
+  callback_config?: PreRecordedV2CallbackConfig
+  /** Enable subtitles generation for this transcription */
+  subtitles?: boolean
+  /** Configuration for subtitles generation if `subtitles` is enabled */
+  subtitles_config?: PreRecordedV2SubtitlesConfig
+  /** Enable speaker recognition (diarization) for this audio */
+  diarization?: boolean
+  /** Speaker recognition configuration, if `diarization` is enabled */
+  diarization_config?: PreRecordedV2DiarizationConfig
+  /** **[Beta]** Enable translation for this audio */
+  translation?: boolean
+  /** **[Beta]** Translation configuration, if `translation` is enabled */
+  translation_config?: PreRecordedV2TranslationConfig
+  /** Enable summarization for this audio */
+  summarization?: boolean
+  /** Summarization configuration, if `summarization` is enabled */
+--
+  /** **[Deprecated]** Use `callback`/`callback_config` instead. Callback URL we will do a `POST` request to with the result of the transcription */
+  callback_url?: string
+  /** Enable callback for this transcription. If true, the `callback_config` property will be used to customize the callback behaviour */
+  callback?: boolean
+  /** Customize the callback behaviour (url and http method) */
+  callback_config?: PreRecordedV2CallbackConfig
+  /** Enable subtitles generation for this transcription */
+  subtitles?: boolean
+  /** Configuration for subtitles generation if `subtitles` is enabled */
+  subtitles_config?: PreRecordedV2SubtitlesConfig
+  /** Enable speaker recognition (diarization) for this audio */
+  diarization?: boolean
+  /** Speaker recognition configuration, if `diarization` is enabled */
+  diarization_config?: PreRecordedV2DiarizationConfig
+  /** **[Beta]** Enable translation for this audio */
+  translation?: boolean
+  /** **[Beta]** Translation configuration, if `translation` is enabled */
+  translation_config?: PreRecordedV2TranslationConfig
+  /** Enable summarization for this audio */
+  summarization?: boolean
+  /** Summarization configuration, if `summarization` is enabled */
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -B 5 -A 15 "LiveV2CallbackConfig" reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts
+receive_errors?: boolean
+  /** If true, lifecycle events will be sent to websocket. */
+  receive_lifecycle_events?: boolean
+}
+
+export interface LiveV2CallbackConfig {
+  /** URL on which we will do a `POST` request with configured messages */
+  url?: string
+  /** If true, partial transcript will be sent to the defined callback. */
+  receive_partial_transcripts?: boolean
+  /** If true, final transcript will be sent to the defined callback. */
+  receive_final_transcripts?: boolean
+  /** If true, begin and end speech events will be sent to the defined callback. */
+  receive_speech_events?: boolean
+  /** If true, pre-processing events will be sent to the defined callback. */
+  receive_pre_processing_events?: boolean
+  /** If true, realtime processing events will be sent to the defined callback. */
+  receive_realtime_processing_events?: boolean
+  /** If true, post-processing events will be sent to the defined callback. */
+  receive_post_processing_events?: boolean
+  /** If true, acknowledgments will be sent to the defined callback. */
+--
+  /** Specify the websocket messages configuration */
+  messages_config?: LiveV2MessagesConfig
+  /** If true, messages will be sent to configured url. */
+  callback?: boolean
+  /** Specify the callback configuration */
+  callback_config?: LiveV2CallbackConfig
+}
+
+export interface LiveV2TranscriptionMetadata {
+  /** Duration of the transcribed audio file */
+  audio_duration: number
+  /** Number of distinct channels in the transcribed audio file */
+  number_of_distinct_channels: number
+  /** Billed duration in seconds (audio_duration * number_of_distinct_channels) */
+  billing_time: number
+  /** Duration of the transcription in seconds */
+  transcription_time: number
+}
+
+export interface LiveV2AddonError {
+  /** Status code of the addon error */
+--
+  /** Specify the websocket messages configuration */
+  messages_config?: LiveV2MessagesConfig
+  /** If true, messages will be sent to configured url. */
+  callback?: boolean
+  /** Specify the callback configuration */
+  callback_config?: LiveV2CallbackConfig
+}
+
+export interface LiveV2InitResponse {
+  /** Id of the job */
+  id: string
+  /** Creation date */
+  created_at: string
+  /** The websocket url to connect to for sending audio data. The url will contain the temporary token to authenticate the session. */
+  url: string
+}
+
+// Job Management Types
+export interface LiveV2Response {
+  /** Id of the job */
+  id: string
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/n8n-nodes-gladia/
+total 480
+drwxr-xr-x  7 runner runner   4096 Sep 27 07:23 .
+drwxr-xr-x 15 runner runner   4096 Sep 27 07:23 ..
+drwxr-xr-x  7 runner runner   4096 Sep 27 07:23 .git
+drwxr-xr-x  4 runner runner   4096 Sep 27 07:23 .github
+-rw-r--r--  1 runner runner     43 Sep 27 07:23 .gitignore
+-rw-r--r--  1 runner runner    904 Sep 27 07:23 .prettierrc.js
+-rw-r--r--  1 runner runner      0 Sep 27 07:23 CHANGELOG.md
+-rw-r--r--  1 runner runner   1063 Sep 27 07:23 LICENSE
+-rw-r--r--  1 runner runner   3045 Sep 27 07:23 README.md
+drwxr-xr-x  2 runner runner   4096 Sep 27 07:23 credentials
+-rw-r--r--  1 runner runner     71 Sep 27 07:23 eslint.config.mjs
+drwxr-xr-x  2 runner runner   4096 Sep 27 07:23 icons
+-rw-r--r--  1 runner runner    305 Sep 27 07:23 jest.config.js
+drwxr-xr-x  3 runner runner   4096 Sep 27 07:23 nodes
+-rw-r--r--  1 runner runner 428372 Sep 27 07:23 package-lock.json
+-rw-r--r--  1 runner runner   1391 Sep 27 07:23 package.json
+-rw-r--r--  1 runner runner    669 Sep 27 07:23 tsconfig.json
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/n8n-nodes-gladia/credentials/
+total 12
+drwxr-xr-x 2 runner runner 4096 Sep 27 07:23 .
+drwxr-xr-x 7 runner runner 4096 Sep 27 07:23 ..
+-rw-r--r-- 1 runner runner  864 Sep 27 07:23 GladiaApi.credentials.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/
+total 12
+drwxr-xr-x 3 runner runner 4096 Sep 27 07:23 .
+drwxr-xr-x 7 runner runner 4096 Sep 27 07:23 ..
+drwxr-xr-x 3 runner runner 4096 Sep 27 07:23 Gladia
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/n8n-nodes-gladia/credentials/GladiaApi.credentials.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/
+total 44
+drwxr-xr-x 3 runner runner  4096 Sep 27 07:23 .
+drwxr-xr-x 3 runner runner  4096 Sep 27 07:23 ..
+-rw-r--r-- 1 runner runner  1950 Sep 27 07:23 GenericFunctions.ts
+-rw-r--r-- 1 runner runner   286 Sep 27 07:23 Gladia.node.json
+-rw-r--r-- 1 runner runner 14151 Sep 27 07:23 Gladia.node.ts
+-rw-r--r-- 1 runner runner  1267 Sep 27 07:23 gladia.dark.svg
+-rw-r--r-- 1 runner runner  1267 Sep 27 07:23 gladia.svg
+drwxr-xr-x 2 runner runner  4096 Sep 27 07:23 test
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/Gladia.node.ts
+[0m→ [0mRead reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/GenericFunctions.ts
+Now I have a comprehensive view. Let me compile the classification tables and verdict.
+
+---
+
+## CLASSIFICATION TABLES
+
+### TEST_OR_EXAMPLE (Test fixtures, sample data, mock values)
+
+| File | Line | Pattern | Context |
+|------|------|---------|---------|
+| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740 | `client_secret: 'secret123'` | OAuth test fixture |
+| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 905 | `access_token: 'access123'` | OAuth test fixture |
+| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 908 | `refresh_token: 'refresh123'` | OAuth test fixture |
+| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409 | `access_token: 'expired-access-token'` | Transport test fixture |
+| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 411 | `refresh_token: 'rotating-refresh-token'` | Transport test fixture |
+| vercel-ai/packages/openai/src/**/*.test.ts | multiple | `apiKey: 'test-api-key'` | Provider test fixtures (20+ files) |
+| vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13,277 | `apiKey: 'test-api-key'` | Test fixture |
+| vercel-ai/packages/togetherai/src/togetherai-provider.test.ts | 99,112,165 | `apiKey: 'custom-key'`, `apiKey: 'explicit-key'` | Test fixtures |
+| vercel-ai/packages/google-vertex/src/**/*.test.ts | multiple | `apiKey: 'test-api-key'`, `token: 'mocked-token'`, `access_token: 'mock.jwt.token'`, `private_key: 'invalid-key'` | Test fixtures |
+| vercel-ai/packages/amazon-bedrock/src/**/*.test.ts | multiple | `sessionToken: 'dynamic-session-token'`, `sessionToken: 'static-session-token'`, `sessionToken: 'async-session-token'`, `apiKey: 'test-api-key-123'` | Test fixtures |
+| vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts | 48 | `apiKey: 'your-api-key-here'` | Code comment example |
+
+### ENDPOINT_LEAK (Internal/dev/staging URLs, API endpoints)
+
+| File | Line | Finding |
+|------|------|---------|
+| vercel-ai/packages/gladia/src/gladia-transcription-model.ts | 70, 221, 238 | Hardcoded `https://api.gladia.io` base URL (official API endpoint, not a leak) |
+
+### INTERESTING (Unusual patterns, debug flags, supply-chain concerns, SSRF vectors)
+
+| File | Line | Finding | Risk Note |
+|------|------|---------|-----------|
+| vercel-ai/pnpm-lock.yaml | 289,291,2368 | `@ai-sdk/gladia` workspace package linked as `link:../../packages/gladia` | Official Vercel AI SDK integration for Gladia (verified in-repo) |
+| vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166,171 | `deniedCIDRs: ['169.254.169.254/32']`, `subnets: { deny: ['169.254.169.254/32'] }` | SSRF protection test for AWS/GCP metadata endpoint — shows security awareness |
+| vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts | 94 | `callbackConfig.url: z.string()` — **no URL validation, no scheme restriction, no SSRF protection** | User-controlled callback URL passed to Gladia API — potential SSRF if API fetches it |
+| gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts | — | `PreRecordedV2CallbackConfig.url: string` — no validation | Same callback SSRF vector in official JS SDK |
+| gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts | — | `LiveV2CallbackConfig.url?: string` — no validation | Same callback SSRF vector for live sessions |
+| n8n-nodes-gladia/nodes/Gladia/Gladia.node.ts | 356 | `audioUrl` accepted as raw string, passed to API without validation | User-supplied `audio_url` — API-side SSRF surface (known, per RAG) |
+| npm registry (external) | — | Package `gladia@0.1.3` claims "Official TypeScript SDK" but README says "Unofficial"; maintainer `softwarecitadel@gmail.com` (personal), repo `alexisbouchez/gladia.ts` (404) | Supply-chain confusion: unofficial package masquerading as official |
+
+---
+
+## VERDICT LIST
+
+| Candidate | Category | REPORT_CANDIDATE | Reason |
+|-----------|----------|------------------|--------|
+| Callback URL SSRF (vercel-ai + official SDK) | INTERESTING | **no** | No validation on `callback_config.url` / `LiveV2CallbackConfig.url` — but this is an **API-side** SSRF surface (Gladia API makes the outbound request). SDKs merely pass the string. Already tracked in RAG as `SSRF@api.gladia.io: spec+RAG frozen — SSRF-by-design surface persists (AUTH_HELPED)`. |
+| `@ai-sdk/gladia` in vercel-ai monorepo | INTERESTING | **no** | Official Vercel AI SDK provider for Gladia, developed in the Vercel org (`vercel/ai`). Not a Gladia-owned supply-chain risk. |
+| Unofficial npm package `gladia@0.1.3` | INTERESTING | **no** (monitor) | Masquerades as "Official" but is personal repo (`alexisbouchez/gladia.ts` — 404). Already noted in inventory. No active threat unless typosquatting. |
+| Sandbox test denying 169.254.169.254 | INTERESTING | **no** | Defensive test pattern — proves SSRF awareness in vercel-ai, not a vulnerability. |
+| All hardcoded secrets in test files | TEST_OR_EXAMPLE | **no** | Obvious fixtures (`test-api-key`, `secret123`, `mock.jwt.token`). No live credentials. |
+| n8n node `audioUrl` passthrough | INTERESTING | **no** | User-supplied URL passed to Gladia API — same known API-side SSRF surface. n8n workflow engine may add its own allowlist. |
+
+---
+
+## SUMMARY
+
+**No REAL_SECRET findings.** All scanned hits are test fixtures, example values, or known API design patterns.
+
+**Top anomaly to track:** The **callback URL SSRF vector** exists in both the Vercel AI SDK provider (`gladiaTranscriptionModelOptionsSchema.callbackConfig.url`) and the official Gladia JS/Python SDKs (`PreRecordedV2CallbackConfig.url`, `LiveV2CallbackConfig.url`). These accept arbitrary strings with no scheme/origin validation. The actual risk depends on **Gladia API behavior** (whether it fetches the callback URL server-side). RAG confirms this is a known, accepted SSRF-by-design surface (`SSRF@api.gladia.io`).
+
+**Supply-chain note:** The unofficial npm package `gladia@0.1.3` remains a confusion vector but is not actively malicious — it's an orphaned personal package.
+
+---
+
+[NEXT] PROBE: To confirm API-side callback SSRF, send a `POST /v2/pre-recorded` with `callback: true` and `callback_config: { "url": "http://169.254.169.254/latest/meta-data/", "method": "POST" }` using a valid Gladia API key. Observe whether the API attempts to fetch the metadata endpoint. (Requires authorized key — cannot execute passively.)
