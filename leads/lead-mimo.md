@@ -1283,3 +1283,45 @@ testability: PASSIVE
 [LEARN] ACCEPTED MISCONFIG @ api.gladia.io: /v2/live/health undocumented key-gated endpoint confirmed informational only — 401 NestJS, not in OpenAPI 14-path spec, properly gated, no bypass/data leakage
 [LEARN] REJECTED AUTH @ api.gladia.io: no-key POST /v2/pre-recorded still 401/144 NestJS no bypass this cycle
 [RISK] api.gladia.io: 72 reason: frozen spec no drift but high-value SSRF-by-design requires stolen/bought key (AUTH_HELPED) to reach 169.254.169.254 -> cloud credential theft critical if key obtained | app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap is live and chainable to OAuth code theft -> ATO via HUMAN_ONLY post-auth step, highest gate_ease | sdk: 68 reason: orphaned maintainer 404 with "Official" description + WebSocket query key leakage = supply-chain hijack risk medium-high but requires GitHub namespace claim and npm publish, passive verifiable
+## 2026-09-28 23:15:00 UTC [sdk] (model mimo)
+[PRIO] app.gladia.io: 7.7 attack_surface:8 business_value:8 tech_exposure:9 gate_ease:9 cloud_surface:2 freshness:8
+[PRIO] api.gladia.io: 7.3 attack_surface:9 business_value:9 tech_exposure:8 gate_ease:2 cloud_surface:7 freshness:6
+[PRIO] sdk: 6.5 attack_surface:7 business_value:6 tech_exposure:6 gate_ease:10 cloud_surface:1 freshness:7
+[HYP] Post-auth open redirect via redirect_to enables OAuth authorization code theft and account takeover
+class: OAUTH
+asset: app.gladia.io
+confidence: 85
+reasoning: /signin?redirect_to reflection alive byte-fresh 2026-09-26 (200/27448B, action="/signin?redirect_to=https%3A%2F%2Fevil.example.com") + CSP 0 form-action directives (gap confirmed) = post-auth redirect honoring sole unverified gate; chains to OAuth code/state theft via trusted domain
+evidence_needed: Post-auth 302 Location header proving redirect_to=https://evil.example.com honored after successful login with authorized test account
+verify_steps: HUMAN: with authorized test account complete login via https://app.gladia.io/signin?redirect_to=https%3A%2F%2Fevil.example.com and intercept post-auth 302 Location
+impact: External redirect after auth -> OAuth authorization code leakage -> session hijack/ATO, phishing via trusted domain, High severity
+testability: HUMAN_ONLY
+[HYP] Authenticated SSRF via audio_url to cloud metadata exfiltration
+class: SSRF
+asset: api.gladia.io
+confidence: 78
+reasoning: OPENAPI 14-path spec frozen NO_DRIFT, POST /v2/pre-recorded requires x-gladia-key (401/144B NestJS fresh) but spec defines audio_url param by design; prior RAG confirms SSRF-by-design persists AUTH_HELPED; undocumented /v2/live/health also key-gated informational only
+evidence_needed: With authorized key, audio_url=http://169.254.169.254/latest/meta-data/ triggers server fetch and returns metadata or fetch error timing/dns proving SSRF reach to cloud metadata
+verify_steps: AUTH_HELPED: POST https://api.gladia.io/v2/pre-recorded with header x-gladia-key: <authorized_key> body {"audio_url":"http://169.254.169.254/latest/meta-data/iam/security-credentials/"} compare vs benign audio_url
+impact: Cloud metadata -> IAM credentials -> full AWS/GCP takeover, cross-tenant data access, Critical
+testability: AUTH_HELPED
+[HYP] Orphaned npm package gladia@0.1.3 enables repo hijack and API key leakage via WebSocket URL query
+class: OTHER
+asset: sdk
+confidence: 72
+reasoning: dist-tag latest=0.1.3 re-verified fresh 2026-09-26 shasum cc96f84a unchanged, description "Official" but GitHub user+repo alexisbouchez 404 orphaned/irrevocable; prior ranked hypothesis notes WebSocket URL query leaks raw API key; attacker can claim GitHub namespace and publish malicious 0.1.4
+evidence_needed: registry.npmjs.org/gladia repository.url points to 404 GitHub, maintainers orphaned, npm package files grep for WebSocket wss:// + "?x-gladia-key=" or "api_key" in query string
+verify_steps: PASSIVE: GET https://registry.npmjs.org/gladia (and GET https://registry.npmjs.org/@gladiaio/sdk), check repository, maintainers, dist-tags, time.modified; download tarball 0.1.3 shasum cc96f84a, grep -R "WebSocket\|wss://\|api_key\|x-gladia-key" ; GET https://api.github.com/users/alexisbouchez and /repos/alexisbouchez/gladia confirm 404
+impact: Supply-chain takeover -> malicious SDK distributes key-logger, API key exfiltration via URL query logged in proxies/CDN, High
+testability: PASSIVE
+[FINAL] Post-auth open redirect via redirect_to enables OAuth authorization code theft and account takeover: confidence 85, OAUTH @ app.gladia.io, HUMAN_ONLY, rank 1
+[FINAL] Authenticated SSRF via audio_url to cloud metadata exfiltration: confidence 78, SSRF @ api.gladia.io, AUTH_HELPED, rank 2
+[FINAL] Orphaned npm package gladia@0.1.3 enables repo hijack and API key leakage via WebSocket URL query: confidence 72, OTHER @ sdk, PASSIVE, rank 3
+[NEXT] PROBE: GET https://registry.npmjs.org/gladia — observe repository.url, maintainers, dist-tags, time.modified; then GET https://registry.npmjs.org/@gladiaio/sdk for comparison (≤1 rps, read-only)
+[LEARN] ACCEPTED OAUTH @ app.gladia.io: /signin?redirect_to reflection alive byte-fresh, 0 CSP form-action directives, post-auth honoring sole unverified gate HUMAN_ONLY
+[LEARN] ACCEPTED SSRF @ api.gladia.io: spec frozen NO_DRIFT 14 paths/7 webhooks, POST /v2/pre-recorded 401/144B NestJS key-gated, SSRF-by-design via audio_url persists AUTH_HELPED
+[LEARN] ACCEPTED OTHER @ sdk: class alive, re-verified fresh this cycle — dist-tag latest=0.1.3 shasum cc96f84a unchanged, GitHub alexisbouchez 404 orphaned/irrevocable
+[LEARN] ACCEPTED MISCONFIG @ app.gladia.io: CSP confirmed fresh — 0 form-action directives (grep-count=0); enables /signin form-action reflection (gap confirmed, not oversight)
+[LEARN] ACCEPTED MISCONFIG @ api.gladia.io: /v2/live/health undocumented key-gated endpoint confirmed informational only — 401 NestJS, not in OpenAPI 14-path spec, properly gated, no bypass/data leakage
+[LEARN] REJECTED AUTH @ api.gladia.io: no-key POST /v2/pre-recorded still 401/144 NestJS no bypass this cycle
+[RISK] api.gladia.io: 72 reason: frozen spec no drift but high-value SSRF-by-design requires stolen/bought key (AUTH_HELPED) to reach 169.254.169.254 -> cloud credential theft critical if key obtained | app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap is live and chainable to OAuth code theft -> ATO via HUMAN_ONLY post-auth step, highest gate_ease | sdk: 68 reason: orphaned maintainer 404 with "Official" description + WebSocket query key leakage = supply-chain hijack risk medium-high but requires GitHub namespace claim and npm publish, passive verifiable
