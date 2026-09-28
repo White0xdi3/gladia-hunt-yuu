@@ -1125,3 +1125,11 @@
   - **VERDICT: VALID**
   - | WS token in URL | HOLD | Needs valid API key |
   - | **npm `gladia@0.1.3` impersonation** | **VALID** | **Reported 2026-08-12, passive proof complete** |
+
+- 6 lead(s) marked VALID at 2026-09-28 07:06:50 UTC
+  - **VERDICT: VALID** — Fully passive, report-ready.
+  - **VERDICT: VALID** — Spec-confirmed design flaw, provable passively from OpenAPI + CORS behavior.
+  - **VERDICT: HOLD** — Spec shows three `/file` endpoints; ownership binding opaque. Needs valid keys + cross-tenant test. Q2/Q4 fail passive.
+  - | SSRF via audio_url/callback_url | **HOLD** | High-value but AUTH_HELPED — needs valid API key to prove |
+  - | npm `gladia@0.1.3` impersonation | **VALID** | Fully passive, report-ready, supply-chain + key leakage |
+  - | WebSocket token in URL query param | **VALID** | Spec-confirmed design flaw, token leaks via Referer/logs |
