@@ -1,41 +1,48 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-### TEST_OR_EXAMPLE (54 hits)
+### Classification Tables
 
-| File | Line | Pattern |
-|------|------|---------|
-| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 740 | `client_secret: 'secret123'` |
-| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 905 | `access_token: 'access123'` |
-| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 908 | `refresh_token: 'refresh123'` |
-| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 409 | `access_token: 'expired-access-token'` |
-| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 411 | `refresh_token: 'rotating-refresh-token'` |
-| `vercel-ai/packages/openai/**/*.test.ts` | 22 files | `apiKey: 'test-api-key'` (22 occurrences) |
-| `vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | `apiKey: 'test-api-key'` |
-| `vercel-ai/packages/togetherai/**/*.test.ts` | 4 files | `apiKey: 'test-api-key' / 'custom-key' / 'explicit-key'` |
-| `vercel-ai/packages/google-vertex/**/*.test.ts` | 6 files | `apiKey: 'test-api-key'`, `token: 'mocked-token'`, `access_token: 'mock.jwt.token'`, `private_key: 'invalid-key'` |
-| `vercel-ai/packages/amazon-bedrock/**/*.test.ts` | 6 files | `sessionToken: 'test-session-token' / 'dynamic-session-token' / 'static-session-token' / 'async-session-token'`, `apiKey: 'test-api-key-123'`, `nextToken: 'test-token'` |
+#### REAL_SECRET
+| File | Line | SHA256(secret) | Notes |
+|------|------|----------------|-------|
+| *none* | — | — | No live credentials found |
 
-### INTERESTING (3 hits)
+#### TEST_OR_EXAMPLE
+| File | Line | Pattern | Context |
+|------|------|---------|---------|
+| vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166, 171 | `169.254.169.254/32` | **Defensive** — denied CIDRs in sandbox tests (SSRF protection) |
+| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740, 905, 908 | `secret123`, `access123`, `refresh123` | Test fixtures |
+| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409, 411 | `expired-access-token`, `rotating-refresh-token` | Test fixtures |
+| vercel-ai/packages/openai/src/**/*.test.ts | many | `test-api-key` | Test fixtures (OpenAI provider) |
+| vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13, 277 | `test-api-key` | Test fixtures |
+| vercel-ai/packages/togetherai/src/*.test.ts | 99, 112, 165, 7 | `custom-key`, `explicit-key`, `test-api-key` | Test fixtures |
+| vercel-ai/packages/google-vertex/src/*.test.ts | 120, 187, 405, 419, 68, 134, 150, 95 | `test-api-key`, `invalid-key`, `mock.jwt.token` | Test fixtures |
+| vercel-ai/packages/amazon-bedrock/src/*.test.ts | 128, 152, 158, 100, 331, 442, 209, 55 | `dynamic-session-token`, `static-session-token`, `test-api-key-123`, `test-session-token`, `async-session-token`, `test-token` | Test fixtures |
+| vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts | 48 | `your-api-key-here` | Documentation placeholder in source |
 
-| File | Line | Finding |
-|------|------|---------|
-| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166 | `deniedCIDRs: ['169.254.169.254/32']` — SSRF protection test blocking cloud metadata |
-| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 171 | `subnets: { deny: ['169.254.169.254/32'] }` — duplicate SSRF protection |
-| `vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts` | 48 | `* apiKey: 'your-api-key-here'` — documentation placeholder in source (not test) |
+#### ENDPOINT_LEAK
+| File | Line | Endpoint | Notes |
+|------|------|----------|-------|
+| *none* | — | — | Metadata IP only appears in **deny-lists** |
 
-### REAL_SECRET: 0 hits
-### ENDPOINT_LEAK: 0 hits
+#### INTERESTING
+| File | Line | Finding | Risk |
+|------|------|---------|------|
+| vercel-ai/pnpm-lock.yaml | 289, 291, 2368 | `@ai-sdk/gladia` linked as local package `packages/gladia` | Official Vercel AI SDK integration (confirmed in RAG) |
+| vercel-ai/tools/analyze-downloads/src/analyze-providers.ts | 21 | Imports `@ai-sdk/gladia` | Usage confirmation |
+| vercel-ai/.github/tigent.yml | 30 | Lists `provider/gladia` among providers | CI awareness |
+| npm `gladia` 0.1.3 | — | Description "Official" but README "Unofficial"; owner `alexisbouchez` (personal) | **Supply-chain note** — already in RAG as ACCEPTED OTHER@sdk |
 
 ---
 
-### VERDICT
+### Verdict
 
-| Candidate | REPORT_CANDIDATE |
-|-----------|------------------|
-| Test fixtures (`test-api-key`, `secret123`, `mocked-token`, etc.) | **no** — all in `*.test.ts` files, clearly fixtures |
-| SSRF protection tests (169.254.169.254 deny rules) | **no** — defensive control, not vuln |
-| Doc placeholder `your-api-key-here` in provider source | **no** — documentation example |
-| `@gladiaio/sdk` vs `gladia` npm package confusion | **no** — already tracked in RAG as `[ACCEPTED] OTHER@sdk` (orphaned personal repo, known since 2026-08-07) |
+| Candidate | REPORT_CANDIDATE | Reason |
+|-----------|------------------|--------|
+| Hardcoded secrets in test files | **no** | All `test-*`, `mock-*`, `secret123`, `invalid-key` — fixtures |
+| `169.254.169.254` references | **no** | Appear only in **deny-lists** (SSRF defense) |
+| `@ai-sdk/gladia` in vercel-ai | **no** | Official integration, not a vulnerability |
+| npm `gladia` package discrepancy | **no** | Already tracked in RAG (ACCEPTED OTHER@sdk) |
 
-**No new reportable findings this cycle.**
+**No reportable findings this cycle.** Delta = 0 new hits; full grep = 100% test fixtures / defensive code / known supply-chain note.
