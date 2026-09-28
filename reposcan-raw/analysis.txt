@@ -1,92 +1,48 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.test.ts" -o -name "*.test.js" -o -name "*.spec.ts" -o -name "__fixtures__" | head -20
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/openai.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/togetherai.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/luma.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/cerebras.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/amazon-bedrock.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google-vertex-anthropic.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/fireworks.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/amazon-bedrock-anthropic.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/gateway.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/mistral.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/deepinfra.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/deepseek.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/azure.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/huggingface.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/anthropic.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/xai.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/cohere.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/groq.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google-vertex.test.ts
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "169.254.169.254" reposcan-raw/gladiaio/ --include="*.ts" --include="*.js" --include="*.json" --include="*.yaml" --include="*.yml"
-reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:        deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:          subnets: { deny: ['169.254.169.254/32'] },
-reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:      download({ url: new URL('http://169.254.169.254/latest/meta-data/') }),
-reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:        location: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.ts:  // e.g. ::ffff:127.0.0.1 or 64:ff9b::169.254.169.254 are blocked.
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:      .mockResolvedValueOnce(redirectResponse('http://169.254.169.254/'));
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:      .mockResolvedValueOnce(redirectWithBody('http://169.254.169.254/'));
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:      downloadBlob('http://169.254.169.254/latest/meta-data/'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:          location: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://169.254.169.254/latest/meta-data/'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block ::ffff:169.254.169.254', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[::ffff:169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block NAT64 64:ff9b::169.254.169.254 (metadata)', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[64:ff9b::169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block NAT64 local-use 64:ff9b:1::169.254.169.254', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[64:ff9b:1::169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['10.5.0.0/16', '169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:            url: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:        server.calls.some(call => call.requestUrl.includes('169.254.169.254')),
-[0m
-### CLASSIFICATION TABLES
+## Classification Results
 
-#### TEST_OR_EXAMPLE (642 hits)
-| File | Line | Pattern | Notes |
-|------|------|---------|-------|
-| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740, 905, 908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` | Test fixtures |
-| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409, 411 | `access_token: 'expired-access-token'`, `refresh_token: 'rotating-refresh-token'` | Test fixtures |
-| vercel-ai/packages/openai/src/**/*.test.ts | 48-3310 | `apiKey: 'test-api-key'` (50+ occurrences) | Test fixtures |
-| vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json | 36 | `encrypted_content: "gAAAAABplLP7..."` | Test fixture (encrypted blob) |
-| vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13, 277 | `apiKey: 'test-api-key'` | Test fixtures |
-| vercel-ai/packages/togetherai/src/togetherai-provider.test.ts | 99, 112, 165 | `apiKey: 'custom-key'`, `apiKey: 'explicit-key'` | Test fixtures |
-| vercel-ai/packages/google-vertex/src/*.test.ts | 120-419 | `apiKey: 'test-api-key'`, `access_token: 'mock.jwt.token'`, `private_key: 'invalid-key'` | Test fixtures |
-| vercel-ai/packages/amazon-bedrock/src/*.test.ts | 100-442 | `sessionToken: 'test-session-token'`, `apiKey: 'test-api-key-123'` | Test fixtures |
-| vercel-ai/pnpm-lock.yaml | 289, 291, 2368 | `@ai-sdk/gladia` package refs | Lockfile deps |
-| vercel-ai/tsconfig.json | 70 | Path alias | Config |
-| vercel-ai/tools/analyze-downloads/src/analyze-providers.ts | 21 | Import `@ai-sdk/gladia` | Source code |
-| vercel-ai/.github/tigent.yml | 30 | Provider list | CI config |
+### REAL_SECRET
+| File | Line | SHA256 (first 16) | Context |
+|------|------|-------------------|---------|
+| *none found* | | | |
 
-#### INTERESTING (10 hits) — SSRF **defense** test vectors
-| File | Line | Pattern | Notes |
-|------|------|---------|-------|
-| vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166, 171 | `deniedCIDRs: ['169.254.169.254/32']` | **Defensive** — test asserts metadata IP blocked |
-| vercel-ai/packages/ai/src/util/download/download.test.ts | 2 hits | `http://169.254.169.254/latest/meta-data/` | **Defensive** — test expects block |
-| vercel-ai/packages/provider-utils/src/validate-download-url.ts | 1 | Comment re `64:ff9b::169.254.169.254` blocked | **Defensive** — IPv6 NAT64 metadata block |
-| vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts | 2 | Mock redirect to metadata IP | **Defensive** — test expects block |
-| vercel-ai/packages/provider-utils/src/download-blob.test.ts | 2 | `downloadBlob('http://169.254.169.254/...')` | **Defensive** — test expects block |
-| vercel-ai/packages/provider-utils/src/validate-download-url.test.ts | 6 | Multiple IPv4/IPv6 metadata block tests | **Defensive** — comprehensive SSRF protection tests |
-| vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts | 2 | `deniedCIDRs: ['169.254.169.254/32']` | **Defensive** — type def for sandbox |
-| vercel-ai/packages/prodia/src/prodia-video-model.test.ts | 2 | Metadata URL in test | **Defensive** — test expects block |
+### TEST_OR_EXAMPLE (59 hits)
+| File | Line | Pattern | Classification |
+|------|------|---------|----------------|
+| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 740 | `client_secret: 'secret123'` | Test fixture |
+| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 905 | `access_token: 'access123'` | Test fixture |
+| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 908 | `refresh_token: 'refresh123'` | Test fixture |
+| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 409 | `access_token: 'expired-access-token'` | Test fixture |
+| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 411 | `refresh_token: 'rotating-refresh-token'` | Test fixture |
+| `vercel-ai/packages/openai/src/**/*.test.ts` | 22 locations | `apiKey: 'test-api-key'` | Test fixture |
+| `vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | `apiKey: 'test-api-key'` | Test fixture |
+| `vercel-ai/packages/togetherai/src/*.test.ts` | 4 locations | `apiKey: 'custom-key'`, `'explicit-key'` | Test fixture |
+| `vercel-ai/packages/google-vertex/src/*.test.ts` | 7 locations | `apiKey: 'test-api-key'`, `token: 'mocked-token'`, `'mock.jwt.token'`, `'invalid-key'` | Test fixture |
+| `vercel-ai/packages/amazon-bedrock/src/*.test.ts` | 7 locations | `sessionToken: 'dynamic-session-token'`, `'static-session-token'`, `'test-session-token'`, `'async-session-token'`, `apiKey: 'test-api-key-123'`, `nextToken: 'test-token'` | Test fixture |
+| `vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts` | 48 | `apiKey: 'your-api-key-here'` | Doc example |
+| `vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | 36 | `encrypted_content: "gAAAAABplLP..."` | Test fixture (encrypted) |
 
-#### REAL_SECRET: 0
-#### ENDPOINT_LEAK: 0
+### ENDPOINT_LEAK
+| File | Line | Detail |
+|------|------|--------|
+| *none found* | | |
+
+### INTERESTING
+| File | Line | Detail |
+|------|------|--------|
+| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | SSRF protection: `deniedCIDRs: ['169.254.169.254/32']` — explicit cloud metadata blocking |
+| `vercel-ai/pnpm-lock.yaml` | 289, 291, 2368 | `@ai-sdk/gladia` linked as local package — official Vercel AI SDK integration |
+| `vercel-ai/tsconfig.json` | 70 | Path alias for `packages/gladia` |
+| `vercel-ai/.github/tigent.yml` | 30 | Gladia listed as supported provider in CI config |
 
 ---
 
-### VERDICT
+## Verdict
 
-| Candidate | Category | REPORT_CANDIDATE |
-|-----------|----------|------------------|
-| `@ai-sdk/gladia` in vercel-ai monorepo | Official Vercel AI SDK integration (in-scope per rules) | **no** — public integration, not a leak |
-| `gladia` npm package (0.1.3, maintainer `softwarecitadel`) | **Personal repo** (alexisbouchez/gladia.ts) — already tracked in RAG as orphaned/unofficial | **no** — known, tracked |
-| All `test-api-key`, `secret123`, `mock.jwt.token` | Test fixtures in vercel-ai (upstream Vercel repo, not Gladia code) | **no** — test data |
-| SSRF metadata IP (169.254.169.254) references | **Defensive test vectors** — code *blocks* this IP | **no** — proves protection exists |
+**REPORT_CANDIDATE: no**
 
-**SUMMARY**: Zero reportable findings. Scan delta = 0 new hits. All grep hits are test fixtures or defensive SSRF protection tests in the `vercel-ai` upstream repo (not Gladia-owned code). The `@ai-sdk/gladia` integration is the official Vercel provider — expected. The orphaned `gladia` npm package is already documented in RAG.
+**Summary**: Zero real secrets. All 652 hits are test fixtures (`test-api-key`, `secret123`, `mocked-token`, etc.), documentation placeholders (`your-api-key-here`), or configuration references. The only security-relevant finding is **positive**: the Vercel sandbox tests explicitly deny `169.254.169.254/32` (AWS/GCP/Azure metadata endpoint), showing SSRF mitigation awareness.
+
+The `@ai-sdk/gladia` package in `vercel-ai` is the official Vercel AI SDK provider for Gladia (confirmed in RAG), not a supply-chain risk.
