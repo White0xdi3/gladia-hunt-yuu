@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-09-28 08:47:00 UTC =====
+===== REPOSCAN 2026-09-28 17:44:58 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5688 code/config files scanned, 652 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,48 +46,120 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-## Classification Results
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/vercel-ai/
+total 1624
+drwxr-xr-x 18 runner runner    4096 Sep 28 17:42 .
+drwxr-xr-x 15 runner runner    4096 Sep 28 17:42 ..
+drwxr-xr-x  2 runner runner    4096 Sep 28 17:42 .agents
+drwxr-xr-x  2 runner runner   28672 Sep 28 17:42 .changeset
+drwxr-xr-x  2 runner runner    4096 Sep 28 17:42 .claude
+drwxr-xr-x  2 runner runner    4096 Sep 28 17:42 .cursor
+drwxr-xr-x  7 runner runner    4096 Sep 28 17:42 .git
+drwxr-xr-x  6 runner runner    4096 Sep 28 17:42 .github
+-rw-r--r--  1 runner runner     261 Sep 28 17:42 .gitignore
+drwxr-xr-x  2 runner runner    4096 Sep 28 17:42 .husky
+-rw-r--r--  1 runner runner     381 Sep 28 17:42 .kodiak.toml
+-rw-r--r--  1 runner runner     122 Sep 28 17:42 .npmrc
+-rw-r--r--  1 runner runner    1119 Sep 28 17:42 .oxfmtrc.jsonc
+-rw-r--r--  1 runner runner    8967 Sep 28 17:42 .oxlintrc.json
+drwxr-xr-x  2 runner runner    4096 Sep 28 17:42 .vscode
+-rw-r--r--  1 runner runner   12684 Sep 28 17:42 AGENTS.md
+-rw-r--r--  1 runner runner    2807 Sep 28 17:42 CHANGELOG.md
+lrwxrwxrwx  1 runner runner       9 Sep 28 17:42 CLAUDE.md -> AGENTS.md
+-rw-r--r--  1 runner runner     111 Sep 28 17:42 CODE_OF_CONDUCT.md
+-rw-r--r--  1 runner runner    7250 Sep 28 17:42 CONTRIBUTING.md
+-rw-r--r--  1 runner runner     552 Sep 28 17:42 LICENSE
+lrwxrwxrwx  1 runner runner      22 Sep 28 17:42 README.md -> packages/ai/README.md
 
-### REAL_SECRET
-| File | Line | SHA256 (first 16) | Context |
-|------|------|-------------------|---------|
-| *none found* | | | |
+drwxr-xr-x  2 runner runner    4096 Sep 28 17:42 architecture
+drwxr-xr-x  2 runner runner    4096 Sep 28 17:42 assets
+drwxr-xr-x  6 runner runner    4096 Sep 28 17:42 content
+drwxr-xr-x  3 runner runner    4096 Sep 28 17:42 contributing
+drwxr-xr-x 27 runner runner    4096 Sep 28 17:42 examples
+-rw-r--r--  1 runner runner    2818 Sep 28 17:42 package.json
+drwxr-xr-x 68 runner runner    4096 Sep 28 17:42 packages
+-rw-r--r--  1 runner runner 1474217 Sep 28 17:42 pnpm-lock.yaml
+-rw-r--r--  1 runner runner     185 Sep 28 17:42 pnpm-workspace.yaml
+drwxr-xr-x 11 runner runner    4096 Sep 28 17:42 skills
+-rw-r--r--  1 runner runner     228 Sep 28 17:42 socket.yaml
+drwxr-xr-x  6 runner runner    4096 Sep 28 17:42 tools
+-rw-r--r--  1 runner runner    3216 Sep 28 17:42 tsconfig.json
+-rw-r--r--  1 runner runner    1335 Sep 28 17:42 tsconfig.with-examples.json
+-rw-r--r--  1 runner runner    2705 Sep 28 17:42 turbo.json
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && head -300 reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts
+import type { Sandbox } from '@vercel/sandbox';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { createVercelSandbox } from './vercel-sandbox';
 
-### TEST_OR_EXAMPLE (59 hits)
-| File | Line | Pattern | Classification |
-|------|------|---------|----------------|
-| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 740 | `client_secret: 'secret123'` | Test fixture |
-| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 905 | `access_token: 'access123'` | Test fixture |
-| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 908 | `refresh_token: 'refresh123'` | Test fixture |
-| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 409 | `access_token: 'expired-access-token'` | Test fixture |
-| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 411 | `refresh_token: 'rotating-refresh-token'` | Test fixture |
-| `vercel-ai/packages/openai/src/**/*.test.ts` | 22 locations | `apiKey: 'test-api-key'` | Test fixture |
-| `vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | `apiKey: 'test-api-key'` | Test fixture |
-| `vercel-ai/packages/togetherai/src/*.test.ts` | 4 locations | `apiKey: 'custom-key'`, `'explicit-key'` | Test fixture |
-| `vercel-ai/packages/google-vertex/src/*.test.ts` | 7 locations | `apiKey: 'test-api-key'`, `token: 'mocked-token'`, `'mock.jwt.token'`, `'invalid-key'` | Test fixture |
-| `vercel-ai/packages/amazon-bedrock/src/*.test.ts` | 7 locations | `sessionToken: 'dynamic-session-token'`, `'static-session-token'`, `'test-session-token'`, `'async-session-token'`, `apiKey: 'test-api-key-123'`, `nextToken: 'test-token'` | Test fixture |
-| `vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts` | 48 | `apiKey: 'your-api-key-here'` | Doc example |
-| `vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | 36 | `encrypted_content: "gAAAAABplLP..."` | Test fixture (encrypted) |
+const { createMock } = vi.hoisted(() => ({ createMock: vi.fn() }));
 
-### ENDPOINT_LEAK
-| File | Line | Detail |
-|------|------|--------|
-| *none found* | | |
+vi.mock('@vercel/sandbox', () => ({
+  Sandbox: { create: createMock },
+}));
 
-### INTERESTING
-| File | Line | Detail |
-|------|------|--------|
-| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | SSRF protection: `deniedCIDRs: ['169.254.169.254/32']` — explicit cloud metadata blocking |
-| `vercel-ai/pnpm-lock.yaml` | 289, 291, 2368 | `@ai-sdk/gladia` linked as local package — official Vercel AI SDK integration |
-| `vercel-ai/tsconfig.json` | 70 | Path alias for `packages/gladia` |
-| `vercel-ai/.github/tigent.yml` | 30 | Gladia listed as supported provider in CI config |
+type MockSpies = {
+  domain: ReturnType<typeof vi.fn>;
+  update: ReturnType<typeof vi.fn>;
+  runCommand: ReturnType<typeof vi.fn>;
+  stop: ReturnType<typeof vi.fn>;
+  delete: ReturnType<typeof vi.fn>;
+  routes: Array<{ port: number }>;
+};
 
----
+function makeMockSandbox(overrides: Partial<MockSpies> = {}) {
+  const domain = overrides.domain ?? vi.fn();
+  const update = overrides.update ?? vi.fn(async () => {});
+  const runCommand = overrides.runCommand ?? vi.fn();
+  const stop = overrides.stop ?? vi.fn(async () => {});
+  const deleteSandbox = overrides.delete ?? vi.fn(async () => {});
+  const routes: Array<{ port: number }> = overrides.routes ?? [{ port: 4000 }];
+  const sandbox = {
+    name: 'sbx_harness',
+    domain,
+    update,
+    runCommand,
+    stop,
+    delete: deleteSandbox,
+    routes,
+    currentSession: () => ({ cwd: '/vercel/sandbox' }),
+  } as unknown as Sandbox;
+  return {
+    sandbox,
+    spies: { domain, update, runCommand, stop, delete: deleteSandbox, routes },
+  };
+}
 
-## Verdict
+describe('createVercelSandbox (wrap existing)', () => {
+  it('produces a network sandbox session whose ports come from sandbox.routes', async () => {
+    const { sandbox } = makeMockSandbox({
+      routes: [{ port: 3000 }, { port: 4000 }],
+    });
+    const provider = createVercelSandbox({ sandbox });
+    const sandboxSession = await provider.createSession();
+    expect(sandboxSession.ports).toEqual([3000, 4000]);
+  });
 
-**REPORT_CANDIDATE: no**
+  it('restricted() returns an Experimental_SandboxSession wrapping the underlying', async () => {
+    const { sandbox, spies } = makeMockSandbox();
+    spies.runCommand.mockResolvedValueOnce({
+      exitCode: 0,
+      stdout: async () => 'ok\n',
+      stderr: async () => '',
+    });
 
-**Summary**: Zero real secrets. All 652 hits are test fixtures (`test-api-key`, `secret123`, `mocked-token`, etc.), documentation placeholders (`your-api-key-here`), or configuration references. The only security-relevant finding is **positive**: the Vercel sandbox tests explicitly deny `169.254.169.254/32` (AWS/GCP/Azure metadata endpoint), showing SSRF mitigation awareness.
+    const sandboxSession = await createVercelSandbox({
+      sandbox,
+    }).createSession();
+    const result = await sandboxSession
+      .restricted()
+      .run({ command: 'echo ok' });
+    expect(result.stdout).toBe('ok\n');
+  });
 
-The `@ai-sdk/gladia` package in `vercel-ai` is the official Vercel AI SDK provider for Gladia (confirmed in RAG), not a supply-chain risk.
+  it('stop is a no-op (caller owns lifecycle)', async () => {
+    const { sandbox, spies } = makeMockSandbox();
+    await (await createVercelSandbox({ sandbox }).createSession()).stop();
+    expect(spies.stop).not.toHaveBeenCalled();
+  });
+
