@@ -1239,3 +1239,4 @@ testability: AUTH_HELPED
 [LEARN] REJECTED AUTH @ api.gladia.io: no-key POST /v2/pre-recorded still 401/144 NestJS no bypass this cycle
 [RISK] api.gladia.io: 72 reason: frozen spec no drift but high-value SSRF-by-design requires stolen/bought key (AUTH_HELPED) to reach 169.254.169.254 -> cloud credential theft critical if key obtained | app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap is live and chainable to OAuth code theft -> ATO via HUMAN_ONLY post-auth step, highest gate_ease | sdk: 68 reason: orphaned maintainer 404 with "Official" description + WebSocket query key leakage = supply-chain hijack risk medium-high but requires GitHub namespace claim and npm publish, passive verifiable
 ## 2026-09-28 01:37:06 UTC [gladia] (model mimo)
+## 2026-09-28 08:39:34 UTC [api] (model mimo)
