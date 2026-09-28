@@ -1119,3 +1119,9 @@
   - | npm gladia@0.1.3 impersonation + key leak | **VALID (DUPLICATE)** | Already reported 2026-08-12, awaiting vendor response |
   - | WS token in URL query param | **HOLD** | Design flaw confirmed, needs valid key (AUTH_HELPED) |
   - | IDOR on /{id}/file endpoints | **HOLD** | High impact if proven, needs two valid keys (AUTH_HELPED) |
+
+- 4 lead(s) marked VALID at 2026-09-28 00:59:08 UTC
+  - **VERDICT: HOLD** — High-severity SSRF-by-design confirmed in spec, but key-gated; needs valid key for PoC
+  - **VERDICT: VALID**
+  - | WS token in URL | HOLD | Needs valid API key |
+  - | **npm `gladia@0.1.3` impersonation** | **VALID** | **Reported 2026-08-12, passive proof complete** |

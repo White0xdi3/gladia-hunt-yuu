@@ -65,3 +65,19 @@ tar xzf gladia-0.1.3.tgz && grep -n "x-gladia-key" package/src/client.ts   # lin
 ```
 
 Evidence package: sha256-verified tarball + `npm view` JSON captured in repo knowledge base (2026-08-07 → 2026-08-17, byte-fresh each check).
+
+
+## Re-confirmed 2026-09-28 00:59 UTC
+### 4. npm `gladia@0.1.3` orphaned impersonation + key-in-URL leak
+**Q1** YES (Official SDKs npm @ MEDIUM scope; supply-chain impacts Gladia users)  
+**Q2** YES (public registry, anyone installs)  
+**Q3** YES (impersonation + `src/client.ts:306-308` embeds raw API key in `wss://` URL query — keys land in proxy/access logs)  
+**Q4** YES (passive: registry metadata, tarball sha256 `3b23ec7d…`, GitHub user+repo 404, README "Unofficial" vs package.json "Official")  
+**Q5** YES (human-reported 2026-08-12, still live)  
+**Q6** YES  
+**Q7** YES (human triager already accepted)  
+**VERDICT: VALID**  
+**Minimal read-only proof**: `npm view gladia@0.1.3` → description="Official", maintainer=softwarecitadel@gmail.com, repo=alexisbouchez/gladia.ts (404), tarball `src/client.ts` line 307 `searchParams.append('x-gladia-key', apiKey)`  
+**Impact**: Supply-chain API key harvesting + irrevocable takeover risk (orphaned GitHub account)  
+**CVSS 3.1**: 7.4 (AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N) — Medium-High  
+**Reporting channel**: Gladia security via https://gladia.io/bug-bounty-report (Google Forms, SSO-gated) — **already submitted 2026-08-12, awaiting vendor response**
