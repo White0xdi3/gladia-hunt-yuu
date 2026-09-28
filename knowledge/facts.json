@@ -1,7 +1,7 @@
 {
  "AUTH@api.gladia.io": {
   "first_seen": "2026-08-07",
-  "last_seen": "2026-09-27",
+  "last_seen": "2026-09-28",
   "reason": "no-key POST /v2/pre-recorded still 401/144 NestJS no bypass this cycle",
   "verdict": "REJECTED"
  },
