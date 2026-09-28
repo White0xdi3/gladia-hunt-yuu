@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-09-28 23:16:34 UTC =====
+===== REPOSCAN 2026-09-28 23:22:11 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5688 code/config files scanned, 652 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,42 +46,120 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-All hits are from `gladiaio/vercel-ai` (a fork of vercel/ai-sdk with Gladia provider). Let me classify:
-
-### TEST_OR_EXAMPLE (all test/fixture data - not reportable)
-
-| File | Line | Pattern | Classification |
-|------|------|---------|----------------|
-| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | `deniedCIDRs: ['169.254.169.254/32']` | TEST_CONFIG - SSRF protection test config (good practice) |
-| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 740, 905, 908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` | TEST_OR_EXAMPLE |
-| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 409, 411 | `access_token: 'expired-access-token'`, `refresh_token: 'rotating-refresh-token'` | TEST_OR_EXAMPLE |
-| `vercel-ai/packages/openai/src/**/*.test.ts` | multiple | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
-| `vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
-| `vercel-ai/packages/togetherai/src/**/*.test.ts` | multiple | `apiKey: 'custom-key'`, `'explicit-key'`, `'test-api-key'` | TEST_OR_EXAMPLE |
-| `vercel-ai/packages/google-vertex/src/**/*.test.ts` | multiple | `apiKey: 'test-api-key'`, `token: 'mocked-token'`, `'mock.jwt.token'`, `'invalid-key'` | TEST_OR_EXAMPLE |
-| `vercel-ai/packages/amazon-bedrock/src/**/*.test.ts` | multiple | `sessionToken: 'dynamic-session-token'`, `'static-session-token'`, `'test-session-token'`, `'async-session-token'`, `apiKey: 'test-api-key-123'` | TEST_OR_EXAMPLE |
-| `vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts` | 48 | `apiKey: 'your-api-key-here'` (doc comment) | TEST_OR_EXAMPLE |
-
-### INTERESTING (config/package metadata)
-
-| File | Line | Finding |
-|------|------|---------|
-| `vercel-ai/pnpm-lock.yaml` | 289, 291, 2368 | `@ai-sdk/gladia` linked as local workspace package (official integration) |
-| `vercel-ai/tsconfig.json` | 70 | Path alias for `packages/gladia` |
-| `vercel-ai/tools/analyze-downloads/src/analyze-providers.ts` | 21 | Import of `@ai-sdk/gladia` for download analytics |
-| `vercel-ai/.github/tigent.yml` | 30 | Gladia listed among AI providers in CI |
-
-### ENDPOINT_LEAK / REAL_SECRET: **NONE**
-
----
-
-### VERDICT
-
-| Candidate | REPORT_CANDIDATE |
-|-----------|------------------|
-| Hardcoded secrets in test files | **no** (all `test-*`, `mock-*`, `secret123` patterns) |
-| Cloud metadata IP (169.254.169.254) in test config | **no** (deny-list config, defensive) |
-| `@ai-sdk/gladia` package linkage | **no** (official Vercel AI SDK integration, expected) |
-| npm `gladia` 0.1.3 (unofficial, personal repo) | **no** (already in KB as ACCEPTED OTHER@sdk, orphaned but known) |
-
-**No new reportable findings this cycle.** The scan surface is clean — only test fixtures and known supply-chain metadata.
+[0m$ [0mls -la reposcan-raw/gladiaio/
+total 60
+drwxr-xr-x 15 runner runner 4096 Sep 28 23:19 .
+drwxr-xr-x  4 runner runner 4096 Sep 28 23:19 ..
+drwxr-xr-x  9 runner runner 4096 Sep 28 23:19 compare-stt
+drwxr-xr-x  9 runner runner 4096 Sep 28 23:19 docs
+drwxr-xr-x  7 runner runner 4096 Sep 28 23:19 gladia-cli
+drwxr-xr-x 11 runner runner 4096 Sep 28 23:19 gladia-quiz-app
+drwxr-xr-x 11 runner runner 4096 Sep 28 23:19 gladia-samples
+drwxr-xr-x  9 runner runner 4096 Sep 28 23:19 gladiaflow
+drwxr-xr-x  7 runner runner 4096 Sep 28 23:19 n8n-nodes-gladia
+drwxr-xr-x  8 runner runner 4096 Sep 28 23:19 normalization
+drwxr-xr-x 12 runner runner 4096 Sep 28 23:19 num2words2
+drwxr-xr-x  9 runner runner 4096 Sep 28 23:19 realtime-multilingual-asr-router
+drwxr-xr-x 10 runner runner 4096 Sep 28 23:19 sdk
+drwxr-xr-x  7 runner runner 4096 Sep 28 23:19 skills
+drwxr-xr-x 18 runner runner 4096 Sep 28 23:20 vercel-ai
+[0m
+[0m$ [0mgrep -r "169.254.169.254" reposcan-raw/gladiaio/vercel-ai/ --include="*.ts" --include="*.js" -n
+reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:166:        deniedCIDRs: ['169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:171:          subnets: { deny: ['169.254.169.254/32'] },
+reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:14:      download({ url: new URL('http://169.254.169.254/latest/meta-data/') }),
+reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:38:        location: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.ts:203:  // e.g. ::ffff:127.0.0.1 or 64:ff9b::169.254.169.254 are blocked.
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:79:      .mockResolvedValueOnce(redirectResponse('http://169.254.169.254/'));
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:108:      .mockResolvedValueOnce(redirectWithBody('http://169.254.169.254/'));
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:237:      downloadBlob('http://169.254.169.254/latest/meta-data/'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:261:          location: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:131:        validateDownloadUrl('http://169.254.169.254/latest/meta-data/'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:184:    it('should block ::ffff:169.254.169.254', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:186:        validateDownloadUrl('http://[::ffff:169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:268:    it('should block NAT64 64:ff9b::169.254.169.254 (metadata)', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:270:        validateDownloadUrl('http://[64:ff9b::169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:274:    it('should block NAT64 local-use 64:ff9b:1::169.254.169.254', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:276:        validateDownloadUrl('http://[64:ff9b:1::169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:68:    deniedCIDRs: ['10.5.0.0/16', '169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:77:    deniedCIDRs: ['169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:462:            url: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:470:        server.calls.some(call => call.requestUrl.includes('169.254.169.254')),
+[0m
+[0m$ [0mcat reposcan-raw/gladiaio/sdk/package.json 2>/dev/null || echo "no package.json"
+{
+  "name": "gladia-sdk",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "e2e/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@commitlint/types": "^20.0.0",
+    "@eslint/js": "^9.37.0",
+    "@nx/eslint": "^21.6.3",
+    "@nx/eslint-plugin": "^21.6.3",
+    "@nx/js": "21.6.3",
+    "@nx/vite": "^21.6.3",
+    "@nx/web": "21.6.3",
+    "@nxlv/python": "^21.2.0",
+    "@swc-node/register": "~1.11.1",
+    "@swc/core": "~1.13.5",
+    "@swc/helpers": "~0.5.17",
+    "@types/node": "20.19.9",
+    "@vitest/coverage-v8": "^4.1.8",
+    "@vitest/ui": "^4.1.8",
+    "eslint": "^9.37.0",
+    "jiti": "2.6.1",
+    "nx": "^21.6.3",
+    "prettier": "^3.6.2",
+    "tslib": "^2.8.1",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.0",
+    "vite": "^7.1.9",
+    "vitest": "^4.1.8"
+  },
+  "scripts": {
+    "release": "node tools/scripts/release.mjs",
+    "publish": "node tools/scripts/publish.mjs"
+  }
+}
+[0m
+[0m$ [0mls -la reposcan-raw/gladiaio/sdk/packages/
+total 20
+drwxr-xr-x  5 runner runner 4096 Sep 28 23:19 .
+drwxr-xr-x 10 runner runner 4096 Sep 28 23:19 ..
+drwxr-xr-x  3 runner runner 4096 Sep 28 23:19 generator
+drwxr-xr-x  4 runner runner 4096 Sep 28 23:19 sdk-js
+drwxr-xr-x  5 runner runner 4096 Sep 28 23:19 sdk-python
+[0m
+[0m$ [0mcat reposcan-raw/gladiaio/sdk/packages/sdk-js/package.json
+{
+  "name": "@gladiaio/sdk",
+  "description": "Gladia JavaScript/TypeScript SDK",
+  "version": "2.0.0",
+  "author": "Gladia",
+  "license": "MIT",
+  "repository": "github:gladiaio/sdk",
+  "keywords": [
+    "gladia",
+    "sdk",
+    "typescript",
+    "javascript"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
