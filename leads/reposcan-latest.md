@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-09-29 02:46:12 UTC =====
+===== REPOSCAN 2026-09-29 05:46:05 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5688 code/config files scanned, 652 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,120 +46,120 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls reposcan-raw/gladiaio/
-compare-stt
-docs
-gladia-cli
-gladia-quiz-app
-gladia-samples
-gladiaflow
-n8n-nodes-gladia
-normalization
-num2words2
-realtime-multilingual-asr-router
-sdk
-skills
-vercel-ai
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/shopify-mcp/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/repro-test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/image-content/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-ui/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "sk-[a-zA-Z0-9]{32,}" reposcan-raw/gladiaio/ --type yaml --type json --type js --type ts --type py --type go --type rs 2>/dev/null | head -20
-(no output)
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/package.json
+[0m✱ [0mGlob "**/packages/gladia/**/*"[90m in reposcan-raw/gladiaio/vercel-ai · 24 matches[0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-upload.json
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-initiate.json
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-result.json
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [limit=30, offset=160][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts[90m [limit=30, offset=735][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts[90m [limit=30, offset=900][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts[90m [limit=30, offset=405][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.test.ts[90m [limit=30, offset=125][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/openai/src/chat/openai-chat-language-model.test.ts[90m [limit=30, offset=110][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts[90m [limit=30, offset=65][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test.ts[90m [offset=95, limit=30][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts[90m [limit=30, offset=10][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json[90m [limit=50, offset=30][0m
+[0m✱ [0mGlob "**/sdk/**/*"[90m in reposcan-raw/gladiaio · 0 matches[0m
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*[\"'][a-zA-Z0-9_\-]{20,}[\"']" reposcan-raw/gladiaio/ --type yaml --type json --type js --type ts --type py --type go --type rs 2>/dev/null | head -30
-(no output)
+[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/
+total 60
+drwxr-xr-x 15 runner runner 4096 Sep 29 05:40 .
+drwxr-xr-x  4 runner runner 4096 Sep 29 05:40 ..
+drwxr-xr-x  9 runner runner 4096 Sep 29 05:40 compare-stt
+drwxr-xr-x  9 runner runner 4096 Sep 29 05:40 docs
+drwxr-xr-x  7 runner runner 4096 Sep 29 05:40 gladia-cli
+drwxr-xr-x 11 runner runner 4096 Sep 29 05:40 gladia-quiz-app
+drwxr-xr-x 11 runner runner 4096 Sep 29 05:40 gladia-samples
+drwxr-xr-x  9 runner runner 4096 Sep 29 05:40 gladiaflow
+drwxr-xr-x  7 runner runner 4096 Sep 29 05:40 n8n-nodes-gladia
+drwxr-xr-x  8 runner runner 4096 Sep 29 05:40 normalization
+drwxr-xr-x 12 runner runner 4096 Sep 29 05:40 num2words2
+drwxr-xr-x  9 runner runner 4096 Sep 29 05:40 realtime-multilingual-asr-router
+drwxr-xr-x 10 runner runner 4096 Sep 29 05:40 sdk
+drwxr-xr-x  7 runner runner 4096 Sep 29 05:40 skills
+drwxr-xr-x 18 runner runner 4096 Sep 29 05:40 vercel-ai
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "(gladia[_-]?key|x-gladia-key|GLADIA_API_KEY)" reposcan-raw/gladiaio/ --type yaml --type json --type js --type ts --type py --type go --type rs 2>/dev/null | head -30
-(no output)
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/sdk -type f \( -name "*.ts" -o -name "*.js" -o -name "*.py" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" \) | head -30
-reposcan-raw/gladiaio/sdk/.cursor/mcp.json
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/project.json
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/vitest.config.ts
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_session.test.ts
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/prerecorded_v2_async.test.ts
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_job_management.test.ts
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/tsconfig.json
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/package.json
-reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/tsdown.config.ts
-reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/project.json
-reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/tsconfig.json
-reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/src/index.ts
-reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/package.json
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/project.json
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/package.json
-reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/conftest.py
-reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/helpers.py
-reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/test_live_v2_session.py
-reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/test_live_v2_job_management.py
-reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/test_prerecorded_v2_async.py
-reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/__init__.py
-reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/test_live_v2_async_session.py
-reposcan-raw/gladiaio/sdk/e2e/e2e-python/project.json
-reposcan-raw/gladiaio/sdk/.github/workflows/ci.yml
-reposcan-raw/gladiaio/sdk/.github/workflows/release.yml
-reposcan-raw/gladiaio/sdk/.github/workflows/publish.yml
-reposcan-raw/gladiaio/sdk/.github/workflows/update-openapi-types.yml
-reposcan-raw/gladiaio/sdk/nx.json
-reposcan-raw/gladiaio/sdk/packages/sdk-js/tsdown.config.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/tsconfig.spec.json
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "x-gladia-key|Authorization|Bearer|apiKey" reposcan-raw/gladiaio/sdk/packages/sdk-js/src/ 2>/dev/null | head -30
-(no output)
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/sdk/packages/sdk-js/src -type f -name "*.ts" | head -20
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/version.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/internal_types.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/helpers.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/wsClient.test.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.test.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/types.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/iso-ws.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/iso-fetch.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/wsClient.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/build-list-url.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/types.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/index.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.ts
-[0m
-[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.ts
+[0m✱ [0mGlob "**/*"[90m in reposcan-raw/gladiaio/sdk · 100 matches[0m
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/package.json
 [0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/client.py
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/generator/src/schema-fetcher.ts
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/generator/src/cli.ts
+[0m✱ [0mGlob "**/*.go"[90m in reposcan-raw/gladiaio/gladia-cli · 20 matches[0m
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-cli/cmd/auth.go
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-cli/pkg/client/client.go
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-cli/cmd/transcribe_test.go
+[0m✱ [0mGlob "**/*.py"[90m in reposcan-raw/gladiaio/realtime-multilingual-asr-router · 59 matches[0m
+[0m→ [0mRead reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/config.py
+[0m→ [0mRead reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/main.py
+[0m→ [0mRead reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_config.py
+[0m✱ [0mGlob "**/*.ts"[90m in reposcan-raw/gladiaio/n8n-nodes-gladia · 4 matches[0m
+[0m→ [0mRead reposcan-raw/gladiaio/n8n-nodes-gladia/credentials/GladiaApi.credentials.ts
+[0m→ [0mRead reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/Gladia.node.ts
+[0m→ [0mRead reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/GenericFunctions.ts
+[0m→ [0mRead reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts
+[0m✱ [0mGlob "**/*.py"[90m in reposcan-raw/gladiaio/gladia-samples · 11 matches[0m
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-samples/python/core-concepts/pre-recorded/pre_recorded.py
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-samples/python/core-concepts/live/live-from-file.py
+[0m✱ [0mGlob "**/*.rs"[90m in reposcan-raw/gladiaio/gladiaflow · 13 matches[0m
+[0m→ [0mRead reposcan-raw/gladiaio/gladiaflow/src-tauri/src/gladia.rs
+[0m→ [0mRead reposcan-raw/gladiaio/gladiaflow/src-tauri/src/config.rs
+[0m✱ [0mGlob "**/*"[90m in reposcan-raw/gladiaio/gladia-quiz-app · 83 matches[0m
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-quiz-app/env.example
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-quiz-app/lib/gladia-client.ts
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-quiz-app/components/GladiaApiKeyInput.tsx
+[0m✱ [0mGlob "**/*"[90m in reposcan-raw/gladiaio/skills · 36 matches[0m
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/sdk/packages/sdk-python -type f -name "*.py" | head -20
-reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/conftest.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/test_client.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_async_http_client.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_helper.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_async_websocket_client.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_http_client_redirect.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/live/test_connect_session.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/live/test_live_list.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/live/test_generated_types.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/core/test_build_list_endpoint.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/prerecorded/test_prerecorded_list.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/__init__.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/version.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/http_client.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/websocket_client.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/helper.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/__init__.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/_helpers.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/types.py
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/sdk/packages/sdk-python/src -type f -name "*.py" | head -20
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/version.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/http_client.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/websocket_client.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/helper.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/__init__.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/_helpers.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/types.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/async_session.py
-reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/client.py
+[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/ && ls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/normalization/ && ls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/num2words2/
+total 512
+drwxr-xr-x  9 runner runner   4096 Sep 29 05:40 .
+drwxr-xr-x 15 runner runner   4096 Sep 29 05:40 ..
+drwxr-xr-x  3 runner runner   4096 Sep 29 05:40 .cursor
+-rw-r--r--  1 runner runner    628 Sep 29 05:40 .env.example
+drwxr-xr-x  7 runner runner   4096 Sep 29 05:40 .git
+-rw-r--r--  1 runner runner    579 Sep 29 05:40 .gitignore
+-rw-r--r--  1 runner runner   1063 Sep 29 05:40 LICENSE
+-rw-r--r--  1 runner runner   1575 Sep 29 05:40 README.md
+-rw-r--r--  1 runner runner    300 Sep 29 05:40 docker-compose.yml
+-rw-r--r--  1 runner runner    477 Sep 29 05:40 eslint.config.mjs
+-rw-r--r--  1 runner runner    366 Sep 29 05:40 instrumentation-client.ts
+drwxr-xr-x  2 runner runner   4096 Sep 29 05:40 logos
+-rw-r--r--  1 runner runner   4534 Sep 29 05:40 next.config.ts
+-rw-r--r--  1 runner runner 394432 Sep 29 05:40 package-lock.json
+-rw-r--r--  1 runner runner   1579 Sep 29 05:40 package.json
+-rw-r--r--  1 runner runner     94 Sep 29 05:40 postcss.config.mjs
+drwxr-xr-x  3 runner runner   4096 Sep 29 05:40 prisma
+-rw-r--r--  1 runner runner    248 Sep 29 05:40 prisma.config.ts
+drwxr-xr-x  4 runner runner   4096 Sep 29 05:40 public
+-rw-r--r--  1 runner runner    926 Sep 29 05:40 sentry.edge.config.ts
+-rw-r--r--  1 runner runner    771 Sep 29 05:40 sentry.server.config.ts
+drwxr-xr-x  6 runner runner   4096 Sep 29 05:40 src
+drwxr-xr-x  2 runner runner   4096 Sep 29 05:40 test-audio
