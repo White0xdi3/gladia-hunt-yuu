@@ -1,101 +1,339 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mls -la reposcan-raw/gladiaio/
-total 60
-drwxr-xr-x 15 runner runner 4096 Sep 28 23:19 .
-drwxr-xr-x  4 runner runner 4096 Sep 28 23:19 ..
-drwxr-xr-x  9 runner runner 4096 Sep 28 23:19 compare-stt
-drwxr-xr-x  9 runner runner 4096 Sep 28 23:19 docs
-drwxr-xr-x  7 runner runner 4096 Sep 28 23:19 gladia-cli
-drwxr-xr-x 11 runner runner 4096 Sep 28 23:19 gladia-quiz-app
-drwxr-xr-x 11 runner runner 4096 Sep 28 23:19 gladia-samples
-drwxr-xr-x  9 runner runner 4096 Sep 28 23:19 gladiaflow
-drwxr-xr-x  7 runner runner 4096 Sep 28 23:19 n8n-nodes-gladia
-drwxr-xr-x  8 runner runner 4096 Sep 28 23:19 normalization
-drwxr-xr-x 12 runner runner 4096 Sep 28 23:19 num2words2
-drwxr-xr-x  9 runner runner 4096 Sep 28 23:19 realtime-multilingual-asr-router
-drwxr-xr-x 10 runner runner 4096 Sep 28 23:19 sdk
-drwxr-xr-x  7 runner runner 4096 Sep 28 23:19 skills
-drwxr-xr-x 18 runner runner 4096 Sep 28 23:20 vercel-ai
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls reposcan-raw/gladiaio/
+compare-stt
+docs
+gladia-cli
+gladia-quiz-app
+gladia-samples
+gladiaflow
+n8n-nodes-gladia
+normalization
+num2words2
+realtime-multilingual-asr-router
+sdk
+skills
+vercel-ai
 [0m
-[0m$ [0mgrep -r "169.254.169.254" reposcan-raw/gladiaio/vercel-ai/ --include="*.ts" --include="*.js" -n
-reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:166:        deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:171:          subnets: { deny: ['169.254.169.254/32'] },
-reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:14:      download({ url: new URL('http://169.254.169.254/latest/meta-data/') }),
-reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:38:        location: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.ts:203:  // e.g. ::ffff:127.0.0.1 or 64:ff9b::169.254.169.254 are blocked.
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:79:      .mockResolvedValueOnce(redirectResponse('http://169.254.169.254/'));
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:108:      .mockResolvedValueOnce(redirectWithBody('http://169.254.169.254/'));
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:237:      downloadBlob('http://169.254.169.254/latest/meta-data/'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:261:          location: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:131:        validateDownloadUrl('http://169.254.169.254/latest/meta-data/'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:184:    it('should block ::ffff:169.254.169.254', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:186:        validateDownloadUrl('http://[::ffff:169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:268:    it('should block NAT64 64:ff9b::169.254.169.254 (metadata)', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:270:        validateDownloadUrl('http://[64:ff9b::169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:274:    it('should block NAT64 local-use 64:ff9b:1::169.254.169.254', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:276:        validateDownloadUrl('http://[64:ff9b:1::169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:68:    deniedCIDRs: ['10.5.0.0/16', '169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:77:    deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:462:            url: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:470:        server.calls.some(call => call.requestUrl.includes('169.254.169.254')),
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "sk-[a-zA-Z0-9]{32,}" reposcan-raw/gladiaio/ --type yaml --type json --type js --type ts --type py --type go --type rs 2>/dev/null | head -20
+(no output)
 [0m
-[0m$ [0mcat reposcan-raw/gladiaio/sdk/package.json 2>/dev/null || echo "no package.json"
-{
-  "name": "gladia-sdk",
-  "version": "0.0.0",
-  "license": "MIT",
-  "private": true,
-  "engines": {
-    "node": ">=20"
-  },
-  "workspaces": [
-    "e2e/*",
-    "packages/*"
-  ],
-  "devDependencies": {
-    "@commitlint/cli": "^20.1.0",
-    "@commitlint/config-conventional": "^20.0.0",
-    "@commitlint/types": "^20.0.0",
-    "@eslint/js": "^9.37.0",
-    "@nx/eslint": "^21.6.3",
-    "@nx/eslint-plugin": "^21.6.3",
-    "@nx/js": "21.6.3",
-    "@nx/vite": "^21.6.3",
-    "@nx/web": "21.6.3",
-    "@nxlv/python": "^21.2.0",
-    "@swc-node/register": "~1.11.1",
-    "@swc/core": "~1.13.5",
-    "@swc/helpers": "~0.5.17",
-    "@types/node": "20.19.9",
-    "@vitest/coverage-v8": "^4.1.8",
-    "@vitest/ui": "^4.1.8",
-    "eslint": "^9.37.0",
-    "jiti": "2.6.1",
-    "nx": "^21.6.3",
-    "prettier": "^3.6.2",
-    "tslib": "^2.8.1",
-    "typescript": "~5.9.3",
-    "typescript-eslint": "^8.46.0",
-    "vite": "^7.1.9",
-    "vitest": "^4.1.8"
-  },
-  "scripts": {
-    "release": "node tools/scripts/release.mjs",
-    "publish": "node tools/scripts/publish.mjs"
-  }
-}
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*[\"'][a-zA-Z0-9_\-]{20,}[\"']" reposcan-raw/gladiaio/ --type yaml --type json --type js --type ts --type py --type go --type rs 2>/dev/null | head -30
+(no output)
 [0m
-[0m$ [0mls -la reposcan-raw/gladiaio/sdk/packages/
-total 20
-drwxr-xr-x  5 runner runner 4096 Sep 28 23:19 .
-drwxr-xr-x 10 runner runner 4096 Sep 28 23:19 ..
-drwxr-xr-x  3 runner runner 4096 Sep 28 23:19 generator
-drwxr-xr-x  4 runner runner 4096 Sep 28 23:19 sdk-js
-drwxr-xr-x  5 runner runner 4096 Sep 28 23:19 sdk-python
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "(gladia[_-]?key|x-gladia-key|GLADIA_API_KEY)" reposcan-raw/gladiaio/ --type yaml --type json --type js --type ts --type py --type go --type rs 2>/dev/null | head -30
+(no output)
 [0m
-[0m$ [0mcat reposcan-raw/gladiaio/sdk/packages/sdk-js/package.json
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/sdk -type f \( -name "*.ts" -o -name "*.js" -o -name "*.py" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" \) | head -30
+reposcan-raw/gladiaio/sdk/.cursor/mcp.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/project.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/vitest.config.ts
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_session.test.ts
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/prerecorded_v2_async.test.ts
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_job_management.test.ts
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/tsconfig.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/package.json
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/tsdown.config.ts
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/project.json
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/tsconfig.json
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/src/index.ts
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/package.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/project.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/package.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/conftest.py
+reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/helpers.py
+reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/test_live_v2_session.py
+reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/test_live_v2_job_management.py
+reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/test_prerecorded_v2_async.py
+reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/__init__.py
+reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/test_live_v2_async_session.py
+reposcan-raw/gladiaio/sdk/e2e/e2e-python/project.json
+reposcan-raw/gladiaio/sdk/.github/workflows/ci.yml
+reposcan-raw/gladiaio/sdk/.github/workflows/release.yml
+reposcan-raw/gladiaio/sdk/.github/workflows/publish.yml
+reposcan-raw/gladiaio/sdk/.github/workflows/update-openapi-types.yml
+reposcan-raw/gladiaio/sdk/nx.json
+reposcan-raw/gladiaio/sdk/packages/sdk-js/tsdown.config.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/tsconfig.spec.json
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "x-gladia-key|Authorization|Bearer|apiKey" reposcan-raw/gladiaio/sdk/packages/sdk-js/src/ 2>/dev/null | head -30
+(no output)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/sdk/packages/sdk-js/src -type f -name "*.ts" | head -20
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/version.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/internal_types.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/helpers.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/wsClient.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/types.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/iso-ws.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/iso-fetch.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/wsClient.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/build-list-url.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/types.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/index.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.ts
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.ts
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/sdk/packages/sdk-python -type f -name "*.py" | head -20
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/conftest.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/test_client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_async_http_client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_helper.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_async_websocket_client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_http_client_redirect.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/live/test_connect_session.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/live/test_live_list.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/live/test_generated_types.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/core/test_build_list_endpoint.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/prerecorded/test_prerecorded_list.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/__init__.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/version.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/http_client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/websocket_client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/helper.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/__init__.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/_helpers.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/types.py
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/sdk/packages/sdk-python/src -type f -name "*.py" | head -20
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/version.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/http_client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/websocket_client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/helper.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/__init__.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/_helpers.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/types.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/async_session.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/session.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/async_client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/core.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/core.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/__init__.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/async_client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/client_options.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/client.py
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/client.py
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "169\.254\.169\.254|metadata\.google\.internal|metadata\.azure\.com|169\.254\.170\.2" reposcan-raw/gladiaio/ --type yaml --type json --type js --type ts --type py --type go --type rs 2>/dev/null | grep -v test | head -20
+(no output)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "(user[_-]?id|tenant[_-]?id|org[_-]?id|account[_-]?id|project[_-]?id)\s*[:=]" reposcan-raw/gladiaio/sdk/ --type ts --type py 2>/dev/null | head -20
+(no output)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/sdk/packages/generator -type f | head -20
+reposcan-raw/gladiaio/sdk/packages/generator/project.json
+reposcan-raw/gladiaio/sdk/packages/generator/tsconfig.json
+reposcan-raw/gladiaio/sdk/packages/generator/src/helpers.ts
+reposcan-raw/gladiaio/sdk/packages/generator/src/types.ts
+reposcan-raw/gladiaio/sdk/packages/generator/src/generators/typescript.ts
+reposcan-raw/gladiaio/sdk/packages/generator/src/generators/python.ts
+reposcan-raw/gladiaio/sdk/packages/generator/src/generators/base.ts
+reposcan-raw/gladiaio/sdk/packages/generator/src/cli.ts
+reposcan-raw/gladiaio/sdk/packages/generator/src/schema-fetcher.ts
+reposcan-raw/gladiaio/sdk/packages/generator/src/generator.ts
+reposcan-raw/gladiaio/sdk/packages/generator/README.md
+reposcan-raw/gladiaio/sdk/packages/generator/package.json
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/generator/src/schema-fetcher.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/gladia-cli -type f -name "*.go" | head -20
+reposcan-raw/gladiaio/gladia-cli/pkg/client/client.go
+reposcan-raw/gladiaio/gladia-cli/pkg/client/client_test.go
+reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe_test.go
+reposcan-raw/gladiaio/gladia-cli/pkg/client/transcription.go
+reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe.go
+reposcan-raw/gladiaio/gladia-cli/pkg/client/types/languages.go
+reposcan-raw/gladiaio/gladia-cli/pkg/client/types/languages_test.go
+reposcan-raw/gladiaio/gladia-cli/pkg/client/types/input.go
+reposcan-raw/gladiaio/gladia-cli/cmd/formatter.go
+reposcan-raw/gladiaio/gladia-cli/cmd/testhelpers_test.go
+reposcan-raw/gladiaio/gladia-cli/cmd/auth.go
+reposcan-raw/gladiaio/gladia-cli/cmd/transcribe_test.go
+reposcan-raw/gladiaio/gladia-cli/cmd/transcribe.go
+reposcan-raw/gladiaio/gladia-cli/cmd/root_test.go
+reposcan-raw/gladiaio/gladia-cli/cmd/languages.go
+reposcan-raw/gladiaio/gladia-cli/cmd/config.go
+reposcan-raw/gladiaio/gladia-cli/cmd/formatter_test.go
+reposcan-raw/gladiaio/gladia-cli/cmd/print_output_test.go
+reposcan-raw/gladiaio/gladia-cli/cmd/main.go
+reposcan-raw/gladiaio/gladia-cli/cmd/config_test.go
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-cli/pkg/client/client.go
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe.go
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/gladia-samples -type f -name "*.py" | head -20
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/pipecat-bot/main.py
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/livekit-agent/main.py
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py
+reposcan-raw/gladiaio/gladia-samples/python/examples/meeting_summary.py
+reposcan-raw/gladiaio/gladia-samples/python/examples/call_sentiment_analysis.py
+reposcan-raw/gladiaio/gladia-samples/python/examples/anonymized_call.py
+reposcan-raw/gladiaio/gladia-samples/python/examples/youtube_translation.py
+reposcan-raw/gladiaio/gladia-samples/python/core-concepts/pre-recorded/pre_recorded.py
+reposcan-raw/gladiaio/gladia-samples/python/core-concepts/pre-recorded/pre_recorded_async.py
+reposcan-raw/gladiaio/gladia-samples/python/core-concepts/live/live-from-microphone.py
+reposcan-raw/gladiaio/gladia-samples/python/core-concepts/live/live-from-file.py
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-samples/python/core-concepts/pre-recorded/pre_recorded.py
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/n8n-nodes-gladia -type f -name "*.ts" | head -20
+reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/GenericFunctions.ts
+reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts
+reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/Gladia.node.ts
+reposcan-raw/gladiaio/n8n-nodes-gladia/credentials/GladiaApi.credentials.ts
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/n8n-nodes-gladia/credentials/GladiaApi.credentials.ts
+[0m→ [0mRead reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/Gladia.node.ts
+[0m→ [0mRead reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/GenericFunctions.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/gladiaflow -type f -name "*.rs" | head -20
+reposcan-raw/gladiaio/gladiaflow/src-tauri/build.rs
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/permissions/accessibility.rs
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/permissions/mod.rs
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/config.rs
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/vocabulary.rs
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/audio.rs
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/hotkey.rs
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/gladia.rs
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/history.rs
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/utterance_cleaner.rs
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/hotkey_layout.rs
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/region.rs
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/gladiaflow/src-tauri/src/gladia.rs
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/realtime-multilingual-asr-router -type f -name "*.py" | head -20
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_coordinator.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_codeswitch_e2e.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_reinference.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_lid_constrained.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_progressive_lid.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/__init__.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_websocket_lifecycle.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_coordinator.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_vad.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_language_switch_detection.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_components.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_scheduler.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_config.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_session_state.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_rollback.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_asr.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_vad_stream.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_audio_buffer.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/__init__.py
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/realtime-multilingual-asr-router -type f -name "*.py" -path "*/src/*" | head -20
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/main.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/sample_clock.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/state.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/coordinator.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/language_switch.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/__init__.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/lid/voxlingua.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/lid/scheduler.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/lid/__init__.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/asr/kroko.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/asr/model_manager.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/asr/__init__.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/models/messages.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/models/exceptions.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/models/__init__.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/config.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/rollback/engine.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/rollback/__init__.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/audio/buffer.py
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/main.py
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "(sk-[a-zA-Z0-9]{20,}|ghp_[a-zA-Z0-9]{36}|gho_[a-zA-Z0-9]{36}|ghu_[a-zA-Z0-9]{36}|ghs_[a-zA-Z0-9]{36}|glpat-[a-zA-Z0-9]{20,}|xoxb-[a-zA-Z0-9-]{20,}|xoxp-[a-zA-Z0-9-]{20,}|AIza[0-9A-Za-z_-]{35}|ya29\.[0-9A-Za-z_-]{20,})" reposcan-raw/gladiaio/ 2>/dev/null | head -20
+(no output)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "(debug|internal|staging|dev|test)\.(gladia|api)" reposcan-raw/gladiaio/ --type js --type ts --type py --type go --type rs 2>/dev/null | head -20
+(no output)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "https?://[a-zA-Z0-9.-]+\.(gladia|api)\." reposcan-raw/gladiaio/ --type js --type ts --type py --type go --type rs 2>/dev/null | grep -v "api.gladia.io" | grep -v "docs.gladia.io" | head -20
+(no output)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/vercel-ai/packages/gladia -type f -name "*.ts" | head -20
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/tsup.config.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/version.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-config.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-api-types.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.test.ts
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/docs -type f -name "*.mdx" -o -name "*.md" | head -20
+reposcan-raw/gladiaio/docs/api-transcription-v1-deprecated/post-videotextvideo-transcription.mdx
+reposcan-raw/gladiaio/docs/api-transcription-v1-deprecated/post-audiotextaudio-transcription.mdx
+reposcan-raw/gladiaio/docs/api-reference/index.mdx
+reposcan-raw/gladiaio/docs/api-reference/authentication.mdx
+reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/get.mdx
+reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/get-audio.mdx
+reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/delete.mdx
+reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/list.mdx
+reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/init.mdx
+reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/webhook/error.mdx
+reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/webhook/success.mdx
+reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/webhook/created.mdx
+reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/callback/error.mdx
+reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/callback/success.mdx
+reposcan-raw/gladiaio/docs/api-reference/v2/live/get.mdx
+reposcan-raw/gladiaio/docs/api-reference/v2/live/websocket.mdx
+reposcan-raw/gladiaio/docs/api-reference/v2/live/get-audio.mdx
+reposcan-raw/gladiaio/docs/api-reference/v2/live/message/named-entity-recognition.mdx
+reposcan-raw/gladiaio/docs/api-reference/v2/live/message/start-session.mdx
+reposcan-raw/gladiaio/docs/api-reference/v2/live/message/stop-recording-ack.mdx
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/docs/api-reference/authentication.mdx
+[0m→ [0mRead reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/init.mdx
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -name "openapi.json" -o -name "swagger.json" 2>/dev/null
+(no output)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "callback[_-]?url|webhook[_-]?url|redirect[_-]?url|return[_-]?url" reposcan-raw/gladiaio/ --type js --type ts --type py --type go --type rs 2>/dev/null | grep -v test | head -20
+(no output)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "fetch\(|axios\.|requests\.|http\.Client|reqwest::" reposcan-raw/gladiaio/ --type js --type ts --type py --type go --type rs 2>/dev/null | grep -v test | grep -v "node_modules" | head -30
+(no output)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "fetch\(" reposcan-raw/gladiaio/sdk/ --type ts 2>/dev/null | head -20
+(no output)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "fetch" reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/ --type ts 2>/dev/null | head -20
+(no output)
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/iso-fetch.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/sdk/packages/sdk-js/package.json
 {
   "name": "@gladiaio/sdk",
   "description": "Gladia JavaScript/TypeScript SDK",
@@ -150,69 +388,7 @@ drwxr-xr-x  5 runner runner 4096 Sep 28 23:19 sdk-python
   }
 }
 [0m
-[0m$ [0mcat reposcan-raw/gladiaio/sdk/packages/sdk-python/pyproject.toml 2>/dev/null || cat reposcan-raw/gladiaio/sdk/packages/sdk-python/setup.py 2>/dev/null || echo "no pyproject/setup"
-[project]
-name = "gladiaio-sdk"
-version = "1.0.2"
-description = "Gladia SDK for Python"
-requires-python = ">=3.10,<4"
-readme = "README.md"
-dependencies = [
-  "dataclasses-json>=0.6.0",
-  "httpx>=0.28.0",
-  "pyee>=13.0.0",
-  "websockets>=15.0.0",
-  "marshmallow>=3.26.2"
-]
-
-[dependency-groups]
-dev = [
-  "autopep8>=2.3.1",
-  "ruff>=0.8.2",
-  "pygments>=2.20.0",
-  "pytest>=9.0.3",
-  "pytest-sugar>=1.0.0"
-]
-
-[build-system]
-requires = [ "hatchling" ]
-build-backend = "hatchling.build"
-
-[tool.hatch.build.targets.wheel]
-packages = [ "src/gladiaio_sdk" ]
-
-[tool.ruff]
-exclude = [ ".ruff_cache", ".svn", ".tox", ".venv", "dist" ]
-line-length = 100
-indent-width = 2
-
-  [tool.ruff.lint]
-  select = [ "E", "F", "UP", "B", "SIM", "I" ]
-  ignore = [ "E501" ]
-  fixable = [ "ALL" ]
-  unfixable = [ ]
-
-[tool.pyright]
-venvPath = "."
-venv = ".venv"
-typeCheckingMode = "standard"
-[0m
-[0m$ [0mls -la reposcan-raw/gladiaio/vercel-ai/packages/gladia/
-total 72
-drwxr-xr-x  3 runner runner  4096 Sep 28 23:20 .
-drwxr-xr-x 68 runner runner  4096 Sep 28 23:20 ..
--rw-r--r--  1 runner runner 26407 Sep 28 23:20 CHANGELOG.md
--rw-r--r--  1 runner runner  1376 Sep 28 23:20 README.md
--rw-r--r--  1 runner runner  2030 Sep 28 23:20 package.json
-drwxr-xr-x  4 runner runner  4096 Sep 28 23:20 src
--rw-r--r--  1 runner runner   139 Sep 28 23:20 tsconfig.build.json
--rw-r--r--  1 runner runner   404 Sep 28 23:20 tsconfig.json
--rw-r--r--  1 runner runner   337 Sep 28 23:20 tsup.config.ts
--rw-r--r--  1 runner runner   119 Sep 28 23:20 turbo.json
--rw-r--r--  1 runner runner   328 Sep 28 23:20 vitest.edge.config.js
--rw-r--r--  1 runner runner   320 Sep 28 23:20 vitest.node.config.js
-[0m
-[0m$ [0mcat reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
 {
   "name": "@ai-sdk/gladia",
   "version": "3.0.0-canary.48",
@@ -292,1132 +468,1344 @@ drwxr-xr-x  4 runner runner  4096 Sep 28 23:20 src
   ]
 }
 [0m
-[0m$ [0mcat reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts
-export { createGladia, gladia } from './gladia-provider';
-export type { GladiaProvider, GladiaProviderSettings } from './gladia-provider';
-export type { GladiaTranscriptionModelOptions } from './gladia-transcription-model-options';
-export { VERSION } from './version';
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -path "*/.github/workflows/*.yml" -o -path "*/.github/workflows/*.yaml" | head -20
+reposcan-raw/gladiaio/vercel-ai/.github/workflows/ci.yml
+reposcan-raw/gladiaio/vercel-ai/.github/workflows/slack-team-review-notification.yml
+reposcan-raw/gladiaio/vercel-ai/.github/workflows/verify-changesets.yml
+reposcan-raw/gladiaio/vercel-ai/.github/workflows/auto-merge-release-prs.yml
+reposcan-raw/gladiaio/vercel-ai/.github/workflows/ai-provider-models.yml
+reposcan-raw/gladiaio/vercel-ai/.github/workflows/slack-workflow-failure-notification.yml
+reposcan-raw/gladiaio/vercel-ai/.github/workflows/ai-provider-api-changes.yml
+reposcan-raw/gladiaio/vercel-ai/.github/workflows/backport.yml
+reposcan-raw/gladiaio/vercel-ai/.github/workflows/release.yml
+reposcan-raw/gladiaio/vercel-ai/.github/workflows/update-model-settings.yml
+reposcan-raw/gladiaio/vercel-ai/.github/workflows/assign-team-pull-request.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/ci.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/crates.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/pr-size.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/refresh-readme-badges.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/aur-publish.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/scheduled-test.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/codeql-analysis.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/e2e-tests.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/lint.yml
 [0m
-[0m$ [0mcat reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts
-import {
-  NoSuchModelError,
-  type TranscriptionModelV4,
-  type ProviderV4,
-} from '@ai-sdk/provider';
-import {
-  loadApiKey,
-  withUserAgentSuffix,
-  type FetchFunction,
-} from '@ai-sdk/provider-utils';
-import { GladiaTranscriptionModel } from './gladia-transcription-model';
-import { VERSION } from './version';
-
-export interface GladiaProvider extends ProviderV4 {
-  (): {
-    transcription: GladiaTranscriptionModel;
-  };
-
-  /**
-   * Creates a model for transcription.
-   */
-  transcription(): TranscriptionModelV4;
-
-  /**
-   * @deprecated Use `embeddingModel` instead.
-   */
-  textEmbeddingModel(modelId: string): never;
-}
-
-export interface GladiaProviderSettings {
-  /**
-   * API key for authenticating requests.
-   */
-  apiKey?: string;
-
-  /**
-   * Custom headers to include in the requests.
-   */
-  headers?: Record<string, string>;
-
-  /**
-   * Custom fetch implementation. You can use it as a middleware to intercept requests,
-   * or to provide a custom fetch implementation for e.g. testing.
-   */
-  fetch?: FetchFunction;
-}
-
-/**
- * Create a Gladia provider instance.
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -path "*/.github/workflows/*.yml" -o -path "*/.github/workflows/*.yaml" | grep -v vercel-ai
+reposcan-raw/gladiaio/num2words2/.github/workflows/ci.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/crates.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/pr-size.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/refresh-readme-badges.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/aur-publish.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/scheduled-test.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/codeql-analysis.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/e2e-tests.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/lint.yml
+reposcan-raw/gladiaio/num2words2/.github/workflows/release.yml
+reposcan-raw/gladiaio/normalization/.github/workflows/ci.yml
+reposcan-raw/gladiaio/normalization/.github/workflows/cd.yml
+reposcan-raw/gladiaio/n8n-nodes-gladia/.github/workflows/ci.yml
+reposcan-raw/gladiaio/n8n-nodes-gladia/.github/workflows/publish.yml
+reposcan-raw/gladiaio/gladiaflow/.github/workflows/ci.yml
+reposcan-raw/gladiaio/gladiaflow/.github/workflows/release.yml
+reposcan-raw/gladiaio/gladiaflow/.github/workflows/commitlint.yml
+reposcan-raw/gladiaio/gladia-samples/.github/workflows/validate-samples.yml
+reposcan-raw/gladiaio/skills/.github/workflows/publish-clawhub.yml
+reposcan-raw/gladiaio/skills/.github/workflows/sync-documentation.yml
+reposcan-raw/gladiaio/skills/.github/workflows/commitlint.yml
+reposcan-raw/gladiaio/skills/.github/workflows/sync-sdk-versions.yml
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/.github/workflows/ci.yml
+reposcan-raw/gladiaio/docs/.github/workflows/mintlify.yml
+reposcan-raw/gladiaio/sdk/.github/workflows/ci.yml
+reposcan-raw/gladiaio/sdk/.github/workflows/release.yml
+reposcan-raw/gladiaio/sdk/.github/workflows/publish.yml
+reposcan-raw/gladiaio/sdk/.github/workflows/update-openapi-types.yml
+reposcan-raw/gladiaio/gladia-cli/.github/workflows/main.yml
+reposcan-raw/gladiaio/gladia-cli/.github/workflows/codeql.yml
+reposcan-raw/gladiaio/gladia-cli/.github/workflows/release.yml
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/.github/workflows/publish.yml
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/.github/workflows/update-openapi-types.yml
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "audio_url|audioUrl" reposcan-raw/gladiaio/sdk/ --type ts --type py 2>/dev/null | head -20
+(no output)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded -type f -name "*.ts" | head -20
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.list.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/index.ts
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.ts
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live -name "generated-types.ts" -exec cat {} \;
+/*
+ * This file is auto-generated. Do not edit manually.
+ * Generated from OpenAPI schema.
  */
-export function createGladia(
-  options: GladiaProviderSettings = {},
-): GladiaProvider {
-  const getHeaders = () =>
-    withUserAgentSuffix(
-      {
-        'x-gladia-key': loadApiKey({
-          apiKey: options.apiKey,
-          environmentVariableName: 'GLADIA_API_KEY',
-          description: 'Gladia',
-        }),
-        ...options.headers,
-      },
-      `ai-sdk/gladia/${VERSION}`,
-    );
 
-  const createTranscriptionModel = () =>
-    new GladiaTranscriptionModel('default', {
-      provider: `gladia.transcription`,
-      url: ({ path }) => `https://api.gladia.io${path}`,
-      headers: getHeaders,
-      fetch: options.fetch,
-    });
+// Shared Types Types
+export type LiveV2Encoding = 'wav/pcm' | 'wav/alaw' | 'wav/ulaw'
 
-  const provider = function () {
-    return {
-      transcription: createTranscriptionModel(),
-    };
-  };
+export type LiveV2BitDepth = 8 | 16 | 24 | 32
 
-  provider.specificationVersion = 'v4' as const;
-  provider.transcription = createTranscriptionModel;
-  provider.transcriptionModel = createTranscriptionModel;
+export type LiveV2SampleRate = 8000 | 16000 | 32000 | 44100 | 48000
 
-  // Required ProviderV4 methods that are not supported
-  provider.languageModel = (modelId: string) => {
-    throw new NoSuchModelError({
-      modelId,
-      modelType: 'languageModel',
-      message: 'Gladia does not provide language models',
-    });
-  };
+export type LiveV2Model = 'solaria-1'
 
-  provider.embeddingModel = (modelId: string) => {
-    throw new NoSuchModelError({
-      modelId,
-      modelType: 'embeddingModel',
-      message: 'Gladia does not provide embedding models',
-    });
-  };
-  provider.textEmbeddingModel = provider.embeddingModel;
+export type LiveV2TranscriptionLanguageCode =
+  | 'af'
+  | 'am'
+  | 'ar'
+  | 'as'
+  | 'az'
+  | 'ba'
+  | 'be'
+  | 'bg'
+  | 'bn'
+  | 'bo'
+  | 'br'
+  | 'bs'
+  | 'ca'
+  | 'cs'
+  | 'cy'
+  | 'da'
+  | 'de'
+  | 'el'
+  | 'en'
+  | 'es'
+  | 'et'
+  | 'eu'
+  | 'fa'
+  | 'fi'
+  | 'fo'
+  | 'fr'
+  | 'gl'
+  | 'gu'
+  | 'ha'
+  | 'haw'
+  | 'he'
+  | 'hi'
+  | 'hr'
+  | 'ht'
+  | 'hu'
+  | 'hy'
+  | 'id'
+  | 'is'
+  | 'it'
+  | 'ja'
+  | 'jw'
+  | 'ka'
+  | 'kk'
+  | 'km'
+  | 'kn'
+  | 'ko'
+  | 'la'
+  | 'lb'
+  | 'ln'
+  | 'lo'
+  | 'lt'
+  | 'lv'
+  | 'mg'
+  | 'mi'
+  | 'mk'
+  | 'ml'
+  | 'mn'
+  | 'mr'
+  | 'ms'
+  | 'mt'
+  | 'my'
+  | 'ne'
+  | 'nl'
+  | 'nn'
+  | 'no'
+  | 'oc'
+  | 'pa'
+  | 'pl'
+  | 'ps'
+  | 'pt'
+  | 'ro'
+  | 'ru'
+  | 'sa'
+  | 'sd'
+  | 'si'
+  | 'sk'
+  | 'sl'
+  | 'sn'
+  | 'so'
+  | 'sq'
+  | 'sr'
+  | 'su'
+  | 'sv'
+  | 'sw'
+  | 'ta'
+  | 'te'
+  | 'tg'
+  | 'th'
+  | 'tk'
+  | 'tl'
+  | 'tr'
+  | 'tt'
+  | 'uk'
+  | 'ur'
+  | 'uz'
+  | 'vi'
+  | 'yi'
+  | 'yo'
+  | 'zh'
 
-  provider.imageModel = (modelId: string) => {
-    throw new NoSuchModelError({
-      modelId,
-      modelType: 'imageModel',
-      message: 'Gladia does not provide image models',
-    });
-  };
-
-  return provider as GladiaProvider;
+export interface LiveV2LanguageConfig {
+  /** If one language is set, it will be used for the transcription. Otherwise, language will be auto-detected by the model. */
+  languages?: Array<LiveV2TranscriptionLanguageCode>
+  /** If true, language will be auto-detected on each utterance. Otherwise, language will be auto-detected on first utterance and then used for the rest of the transcription. If one language is set, this option will be ignored. */
+  code_switching?: boolean
 }
 
-/**
- * Default Gladia provider instance.
- */
-export const gladia = createGladia();
-[0m
-[0m$ [0mcat reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts
-import {
-  AISDKError,
-  type TranscriptionModelV4,
-  type SharedV4Warning,
-} from '@ai-sdk/provider';
-import {
-  combineHeaders,
-  convertBase64ToUint8Array,
-  createJsonResponseHandler,
-  mediaTypeToExtension,
-  delay,
-  getFromApi,
-  isSameOrigin,
-  parseProviderOptions,
-  postFormDataToApi,
-  postJsonToApi,
-  serializeModelOptions,
-  WORKFLOW_SERIALIZE,
-  WORKFLOW_DESERIALIZE,
-} from '@ai-sdk/provider-utils';
-import { z } from 'zod/v4';
-import type { GladiaConfig } from './gladia-config';
-import { gladiaFailedResponseHandler } from './gladia-error';
-import { gladiaTranscriptionModelOptionsSchema } from './gladia-transcription-model-options';
-import type { GladiaTranscriptionInitiateAPITypes } from './gladia-api-types';
-
-interface GladiaTranscriptionModelConfig extends GladiaConfig {
-  _internal?: {
-    currentDate?: () => Date;
-  };
+export interface LiveV2PreProcessingConfig {
+  /** If true, apply pre-processing to the audio stream to enhance the quality. */
+  audio_enhancer?: boolean
+  /** Sensitivity configuration for Speech Threshold. A value close to 1 will apply stricter thresholds, making it less likely to detect background sounds as speech. */
+  speech_threshold?: number
 }
 
-export class GladiaTranscriptionModel implements TranscriptionModelV4 {
-  readonly specificationVersion = 'v4';
-
-  get provider(): string {
-    return this.config.provider;
-  }
-
-  static [WORKFLOW_SERIALIZE](model: GladiaTranscriptionModel) {
-    return serializeModelOptions({
-      modelId: model.modelId,
-      config: model.config,
-    });
-  }
-
-  static [WORKFLOW_DESERIALIZE](options: {
-    modelId: 'default';
-    config: GladiaTranscriptionModelConfig;
-  }) {
-    return new GladiaTranscriptionModel(options.modelId, options.config);
-  }
-
-  constructor(
-    readonly modelId: string,
-    private readonly config: GladiaTranscriptionModelConfig,
-  ) {}
-
-  private async getArgs({
-    providerOptions,
-  }: Parameters<TranscriptionModelV4['doGenerate']>[0]) {
-    const warnings: SharedV4Warning[] = [];
-
-    // Parse provider options
-    const gladiaOptions = await parseProviderOptions({
-      provider: 'gladia',
-      providerOptions,
-      schema: gladiaTranscriptionModelOptionsSchema,
-    });
-
-    const body: Omit<GladiaTranscriptionInitiateAPITypes, 'audio_url'> = {};
-
-    // Add provider-specific options
-    if (gladiaOptions) {
-      body.context_prompt = gladiaOptions.contextPrompt ?? undefined;
-      body.custom_vocabulary = gladiaOptions.customVocabulary ?? undefined;
-      body.detect_language = gladiaOptions.detectLanguage ?? undefined;
-      body.enable_code_switching =
-        gladiaOptions.enableCodeSwitching ?? undefined;
-      body.language = gladiaOptions.language ?? undefined;
-      body.callback = gladiaOptions.callback ?? undefined;
-      body.subtitles = gladiaOptions.subtitles ?? undefined;
-      body.diarization = gladiaOptions.diarization ?? undefined;
-      body.translation = gladiaOptions.translation ?? undefined;
-      body.summarization = gladiaOptions.summarization ?? undefined;
-      body.moderation = gladiaOptions.moderation ?? undefined;
-      body.named_entity_recognition =
-        gladiaOptions.namedEntityRecognition ?? undefined;
-      body.chapterization = gladiaOptions.chapterization ?? undefined;
-      body.name_consistency = gladiaOptions.nameConsistency ?? undefined;
-      body.custom_spelling = gladiaOptions.customSpelling ?? undefined;
-      body.structured_data_extraction =
-        gladiaOptions.structuredDataExtraction ?? undefined;
-      body.structured_data_extraction_config =
-        gladiaOptions.structuredDataExtractionConfig ?? undefined;
-      body.sentiment_analysis = gladiaOptions.sentimentAnalysis ?? undefined;
-      body.audio_to_llm = gladiaOptions.audioToLlm ?? undefined;
-      body.audio_to_llm_config = gladiaOptions.audioToLlmConfig ?? undefined;
-      body.custom_metadata = gladiaOptions.customMetadata ?? undefined;
-      body.sentences = gladiaOptions.sentences ?? undefined;
-      body.display_mode = gladiaOptions.displayMode ?? undefined;
-      body.punctuation_enhanced =
-        gladiaOptions.punctuationEnhanced ?? undefined;
-
-      if (gladiaOptions.customVocabularyConfig) {
-        body.custom_vocabulary_config = {
-          vocabulary: gladiaOptions.customVocabularyConfig.vocabulary.map(
-            item => {
-              if (typeof item === 'string') return item;
-              return {
-                value: item.value,
-                intensity: item.intensity ?? undefined,
-                pronunciations: item.pronunciations ?? undefined,
-                language: item.language ?? undefined,
-              };
-            },
-          ),
-          default_intensity:
-            gladiaOptions.customVocabularyConfig.defaultIntensity ?? undefined,
-        };
-      }
-
-      // Handle code switching config
-      if (gladiaOptions.codeSwitchingConfig) {
-        body.code_switching_config = {
-          languages: gladiaOptions.codeSwitchingConfig.languages ?? undefined,
-        };
-      }
-
-      // Handle callback config
-      if (gladiaOptions.callbackConfig) {
-        body.callback_config = {
-          url: gladiaOptions.callbackConfig.url,
-          method: gladiaOptions.callbackConfig.method ?? undefined,
-        };
-      }
-
-      // Handle subtitles config
-      if (gladiaOptions.subtitlesConfig) {
-        body.subtitles_config = {
-          formats: gladiaOptions.subtitlesConfig.formats ?? undefined,
-          minimum_duration:
-            gladiaOptions.subtitlesConfig.minimumDuration ?? undefined,
-          maximum_duration:
-            gladiaOptions.subtitlesConfig.maximumDuration ?? undefined,
-          maximum_characters_per_row:
-            gladiaOptions.subtitlesConfig.maximumCharactersPerRow ?? undefined,
-          maximum_rows_per_caption:
-            gladiaOptions.subtitlesConfig.maximumRowsPerCaption ?? undefined,
-          style: gladiaOptions.subtitlesConfig.style ?? undefined,
-        };
-      }
-
-      // Handle diarization config
-      if (gladiaOptions.diarizationConfig) {
-        body.diarization_config = {
-          number_of_speakers:
-            gladiaOptions.diarizationConfig.numberOfSpeakers ?? undefined,
-          min_speakers:
-            gladiaOptions.diarizationConfig.minSpeakers ?? undefined,
-          max_speakers:
-            gladiaOptions.diarizationConfig.maxSpeakers ?? undefined,
-          enhanced: gladiaOptions.diarizationConfig.enhanced ?? undefined,
-        };
-      }
-
-      // Handle translation config
-      if (gladiaOptions.translationConfig) {
-        body.translation_config = {
-          target_languages: gladiaOptions.translationConfig.targetLanguages,
-          model: gladiaOptions.translationConfig.model ?? undefined,
-          match_original_utterances:
-            gladiaOptions.translationConfig.matchOriginalUtterances ??
-            undefined,
-        };
-      }
-
-      // Handle summarization config
-      if (gladiaOptions.summarizationConfig) {
-        body.summarization_config = {
-          type: gladiaOptions.summarizationConfig.type ?? undefined,
-        };
-      }
-
-      // Handle custom spelling config
-      if (gladiaOptions.customSpellingConfig) {
-        body.custom_spelling_config = {
-          spelling_dictionary:
-            gladiaOptions.customSpellingConfig.spellingDictionary,
-        };
-      }
-    }
-
-    return {
-      body,
-      warnings,
-    };
-  }
-
-  async doGenerate(
-    options: Parameters<TranscriptionModelV4['doGenerate']>[0],
-  ): Promise<Awaited<ReturnType<TranscriptionModelV4['doGenerate']>>> {
-    const currentDate = this.config._internal?.currentDate?.() ?? new Date();
-
-    // Create form data with base fields
-    const formData = new FormData();
-    const blob =
-      options.audio instanceof Uint8Array
-        ? new Blob([options.audio])
-        : new Blob([convertBase64ToUint8Array(options.audio)]);
-
-    const fileExtension = mediaTypeToExtension(options.mediaType);
-    formData.append(
-      'audio',
-      new File([blob], 'audio', { type: options.mediaType }),
-      `audio.${fileExtension}`,
-    );
-
-    const { value: uploadResponse } = await postFormDataToApi({
-      url: this.config.url({
-        path: '/v2/upload',
-        modelId: 'default',
-      }),
-      headers: combineHeaders(this.config.headers?.(), options.headers),
-      formData,
-      failedResponseHandler: gladiaFailedResponseHandler,
-      successfulResponseHandler: createJsonResponseHandler(
-        gladiaUploadResponseSchema,
-      ),
-      abortSignal: options.abortSignal,
-      fetch: this.config.fetch,
-    });
-
-    const { body, warnings } = await this.getArgs(options);
-
-    const { value: transcriptionInitResponse } = await postJsonToApi({
-      url: this.config.url({
-        path: '/v2/pre-recorded',
-        modelId: 'default',
-      }),
-      headers: combineHeaders(this.config.headers?.(), options.headers),
-      body: {
-        ...body,
-        audio_url: uploadResponse.audio_url,
-      },
-      failedResponseHandler: gladiaFailedResponseHandler,
-      successfulResponseHandler: createJsonResponseHandler(
-        gladiaTranscriptionInitializeResponseSchema,
-      ),
-      abortSignal: options.abortSignal,
-      fetch: this.config.fetch,
-    });
-
-    // Poll the result URL until the transcription is done or an error occurs.
-    // The result URL comes from the provider response; only send credentials
-    // when it stays on the provider's own origin.
-    const resultUrl = transcriptionInitResponse.result_url;
-    const apiOrigin = this.config.url({ modelId: 'default', path: '' });
-    let transcriptionResult;
-    let transcriptionResultHeaders;
-    const timeoutMs = 60 * 1000; // 60 seconds timeout
-    const startTime = Date.now();
-    const pollingInterval = 1000;
-
-    while (true) {
-      // Check if we've exceeded the timeout
-      if (Date.now() - startTime > timeoutMs) {
-        throw new AISDKError({
-          message: 'Transcription job polling timed out',
-          name: 'TranscriptionJobPollingTimedOut',
-          cause: transcriptionResult,
-        });
-      }
-
-      const response = await getFromApi({
-        url: resultUrl,
-        headers: isSameOrigin(resultUrl, apiOrigin)
-          ? combineHeaders(this.config.headers?.(), options.headers)
-          : undefined,
-        failedResponseHandler: gladiaFailedResponseHandler,
-        successfulResponseHandler: createJsonResponseHandler(
-          gladiaTranscriptionResultResponseSchema,
-        ),
-        abortSignal: options.abortSignal,
-        fetch: this.config.fetch,
-      });
-
-      transcriptionResult = response.value;
-      transcriptionResultHeaders = response.responseHeaders;
-
-      if (transcriptionResult.status === 'done') {
-        break;
-      }
-
-      if (transcriptionResult.status === 'error') {
-        throw new AISDKError({
-          message: 'Transcription job failed',
-          name: 'TranscriptionJobFailed',
-          cause: transcriptionResult,
-        });
-      }
-
-      // Wait for the configured polling interval before checking again
-      await delay(pollingInterval);
-    }
-
-    if (!transcriptionResult.result) {
-      throw new AISDKError({
-        message: 'Transcription result is empty',
-        name: 'TranscriptionResultEmpty',
-        cause: transcriptionResult,
-      });
-    }
-
-    // Process the successful result
-    return {
-      text: transcriptionResult.result.transcription.full_transcript,
-      durationInSeconds: transcriptionResult.result.metadata.audio_duration,
-      language: transcriptionResult.result.transcription.languages.at(0),
-      segments: transcriptionResult.result.transcription.utterances.map(
-        utterance => ({
-          text: utterance.text,
-          startSecond: utterance.start,
-          endSecond: utterance.end,
-        }),
-      ),
-      response: {
-        timestamp: currentDate,
-        modelId: 'default',
-        headers: transcriptionResultHeaders,
-      },
-      providerMetadata: {
-        gladia: transcriptionResult,
-      },
-      warnings,
-    };
-  }
+export interface LiveV2CustomVocabularyEntry {
+  /** The text used to replace in the transcription. */
+  value: string
+  /** The global intensity of the feature. */
+  intensity?: number
+  /** The pronunciations used in the transcription. */
+  pronunciations?: Array<string>
+  /** Specify the language in which it will be pronounced when sound comparison occurs. Default to transcription language. */
+  language?: LiveV2TranscriptionLanguageCode
 }
 
-const gladiaUploadResponseSchema = z.object({
-  audio_url: z.string(),
-});
-
-const gladiaTranscriptionInitializeResponseSchema = z.object({
-  result_url: z.string(),
-});
-
-const gladiaTranscriptionResultResponseSchema = z.object({
-  status: z.enum(['queued', 'processing', 'done', 'error']),
-  result: z
-    .object({
-      metadata: z.object({
-        audio_duration: z.number(),
-      }),
-      transcription: z.object({
-        full_transcript: z.string(),
-        languages: z.array(z.string()),
-        utterances: z.array(
-          z.object({
-            start: z.number(),
-            end: z.number(),
-            text: z.string(),
-          }),
-        ),
-      }),
-    })
-    .nullish(),
-});
-[0m
-[0m$ [0mls -la reposcan-raw/gladiaio/sdk/packages/generator/
-total 28
-drwxr-xr-x 3 runner runner 4096 Sep 28 23:19 .
-drwxr-xr-x 5 runner runner 4096 Sep 28 23:19 ..
--rw-r--r-- 1 runner runner  160 Sep 28 23:19 README.md
--rw-r--r-- 1 runner runner  698 Sep 28 23:19 package.json
--rw-r--r-- 1 runner runner  547 Sep 28 23:19 project.json
-drwxr-xr-x 3 runner runner 4096 Sep 28 23:19 src
--rw-r--r-- 1 runner runner  137 Sep 28 23:19 tsconfig.json
-[0m
-[0m$ [0mcat reposcan-raw/gladiaio/sdk/packages/generator/src/index.ts
-cat: reposcan-raw/gladiaio/sdk/packages/generator/src/index.ts: No such file or directory
-[0m
-[0m$ [0mfind reposcan-raw/gladiaio/sdk/packages/generator -name "*.ts" -o -name "*.js"
-reposcan-raw/gladiaio/sdk/packages/generator/src/helpers.ts
-reposcan-raw/gladiaio/sdk/packages/generator/src/types.ts
-reposcan-raw/gladiaio/sdk/packages/generator/src/generators/typescript.ts
-reposcan-raw/gladiaio/sdk/packages/generator/src/generators/python.ts
-reposcan-raw/gladiaio/sdk/packages/generator/src/generators/base.ts
-reposcan-raw/gladiaio/sdk/packages/generator/src/cli.ts
-reposcan-raw/gladiaio/sdk/packages/generator/src/schema-fetcher.ts
-reposcan-raw/gladiaio/sdk/packages/generator/src/generator.ts
-[0m
-[0m$ [0mcat reposcan-raw/gladiaio/sdk/packages/generator/src/schema-fetcher.ts
-import type { OpenAPIObject } from './types.ts'
-
-export async function fetchSchema(url: string): Promise<OpenAPIObject> {
-  try {
-    const response = await fetch(url)
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch schema: ${response.status} ${response.statusText}`)
-    }
-
-    const contentType = response.headers.get('content-type')
-    if (!contentType?.includes('application/json')) {
-      throw new Error(`Expected JSON content type, got: ${contentType}`)
-    }
-
-    const schema = (await response.json()) as OpenAPIObject
-
-    // Basic validation
-    if (!schema.openapi) {
-      throw new Error('Invalid OpenAPI schema: missing openapi field')
-    }
-
-    if (!schema.paths) {
-      throw new Error('Invalid OpenAPI schema: missing paths field')
-    }
-
-    return schema
-  } catch (error) {
-    if (error instanceof Error) {
-      throw new Error(`Schema fetch failed: ${error.message}`)
-    }
-    throw new Error('Unknown error occurred while fetching schema')
-  }
+export interface LiveV2CustomVocabularyConfig {
+  /** Specific vocabulary list to feed the transcription model with. Each item can be a string or an object with the following properties: value, intensity, pronunciations, language. */
+  vocabulary: Array<LiveV2CustomVocabularyEntry | string>
+  /** Default intensity for the custom vocabulary */
+  default_intensity?: number
 }
-[0m
-[0m$ [0mcat reposcan-raw/gladiaio/sdk/packages/generator/src/cli.ts
-import { Command } from 'commander'
-import * as process from 'process'
-import { Generator } from './generator.ts'
 
-interface CliOptions {
+export interface LiveV2CustomSpellingConfig {
+  /** The list of spelling applied on the audio transcription */
+  spelling_dictionary: Record<string, Array<string>>
+}
+
+export type LiveV2TranslationLanguageCode =
+  | 'af'
+  | 'am'
+  | 'ar'
+  | 'as'
+  | 'az'
+  | 'ba'
+  | 'be'
+  | 'bg'
+  | 'bn'
+  | 'bo'
+  | 'br'
+  | 'bs'
+  | 'ca'
+  | 'cs'
+  | 'cy'
+  | 'da'
+  | 'de'
+  | 'el'
+  | 'en'
+  | 'es'
+  | 'et'
+  | 'eu'
+  | 'fa'
+  | 'fi'
+  | 'fo'
+  | 'fr'
+  | 'gl'
+  | 'gu'
+  | 'ha'
+  | 'haw'
+  | 'he'
+  | 'hi'
+  | 'hr'
+  | 'ht'
+  | 'hu'
+  | 'hy'
+  | 'id'
+  | 'is'
+  | 'it'
+  | 'ja'
+  | 'jw'
+  | 'ka'
+  | 'kk'
+  | 'km'
+  | 'kn'
+  | 'ko'
+  | 'la'
+  | 'lb'
+  | 'ln'
+  | 'lo'
+  | 'lt'
+  | 'lv'
+  | 'mg'
+  | 'mi'
+  | 'mk'
+  | 'ml'
+  | 'mn'
+  | 'mr'
+  | 'ms'
+  | 'mt'
+  | 'my'
+  | 'ne'
+  | 'nl'
+  | 'nn'
+  | 'no'
+  | 'oc'
+  | 'pa'
+  | 'pl'
+  | 'ps'
+  | 'pt'
+  | 'ro'
+  | 'ru'
+  | 'sa'
+  | 'sd'
+  | 'si'
+  | 'sk'
+  | 'sl'
+  | 'sn'
+  | 'so'
+  | 'sq'
+  | 'sr'
+  | 'su'
+  | 'sv'
+  | 'sw'
+  | 'ta'
+  | 'te'
+  | 'tg'
+  | 'th'
+  | 'tk'
+  | 'tl'
+  | 'tr'
+  | 'tt'
+  | 'uk'
+  | 'ur'
+  | 'uz'
+  | 'vi'
+  | 'wo'
+  | 'yi'
+  | 'yo'
+  | 'zh'
+
+export type LiveV2TranslationModel = 'base' | 'batch' | 'enhanced'
+
+export interface LiveV2TranslationConfig {
+  /** Target language in `iso639-1` format you want the transcription translated to */
+  target_languages: Array<LiveV2TranslationLanguageCode>
+  /** Model you want the translation model to use to translate */
+  model?: LiveV2TranslationModel
+  /** Align translated utterances with the original ones */
+  match_original_utterances?: boolean
+  /** Whether to apply lipsync to the translated transcription.  */
+  lipsync?: boolean
+  /** Enables or disables context-aware translation features that allow the model to adapt translations based on provided context. */
+  context_adaptation?: boolean
+  /** Context information to improve translation accuracy */
+  context?: string
+  /** Forces the translation to use informal language forms when available in the target language. */
+  informal?: boolean
+}
+
+export interface LiveV2RealtimeProcessingConfig {
+  /** If true, enable custom vocabulary for the transcription. */
+  custom_vocabulary?: boolean
+  /** Custom vocabulary configuration, if `custom_vocabulary` is enabled */
+  custom_vocabulary_config?: LiveV2CustomVocabularyConfig
+  /** If true, enable custom spelling for the transcription. */
+  custom_spelling?: boolean
+  /** Custom spelling configuration, if `custom_spelling` is enabled */
+  custom_spelling_config?: LiveV2CustomSpellingConfig
+  /** If true, enable translation for the transcription */
+  translation?: boolean
+  /** Translation configuration, if `translation` is enabled */
+  translation_config?: LiveV2TranslationConfig
+  /** If true, enable named entity recognition for the transcription. */
+  named_entity_recognition?: boolean
+  /** If true, enable sentiment analysis for the transcription. */
+  sentiment_analysis?: boolean
+}
+
+export type LiveV2SummaryType = 'general' | 'bullet_points' | 'concise'
+
+export interface LiveV2SummarizationConfig {
+  /** The type of summarization to apply */
+  type?: LiveV2SummaryType
+}
+
+export interface LiveV2PostProcessingConfig {
+  /** If true, generates summarization for the whole transcription. */
+  summarization?: boolean
+  /** Summarization configuration, if `summarization` is enabled */
+  summarization_config?: LiveV2SummarizationConfig
+  /** Deprecated: this parameter is ignored. */
+  chapterization?: boolean
+}
+
+export interface LiveV2MessagesConfig {
+  /** If true, partial transcript will be sent to websocket. */
+  receive_partial_transcripts?: boolean
+  /** If true, final transcript will be sent to websocket. */
+  receive_final_transcripts?: boolean
+  /** If true, begin and end speech events will be sent to websocket. */
+  receive_speech_events?: boolean
+  /** If true, pre-processing events will be sent to websocket. */
+  receive_pre_processing_events?: boolean
+  /** If true, realtime processing events will be sent to websocket. */
+  receive_realtime_processing_events?: boolean
+  /** If true, post-processing events will be sent to websocket. */
+  receive_post_processing_events?: boolean
+  /** If true, acknowledgments will be sent to websocket. */
+  receive_acknowledgments?: boolean
+  /** If true, errors will be sent to websocket. */
+  receive_errors?: boolean
+  /** If true, lifecycle events will be sent to websocket. */
+  receive_lifecycle_events?: boolean
+}
+
+export interface LiveV2CallbackConfig {
+  /** URL on which we will do a `POST` request with configured messages */
+  url?: string
+  /** If true, partial transcript will be sent to the defined callback. */
+  receive_partial_transcripts?: boolean
+  /** If true, final transcript will be sent to the defined callback. */
+  receive_final_transcripts?: boolean
+  /** If true, begin and end speech events will be sent to the defined callback. */
+  receive_speech_events?: boolean
+  /** If true, pre-processing events will be sent to the defined callback. */
+  receive_pre_processing_events?: boolean
+  /** If true, realtime processing events will be sent to the defined callback. */
+  receive_realtime_processing_events?: boolean
+  /** If true, post-processing events will be sent to the defined callback. */
+  receive_post_processing_events?: boolean
+  /** If true, acknowledgments will be sent to the defined callback. */
+  receive_acknowledgments?: boolean
+  /** If true, errors will be sent to the defined callback. */
+  receive_errors?: boolean
+  /** If true, lifecycle events will be sent to the defined callback. */
+  receive_lifecycle_events?: boolean
+}
+
+export interface LiveV2FileResponse {
+  /** The file id */
+  id: string
+  /** The name of the uploaded file */
+  filename: string | null
+  /** The link used to download the file if audio_url was used */
+  source: string | null
+  /** Duration of the audio file */
+  audio_duration: number | null
+  /** Number of channels in the audio file */
+  number_of_channels: number | null
+}
+
+export interface LiveV2RequestParamsResponse {
+  /** The encoding format of the audio stream. Supported formats: 
+- PCM: 8, 16, 24, and 32 bits 
+- A-law: 8 bits 
+- μ-law: 8 bits 
+
+Note: No need to add WAV headers to raw audio as the API supports both formats. */
+  encoding?: LiveV2Encoding
+  /** The bit depth of the audio stream */
+  bit_depth?: LiveV2BitDepth
+  /** The sample rate of the audio stream */
+  sample_rate?: LiveV2SampleRate
+  /** The number of channels of the audio stream */
+  channels?: number
+  /** The model used to process the audio. "solaria-1" is used by default. */
+  model?: LiveV2Model
+  /** The endpointing duration in seconds. Endpointing is the duration of silence which will cause an utterance to be considered as finished */
+  endpointing?: number
+  /** The maximum duration in seconds without endpointing. If endpointing is not detected after this duration, current utterance will be considered as finished */
+  maximum_duration_without_endpointing?: number
+  /** Specify the language configuration */
+  language_config?: LiveV2LanguageConfig
+  /** Specify the pre-processing configuration */
+  pre_processing?: LiveV2PreProcessingConfig
+  /** Specify the realtime processing configuration */
+  realtime_processing?: LiveV2RealtimeProcessingConfig
+  /** Specify the post-processing configuration */
+  post_processing?: LiveV2PostProcessingConfig
+  /** Specify the websocket messages configuration */
+  messages_config?: LiveV2MessagesConfig
+  /** If true, messages will be sent to configured url. */
+  callback?: boolean
+  /** Specify the callback configuration */
+  callback_config?: LiveV2CallbackConfig
+}
+
+export interface LiveV2TranscriptionMetadata {
+  /** Duration of the transcribed audio file */
+  audio_duration: number
+  /** Number of distinct channels in the transcribed audio file */
+  number_of_distinct_channels: number
+  /** Billed duration in seconds (audio_duration * number_of_distinct_channels) */
+  billing_time: number
+  /** Duration of the transcription in seconds */
+  transcription_time: number
+}
+
+export interface LiveV2AddonError {
+  /** Status code of the addon error */
+  status_code: number
+  /** Reason of the addon error */
+  exception: string
+  /** Detailed message of the addon error */
+  message: string
+}
+
+export interface LiveV2Sentences {
+  /** The audio intelligence model succeeded to get a valid output */
+  success: boolean
+  /** The audio intelligence model returned an empty value */
+  is_empty: boolean
+  /** Time audio intelligence model took to complete the task */
+  exec_time: number
+  /** `null` if `success` is `true`. Contains the error details of the failed model */
+  error: LiveV2AddonError | null
+  /** If `sentences` has been enabled, transcription as sentences. */
+  results: Array<string> | null
+}
+
+export type LiveV2SubtitlesFormat = 'srt' | 'vtt'
+
+export interface LiveV2Subtitle {
+  /** Format of the current subtitle */
+  format: LiveV2SubtitlesFormat
+  /** Transcription on the asked subtitle format */
+  subtitles: string
+}
+
+export interface LiveV2Word {
+  /** Spoken word */
+  word: string
+  /** Start timestamps in seconds of the spoken word */
+  start: number
+  /** End timestamps in seconds of the spoken word */
+  end: number
+  /** Confidence on the transcribed word (1 = 100% confident) */
+  confidence: number
+}
+
+export interface LiveV2Utterance {
+  /** Start timestamp in seconds of this utterance */
+  start: number
+  /** End timestamp in seconds of this utterance */
+  end: number
+  /** Confidence on the transcribed utterance (1 = 100% confident) */
+  confidence: number
+  /** Audio channel of where this utterance has been transcribed from */
+  channel: number
+  /** If `diarization` enabled, speaker identification number */
+  speaker?: number
+  /** List of words of the utterance, split by timestamp */
+  words: Array<LiveV2Word>
+  /** Transcription for this utterance */
+  text: string
+  /** Spoken language in this utterance */
+  language: LiveV2TranscriptionLanguageCode
+}
+
+export interface LiveV2Transcription {
+  /** All transcription on text format without any other information */
+  full_transcript: string
+  /** All the detected languages in the audio sorted from the most detected to the less detected */
+  languages: Array<LiveV2TranscriptionLanguageCode>
+  /** If `sentences` has been enabled, sentences results */
+  sentences?: Array<LiveV2Sentences>
+  /** If `subtitles` has been enabled, subtitles results */
+  subtitles?: Array<LiveV2Subtitle>
+  /** Transcribed speech utterances present in the audio */
+  utterances: Array<LiveV2Utterance>
+}
+
+export interface LiveV2TranslationResult {
+  /** Contains the error details of the failed addon */
+  error: LiveV2AddonError | null
+  /** All transcription on text format without any other information */
+  full_transcript: string
+  /** All the detected languages in the audio sorted from the most detected to the less detected */
+  languages: Array<LiveV2TranslationLanguageCode>
+  /** If `sentences` has been enabled, sentences results for this translation */
+  sentences?: Array<LiveV2Sentences>
+  /** If `subtitles` has been enabled, subtitles results for this translation */
+  subtitles?: Array<LiveV2Subtitle>
+  /** Transcribed speech utterances present in the audio */
+  utterances: Array<LiveV2Utterance>
+}
+
+export interface LiveV2Translation {
+  /** The audio intelligence model succeeded to get a valid output */
+  success: boolean
+  /** The audio intelligence model returned an empty value */
+  is_empty: boolean
+  /** Time audio intelligence model took to complete the task */
+  exec_time: number
+  /** `null` if `success` is `true`. Contains the error details of the failed model */
+  error: LiveV2AddonError | null
+  /** List of translated transcriptions, one for each `target_languages` */
+  results: Array<LiveV2TranslationResult> | null
+}
+
+export interface LiveV2Summarization {
+  /** The audio intelligence model succeeded to get a valid output */
+  success: boolean
+  /** The audio intelligence model returned an empty value */
+  is_empty: boolean
+  /** Time audio intelligence model took to complete the task */
+  exec_time: number
+  /** `null` if `success` is `true`. Contains the error details of the failed model */
+  error: LiveV2AddonError | null
+  /** If `summarization` has been enabled, summary of the transcription */
+  results: string | null
+}
+
+export interface LiveV2NamedEntityRecognitionResult {
+  entity_type: string
+  text: string
+  start: number
+  end: number
+}
+
+export interface LiveV2NamedEntityRecognition {
+  /** The audio intelligence model succeeded to get a valid output */
+  success: boolean
+  /** The audio intelligence model returned an empty value */
+  is_empty: boolean
+  /** Time audio intelligence model took to complete the task */
+  exec_time: number
+  /** `null` if `success` is `true`. Contains the error details of the failed model */
+  error: LiveV2AddonError | null
+  /** If `named_entity_recognition` has been enabled, the detected entities. */
+  results: Array<LiveV2NamedEntityRecognitionResult> | null
+}
+
+export interface LiveV2SentimentAnalysis {
+  /** The audio intelligence model succeeded to get a valid output */
+  success: boolean
+  /** The audio intelligence model returned an empty value */
+  is_empty: boolean
+  /** Time audio intelligence model took to complete the task */
+  exec_time: number
+  /** `null` if `success` is `true`. Contains the error details of the failed model */
+  error: LiveV2AddonError | null
+  /** If `sentiment_analysis` has been enabled, Gladia will analyze the sentiments and emotions of the audio */
+  results: string
+}
+
+export interface LiveV2TranscriptionResultWithMessages {
+  /** Metadata for the given transcription & audio file */
+  metadata: LiveV2TranscriptionMetadata
+  /** Transcription of the audio speech */
+  transcription?: LiveV2Transcription
+  /** If `translation` has been enabled, translation of the audio speech transcription */
+  translation?: LiveV2Translation
+  /** If `summarization` has been enabled, summarization of the audio speech transcription */
+  summarization?: LiveV2Summarization
+  /** If `named_entity_recognition` has been enabled, the detected entities */
+  named_entity_recognition?: LiveV2NamedEntityRecognition
+  /** If `sentiment_analysis` has been enabled, sentiment analysis of the audio speech transcription */
+  sentiment_analysis?: LiveV2SentimentAnalysis
+  /** Real-Time messages sent by the server during the live transcription */
+  messages?: Array<string>
+}
+
+export interface LiveV2Error {
+  /** The error message */
+  message: string
+}
+
+export interface LiveV2AudioChunkAckData {
+  /** Range in bytes length of the audio chunk (relative to the whole session) */
+  byte_range: Array<number>
+  /** Range in seconds of the audio chunk (relative to the whole session) */
+  time_range: Array<number>
+}
+
+export interface LiveV2EndRecordingMessageData {
+  /** Total audio duration in seconds */
+  recording_duration: number
+}
+
+export interface LiveV2TranslationData {
+  /** Id of the utterance used for this result */
+  utterance_id: string
+  /** The transcribed utterance */
+  utterance: LiveV2Utterance
+  /** The original language in `iso639-1` or `iso639-2` format depending on the language */
+  original_language: LiveV2TranscriptionLanguageCode
+  /** The target language in `iso639-1` or `iso639-2` format depending on the language */
+  target_language: LiveV2TranslationLanguageCode
+  /** The translated utterance */
+  translated_utterance: LiveV2Utterance
+}
+
+export interface LiveV2NamedEntityRecognitionData {
+  /** Id of the utterance used for this result */
+  utterance_id: string
+  /** The transcribed utterance */
+  utterance: LiveV2Utterance
+  /** The NER results */
+  results: Array<LiveV2NamedEntityRecognitionResult>
+}
+
+export interface LiveV2TranscriptionResult {
+  /** Metadata for the given transcription & audio file */
+  metadata: LiveV2TranscriptionMetadata
+  /** Transcription of the audio speech */
+  transcription?: LiveV2Transcription
+  /** If `translation` has been enabled, translation of the audio speech transcription */
+  translation?: LiveV2Translation
+  /** If `summarization` has been enabled, summarization of the audio speech transcription */
+  summarization?: LiveV2Summarization
+  /** If `named_entity_recognition` has been enabled, the detected entities */
+  named_entity_recognition?: LiveV2NamedEntityRecognition
+  /** If `sentiment_analysis` has been enabled, sentiment analysis of the audio speech transcription */
+  sentiment_analysis?: LiveV2SentimentAnalysis
+}
+
+export interface LiveV2PostSummarizationMessageData {
+  /** The summarization */
+  results: string
+}
+
+export interface LiveV2SentimentAnalysisResult {
+  sentiment: string
+  emotion: string
+  text: string
+  start: number
+  end: number
+  channel: number
+}
+
+export interface LiveV2SentimentAnalysisData {
+  /** Id of the utterance used for this result */
+  utterance_id: string
+  /** The transcribed utterance */
+  utterance: LiveV2Utterance
+  /** The sentiment analysis results */
+  results: Array<LiveV2SentimentAnalysisResult>
+}
+
+export interface LiveV2StopRecordingAckData {
+  /** Total audio duration in seconds */
+  recording_duration: number
+  /** Audio duration left to process in seconds */
+  recording_left_to_process: number
+}
+
+export interface LiveV2TranscriptMessageData {
+  /** Id of the utterance */
+  id: string
+  /** Flag to indicate if the transcript is final or not */
+  is_final: boolean
+  /** The transcribed utterance */
+  utterance: LiveV2Utterance
+}
+
+export interface LiveV2SpeechMessageData {
+  /** Timestamp in seconds of the speech event */
+  time: number
+  /** Channel of the speech event */
+  channel: number
+}
+
+export interface LiveV2EventPayload {
+  /** Id of the job */
+  id: string
+}
+
+// Init Session Types
+export interface LiveV2InitRequest {
+  /** The encoding format of the audio stream. Supported formats: 
+- PCM: 8, 16, 24, and 32 bits 
+- A-law: 8 bits 
+- μ-law: 8 bits 
+
+Note: No need to add WAV headers to raw audio as the API supports both formats. */
+  encoding?: LiveV2Encoding
+  /** The bit depth of the audio stream */
+  bit_depth?: LiveV2BitDepth
+  /** The sample rate of the audio stream */
+  sample_rate?: LiveV2SampleRate
+  /** The number of channels of the audio stream */
+  channels?: number
+  /** Custom metadata you can attach to this live transcription */
+  custom_metadata?: Record<string, any>
+  /** The model used to process the audio. "solaria-1" is used by default. */
+  model?: LiveV2Model
+  /** The endpointing duration in seconds. Endpointing is the duration of silence which will cause an utterance to be considered as finished */
+  endpointing?: number
+  /** The maximum duration in seconds without endpointing. If endpointing is not detected after this duration, current utterance will be considered as finished */
+  maximum_duration_without_endpointing?: number
+  /** Specify the language configuration */
+  language_config?: LiveV2LanguageConfig
+  /** Specify the pre-processing configuration */
+  pre_processing?: LiveV2PreProcessingConfig
+  /** Specify the realtime processing configuration */
+  realtime_processing?: LiveV2RealtimeProcessingConfig
+  /** Specify the post-processing configuration */
+  post_processing?: LiveV2PostProcessingConfig
+  /** Specify the websocket messages configuration */
+  messages_config?: LiveV2MessagesConfig
+  /** If true, messages will be sent to configured url. */
+  callback?: boolean
+  /** Specify the callback configuration */
+  callback_config?: LiveV2CallbackConfig
+}
+
+export interface LiveV2InitResponse {
+  /** Id of the job */
+  id: string
+  /** Creation date */
+  created_at: string
+  /** The websocket url to connect to for sending audio data. The url will contain the temporary token to authenticate the session. */
   url: string
 }
 
-const program = new Command()
+// Job Management Types
+export interface LiveV2Response {
+  /** Id of the job */
+  id: string
+  /** Debug id */
+  request_id: string
+  /** API version */
+  version: number
+  /** "queued": the job has been queued. "processing": the job is being processed. "done": the job has been processed and the result is available. "error": an error occurred during the job's processing. */
+  status: 'queued' | 'processing' | 'done' | 'error'
+  /** Creation date */
+  created_at: string
+  /** Completion date when status is "done" or "error" */
+  completed_at?: string | null
+  /** Custom metadata given in the initial request */
+  custom_metadata?: Record<string, any>
+  /** HTTP status code of the error if status is "error" */
+  error_code?: number | null
+  /** For debugging purposes, send data that could help to identify issues */
+  post_session_metadata?: object
+  kind: 'live'
+  /** The file data you uploaded. Can be null if status is "error" */
+  file?: LiveV2FileResponse | null
+  /** Parameters used for this live transcription. Can be null if status is "error" */
+  request_params?: LiveV2RequestParamsResponse | null
+  /** Live transcription's result when status is "done" */
+  result?: LiveV2TranscriptionResultWithMessages | null
+}
 
-program
-  .name('gladia-generator')
-  .description('Generate SDK code from OpenAPI schema')
-  .version('1.0.0')
-  .option('-u, --url <url>', 'OpenAPI schema URL', 'https://api.gladia.io/openapi.json')
-  .action(async (options: CliOptions) => {
-    try {
-      const generator = new Generator({
-        schemaUrl: options.url,
-      })
+export interface LiveV2ListResponse {
+  /** URL to fetch the first page */
+  first: string
+  /** URL to fetch the current page */
+  current: string
+  /** URL to fetch the next page */
+  next: string | null
+  /** List of live transcriptions */
+  items: Array<LiveV2Response>
+}
 
-      await generator.generate()
-      console.log('✅ Code generation completed successfully!')
-    } catch (error) {
-      console.error('❌ Generation failed:', error)
-      process.exit(1)
-    }
-  })
+/** Query parameters for listing live transcription jobs */
+export interface LiveV2ListParams {
+  /** The starting point for pagination. A value of 0 starts from the first item. */
+  offset?: number
+  /** The maximum number of items to return. Useful for pagination and controlling data payload size. */
+  limit?: number
+  /** Filter items relevant to a specific date in ISO format (YYYY-MM-DD). */
+  date?: string
+  /** Include items that occurred before the specified date in ISO format. */
+  before_date?: string
+  /** Filter for items after the specified date. Use with `before_date` for a range. Date in ISO format. */
+  after_date?: string
+  /** Filter the list based on item status. Accepts multiple values from the predefined list. */
+  status?: Array<'queued' | 'processing' | 'done' | 'error'>
+  custom_metadata?: Record<string, any>
+  /** Absolute pagination URL (`next`, `first`, or `current` from a previous list response). When set, other filters are ignored. */
+  url?: string
+}
 
-program.parse()
+// WebSocket Messages Types
+export interface LiveV2AudioChunkAckMessage {
+  /** Id of the live session */
+  session_id: string
+  /** Date of creation of the message. The date is formatted as an ISO 8601 string */
+  created_at: string
+  /** Flag to indicate if the action was successfully acknowledged */
+  acknowledged: boolean
+  /** Error message if the action was not successfully acknowledged */
+  error: LiveV2Error | null
+  type: 'audio_chunk'
+  /** The message data. "null" if the action was not successfully acknowledged */
+  data: LiveV2AudioChunkAckData | null
+}
+
+export interface LiveV2EndRecordingMessage {
+  /** Id of the live session */
+  session_id: string
+  /** Date of creation of the message. The date is formatted as an ISO 8601 string */
+  created_at: string
+  type: 'end_recording'
+  /** The message data */
+  data: LiveV2EndRecordingMessageData
+}
+
+export interface LiveV2EndSessionMessage {
+  /** Id of the live session */
+  session_id: string
+  /** Date of creation of the message. The date is formatted as an ISO 8601 string */
+  created_at: string
+  type: 'end_session'
+}
+
+export interface LiveV2TranslationMessage {
+  /** Id of the live session */
+  session_id: string
+  /** Date of creation of the message. The date is formatted as an ISO 8601 string */
+  created_at: string
+  /** Error message if the addon failed */
+  error: LiveV2Error | null
+  type: 'translation'
+  /** The message data. "null" if the addon failed */
+  data: LiveV2TranslationData | null
+}
+
+export interface LiveV2NamedEntityRecognitionMessage {
+  /** Id of the live session */
+  session_id: string
+  /** Date of creation of the message. The date is formatted as an ISO 8601 string */
+  created_at: string
+  /** Error message if the addon failed */
+  error: LiveV2Error | null
+  type: 'named_entity_recognition'
+  /** The message data. "null" if the addon failed */
+  data: LiveV2NamedEntityRecognitionData | null
+}
+
+export interface LiveV2PostFinalTranscriptMessage {
+  /** Id of the live session */
+  session_id: string
+  /** Date of creation of the message. The date is formatted as an ISO 8601 string */
+  created_at: string
+  type: 'post_final_transcript'
+  /** The message data */
+  data: LiveV2TranscriptionResult
+}
+
+export interface LiveV2PostSummarizationMessage {
+  /** Id of the live session */
+  session_id: string
+  /** Date of creation of the message. The date is formatted as an ISO 8601 string */
+  created_at: string
+  /** Error message if the addon failed */
+  error: LiveV2Error | null
+  type: 'post_summarization'
+  /** The message data. "null" if the addon failed */
+  data: LiveV2PostSummarizationMessageData | null
+}
+
+export interface LiveV2PostTranscriptMessage {
+  /** Id of the live session */
+  session_id: string
+  /** Date of creation of the message. The date is formatted as an ISO 8601 string */
+  created_at: string
+  type: 'post_transcript'
+  /** The message data */
+  data: LiveV2Transcription
+}
+
+export interface LiveV2SentimentAnalysisMessage {
+  /** Id of the live session */
+  session_id: string
+  /** Date of creation of the message. The date is formatted as an ISO 8601 string */
+  created_at: string
+  /** Error message if the addon failed */
+  error: LiveV2Error | null
+  type: 'sentiment_analysis'
+  /** The message data. "null" if the addon failed */
+  data: LiveV2SentimentAnalysisData | null
+}
+
+export interface LiveV2StartRecordingMessage {
+  /** Id of the live session */
+  session_id: string
+  /** Date of creation of the message. The date is formatted as an ISO 8601 string */
+  created_at: string
+  type: 'start_recording'
+}
+
+export interface LiveV2StartSessionMessage {
+  /** Id of the live session */
+  session_id: string
+  /** Date of creation of the message. The date is formatted as an ISO 8601 string */
+  created_at: string
+  type: 'start_session'
+}
+
+export interface LiveV2StopRecordingAckMessage {
+  /** Id of the live session */
+  session_id: string
+  /** Date of creation of the message. The date is formatted as an ISO 8601 string */
+  created_at: string
+  /** Flag to indicate if the action was successfully acknowledged */
+  acknowledged: boolean
+  /** Error message if the action was not successfully acknowledged */
+  error: LiveV2Error | null
+  type: 'stop_recording'
+  /** The message data. "null" if the action was not successfully acknowledged */
+  data: LiveV2StopRecordingAckData | null
+}
+
+export interface LiveV2TranscriptMessage {
+  /** Id of the live session */
+  session_id: string
+  /** Date of creation of the message. The date is formatted as an ISO 8601 string */
+  created_at: string
+  type: 'transcript'
+  /** The message data */
+  data: LiveV2TranscriptMessageData
+}
+
+export interface LiveV2SpeechStartMessage {
+  /** Id of the live session */
+  session_id: string
+  /** Date of creation of the message. The date is formatted as an ISO 8601 string */
+  created_at: string
+  type: 'speech_start'
+  /** The message data */
+  data: LiveV2SpeechMessageData
+}
+
+export interface LiveV2SpeechEndMessage {
+  /** Id of the live session */
+  session_id: string
+  /** Date of creation of the message. The date is formatted as an ISO 8601 string */
+  created_at: string
+  type: 'speech_end'
+  /** The message data */
+  data: LiveV2SpeechMessageData
+}
+
+// Union of all websocket messages
+export type LiveV2WebSocketMessage =
+  | LiveV2AudioChunkAckMessage
+  | LiveV2EndRecordingMessage
+  | LiveV2EndSessionMessage
+  | LiveV2TranslationMessage
+  | LiveV2NamedEntityRecognitionMessage
+  | LiveV2PostFinalTranscriptMessage
+  | LiveV2PostSummarizationMessage
+  | LiveV2PostTranscriptMessage
+  | LiveV2SentimentAnalysisMessage
+  | LiveV2StartRecordingMessage
+  | LiveV2StartSessionMessage
+  | LiveV2StopRecordingAckMessage
+  | LiveV2TranscriptMessage
+  | LiveV2SpeechStartMessage
+  | LiveV2SpeechEndMessage
+
+// Callback Messages Types
+export interface LiveV2CallbackAudioChunkAckMessage {
+  /** Id of the job */
+  id: string
+  event: 'live.audio_chunk'
+  /** The live message payload as sent to the WebSocket */
+  payload: LiveV2AudioChunkAckMessage
+}
+
+export interface LiveV2CallbackEndRecordingMessage {
+  /** Id of the job */
+  id: string
+  event: 'live.end_recording'
+  /** The live message payload as sent to the WebSocket */
+  payload: LiveV2EndRecordingMessage
+}
+
+export interface LiveV2CallbackEndSessionMessage {
+  /** Id of the job */
+  id: string
+  event: 'live.end_session'
+  /** The live message payload as sent to the WebSocket */
+  payload: LiveV2EndSessionMessage
+}
+
+export interface LiveV2CallbackTranslationMessage {
+  /** Id of the job */
+  id: string
+  event: 'live.translation'
+  /** The live message payload as sent to the WebSocket */
+  payload: LiveV2TranslationMessage
+}
+
+export interface LiveV2CallbackNamedEntityRecognitionMessage {
+  /** Id of the job */
+  id: string
+  event: 'live.named_entity_recognition'
+  /** The live message payload as sent to the WebSocket */
+  payload: LiveV2NamedEntityRecognitionMessage
+}
+
+export interface LiveV2CallbackPostFinalTranscriptMessage {
+  /** Id of the job */
+  id: string
+  event: 'live.post_final_transcript'
+  /** The live message payload as sent to the WebSocket */
+  payload: LiveV2PostFinalTranscriptMessage
+}
+
+export interface LiveV2CallbackPostSummarizationMessage {
+  /** Id of the job */
+  id: string
+  event: 'live.post_summarization'
+  /** The live message payload as sent to the WebSocket */
+  payload: LiveV2PostSummarizationMessage
+}
+
+export interface LiveV2CallbackPostTranscriptMessage {
+  /** Id of the job */
+  id: string
+  event: 'live.post_transcript'
+  /** The live message payload as sent to the WebSocket */
+  payload: LiveV2PostTranscriptMessage
+}
+
+export interface LiveV2CallbackSentimentAnalysisMessage {
+  /** Id of the job */
+  id: string
+  event: 'live.sentiment_analysis'
+  /** The live message payload as sent to the WebSocket */
+  payload: LiveV2SentimentAnalysisMessage
+}
+
+export interface LiveV2CallbackStartRecordingMessage {
+  /** Id of the job */
+  id: string
+  event: 'live.start_recording'
+  /** The live message payload as sent to the WebSocket */
+  payload: LiveV2StartRecordingMessage
+}
+
+export interface LiveV2CallbackStartSessionMessage {
+  /** Id of the job */
+  id: string
+  event: 'live.start_session'
+  /** The live message payload as sent to the WebSocket */
+  payload: LiveV2StartSessionMessage
+}
+
+export interface LiveV2CallbackStopRecordingAckMessage {
+  /** Id of the job */
+  id: string
+  event: 'live.stop_recording'
+  /** The live message payload as sent to the WebSocket */
+  payload: LiveV2StopRecordingAckMessage
+}
+
+export interface LiveV2CallbackTranscriptMessage {
+  /** Id of the job */
+  id: string
+  event: 'live.transcript'
+  /** The live message payload as sent to the WebSocket */
+  payload: LiveV2TranscriptMessage
+}
+
+export interface LiveV2CallbackSpeechStartMessage {
+  /** Id of the job */
+  id: string
+  event: 'live.speech_start'
+  /** The live message payload as sent to the WebSocket */
+  payload: LiveV2SpeechStartMessage
+}
+
+export interface LiveV2CallbackSpeechEndMessage {
+  /** Id of the job */
+  id: string
+  event: 'live.speech_end'
+  /** The live message payload as sent to the WebSocket */
+  payload: LiveV2SpeechEndMessage
+}
+
+// Union of all callback messages
+export type LiveV2CallbackMessage =
+  | LiveV2CallbackAudioChunkAckMessage
+  | LiveV2CallbackEndRecordingMessage
+  | LiveV2CallbackEndSessionMessage
+  | LiveV2CallbackTranslationMessage
+  | LiveV2CallbackNamedEntityRecognitionMessage
+  | LiveV2CallbackPostFinalTranscriptMessage
+  | LiveV2CallbackPostSummarizationMessage
+  | LiveV2CallbackPostTranscriptMessage
+  | LiveV2CallbackSentimentAnalysisMessage
+  | LiveV2CallbackStartRecordingMessage
+  | LiveV2CallbackStartSessionMessage
+  | LiveV2CallbackStopRecordingAckMessage
+  | LiveV2CallbackTranscriptMessage
+  | LiveV2CallbackSpeechStartMessage
+  | LiveV2CallbackSpeechEndMessage
+
+// Webhook Messages Types
+export interface LiveV2WebhookStartSessionMessage {
+  event: 'live.start_session'
+  payload: LiveV2EventPayload
+}
+
+export interface LiveV2WebhookStartRecordingMessage {
+  event: 'live.start_recording'
+  payload: LiveV2EventPayload
+}
+
+export interface LiveV2WebhookEndRecordingMessage {
+  event: 'live.end_recording'
+  payload: LiveV2EventPayload
+}
+
+export interface LiveV2WebhookEndSessionMessage {
+  event: 'live.end_session'
+  payload: LiveV2EventPayload
+}
+
+// Union of all webhook messages
+export type LiveV2WebhookMessage =
+  | LiveV2WebhookStartSessionMessage
+  | LiveV2WebhookStartRecordingMessage
+  | LiveV2WebhookEndRecordingMessage
+  | LiveV2WebhookEndSessionMessage
 [0m
-[0m$ [0mgrep -r "api.gladia.io\|app.gladia.io\|gladia.io" reposcan-raw/gladiaio/ --include="*.ts" --include="*.js" --include="*.json" --include="*.py" --include="*.toml" --include="*.yaml" --include="*.yml" | grep -v ".test." | grep -v "__fixtures__" | grep -v "node_modules" | head -100
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:      url: ({ path }) => `https://api.gladia.io${path}`,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:// https://docs.gladia.io/api-reference/v2/pre-recorded/init
-reposcan-raw/gladiaio/compare-stt/next.config.ts:const PUBLIC_APP_URL = `https://www.gladia.io${BASE_PATH}`;
-reposcan-raw/gladiaio/compare-stt/next.config.ts:  // www.gladia.io that slash path is not rewritten to this app (Webflow
-reposcan-raw/gladiaio/compare-stt/src/lib/site.ts:  process.env.NEXT_PUBLIC_SITE_ORIGIN ?? "https://www.gladia.io"
-reposcan-raw/gladiaio/compare-stt/src/lib/site.ts:export const CITATION_DOMAIN = "www.gladia.io";
-reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts:const GLADIA_BASE = "https://api.gladia.io/v2";
-reposcan-raw/gladiaio/compare-stt/src/lib/base-path-fetch.ts:/** Base path used when the app is mounted under www.gladia.io/speech-to-text-api-comparison */
-reposcan-raw/gladiaio/compare-stt/src/lib/base-path-fetch.ts:    const u = new URL(url, origin ?? "https://www.gladia.io");
-reposcan-raw/gladiaio/compare-stt/src/lib/leaderboard-articles.ts:    url: "https://www.gladia.io/blog/best-speech-to-text-apis",
-reposcan-raw/gladiaio/compare-stt/src/lib/leaderboard-articles.ts:    url: "https://www.gladia.io/blog/best-open-source-speech-to-text-models",
-reposcan-raw/gladiaio/normalization/pyproject.toml:authors = [{ name = "Gladia", email = "support@gladia.io" }]
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/GenericFunctions.ts:const BASE_URL = 'https://api.gladia.io';
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/Gladia.node.json:				"url": "https://docs.gladia.io/"
-reposcan-raw/gladiaio/n8n-nodes-gladia/credentials/GladiaApi.credentials.ts:	documentationUrl = 'https://docs.gladia.io/reference/getting-your-api-key';
-reposcan-raw/gladiaio/n8n-nodes-gladia/credentials/GladiaApi.credentials.ts:			baseURL: 'https://api.gladia.io',
-reposcan-raw/gladiaio/n8n-nodes-gladia/package.json:		"email": "support@gladia.io"
-reposcan-raw/gladiaio/gladiaflow/src-tauri/Cargo.toml:authors = ["Gladia <support@gladia.io>"]
-reposcan-raw/gladiaio/gladia-samples/javascript/env.js:      'You must provide a Gladia key. Go to https://app.gladia.io to get yours.',
-reposcan-raw/gladiaio/gladia-samples/javascript/env.js:  return process.env.GLADIA_API_URL || 'https://api.gladia.io';
-reposcan-raw/gladiaio/gladia-samples/javascript/examples/youtube-translation.js:      // check all the supported languages at https://docs.gladia.io/chapters/language/supported-languages#supported-languages
-reposcan-raw/gladiaio/gladia-samples/javascript/examples/youtube-translation.js:    // Want to know more about custom vocabulary? check https://docs.gladia.io/chapters/audio-intelligence/custom-vocabulary
-reposcan-raw/gladiaio/gladia-samples/javascript/examples/youtube-translation.js:    // Want to know more about translation and subtitles ? Check https://docs.gladia.io/chapters/audio-intelligence/translation
-reposcan-raw/gladiaio/gladia-samples/javascript/examples/youtube-translation.js:      // check all the supported languages for translation at https://docs.gladia.io/chapters/language/supported-languages#supported-languages
-reposcan-raw/gladiaio/gladia-samples/javascript/examples/call-sentiment-analysis.js:    // check all the supported languages at https://docs.gladia.io/chapters/language/supported-languages#supported-languages
-reposcan-raw/gladiaio/gladia-samples/javascript/examples/call-sentiment-analysis.js:  // check all the sentiment/ emotion supported at https://docs.gladia.io/chapters/audio-intelligence/sentiment-analysis#sentiment-and-emotion-analysis
-reposcan-raw/gladiaio/gladia-samples/javascript/examples/anonymized-call.js:      // Check all the supported entity types at https://docs.gladia.io/chapters/audio-intelligence/pii-redaction
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/twilio/app.js:  const gladiaUrl = 'wss://api.gladia.io/audio/text/audio-transcription';
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/discord/gladia.js:    'You must provide a Gladia key. Go to https://app.gladia.io to get yours.',
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/discord/gladia.js:const gladiaUrl = 'wss://api.gladia.io/audio/text/audio-transcription';
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:        print("Create one for free at https://app.gladia.io/")
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:        "https://api.gladia.io/v2/upload/", headers, "POST", files=files
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:        "https://api.gladia.io/v2/pre-recorded/", headers, "POST", data=data
-reposcan-raw/gladiaio/gladia-samples/python/examples/meeting_summary.py:# Create your account and get your API key in 30 seconds at https://docs.gladia.io/chapters/introduction/getting-started
-reposcan-raw/gladiaio/gladia-samples/python/examples/meeting_summary.py:    # check all the summarization options at https://docs.gladia.io/chapters/audio-intelligence/summarization
-reposcan-raw/gladiaio/gladia-samples/python/examples/call_sentiment_analysis.py:# Create your account and get your API key in 30 seconds at https://docs.gladia.io/chapters/introduction/getting-started
-reposcan-raw/gladiaio/gladia-samples/python/examples/call_sentiment_analysis.py:        # check all the supported languages at https://docs.gladia.io/chapters/language/supported-languages#supported-languages
-reposcan-raw/gladiaio/gladia-samples/python/examples/call_sentiment_analysis.py:        # check all the sentiment/emotion supported at https://docs.gladia.io/chapters/audio-intelligence/sentiment-analysis#sentiment-and-emotion-analysis
-reposcan-raw/gladiaio/gladia-samples/python/examples/anonymized_call.py:# Create your account and get your API key in 30 seconds ! [Click here](https://docs.gladia.io/chapters/introduction/getting-started) to get started.
-reposcan-raw/gladiaio/gladia-samples/python/examples/anonymized_call.py:            # Check all the supported entity types at https://docs.gladia.io/chapters/audio-intelligence/pii-redaction
-reposcan-raw/gladiaio/gladia-samples/python/examples/youtube_translation.py:# Create your account and get your API key in 30 seconds at https://docs.gladia.io/chapters/introduction/getting-started
-reposcan-raw/gladiaio/gladia-samples/python/examples/youtube_translation.py:        # check all the supported languages at https://docs.gladia.io/chapters/language/supported-languages#supported-languages
-reposcan-raw/gladiaio/gladia-samples/python/examples/youtube_translation.py:        # Want to know more about custom vocabulary? check https://docs.gladia.io/chapters/audio-intelligence/custom-vocabulary
-reposcan-raw/gladiaio/gladia-samples/python/examples/youtube_translation.py:        # Want to know more about translation and subtitles ? Check https://docs.gladia.io/chapters/audio-intelligence/translation
-reposcan-raw/gladiaio/gladia-samples/python/examples/youtube_translation.py:        # check all the supported languages for translation at https://docs.gladia.io/chapters/language/supported-languages#supported-languages
-reposcan-raw/gladiaio/gladia-samples/python/core-concepts/pre-recorded/pre_recorded.py:# Create your account and get your API key in 30 seconds ! [Click here](https://docs.gladia.io/chapters/introduction/getting-started) to get started.
-reposcan-raw/gladiaio/gladia-samples/python/core-concepts/pre-recorded/pre_recorded.py:            # check all the supported languages at https://docs.gladia.io/chapters/language/supported-languages#supported-languages
-reposcan-raw/gladiaio/gladia-samples/python/core-concepts/pre-recorded/pre_recorded_async.py:    # Create your account and get your API key in 30 seconds ! [Click here](https://docs.gladia.io/chapters/introduction/getting-started) to get started.
-reposcan-raw/gladiaio/gladia-samples/python/core-concepts/pre-recorded/pre_recorded_async.py:                # check all the supported languages at https://docs.gladia.io/chapters/language/supported-languages#supported-languages
-reposcan-raw/gladiaio/gladia-samples/python/core-concepts/live/live-from-microphone.py:# Create your account and get your API key in 30 seconds ! [Click here](https://docs.gladia.io/chapters/introduction/getting-started) to get started.
-reposcan-raw/gladiaio/gladia-samples/python/core-concepts/live/live-from-microphone.py:        # Check the encoding, bit depth, sample rate and channels supported at https://docs.gladia.io/api-reference/v2/live/init
-reposcan-raw/gladiaio/gladia-samples/python/core-concepts/live/live-from-microphone.py:        # Check the language code supported at https://docs.gladia.io/chapters/language/supported-languages#supported-languages
-reposcan-raw/gladiaio/gladia-samples/python/core-concepts/live/live-from-file.py:# Create your account and get your API key in 30 seconds ! [Click here](https://docs.gladia.io/chapters/introduction/getting-started) to get started.
-reposcan-raw/gladiaio/gladia-samples/python/core-concepts/live/live-from-file.py:        # Check the encoding, bit depth, sample rate and channels supported at https://docs.gladia.io/api-reference/v2/live/init
-reposcan-raw/gladiaio/gladia-samples/python/core-concepts/live/live-from-file.py:        # Check the language code supported at https://docs.gladia.io/chapters/language/supported-languages#supported-languages
-reposcan-raw/gladiaio/gladia-samples/typescript/examples/anonymized-call.ts:      // @ts-expect-error - check all supported entity types at https://docs.gladia.io/chapters/audio-intelligence/named-entity-recognition
-reposcan-raw/gladiaio/gladia-samples/typescript/examples/youtube-translation.ts:      // check all the supported languages at https://docs.gladia.io/chapters/language/supported-languages#supported-languages
-reposcan-raw/gladiaio/gladia-samples/typescript/examples/youtube-translation.ts:    // Want to know more about custom vocabulary? check https://docs.gladia.io/chapters/audio-intelligence/custom-vocabulary
-reposcan-raw/gladiaio/gladia-samples/typescript/examples/youtube-translation.ts:    // Want to know more about translation and subtitles ? Check https://docs.gladia.io/chapters/audio-intelligence/translation
-reposcan-raw/gladiaio/gladia-samples/typescript/examples/youtube-translation.ts:      // check all the supported languages for translation at https://docs.gladia.io/chapters/language/supported-languages#supported-languages
-reposcan-raw/gladiaio/gladia-samples/typescript/examples/call-sentiment-analysis.ts:      // check all the supported languages at https://docs.gladia.io/chapters/language/supported-languages#supported-languages
-reposcan-raw/gladiaio/gladia-samples/typescript/examples/call-sentiment-analysis.ts:    // check all the sentiment/ emotion supported at https://docs.gladia.io/chapters/audio-intelligence/sentiment-analysis#sentiment-and-emotion-analysis
-reposcan-raw/gladiaio/gladia-samples/typescript/examples/meeting-summary.ts:      // check all the summarization options at https://docs.gladia.io/chapters/audio-intelligence/summarization
-reposcan-raw/gladiaio/gladia-samples/typescript/env.ts:      'You must provide a Gladia key. Go to https://app.gladia.io to get yours.',
-reposcan-raw/gladiaio/gladia-samples/typescript/env.ts:  return process.env.GLADIA_API_URL || 'https://api.gladia.io';
-reposcan-raw/gladiaio/skills/plugins/gladia/.claude-plugin/plugin.json:    "email": "support@gladia.io"
-reposcan-raw/gladiaio/skills/.claude-plugin/marketplace.json:    "email": "support@gladia.io"
-reposcan-raw/gladiaio/skills/.github/workflows/sync-documentation.yml:          INDEX=$(curl -sf https://docs.gladia.io/.well-known/agent-skills/index.json)
-reposcan-raw/gladiaio/skills/.github/workflows/sync-documentation.yml:          curl -sf https://docs.gladia.io/.well-known/agent-skills/gladia/skill.md -o /tmp/skill-raw.md
-reposcan-raw/gladiaio/skills/.github/workflows/sync-documentation.yml:            echo "description: Comprehensive Gladia speech-to-text reference auto-synced from docs.gladia.io. Use as a general-purpose fallback when other specialized skills don't match, or when the user needs a broad overview of Gladia capabilities, endpoints, decision guidance, or workflows. Always prefer the official SDK; fall back to raw REST/WebSocket only when SDK cannot satisfy the requirement."
-reposcan-raw/gladiaio/skills/.github/workflows/sync-documentation.yml:            echo "  source: https://docs.gladia.io/.well-known/agent-skills/gladia/skill.md"
-reposcan-raw/gladiaio/skills/.github/workflows/sync-documentation.yml:          echo "> This file is auto-synced from https://docs.gladia.io/.well-known/agent-skills/gladia/skill.md" >> "$SKILL_FILE"
-reposcan-raw/gladiaio/skills/.github/workflows/sync-documentation.yml:          echo "> For additional documentation and navigation, see: https://docs.gladia.io/llms.txt" >> "$SKILL_FILE"
-reposcan-raw/gladiaio/skills/.github/workflows/sync-documentation.yml:          commit-message: "chore: sync gladia-documentation-auto skill from docs.gladia.io"
-reposcan-raw/gladiaio/skills/.github/workflows/sync-documentation.yml:          title: "chore: sync gladia-documentation-auto skill from docs.gladia.io"
-reposcan-raw/gladiaio/skills/.github/workflows/sync-documentation.yml:            Automated update of the `gladia-documentation-auto` skill from [docs.gladia.io](https://docs.gladia.io/.well-known/agent-skills/gladia/skill.md).
-reposcan-raw/gladiaio/docs/docs.json:    "openapi": "https://api.gladia.io/openapi.json"
-reposcan-raw/gladiaio/docs/docs.json:      "href": "https://app.gladia.io/?utm_campaign=197609689-Website&utm_source=documentation&utm_content=sign-up"
-reposcan-raw/gladiaio/docs/docs.json:        "href": "https://support.gladia.io/",
-reposcan-raw/gladiaio/docs/docs.json:        "href": "https://www.gladia.io/blog",
-reposcan-raw/gladiaio/docs/docs.json:      "twitter": "https://twitter.com/gladia_io",
-reposcan-raw/gladiaio/docs/docs.json:      "linkedin": "https://www.linkedin.com/company/gladia-io"
-reposcan-raw/gladiaio/docs/asyncapi.yaml:    host: api.gladia.io/v2/live?token={SESSION}
-reposcan-raw/gladiaio/sdk/.github/workflows/release.yml:          git config --global user.email '${{ steps.generate-token-sdk-publisher.outputs.app-slug }}@gladia.io'
-reposcan-raw/gladiaio/sdk/.github/workflows/update-openapi-types.yml:            https://api.gladia.io/openapi.json
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.ts:   * @see https://docs.gladia.io/api-reference/v2/live/list
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.ts:   * @see https://docs.gladia.io/api-reference/v2/pre-recorded/init
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.ts:   * @see https://docs.gladia.io/api-reference/v2/pre-recorded/init
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.ts:   * @see https://docs.gladia.io/api-reference/v2/pre-recorded/list
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.ts:   * @see https://docs.gladia.io/api-reference/v2/pre-recorded/init
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.ts:   * @see https://docs.gladia.io/api-reference/v2/pre-recorded/get
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.ts:   * @see https://docs.gladia.io/api-reference/v2/pre-recorded/init
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.ts:   * @see https://docs.gladia.io/api-reference/v2/pre-recorded/get
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.ts:   * @see https://docs.gladia.io/api-reference/v2/upload/audio-file
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.ts:   * @see https://docs.gladia.io/api-reference/v2/pre-recorded/init
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.ts:   * @see https://docs.gladia.io/api-reference/v2/pre-recorded/get
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/types.ts:   * You can obtain one by going to https://app.gladia.io.
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/types.ts:   * The server will have to act as a proxy to https://api.gladia.io and only add the header "x-gladia-key" with your API key.
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/types.ts:   * If not provided, the client will take the environment variable GLADIA_API_URL and, if not provided either, it will default to https://api.gladia.io.
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts:  if (!options?.apiKey && url.hostname.endsWith('.gladia.io')) {
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/sdk/packages/sdk-python/src -name "*.py" -path "*/v2/prerecorded/*" | head -10
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/core.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/__init__.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/async_client.py
 [0m
-[0m$ [0mcat reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts
-import { deepMergeObjects, getEnv } from './helpers.js'
-import type { InternalGladiaClientOptions } from './internal_types.js'
-import type { Headers } from './network/types.js'
-import type { GladiaClientOptions } from './types.js'
-import { LiveV2Client } from './v2/live/index.js'
-import { PreRecordedV2Client } from './v2/prerecorded/index.js'
-import { SDK_VERSION } from './version.js'
-
-function normalizeGladiaHeaders(headers: Headers | [string, string][]): Headers {
-  const entries = Array.isArray(headers) ? headers : Object.entries(headers)
-  return Object.fromEntries(
-    entries.map(([key, value]) => {
-      const lcKey = key.toLowerCase()
-      return [lcKey.startsWith('x-gladia-') ? lcKey : key, value]
-    })
-  )
-}
-
-function assertValidOptions(options: InternalGladiaClientOptions) {
-  let url: URL
-  try {
-    url = new URL(options.apiUrl)
-  } catch {
-    throw new Error(`Invalid url: "${options.apiUrl}".`)
-  }
-
-  if (!options?.apiKey && url.hostname.endsWith('.gladia.io')) {
-    throw new Error(`You have to set your "apiKey" or define a proxy "apiUrl".`)
-  }
-
-  if (!['https:', 'http:', 'wss:', 'ws:'].includes(url.protocol)) {
-    throw new Error(
-      `Only HTTP and WebSocket protocols are supported for apiUrl (received: ${url.protocol}).`
-    )
-  }
-}
-
-const defaultHttpDelay = (attemptCount: number) =>
-  Math.min(0.3 * 2 ** (attemptCount - 1) * 1_000, 10_000)
-
-const defaultWsDelay = (attemptCount: number) =>
-  Math.min(0.3 * 2 ** (attemptCount - 1) * 1_000, 2_000)
-
-const gladiaVersion = `SdkJavascript/${SDK_VERSION}`
-
-const defaultOptions: InternalGladiaClientOptions = {
-  apiKey: getEnv('GLADIA_API_KEY'),
-  apiUrl: getEnv('GLADIA_API_URL', 'https://api.gladia.io'),
-  region: getEnv<Required<GladiaClientOptions>['region']>('GLADIA_REGION'),
-  httpHeaders: {
-    'x-gladia-version': gladiaVersion,
-  },
-  httpRetry: {
-    maxAttempts: 2,
-    statusCodes: [408, 413, 429, [500, 599]],
-    delay: defaultHttpDelay,
-  },
-  httpTimeout: 10_000,
-  wsRetry: {
-    maxAttemptsPerConnection: 5,
-    closeCodes: [
-      [1002, 4399],
-      [4500, 9999],
-    ],
-    delay: defaultWsDelay,
-    maxConnections: 0,
-  },
-  wsTimeout: 10_000,
-  prerecordedTimeouts: {
-    transcribe: 7_200_000,
-    poll: 7_200_000,
-    createAndPoll: 7_200_000,
-    uploadFile: 300_000,
-    getFile: 300_000,
-    create: 60_000,
-    delete: 60_000,
-    get: 10_000,
-    list: 10_000,
-  },
-  liveTimeouts: {
-    get: 10_000,
-    delete: 60_000,
-    getFile: 300_000,
-    list: 10_000,
-  },
-}
-
-/**
- * Entrypoint for Gladia SDK.
- */
-export class GladiaClient {
-  private options: InternalGladiaClientOptions
-
-  constructor(options?: GladiaClientOptions) {
-    if (options?.httpHeaders) {
-      options.httpHeaders = normalizeGladiaHeaders(options.httpHeaders)
-    }
-    this.options = deepMergeObjects(defaultOptions, options)
-  }
-
-  preRecordedV2(options?: GladiaClientOptions): PreRecordedV2Client {
-    if (options?.httpHeaders) {
-      options.httpHeaders = normalizeGladiaHeaders(options.httpHeaders)
-    }
-
-    const mergedOptions = deepMergeObjects(this.options, options)
-    if (mergedOptions.apiKey) {
-      mergedOptions.httpHeaders = deepMergeObjects(mergedOptions.httpHeaders, {
-        'x-gladia-key': mergedOptions.apiKey,
-      })
-    }
-    if (mergedOptions.httpHeaders['x-gladia-version'] !== gladiaVersion) {
-      mergedOptions.httpHeaders['x-gladia-version'] =
-        `${mergedOptions.httpHeaders['x-gladia-version'].trim()} ${gladiaVersion}`.trim()
-    }
-    assertValidOptions(mergedOptions)
-    return new PreRecordedV2Client(mergedOptions)
-  }
-  preRecorded: (options?: GladiaClientOptions) => PreRecordedV2Client = this.preRecordedV2
-
-  liveV2(options?: GladiaClientOptions): LiveV2Client {
-    if (options?.httpHeaders) {
-      options.httpHeaders = normalizeGladiaHeaders(options.httpHeaders)
-    }
-
-    const mergedOptions = deepMergeObjects(this.options, options)
-    if (mergedOptions.apiKey) {
-      mergedOptions.httpHeaders = deepMergeObjects(mergedOptions.httpHeaders, {
-        'x-gladia-key': mergedOptions.apiKey,
-      })
-    }
-    if (mergedOptions.httpHeaders['x-gladia-version'] !== gladiaVersion) {
-      mergedOptions.httpHeaders['x-gladia-version'] =
-        `${mergedOptions.httpHeaders['x-gladia-version'].trim()} ${gladiaVersion}`.trim()
-    }
-    assertValidOptions(mergedOptions)
-    return new LiveV2Client(mergedOptions)
-  }
-  live: (options?: GladiaClientOptions) => LiveV2Client = this.liveV2
-}
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/client.py
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/core.py
 [0m
-[0m$ [0mcat reposcan-raw/gladiaio/sdk/packages/sdk-js/src/types.ts
-import type { Headers } from './network/types.js'
-
-/**
- * Options for the HTTP retry policy.
- */
-export type HttpRetryOptions = {
-  /**
-   * Maximum number of attempts for an HTTP request.
-   * 0 for unlimited. 1 for no retry.
-   *
-   * Default is 2.
-   */
-  maxAttempts?: number
-
-  /**
-   * List of status codes eligible for retry. You can specify a range by using a tuple.
-   *
-   * Default for HTTP is [408, 413, 429, [500, 599]].
-   */
-  statusCodes?: (number | [start: number, end: number])[]
-
-  /**
-   * The function used to determine the delay between retries.
-   * It takes one parameter, attemptCount, starting at 1.
-   *
-   * Default is (attemptCount) => Math.min(0, 0.3 * (2 ** (attemptCount - 1)) * 1_000, 10_000)
-   */
-  delay?: (attemptCount: number) => number
-}
-
-/**
- * Options for the WebSocket retry policy.
- */
-export type WebSocketRetryOptions = {
-  /**
-   * Maximum number of attempts for a WS connection.
-   * 0 for unlimited. 1 for no retry.
-   * Once connected, the number of attempts to reconnect is reset.
-   *
-   * Default is 5.
-   */
-  maxAttemptsPerConnection?: number
-
-  /**
-   * The function used to determine the delay between retries.
-   * It takes one parameter, attemptCount, starting at 1.
-   *
-   * Default is (attemptCount) => Math.min(0, 0.3 * (2 ** (attemptCount - 1)) * 1_000, 2_000)
-   */
-  delay?: (attemptCount: number) => number
-
-  /**
-   * Maximum number of WS connections.
-   * 0 for unlimited. 1 for no reconnection.
-   *
-   * Default is 0.
-   */
-  maxConnections?: number
-
-  /**
-   * List of close code eligible for reconnection. You can specify a range by using a tuple.
-   * Default is [[1002, 4399], [4500, 9999]].
-   */
-  closeCodes?: (number | [start: number, end: number])[]
-}
-
-/**
- * HTTP and flow timeouts for pre-recorded V2 (milliseconds).
- *
- * Used as per-request HTTP limits and as defaults for `poll`, `createAndPoll`, and `transcribe`
- * when their `timeout` argument is omitted. Pass `timeout: null` on those methods for no deadline.
- */
-export type PreRecordedV2Timeouts = {
-  transcribe?: number
-  poll?: number
-  createAndPoll?: number
-  uploadFile?: number
-  getFile?: number
-  create?: number
-  delete?: number
-  get?: number
-  list?: number
-}
-
-/**
- * HTTP timeouts for live V2 job-management operations (milliseconds).
- */
-export type LiveV2Timeouts = {
-  get?: number
-  delete?: number
-  getFile?: number
-  list?: number
-}
-
-/**
- * Region for live session creation (POST /v2/live).
- */
-export type Region = 'eu-west' | 'us-west'
-
-/**
- * Default HTTP query parameters attached to every request from an HTTP client.
- * Do not put `region` here — it is only supported on live session creation (POST /v2/live).
- */
-export type QueryParams = Record<string, string>
-
-/**
- * Options for the Gladia Client.
- */
-export type GladiaClientOptions = {
-  /**
-   * Your Gladia API key.
-   * You can obtain one by going to https://app.gladia.io.
-   *
-   * If you are using this client from a browser or in public code, you can omit it and give a different baseUrl pointing to a server you control.
-   * The server will have to act as a proxy to https://api.gladia.io and only add the header "x-gladia-key" with your API key.
-   *
-   * If not provided, the client will use the API key from the environment variable GLADIA_API_KEY.
-   */
-  apiKey?: string
-
-  /**
-   * Base API URL used for the API calls to Gladia.
-   *
-   * You can modify it to proxy the requests.
-   *
-   * If not provided, the client will take the environment variable GLADIA_API_URL and, if not provided either, it will default to https://api.gladia.io.
-   */
-  apiUrl?: string
-
-  /**
-   * Region for live session creation (POST /v2/live). Other routes do not support this param.
-   *
-   * If not provided, the client will take the environment variable GLADIA_REGION.
-   */
-  region?: Region
-
-  /**
-   * Custom headers to add to the HTTP requests.
-   */
-  httpHeaders?: Headers | [string, string][]
-
-  /**
-   * Control the retry behavior for HTTP requests.
-   *
-   * Retries are not triggered following a timeout.
-   */
-  httpRetry?: HttpRetryOptions
-
-  /**
-   * Timeout for HTTP requests in milliseconds.
-   *
-   * Retries are not triggered following a timeout.
-   *
-   * Default is 10_000.
-   */
-  httpTimeout?: number
-
-  /**
-   * Control the retry behavior for WebSocket connections and re-connections after a close event.
-   * Attempt count resets after a successful WebSocket connection.
-   *
-   * Retries are not triggered following a timeout.
-   */
-  wsRetry?: WebSocketRetryOptions
-
-  /**
-   * Timeout for WebSocket connections and re-connections after a close event in milliseconds.
-   *
-   * Retries are not triggered following a timeout.
-   *
-   * Default is 10_000.
-   */
-  wsTimeout?: number
-
-  /**
-   * Pre-recorded V2 per-operation timeouts. See {@link PreRecordedV2Timeouts}.
-   */
-  prerecordedTimeouts?: PreRecordedV2Timeouts
-
-  /**
-   * Live V2 per-operation timeouts. See {@link LiveV2Timeouts}.
-   */
-  liveTimeouts?: LiveV2Timeouts
-}
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && rg -r "deniedCIDRs|169\.254\.169\.254" reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts -A 2 -B 2
+/bin/bash: line 1: rg: command not found
 [0m
-[0m$ [0mgrep -r "sk-\|api[_-]key\|secret\|token" reposcan-raw/gladiaio/ --include="*.ts" --include="*.js" --include="*.json" --include="*.py" --include="*.toml" --include="*.yaml" --include="*.yml" | grep -v ".test." | grep -v "__fixtures__" | grep -v "node_modules" | grep -v "pnpm-lock.yaml" | grep -v "test" | head -50
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:  private _tokens?: OAuthTokens;
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:  async tokens(): Promise<OAuthTokens | undefined> {
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:    return this._tokens;
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:  async saveTokens(tokens: OAuthTokens): Promise<void> {
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:    this._tokens = tokens;
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:      grant_types: ['authorization_code', 'refresh_token'],
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:      token_endpoint_auth_method: 'client_secret_post',
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:    const method = (info as any).token_endpoint_auth_method as
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:      | 'client_secret_post'
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:      | 'client_secret_basic'
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:    const hasSecret = Boolean((info as any).client_secret);
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:    const clientSecret = (info as any).client_secret as string | undefined;
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:    const chosen = method ?? (hasSecret ? 'client_secret_post' : 'none');
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:    if (chosen === 'client_secret_basic') {
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:    if (chosen === 'client_secret_post') {
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:      if (clientSecret) params.set('client_secret', clientSecret);
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:  async invalidateCredentials(scope: 'all' | 'client' | 'tokens' | 'verifier') {
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts:    if (scope === 'all' || scope === 'tokens') this._tokens = undefined;
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:  'get-secret-data',
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:  'Retrieve protected secret data (requires authentication)',
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:    secretKey: z.string(),
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:  async ({ secretKey }) => {
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:          text: `Secret data for key "${secretKey}": This is highly confidential information!`,
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:// Simple in-memory token store (for demo purposes)
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:const validTokens = new Set<string>(['demo-access-token-123']);
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:  { client_id: string; client_secret: string; redirect_uris: string[] }
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:  const token = authHeader.substring(7);
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:  if (!validTokens.has(token)) {
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:    console.log('  → 401: Invalid token');
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:        'Bearer error="invalid_token", resource_metadata="http://localhost:8081/.well-known/oauth-protected-resource"',
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:    res.send('Invalid token');
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:    token_endpoint: 'http://localhost:8081/token',
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:    grant_types_supported: ['authorization_code', 'refresh_token'],
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:    token_endpoint_auth_methods_supported: ['client_secret_post', 'none'],
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:  const clientSecret = `secret-${Math.random().toString(36).substring(7)}`;
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:    client_secret: clientSecret,
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:    client_secret: clientSecret,
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:app.post('/token', express.urlencoded({ extended: true }), (req, res) => {
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:  const { grant_type, code, code_verifier, refresh_token, client_id } =
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:    // Issue token
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:    const accessToken = 'demo-access-token-123';
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:      access_token: accessToken,
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:      token_type: 'Bearer',
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:      refresh_token: `refresh-${Date.now()}`,
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:  } else if (grant_type === 'refresh_token') {
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:    // Issue new token from refresh token
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:    const accessToken = 'demo-access-token-123';
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:      access_token: accessToken,
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:      token_type: 'Bearer',
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts:  console.log('Token endpoint: http://localhost:8081/token');
+Now I have a comprehensive view. Let me compile the classification tables.
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -n "deniedCIDRs\|169.254.169.254" reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts
+160:    it('maps custom with allowedHosts + deniedCIDRs to combined shape', async () => {
+166:        deniedCIDRs: ['169.254.169.254/32'],
+171:          subnets: { deny: ['169.254.169.254/32'] },
+176:    it('maps custom with both allowedCIDRs + deniedCIDRs', async () => {
+182:        deniedCIDRs: ['10.5.0.0/16'],
 [0m
-[0m$ [0mgrep -A 20 '"@ai-sdk/gladia"' reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml | head -30
-(no output)
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | head -190 | tail -40
+await handle.setNetworkPolicy!({
+        mode: 'custom',
+        allowedCIDRs: ['10.0.0.0/8'],
+      });
+      expect(spies.update).toHaveBeenCalledWith({
+        networkPolicy: { subnets: { allow: ['10.0.0.0/8'] } },
+      });
+    });
+
+    it('maps custom with allowedHosts + deniedCIDRs to combined shape', async () => {
+      const { sandbox, spies } = makeMockSandbox();
+      const handle = await createVercelSandbox({ sandbox }).createSession();
+      await handle.setNetworkPolicy!({
+        mode: 'custom',
+        allowedHosts: ['api.example.com'],
+        deniedCIDRs: ['169.254.169.254/32'],
+      });
+      expect(spies.update).toHaveBeenCalledWith({
+        networkPolicy: {
+          allow: ['api.example.com'],
+          subnets: { deny: ['169.254.169.254/32'] },
+        },
+      });
+    });
+
+    it('maps custom with both allowedCIDRs + deniedCIDRs', async () => {
+      const { sandbox, spies } = makeMockSandbox();
+      const handle = await createVercelSandbox({ sandbox }).createSession();
+      await handle.setNetworkPolicy!({
+        mode: 'custom',
+        allowedCIDRs: ['10.0.0.0/8'],
+        deniedCIDRs: ['10.5.0.0/16'],
+      });
+      expect(spies.update).toHaveBeenCalledWith({
+        networkPolicy: {
+          subnets: { allow: ['10.0.0.0/8'], deny: ['10.5.0.0/16'] },
+        },
+      });
+    });
+  });
 [0m
-[0m$ [0mgrep -n "@ai-sdk/gladia" reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml
-289:      '@ai-sdk/gladia':
-[0m
-[0m$ [0msed -n '285,310p' reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml
-version: link:../../packages/fireworks
-      '@ai-sdk/gateway':
-        specifier: workspace:*
-        version: link:../../packages/gateway
-      '@ai-sdk/gladia':
-        specifier: workspace:*
-        version: link:../../packages/gladia
-      '@ai-sdk/google':
-        specifier: workspace:*
-        version: link:../../packages/google
-      '@ai-sdk/google-vertex':
-        specifier: workspace:*
-        version: link:../../packages/google-vertex
-      '@ai-sdk/groq':
-        specifier: workspace:*
-        version: link:../../packages/groq
-      '@ai-sdk/harness':
-        specifier: workspace:*
-        version: link:../../packages/harness
-      '@ai-sdk/harness-claude-code':
-        specifier: workspace:*
-        version: link:../../packages/harness-claude-code
-      '@ai-sdk/harness-codex':
-        specifier: workspace:*
-        version: link:../../packages/harness-codex
-      '@ai-sdk/harness-pi':
-[0m
-All grep hits analyzed. Here's the classification:
+---
 
-### Classification Tables
+## CLASSIFICATION TABLES
 
-| Category | Count | Files |
-|----------|-------|-------|
-| **TEST_OR_EXAMPLE** | 652 | All hits — test fixtures (`test-api-key`, `secret123`, `access123`, `refresh123`, `custom-key`, `explicit-key`, `mocked-token`, `dynamic-session-token`, `test-session-token`), SSRF protection tests blocking `169.254.169.254`, lockfile workspace refs, config files |
-| **REAL_SECRET** | 0 | — |
-| **ENDPOINT_LEAK** | 0 | — |
-| **INTERESTING** | 0 | — |
+### REAL_SECRET
+| File | Line | SHA256(secret) | Notes |
+|------|------|----------------|-------|
+| *none found* | — | — | All candidate strings are test fixtures or placeholders |
 
-**Key observations:**
-- `169.254.169.254/32` appears in **deny-lists** (SSRF protection tests in `provider-utils`, `sandbox-vercel`, `harness`, `prodia`) — security controls, not vulnerabilities
-- `@ai-sdk/gladia` in `vercel-ai` is the **official Vercel AI SDK provider** (workspace-linked to `packages/gladia/`)
-- Official SDK `@gladiaio/sdk@2.0.0` in `gladiaio/sdk/packages/sdk-js/` — correct auth (`x-gladia-key`), proper proxy guidance for browsers
-- No hardcoded live credentials, internal endpoints, or supply-chain anomalies in this scan
+### TEST_OR_EXAMPLE
+| File | Line | Pattern | Context |
+|------|------|---------|---------|
+| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 740, 905, 908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` | OAuth test fixtures |
+| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 409, 411 | `access_token: 'expired-access-token'`, `refresh_token: 'rotating-refresh-token'` | MCP transport test fixtures |
+| `vercel-ai/packages/openai/src/*` | numerous | `apiKey: 'test-api-key'` | OpenAI provider test fixtures (50+ occurrences) |
+| `vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | `apiKey: 'test-api-key'` | AssemblyAI test fixtures |
+| `vercel-ai/packages/togetherai/src/*` | 99, 112, 165 | `apiKey: 'custom-key'`, `apiKey: 'explicit-key'` | TogetherAI test fixtures |
+| `vercel-ai/packages/google-vertex/src/*` | numerous | `apiKey: 'test-api-key'`, `private_key: 'invalid-key'`, `access_token: 'mock.jwt.token'` | Google Vertex test fixtures |
+| `vercel-ai/packages/amazon-bedrock/src/*` | numerous | `sessionToken: 'dynamic-session-token'`, `apiKey: 'test-api-key-123'` | Bedrock test fixtures |
+| `vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | 36 | `encrypted_content: "gAAAAABplLP..."` | Encrypted fixture blob (test data) |
 
-### Verdict
+### ENDPOINT_LEAK
+| File | Line | Endpoint | Notes |
+|------|------|----------|-------|
+| *none found* | — | — | No internal/staging endpoints leaked in source |
 
-| Candidate | REPORT_CANDIDATE |
-|-----------|------------------|
-| Any secret/credential | **no** — all test fixtures |
-| SSRF surface | **no** — metadata IP in blocklists only |
-| Supply-chain (npm `gladia` vs `@gladiaio/sdk`) | **no** — known, documented in RAG; not in this delta |
-| OAuth/redirect flaws | **no** — no new code paths vs last scan |
+### INTERESTING
+| File | Line | Finding | Severity |
+|------|------|---------|----------|
+| `vercel-ai/pnpm-lock.yaml` | 289, 291, 2368 | `@ai-sdk/gladia` workspace package linked — official Vercel AI SDK integration for Gladia | Info |
+| `vercel-ai/.github/tigent.yml` | 30 | Gladia listed alongside OpenAI, Anthropic, Google, Azure, Bedrock, etc. as supported provider | Info |
+| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | Explicit `deniedCIDRs: ['169.254.169.254/32']` in network policy tests — SSRF awareness | Info |
+| `sdk/packages/sdk-js/src/v2/prerecorded/client.ts` | 277-294 | `transcribe(audio_url)` accepts **any http/https URL** (YouTube, S3, metadata endpoints) — passes directly to `/v2/pre-recorded` | **HIGH** (SSRF surface) |
+| `sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts` | 147, 840 | `callback_config.url` + `audio_url` in PreRecordedV2InitTranscriptionRequest — both user-controlled URLs | **HIGH** (SSRF surface) |
+| `sdk/packages/sdk-js/src/v2/live/generated-types.ts` | 188, 417 | `callback_config.url` in LiveV2CallbackConfig + LiveV2InitRequest — webhook callback SSRF surface | **HIGH** (SSRF surface) |
+| `sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/core.py` | 124-130 | `is_url()` only validates `scheme in ("http","https")` — no blocklist for 169.254.169.254, metadata.google.internal, etc. | **HIGH** (SSRF surface) |
+| `npm: gladia@0.1.3` | — | Unofficial package (maintainer: `softwarecitadel@gmail.com`, repo: `alexisbouchez/gladia.ts` — personal, not gladiaio org) | **MED** (supply-chain confusion) |
 
-**Delta verdict:** 0 new hit lines vs previous scan — no actionable findings this cycle. Passive recon remains exhausted per RAG.
+---
+
+## VERDICT LIST
+
+| Candidate | REPORT_CANDIDATE | Rationale |
+|-----------|------------------|-----------|
+| SSRF via `audio_url` in `/v2/pre-recorded` | **yes** | User-supplied URL fetched server-side by Gladia API; SDKs accept any http/https URL incl. `http://169.254.169.254/`, `http://metadata.google.internal/` — matches [ACCEPTED] SSRF@api.gladia.io in RAG |
+| SSRF via `callback_config.url` (pre-recorded + live) | **yes** | Webhook callback URLs POSTed by Gladia server; same SSRF surface; no validation in SDKs or documented API |
+| Unofficial `gladia` npm package (0.1.3) | **yes** | Typosquatting/confusion risk: package description claims "Official TypeScript SDK" but README says "Unofficial"; maintainer not Gladia; GitHub 404 for `alexisbouchez/gladia.ts` — supply-chain finding |
+| Vercel AI SDK `@ai-sdk/gladia` integration | **no** | Official Vercel-maintained provider in `vercel/ai` monorepo; not a Gladia-owned asset; test fixtures only |
+| Test fixtures with `test-api-key`, `secret123`, etc. | **no** | All in `vercel-ai` test files; clearly test data; no live credentials |
+| Sandbox network policy denying 169.254.169.254/32 | **no** | Defensive test in third-party repo (Vercel); demonstrates awareness, not vulnerability |
+
+---
+
+## NEXT PROBE (read-only)
+
+The SSRF surface is **confirmed in SDK source** (user-controlled `audio_url` + `callback_config.url` passed to API). Live confirmation requires a valid Gladia API key.
+
+```
+[NEXT] PROBE
+POST https://api.gladia.io/v2/pre-recorded
+Headers: x-gladia-key: <YOUR_KEY>, content-type: application/json
+Body: {"audio_url": "http://169.254.169.254/latest/meta-data/iam/security-credentials/", "callback_config": {"url": "http://169.254.169.254/latest/meta-data/"}}
+Expected: 200/202 if SSRF works (server fetches metadata); 400/422 if blocked; 401 if key invalid
+```
+
+**Alternative callback-only probe** (lower blast radius):
+```
+[NEXT] PROBE
+POST https://api.gladia.io/v2/pre-recorded
+Headers: x-gladia-key: <YOUR_KEY>, content-type: application/json
+Body: {"audio_url": "https://example.com/test.wav", "callback_config": {"url": "http://169.254.169.254/latest/meta-data/"}}
+```
