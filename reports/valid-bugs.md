@@ -1159,3 +1159,8 @@
   - | npm `gladia@0.1.3` impersonation + key leak | **VALID** | **REPORT NOW** |
   - | api.gladia.io SSRF-by-design (audio_url/callback) | **HOLD** | Needs valid key |
   - | api.gladia.io WS token in URL query | **HOLD** | Needs valid key |
+
+- 3 lead(s) marked VALID at 2026-09-29 20:57:09 UTC
+  - **VERDICT: VALID**
+  - **VERDICT: HOLD** — Token-in-URL by design per spec. Need valid key to init session and inspect WS handshake headers.
+  - | npm gladia@0.1.3 impersonation | **VALID** |

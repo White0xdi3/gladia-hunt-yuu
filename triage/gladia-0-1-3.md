@@ -97,3 +97,11 @@ Evidence package: sha256-verified tarball + `npm view` JSON captured in repo kno
 **CVSS 3.1:** 7.5 (AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N)  
 **Proof:** `npm view gladia@0.1.3` → description "Official", maintainer `softwarecitadel@gmail.com`, repo `alexisbouchez/gladia.ts` (404), tarball `src/client.ts:306-308` embeds key in WS URL  
 **Channel:** Gladia bug-bounty-report (https://gladia.io/bug-bounty-report) + npm Trust & Safety (npmjs.com/support)
+
+
+## Re-confirmed 2026-09-29 20:57 UTC
+**VERDICT: VALID**  
+**Minimal proof**: `npm view gladia@0.1.3` → description "Official", maintainer `softwarecitadel@gmail.com`, repo `alexisbouchez/gladia.ts` (404); tarball `src/client.ts:306-308` shows `searchParams.append('x-gladia-key', apiKey)` → `new WebSocket(wsUrl.toString())`  
+**Impact**: Supply-chain API key harvesting + irrevocable account takeover (P3/P4)  
+**CVSS 3.1**: 7.5 (AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N)  
+**Channel**: Gladia bug-bounty-report (Google Forms) + npm Trust & Safety

@@ -1,240 +1,167 @@
-===== TRIAGE 2026-09-29 16:02:56 UTC =====
+===== TRIAGE 2026-09-29 20:57:09 UTC =====
 [0m
 > build · nemotron-3-ultra-free
 [0m
 [0m✱ [0mGlob "**/*"[90m 51 matches[0m
-[0m→ [0mRead scope.yml
 [0m→ [0mRead probe-results.txt
-[0m→ [0mRead probe-results.md
+[0m→ [0mRead scope.yml
 [0m→ [0mRead leads/lead-nemotron3.md
 [0m→ [0mRead leads/lead-bigpickle.md
 [0m→ [0mRead leads/lead-human.md
 [0m→ [0mRead leads/lead-longcat.md
 [0m→ [0mRead leads/lead-ling3.md
 [0m→ [0mRead leads/lead-laguna.md
-[0m→ [0mRead triage-prompt.txt
-[0m→ [0mRead triage/latest.md
-Based on the probe results and all lead files, here are the triage verdicts for each unique lead against the 7-Question Gate:
+[0m→ [0mRead leads/lead-mimo.md
+Based on my analysis of all lead files and the scope.yml, here are the triage verdicts for each unique vulnerability class:
 
 ---
 
-### LEAD 1: npm `gladia@0.1.3` orphaned impersonation + API key in WebSocket URL
-**Asset:** npm registry (`gladia@0.1.3`) — MEDIUM priority per scope.yml
+### 1. SSRF via audio_url/video_url/callback_url server-side fetch (api.gladia.io)
+**Q1** YES (api.gladia.io = Highest)  
+**Q2** PARTIAL (requires valid x-gladia-key; 401 without)  
+**Q3** YES (cloud metadata 169.254.169.254, internal network, HIGH if proven)  
+**Q4** NO (requires AUTH_HELPED POST with valid key; GET/HEAD cannot prove server-side fetch)  
+**Q5** Known hypothesis across all models, unproven  
+**Q6** YES (SSRF not on rejected list)  
+**Q7** HOLD — triager would accept IF key-gated POC provided; currently unvalidated  
 
-| Q | Answer |
-|---|--------|
-| Q1 In scope? | YES — npm package is typosquat target of official `@gladiaio/sdk` (scope lists npm packages) |
-| Q2 Attacker reachable? | YES — public npm registry, no auth to install |
-| Q3 Real impact? | YES — supply-chain impersonation (description "Official" vs README "Unofficial"), dead repo (alexisbouchez 404), dist-tag `latest=0.1.3` persists, key leakage via `searchParams.append('x-gladia-key', apiKey)` in WS URL query |
-| Q4 Provable passively? | YES — registry metadata, tarball source, GitHub 404 all verified via GET |
-| Q5 Novel/unreported? | YES — human reported 2026-08-12 to security@gladia.io + npm Trust & Safety; no vendor action |
-| Q6 Not always-rejected? | YES — not info disclosure; active impersonation + credential hygiene flaw |
-| Q7 Triager accepts? | YES — clear supply-chain risk, irrevocable takeover vector |
+**VERDICT: HOLD** — Spec confirms `format:uri` with no scheme allowlist; `/v1/models` shows FR/US egress; 7 webhook paths. Needs authorized key to prove.
+
+---
+
+### 2. npm `gladia@0.1.3` orphaned impersonation + key-in-URL (npm registry)
+**Q1** YES (Official SDKs = Medium priority; npm registry in scope)  
+**Q2** YES (public package, anyone installs)  
+**Q3** YES (supply-chain: "Official" claim vs README "Unofficial"; orphaned repo alexisbouchez 404 = irrevocable takeover; src/client.ts:306-308 embeds raw x-gladia-key in wss:// URL query → leaks to proxy/logs/history)  
+**Q4** YES (PASSIVE complete: registry metadata, tarball sha256 `3b23ec7d...`, GitHub 404, source code verified)  
+**Q5** YES (human-reported 2026-08-12; still live, no vendor action)  
+**Q6** YES (supply-chain impersonation not rejected)  
+**Q7** YES — multiple models 95-97% confidence, report-ready  
 
 **VERDICT: VALID**  
-**Impact:** Supply-chain API key harvesting + account takeover (P3/P4)  
-**CVSS 3.1:** 7.5 (AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N)  
-**Proof:** `npm view gladia@0.1.3` → description "Official", maintainer `softwarecitadel@gmail.com`, repo `alexisbouchez/gladia.ts` (404), tarball `src/client.ts:306-308` embeds key in WS URL  
-**Channel:** Gladia bug-bounty-report (https://gladia.io/bug-bounty-report) + npm Trust & Safety (npmjs.com/support)
+**Minimal proof**: `npm view gladia@0.1.3` → description "Official", maintainer `softwarecitadel@gmail.com`, repo `alexisbouchez/gladia.ts` (404); tarball `src/client.ts:306-308` shows `searchParams.append('x-gladia-key', apiKey)` → `new WebSocket(wsUrl.toString())`  
+**Impact**: Supply-chain API key harvesting + irrevocable account takeover (P3/P4)  
+**CVSS 3.1**: 7.5 (AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N)  
+**Channel**: Gladia bug-bounty-report (Google Forms) + npm Trust & Safety
 
 ---
 
-### LEAD 2: app.gladia.io `/signin?redirect_to=` reflection → post-auth open redirect
-**Asset:** app.gladia.io — HIGH priority per scope.yml
+### 3. Post-auth open redirect via redirect_to (app.gladia.io)
+**Q1** YES (app.gladia.io = High)  
+**Q2** PARTIAL (unauthenticated reflection confirmed; post-auth requires HUMAN_ONLY session)  
+**Q3** MEDIUM (phishing post-auth; OAuth redirect_uri FIXED via PKCE → no code theft)  
+**Q4** NO (requires authenticated Google OAuth session to observe final 302 Location)  
+**Q5** Known hypothesis  
+**Q6** YES  
+**Q7** HOLD — unverified post-auth behavior  
 
-| Q | Answer |
-|---|--------|
-| Q1 In scope? | YES — app.gladia.io explicitly in scope (High) |
-| Q2 Attacker reachable? | YES — unauthenticated GET reflects `redirect_to` into form `action` (probe 200, byte-fresh) |
-| Q3 Real impact? | HOLD — reflection confirmed, but **post-auth honoring UNVERIFIED** (requires Google SSO session); OAuth `redirect_uri` FIXED (PKCE S256) prevents code/state theft; return-to cookie tamper REJECTED; CSP lacks `form-action` directive (gap) |
-| Q4 Provable passively? | NO — needs authenticated session to observe final 302 Location |
-| Q5 Novel/unreported? | YES |
-| Q6 Not always-rejected? | YES |
-| Q7 Triager accepts? | HOLD — unproven without auth; only reflection is proven |
-
-**VERDICT: HOLD** — post-auth honoring unproven (AUTH_HELPED/HUMAN_ONLY). Reflection alone is not a vulnerability without evidence the server honors it after authentication.  
-**Next:** `[NEXT] PROBE: HUMAN — complete Google OAuth with ?redirect_to=https://evil.example.com, capture final 302 Location`
+**VERDICT: HOLD** — Form action reflects `redirect_to` URL-encoded for all variants (https://evil, //evil, confusing-subdomain). CSP has 0 `form-action` directives. Post-auth honoring untested.
 
 ---
 
-### LEAD 3: api.gladia.io SSRF via `audio_url`/`video_url`/`callback_config.url` (no scheme allowlist)
-**Asset:** api.gladia.io — HIGHEST priority per scope.yml
+### 4. WebSocket auth token in URL query param (api.gladia.io)
+**Q1** YES (Highest)  
+**Q2** YES (spec shows `wss://api.gladia.io/v2/live?token=<uuid>`)  
+**Q3** HIGH (token leaks via Referer, browser history, proxy/server logs; bearer-equivalent)  
+**Q4** PARTIAL (spec confirms design; exploitability needs AUTH_HELPED to check token lifetime, rotation, Referrer-Policy on WS upgrade)  
+**Q5** Known from OpenAPI  
+**Q6** YES  
+**Q7** HOLD — design flaw confirmed, exploitability needs validation  
 
-| Q | Answer |
-|---|--------|
-| Q1 In scope? | YES — api.gladia.io (Highest) |
-| Q2 Attacker reachable? | NO — all endpoints key-gated (401 NestJS `x-gladia-key`); no valid key available for passive validation |
-| Q3 Real impact? | YES — spec confirms `format:uri` with NO scheme allowlist, 7 webhook delivery paths, `/v1/models` exposes FR/US egress regions; SSRF-by-design |
-| Q4 Provable passively? | NO — requires valid API key (AUTH_HELPED) to test internal fetch (169.254.169.254) |
-| Q5 Novel/unreported? | YES — spec-confirmed design flaw |
-| Q6 Not always-rejected? | YES — SSRF to cloud metadata is High severity |
-| Q7 Triager accepts? | HOLD — key-gated, no bypass found across 100+ cycles; surface frozen |
-
-**VERDICT: HOLD** — genuine SSRF-by-design surface confirmed in spec, but **key-gated with no auth bypass**. Cannot prove exploitability without valid key.  
-**CVSS (if proven):** 7.1 (AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N)  
-**Next:** `[NEXT] PROBE: AUTH_HELPED — POST /v2/pre-recorded with x-gladia-key + audio_url=http://169.254.169.254/latest/meta-data/`
+**VERDICT: HOLD** — Token-in-URL by design per spec. Need valid key to init session and inspect WS handshake headers.
 
 ---
 
-### LEAD 4: api.gladia.io `x-powered-by: Express` on CORS preflight only
-**Asset:** api.gladia.io — HIGHEST
+### 5. Undocumented /health endpoint (api.gladia.io)
+**Q1** YES  
+**Q2** YES (public GET → 200 `{"health":"OK"}`)  
+**Q3** NO (only `{"health":"OK"}`; `?full=true`/` ?format=json` return identical; no version/build/metadata)  
+**Q4** YES (PASSIVE)  
+**Q5** Known  
+**Q6** NO — "info disclosure of public data" on always-rejected list  
+**Q7** NO  
 
-| Q | Answer |
-|---|--------|
-| Q1 In scope? | YES |
-| Q2 Attacker reachable? | YES — OPTIONS preflight returns header (probe confirmed) |
-| Q3 Real impact? | NO — framework fingerprinting alone is Low severity (recon aid), not a vulnerability |
-| Q4 Provable passively? | YES |
-| Q5 Novel/unreported? | YES |
-| Q6 Not always-rejected? | NO — **ON ALWAYS-REJECTED LIST**: "best practice", "info disclosure of public data", "tech stack disclosure" |
-| Q7 Triager accepts? | NO |
-
-**VERDICT: INVALID** — always-rejected class (framework fingerprinting / recon aid only)
+**VERDICT: INVALID** — Zero sensitive data disclosed.
 
 ---
 
-### LEAD 5: api.gladia.io IDOR on `/v2/transcription/{id}/file` (and /pre-recorded, /live)
-**Asset:** api.gladia.io — HIGHEST
+### 6. CORS wildcard with x-gladia-key allowed (api.gladia.io)
+**Q1** YES  
+**Q2** YES  
+**Q3** NO (static `access-control-allow-origin: *`; NO `access-control-allow-credentials`; only public endpoints `/v1/models`, `/openapi.json`, `/health` readable cross-origin)  
+**Q4** YES (PASSIVE)  
+**Q5** Known  
+**Q6** NO — "best practice / rate limit absence alone" tier; wildcard without creds on public data  
+**Q7** NO  
 
-| Q | Answer |
-|---|--------|
-| Q1 In scope? | YES |
-| Q2 Attacker reachable? | NO — key-gated (401), needs valid key + cross-account resource ID |
-| Q3 Real impact? | YES — if no object-level auth, cross-tenant transcription data (PII, audio) |
-| Q4 Provable passively? | NO — requires AUTH_HELPED with two accounts |
-| Q5 Novel/unreported? | YES |
-| Q6 Not always-rejected? | YES |
-| Q7 Triager accepts? | HOLD — unproven without key |
-
-**VERDICT: HOLD** — plausible IDOR surface (spec shows no ownership binding), but key-gated and untestable without two valid accounts.  
-**Next:** `[NEXT] PROBE: AUTH_HELPED — two valid keys, POST /v2/pre-recorded with key A, GET /v2/pre-recorded/{id_from_A}/file with key B`
+**VERDICT: INVALID** — No credential leakage, no sensitive data exposure.
 
 ---
 
-### LEAD 6: api.gladia.io undocumented `/health` endpoint
-**Asset:** api.gladia.io — HIGHEST
+### 7. x-powered-by: Express on CORS preflight only (api.gladia.io)
+**Q1** YES  
+**Q2** YES (OPTIONS preflight)  
+**Q3** LOW (framework fingerprinting only)  
+**Q4** YES (PASSIVE)  
+**Q5** Known  
+**Q6** NO — "info disclosure of public data" tier  
+**Q7** NO  
 
-| Q | Answer |
-|---|--------|
-| Q1 In scope? | YES |
-| Q2 Attacker reachable? | YES — GET /health returns 200 `{"health":"OK"}` (probe confirmed) |
-| Q3 Real impact? | NO — returns minimal static JSON; no version, build, metadata leakage (probed `?full=true`, `?format=json` — identical) |
-| Q4 Provable passively? | YES |
-| Q5 Novel/unreported? | YES |
-| Q6 Not always-rejected? | NO — **ON ALWAYS-REJECTED LIST**: "info disclosure of public data" (health check is public by design) |
-| Q7 Triager accepts? | NO |
-
-**VERDICT: INVALID** — always-rejected (public health endpoint, no sensitive disclosure)
+**VERDICT: INVALID** — Low-value reconnaissance aid only.
 
 ---
 
-### LEAD 7: api.gladia.io CORS wildcard (`access-control-allow-origin: *`)
-**Asset:** api.gladia.io — HIGHEST
+### 8. IDOR on transcription file download /{id}/file (api.gladia.io)
+**Q1** YES  
+**Q2** NO (requires valid x-gladia-key + cross-account transcription ID)  
+**Q3** HIGH (PII/audio cross-tenant)  
+**Q4** NO (AUTH_HELPED required)  
+**Q5** Hypothesis only  
+**Q6** YES  
+**Q7** HOLD  
 
-| Q | Answer |
-|---|--------|
-| Q1 In scope? | YES |
-| Q2 Attacker reachable? | YES — static `*` on all responses (probe confirmed) |
-| Q3 Real impact? | NO — no `access-control-allow-credentials`; cannot read authenticated responses cross-origin; only public endpoints (/v1/models, /openapi.json, /health) readable |
-| Q4 Provable passively? | YES |
-| Q5 Novel/unreported? | YES |
-| Q6 Not always-rejected? | NO — **ON ALWAYS-REJECTED LIST**: "best practice" (wildcard without credentials is not exploitable) |
-| Q7 Triager accepts? | NO |
-
-**VERDICT: INVALID** — always-rejected (CORS wildcard without credentials = Low/Info, not a vuln)
+**VERDICT: HOLD** — Spec shows 3 GET `{id}/file` endpoints; ownership binding opaque. Needs authorized key + cross-account test.
 
 ---
 
-### LEAD 8: api.gladia.io WebSocket auth token in URL query (`wss://api.gladia.io/v2/live?token=<uuid>`)
-**Asset:** api.gladia.io — HIGHEST
+### 9. return-to cookie JWT parsing without signature (app.gladia.io)
+**Q1** YES  
+**Q2** YES  
+**Q3** NONE — **DISPROVEN**: server rejects tampered cookie, resets to `{"url":"/"}`  
+**Q4** YES (PASSIVE test confirmed)  
+**Q5** Tested and rejected  
+**Q6** N/A  
+**Q7** NO  
 
-| Q | Answer |
-|---|--------|
-| Q1 In scope? | YES |
-| Q2 Attacker reachable? | NO — token issued only after POST /v2/live with valid `x-gladia-key` (key-gated) |
-| Q3 Real impact? | YES — token in URL leaks via Referer, browser history, proxy logs, server logs |
-| Q4 Provable passively? | NO — needs valid key to init session and observe token format |
-| Q5 Novel/unreported? | YES |
-| Q6 Not always-rejected? | YES |
-| Q7 Triager accepts? | HOLD — design flaw confirmed in spec, but key-gated |
-
-**VERDICT: HOLD** — spec-confirmed token-in-URL design, but requires valid key to prove exploitability.  
-**CVSS (if proven):** 5.3 (AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N)  
-**Next:** `[NEXT] PROBE: AUTH_HELPED — POST /v2/live with x-gladia-key, observe response.url token format`
+**VERDICT: INVALID** — Multiple models confirmed server validates/resets tampered cookie.
 
 ---
 
-### LEAD 9: api.gladia.io `/v1/history` query-param injection (`custom_metadata` object, `status`/`kind` arrays)
-**Asset:** api.gladia.io — HIGHEST
+### 10. Query-param parsing injection on /v1/history (api.gladia.io)
+**Q1** YES  
+**Q2** NO (key-gated, 401 without)  
+**Q3** LOW-MEDIUM (filter bypass / prototype pollution on own-tenant)  
+**Q4** NO (AUTH_HELPED)  
+**Q5** Hypothesis (bigpickle only)  
+**Q6** YES  
+**Q7** HOLD  
 
-| Q | Answer |
-|---|--------|
-| Q1 In scope? | YES |
-| Q2 Attacker reachable? | NO — key-gated (401) |
-| Q3 Real impact? | LOW — prototype pollution / filter bypass on own-tenant query only (key-gated) |
-| Q4 Provable passively? | NO |
-| Q5 Novel/unreported? | YES |
-| Q6 Not always-rejected? | YES |
-| Q7 Triager accepts? | HOLD — low impact, key-gated, untestable |
-
-**VERDICT: HOLD** — speculative injection surface, key-gated, low impact even if proven
+**VERDICT: HOLD** — `custom_metadata` object + `status`/`kind` arrays in query string; NestJS deep-parse surface. Needs key.
 
 ---
 
-### LEAD 10: app.gladia.io `return-to` cookie (unsigned base64url JSON)
-**Asset:** app.gladia.io — HIGH
+### Summary
+| Lead | Verdict |
+|------|---------|
+| SSRF audio_url/callback_url | HOLD |
+| npm gladia@0.1.3 impersonation | **VALID** |
+| Post-auth redirect_to open redirect | HOLD |
+| WebSocket token in URL | HOLD |
+| Undocumented /health | INVALID |
+| CORS wildcard | INVALID |
+| x-powered-by Express | INVALID |
+| IDOR /{id}/file | HOLD |
+| return-to cookie JWT | INVALID |
+| /v1/history query injection | HOLD |
 
-| Q | Answer |
-|---|--------|
-| Q1 In scope? | YES |
-| Q2 Attacker reachable? | YES — cookie set on root `/` |
-| Q3 Real impact? | NO — probe confirmed server **rejects tampered value and resets** to default; no open redirect |
-| Q4 Provable passively? | YES — `curl -b "return-to=eyJ1cmwiOiJodHRwczovL2V2aWwuY29tIn0=" https://app.gladia.io/` → reset |
-| Q5 Novel/unreported? | YES |
-| Q6 Not always-rejected? | NO — tested and **REJECTED** (server validates/resets) |
-| Q7 Triager accepts? | NO |
-
-**VERDICT: INVALID** — tested, server-side validation blocks exploit
-
----
-
-### LEAD 11: app.gladia.io `/dashboard` SPA shell served without auth
-**Asset:** app.gladia.io — HIGH
-
-| Q | Answer |
-|---|--------|
-| Q1 In scope? | YES |
-| Q2 Attacker reachable? | YES — GET /dashboard returns 200 HTML (probe confirmed) |
-| Q3 Real impact? | NO — client-side auth enforcement; API calls fail 401 without key; shell is static |
-| Q4 Provable passively? | YES |
-| Q5 Novel/unreported? | YES |
-| Q6 Not always-rejected? | NO — **ON ALWAYS-REJECTED LIST**: "best practice" (SPA shell without auth is normal; API enforces) |
-| Q7 Triager accepts? | NO |
-
-**VERDICT: INVALID** — always-rejected (client-side SPA pattern, API enforces auth)
-
----
-
-## SUMMARY
-
-| Lead | Verdict | Priority |
-|------|---------|----------|
-| npm `gladia@0.1.3` impersonation + key leak | **VALID** | **REPORT NOW** |
-| app.gladia.io `/signin` redirect_to post-auth open redirect | **HOLD** | Needs auth session |
-| api.gladia.io SSRF-by-design (audio_url/callback) | **HOLD** | Needs valid key |
-| api.gladia.io x-powered-by Express (preflight) | **INVALID** | Always-rejected |
-| api.gladia.io IDOR on /{id}/file | **HOLD** | Needs 2 keys |
-| api.gladia.io /health undocumented | **INVALID** | Always-rejected |
-| api.gladia.io CORS wildcard | **INVALID** | Always-rejected |
-| api.gladia.io WS token in URL query | **HOLD** | Needs valid key |
-| api.gladia.io /v1/history query injection | **HOLD** | Low impact, key-gated |
-| app.gladia.io return-to cookie | **INVALID** | Tested, server rejects |
-| app.gladia.io /dashboard SPA shell | **INVALID** | Always-rejected |
-
-**Only one lead is VALID and report-ready right now:**
-> **npm `gladia@0.1.3` orphaned impersonation + API key in WebSocket URL**  
-> **Channel:** Gladia bug-bounty-report (https://gladia.io/bug-bounty-report) + npm Trust & Safety  
-> **Evidence package:** sha256 `3b23ec7d7a763abc04c52db232d157a982fd3bd969c9f703af3eecad5fa802f2`, shasum `cc96f84a200c0fd49a71e919391f9b659c39f3e9`, GitHub user+repo 404, package.json "Official" vs README "Unofficial", `src/client.ts:306-308` raw key in WS URL  
-> **Human status:** Already reported 2026-08-12 to security@gladia.io — **follow up 2026-08-26** (14-day mark)
-
-All HOLD leads require **AUTH_HELPED** or **HUMAN_ONLY** validation that cannot be done passively. No further passive probes will advance them.
+**Only one VALID finding this cycle**: npm `gladia@0.1.3` orphaned impersonation with credential-leaking WebSocket URL construction. All others require AUTH_HELPED or HUMAN_ONLY validation, or are invalid/low-value.
