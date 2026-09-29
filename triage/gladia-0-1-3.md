@@ -89,3 +89,11 @@ Evidence package: sha256-verified tarball + `npm view` JSON captured in repo kno
 **CVSS 3.1:** 7.5 (AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N) — network, low complexity, no auth, user interaction (install), high confidentiality  
 **Proof:** `npm view gladia@0.1.3` → description "Official", maintainer `softwarecitadel@gmail.com`, repo `alexisbouchez/gladia.ts` (404), tarball `src/client.ts:306-308` embeds key in WS URL  
 **Channel:** Gladia bug-bounty-report (https://gladia.io/bug-bounty-report) + npm Trust & Safety (npmjs.com/support) — dual venue per lead-human.md
+
+
+## Re-confirmed 2026-09-29 16:02 UTC
+**VERDICT: VALID**  
+**Impact:** Supply-chain API key harvesting + account takeover (P3/P4)  
+**CVSS 3.1:** 7.5 (AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N)  
+**Proof:** `npm view gladia@0.1.3` → description "Official", maintainer `softwarecitadel@gmail.com`, repo `alexisbouchez/gladia.ts` (404), tarball `src/client.ts:306-308` embeds key in WS URL  
+**Channel:** Gladia bug-bounty-report (https://gladia.io/bug-bounty-report) + npm Trust & Safety (npmjs.com/support)
