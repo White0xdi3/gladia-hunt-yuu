@@ -1133,3 +1133,16 @@
   - | SSRF via audio_url/callback_url | **HOLD** | High-value but AUTH_HELPED — needs valid API key to prove |
   - | npm `gladia@0.1.3` impersonation | **VALID** | Fully passive, report-ready, supply-chain + key leakage |
   - | WebSocket token in URL query param | **VALID** | Spec-confirmed design flaw, token leaks via Referer/logs |
+
+- 11 lead(s) marked VALID at 2026-09-29 08:46:34 UTC
+  - **VERDICT: VALID**
+  - | Q4 Provable passively? | **NO** — requires valid API key (AUTH_HELPED) to test internal fetch (169.254.169.254) |
+  - **VERDICT: HOLD** — genuine SSRF-by-design surface confirmed in spec, but **key-gated with no auth bypass**. Cannot prove exploitability without valid key.
+  - | Q2 Attacker reachable? | **NO** — key-gated (401), needs valid key + cross-account resource ID |
+  - **VERDICT: HOLD** — plausible IDOR surface (spec shows no ownership binding), but key-gated and untestable without two valid accounts.
+  - | Q2 Attacker reachable? | **NO** — token issued only after POST /v2/live with valid `x-gladia-key` (key-gated) |
+  - | Q4 Provable passively? | **NO** — needs valid key to init session and observe token format |
+  - **VERDICT: HOLD** — spec-confirmed token-in-URL design, but requires valid key to prove exploitability.
+  - | npm `gladia@0.1.3` impersonation + key leak | **VALID** | **REPORT NOW** |
+  - | api.gladia.io SSRF-by-design (audio_url/callback) | **HOLD** | Needs valid key |
+  - | api.gladia.io WS token in URL query | **HOLD** | Needs valid key |
