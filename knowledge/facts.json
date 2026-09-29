@@ -43,8 +43,8 @@
  },
  "OTHER@api.gladia.io": {
   "first_seen": "2026-08-08",
-  "last_seen": "2026-09-27",
-  "reason": "no new surface this cycle beyond ACCEPTED SSRF + MISCONFIG, re-confirmed static via NO_DRIFT OpenAPI spec",
+  "last_seen": "2026-09-29",
+  "reason": "no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec",
   "verdict": "ACCEPTED"
  },
  "OTHER@gladia.io": {

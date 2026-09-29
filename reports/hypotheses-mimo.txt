@@ -1,5 +1,4 @@
-## 2026-09-29 05:39:26 UTC [gladia] (model mimo)
-[NEW] None — OpenAPI spec NO_DRIFT (14 paths, 7 webhooks structurally identical), inventory timestamps show no new endpoints since 2026-09-28 23:15:08, knowledge base last updated 2026-09-28 for all ACCEPTED/REJECTED entries
+## 2026-09-29 12:47:01 UTC [api] (model mimo)
 [PRIO] app.gladia.io: 7.7 attack_surface:8 business_value:8 tech_exposure:9 gate_ease:9 cloud_surface:2 freshness:8
 [PRIO] api.gladia.io: 7.3 attack_surface:9 business_value:9 tech_exposure:8 gate_ease:2 cloud_surface:7 freshness:6
 [PRIO] sdk: 6.5 attack_surface:7 business_value:6 tech_exposure:6 gate_ease:10 cloud_surface:1 freshness:7
@@ -41,4 +40,5 @@ testability: PASSIVE
 [LEARN] ACCEPTED MISCONFIG @ app.gladia.io: CSP confirmed fresh — 0 form-action directives (grep-count=0); enables /signin form-action reflection (gap confirmed, not oversight)
 [LEARN] ACCEPTED MISCONFIG @ api.gladia.io: /v2/live/health undocumented key-gated endpoint confirmed informational only — 401 NestJS, not in OpenAPI 14-path spec, properly gated, no bypass/data leakage
 [LEARN] REJECTED AUTH @ api.gladia.io: no-key POST /v2/pre-recorded still 401/144 NestJS no bypass this cycle
+[LEARN] ACCEPTED OTHER @ api: no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec
 [RISK] api.gladia.io: 72 reason: frozen spec no drift but high-value SSRF-by-design requires stolen/bought key (AUTH_HELPED) to reach 169.254.169.254 -> cloud credential theft critical if key obtained | app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap is live and chainable to OAuth code theft -> ATO via HUMAN_ONLY post-auth step, highest gate_ease | sdk: 68 reason: orphaned maintainer 404 with "Official" description + WebSocket query key leakage = supply-chain hijack risk medium-high but requires GitHub namespace claim and npm publish, passive verifiable
