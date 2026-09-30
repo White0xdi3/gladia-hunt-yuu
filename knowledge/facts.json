@@ -47,6 +47,12 @@
   "reason": "no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec",
   "verdict": "ACCEPTED"
  },
+ "OTHER@app.gladia.io": {
+  "first_seen": "2026-09-30",
+  "last_seen": "2026-09-30",
+  "reason": "no new surface this cycle, re-confirmed static \u2014 /signin?redirect_to reflection byte-fresh, CSP 0 form-action directives gap confirmed, OAuth post-auth chain HUMAN_ONLY gate",
+  "verdict": "ACCEPTED"
+ },
  "OTHER@gladia": {
   "first_seen": "2026-09-30",
   "last_seen": "2026-09-30",
