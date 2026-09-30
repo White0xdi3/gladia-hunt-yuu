@@ -1,4 +1,62 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[91m[1mError: [0m{"message":"Streaming response failed: [503] Upstream error from Nvidia: Service temporarily overloaded","type":"server_error"}
+### Classification Tables
+
+#### TEST_OR_EXAMPLE (57 hits — all test fixtures, examples, or documentation)
+
+| File | Line | Pattern | Note |
+|------|------|---------|------|
+| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740 | `client_secret: 'secret123'` | Test fixture |
+| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 905 | `access_token: 'access123'` | Test fixture |
+| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 908 | `refresh_token: 'refresh123'` | Test fixture |
+| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409 | `access_token: 'expired-access-token'` | Test fixture |
+| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 411 | `refresh_token: 'rotating-refresh-token'` | Test fixture |
+| vercel-ai/packages/openai/src/openai-provider.test.ts | 48,66,84 | `apiKey: 'test-api-key'` | Test fixture (3×) |
+| vercel-ai/packages/openai/src/files/openai-files.test.ts | 40,61,78 | `apiKey: 'test-api-key'` | Test fixture (3×) |
+| vercel-ai/packages/openai/src/image/openai-image-model.test.ts | 14,114 | `apiKey: 'test-api-key'` | Test fixture (2×) |
+| vercel-ai/packages/openai/src/chat/openai-chat-language-model.test.ts | 113,778,3310 | `apiKey: 'test-api-key'` | Test fixture (3×) |
+| vercel-ai/packages/openai/src/completion/openai-completion-language-model.test.ts | 45,246,381 | `apiKey: 'test-api-key'` | Test fixture (3×) |
+| vercel-ai/packages/openai/src/speech/openai-speech-model.test.ts | 10,54 | `apiKey: 'test-api-key'` | Test fixture (2×) |
+| vercel-ai/packages/openai/src/skills/openai-skills.test.ts | 12 | `apiKey: 'test-api-key'` | Test fixture |
+| vercel-ai/packages/openai/src/transcription/openai-transcription-model.test.ts | 17,73 | `apiKey: 'test-api-key'` | Test fixture (2×) |
+| vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13,277 | `apiKey: 'test-api-key'` | Test fixture (2×) |
+| vercel-ai/packages/togetherai/src/togetherai-provider.test.ts | 99,112,165 | `apiKey: 'custom-key'/'explicit-key'` | Test fixture (3×) |
+| vercel-ai/packages/togetherai/src/reranking/togetherai-reranking-model.test.ts | 7 | `apiKey: 'test-api-key'` | Test fixture |
+| vercel-ai/packages/google-vertex/src/google-vertex-provider.test.ts | 120 | `apiKey: 'test-api-key'` | Test fixture |
+| vercel-ai/packages/google-vertex/src/google-vertex-provider-base.test.ts | 187,405,419 | `apiKey: 'test-api-key'` | Test fixture (3×) |
+| vercel-ai/packages/google-vertex/src/google-vertex-auth-google-auth-library.test.ts | 5,21 | `token: 'mocked-token'` | Test fixture (2×) |
+| vercel-ai/packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts | 68,134,150 | `access_token: 'mock.jwt.token'`, `private_key: 'invalid-key'` | Test fixture (3×) |
+| vercel-ai/packages/google-vertex/src/edge/google-vertex-provider-edge.test.ts | 95 | `apiKey: 'test-api-key'` | Test fixture |
+| vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.test.ts | 128,152,158 | `sessionToken: 'dynamic-session-token'/'static-session-token'` | Test fixture (3×) |
+| vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts | 48 | `apiKey: 'your-api-key-here'` | Doc example |
+| vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-sigv4-fetch.test.ts | 100,331,442 | `sessionToken: 'test-session-token'`, `apiKey: 'test-api-key-123'` | Test fixture (3×) |
+| vercel-ai/packages/amazon-bedrock/src/mantle/bedrock-mantle-provider.test.ts | 209 | `apiKey: 'test-api-key'` | Test fixture |
+| vercel-ai/packages/amazon-bedrock/src/reranking/amazon-bedrock-reranking-model.test.ts | 55 | `nextToken: 'test-token'` | Test fixture |
+| vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json | 36 | `encrypted_content: "gAAAAAB..."` | Test fixture (encrypted blob) |
+
+#### INTERESTING (6 hits — config/architecture signals)
+
+| File | Line | Pattern | Note |
+|------|------|---------|------|
+| vercel-ai/pnpm-lock.yaml | 289,291,2368 | `@ai-sdk/gladia` linked as local package | Official Vercel AI SDK integration for Gladia (confirmed in RAG) |
+| vercel-ai/tsconfig.json | 70 | `"path": "packages/gladia"` | TypeScript project reference to Gladia provider |
+| vercel-ai/tools/analyze-downloads/src/analyze-providers.ts | 21 | `'@ai-sdk/gladia'` | Provider analysis script includes Gladia |
+| vercel-ai/.github/tigent.yml | 30 | Provider list includes Gladia-adjacent providers | CI config referencing multiple AI providers |
+| vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166,171 | `deniedCIDRs: ['169.254.169.254/32']` | **Positive**: SSRF protection blocking AWS/GCP metadata endpoint |
+
+#### REAL_SECRET: 0 hits
+#### ENDPOINT_LEAK: 0 hits
+
+---
+
+### Verdict
+
+| Candidate | REPORT_CANDIDATE | Reason |
+|-----------|------------------|--------|
+| Any hardcoded secret in vercel-ai test files | **no** | All are test fixtures (`test-api-key`, `secret123`, `mocked-token`, etc.) |
+| `@ai-sdk/gladia` supply-chain surface | **no** | Official integration, already tracked in RAG (`vercel-ai @ai-sdk/gladia = official org integration`) |
+| SSRF protection in vercel-sandbox | **no** | Defensive control (denies 169.254.169.254), not a vulnerability |
+| npm `gladia` 0.1.3 ownership mismatch | **no** | Already documented in RAG (orphaned personal repo, `shasum cc96f84a… unchanged`) |
+
+**No new reportable findings this cycle.** Delta = 0 new hit lines vs previous scan. All hits are pre-classified test fixtures or known architecture.
