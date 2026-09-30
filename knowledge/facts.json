@@ -43,7 +43,7 @@
  },
  "OTHER@api.gladia.io": {
   "first_seen": "2026-08-08",
-  "last_seen": "2026-09-29",
+  "last_seen": "2026-09-30",
   "reason": "no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec",
   "verdict": "ACCEPTED"
  },

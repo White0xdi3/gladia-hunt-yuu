@@ -1,4 +1,4 @@
-## 2026-09-30 02:04:09 UTC [gladia] (model mimo)
+## 2026-09-30 08:28:09 UTC [api] (model mimo)
 [PRIO] api.gladia.io: 7.3 attack_surface:9 business_value:9 tech_exposure:8 gate_ease:2 cloud_surface:7 freshness:6
 [PRIO] app.gladia.io: 7.7 attack_surface:8 business_value:8 tech_exposure:9 gate_ease:9 cloud_surface:2 freshness:8
 [PRIO] sdk: 6.5 attack_surface:7 business_value:6 tech_exposure:6 gate_ease:10 cloud_surface:1 freshness:7
@@ -29,10 +29,9 @@ evidence_needed: registry.npmjs.org/gladia repository.url points to 404 GitHub, 
 verify_steps: PASSIVE: GET https://registry.npmjs.org/gladia (and GET https://registry.npmjs.org/@gladiaio/sdk), check repository, maintainers, dist-tags, time.modified; download tarball 0.1.3 shasum cc96f84a, grep -R "WebSocket\|wss://\|api_key\|x-gladia-key" ; GET https://api.github.com/users/alexisbouchez and /repos/alexisbouchez/gladia confirm 404
 impact: Supply-chain takeover -> malicious SDK distributes key-logger, API key exfiltration via URL query logged in proxies/CDN, High
 testability: PASSIVE
-[PARKED] None dropped: all three hypotheses have confidence ≥ 72, classes OAUTH/SSRF/OTHER all ACCEPTED in KB, and all have concrete verify_steps (HUMAN_ONLY, AUTH_HELPED, PASSIVE respectively)
 [FINAL] Post-auth open redirect via redirect_to enables OAuth authorization code theft and account takeover: confidence 85, OAUTH @ app.gladia.io, HUMAN_ONLY, rank 1
 [FINAL] Authenticated SSRF via audio_url to cloud metadata exfiltration: confidence 78, SSRF @ api.gladia.io, AUTH_HELPED, rank 2
 [FINAL] Orphaned npm package gladia@0.1.3 impersonates official SDK and leaks raw API key in WebSocket URL query: confidence 72, OTHER @ sdk, PASSIVE, rank 3
 [NEXT] PROBE: GET https://registry.npmjs.org/gladia — observe repository.url, maintainers, dist-tags, time.modified; then GET https://registry.npmjs.org/@gladiaio/sdk for comparison (≤1 rps, read-only)
-[LEARN] ACCEPTED OTHER @ gladia: no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec and inventory timestamps
+[LEARN] ACCEPTED OTHER @ api: no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec
 [RISK] api.gladia.io: 72 reason: frozen spec no drift but high-value SSRF-by-design requires stolen/bought key (AUTH_HELPED) to reach 169.254.169.254 -> cloud credential theft critical if key obtained | app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap is live and chainable to OAuth code theft -> ATO via HUMAN_ONLY post-auth step, highest gate_ease | sdk: 68 reason: orphaned maintainer 404 with "Official" description + WebSocket query key leakage = supply-chain hijack risk medium-high but requires GitHub namespace claim and npm publish, passive verifiable
