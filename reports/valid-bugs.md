@@ -1164,3 +1164,7 @@
   - **VERDICT: VALID**
   - **VERDICT: HOLD** — Token-in-URL by design per spec. Need valid key to init session and inspect WS handshake headers.
   - | npm gladia@0.1.3 impersonation | **VALID** |
+
+- 2 lead(s) marked VALID at 2026-09-30 00:35:53 UTC
+  - **VERDICT: VALID**
+  - | npm `gladia@0.1.3` orphaned impersonation + key leak | **VALID** | Report-ready, 10+ reproductions, supply-chain P3/P4 |
