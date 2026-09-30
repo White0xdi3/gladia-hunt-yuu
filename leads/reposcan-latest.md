@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-09-30 21:05:08 UTC =====
+===== REPOSCAN 2026-09-30 23:55:31 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5688 code/config files scanned, 652 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,120 +46,52 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mls -la reposcan-raw/gladiaio/
-total 60
-drwxr-xr-x 15 runner runner 4096 Sep 30 20:51 .
-drwxr-xr-x  4 runner runner 4096 Sep 30 20:51 ..
-drwxr-xr-x  9 runner runner 4096 Sep 30 20:51 compare-stt
-drwxr-xr-x  9 runner runner 4096 Sep 30 20:51 docs
-drwxr-xr-x  7 runner runner 4096 Sep 30 20:51 gladia-cli
-drwxr-xr-x 11 runner runner 4096 Sep 30 20:51 gladia-quiz-app
-drwxr-xr-x 11 runner runner 4096 Sep 30 20:51 gladia-samples
-drwxr-xr-x  9 runner runner 4096 Sep 30 20:51 gladiaflow
-drwxr-xr-x  7 runner runner 4096 Sep 30 20:51 n8n-nodes-gladia
-drwxr-xr-x  8 runner runner 4096 Sep 30 20:51 normalization
-drwxr-xr-x 12 runner runner 4096 Sep 30 20:51 num2words2
-drwxr-xr-x  9 runner runner 4096 Sep 30 20:51 realtime-multilingual-asr-router
-drwxr-xr-x 10 runner runner 4096 Sep 30 20:51 sdk
-drwxr-xr-x  7 runner runner 4096 Sep 30 20:51 skills
-drwxr-xr-x 18 runner runner 4096 Sep 30 20:51 vercel-ai
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts
+-rw-r--r-- 1 runner runner 9741 Sep 30 23:54 reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts
 [0m
-[0m$ [0mcat reposcan-raw/gladiaio/vercel-ai/package.json
-{
-  "private": true,
-  "name": "ai-repo",
-  "scripts": {
-    "build": "turbo build --concurrency 16",
-    "build:examples": "turbo build --filter=@example/*",
-    "build:packages": "turbo build --filter=@ai-sdk/* --filter=ai",
-    "changeset": "changeset",
-    "clean": "turbo clean",
-    "dev": "turbo dev --cache=local:r,remote:r --concurrency 25 --continue",
-    "prepare": "husky",
-    "update-references": "update-ts-references && node tools/split-ts-references.mjs",
-    "type-check": "tsc --build",
-    "type-check:full": "tsc --build tsconfig.with-examples.json",
-    "publint": "turbo publint",
-    "test": "turbo test --concurrency 16 --filter=!@example/*",
-    "test:ci": "turbo test --concurrency 16 --filter=!@example/* --filter=!ai --filter=!@ai-sdk/codemod --only",
-    "test:update": "turbo test:update --concurrency 16 --filter=!@example/*",
-    "ci:release": "turbo clean && turbo build && changeset publish",
-    "ci:version": "changeset version && node .github/scripts/cleanup-examples-changesets.mjs && pnpm install --no-frozen-lockfile",
-    "clean-examples": "node .github/scripts/cleanup-examples-changesets.mjs && pnpm install --no-frozen-lockfile",
-    "check": "ultracite check",
-    "fix": "ultracite fix",
-    "validate:docs": "node tools/validate-properties-tables.mjs",
-    "konsistent": "turbo run konsistent:validate konsistent:check --log-order=grouped --log-prefix=none",
-    "konsistent:check": "konsistent --config-path .github/konsistent.json",
-    "konsistent:validate": "konsistent validate --config-path .github/konsistent.json",
-    "worktree:setup": "bash tools/worktree-setup.sh"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "ultracite fix"
-    ]
-  },
-  "devDependencies": {
-    "konsistent-provider": "workspace:*",
-    "@changesets/cli": "2.27.10",
-    "@playwright/test": "^1.60.0",
-    "del-cli": "^5.1.0",
-    "husky": "^9.1.7",
-    "konsistent": "0.0.1-alpha.20",
-    "lint-staged": "^15.5.1",
-    "next": "15.0.7",
-    "oxfmt": "^0.41.0",
-    "oxlint": "^1.56.0",
-    "playwright": "^1.60.0",
-    "publint": "0.2.12",
-    "react": "19.0.0-rc-cc1ec60d0d-20240607",
-    "react-dom": "19.0.0-rc-cc1ec60d0d-20240607",
-    "turbo": "2.4.4",
-    "typescript": "5.8.3",
-    "ultracite": "7.3.2",
-    "update-ts-references": "^3.6.0",
-    "vitest": "4.1.5"
-  },
-  "engines": {
-    "node": "^22.0.0 || ^24.0.0 || ^26.0.0"
-  },
-  "homepage": "https://ai-sdk.dev/docs",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vercel/ai"
-  },
-  "license": "Apache License",
-  "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
-  },
-  "keywords": [
-    "ai"
-  ],
-  "packageManager": "pnpm@10.33.4",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild"
-    ],
-    "overrides": {
-      "tinyexec": "1.0.2",
-      "oxlint": "1.56.0"
-    }
-  }
-}
-[0m
-[0m$ [0mgrep -r "gladia" reposcan-raw/gladiaio/vercel-ai/packages/gladia/ 2>/dev/null | head -50
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:# @ai-sdk/gladia
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- 7948763: fix(provider/gladia): Invalid `model` param removed
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- 7948763: fix(provider/gladia): Invalid `model` parameter being passed
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:  fix(provider/gladia): `experimental_transcribe` fails with valid Buffer
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- 84d4b2b: fix (provider/gladia): correct workspace dependencies
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- cf822aa: feat(providers/gladia): add transcribe
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- 84d4b2b: fix (provider/gladia): correct workspace dependencies
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- cf822aa: feat(providers/gladia): add transcribe
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:import { GladiaTranscriptionModel } from './gladia-transcription-model';
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:        'x-gladia-key': loadApiKey({
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:      `ai-sdk/gladia/${VERSION}`,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:      provider: `gladia.transcription`,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:      url: ({ path }) => `https://api.gladia.io${path}`,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:export const gladia = createGladia();
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:export { createGladia, gladia } from './gladia-provider';
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [offset=160, limit=30][0m
+### Classification Tables
+
+#### TEST_OR_EXAMPLE (all test fixtures / placeholder values)
+| File | Line | Pattern | SHA256(prefix) |
+|------|------|---------|----------------|
+| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740 | `client_secret: 'secret123'` | `a591...` |
+| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts | 905 | `access_token: 'access123'` | `f2d7...` |
+| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts | 908 | `refresh_token: 'refresh123'` | `e3b0...` |
+| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409 | `access_token: 'expired-access-token'` | `d4f8...` |
+| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 411 | `refresh_token: 'rotating-refresh-token'` | `c8a2...` |
+| reposcan-raw/gladiaio/vercel-ai/packages/openai/src/**/*.test.ts | 48+ | `apiKey: 'test-api-key'` (20+ occurrences) | `3e9f...` |
+| reposcan-raw/gladiaio/vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13,277 | `apiKey: 'test-api-key'` | `3e9f...` |
+| reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test.ts | 99,112,165 | `apiKey: 'custom-key'`, `apiKey: 'explicit-key'` | `9b4e...` |
+| reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/reranking/togetherai-reranking-model.test.ts | 7 | `apiKey: 'test-api-key'` | `3e9f...` |
+| reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/*.test.ts | 120,187,405,419 | `apiKey: 'test-api-key'` | `3e9f...` |
+| reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts | 68,134,150 | `access_token: 'mock.jwt.token'`, `private_key: 'invalid-key'` | `b1a7...` |
+| reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.test.ts | 128,152,158 | `sessionToken: 'dynamic-session-token'`, `'static-session-token'` | `a3f1...` |
+| reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-sigv4-fetch.test.ts | 100,331,442 | `sessionToken: 'test-session-token'`, `apiKey: 'test-api-key-123'` | `7c2e...` |
+| reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/mantle/bedrock-mantle-provider.test.ts | 209 | `apiKey: 'test-api-key'` | `3e9f...` |
+| reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/reranking/amazon-bedrock-reranking-model.test.ts | 55 | `nextToken: 'test-token'` | `f8d4...` |
+| reposcan-raw/gladiaio/vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json | 36 | `encrypted_content: "gAAAAABplLP7..."` (Fernet test token) | `8e3c...` |
+
+#### INTERESTING (security-relevant configuration)
+| File | Line | Finding | Context |
+|------|------|---------|---------|
+| reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166,171 | `deniedCIDRs: ['169.254.169.254/32']` | Explicit SSRF protection test — denies cloud metadata IP in network policy |
+
+#### ENDPOINT_LEAK / REAL_SECRET
+| Category | Count |
+|----------|-------|
+| ENDPOINT_LEAK | 0 |
+| REAL_SECRET | 0 |
+
+---
+
+### Verdict
+
+| Candidate | REPORT_CANDIDATE | Reason |
+|-----------|------------------|--------|
+| `@ai-sdk/gladia` in vercel-ai monorepo | **no** | Official Vercel AI SDK integration (confirmed in RAG), not a supply-chain risk |
+| Hardcoded secrets in test files | **no** | All values are obvious placeholders (`test-api-key`, `secret123`, `mock.jwt.token`, `invalid-key`) in `*.test.ts` fixtures |
+| `deniedCIDRs: ['169.254.169.254/32']` | **no** | Defensive SSRF mitigation test — proves metadata IP blocking is implemented, not a vulnerability |
+| `gladia` npm package (0.1.3, alexisbouchez) | **no** | Already tracked in RAG as orphaned personal repo; dist-tag/shasum unchanged since 2026-08-07 |
+
+**No reportable findings this cycle.** All hits are test fixtures or defensive security controls.
