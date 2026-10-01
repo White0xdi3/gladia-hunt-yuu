@@ -1168,3 +1168,19 @@
 - 2 lead(s) marked VALID at 2026-09-30 00:35:53 UTC
   - **VERDICT: VALID**
   - | npm `gladia@0.1.3` orphaned impersonation + key leak | **VALID** | Report-ready, 10+ reproductions, supply-chain P3/P4 |
+
+- 14 lead(s) marked VALID at 2026-10-01 06:14:49 UTC
+  - **VERDICT: VALID**
+  - | Q2 Reachability | **CONDITIONAL** — Endpoints (`/v2/pre-recorded`, `/v2/upload`, `/v2/live`, legacy `/audio/text/audio-transcription`, `/video/text/video-transcription`) are **key-gated (401 without
+  - | Q4 Proof (passive) | **PARTIAL** — Spec analysis + SDK RAG confirms zero client-side validation. Passive probes confirm endpoints exist and are key-gated (401). **Cannot prove actual SSRF without a 
+  - | Q7 Triager accept | **HOLD** — Real vulnerability class, high impact, but **cannot be proven without a valid API key** (AUTH_HELPED). Passive-only triage cannot confirm exploitability. |
+  - | Q2 Reachability | **CONDITIONAL** — Requires valid `x-gladia-key` to POST `/v2/live` and receive `url` with token. |
+  - | Q2 Reachability | **CONDITIONAL** — Key-gated (401). Needs valid key + valid transcription ID owned by another user. |
+  - **VERDICT: HOLD** — Requires two valid API keys (attacker + victim) to test cross-account access.
+  - | 1 | npm `gladia`@0.1.3 impersonation + key-in-URL | npm (Medium) | **VALID** | Passive-proven supply-chain impersonation (orphaned repo) + credential hygiene flaw |
+  - | 2 | SSRF via `audio_url`/`video_url`/`callback_url` | api.gladia.io (Highest) | **HOLD** | Spec-confirmed SSRF-by-design; needs valid API key to prove exploitability |
+  - | 8 | IDOR on `/{id}/file` download | api.gladia.io (Highest) | **HOLD** | High impact but needs two valid keys (cross-tenant) |
+  - | SSRF (api.gladia.io) | 1 valid `x-gladia-key` → POST `/v2/pre-recorded` with `audio_url=http://169.254.169.254/latest/meta-data/` |
+  - | WS token leak (api.gladia.io) | 1 valid key → POST `/v2/live` → inspect token format, lifetime, Referrer-Policy |
+  - | IDOR (api.gladia.io) | 2 valid keys (different accounts) + transcription IDs |
+  - | Query injection (api.gladia.io) | 1 valid key → GET `/v1/history?custom_metadata[__proto__][x]=1` |
