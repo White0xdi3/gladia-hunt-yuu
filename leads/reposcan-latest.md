@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-01 06:07:10 UTC =====
+===== REPOSCAN 2026-10-01 07:13:59 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5688 code/config files scanned, 652 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,120 +46,83 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -name "*.test.ts" -o -name "*.test.js" -o -name "*.spec.ts" -o -name "*.spec.js" | head -20
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/openai.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/togetherai.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/luma.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/cerebras.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/amazon-bedrock.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google-vertex-anthropic.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/fireworks.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/amazon-bedrock-anthropic.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/gateway.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/mistral.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/deepinfra.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/deepseek.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/azure.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/huggingface.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/anthropic.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/xai.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/cohere.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/groq.test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google-vertex.test.ts
+[0m$ [0mcat << 'EOF'
+=== CLASSIFICATION TABLE ===
+
+| File | Line | Pattern | Category | Reason |
+|------|------|---------|----------|--------|
+| vercel-ai/pnpm-lock.yaml | 289,291,2368 | @ai-sdk/gladia link:../../packages/gladia | INTERESTING | Local workspace dependency; confirms @ai-sdk/gladia is official Gladia integration in vercel-ai monorepo |
+| vercel-ai/tsconfig.json | 70 | "path": "packages/gladia" | INTERESTING | TypeScript path alias for the Gladia provider package |
+| vercel-ai/tools/analyze-downloads/src/analyze-providers.ts | 21 | '@ai-sdk/gladia' | INTERESTING | Provider enumeration in download analytics tool |
+| vercel-ai/.github/tigent.yml | 30 | provider/gladia (implied in list) | INTERESTING | CI workflow provider matrix includes Gladia |
+| vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166,171 | deniedCIDRs: ['169.254.169.254/32'] | INTERESTING | **Security control**: Test explicitly blocks cloud metadata IP (SSRF mitigation) |
+| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740 | client_secret: 'secret123' | TEST_OR_EXAMPLE | Hardcoded test fixture value |
+| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 905 | access_token: 'access123' | TEST_OR_EXAMPLE | Hardcoded test fixture value |
+| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 908 | refresh_token: 'refresh123' | TEST_OR_EXAMPLE | Hardcoded test fixture value |
+| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409 | access_token: 'expired-access-token' | TEST_OR_EXAMPLE | Test fixture for expired token scenario |
+| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 411 | refresh_token: 'rotating-refresh-token' | TEST_OR_EXAMPLE | Test fixture for token rotation scenario |
+| vercel-ai/packages/openai/src/**/*.test.ts | (multiple) | apiKey: 'test-api-key' | TEST_OR_EXAMPLE | Standard test fixture across 15+ files |
+| vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json | 36 | encrypted_content: "gAAAAABplLP7..." | TEST_OR_EXAMPLE | Encrypted test fixture (Fernet-style token) |
+| vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13,277 | apiKey: 'test-api-key' | TEST_OR_EXAMPLE | Test fixture |
+| vercel-ai/packages/togetherai/src/togetherai-provider.test.ts | 99,112,165 | apiKey: 'custom-key'/'explicit-key' | TEST_OR_EXAMPLE | Test fixtures |
+| vercel-ai/packages/togetherai/src/reranking/togetherai-reranking-model.test.ts | 7 | apiKey: 'test-api-key' | TEST_OR_EXAMPLE | Test fixture |
+| vercel-ai/packages/google-vertex/src/*.test.ts | (multiple) | apiKey: 'test-api-key', mocked tokens | TEST_OR_EXAMPLE | Test fixtures + mocked OAuth flows |
+| vercel-ai/packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts | 134 | private_key: 'invalid-key' | TEST_OR_EXAMPLE | Negative test case fixture |
+| vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts | 48 | * apiKey: 'your-api-key-here' | TEST_OR_EXAMPLE | Documentation comment example |
+| vercel-ai/packages/amazon-bedrock/src/*.test.ts | (multiple) | sessionToken: 'test-session-token' etc | TEST_OR_EXAMPLE | Test fixtures for STS scenarios |
+
+=== VERDICT ===
+
+REPORT_CANDIDATE: NO
+
+No REAL_SECRET found. All hits are:
+- TEST_OR_EXAMPLE (test fixtures, mocked credentials, documentation examples) — 600+ lines
+- INTERESTING (config/architecture signals: @ai-sdk/gladia official integration, SSRF mitigation test at 169.254.169.254/32) — 7 lines
+- Zero ENDPOINT_LEAK (no internal/staging URLs)
+- Zero hardcoded live credentials
+
+The vercel-ai repo is a **fork/integration** of Vercel's AI SDK adding Gladia as a provider (@ai-sdk/gladia). The 169.254.169.254/32 deny-list in sandbox tests is a positive security control, not a finding.
+EOF
+=== CLASSIFICATION TABLE ===
+
+| File | Line | Pattern | Category | Reason |
+|------|------|---------|----------|--------|
+| vercel-ai/pnpm-lock.yaml | 289,291,2368 | @ai-sdk/gladia link:../../packages/gladia | INTERESTING | Local workspace dependency; confirms @ai-sdk/gladia is official Gladia integration in vercel-ai monorepo |
+| vercel-ai/tsconfig.json | 70 | "path": "packages/gladia" | INTERESTING | TypeScript path alias for the Gladia provider package |
+| vercel-ai/tools/analyze-downloads/src/analyze-providers.ts | 21 | '@ai-sdk/gladia' | INTERESTING | Provider enumeration in download analytics tool |
+| vercel-ai/.github/tigent.yml | 30 | provider/gladia (implied in list) | INTERESTING | CI workflow provider matrix includes Gladia |
+| vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166,171 | deniedCIDRs: ['169.254.169.254/32'] | INTERESTING | **Security control**: Test explicitly blocks cloud metadata IP (SSRF mitigation) |
+| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740 | client_secret: 'secret123' | TEST_OR_EXAMPLE | Hardcoded test fixture value |
+| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 905 | access_token: 'access123' | TEST_OR_EXAMPLE | Hardcoded test fixture value |
+| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 908 | refresh_token: 'refresh123' | TEST_OR_EXAMPLE | Hardcoded test fixture value |
+| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409 | access_token: 'expired-access-token' | TEST_OR_EXAMPLE | Test fixture for expired token scenario |
+| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 411 | refresh_token: 'rotating-refresh-token' | TEST_OR_EXAMPLE | Test fixture for token rotation scenario |
+| vercel-ai/packages/openai/src/**/*.test.ts | (multiple) | apiKey: 'test-api-key' | TEST_OR_EXAMPLE | Standard test fixture across 15+ files |
+| vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json | 36 | encrypted_content: "gAAAAABplLP7..." | TEST_OR_EXAMPLE | Encrypted test fixture (Fernet-style token) |
+| vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13,277 | apiKey: 'test-api-key' | TEST_OR_EXAMPLE | Test fixture |
+| vercel-ai/packages/togetherai/src/togetherai-provider.test.ts | 99,112,165 | apiKey: 'custom-key'/'explicit-key' | TEST_OR_EXAMPLE | Test fixtures |
+| vercel-ai/packages/togetherai/src/reranking/togetherai-reranking-model.test.ts | 7 | apiKey: 'test-api-key' | TEST_OR_EXAMPLE | Test fixture |
+| vercel-ai/packages/google-vertex/src/*.test.ts | (multiple) | apiKey: 'test-api-key', mocked tokens | TEST_OR_EXAMPLE | Test fixtures + mocked OAuth flows |
+| vercel-ai/packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts | 134 | private_key: 'invalid-key' | TEST_OR_EXAMPLE | Negative test case fixture |
+| vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts | 48 | * apiKey: 'your-api-key-here' | TEST_OR_EXAMPLE | Documentation comment example |
+| vercel-ai/packages/amazon-bedrock/src/*.test.ts | (multiple) | sessionToken: 'test-session-token' etc | TEST_OR_EXAMPLE | Test fixtures for STS scenarios |
+
+=== VERDICT ===
+
+REPORT_CANDIDATE: NO
+
+No REAL_SECRET found. All hits are:
+- TEST_OR_EXAMPLE (test fixtures, mocked credentials, documentation examples) — 600+ lines
+- INTERESTING (config/architecture signals: @ai-sdk/gladia official integration, SSRF mitigation test at 169.254.169.254/32) — 7 lines
+- Zero ENDPOINT_LEAK (no internal/staging URLs)
+- Zero hardcoded live credentials
+
+The vercel-ai repo is a **fork/integration** of Vercel's AI SDK adding Gladia as a provider (@ai-sdk/gladia). The 169.254.169.254/32 deny-list in sandbox tests is a positive security control, not a finding.
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && head -50 reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts
-import { describe, it, expect, vi, beforeEach, type Mock } from 'vitest';
-import {
-  extractResourceMetadataUrl,
-  discoverOAuthProtectedResourceMetadata,
-  buildDiscoveryUrls,
-  discoverAuthorizationServerMetadata,
-  startAuthorization,
-  exchangeAuthorization,
-  refreshAuthorization,
-  registerClient,
-  auth,
-  type OAuthClientProvider,
-  type AuthResult,
-} from './oauth';
-import type { AuthorizationServerMetadata } from './oauth-types';
-import { ServerError } from '../error/oauth-error';
-import { LATEST_PROTOCOL_VERSION } from './types';
+**Classification complete.** All 652 hits from `gladiaio/vercel-ai` are **TEST_OR_EXAMPLE** (test fixtures, mocked credentials, doc examples) or **INTERESTING** (architecture/config signals). 
 
-// Mock the pkce-challenge module
-vi.mock('pkce-challenge', () => ({
-  default: vi.fn(() => ({
-    code_verifier: 'test_verifier',
-    code_challenge: 'test_challenge',
-  })),
-}));
+**Key INTERESTING findings:**
+- `@ai-sdk/gladia` confirmed as official Gladia provider in Vercel AI SDK monorepo (local workspace package)
+- `deniedCIDRs: ['169.254.169.254/32']` in sandbox tests — explicit SSRF mitigation blocking cloud metadata IP
 
-const mockFetch = vi.fn();
-global.fetch = mockFetch;
-
-beforeEach(() => {
-  mockFetch.mockReset();
-});
-
-describe('extractResourceMetadataUrl', () => {
-  it('returns resource metadata url when present', async () => {
-    const resourceUrl =
-      'https://resource.example.com/.well-known/oauth-protected-resource';
-    const mockResponse = {
-      headers: {
-        get: vi.fn(name =>
-          name === 'WWW-Authenticate'
-            ? `Bearer realm="mcp", resource_metadata="${resourceUrl}"`
-            : null,
-        ),
-      },
-    } as unknown as Response;
-
-    expect(extractResourceMetadataUrl(mockResponse)).toEqual(
-      new URL(resourceUrl),
-    );
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -n "secret123\|access123\|refresh123\|test-api-key\|mocked-token\|mock.jwt.token" reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts reposcan-raw/gladiaio/vercel-ai/packages/openai/src/chat/openai-chat-language-model.test.ts reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-auth-edge.test.ts | head -30
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:740:    client_secret: 'secret123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:905:    access_token: 'access123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:908:    refresh_token: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:924:    client_secret: 'secret123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:957:    expect(body.get('client_secret')).toBe('secret123');
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1034:        access_token: 'access123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1104:    expect(body.get('client_secret')).toBe('secret123');
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1161:    access_token: 'newaccess123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1167:    refresh_token: 'newrefresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1179:    client_secret: 'secret123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1193:      refreshToken: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1213:    expect(body.get('refresh_token')).toBe('refresh123');
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1215:    expect(body.get('client_secret')).toBe('secret123');
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1229:      refreshToken: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1271:    expect(body.get('refresh_token')).toBe('refresh123');
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1288:    const refreshToken = 'refresh123';
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1303:        access_token: 'newaccess123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1310:        refreshToken: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1329:        refreshToken: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1343:      refreshToken: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1370:      refreshToken: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1388:    client_secret: 'secret123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1426:        client_secret: 'secret123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1674:            access_token: 'access123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1677:            refresh_token: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1747:            access_token: 'new-access123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1767:      refresh_token: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1789:    expect(body.get('refresh_token')).toBe('refresh123');
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:2221:            access_token: 'access123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:2224:            refresh_token: 'refresh123',
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -n "test-api-key" reposcan-raw/gladiaio/vercel-ai/packages/openai/src/chat/openai-chat-language-model.test.ts | head -10
-113:  apiKey: 'test-api-key',
-778:      apiKey: 'test-api-key',
-794:      authorization: 'Bearer test-api-key',
-3310:      apiKey: 'test-api-key',
-3327:      authorization: 'Bearer test-api-key',
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -B5 -A5 "169.254.169.254" reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts
-const { sandbox, spies } = makeMockSandbox();
-      const handle = await createVercelSandbox({ sandbox }).createSession();
-      await handle.setNetworkPolicy!({
+**Verdict: REPORT_CANDIDATE: NO** — No live secrets, no endpoint leaks, no vulnerable patterns. The repo is a provider integration fork with proper test hygiene.
