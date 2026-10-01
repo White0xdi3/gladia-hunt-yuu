@@ -1184,3 +1184,11 @@
   - | WS token leak (api.gladia.io) | 1 valid key → POST `/v2/live` → inspect token format, lifetime, Referrer-Policy |
   - | IDOR (api.gladia.io) | 2 valid keys (different accounts) + transcription IDs |
   - | Query injection (api.gladia.io) | 1 valid key → GET `/v1/history?custom_metadata[__proto__][x]=1` |
+
+- 6 lead(s) marked VALID at 2026-10-01 13:36:01 UTC
+  - **VERDICT: VALID**
+  - **VERDICT: HOLD** — "Requires valid x-gladia-key for POC; surface frozen 100+ cycles, key-gated only. Cannot prove without AUTH_HELPED test. Submit only if program provides test key."
+  - **VERDICT: HOLD** — "Parked at confidence 50; spec shows 3 file download endpoints but ownership binding unknown. Needs two valid API keys to test cross-account access. Cannot verify passively."
+  - | npm `gladia@0.1.3` impersonation | **VALID** | Proven supply-chain impersonation + API key in WS URL |
+  - | SSRF via `audio_url`/`callback_url` | **HOLD** | Key-gated; needs valid key for POC |
+  - | IDOR on `/{id}/file` | **HOLD** | Needs two valid keys; parked |

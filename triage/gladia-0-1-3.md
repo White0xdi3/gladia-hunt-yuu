@@ -113,3 +113,11 @@ Evidence package: sha256-verified tarball + `npm view` JSON captured in repo kno
 **Impact:** Supply-chain API key harvesting + irrevocable account takeover (P3/P4)  
 **CVSS 3.1:** 7.1 (AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N) — key exposure in transit/logs  
 **Channel:** https://gladia.io/bug-bounty-report (301→www→302→Google Forms, Google SSO auth-gated)
+
+
+## Re-confirmed 2026-10-01 13:36 UTC
+**VERDICT: VALID**
+- **Minimal proof**: `npm view gladia@0.1.3 description repository.url maintainer` + tarball `src/client.ts:306-308` showing `searchParams.append('x-gladia-key', apiKey)` → `wss://api.gladia.io/v2/live?x-gladia-key=<KEY>`
+- **Impact**: Supply-chain API key harvesting + irrevocable account takeover risk (P3/P4)
+- **CVSS 3.1**: 7.1 (AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N) — network, low complexity, no auth, user interaction (install), high confidentiality
+- **Channel**: Gladia security channel per scope.yml (https://gladia.io/bug-bounty-report → Google Forms) + npm Trust & Safety
