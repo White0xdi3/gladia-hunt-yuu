@@ -1,54 +1,1779 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/shopify-mcp/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/repro-test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/image-content/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-ui/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -name "*.test.ts" -o -name "*.test.js" -o -name "*.spec.ts" -o -name "*.spec.js" | head -20
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/openai.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/togetherai.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/luma.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/cerebras.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/amazon-bedrock.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google-vertex-anthropic.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/fireworks.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/amazon-bedrock-anthropic.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/gateway.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/mistral.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/deepinfra.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/deepseek.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/azure.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/huggingface.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/anthropic.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/xai.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/cohere.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/groq.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google-vertex.test.ts
 [0m
-### Classification Table
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && head -50 reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts
+import { describe, it, expect, vi, beforeEach, type Mock } from 'vitest';
+import {
+  extractResourceMetadataUrl,
+  discoverOAuthProtectedResourceMetadata,
+  buildDiscoveryUrls,
+  discoverAuthorizationServerMetadata,
+  startAuthorization,
+  exchangeAuthorization,
+  refreshAuthorization,
+  registerClient,
+  auth,
+  type OAuthClientProvider,
+  type AuthResult,
+} from './oauth';
+import type { AuthorizationServerMetadata } from './oauth-types';
+import { ServerError } from '../error/oauth-error';
+import { LATEST_PROTOCOL_VERSION } from './types';
 
-| Category | File | Line | Evidence | Verdict |
-|----------|------|------|----------|---------|
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740, 905, 908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` | Test fixtures |
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409, 411 | `access_token: 'expired-access-token'`, `refresh_token: 'rotating-refresh-token'` | Test fixtures |
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/openai/src/**/*.test.ts | 48, 66, 84, 14, 54, 113, 778, 3310, 45, 246, 381, 10, 54, 13, 137, 12, 17, 73 | `apiKey: 'test-api-key'` (20+ occurrences) | Test fixtures |
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13, 277 | `apiKey: 'test-api-key'` | Test fixtures |
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/togetherai/src/*.test.ts | 99, 112, 165, 7 | `apiKey: 'custom-key'`, `apiKey: 'explicit-key'`, `apiKey: 'test-api-key'` | Test fixtures |
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/google-vertex/src/*.test.ts | 120, 187, 405, 419, 5, 21, 68, 134, 95 | `apiKey: 'test-api-key'`, `token: 'mocked-token'`, `access_token: 'mock.jwt.token'`, `private_key: 'invalid-key'` | Test fixtures |
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/amazon-bedrock/src/*.test.ts | 128, 152, 158, 100, 331, 442, 209, 55 | `sessionToken: 'dynamic-session-token'`, `sessionToken: 'static-session-token'`, `apiKey: 'test-api-key-123'`, `nextToken: 'test-token'` | Test fixtures |
-| **INTERESTING** | vercel-ai/pnpm-lock.yaml | 289, 291, 2368 | `@ai-sdk/gladia` linked as local package `packages/gladia` | Official Vercel AI SDK integration (known) |
-| **INTERESTING** | vercel-ai/tools/analyze-downloads/src/analyze-providers.ts | 21 | `'@ai-sdk/gladia'` in provider list | Official integration (known) |
-| **INTERESTING** | vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166, 171 | `deny: ['169.254.169.254/32']` | **Security control** — SSRF protection for cloud metadata (not a leak) |
-| **INTERESTING** | vercel-ai/.github/tigent.yml | 30 | Provider list includes gladia among 11 providers | Supply-chain visibility |
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json | 36 | `encrypted_content: "gAAAAABplLP75yhVf0v4856Geb-oLdsjDPhdISdmBJvCNP9Su2ib_UJkknntI-GqAeBDF59lGgLqPE4lDYfm5q7IhjCloCkaGycZGBo9GHcLdpuKj63e_CyVxYFNZdP4HYXKpKQZbbz7blA_nATSTNNN-PQpQ1DYWjYfq6uAxEUrm-4PUPSorUPWIiByyqIGDgHt-b...` | Test fixture (encrypted blob) |
+// Mock the pkce-challenge module
+vi.mock('pkce-challenge', () => ({
+  default: vi.fn(() => ({
+    code_verifier: 'test_verifier',
+    code_challenge: 'test_challenge',
+  })),
+}));
 
-### SHORT VERDICT LIST
+const mockFetch = vi.fn();
+global.fetch = mockFetch;
 
-| Candidate | REPORT_CANDIDATE | Reason |
-|-----------|------------------|--------|
-| `@ai-sdk/gladia` in vercel-ai | **no** | Official Vercel AI SDK integration (known, documented in KB) |
-| Sandbox deny-list `169.254.169.254/32` | **no** | Defensive SSRF control, not a vulnerability |
-| All `test-api-key`, `secret123`, `mocked-token`, `access123`, `refresh123`, `custom-key`, `explicit-key`, `invalid-key`, `dynamic-session-token`, `static-session-token`, `test-api-key-123` | **no** | Test/example fixtures — no signs of life |
-| Encrypted fixture blob in openai-compaction.1.json | **no** | Test fixture |
-| npm `gladia` 0.1.3 (alexisbouchez) | **no** | Already tracked: orphaned personal repo, shasum unchanged (KB: ACCEPTED OTHER@sdk) |
+beforeEach(() => {
+  mockFetch.mockReset();
+});
 
-**No new REAL_SECRET or actionable ENDPOINT_LEAK findings this cycle.**  
-Delta = 0 new hit lines confirms static surface — no drift.
+describe('extractResourceMetadataUrl', () => {
+  it('returns resource metadata url when present', async () => {
+    const resourceUrl =
+      'https://resource.example.com/.well-known/oauth-protected-resource';
+    const mockResponse = {
+      headers: {
+        get: vi.fn(name =>
+          name === 'WWW-Authenticate'
+            ? `Bearer realm="mcp", resource_metadata="${resourceUrl}"`
+            : null,
+        ),
+      },
+    } as unknown as Response;
+
+    expect(extractResourceMetadataUrl(mockResponse)).toEqual(
+      new URL(resourceUrl),
+    );
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -n "secret123\|access123\|refresh123\|test-api-key\|mocked-token\|mock.jwt.token" reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts reposcan-raw/gladiaio/vercel-ai/packages/openai/src/chat/openai-chat-language-model.test.ts reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-auth-edge.test.ts | head -30
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:740:    client_secret: 'secret123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:905:    access_token: 'access123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:908:    refresh_token: 'refresh123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:924:    client_secret: 'secret123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:957:    expect(body.get('client_secret')).toBe('secret123');
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1034:        access_token: 'access123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1104:    expect(body.get('client_secret')).toBe('secret123');
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1161:    access_token: 'newaccess123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1167:    refresh_token: 'newrefresh123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1179:    client_secret: 'secret123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1193:      refreshToken: 'refresh123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1213:    expect(body.get('refresh_token')).toBe('refresh123');
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1215:    expect(body.get('client_secret')).toBe('secret123');
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1229:      refreshToken: 'refresh123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1271:    expect(body.get('refresh_token')).toBe('refresh123');
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1288:    const refreshToken = 'refresh123';
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1303:        access_token: 'newaccess123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1310:        refreshToken: 'refresh123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1329:        refreshToken: 'refresh123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1343:      refreshToken: 'refresh123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1370:      refreshToken: 'refresh123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1388:    client_secret: 'secret123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1426:        client_secret: 'secret123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1674:            access_token: 'access123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1677:            refresh_token: 'refresh123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1747:            access_token: 'new-access123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1767:      refresh_token: 'refresh123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1789:    expect(body.get('refresh_token')).toBe('refresh123');
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:2221:            access_token: 'access123',
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:2224:            refresh_token: 'refresh123',
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -n "test-api-key" reposcan-raw/gladiaio/vercel-ai/packages/openai/src/chat/openai-chat-language-model.test.ts | head -10
+113:  apiKey: 'test-api-key',
+778:      apiKey: 'test-api-key',
+794:      authorization: 'Bearer test-api-key',
+3310:      apiKey: 'test-api-key',
+3327:      authorization: 'Bearer test-api-key',
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -B5 -A5 "169.254.169.254" reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts
+const { sandbox, spies } = makeMockSandbox();
+      const handle = await createVercelSandbox({ sandbox }).createSession();
+      await handle.setNetworkPolicy!({
+        mode: 'custom',
+        allowedHosts: ['api.example.com'],
+        deniedCIDRs: ['169.254.169.254/32'],
+      });
+      expect(spies.update).toHaveBeenCalledWith({
+        networkPolicy: {
+          allow: ['api.example.com'],
+          subnets: { deny: ['169.254.169.254/32'] },
+        },
+      });
+    });
+
+    it('maps custom with both allowedCIDRs + deniedCIDRs', async () => {
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "gladia" reposcan-raw/gladiaio/vercel-ai/packages/gladia/ 2>/dev/null | head -30
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:1:# @ai-sdk/gladia
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:1113:- 7948763: fix(provider/gladia): Invalid `model` param removed
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:1114:- 7948763: fix(provider/gladia): Invalid `model` parameter being passed
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:1115:  fix(provider/gladia): `experimental_transcribe` fails with valid Buffer
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:1172:- 84d4b2b: fix (provider/gladia): correct workspace dependencies
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:1174:- cf822aa: feat(providers/gladia): add transcribe
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:1416:- 84d4b2b: fix (provider/gladia): correct workspace dependencies
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:1422:- cf822aa: feat(providers/gladia): add transcribe
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:11:import { GladiaTranscriptionModel } from './gladia-transcription-model';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:57:        'x-gladia-key': loadApiKey({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:64:      `ai-sdk/gladia/${VERSION}`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:69:      provider: `gladia.transcription`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:70:      url: ({ path }) => `https://api.gladia.io${path}`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:117:export const gladia = createGladia();
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:1:export { createGladia, gladia } from './gladia-provider';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:2:export type { GladiaProvider, GladiaProviderSettings } from './gladia-provider';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:3:export type { GladiaTranscriptionModelOptions } from './gladia-transcription-model-options';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:3:// https://docs.gladia.io/api-reference/v2/pre-recorded/init
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:4:export const gladiaTranscriptionModelOptionsSchema = z.object({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:308:  typeof gladiaTranscriptionModelOptionsSchema
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:4:export const gladiaErrorDataSchema = z.object({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:11:export type GladiaErrorData = z.infer<typeof gladiaErrorDataSchema>;
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:13:export const gladiaFailedResponseHandler = createJsonErrorResponseHandler({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:14:  errorSchema: gladiaErrorDataSchema,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:2:import { GladiaTranscriptionModel } from './gladia-transcription-model';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:3:import { createGladia } from './gladia-provider';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:18:  fs.readFileSync('src/__fixtures__/gladia-upload.json', 'utf8'),
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:21:  fs.readFileSync('src/__fixtures__/gladia-initiate.json', 'utf8'),
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:24:  fs.readFileSync('src/__fixtures__/gladia-result.json', 'utf8'),
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:28:  'https://api.gladia.io/v2/upload': {
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts
+import { createTestServer } from '@ai-sdk/test-server/with-vitest';
+import { GladiaTranscriptionModel } from './gladia-transcription-model';
+import { createGladia } from './gladia-provider';
+import { readFile } from 'node:fs/promises';
+import * as fs from 'node:fs';
+import path from 'node:path';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+
+vi.mock('./version', () => ({
+  VERSION: '0.0.0-test',
+}));
+
+const audioData = await readFile(path.join(__dirname, 'transcript-test.mp3'));
+const provider = createGladia({ apiKey: 'test-api-key' });
+const model = provider.transcription();
+
+const uploadFixture = JSON.parse(
+  fs.readFileSync('src/__fixtures__/gladia-upload.json', 'utf8'),
+);
+const initiateFixture = JSON.parse(
+  fs.readFileSync('src/__fixtures__/gladia-initiate.json', 'utf8'),
+);
+const resultFixture = JSON.parse(
+  fs.readFileSync('src/__fixtures__/gladia-result.json', 'utf8'),
+);
+
+const server = createTestServer({
+  'https://api.gladia.io/v2/upload': {
+    response: {
+      type: 'json-value',
+      body: uploadFixture,
+    },
+  },
+  'https://api.gladia.io/v2/pre-recorded': {},
+  [initiateFixture.result_url]: {},
+  'https://cdn.evil.example/v2/pre-recorded/result': {},
+});
+
+function prepareJsonFixtureResponse(headers?: Record<string, string>) {
+  server.urls['https://api.gladia.io/v2/pre-recorded'].response = {
+    type: 'json-value',
+    headers,
+    body: initiateFixture,
+  };
+  server.urls[initiateFixture.result_url].response = {
+    type: 'json-value',
+    headers,
+    body: resultFixture,
+  };
+}
+
+describe('doGenerate', () => {
+  describe('transcription', () => {
+    beforeEach(() => prepareJsonFixtureResponse());
+
+    it('should pass audio_url to pre-recorded endpoint', async () => {
+      await model.doGenerate({
+        audio: audioData,
+        mediaType: 'audio/wav',
+      });
+
+      expect(await server.calls[1].requestBodyJson).toMatchObject({
+        audio_url: uploadFixture.audio_url,
+      });
+    });
+
+    it('does not send the API key when the result URL is on a foreign origin', async () => {
+      const foreignResultUrl =
+        'https://cdn.evil.example/v2/pre-recorded/result';
+      server.urls['https://api.gladia.io/v2/pre-recorded'].response = {
+        type: 'json-value',
+        body: { ...initiateFixture, result_url: foreignResultUrl },
+      };
+      server.urls[foreignResultUrl].response = {
+        type: 'json-value',
+        body: resultFixture,
+      };
+
+      await model.doGenerate({
+        audio: audioData,
+        mediaType: 'audio/wav',
+      });
+
+      const pollCall = server.calls.find(
+        call => call.requestUrl === foreignResultUrl,
+      );
+      expect(pollCall).toBeDefined();
+      expect(pollCall!.requestHeaders['x-gladia-key']).toBeUndefined();
+    });
+
+    it('should pass headers', async () => {
+      const provider = createGladia({
+        apiKey: 'test-api-key',
+        headers: {
+          'Custom-Provider-Header': 'provider-header-value',
+        },
+      });
+
+      await provider.transcription().doGenerate({
+        audio: audioData,
+        mediaType: 'audio/wav',
+        headers: {
+          'Custom-Request-Header': 'request-header-value',
+        },
+      });
+
+      expect(server.calls[1].requestHeaders).toMatchObject({
+        'x-gladia-key': 'test-api-key',
+        'content-type': 'application/json',
+        'custom-provider-header': 'provider-header-value',
+        'custom-request-header': 'request-header-value',
+      });
+      expect(server.calls[0].requestUserAgent).toContain(
+        `ai-sdk/gladia/0.0.0-test`,
+      );
+    });
+
+    it('should extract the transcription text', async () => {
+      const result = await model.doGenerate({
+        audio: audioData,
+        mediaType: 'audio/wav',
+      });
+
+      expect(result.text).toBe(
+        resultFixture.result.transcription.full_transcript,
+      );
+    });
+
+    it('should generate full response', async () => {
+      const testDate = new Date(0);
+      const customModel = new GladiaTranscriptionModel('default', {
+        provider: 'test-provider',
+        url: ({ path }) => `https://api.gladia.io${path}`,
+        headers: () => ({}),
+        _internal: {
+          currentDate: () => testDate,
+        },
+      });
+
+      const result = await customModel.doGenerate({
+        audio: audioData,
+        mediaType: 'audio/wav',
+      });
+
+      expect(result).toMatchSnapshot();
+    });
+  });
+
+  describe('response headers', () => {
+    beforeEach(() =>
+      prepareJsonFixtureResponse({
+        'x-request-id': 'test-request-id',
+        'x-ratelimit-remaining': '123',
+      }),
+    );
+
+    it('should include response headers', async () => {
+      const testDate = new Date(0);
+      const customModel = new GladiaTranscriptionModel('default', {
+        provider: 'test-provider',
+        url: ({ path }) => `https://api.gladia.io${path}`,
+        headers: () => ({}),
+        _internal: {
+          currentDate: () => testDate,
+        },
+      });
+
+      const result = await customModel.doGenerate({
+        audio: audioData,
+        mediaType: 'audio/wav',
+      });
+
+      expect(result.response).toMatchObject({
+        timestamp: testDate,
+        modelId: 'default',
+        headers: {
+          'content-type': 'application/json',
+          'x-request-id': 'test-request-id',
+          'x-ratelimit-remaining': '123',
+        },
+      });
+    });
+  });
+
+  describe('response metadata', () => {
+    beforeEach(() => prepareJsonFixtureResponse());
+
+    it('should include timestamp and modelId', async () => {
+      const testDate = new Date(0);
+      const customModel = new GladiaTranscriptionModel('default', {
+        provider: 'test-provider',
+        url: ({ path }) => `https://api.gladia.io${path}`,
+        headers: () => ({}),
+        _internal: {
+          currentDate: () => testDate,
+        },
+      });
+
+      const result = await customModel.doGenerate({
+        audio: audioData,
+        mediaType: 'audio/wav',
+      });
+
+      expect(result.response.timestamp.getTime()).toEqual(testDate.getTime());
+      expect(result.response.modelId).toBe('default');
+    });
+  });
+});
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-upload.json reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-initiate.json reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-result.json
+{
+  "audio_url": "https://api.gladia.io/file/7403f025-be30-4335-ae29-20131e0adbd6",
+  "audio_metadata": {
+    "id": "7403f025-be30-4335-ae29-20131e0adbd6",
+    "filename": "audio.mp3",
+    "extension": "mp3",
+    "size": 882477,
+    "audio_duration": 36.74,
+    "number_of_channels": 1
+  }
+}
+{
+  "id": "7b0137fd-5fd6-4d08-b9bf-4cdf9876797d",
+  "result_url": "https://api.gladia.io/v2/pre-recorded/7b0137fd-5fd6-4d08-b9bf-4cdf9876797d"
+}
+{
+  "id": "7b0137fd-5fd6-4d08-b9bf-4cdf9876797d",
+  "request_id": "G-7b0137fd",
+  "version": 2,
+  "status": "done",
+  "created_at": "2026-02-12T16:54:20.378Z",
+  "completed_at": "2026-02-12T16:54:46.321Z",
+  "custom_metadata": null,
+  "error_code": null,
+  "kind": "pre-recorded",
+  "file": {
+    "id": "7403f025-be30-4335-ae29-20131e0adbd6",
+    "filename": "audio.mp3",
+    "source": null,
+    "audio_duration": 36.74,
+    "number_of_channels": 1
+  },
+  "request_params": {
+    "audio_url": "https://api.gladia.io/file/7403f025-be30-4335-ae29-20131e0adbd6",
+    "model": "solaria-1",
+    "sentences": false,
+    "subtitles": false,
+    "moderation": false,
+    "diarization": false,
+    "translation": false,
+    "audio_to_llm": false,
+    "display_mode": false,
+    "pii_redaction": false,
+    "summarization": false,
+    "audio_enhancer": false,
+    "chapterization": false,
+    "custom_spelling": false,
+    "detect_language": true,
+    "language_config": {
+      "languages": []
+    },
+    "name_consistency": false,
+    "sentiment_analysis": false,
+    "diarization_enhanced": false,
+    "punctuation_enhanced": false,
+    "enable_code_switching": false,
+    "named_entity_recognition": false,
+    "speaker_reidentification": false,
+    "accurate_words_timestamps": false,
+    "skip_channel_deduplication": false,
+    "structured_data_extraction": false
+  },
+  "result": {
+    "metadata": {
+      "audio_duration": 36.74,
+      "number_of_distinct_channels": 1,
+      "billing_time": 36.74,
+      "transcription_time": 25.943
+    },
+    "transcription": {
+      "languages": ["en"],
+      "utterances": [
+        {
+          "text": "Galileo was an American robotic space program that studied the planet Jupiter and its moons,",
+          "language": "en",
+          "start": 0.14,
+          "end": 5.341,
+          "confidence": 0.98,
+          "channel": 0,
+          "words": [
+            {
+              "word": "Galileo",
+              "start": 0.14,
+              "end": 0.64,
+              "confidence": 0.94
+            },
+            { "word": " was", "start": 0.76, "end": 0.88, "confidence": 1 },
+            { "word": " an", "start": 0.881, "end": 1, "confidence": 0.89 },
+            {
+              "word": " American",
+              "start": 1.02,
+              "end": 1.48,
+              "confidence": 1
+            },
+            {
+              "word": " robotic",
+              "start": 1.56,
+              "end": 2.04,
+              "confidence": 0.97
+            },
+            { "word": " space", "start": 2.121, "end": 2.4, "confidence": 1 },
+            {
+              "word": " program",
+              "start": 2.441,
+              "end": 2.861,
+              "confidence": 1
+            },
+            { "word": " that", "start": 2.921, "end": 3.04, "confidence": 1 },
+            {
+              "word": " studied",
+              "start": 3.121,
+              "end": 3.48,
+              "confidence": 0.98
+            },
+            {
+              "word": " the",
+              "start": 3.481,
+              "end": 3.601,
+              "confidence": 0.95
+            },
+            { "word": " planet", "start": 3.621, "end": 3.96, "confidence": 1 },
+            {
+              "word": " Jupiter",
+              "start": 4.001,
+              "end": 4.443,
+              "confidence": 0.97
+            },
+            { "word": " and", "start": 4.599, "end": 4.72, "confidence": 1 },
+            { "word": " its", "start": 4.74, "end": 4.861, "confidence": 1 },
+            {
+              "word": " moons,",
+              "start": 4.943,
+              "end": 5.341,
+              "confidence": 0.99
+            }
+          ]
+        },
+        {
+          "text": "as well as several other solar system bodies.",
+          "language": "en",
+          "start": 5.662,
+          "end": 8.099,
+          "confidence": 0.97,
+          "channel": 0,
+          "words": [
+            { "word": " as", "start": 5.662, "end": 5.783, "confidence": 1 },
+            { "word": " well", "start": 5.841, "end": 6.001, "confidence": 1 },
+            { "word": " as", "start": 6.002, "end": 6.122, "confidence": 1 },
+            { "word": " several", "start": 6.22, "end": 6.54, "confidence": 1 },
+            {
+              "word": " other",
+              "start": 6.642,
+              "end": 6.841,
+              "confidence": 0.95
+            },
+            {
+              "word": " solar",
+              "start": 6.943,
+              "end": 7.24,
+              "confidence": 0.81
+            },
+            {
+              "word": " system",
+              "start": 7.283,
+              "end": 7.622,
+              "confidence": 1
+            },
+            {
+              "word": " bodies.",
+              "start": 7.681,
+              "end": 8.099,
+              "confidence": 1
+            }
+          ]
+        },
+        {
+          "text": "Named after the Italian astronomer Galileo Galilei,",
+          "language": "en",
+          "start": 9.138,
+          "end": 12.122,
+          "confidence": 0.93,
+          "channel": 0,
+          "words": [
+            {
+              "word": " Named",
+              "start": 9.138,
+              "end": 9.443,
+              "confidence": 0.96
+            },
+            { "word": " after", "start": 9.544, "end": 9.763, "confidence": 1 },
+            { "word": " the", "start": 9.764, "end": 9.88, "confidence": 1 },
+            {
+              "word": " Italian",
+              "start": 9.919,
+              "end": 10.38,
+              "confidence": 1
+            },
+            {
+              "word": " astronomer",
+              "start": 10.443,
+              "end": 10.982,
+              "confidence": 0.8
+            },
+            {
+              "word": " Galileo",
+              "start": 11.044,
+              "end": 11.505,
+              "confidence": 0.94
+            },
+            {
+              "word": " Galilei,",
+              "start": 11.622,
+              "end": 12.122,
+              "confidence": 0.78
+            }
+          ]
+        },
+        {
+          "text": "the Galileo spacecraft consisted of an orbiter and an atmospheric entry probe.",
+          "language": "en",
+          "start": 12.419,
+          "end": 17.248,
+          "confidence": 0.97,
+          "channel": 0,
+          "words": [
+            { "word": " the", "start": 12.419, "end": 12.544, "confidence": 1 },
+            {
+              "word": " Galileo",
+              "start": 12.599,
+              "end": 13.099,
+              "confidence": 0.94
+            },
+            {
+              "word": " spacecraft",
+              "start": 13.263,
+              "end": 13.88,
+              "confidence": 1
+            },
+            {
+              "word": " consisted",
+              "start": 13.943,
+              "end": 14.521,
+              "confidence": 1
+            },
+            { "word": " of", "start": 14.583, "end": 14.701, "confidence": 1 },
+            { "word": " an", "start": 14.702, "end": 14.802, "confidence": 1 },
+            {
+              "word": " orbiter",
+              "start": 14.88,
+              "end": 15.263,
+              "confidence": 0.78
+            },
+            {
+              "word": " and",
+              "start": 15.419,
+              "end": 15.544,
+              "confidence": 0.99
+            },
+            { "word": " an", "start": 15.545, "end": 15.662, "confidence": 1 },
+            {
+              "word": " atmospheric",
+              "start": 15.74,
+              "end": 16.404,
+              "confidence": 0.96
+            },
+            {
+              "word": " entry",
+              "start": 16.482,
+              "end": 16.716,
+              "confidence": 1
+            },
+            {
+              "word": " probe.",
+              "start": 16.81,
+              "end": 17.248,
+              "confidence": 0.99
+            }
+          ]
+        },
+        {
+          "text": "It was delivered into Earth orbit on October 18,",
+          "language": "en",
+          "start": 18.185,
+          "end": 20.919,
+          "confidence": 0.86,
+          "channel": 0,
+          "words": [
+            { "word": " It", "start": 18.185, "end": 18.31, "confidence": 1 },
+            { "word": " was", "start": 18.326, "end": 18.451, "confidence": 1 },
+            {
+              "word": " delivered",
+              "start": 18.529,
+              "end": 18.951,
+              "confidence": 1
+            },
+            {
+              "word": " into",
+              "start": 18.998,
+              "end": 19.201,
+              "confidence": 1
+            },
+            {
+              "word": " Earth",
+              "start": 19.279,
+              "end": 19.482,
+              "confidence": 0.93
+            },
+            {
+              "word": " orbit",
+              "start": 19.591,
+              "end": 19.841,
+              "confidence": 0.79
+            },
+            { "word": " on", "start": 19.919, "end": 20.044, "confidence": 1 },
+            {
+              "word": " October",
+              "start": 20.06,
+              "end": 20.529,
+              "confidence": 1
+            },
+            { "word": " 18,", "start": 20.53, "end": 20.919, "confidence": 0 }
+          ]
+        },
+        {
+          "text": "1989,",
+          "language": "en",
+          "start": 20.92,
+          "end": 22.498,
+          "confidence": 0,
+          "channel": 0,
+          "words": [
+            { "word": " 1989,", "start": 20.92, "end": 22.498, "confidence": 0 }
+          ]
+        },
+        {
+          "text": "by Space Shuttle Atlantis on the STS-34 mission.",
+          "language": "en",
+          "start": 22.499,
+          "end": 25.966,
+          "confidence": 0.94,
+          "channel": 0,
+          "words": [
+            { "word": " by", "start": 22.499, "end": 22.622, "confidence": 1 },
+            {
+              "word": " Space",
+              "start": 22.685,
+              "end": 22.982,
+              "confidence": 0.94
+            },
+            {
+              "word": " Shuttle",
+              "start": 23.029,
+              "end": 23.326,
+              "confidence": 0.68
+            },
+            {
+              "word": " Atlantis",
+              "start": 23.341,
+              "end": 23.872,
+              "confidence": 0.97
+            },
+            { "word": " on", "start": 23.951, "end": 24.06, "confidence": 1 },
+            {
+              "word": " the",
+              "start": 24.061,
+              "end": 24.169,
+              "confidence": 0.96
+            },
+            {
+              "word": " STS-34",
+              "start": 24.326,
+              "end": 24.81,
+              "confidence": 1
+            },
+            {
+              "word": " mission.",
+              "start": 25.607,
+              "end": 25.966,
+              "confidence": 0.96
+            }
+          ]
+        },
+        {
+          "text": "and arrived at Jupiter on December 7,",
+          "language": "en",
+          "start": 26.4,
+          "end": 28.525,
+          "confidence": 0.85,
+          "channel": 0,
+          "words": [
+            { "word": " and", "start": 26.4, "end": 26.52, "confidence": 0.99 },
+            {
+              "word": " arrived",
+              "start": 26.54,
+              "end": 26.961,
+              "confidence": 1
+            },
+            { "word": " at", "start": 26.962, "end": 27.081, "confidence": 1 },
+            {
+              "word": " Jupiter",
+              "start": 27.141,
+              "end": 27.603,
+              "confidence": 0.96
+            },
+            { "word": " on", "start": 27.662, "end": 27.782, "confidence": 1 },
+            {
+              "word": " December",
+              "start": 27.803,
+              "end": 28.203,
+              "confidence": 0.99
+            },
+            {
+              "word": " 7,",
+              "start": 28.304,
+              "end": 28.525,
+              "confidence": 0.01
+            }
+          ]
+        },
+        {
+          "text": "1995,",
+          "language": "en",
+          "start": 28.526,
+          "end": 29.847,
+          "confidence": 0,
+          "channel": 0,
+          "words": [
+            {
+              "word": " 1995,",
+              "start": 28.526,
+              "end": 29.847,
+              "confidence": 0
+            }
+          ]
+        },
+        {
+          "text": "after gravity-assist flybys of Venus and Earth,",
+          "language": "en",
+          "start": 30.247,
+          "end": 32.851,
+          "confidence": 0.95,
+          "channel": 0,
+          "words": [
+            {
+              "word": " after",
+              "start": 30.247,
+              "end": 30.507,
+              "confidence": 1
+            },
+            {
+              "word": " gravity-assist",
+              "start": 30.546,
+              "end": 31.308,
+              "confidence": 0.98
+            },
+            {
+              "word": " flybys",
+              "start": 31.347,
+              "end": 31.808,
+              "confidence": 0.79
+            },
+            { "word": " of", "start": 31.809, "end": 31.929, "confidence": 1 },
+            {
+              "word": " Venus",
+              "start": 31.968,
+              "end": 32.331,
+              "confidence": 0.99
+            },
+            { "word": " and", "start": 32.409, "end": 32.53, "confidence": 1 },
+            {
+              "word": " Earth,",
+              "start": 32.57,
+              "end": 32.851,
+              "confidence": 0.92
+            }
+          ]
+        },
+        {
+          "text": "and became the first spacecraft to orbit Jupiter.",
+          "language": "en",
+          "start": 33.132,
+          "end": 35.816,
+          "confidence": 0.96,
+          "channel": 0,
+          "words": [
+            {
+              "word": " and",
+              "start": 33.132,
+              "end": 33.253,
+              "confidence": 0.97
+            },
+            {
+              "word": " became",
+              "start": 33.292,
+              "end": 33.593,
+              "confidence": 1
+            },
+            {
+              "word": " the",
+              "start": 33.594,
+              "end": 33.714,
+              "confidence": 0.96
+            },
+            {
+              "word": " first",
+              "start": 33.792,
+              "end": 34.112,
+              "confidence": 1
+            },
+            {
+              "word": " spacecraft",
+              "start": 34.175,
+              "end": 34.816,
+              "confidence": 1
+            },
+            { "word": " to", "start": 34.831, "end": 34.956, "confidence": 1 },
+            {
+              "word": " orbit",
+              "start": 35.058,
+              "end": 35.292,
+              "confidence": 0.73
+            },
+            {
+              "word": " Jupiter.",
+              "start": 35.355,
+              "end": 35.816,
+              "confidence": 0.98
+            }
+          ]
+        }
+      ],
+      "full_transcript": "Galileo was an American robotic space program that studied the planet Jupiter and its moons, as well as several other solar system bodies. Named after the Italian astronomer Galileo Galilei, the Galileo spacecraft consisted of an orbiter and an atmospheric entry probe. It was delivered into Earth orbit on October 18, 1989, by Space Shuttle Atlantis on the STS-34 mission. and arrived at Jupiter on December 7, 1995, after gravity-assist flybys of Venus and Earth, and became the first spacecraft to orbit Jupiter."
+    }
+  }
+}
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "sk-\|ghp_\|gho_\|ghu_\|ghs_\|ghr_\|gladia_key\|x-gladia-key" reposcan-raw/gladiaio --include="*.ts" --include="*.js" --include="*.json" --include="*.yaml" --include="*.yml" | grep -v ".test.ts" | grep -v ".spec.ts" | grep -v "__fixtures__" | grep -v "node_modules" | head -30
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/generate-image/google/vertex-edit-outpaint.ts:12:  const mask = readFileSync('data/comic-cat-mask-2.png');
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/telemetry/console/tool-loop-agent-stream.ts:39:    secretApiKey: 'sk-secret',
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/telemetry/console/stream-text.ts:15:      secretApiKey: 'sk-secret',
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/telemetry/console/tool-loop-agent-generate.ts:39:    secretApiKey: 'sk-secret',
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/telemetry/console/generate-text.ts:22:      secretApiKey: 'sk-secret',
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/telemetry/otel/tool-loop-agent.ts:36:    secretApiKey: 'sk-secret',
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/telemetry/otel/stream-text.ts:24:      secretApiKey: 'sk-secret',
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/telemetry/otel/generate-text.ts:31:      secretApiKey: 'sk-secret',
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/generate-text/anthropic-aws/basic.ts:9://   ANTHROPIC_AWS_API_KEY=sk-…
+reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:16305:  mdast-util-gfm-task-list-item@2.0.0:
+reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:16434:  micromark-extension-gfm-task-list-item@2.1.0:
+reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:36466:  mdast-util-gfm-task-list-item@2.0.0:
+reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:36482:      mdast-util-gfm-task-list-item: 2.0.0
+reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:36741:  micromark-extension-gfm-task-list-item@2.1.0:
+reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:36756:      micromark-extension-gfm-task-list-item: 2.1.0
+reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-image-model.ts:72:        'Together AI does not support mask-based image editing. ' +
+reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.ts:250:        'Gemini image models do not support mask-based image editing.',
+reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-harness.ts:908:       * attach / replay: the still-running (or disk-replayed) turn streams into
+reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-harness.ts:1372:       * attach / replay: the still-running (or disk-replayed) turn streams into
+reposcan-raw/gladiaio/vercel-ai/packages/google/src/google-image-model.ts:230:    // Gemini does not support mask-based inpainting
+reposcan-raw/gladiaio/vercel-ai/packages/google/src/google-image-model.ts:233:        'Gemini image models do not support mask-based image editing.',
+reposcan-raw/gladiaio/vercel-ai/packages/workflow/src/test/agent-e2e-workflows.ts:560:        apiKey: 'sk-test-key',
+reposcan-raw/gladiaio/vercel-ai/packages/harness/src/utils/index.ts:7:export { classifyDiskLog, type DiskLogRecoveryMode } from './classify-disk-log';
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-language-model.ts:717:      betas.add('task-budgets-2026-03-13');
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:57:        'x-gladia-key': loadApiKey({
+reposcan-raw/gladiaio/vercel-ai/packages/luma/src/luma-image-model.ts:232:    // Luma does not support mask-based inpainting
+reposcan-raw/gladiaio/vercel-ai/packages/luma/src/luma-image-model.ts:235:        'Luma AI does not support mask-based image editing. ' +
+reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json:9992:      "resolved": "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz",
+reposcan-raw/gladiaio/compare-stt/package-lock.json:9399:      "resolved": "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz",
+reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts:36:    headers: { "x-gladia-key": apiKey },
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && head -30 reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/telemetry/console/stream-text.ts
+import { openai } from '@ai-sdk/openai';
+import { streamText, registerTelemetry } from 'ai';
+import { run } from '../../lib/run';
+import { consoleTelemetry } from './console-telemetry';
+
+registerTelemetry(consoleTelemetry);
+
+run(async () => {
+  const result = streamText({
+    model: openai('gpt-5-mini'),
+    prompt: 'Invent a new holiday and describe its traditions.',
+    runtimeContext: {
+      something: 'custom',
+      someOtherThing: 'other-value',
+      secretApiKey: 'sk-secret',
+    },
+    telemetry: {
+      functionId: 'my-awesome-function',
+      includeRuntimeContext: {
+        something: true,
+        someOtherThing: true,
+      },
+    },
+  });
+
+  await result.consumeStream();
+});
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "sk-\|secret\|api[_-]?key\|token" reposcan-raw/gladiaio --include="*.ts" --include="*.js" --include="*.json" | grep -v ".test.ts" | grep -v ".spec.ts" | grep -v "__fixtures__" | grep -v "node_modules" | grep -v "pnpm-lock.yaml" | grep -v "package-lock.json" | grep -v "sk-secret" | grep -v "sk-test" | grep -v "test-api-key" | grep -v "example" | head -30
+reposcan-raw/gladiaio/vercel-ai/tools/generate-llms-txt/src/generate-llms-txt.ts:77:    console.log(`Length (approx tokens): ${fullContent.length / 4}`);
+reposcan-raw/gladiaio/vercel-ai/packages/policy-opa/src/opa/opa-capability-middleware.ts:26: * 2. **Capability disclosure.** The model does not waste tokens describing
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.ts:96:      const tokens = await this.authProvider.tokens();
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.ts:97:      if (tokens?.access_token) {
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.ts:98:        headers['Authorization'] = `Bearer ${tokens.access_token}`;
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:32: * OAuth 2.1 token response
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:36:    access_token: z.string(),
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:37:    id_token: z.string().optional(), // Optional for OAuth 2.1, but necessary in OpenID Connect
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:38:    token_type: z.string(),
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:41:    refresh_token: z.string().optional(),
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:43:    token_endpoint: SafeUrlSchema.optional(),
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:59:    tls_client_certificate_bound_access_tokens: z.boolean().optional(),
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:62:    dpop_bound_access_tokens_required: z.boolean().optional(),
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:70:    token_endpoint: SafeUrlSchema,
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:76:    token_endpoint_auth_methods_supported: z.array(z.string()).optional(),
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:77:    token_endpoint_auth_signing_alg_values_supported: z
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:91:    token_endpoint: SafeUrlSchema,
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:99:    id_token_signing_alg_values_supported: z.array(z.string()),
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:101:    token_endpoint_auth_methods_supported: z.array(z.string()).optional(),
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:120:    client_secret: z.string().optional(),
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:122:    client_secret_expires_at: z.number().optional(),
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:124:    token_endpoint: SafeUrlSchema.optional(),
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth-types.ts:131:    token_endpoint_auth_method: z.string().optional(),
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-sse-transport.ts:72:      const tokens = await this.authProvider.tokens();
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-sse-transport.ts:73:      if (tokens?.access_token) {
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-sse-transport.ts:74:        headers['Authorization'] = `Bearer ${tokens.access_token}`;
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.ts:35:  tokenEndpoint: string;
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.ts:40:   * Returns current access token if present; undefined otherwise.
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.ts:42:  tokens(): OAuthTokens | undefined | Promise<OAuthTokens | undefined>;
+reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.ts:43:  saveTokens(tokens: OAuthTokens): void | Promise<void>;
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -maxdepth 2 -type d | head -30
+reposcan-raw/gladiaio
+reposcan-raw/gladiaio/vercel-ai
+reposcan-raw/gladiaio/vercel-ai/examples
+reposcan-raw/gladiaio/vercel-ai/.husky
+reposcan-raw/gladiaio/vercel-ai/.cursor
+reposcan-raw/gladiaio/vercel-ai/.claude
+reposcan-raw/gladiaio/vercel-ai/tools
+reposcan-raw/gladiaio/vercel-ai/.git
+reposcan-raw/gladiaio/vercel-ai/.github
+reposcan-raw/gladiaio/vercel-ai/assets
+reposcan-raw/gladiaio/vercel-ai/.agents
+reposcan-raw/gladiaio/vercel-ai/contributing
+reposcan-raw/gladiaio/vercel-ai/packages
+reposcan-raw/gladiaio/vercel-ai/skills
+reposcan-raw/gladiaio/vercel-ai/architecture
+reposcan-raw/gladiaio/vercel-ai/content
+reposcan-raw/gladiaio/vercel-ai/.changeset
+reposcan-raw/gladiaio/vercel-ai/.vscode
+reposcan-raw/gladiaio/gladia-quiz-app
+reposcan-raw/gladiaio/gladia-quiz-app/store
+reposcan-raw/gladiaio/gladia-quiz-app/.cursor
+reposcan-raw/gladiaio/gladia-quiz-app/components
+reposcan-raw/gladiaio/gladia-quiz-app/lib
+reposcan-raw/gladiaio/gladia-quiz-app/.git
+reposcan-raw/gladiaio/gladia-quiz-app/app
+reposcan-raw/gladiaio/gladia-quiz-app/public
+reposcan-raw/gladiaio/gladia-quiz-app/hooks
+reposcan-raw/gladiaio/gladia-quiz-app/scripts
+reposcan-raw/gladiaio/compare-stt
+reposcan-raw/gladiaio/compare-stt/.cursor
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "sk-\|secret\|api[_-]?key\|token\|gladia" reposcan-raw/gladiaio/gladia-quiz-app --include="*.ts" --include="*.tsx" --include="*.js" --include="*.json" | grep -v "node_modules" | grep -v ".test" | grep -v "pnpm-lock" | grep -v "package-lock" | head -30
+reposcan-raw/gladiaio/gladia-quiz-app/components/GladiaApiKeyInput.tsx:9:import { GLADIA_API_KEY_STORAGE } from '../lib/gladia-client';
+reposcan-raw/gladiaio/gladia-quiz-app/components/GladiaApiKeyInput.tsx:94:                      href="https://app.gladia.io"
+reposcan-raw/gladiaio/gladia-quiz-app/components/HalloweenQuiz.tsx:47:  const [gladiaApiKey, setGladiaApiKey] = useState<string | null>(null);
+reposcan-raw/gladiaio/gladia-quiz-app/components/HalloweenQuiz.tsx:56:    const stored = localStorage.getItem('gladia_api_key');
+reposcan-raw/gladiaio/gladia-quiz-app/lib/gladia-client.ts:1:export const GLADIA_API_KEY_STORAGE = 'gladia_api_key';
+reposcan-raw/gladiaio/gladia-quiz-app/app/layout.tsx:7:  metadataBase: new URL('https://gladia-halloween-quiz.vercel.app'),
+reposcan-raw/gladiaio/gladia-quiz-app/app/layout.tsx:43:          src="https://unpkg.com/@gladiaio/sdk@0.5.2"
+reposcan-raw/gladiaio/gladia-quiz-app/hooks/useGladiaTranscription.ts:5:import { createGladiaClient, getStoredApiKey } from '../lib/gladia-client';
+reposcan-raw/gladiaio/gladia-quiz-app/hooks/useGladiaTranscription.ts:70:      const gladia = createGladiaClient(apiKey);
+reposcan-raw/gladiaio/gladia-quiz-app/hooks/useGladiaTranscription.ts:74:      const liveSession = gladia.liveV2().startSession({
+reposcan-raw/gladiaio/gladia-quiz-app/package.json:2:  "name": "gladia-demo",
+reposcan-raw/gladiaio/gladia-quiz-app/package.json:24:    "@gladiaio/sdk": "^0.6.0",
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "sk-\|secret\|api[_-]?key\|token\|gladia" reposcan-raw/gladiaio/compare-stt --include="*.ts" --include="*.tsx" --include="*.js" --include="*.json" | grep -v "node_modules" | grep -v ".test" | grep -v "pnpm-lock" | grep -v "package-lock" | head -30
+reposcan-raw/gladiaio/compare-stt/next.config.ts:6:/** Canonical public URL on www.gladia.io (requires marketing vercel rewrite). */
+reposcan-raw/gladiaio/compare-stt/next.config.ts:7:const PUBLIC_APP_URL = `https://www.gladia.io${BASE_PATH}`;
+reposcan-raw/gladiaio/compare-stt/next.config.ts:10: * never only on gladia.io — so a missing/outdated marketing rewrite cannot
+reposcan-raw/gladiaio/compare-stt/next.config.ts:19:  // www.gladia.io that slash path is not rewritten to this app (Webflow
+reposcan-raw/gladiaio/compare-stt/next.config.ts:77:    // PostHog reverse proxy — same hosts as gladia-marketing vercel.json.
+reposcan-raw/gladiaio/compare-stt/next.config.ts:103:  org: "gladia-p2",
+reposcan-raw/gladiaio/compare-stt/prisma/seed.ts:10:  { name: "Gladia", slug: "gladia", logoUrl: "/providers/gladia.svg" },
+reposcan-raw/gladiaio/compare-stt/src/components/arena-page.tsx:270:              href="https://github.com/gladiaio/normalization/tree/main?tab=readme-ov-file#quick-start"
+reposcan-raw/gladiaio/compare-stt/src/components/arena-page.tsx:341:              href="https://github.com/gladiaio/normalization/tree/main?tab=readme-ov-file#quick-start"
+reposcan-raw/gladiaio/compare-stt/src/components/arena-page.tsx:427:              href="https://github.com/gladiaio/normalization/tree/main?tab=readme-ov-file#quick-start"
+reposcan-raw/gladiaio/compare-stt/src/components/hero-provider-logos.tsx:7:  "mailto:privacy@gladia.io?subject=Apply%20to%20be%20featured%20on%20Compare%20STT";
+reposcan-raw/gladiaio/compare-stt/src/components/navbar.tsx:33:  // That path is not rewritten to this app on www.gladia.io — use the
+reposcan-raw/gladiaio/compare-stt/src/components/tracking/base-path-fetch-fix.tsx:5: * requests use that trailing-slash URL. On www.gladia.io the marketing
+reposcan-raw/gladiaio/compare-stt/src/components/tracking/base-path-fetch-fix.tsx:7: * falls through to Webflow (301 → gladia-0c772dnew.webflow.io) and
+reposcan-raw/gladiaio/compare-stt/src/components/tracking/gladia-analytics.tsx:5: * Same tag stack as gladia-marketing `components/gtm-head.html`:
+reposcan-raw/gladiaio/compare-stt/src/components/seo/leaderboard-dataset-schema.tsx:28:      url: "https://gladia.io",
+reposcan-raw/gladiaio/compare-stt/src/lib/site.ts:5:  process.env.NEXT_PUBLIC_SITE_ORIGIN ?? "https://www.gladia.io"
+reposcan-raw/gladiaio/compare-stt/src/lib/site.ts:20:export const CITATION_DOMAIN = "www.gladia.io";
+reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts:3:const GLADIA_BASE = "https://api.gladia.io/v2";
+reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts:36:    headers: { "x-gladia-key": apiKey },
+reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts:49:      "x-gladia-key": apiKey,
+reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts:81:      headers: { "x-gladia-key": apiKey },
+reposcan-raw/gladiaio/compare-stt/src/lib/base-path-fetch.ts:1:/** Base path used when the app is mounted under www.gladia.io/speech-to-text-api-comparison */
+reposcan-raw/gladiaio/compare-stt/src/lib/base-path-fetch.ts:23:    const u = new URL(url, origin ?? "https://www.gladia.io");
+reposcan-raw/gladiaio/compare-stt/src/lib/rate-limit.ts:5: * on top of the DB-backed single-use token and session cap checks.
+reposcan-raw/gladiaio/compare-stt/src/lib/providers.ts:10:  { name: "Gladia", slug: "gladia", logoUrl: "/providers/gladia.svg", color: "#947AFC", model: "Solaria-3" },
+reposcan-raw/gladiaio/compare-stt/src/lib/transcribe.ts:2:import { transcribeWithGladia } from "./providers/gladia";
+reposcan-raw/gladiaio/compare-stt/src/lib/transcribe.ts:25:  gladia: transcribeWithGladia,
+reposcan-raw/gladiaio/compare-stt/src/lib/transcribe.ts:148:    gladia: "Gladia",
+reposcan-raw/gladiaio/compare-stt/src/lib/match-token.ts:40: * a deploy boundary. Legacy tokens get issuedAt = 0 so the minimum-delay
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -name "sdk" -type d | head -10
+reposcan-raw/gladiaio/sdk
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/sdk -type f -name "*.ts" -o -name "*.js" -o -name "*.json" | head -30
+reposcan-raw/gladiaio/sdk/.cursor/mcp.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/project.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/vitest.config.ts
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_session.test.ts
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/prerecorded_v2_async.test.ts
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_job_management.test.ts
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/tsconfig.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/package.json
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/tsdown.config.ts
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/project.json
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/tsconfig.json
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/src/index.ts
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/package.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/project.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/package.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-python/project.json
+reposcan-raw/gladiaio/sdk/nx.json
+reposcan-raw/gladiaio/sdk/packages/sdk-js/tsdown.config.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/tsconfig.spec.json
+reposcan-raw/gladiaio/sdk/packages/sdk-js/project.json
+reposcan-raw/gladiaio/sdk/packages/sdk-js/vitest.config.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/tsconfig.json
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/version.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/internal_types.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/helpers.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/wsClient.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/types.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "sk-\|secret\|api[_-]?key\|token" reposcan-raw/gladiaio/sdk/packages/sdk-js/src --include="*.ts" | grep -v ".test.ts" | head -30
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:727:  /** The websocket url to connect to for sending audio data. The url will contain the temporary token to authenticate the session. */
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "sk-\|secret\|api[_-]?key\|token" reposcan-raw/gladiaio/sdk/packages/sdk-js/src --include="*.test.ts" | head -30
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:38:  const secretKey = 'DUMMY-KEY-REDIRECT-LEAK-TEST'
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:78:        'x-gladia-key': secretKey,
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:90:    expect(originCaptured[0]?.headers['x-gladia-key']).toBe(secretKey)
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:99:      apiKey: secretKey,
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:117:      apiKey: secretKey,
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts:53:      url: 'wss://api.gladia.io/v2/live/ws?token=created',
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts:86:    expect(createSessionSpy).toHaveBeenCalledWith('wss://api.gladia.io/v2/live/ws?token=created')
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts:27:      url: 'wss://api.gladia.io/v2/live/ws?token=created',
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts:59:      url: 'wss://api.gladia.io/v2/live/ws?token=abc',
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts:91:      url: 'wss://api.gladia.io/v2/live/ws?token=abc',
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts:141:    expect(mockCreateSession).toHaveBeenCalledWith('wss://api.gladia.io/v2/live/ws?token=created')
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts:144:      url: 'wss://api.gladia.io/v2/live/ws?token=created',
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "sk-\|ghp_\|gho_\|ghu_\|ghs_\|ghr_\|gladia.*key\|x-gladia" reposcan-raw/gladiaio --include="*.env*" --include="*.config.*" --include="*.json" | grep -v "node_modules" | grep -v ".test" | grep -v "pnpm-lock" | grep -v "package-lock" | grep -v "DUMMY" | grep -v "test-api-key" | head -30
+reposcan-raw/gladiaio/vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json:36:      "encrypted_content": "gAAAAABplLP75yhVf0v4856Geb-oLdsjDPhdISdmBJvCNP9Su2ib_UJkknntI-GqAeBDF59lGgLqPE4lDYfm5q7IhjCloCkaGycZGBo9GHcLdpuKj63e_CyVxYFNZdP4HYXKpKQZbbz7blA_nATSTNNN-PQpQ1DYWjYfq6uAxEUrm-4PUPSorUPWIiByyqIGDgHt-byUa3HxQ0MPQtuYrmL6yfwyTCE0JEglK1XGR1z-d9QgVUWSC3LkgLGMN8kpF8nST89bbZQmVwgpQqfq4QTMifXnJdXBDrm9jIRBwisdKWeLfOEQnQY3a00wXgMv-LncN9j_uJQiwKptZnIOggMGntAsxJSBXDLJxIU5NGtzBNy3vPi7lUE6P517_I9TIi4CX2zNHe6YCy_IEVRu22qoQkNernu0hvPRm-odD1zfRYjbBIKnCXhQwU9Q3IvXxF7M_CZoamXmYSt0uxvDmfgvMjgzeAzhc_s_YL_y5V9sBPXQDDkpZ1peYKQ76c91nYzjphoLkeH8erALhgwSUULffOTzAKsy5embGlvx9X_8pT5MQohxQOTP5ceDTz5OxoPv_tbE6NcJ8fC4PY9MGcBNxNje-Ut6W6xa9NwhNJ77rh8MUSfKjZsH5N8hnelCS8ibEcbOfhgR5b779KxQrosHLRxw04_R4CR-2yncBPnPXRnmW5zZnNphU6pnbMvBoDNR4n-RlzD-siLAQia7SsJShm_KLYBdRndxAn0bgWBBVerbxV9TE7xFJGXLRTBdurg1-PKW53RiCSI_18D_5UAy3Vm-oJ7zrGSNaaHcr163mvW8vZkEEbAweYFsSSGTrTit-3_qSGTphVcx0j2r18pGoi3ZRyLUV-w9uZF-cfQugdRQ8R2IAVPqzSlWTQ8yGQdeVlZJQF7w2K8QlS-IVRw7m3jcutJL3C49NPothMi8Q8fj0CDClCLKRmN7z0mI4oir178FjRlpGZ3e3Nora4fUinlQbZZtQRBcGghVU-BbZtOfkrUWYTeEh3SSmpEsfsk5JV6QFD8Ppd5a4mZ31DarK8uIgkZoCMfo7bY0bT7zc-sECVNOvrQGRUdjRpbcl57S15yWh194yimzcKKj3qNOM2mCr1fKSwEFkBC0aSo8P1_wLWFH6diMzpq5fStOpRw-yG7bkOm3ufmkNOS1ZYVSA7-FTO6j9zCeAlxwmcyBgWVkj1MCxfDfoIkNtUi05B4-Pl9dsyU0WBJCaQs3u_uvsAom0tOdpcUUgyRsJWgdWOBvcPr23FgFPxz28xD66vQk6d_d7NswC02cErGRhdugASFPU1RdFJr4DkZbcoB1P-SgBf9ypjgrN3VW55af60TEJxNbcYSJuZDsJTGYAQy-2PSX8sWtcmXa2TFZeHN4rh7bz2TUAXvsE3LMXJ0WxthTvXG3UxEgULGiC90jnrek9Hn8b8OZdKJsje0FagzHpOt5617gUTjeJHQ0kkBNUW6x2Uz53nzumd8foXp0_3iXBMw6Jjc19-Lh9OvJxB_sI9_rc1iH9rSqBj_j4VrIsiOqqA9Ud1A22vtGLwAAayPdVc9m-CFmUt6GwrAKFhyduybwFVsbN-RCBGLXWgF-TXu7i_JNT9MY5tbhvd_9GFcju3pFSJIUSDFlUVmT-I9u5m3rXgtOjJYLxTCby-qNoimr-LCpujibC8mtiFis2tLVVxcuanSkzKwMhQIqIbjjxPd78jCmYRwQrHk7K3h3tsbVddKZ9V9VnRvczJlWvBoI_CoLShg-x5o0RHfDZSWQfT63mjQyB9mRiKsnuyypssLk28h_vHjypqFRKOgksUZno9K2i14USqfpDeg3KGjrwmmsN0XfPa09wGzTz8EuP5CiyvZise7Y4nqhLQBlX5GN0Og4wBOSqnfpnmoIBlrESo5Xo59DyrrLI8KkgR0FeX1AiNRw1YzXrI7NwHqO-5-VT7cuX9IkJXe-t1agZXB4jpzbEkYeczEG8Op1tJHOyo-yfCzmoiWg9OPnN5OtM68H68y_336BzJNkosUdFJsOEFWAWLYiP75dkly9i_ODAqxlSSLgsmIE8RsRBXRbaxmc9y4H1nnIXVDH1565phsji3_Mvk1YfOM2iNnUaH6nPmAvTwajMJ6JBuUOMVcPcY0PLlzpuYRDDtFocxeyw_RSe7Vig3uxvH-C-in_41I4OLESX0seqkF26yQaPJCWnY58nOMLRWGcZw5qkUoEV8e0c9fhhPDwJEfRWfakJidOw5QB5xY00UBKL0ydvEIAFJD9eoinwJFsedlHzBLfdArJruCv3Hv9blxpzDHbxDxvuHygPfOnvbTkE6zPn1nhE0qqkSTZ-C3s3-_XgKks8T-xIood69IcfXibv8R3zeXho82sgkHuD4J8yK4sGilJw1s6XOpiJReu78mVn83Iae_nsf1b_V2IOE1qQVm7AtDUDGOEj3NbLFaH2tZNFy2No9GRYZd0u7IQiCjfHuat7xTfnG_nmrZvJEwVkVFNgdFJYhyj8VCKue-sWXB2Y0qK9x5nPrqyjlX7x4A9WpmjAKVs-uitqYhVM-8MQA1J4RIfXmMvhaqobU_Cl5hYzJyMVkUBgwYj8x-FsmBrRBXtlG6FxmQRE91nCM3RRuNuZXkYYhdo1tEht1lSsJUTMsdCRTrRw0nHiXM4s5pjSIA2IuFidnECHuvOvwOI7wMUXM8agwC1sWKwmYG75LKg5F9JgQnSm_2mkp0VSk5V0heSx1uc59E7RyDvclMGle7Wwg6txGkcE8FjicupHpGx3mmyN3wt2RYwhhtbOe5fhSTiXps7iSctJdreSjYMfFLhLthnf7p_vr4Ef7UhsX8nZ2rKRAChqzg0-rmWQoOZUbTX7vb-DesHqW01giqzcmP0FhceUGPkA_krStcoMWD5EhQxVxpl5voOB-gL2xp0PJLkAzhhFlblaW8qCggYbZEouR03DVXj0CDHyukwj28n2hs6mEaX98Zwmg33LRb3V--iiCUcY5d2hU9QzLekuGgu-gR-gN0Ig3pNl0wjWB6jkSJDqq4lpMWMf8hvnMdEJCZeJ8SjXeOjL2wcaTH68tgIem0RvP17Yi3kDbdkKfFETqnVfp_-u5YlA0pGKlrLz17O7oFRWmcbhySCiLMRKqhAyVEoHA3wj8UJCq1VF95v3l3ME_WmiHjslvnehheM-R39ilbQW4UTCeYC6rEAUZfsAjbg6IqzAci_3O1BEL7SLULquxdcOSlAyC9ufbyrvy9BIrpuoCmoES7gm4B8jeGStz5122sQH54fclV4CO4CRKK3PQagZ4iGpBsYNTUmc4wIq4SDKSgzR1BMoV-i59J2VyeWI6OIMoRkSy2YgBjIVo6C4PLrXT3hsRYjv_NHZaLZlpSwmoSXz8JY716or3sVT7ALxbiO8F7XujKe3fcqd7NQ9hASfyFWzw0dHlm_R3Bghd4YQKV-3eJ0IeH33uEyLFcooH3ZTMl42oUVB8CilpU3a4xL-QDcazXBeH7FYS6GcvgUB3AdDUUiFkaFe-lpC_3G8EFUZo6EbfmGbyn1G5VXjjQ2342tcu2FkDPowWLD5GErD_etB81FnUquLKeuzzHX82qv6SFTsFXoPhN8grvswrzdnr2tqS8KeNYQoye9sS0YzXAWS9H4BmOzE63FvQMwYymWIhG6VXZpA1n-3LcfFQqSAMkQpgOApRIZKilUNPFsgrsLPc4hRlAtNvGWmZ54IozQxpgDK3Wr3etqmYiOixg0WDQg6m7rVHEVtWaXDDHgH9E5GSiqD2JhqGpT_9tKN1NJchdbhbB6Mbsk7qKpyYYrIM1qkvF_8OqpiC4e1_CYvvkBFxawwyopbtZozNS40-pBIkVP5lnjNgqZcvaxZYNUkKMrIiIHAIteIiJKAb_qwKyDnUcW7ABp_npxtTQ6eLPrGzkroCwYjzp5FffjGMhy5BNtgeYHeGr0KalxTMBd99PN16WNbIuwZHQsb2e-xDuwuuKTrl_V5lUrSGYVV8U3Rz4Obp3YJ84QbMuzSzmIEbxmxeUFGThXgxIATjuRu0waKoXFWQpXUhdx_VX26sRzMc_vu_MZpIt59VvPWiT9B1DfAfjDYCzOnShY_5JlB2W-J_8Of9ojSHwM6eF9EohqnXbbkIdbhvsbnLTvzu1X2btgDyCwMEajMewFckrZc1SInt_wsL-v_MNNpmvXfVyOQI9GGRkWsBQtSPjBXD8cBJ2sVkMTq0an_KeuEMCTBmRSvSZ9tyxJcG-Eu3CUL9i9jPYF14n4VeF8yRWddKvEG_H5M8fJXz7jvPY9IwQwhCrAPF1VF5g0luqxpQ-YZngabhWbtzBw4gdXQHd2x880O1GwoRgwAMtOK4wVkR-xaikIbCLDNJUFPYqTyEwIGHCzEGRA5etYCFxnoT_uTpveiOZ7xCJMdFAk6256U-6E5ajZP1jSbQh_boK8O5P6DSkQj8nwPD5_8gedlZz3RCk8BFvBBEdt2FFrl_d4VDRcE_d9YCZZrfMCJd00rErUdCmEVyVWHLyQJ9urBFgt0rqeqHsHWPwIMNNqd838W4O52jHW4foMdpu8mAg7SJf0xE5ng12Y9jCUr5ScyZzBj8j09U9wfTDZ-8G3g8FH5Mtf8c8c5egO5go6FcbVpxZ3ZlISmJvx3NSeQpw7OgDDD_458Hc7bqkzuc55A1BWRUXbTjI9hSc-pkco6DXiJb4lhEeS59QqBF1Rapfz2OJ7vqL6g0KV8TCHMvxy6N89Jgt9L9H9WLSRRr11QMLEWgehlZ0hdTszWbjXkcOLgP6aqWeUEd_uagQxhVaiyIBlGIzaeyeUJA76-rvGltopf51h9NDSS-KLXgqBHzPaRgw0wEtgTWPnxznluaQTjUiAHIsH8RQ0O8YKBhKUuBtzNAZ1RlhqFTUa7g4eXfvxrInpGt37r7Us81Hgecy4qddNSsKD3j7xdztHKNKqgXVZY6Mm3BouRjpoVtAlSTvdqY1CNIxwurxscjjy9swM5p3SjNSioXTd7OkwWsD9Ah5oNnWX5KIjgccs5nDsTZm-y4cHbR2-uj45SlNWUKhQI-fSINa1qI2jJ_pW6DtQRIk7-KvmPB8VoHj8yfSliPMEMHFU8DGx74dbMutbLjdk6vfYOZ5Mg6WaYdJBysVoNPwOcYngjIOlqZ6Lgon6cblX4VcfFTO2qw5bvcJ1QBpjzc3YRQ6iNAhIRMTn4375R07wdUvRkyC6WcTgeYi3dilLi8b5Ya8GlNP5p79gqj513xIbInav5C8PKNncgcJFi6zrCpFw93TLlmevCuMDtnRBSq_V2pTAvdn1385es_MNR948nTNUMUYu2wZNLnzLCCHpUiJoBLELzv-OsROgLeT4HhTNxUOyN_a5U8N8thR6sF6o8lAWYZa7U9QGDbKYNNk5LnfxrYgrS9AgmvXtxfn60BuWizSEenvp0N_K_QOt-_AQ5iNJM6UnVMY5mlKgCRdd4KmTZDcSh5POtdWj8KX3sNnlXlDz1aKrDhkR6VFnZ7HmKXbjbkAgINiPtgCANA_oggcMl4Gt1B3elIzSPN1jWrUVJX8JPs4uDuDHbLzcPgkv8EeSTfysilY4FvZS2ZQ1dcXv6gcdVJx3m3WXZoJfNxg4NOiUQJxFkj0_uK75VMye20T01_79scAiLIHRUvuCWNiGh-vcLpx1wGUKr7HyRLdCQubqxEX9wQi4pgoJ0NsxRQnzXUEA134tPzEW2ZGSPxSXicNFDs9HsmvnLdXVLY-ppwchbIUnYq68Zv7l3NKrHFZPxUMD8eY7_6NfQUHmuJ5YRG3Gz4wnigthFXWf5Q9_tHQNM4hzwlv2kBWNmeqRzfo56h6C0CrYts_2iyaWDk2RJYSKTuqWcmpDd4P9lEwFTL_nBfkpEaqHyxWzwxGlAfX76pJ5NeQc068C62SYgeTR7WRZ6y0VesUa3I5ICAfMRGXBDAyKJswj39B94KCwJlI77tN6WyM917eJ2TR3LcYF7gb99rdmxUqVgiwQCKEfk0GtIVTydhWHuzXiOq8iKzD4FngtZHGkVASg_wEhig1dNuAvAi2KlFmFGD_7jjtplwwvN1Gt0JnVe0saFf25L89ZmpqhrsUWo5xmcA_zPSP_-_zkQedsxV2c60Qg3WdUjr6NbvpXxXZjcVzcHZ82j-rAC-duZC_Vl7yoygaD1fsfoSnY4A_KUKhiZ0onqxjgr0ITkJnm7bg6OOLjO8TIjdO5JUEy9w3UazHFkAGT1QmB3m6Q_OLVjArvXr-sbZm83KIMNOPZnkXvGLCrmAZ3cBAZ0uIM-MekMK1xOr7djV7liOQL3sXEzSDmFDqp-JeUdvuJcPkoqSW-6Zylv6WXbUD-_WcMN3fkks6Uq3TFuhuu2r7S0WZSrygK9zrRvbMPyQyM4ob-V6R1TR9UuLyCiCFJKpLDumoxTUfZ9RmQ6IwZnXfWBtwBiZKu3Wt157bg1UXDPW2BGGgMp19pPcDTz0JlKHF481NJTA1AxV_uztnae3orKVg_kNMDAPSKCElwG4ja6VG9wkv_4_2JQRU8NS4r0iXYoCAJ16p6PpG7tqHS1_CtFvjD441LaXaMOXYNhbGhLrWh44jsYpicqmW-PEzq0_RgtWsZ8VdY1s0HGcpmuDrdIfOvALL2ujjz7B7CjcVUsz9XsT0f5ZogO2jE8Td9SRMGM-uzZvfuC8TRTRbDSVgtfUatp8yo_zKjdVRdZijKSWjpx-latKZKt2DKL78Dz5KAbMUDTC0DNMAUKT3UtdMQpfP6ePUYfkD3dSOiWHxHpLEkhNRz0lHfBZ4pSit0QlZExL7yBjdY4npd21ViRwkzuMyfqdkYbXM1_u-qzZYG6pbdFOvsP8C4bwQVUuf2d0BNnv1wXw-H3nZCKBhKQrE64apv0vPs0RdM6i_fJunOP74YEiHT-DiNNvGQ6BVbQJ-IIAShJdBBZDd3qMe2JraDRLKfoHlX4e1uAbeyTou8vgFk73o-dJ817Gg9FrbDNr30N5x1aSqnzXOyvS5Ct_J5geiaqV4M9hyMnKihCcjqzXhIrr7qT3pNzdG7IYl5P5xKn7u7oifr_v8Z0lT0_LRySySqgmSAhChTDIusw0o_EbVeqmfhLD8Pl-WzqRHJ78cVH_CE2E-vnO_m7fnta5Q2FnaciRjVahCaW9OqT_n3l1lspXaHUSzG0dEERRP4KL8eqF1Lkc5Woe5WLIfoqqJaG_Pe-UsxF0QBqRl4yWqzEETHlVaNs18YNtityqGzgG7GO-D10hXkoLXHde760r4gjGqbBbIX6sRqucULeb6YBS7EUwDBZyNJaLOh7Rmht0rpLe0_5yxcQFAls9QkE4wfozZXPX9Gm7K7k7GWE_vpuaW6brwPgRS-5E-4EsAj90og3dY-vohP0sxXnowvS9mSVhbVsS1nkZQ3OGn_9g-rr_XQrqfLLLZKQEr7NBiTePVpW_3KpIHSFM8eYw0KpoY5FU27K-ROIBZCesuyoCpBECt-dzan4sMZQi1Dp1uusMnSchwjHH-wl5xs0PNbV8gRelquK7ixDSOIb2rTkA6hbnW_bMEq62M0tQNJaslSEwOEkISjlyxD0uKgDrs1JHpco-Q8EzDiDi0gh-2s-oUhoG_UvMustSy0ReTqC5FGyDmTZWwMVPO0xZvNkcR0qluKEmtPFo7kyDhK6nauIlqlK5zXWL5uLOca6ElUsC8PflGYtBQhitu8QyyxzMSP7yf0suG_Mszyy2gKKpQLSZ2kDwEqfzl-pSp2h2a9a_564F6u_ldNoq3B_zEnp-DCvGguCjGENpthjtr8UHRDQfzugNJyP518kY3A5Hg37zwtip0V7KQGcTDl1OrSsPhcutjx0M9eNWzkzz147lJE_mvyD0-YRjkXogI6LX-A4NQrq_DAt7SpPa32_oqDeLK16Cr-ZhrYeeRIKS1Cz4x5oFkQriBDqaKLac25sZFLQdWIQyhNmJHZFQ7fJSDCH0mSOr8sW_4QV_SyZydBPQuur8ohBvb4iTTlP3kWZX6TQM_8KGo2yE2QjiNVmnoPlSpNV6BFeetYanUzVpMSk4HSQlErMUE__Xnt6t2hjFIGPsdBOynLcR8tn2xiwbJGzGUfre3fLjha9v4Xzd4hCEeq-82nlqfW9ufjaWgGRS8ZmCiG9GnAY1jd3PDEB18U6TnWQ9p1uXRSZ40SdTc25Y4rCcFGsbnhtAuwnYbXv6dAN_smkg-y9ZatfFYkwI-ZVApdQpGq7FAVoHDy3wO1XUpPUp1QKXaPKkplXAjjnnmMtbJRImEXmtNv0kP1CxX3LJkVizBPV6_Wrsq8tIvN5UH7oCAbU_PeHbw_0vJgN6S9GYkrFH4wFpNyTxs3uGBhqUZc3g0zVOfcWdiTWic8WwQgQCdg8hBzCJXnVmCi6u0ysnuEnHRWSJ2_qTYj-C9P5SnObTCi8BxDNp9NWn1ot3bcpXuy6ZhtVKYCYfd3En3SN3516mX_NDtClaeEJRCtS-SeL9e9uuiRaz6o9AMQlcJLR5CKAvbQ5D6g5hPJ07NwIh0RiVpe4TtW5YtjWax2mhsrXXbNTbnV__3Qr1W7ggox396i-UwVNzx6j4brBYSPssVBARNsY-nN4yQ_fSPcgGrFYSgUpPnbu5qV8SPsCGmIjgS0-eTQ6nZETX6RDWVpgqAsBVGrETudiNbsIRA2A1-IgwJSuvjTwFRBIRabG6snG-LHiJeKcQaHFodLP3cm9UgPZvTXkfaJQTj6QgswjoAZgcxeAu6y_JRK_rNlSAc-PRY2MC3lC0MpCHgtm6JuWOyEF_Hv5QW3QT58QcnpmvERLS4-JlquLBjoHilEDs_4h8-TUqO0IgCzRo_fb_O1b1F7RmrN6QTP2QSpOt5RiczoT3py5YzS4dcanPFd8cSTO--dZsI9_MIc6NybDTtbTlmzIgKQfGNyJV-vkD_B6kz6DnPMszZoqgzNQR7Jw28PR_Ntp66DW9B3q8zshhsihBKW5dRz_oHTAJIiUu-HGeSAR1neDfFkZeYB6R22xoZZQU2gGO2digwngAkF_PPhHqY4M3LWbiip9aaqhU5zaRPI72UtC-zgR25S6PQXjlH8EPoJBSScnV_tVYFHR9TaN33vVQDraz74e2JiDGujwAASbVMcvsd0VEI_SW0JqZI0BDaY4-KDuAiYn3eKhTLvvm0e564kNYBqxbOKrb0JZ5zvH_TbRuuNaiqb-1NBgWCk1hykUKKCeDzwJ73KSnJa9NcbQgiWZcdijR5G5D58q0hi42HgIzuM5rij8_4LyS29go7bgFr7DUx8QUQDoUunJcv9GK4ZZQYuZ0iztlvTrStTJv34-cWGRdU6VOOfiLmQJR-1hhVQ2E0JxbyCxz5NJGxHFJA3nSaOMeqJ_0TUg8SVl7gTFfuInsO-gAjUbrIurxWv3a4_AIulOdDbYNFciU97iydL1mlI3kf5NrxZRsTreXc4Y5atSB5WNsL_f8cwztPqgOY-09P2TuCEWrRc5D-q6NrbsYxLAdWndtp7GiHlFd7lSrzZ6m_5mi2YSeT_ph2QIjn71_DnPosWzleULW-wTsxiPcBnrGwzydYoFVDDz0-wcHZCtW20Bb3i53V98HBokL9IlifkVVWVtxXWlE9JXgaoTfYG2B3aHLPKEEmZefUlXnlO6N0HH8nB9pDm18fddA_pD4f_YJjvVktJjt2bP_OQojrCHlRG-qqBONaiquaLr-Fjc0aZXangVEjUaFIVJLu86ogxgkJaii38D9aso11X0uHvwmiB933emQUHgwN5bhMZbn7lH5c4Gt1RgVIkqC5EiA-k3g1SlwPlEEDcd9VqVXp7kxB5TrofDT8Gaevh4zXvza7xjTez4Sm1t5IvecdVyFHTiZvNOmwFQfqw8Xl1H3hs-mxGJTI0vmpWLybi3IaWrGABsCJBIiWa4YCTga0bG_gtq338gnz7HJwkXVL1Kg9zUG7nMnui3Qet_1HxVHSDSi870oN9FdpU6J8BWtldsmZwZGZ_y-zpPLG8SIo7c0_V2pimrVIrSjauFXPWgevAdRQY5WNNL9R__BzmbIC47JC-B_Ub8i1dNJvybEkUjK_KG5u65-74kV-gQmcZNd81Rdt8Ile0j1-3hCWcgg5aWro0ckBsdQT_J8q2pla2z5fy9eLu0Y-7Cqcszqu3FzIkvm8VbqltfuKpKcbCtheKVvni7P7721Wv_IlNcap5bLJA1WgZQ8bMD1jsSn6doU7BqK7OULCxS6fJ_STx-L41uk91GYizyAmQKPZwuaMb_LnHH0_0HH0YpMBh-15jYZ-HWpbPhueUPZqpXzYCdWaZNUam0PfnUIX0j_z_xJJ2rTrEhQLb2pANloBT35sj8n2uZpNXfy0kQCKzbJ9P9RK792DZLZSC6JGjLf1ukkmswrsX_mrE2_kttKKR4XopQu49mawCDfNpfUlrWCwdeXYf06kaAk84miWB_pqX_dWdcvaGvHbLf_5HgBp0WNEXMvb6D-PUzmofmXtqE4TuxSqQCelhut-rjm5fMqCH8SJofxe0DHIZ1D1DeVh9q_oSFXsbK9BRQQG5Ud5B2vWX-g8k0IoMBfRnRvSa6wpE1f2QrmzbYyWl1o3J_Ye3TLoeLgHZNxNeItEtFPjpbhRfxYa8fouVV-1gLQkBC1I0YKOjXUbM8L8wDWi3Niq6QZDHmbIlUYVUdC4jVBkvlqp79t-CFZVW4iA-PUJd9mOXdEa4anj_I8qs60Rp3NhIfsbEY3sNndwMOEsCQwZNVJ2CaABpyW6O3klG-td_GohvVOGD3-JRbg1BwfBXZ0M6DY8Ijn81TVz2Jp8vXLULdX_0MpllgKRRxFRoEgY2EAzAa8Dz--20k8xQiPdBQY43rtd7QiW4cEF6ifOfQZxzuDI3dyD7vWwqfU3QdSYbySyLqBPjE5hVYxF6To349VxgXmvizAhQ4kWEetY3U0CY3vV6lGDGdN04ZxdmnrpVyaj8OHLSslC_a1kgou2-dIwDoAS83z4qMQkIN9BQB2qYatipaNVHUAd6Yizih0xzwslj8yWMzGsnhqbXHqbXmNdzekrYP3ggEqT4V7t581cxKhkEH5v80dhzhOz2c3BF3vqgzxFIyCxN5H3hMxJdTkrfL7NtceaxfdilFcnINDuc5fRTURvJAtGJ-f3MlOG9qGneLV-IxTLv4MMC0FIdQyoKIPJLK_XkL7iOJn1VRTrIgqVOOd-WB0pWeAeTyMyzdx9STyVKJ75DpB7h30_l2vYrPB7XhPnWdPaOr0eIVg0MBkgUas8cEapCA8-cebArzEwyR-kE_7m5SXearTbRtTTYuB0F5K4vrjOLEu16uoDCnVY0Lhn0201BAKmteyuxf3EZk63CAkWU4iqhW4omGP8yS0T3hZzAMgTkgraJbEKoqWW9xU9JxrO5-TkXFDUojQvqFKOL6__0tnwfak-VtRHvPdI6nLgGHU9laxqUkpfFE9mrxeGdqPN1_qBKoqUWWh0-Q6l8sjLRRKNJEf1QUF4PeJ7x6nBvHO4WBfvsUn5gOvhfh0QtpMNGVXkLClRRWwcbzZxIMUQa-UKKTjXyMeAMe81DrZfgA1FkvcMjYr7AFOVhmzLcOYvLzF2BGLUUM1buVdL_IHCrqt58kpWgIF1LplG2ZObGO4gL_tQZlqzdJMHE1ucT-900dMsJoR3FDbXtupduoSqPsLf0KRkRw8wxjkBFkf-wxprI3rvQV8ozo4gVdT-Bd0v8YUTkOk4YXNczkzqrCjDsPbyDypMCcVSjglOzf1vwUSfFFLJurZtaTxvBJ14iUqvpNPx4mpph67eJC1YGEoOmDPxY5c-EKRv-9tbw65DyY7s5R2yjh_x7TMddFpl201PO4uzufF1dHXOab0PNxKwq7iXPYD40AahzEMNhqSauJ8B5ZzjveJ_B7BaGwJJODKbDZkI4DT1j2C0PE0T2nP-7X-sVMkjT5hw2aQQiOjWmGdNS_fMNl1RR2PTxe4EywGVTWqQLgxUJKva18DWLxEg74uDy0i9YfkaaMpwH7tMnvRuAIUN3bxB9Sanwchf19Cp-NS74uPACgEcF4-wA1UkQt3kFFWzdp6UntLo0DiuUMRYtMUVQeEE32Smd-M83Rvu-VQt-5uB_Sn4AAgQXMSXq9u4F4pcyshLhRYmXUIJDJ1Ri_dXov_UhUQPb9VxQMvLup5F-xoIR8_6YCw-WUDpd8CuepOb7IuvMy5ZVE8L62ize582S4VAxZ28uiWXD2f95zv9RFtkLpFhI4mJcb34mC1rQotRhNeMfn2zYpBle24MRDT7xylggGuJ0cuVKP5Urn2GzcxP_L9x7n5tuXOpYxwsWWZ0jdGKJG0nf3liExitv_LbvRvEeOGMAEGn0_wgmeG87S3MeHe8gTKm0ik_NcOasgM6wgLU0Oo7YT3m8JRhv-sfzpEDN3mnfrNWebQ1AWuyjsuUxTcxoE0nUnKcslp6wVGvII1e5zb4M4ZuE3NIUBjZhuKOAAQukEjhx1-s0GEE0bj-E3dlKvoyGhaC66vK0UXe3xbo0P6A0Qijb2pyGUpo1hP_jERmZ3J5ZgbLhEe65whNSLKeM_WYtQiDvjKQe6h1P5nTbQX2eR4_laUS4XKer-vU1v-94zl21Zz6ioNQpvP7brsybAOQmgCDtsUosk-EWGmqa3jONgfk3223HACLGcaMwJAMZEfBMurb7HQpAaSc7K5A9i5j3fUny1kq9acT0Cx1bwr1JvJNv9ErllPy2u1cH5nbBpjQQQLRhFCL3_qy7JWI9C7cA6AlwldXdogD0N8aWmhYr9tEJbNmJZ03LXSKpAIsyaJgi5AsewpMg28-mRS9Rr-Zi5rck8Sb-QarBNERFrqSzIJvxm5K3SrdmESBksStvBYBSCvu6f6AjbQmeiiosTo-PSAIaIJXtmB6UuT7BExm3BKcZ-aZNM81G_tpBM71nStDii61xmCZxP5Nv9xLG2S3D8BSewPKk2OkTGvT7NB4yPPgNiQskKVsOP9gt603qB1Nx0VISb-oRG7HCxH8uzILjxInAI_jfv5sfzcnS3ohEZPLHtwN2zfjtNhbcM8bhecYa1MYIIi4qdN7R8MSePnQgqqWr2SlGS-8QrxSP66lu6kVlZxk9_EJqN8R0X3DsEaxmkgwoo3IyUdsOyEJDJalJRZQGvrQJeFjUL7esZLGmDRv8oHMe-MyQlB8ldPPDuOH5fcRSjCY4kdHVwEAeXM5riqdpILpXOwoT8e97nGiXEu66E17iy85E--TRU0Vn9lu1TqShIbjwRcWV_0wjxGK0vtlznXHZV99y4Hry2dL-CuV6zCrhI8DPr2H8nKQlHaAB4q5GucS0ITpLRu_8TEUFhb5gbOFVaPxJzFUMaXhgD_WjxCnOyGuQQkMo8dopiTuRAjwrPHwSB0PHkm0psoaRRPqgrt9YThM6HfmagsJD1E3h4vbgj3P8g-TIfr3dhKVvgQ8YokQLcdU7U_Ej0VMpnUV8g2cVGmYNCeutGkhLZrYAJ2uJlOO-SDnmMmgB1gtB0OyItQjCd1aNKhvgG1bX7Mp8qXY9WY-qWmtrsMXpPOzfLX7gNxfu4mcVEBl3S68bO5T_7Fz1yt7WL7-dXMLfwmTDpzVoajiUJsvMwpsln-QEXh_PCUaA3DJbBEXc5GuhqWhkm4y-NobnZwlxZjtu2ES4TPocTQVLURqV9JqqwRo5Yy4194rUOk26iJjv-aAuqyYGyS_rzMHugSD59rxbsWHBqlTXKwev2MOT_4jQn1A8XZuuUjIYg82cDrGcmZ6e8zuPEjLCG_5BSVL9rYLrYQA-0T1qEhgk0BXikb3fsYJZNrdQc50z99b2QjS72H2Yl8iT22DgxOWA5dpuYxBpHAHQEw2kTbYeGcg0wBY_pywboP4dprCzDK0DSRHk7KasxVgMXblv7okiFc03pAli9WpUTXbdaE0Go96TH7dgPpdlpdfjlCBI9-xsTL_ifu5C_3Emf_OBRXuB1fogTJOvA7NUB0sKGExCG95cl8IpKgKVE-j9JJmXBiQzmgPPXfJkWlPBF-MuZ0cnQIVHEsGvL4x1NHpBRMlNT3oMoZkxl8GDyq46Mp1Oik2xU_h6WLEgsqvVyXvI-IkMZaXjNGlFyIClyYUUQxyuLwxAq3nduEe25Ltk4mp-ayaBMAkGAfrkyMEX74f6ke5duc4cr0_WS323Cb1w3u-5qLh7AiAbhtN9Wr0w7XrP6_TEgSzG1zrJjYFk81c0wXLwvrNDRmRtFWrT6gSQgV6oJP89ghEt1ALs9id01cbhRNNQPMe6utbosbS-K0U-1mJyl9sM26GZ3WBpCJP_tbrrJ2S09Gc-89mNpA98g1DXdvW0ENkAGwiDL41gO6pbgaqtMjEzipDhl0NocLnMkcHtJ5Iucmk6HRL5YbNZG2TLsD36WqClNFRXn3JHFjiZRELUDmnWqSRK5u8bo59juCyqKF3gBmxEdhU82yvXfC5aGjgYzP7seCgBiSUcqZOVpBXBhKXK0g47TrJJR4k7_waocAh-1fPNBY1HecG6g6CIawLF_DAcm-jzlkJBkgJX2LeDx0S2qNekdJkLsvlR8rKq-eqNtkI1153h0aHeITzxD2qADD8wuOhMfYfWfcp7d85w5qz2Bhw9s_dJrGkC66sOcC3RxxXAEBNc_JgODdfdeSXxTslkgsFtIY6XFxltOba_-R5axA07zlODGBbpZ2_dE3Vm12mvWBIOnt7eejywlB4okmAQPn8fhv52iv1YIM_BpEbC7JZuoxOyrba9ZIECftncAVyoqaoCUTMIk_eS0XHhasnihZPlFnJUcjh7CCQtG0PueaTsfj10VR5bdzDl2LZotUeKv6v_-6gggjXsTZRMU8j3ZaNkkup0iZCPit0rutRK02oKOCyY4pnsdsXgCbGGO-cJEKFT44V2jyu_Tzkz_UgyAu0xdBHlxHtxczAhlm-thTqYztRNAwOSmZrepfas1RwZ-RugcdofT6nsVTq4Gvh3VvltCgIUDw81exPxCsRtm6vAf0i_4z9IOju-ZXz3CpBnbAUKX4LDbaA96ZYfIBsN5cdQQQURSiod-_WZ22HcwVl5Dr7DXa_56hN6VpiAJNzdd-HelfkFOET4_WkuJTpGV8UUpCH68c2LyOJhSpMkP20a5v5F0H3wyA7kHK8fjwPlcvY54pNSVSH7zBVCgkhsUa92B7YZm_yXR-5S2cnwgmDUDKkxgg3OuwGbISGd4Q-JUHkaiyO6DMpSg-NeJH17truSIlOjvOOMVSOJwi4b3D1rdfOBU4LZUXBzckwgaP2FVhc1KkVk5wWh89y1bcJOOmjcR8dbdgzCy44Tfsv_saxxDyejf2c9D9SyaCZg-adNk14UxYEnNPylNVHJ_guyJbUac5Ksxq7ASkP7CEPEDsJ0nGfNVsNGse2erqSXcpPU3xZzI10Ink0XdtBQe1I4dh_2Qe1IJeyUeCdZymIQkF7Wuu9-rCLmpJboIOlv3uQQf4J8xWpUVqmdhwpTQeIsM_l38GrFLiLco6iU856oko90Se13Uykg9pNABNFv5GakH0bXyQ5EAfFHRapQDoSMScF51uNvXh8wVmRbQZFtDJ9u-ztedKySplQ7EQP8SCeuxIFiQhMgT_dy4qXBqTI-y9A7KAv3xCnaJ_bX7rUAKbMs5ugTxOdDtIQY9x2aczdcOX0FqJf9G9p4vL9OCLxwveAIyQV6OV49nG3CuXEHF5Svezm2GjV72GxHff4ysGuJuy8LtLl6Kdv8k0vXk4MK5_meqpSuQfZi3fSF3uzYiz3U53f1s1JR3O8AwNl6JYMxdX-Gf6K1GU05yvKfVpHGFqwKr-zz42KqvXsVPlzf5fAMV-Z0wYJhdkv7YWuzDCA2w4W5EAIDdvKk07E5JQuDHtFLrF8VojW0wM_XxQ-X0h5j6nwEVnY5IzJFcplelVz0hvVs_3z77p8QlUn2VZrfPdu8QPv3NPwNjx9whF8cwNbOErEp3D8oyMqR_asfSJC8lnsdn1gnPGSztft8jVdwKME_55r7WIMwfjvpSxaG6oA280_x7qW_KFoyycelb8BBzYK345UsjLGOtOI1C6b0DoPdOfPi9S39eErGwS-oSw-ZGNP4-dqonysP0izEElp0Oxo2Nr4xtgenA4FOSkb4FPnEguT5fHHM5Z6Itp81raWEOr26TqHlRGgSmqiRHykVWfhU5gk8lVfhWpOfk-Y1PogxJa8kFr3_0jeHHSmXF74abWtNyRn0imfbPnNGLL15GXrpa-NxMeW-I8Kk6xkJxSQZMQqDc1LCxUWb_rymEuRqnQmaEWfn0LZCLu5lh6j4EOPi2lOryWpIhzQYAw3jC7IzeQlPng3e7004k7S3VBe7m6HTmcS8hm9fXi6NzwOYRQF2rygjbP-0scQo2EUAsC4p7BLaXCpqp-Onh4ILo6byfW5CfjKnMa_VqO-bGwIrSMd1GyRVVVoWRuFMj_pfYi3RmY8Ne9UNS-8j-_JTMmArZTVxsYyohv8GTWybxl7zInql41xHPawdrU8W4H8xE8MvrhlR7YasVgufjxbZfr7GTM95-lFB94iDRcyVrwIFemUgUjY9UBkiYSKDxCJOqxntyedVob2zaWPc6bnTewcefCnBQhpLLvx4PqQocZKLb-G2rOghjDhYfbyhcxgd1tOho_J34EHsOKKMAW0LU3b197o9SIvDGiDC8-NfsFFMpT3WE72U8iBmon5QQLLy7_g9jrTHq3ca2fZ2zSknZ08fIQKPKqY-pYRAxvxYy_46GFzHGuGi4yCP71GoXl-v81o8z2G3E7jbwABwIF9pSOpDTIeL0dZhLswnF8BiGGCSynmgAEFyG3IrO45mqEkuAhQkliX2BtNoBW1Bcz9pKEpr3PXMWQrG24pe3h3Z7W7P1lkfO4-nGBhgBBw9bbanJiECofwoSTdGUJ1vQjlSF7_UPL5E9Yxe2ObStvDV1ub14hdK0QVPtm-qadauxATHE1DgRJN-UpUb1_cSpcBbKlKkAJqFhtfn0UVzLIu8W6RwdWoenVWWEQuqYs9u1ztdYriXaU25v86iU5PtMIHv_N3xyxREs-bbZv9S_hzflmJ6GNJWoGTuCLgYmjbglU_6ykA6umG4WhqnuvrUhYiqbHt5W2jhB27_Vo6C-biI-vZeho18A4T1bGJuK-mbkL_N_6gs_fzETJVqaUmq6Mm9YuXW1D4T1GiruVBwwSU_wjk5exdB8Fq4uSLCOgyP-bSktrHEDDuOAYXK02PyVsdam4fNeBFF_M7hoiqxbjn0hbPKxeLIj3mUsWVvGTYq6g7S1Ga8xdlsblVxJc0-mnkRaSKUF6oLsKm5kCUnD8qMax2kSfCQvjOOv_QmRZmy0E-g4JVHagl8S41FWGV0jLIbTljaUOr8R3MVsmr_Rf2dt-odj8BvnFvIxCQWiLbhg1jDLnTZzEpOmZIIDGL1gSvXnOgvyMacNvjEan3FELFumPUWhj6E0LHwAAhBC7P21HAFQGTqFTvWXjj2ajJuMH5puFATOYlmejb0mO1XzSuE6akBI1zP3WeAGnr4OEb-KXxmiHNYIU1Spr6BBgvgZwKg9_l_rV0oJKXLMGZ1GTTgeVbti7sjRBfdCkPoPeiWx4LB_rWL9h_REcHQ_eldFjQlD76lVmiYfdGsL-bo6gcFA5ZHgr56hT5eRzWNQ9PpShK1rv_hanRd1-CchR7Cj7aEhT0eBVu4SErcM3gOlvFqzoQqknAYvpQBn0NxCIKWNnhS7fPY5FFcmU9hXcX39HkU3u_BZMkNUr1KFv9gkI2wn5a-acTfdo1Q_8W-N9mxMxfQbWaPcj1PdeAzBFXQK2O5eJrhEviFe-b0BuIFTe_RuiBE9gp8DqYP4e2daHzfwdK-c572zThxuudInN9MmVJfrlEJ0y5Hx7TX5LicQ4YbRGHV7VC2QIcuxHp92B18fPoBPhcYqf_Fv45GIkuYt9mmoHg4J0rfEDqZX3CeJL7yi-RJWmmsTqsUIDUb2ZrzwqzB0F70fx2hHBGUSrfek8HiHCnTl4Uihzs3u3NF-OQ5T6Nhte_5YY2m_npWWgqQvYSTGXw5VO5qSMvydMRnqOPe_WEw8iodyBXE54BBQVRghmys5EuY4ZjWfxEXySjywufqWrCbea4BAhM10LjwOiFBorQrdj5rZw0apGMIkq5QO_TLHfWxWAU1XEs6J_cyb3jWXrokPyWhTotFZHVH9Lo5uTyfbmTDk9x4UzGBPOr8GCsTofbjUlD95ZFxHkHltTsbHsAlvowqr1WAdanDqZu4EtwaltMHS71IRQkLydpDj-fUmWSXyAGKDcMvrsV0fd8FvUGzfyRssX7OrzS9JNXtn5YEO8j89Q51AS0fo5D7J9qtf4a37H5Xq6XynOctjdFmlzy077dkrDckkdDv8n6-pbL0w_CRGSymq_UftbyEvfVlzxthYSQOA6bDXHhNC0EZVMrEWG59A02wYn8jPJdEWN71fbLv8ZWkufaVGkDkylMmI4c_4oIUExoalPppUsDRzCQs-myCwtepWBu3CLAYx3i98RRR6kHBm2zsdTNmWds-oSub_x0Vdqrc9NWgr9HJfgbo_S4waQT0ojcZkLtozrQKSnLsGYtdmHjqIWlZP24oq_0JT6VmoQDrHMP6NqsxHaBZYqENK-zdbxyVA6IX3edDcBhWNO1YYVlmXjez4zgnA4llJCe9ksUSv5NsEu9p8OSMecRiHR9NN1SDh7GoWgfPr02uzmwzJAH48poIZLB5YynjO5uVYBP8CbMInvCJZ8g30nZG4DZaBXJdVOmD4ho8I1hVhdQWXYA_B93mYWoLKUtPrSVvKVyAabEREbjG0ctkfhFTAXOrnrqbXlqW2IiOu79MzWl0oBy1AwOa4LZb_nQ_eICJocoGl86qXY2RMVHpKP_xK3vgQEgWIfvEmxQz9ShfWq0sW8QAC00paWvcVYoB571D6IqMCr6cF2nGT6vvv0VbvKadG9bUE5ZHPN0MN4ATOvLgGw6Sb6-AwFTWyZL9va1Kz6lMW2RWy5eKJyOxEJk2YltinlP370Oa2sabIOF2Okx0HxlTAr4gXfLfr2t2We06640DgWSMpE_J5U4XQzpmmH_jk1_yFF1wnEhHgXveL9OZMgVWEANl6E3oMF6Oy6g5hoJ6e4QC7FkmX7tLJOacstT3WXyLj_oXXCEfvcsbjFNBpUG44YPODLR4bTM2N_aGQMIDPt7uxJVI__2GKV9dG_WUA9C852WOc59i_tSCFB2VU8uzT-DDr5ahEOSFSboNPkRWbg9JhuAT8-hIl3s0zfDJkwOjxiBeS7QiPuJ6C9vugOu34sQ_AuM9g994nkzK7OcRmZt_EW_AZ7b5-icyLuO-mN4j6f7FmycL8P9oaZnRnzP9oFsriH5zmauwjzM3CArNYmI3-U8FMBpJyK76wn8SywP0SXYI5lEHM-tmBXxv1mXmlGEqQg-larBsVMHmDdTbQwg9x0Q7kAbh8MomUxdnccQ2_NLrPCoNzKFbBV0htfshVP9luaBB2Fb0ITPHD7nnymPtu5-wiJB44u8YWE8wZwE4T0V8N5F91xk1-TU-K640sWa9U8vFfBb310udZXiZu1WiJFRJpTjYaBiZ10wVG7mBUnBKQXAjWW1XhY8hGDvC0CQGT5gD2NATkT24XHNfBW_QHklNna4CUmolrWicvHl6JnRzE50F01lpiwhuXRO53jqT4UoMn-qmpChlaaC5Q4Y9krOb-CXzkfl9ITV5fpv0H04LGK9JM4z88oDqkaDRBDN6GTX9A_UwnK-G5PXy0jPD8XljhXNGg4_A6ekEFjEirV8jJErMYXKpcmCFWQRAbFKrQ1vf4cX6ZJ7dD-23vhMxcoN0-VvVGZFrs0dn4ipZ319vb7MbcLlf7v6bbH2K-N1ZLSkl792UR_Ws0TnZhlXfsIrD9-eW9PK__32SxSTZMTKmwJ337DUr6-oJlvwZJ5fvm6Ht1vK5XeWdv5HfUmlsPopKLILTRFKZx-8NUZLu5D_jTnkuvFMXFHFeTNJOnL4ZAzsabCyFEk8B1OfZ_14BIpGpqE-yeT5ob_M_twNFyXUAe5em1cEup34oDPZ_sc6NeaM8RFmu7Pg5b-lq0fvcxzK20quYweQ7i1pD9INUAPpExUaFfpWkDqhuoGe0_gaMhRIM9h8nF5XtSnaK95BjSFdP0msRhhLVDhNCpBJNbXuX7j1NlRsYVuQ1k5iri5KKwjtOV4FRaQraGF3PAjch_c43-V5coBYobs08a5kSsVnsNrD4mYll0DDTN3cSFfKVZoXLs4grCgFmTteaL07p3Fe5akLtGgnvxnr18PUCv12ek455fDIH5GOwxg4ESa-pkYYq48TtwNVSuEfSLr66rRKCU0KBukvlBKhUKd-i5bRlb6yo8WSaGrIxmrQJpr7AnR55yW8Kii2poYS2zOQjI7Q4I_2uLaJ-UBhWBUkRkA_hSqE9Mxfh5E6zurXAU-X3DJVnQHOOgC3Z4D-oEd363QukztN0tJUHCFf--62g95ywckduZ3BRuEgQIxivt_ZzZA4le9Pxd7gxyN9MWr9mVKjKIrJSW7EPEB5KxpRGHuqH11goNMNfMX3XfSuD3L59Ois1B8xuf4Eaqq1zeHdZRNjcyGS2rn6mThNzyY2XdZHJiJcNpLmWO4bqq2GXeSFGiqhnByMD5zK3RyNmhx0VItIbymEN3CTkmeex1btsYdav-QGqq58DYN4zIacoZV7roADUiWOm_mAP8BexjQ66JL4mqxubmxLsw0Gqx40_1nGP8xMWM2Gp_dhWhsXZVbB45eOxiynCRDGGurd8V1hnenvem5pqKaJpOgNZzDTcLWKbsHRF2iAfaecsccKFNTa1J8u81_fXG4wcz5iwK9cUQrFbDH99RllR_YmCHUSMtlFLGPCN6oRZWBNnp8X3i0hoC1TsPldk8E5TK4Iw5Iu24AqUYp6qPf_aaLGUg0BJBHMZUFLUEmt-GiteAnri5QbrWJrGvuzZm8g9CGdsGTpTtEB0mDDw9XuhEAMGQjRq3Msw9pT6OBgd6SiuswVoZKLEdIjWcyOGaRO4ZWrC6BMeQvBg2zlmaJmxThAbYQoM0mmcbiCQ7k_39HMRT0FHeWTG5lA39H03Ncc4jByCl-ksOk2B3Osd6QEo2NkqkxpqXe80d8cZaZk5KryVbQ4Ywd4dXL1ZhN89XKgUdIqN6ZjDldK-d5h0MSTTF9eHHDmWXUZbAst7D1ZdR0UZxF8ux_zNhChMSvm4dXOhFqwD36nUBfvDjuRnO1qgc82Ascf-dVACc23-CSdSmI7txMUgPI2N7r0Hc94QDOSMMsLidIlQe8qZWYldbtODRisjufQAv8fYBvZgD2n_wfHqmGr-zbxoLoSdZRKjt2AgKO2Pj-ecHi41eByTq6jthNQ_uCuUyANPk610zxIBPn5lXwKgiowhGTu0LFhFwl-GZ1Ozg4tE1nhZASmAaaQzj8nysPjw1lYzofjLdcSdKiWHPRnMydBQdNk14tHNaIYvBumCWHiaujN-V_O_kZC-J9y-yWts65kOmfoUziZ9ODa0dJnXIGT_AKhfCcwUiq8DbYF5gaL0SfY9MKwOyT_Bn1i8-hIpqTY-PXsLtaZdYBVe1DVsF0VcCdl2biJCKuj438j9rDz3g6mUN3d_5SrwWPpm96wbs3mwzCcGRX3HzwGY7Sqb3DDGMwvZEJto2LyyIogCU8ovAFgKZNdBHLrtwoMLKQ42K_yCMz8rJZsrZaZzhTPuFJL3aco4_nh9SkBfxSMl6mk696FFEulEbFKoDiq4SMWKhOyzDEyINgDoHnvB8HmJwWLIcNZ67dnOScpAQuv5HyX6amAedZIvOYuH5iBoBqnTwnjwbvlo4i_dPk5OYnvb3XuU2xEkc3ArSkpgXfAmQNVsG2BFDUevqzl3E1SAJwH68VfA9MJqL4OaEkqPuSi2sgDrtRe-m7SJlFj_83UtmSC83NfTzvNiprasV50TNBzYYVOaaVVLRQGAB7gKqMS6uib5bC3Zaiq9kwrapzESuDfiIyYhiFtFFiE41a8c-YYVj6SeG0IDDCMV8Zub2zHMHqKpV3zcey3EvNEI82JmQJqgeE5TRJZXqmSFetb_hzPWcvOjTR0qQMBny4kwidu81_Acn9yCFa918nF_AmziZgfe4vaSptdxOgZoywIPexHJENg_WxjwhFBOXRCizdXrpHr_7STngp-KNHb9t8WSwTXbP2-oU5ugMq9jEPg5l9O2ohQux7GMMaruYR2i8PvueSMHeMuYPFkm0tmuXZUMQDAYQXWRXGoFjmKeHBPEhUR2MlqtrJ6vQt12TVqUTih02Apqj1LOpAqBZHY5_m53M-8K1NpLvPnNkMS_M4jHKYq_oPchyf_kY_RdDz798JCb-mOVD8CCeb0WyRvKg3Nc7jzwVeWFszev48yi3voK2HTzfdH8hezANK_rGwP6NfbTWpE3A2489m4AsEYgczfVNK9NsaGuOfQ1igJhfarhRhJnj90PvcLfHHIuas4h_xpFbkE7tXqhiQJwg8aT7xl8FUSkftO_qe5nQwfBoyWRzZ8sYAZeBC3Rgwmqhyy6QShgEhlt2ACC9HoYj-w_xOyadwm7NJqqAoW1p2mTKpE1xu2QyXh4sw2qNEGakNF58UfVlbvbrQ__9ftZgHo-qIS7Xa2XEAzmeioplkJaSsqf8cNtNMSg6lXoBx0XXzYitJ5WzDP29Fz510NCT-53qIsc3wX5mPL5gjHeLMVrQALhNDz08UIzHv-6p2OmTSDU7KZgf84heZP2UYAYI1Cj29G9XpApH0tZhCUYK2R7QxozpcLecmwZ3FgMf4_WYTBKv-wK8Lsc3HDLqu4P7fdnjiqnU_EsAiciTkWAcyYwGhqk8L2Og3uHhuEVrx2zMj_gFRd9Cp0qfU4y9Xpo1N8MFr8rNMVT-P4dg0in6IOskUGdqqdTR1i5T-f0KQ_IaWwfJ-JVKIiv7EUoqizIAKoLqqQeimosiZJJVqob6r3mUL0TAq1CCIexlnX6PwEijlGRP9ewfBkd_Z2IPHdUAhwQif8yroWJbSKZbCOD6wp4pkX2K3Fs4XeP4tm94yCI_XLkA29W2A128s9tHxDOyrJlfK0EQ34m48Sbi_Rga4MaB0bCapiLpJ9Xscg94jsGXarCRwJhf6_QnjF2X7TOrEry15pfR7vzcuN6UbdIvhE3_7t5ESLcH0w5WdjintqCwJJbGEEOayBvxVPRQqlMX-K9iG0mao3LLGgmQMpGrFRYxiHuxUpVTwtj9_SyM6Q_fy7RtXewfrX4RrQtcQvBN1Sek5DtRBOnEFUzcjgYoghMglQwHBJD1QlZu5jTyVI1keT5qdnq0Tlbsit3I13ouxjE0BMHdScJSMuIe_nAMlcFXp8JRKeFZpBSD_xJy7dLP3zNXO0W5mfn_efIRO9Qk2LUx9tUXsTbYZymCaXhdjXHNOXsWQJftTznnImSFDk0bYci4EacNBGyA-aTnUs9KHpmXLujZKwzghClqfq2uY0C1-W8Jk0zWePJdUjhfAF0neYh1bY_l0fd9ojbuipKsfWLkkxw9G3zs0tyNKSeWX2ZDfet3lWMV9JOuZRiqmuN2STr8tEn18IWM2gv6Yhn-XdMQNIeGw0yIE-MkaSqQ_XT9Lluw-eE--l5hqr_ovSB0GKqRBHuOeO83Afmyer83vF0JmvoRtcHCyFSY2OHoabk_xQ06F3DdA58fzGUYUtNSh4uNUr-tEWRSf0dTvHkZKbvwcAaSvXJAD6kmYF3GQZsLipLq4o4luVqyFlRTLb_LS_nHodmnfGW0p5gSEkWA1N9g9BsQ-UaINnxU6rSoTSzaf0l9GyRwSGA3JNklcmBfIhiJeSz-M_pDZNGO_NGWxQN-a_RDVUfLh6o2fHEQvSDCQj0v3CkC-e6L7cyIZQSwXYvMhefUJDi6EDNDMcKC3eYa-IwkONnHkmfSL7kw7xiNS-DFQgxx7W4Nq77AyQXTvpjqmTFo_RyyAGN4VCAZL1VorDkD-iT9UAOVnZYPdY4cNIcC4lGZPiCYHo2Wi8Su1GabMa5hhwAHW8GgxoqAri21f9jNE3XvmtrOvquM-YXAj7fd7tvabKPN5WQkFOofT0IeHHkQVsmdoW0bWZmuy0LCMoVK8I8FlKhN35VamDS0SgcAn5daxBAJAEQUNnWuTivOFkw1ffCurljzsZmjJcvIrOWynsnp1-kl1oZiumJgTGX6spajh7jxfeYE3UBNfPhVyOtpMIkEDIFiPDnkXoBPQOflBr2eaW5VVwFcFhpMI2hQCnm-Ob8u2KAlSzmQwHwFOo21dOV7f2xYq6jQKemEY1U4HQ36Zw6xb9eEeGuYqUZo6SMDdaQnJaDIY1P8-I45SDTlIfvWgo9TNG9yIZ1HsF4Jc7cuc4sJf7jsBi7zxwD4o31QL5KAhxw3ISzSl9POLCLnosZG64BUkBQfrQcKT2yCTSwRlMh_CpyE49eiKXaObVONAa4IQrnVZrI_Dop8cU5vdO0tw03l89y-Rw6sYoZ5BeWoMpz6ghdEcqjAXRo9A5KKU81FI9Nb7j6bZL9vHF9gMyYamHPaFzNNM3YhbjdS-wca1LZMlsolpGEA8P9DdhZEfGf7mQZumAe4dc6BFn_KeYrJmz2Fjsegt3Qt6KKA4FutXVQNbRJWIVstTnwRL97xJW-EJtSM1mWS6cMlrvynCpueHdMr2zvjOjz7SkOEtggIb5zdgndhSNjbVhKQcp6t3852tocjRrvr1-7Sh1nbepG0NmZVHNFZ1tTIk5Zza45eGg3oaSpW01ipth5nR_geNCSbuy-yFSOorE-Yb5jadrWl89-epApdG2IDqn83-2AR2G4bvlKnKAzI23uh1vzHxjXAMD3G19DaLaoeIe1RPjeMMHm4CZVn68MlicRBUwcXPiNJyVfNfSDhER4upyTvVCgxmX98QwPQ-47GY4pBaSlZxgO-E0S4o4INiTThIQdsj-ffad7LeD8KhTvyx8GGcchd-WJc73ugtytHhFfRLhDB44_7pSR_tB5yHrYws3iiMaIypvzvCYdArEAX1aG8FboID_UH2RFRBnVvn1A4pt0cXjyQc0umlVG_4xR7ZC1vAYXgzl9ZPSfQt39HdpXIpZGqSbeTN6gUxJM45pusEwDKkCocR_J4cwkN8pb-P7s6rCpsKMw0lmdOqd535zCN9vu0w-AUufJCvix-S2sHpUcExfPdJcv_2FKr4Nl1wTlLvk9nbYV4BexzfE7zknjfrFZh78Kb_h1xwLb97cxXtSowYFZgteldiblyvfkp_-eSOw58Tq2DytwRdpQYDo0XoBej-cmF04tNsufzshrGObGP1qe-IPNLniyI6_HIZZ7fqy3ANJyDZqP-8ogDgMz9IJFJVr5drwQoUaafydlNNemXNKurQumhxLYze28C7vT_irq3lB6HY0nN1BPDCHu3Br8CXZtb8JW8e-XUVUP0C3vxe7YTgP9nDbl--_sEqNrA_e1SGN8inn-xcmvMfN-mQZvwc4ZDkgoYp5tzaOpwLgB-c8dug0wvMPz0He5u9KJKt3Enr3GvTSxvjSB4IdkA1DEeffFJYdFjVeZ6IpXGaNDaKkZBoBq-Swye-u8bhI4SYm6UaCzHusXVccMldp1i-03eSNN1bzuZ_tbJXcgpRjRKQ3EW4cS7cKmFeoUBUBv6pyOyyJW4T5e8OwVnYRH3IjUJkVo3YRXTvsd3-W4lBaBmwWYjUqHQlFe5_BCCVmwnyev52nI3V9Z6O06ZyvIkhCzErWBxLzS-sWfjNt-ZFzhlOAhTTmOZyva6aCJ3VJb_kH_tD3BmSMZf_vC4chz9rKrivhKHAWSn_ObxxJuvzCpEcb8zJcltjWj4xeAMYVJ1-zLf5LRFl9_ZczZrRnLXrmx10ETawuINYYKwSrL6eMRm5txaFJG6XF5lJj-Ctkf5wWJovgfwRx7_JGV7IGgBWNLLm54gK5P5DeoabDYKEGsQin85k6HrkFTMeXbPP58wCjhdpd5zPqQllzZQrzRycdideQhR50lRc-UFJHupNFRfXymnN5JBynE3pxzLFZfbs7UhNngG3igLQtJwbYwwhUXpbvYmmmBI7s2XsszwYzxJ0X_xM8w_8HKON9mFg3-pmPPdpPtxU6RQo_0Z-YSo2kW4oLxF7OaMkwjOSY31p6uQ8UC6qfsitMm_J2TaEsW5g4UHNaWQBy6wZHFaVaxjyYs2rHsUqYEtMUcGeiIxt_3IWNfi9TnA_JCUIM4jddTIJTqJenZQMjwFQeDaBDx2iFaUSOcbv1OZRwdZlBT9n-zRNDps--92cHILe7pRWB_GsaXAxXcPPlhHJj6YFAIukGvE16t64SuenBRWClwlhHLnSjRiXBlVFXxzUnGBuYsa_ePLadNQlYTyddGSP3v_wu-Pn0QbkhebKiNky5SXI-7bh88GL3EpQKQXvr88O7hYgFgUGW83vwxsbf8gOkodtjoZ6NGNQLhmXWCEiGwzlkKH0Fl68ASC4jKpqGqxINGxzSTb6k7hR0_gAF9gtAtBssMvrteRaZX4OmOwfnKS0rm1Vm1whsya63kiPyrQgUPmbOihgy0K9KjdUM8-KFjujQ7u05sp_Ynx8ykmA82INRenKgqh_dNZ6WR6PShecoObEaAv9uLvY4qSRD094uLZ08ZbnZGNWOs-hqr4VogFW7mGCDWNNHndW09g_Mv0XdNMqWaNPrwxLD7sbtKMdCI6Iwsm3dRExSphpKABiVKk93B0neh1eRnayePQBimtTGJLQTSYAB8igQoIdlAHdzx87Rtc9K7aPTXAQQEpZht3bHsRUdar3Y6kFxcEb8yhLpbbhWPaRc5KCOM6Lb0Vp5XhVvYZGM47vTKlxPfyZ9FDGXDs0hFkAhiq7efeXxAYhPFfjnXwt7YyDbCzqvjRuX_MmcK7uICr7cXf_GDfbSFw9riwnVyydPx2V9wRr2MAcMlx9387hStZaw0HpxyE7waplnMgPMpeUpkhe9Uv8nsczYxlVkaXA1GG04UgbzsAym04OqMauepXhmAbc4KlOO04H2vRxt44UyUTnLh4Bv-05Pgnx8YKpdCOskZwoJEfVGp3wN8YZSWUF-yM-dg_uyQffVdcaQ9wZl25DSxt0wMgTNy_eJZPkc6X2eq4cUKTXsVZThvWICQ9wsv9Z1vh2Nlg19G7JkoePEhDEeQ_lWpO43gI8dziTMBgl_vaHDapTPdckCPILzMXXQvd3IuA4J1JOKWyuyYI2aa6eAjwYnWSFH227QYjmLXTaeFE1ryf11qk1JvBOOdr34NLKuHzCC5fRk62MmjyhBXWG2FcZkpiJdESsjKHVRxgcCGpT-cIE7DPBQdjjRMuXu5Ui57socP5jERLspDPrj26_TIBKxTEfiLj5v9odRpU3jYJHs4AqRc6zkJo78-aRWGg9uK-EjUEoKrjOVBWIU_n_dE9ofBR4UVPi6rhNZ2P6QjwCZpkT49SN3xBVBBDm8JlpWlw3k94rh6MzoBMKpI2Zx9PKC7w7htwb9K9snc431Ck69oOgr4_YbYOort47iUUoYhh2r6bKwfB2_Gp8MacNHc9KIImS1IvIfOYjP6yYQBDuJ19LFIAPWjxBtmfZwTEHWkEwAhPYPZT_3csjnYbHwvXnBPCj8aaP6CNTDPzDPp8uOu4ce013aW3Atq0mqXpO-sgJsjwaiUWehR3X1WQMWHWbQ11CVUVTfNx_3y5hTV-f1j2jSxVGKDPBz7Ucyba5TX8fOo6xSzQRawuaj8mgHK-_Zdv1QxwSeUMi84ZxJmmQITsVG6x8DmjO5RbPU4u59xtEMvDtYFov7stZBpWKoGLxB_G2od9DFbw8qvmuQwhA9RwePH1Cekzjm6bxdpdSISJWcQLglLpWneUPqBKF1cFRnwbc7rQkumvWO-Bn_28xS68M9qzjMQ9ZllxoARnOSHto_FeAwdiSOa1bn8TeM0RvffaIZZOhE9rRH2ICgtq7TzyzvQAeEJbryt6Iq2Obv3r6Ude9fpGk9q5a9zvJxloQT-DA0N3sPRm4JtpXCq0o5e7V4SNXFu34j5tOHlqHPgJyDaF16gh-H7wuQLPszbWbfvPucrEI4VqyLBMfdqKh3TEyM2D8iQpmmehqIOXJjegQfn6toITjvvKL4Yhz8DJcCDSA3w2NgSIGb3viZlBiI5-U5Lli9Lr2fBidXXGMgshyJ5eRgy_dinvlLCLJ4CY_3PiCX7ke5xvjffxo0qqow9Arm2wMWfF2JgDaL3Sd3KGpp-wcJpSNecOKFzq0Wc2z83FOIg9Y_E1no_pa2f7DVL9FsY3jjrtmWtx654jimeH6wu4gjai0kMw5xlgZ2GR-y81on9C_htZGLZPLbP1vL8GZRMMavHrak8OfL29AFCY5K7Tz4ayan5mw9xfuBDJkxeaQkR3mmS0l-LM9b5Lje-BqJ6lYUzEES_V8qL6XgSwrYwgXWFz1CaKka3M0Kli59GuLZliGEjU-nTWVqlasLTN7QDPvcNTjDkiDhO69ztI0AQ5aMwpJTx-TfI27i89ZHJDCmSgS4ixImq_0BD7FYKvmv5wfE5UE7i57ySENK3wei0j9rcEQNUwGg6RByw6HW-bU9BnzscrwYMlAJjVdUqAV_xBJ-dqR56g9lSzDruWkDsS1xiplS8doJc0phP_Oggtu-HLJIf1KGxzjYczEIs0-PqhO2I4jhniVJ5xKV48xM-MeMi_TAlR-qVUm-bfejiRWGBOprwo2M3aGgK851LYtpoPsqsHRXGCLAlvNumNCZ_V5c0yxFrlnyn8HQ9yCABbyKqIa7DrudtOwsoGQPSGdZ98pFfh587JJOtsPkg0LhwqBcKakszntbMG4WW80VXSikkdueuLPNxBiTn0CEg77wIQdl_g0KBPsJSq5sOTxFT1TtQ_RrpV1ChAqFtdnoPNSA41hZ5zTGEW42XXdcXmaC29dPO9YR7v21-X0G8UiMV0UsWjDGS6heq9qj4MJTlJW81limlDrO951IO4zdQng9_ODVx3vMXkcViy4bKxzzYYOcaGAtrWRgLlN6h5hDTXFDqVgrul46Tq-ILclgqxE_Ot0uRDdcIc30UalkYQMox52j3O6n_0EF-ZPaiJZfkRHDs2iQs1MihJsuUYnR0_Ja9qSYSRBhhO6nBV9E9JXEtcX20vsPF4B3AozO6yfaqswQPdq-v627JxmoW8gg-kn3aGaJP9deQOKC5DNN3C_wXU3LVQ9ULkSMqe4tFIIM8rISY3XcHb5Tkqjs1-RlElJawquh9Cw-aYP36NuXWzCf6gDYZ7llj3B2CUUDTvNA-seF4PRMXPSnI1p5G7gLdIRsX3x5s5IIetXQJObQK4VpvGfM4g3cJw4QkGf8dLB5gpH6MxMp2OCG9zhdAPgRuU69nY9fXyjPDGiWHuA_WH3TRvlv-Fssm9Tqwggen3bthNdm9P4D5HMdJfDOwxc1ZLTIoPUk7aj2D9_Btk2b4w1sIiiG4f84ykcy2CINg7uaryxDMBuzH4g6Z6cFOwG_ArQVWh4E5Wh4kuM0TEr1GMH1xoPjsEkQ7NVCdUUn0I9JllRFEI6bDkPPkAU3x3KeOwxaoIleFzLyJThXNJyQjW_H_p8doLpqGqXxThp4X8fTM3-geHZ3S82nVZ4g6AnqyfMgX0JUg3yvuHU_1aVQ-t5Py_vvRkMO4Uxv2RWsIw7rbxuOV7PnS3gX8SMGLBWEbhbAdIRhQhjVEdKcrLMicN5CdhSV62XnEcJYTmAE6TjQox3UofXf9_RPmtspC46iCd1i3u3_657XoI9DkFKKra6Qj1K1ZeALwoQEQDzNVVXp4tsZYsTPBbj5-NrpAhY4dx1slIZkCUTuP2jSZ9NJlI6DuO_0gVl7mS30Ht-93BVdGliACU7rQEsLTzjVNBuqDlUPDhyHhqQ-YAOhZAfBdA3GAYt3xVyUXRbJqbjg3EKFeTZXjTURoOW42Tt1tDZpxnFerz0XdPD2mJ47wL6ZKkKroEPGOL6SJkUWFG7nAkpRo325oMsjpmdEs9B_vVBUf82urirZmIl_XJ_TH9qGVS2LvIVvTCVDv69U7fGjLCYqab9x7SF0lBq5HhDq_C5sMDs1-zkGhCznbQ90VrV52j4uAPqfMhUp24zvAoByZjO7M3q2C_Xir2xDEkTjktDIHNtaGc_Yd30JFiioafgY-Iowkkgvj7UrLJ2eQSpvmj3ZMIwb1J9lLQ3Fp_DvfxsOAdtdllGLyNOsTq7eWUdeizxMC23bG_AE8oC6P9uwYs8MnH91y-Z5EXgeTI1pIuAwKULXMXq46xLD1jH_mWfuxclNUlzIrdoKId0ULQ48H-OS5R1wjetpTd_NCCkTFxm70pWelXhqTPn2KuLoMPBWfO20IrbyLXZqqp-6Ey9OVnNP0Se2K6H0LrK5y8NkBssTjoj4DEwUguXx8TO09owEY9DnfYfrbPpWBCQuCC_TO21rP4DKPSr2NN2ZYIhXFyincR4ar56SyDg9_sqnpQQHY1R-dB532u1BqczSJ08oLRlgRiWObhzQ-VFDBrK7O84tJBVgJpWrpapN49o067K2ao5zzO4VH7CxG0AqTDysJjtdtJgb0cVhL2dJ_WA1Whq2TM0iV2CZpTeDSO9spHPOr4JfFaGrbkleX1K9A497tDbnos_R4KmkjJVCVGq24Ol1P5Zu2JhafdD9sEuaLSgt4b1T6cBUQ3tEQB4jtrQJZ7WTQxGnDOd7naFMCtkOySRKvwwdiHmQwhso9WhNoSoszqOeksACn-6BgZDUMRWY99Z5wkU6GsogOI3aS__z4AloCghC00_VIGCApp4DQv589YhD0ZPL0wy49KjcguiZrB5jIlwdLyxbzQQ3ng80HOPDDgD-eiir8GKaADsw5_5S8SnF8BGFm1g8crNhm8q64aXWpr5fB6uzP29ja9hr8T6hz2tWr9mLJV1P0Oqot6fzaSc65hZ9T6TtzK8dgth6Q6iXM6gZU33LAdT1pKg0_fR9s28gTIYuYuNe5UkRw1VoA5OwhUBC39S5343IDahcuJVbVQvSUKPzQzNJiDcxSerq3bzmkAp5yJLctzxs9Eul4ZJG0YyOVHeuhrcmTDbzHhNcyHhYqVMX5AhjMop-mdk0SgTZpBjcVBjxkn7YZgh2nEt5AlBXLZ5rrGADl4B4rbB3rEpPhZD40oRYgtqG-wwxl1e74GVZ99oiUPwkQucDGZsRqdPUNzb6vE4YsbAqTy29_sXBfr8RSgSy0sC1JQvXs751lYzWKVIqJ6UVzZcsu_-DJh3qo23IoCbZUWYgP8PEV8LrVzr_4yK1ptOim-889PFDVP3lpWZkmcdO4pJy1WimLVhzaRc2u3DRb3u3Kg_yNPPN4k-pZQO1fJZqSuZV6q_t0rJdydiQ-XROPa0uXNNa9Sr7E1ouGaB-1SI5emzrsryH1ijNt_vxZ5llWd5EjEUU2ck861eOATsM15FNrYJkMJIBDnV9-uwamJk-d1UZPwyWlhs90N9Id_FriF8Ln8vLImaKlFrhdeNFEWYrMJPHn7SXMnAUT4BIk5N9c8akmHcJn5LgBGy6NvODHuin6yAQZAsFtyYU0izZorhDUkHej9pjqi7_-KvTKY_U6cbo4jBRO_RehP8NRB0DPyZgwbtZkSwaSHKnW8xVOKRbi3X3u3eUh_rZYcoyfm3NgV72N-OkZkEvpgIWDyCR5Jt7gzuWI02LbBksGSMnz9uKyUq1cgB__drm2B2biVZY9fjg2Gwi9w87jSVHzXbwg9aCj3cc7-lwjAZeAuZGIL9XLhT45PJ4Ge3E1Oyd_C7oYJdSjKRuffAzJfpu-piTJ3D2Bg-_dGu9db_2aT84z6OZyg-htCO4h97Hd0FEJhKkNNqFkJ_9vFZMRDj6sQLVMoT7S4LVOePKE-g2bP_sBej0MaOdU-SDGOHOR0bxxh36EVxFctYt2jwq6rNp7_jUcSFc8paJ5MCPIksgPD1EpUVx-xuSd6lAw3FNl3GihYE8AkUR4xLB3QvBUhSMPoyB9s41Z2KfHxv5mpotyqJJG-dm3K4TPIZPSdefpVMpvjBclX0P6WHVG_YhccZz7KIgc2hsRMam82cyVG1RE9nVPQxpu3dlNSbkToI2NfiCa388CSw_7JnuD6baCQRaMMc1vWe8OMDgKhiZhsn5JE5Hb0NDaxxK7PUZXCeHHApoOItNzXyyAU8XsvTTWDi5FHY843COcmePJitm6VjrYoeRmZ2AIxNkXhlgCy67d9FrIuK6J-K1W9_9XRGXVrnJMXqmXEspw60Gh3KeomtgVonPnqXXNksaOMiVHUADJ0Qr4OvkONP7Lq5T9ZSkj0h5POt6mu7UQv4ajSnPlzU3BrkdAgY9AU3w8MH9IKD9lYOZITRl2Gpdsr9gfPkBuKEhx-urGBd7sUEqQEi_uYKIdJF-OhCIZy2wknctjrbcm72U9kMUq19-_DUiZ811dNon-zSSuDUlbej4a51ocK7AfXVgTx-SvSpGMUNzbB489uKWzNKF6gPwgNLmYm7w8GFoJSc5wWUiMauzqBW9SMCpfvZ5VFk55ync8Ur81XW5DffBRxxlEihHCvGyIan9-gnqVKvN1gm_fHyvhnl-UE_iO4GGjapaYd_pF9NYQZQxCO5Acvpe73IhgrK_Yss5dt6cgM9_WpWKNcsW91jrLnz2713luNi5fq1WB0YHXMSOzhVxL6c039INxotoPbPo8U9lukVsOeBsUkv_N4PKWRnC63VvQfnmWcvfhAVh-3No9GWgvp5hriHjbkk91o_ypeQfsU7RQMABmujVukztekdGqGdG2eCzTXHBiPvXej8ZtaCCka6ZSilkfuctfleuQhbxg0O7_RPjh3IEjmle4T5zL5wA6VX4g4sfU5lmghMph3nOA1SLqioYgv_TnjFs31H36-Xipp180kUJujOdDb7SZTPtnBWlpkFiNVaCIbDro24tc_xs8fCMTZE2qQ9GoKeaBvzfiLiS3DrC3wcYPvZX2G812JBX_7N--Y4fEqcM4nwnhkVtmRoaAqUTnf1BsCLA2K6BT0Yd9EpRoepXnY9OXwBLks3CI1cmcM4tF_6RvzJHHPZ0thDIUSPLOqg70YOnHGef7KFES-Opun1_cO7nuVpzdPceCkseftQzZaNWhA-ANWwym-jwYv6Z0hXGViAz0IffuxGoJ9K_TcLNviEcfZ0nDNDVv9gW5Ik-llV3lZ7nTq_CwvEu6TwSrfLJzilxjrZaUThuYSCMNpbpSU6HKL9i3n1WR-o2-OmOHHPwTDjHeyAAXc4bKXJhKYrDX2_Lc0R7sGbvqyS0N3SqmmBK_1NlP1FuiWNM1nW0J5IPAsszKqgZvSM9HDG7J5YP9Ye4LjhJgBjhqLr3-VxHuWCikvxXfSUMUFGRqCC30SzKaHDY7kHKcXA13kZndjtfnT2TX-6OLa2ZcmYVzXLzooQGUaR8Wa0_SlMnF4Rwa41HDn7yPkwe5Sphj2ony8sr0NYCAZ5-5JzTY93Hy57kYMdydwVNJS4YavwGZm6xtKahi7CdbESQ6JxaqEq436RFwOWF92p6niKwz416KQHXnlsbKltNeS_w_zkcJ-RHRnb5GVZEu4X6XD3Un1qjhGL-AHaH8fJO_Ffp-q2EFYDTOzAgXVawxxOGoMAdKnVTJuqOpLsTHLcda_D1XVg0ADQZUMasNPzOGqqqNtCcbtvcJCaTHKw6tX-mLkpprnbn-eWnrfKCqOUfklPra3XBrtKbPWu3AKRYURoXx6xMEzQdiZfKwUgs11Mn8fMWKIhNfQ_bZ3PFf9eANjypb0P7CHlc6EHubrO62BoglmwJF7ZRn6MyW5mJkCSXzdZTa-MxER-M5R-4yTjnxCtOIhEKdbH_VjxbC_Oczb_rBNL0TyMPcWw7pmRSBd0ZaQ39_mpk67S_BNM0G3xaMUk7xmsMPXTWmyvkWIJgH_zNhY3AmtW9OJR_FDm9jz-NFrbPW4JBo3qopNeeScDyh9qt2pWh3IIXXymuPvkP8mncVLcRg-wnh_nG6oUft5K3S26cRmoepz0Y0vJFU4e8YdGAOlwpb4_AvEJ_TdUZqN4IigE1d3O2FaU_H9eLLFBAmhN07S-3KCFsA55xuLVdA3rlDPqw5tizniMBiDMCjqH2xymu7_OxyUZlra4YSRQQf33_JuOp7ZNWOHpJIAeuiG-5VNrpUyGe6t1tV-BGCwjeAGnNe__bA9azVDz51HXsd0cnDMWSugxm7gFfyzUUhbHM5b6Nd6dn02S8HCKGCBmPepLyg0-K0DgBGLavQIxRFBnEcib65SeqKraYPFEU-QobJiAWJYLxUOKg253TIMbGzYF73m3Q7FUEubxAwfrhAa_dmBmW_FkLnRE_xuncrIsZZMGIgA9bJWCRVO8BaU_Sl8d2Ger1UTSJ_g_LaSQyWq64f9PtBpC_SgyBSdvtMpLmUSfdeYPb3C3kvxatRI9ElEZ7mSy_BkAcEZkyjpc25Fd7sQWgPd4xXA5toYDm9ol-0IoeLFRC-s-GZ8-FaGs-o4DJm88V4rmonIzK8B9J9Uw5ybDLOoWEnMqxWAGEAT5E1TZx4D3oyBKlkAG2ktRCauNRqSnUpKdJY5_mOR-Bsbqc-Ovod2Ya3FxZzPfG0S-rBxdm0QwV4EvabrwJXSiEPGg4-La-iBqHFMCyWSkZXwmR3JfClQYS1spyeIraVqIVtZQovI88qiz_lcNi68XgIJcil8t8FVCTLrhKQOumCMEnzNj3J5J9ynL4sW2e4IyelknFRQ7mWQdUd8aVNCnlkCkNDTkdBnsxDxEkd6hbv5lJQI1Bg2dLhEKWhKrpND9-bdOBvOFb4Z2CfTsZPeI5KdkFPyHqwOrnuB6XLXFiKpTumDR2vS5DCxL9gG4gHxCHlG1mGFfCLQZj6JM04wuSvf4yQ09H5KWgg-WDQXuTWqoEgI2moQuGIge-43Hv90XoVyTC00Zhaez3hZbHfTp7pzEwtE-ouqe6fIPmBoxiRmVG9K_6uwRspFYm3TkThXPmZ-nlJ3cYHeA9pGEyDJMPLCpf9-FdQp9LhX19RQKv8i9-TA2aA5xNIENKxOfERiQU0Mms04KWtY_lvHev82mpqDpoBglMLtB_8Y_IBp_QTMgXKk8oqSlSbDSg9XF2V4A6hAKoB7HmpjAvn9Rkqo56ehkZ3KS-NBGOg85cdk3PNmdjR1mZPwkqgHEv69dhHDteMdyRvgYfnfraP7xGDQ1ZpdS93lKa5ePd2-02hKuUyq1w51zGP2HCo1C4HfbalRI5KJ1YYpKykIEsflMgnEpuEVQD6ZwTHQJwxQyltSUkmh4EjzV7dCN4LxosfSyewEHTOfO7Px2A0bdyuYiWaU93hB9qxawXAP-eLqLFmcxkSEQUEyxo5DBWZBcDpAjZ_smZSynjUKRh6FpK_MWKSERPS0miLWl_UE-gmUkdExrqTxIxkQYqvF4hjYS3Ny75vPVBtXgcZrCZ9445m1jQklbk6tUw06jCcxjws6REfxUggI3MLz_FOGbFLRnViB_D5IZhcTE22Chj3Cij4xtW8beSwqBiWIGLnkGxT15VaSI_CezVKG30HZ0yOUtJEK-LhefnIOk87tcX8B1dOQhc1f6l5q2QF5hYWPc6Yb9AluL2hc07JWXVePzLvHPMThxsUQWnoXvsI1X_iuPUnfbCOj8tybMMyWaHAGMFmTHxqIWK31v95ATPm0Jbvf6Z5Fz0R6afQEw5EpCe6G0gyhTx9C1hkv2ZZczS17ZptrtTT676J0Wel5yTIa6fg30I75ZKCIRCc5GzHSlwtsPG3kT5_wy5gf-fji18pSExrA31VB8guoXuwOJZEMuY1bdopWCkCsPWI6h4dL2-Oa2bnEk-6CqJRr10pfdxDZS4TgZIzD-h7Fr1ZmaTq0aRBenKUk8I-9gbgVlL6_HTB38hvQwJtseIPh_j2DGFl6n3xW5arnjNBIJdOrdnV3WmiT_Kc7VfCT0SjSG2iuCT2z2jsAdOASZ7N8Q9hQ1Mknr6w8ZrUhqStUO7u4QHEQg-XcX2cHC6pM4D8XUP3sxyk8olAjGOBQDK-NHGG8_ehfAHnqRlLD1pnEkIRxk5WDHkomR5UwqnNlJ93YFEVnzA1gPbhPniBTxayeTXkpfMthMzsid0B-sFj5_AgERaZNLZ8UBgze-3iagUs0eX9fb0gyHB5ajVV1lGThckUnlrRsHIN-8WW73seqQMm3GFDuj0REuahlh1QoYKfg1RE1Ftw9CVW8hAtB-uMewfOO8Mdps6GEjKmT3j64wuJ_vm8B7dKfDv3EBXs8bBVb8yXbEsM-WTgxiAe1nzPBw6B78ij_HUj-hR2swmZxLnIFLHLJBlLcj5eJyfd0gNpD61uxTTaqWYTdrLyjWL-4vZyYm-ToYYV7c3t2N5J8Qjc-GiL47pVlf0Aw9SwLPsimgPM8GhLIItpTU6R7_la_bTuVpp__qi7d2wdHSB6HB8Wwt_4TOWCsmDKKoS8bH3z6Jafjpaho2-klAwHJRjRxk_8tlJtsow3lXmJ1X_yKGX0asOvC2aCvroGARTilNHjbDibzrJkFuYG-oauRJRB7e6SE_Nt6vwfIsB0lRkjTJ0_ufaFbR15NWTjWb4X39U_y33YeKdmETk4txMS-irtRExFOHHEPbJUbIcBnEU3eoG1XWN9onHnzdlN5-dwLUfi-lJLNz4cL9eWACynRYrRr3dTZuOJeNnARBQIXvBn3-LcLsSeDfj50yNi13TuLekR--nQkXaYmVgizh6fIGbPi1iYmbcgRMUexjaPX1D3fo77HIxam5Vxm7j5cRTZB70VAfNNXRYUtopBvUANSwKcqJ_Dr_ifqtjufDBupFAKrdmg6rAYN_hROSIFJeFF8UqaGZUgqlFakZYLtN9AcqFUIpBTQK93ByqK4qm156M6tGrxRNqa62H9FmgtTPNWvdZZE7uhlOZhrDuZ-auBlUANgLyYo59t3cAv5orilFPVdWLXUDMds2ftZm-txwDq30UIbbEYVg-gDjrji4SW4xJnoVU1R_D3CXzH5EarJv23V2unm5i92X6KG88GV_pFLQiYKhshkA5uLNxjpVvLEYHLpMIOZ8y7UKA8Ytg60iKJ2TtdSVNsplp00op2Vb950sfwdCfBMF1Qsz_b0NiqUrDm8UFvWW1gEU9_YvyBYqeEf7gd0RbTZNQt-voFgs1rwr__hH1oX-zSpYlvilWnkfFw5TsuYHxTq5ZyxGpsVr8wkiXgGPr2gJJ2b7Ah_Ar9NglyH_spc5E2YM9LR81UEh24Pl1r_TkgJmadLVcwQ9ocw4Jg_f1je7IwBQ5klLw1cG26QwpIPKkAVPq6tY56prZq6mjOW8cD2jBY_55QRqqFGDfVIzqtG_GF0T7emPaDFxnoeUZlO53AWZPqn6A-LZ-t1FA-gqVzG8zzfdZd_tcEys31alO0UjJhcg46SJR6NMjUbO8arrmYYKeq3zVQdUmmPRap05TBrIVkqSnC8UVVHgqoq0hL_fx6lbctBKffnMVtbPHUA17WFNY9AqjKzPgz9JakmcovMW35b84NO-nMJtBdfhkHsK7x-RhjS52YZyIHmZX_Gg3vqRwsM0asoNXkF6WDlk7LQG-ralJLoJqWXh5aEojDhhsGtpeTHDCji0aJRvRjR4w7tQdFWm3gHGCrzJnpcSNAIQ4rvSMdL3Etuxqr3MRTj-N5BaCNQ6D0zqzmz878pdeso1uQp1PytozmvlG2QF-kNhbrBDiZYWGoAonCCOgTHUDUF42RR_hoizyQr0y9rbM2zB8n3W0o_rMrT5yozGNFvp74XBzAk6PTMPp641z1XUo_6xnsxk69qaUYisHeV2JolkiWS5fcruK1GLiVkTRh-Jo36rI4dR4KU-IXGRN1MS1eHzC0N3WUu6lDJbS4JwB8sgDuriwmmp-Ogmj-ozaYKcCVintPUO6AhQ8Ew4Uz1PzusbP-JF26_IcATGVbC_ThI0QpxZ-m6GQv-cpqZDcWnBOgS00olfhZZHIwfNcTyXZ5_fn44Af5i73I9-hLjMygr_8Aune7HtsfUV2eKGpdQ7mbauuYafe5EQKopBftcVWey_oMbO0Xz2SLKrPQGmqVmCROg-HSeDKT6kvj55BNWU1pAPgVn3pRNJ_HtuIOGa23sbB8FlJZviNlsCmOX3KIf7aKVLJFFlNcm1dhPyD1HwHZ8sBPsG2gXYCpplUWbqeMsqjkKyylbHJfuFcLD6zTKSQ0BY1yyAOlXyZZzkylod66mnwx_EgHrH5K8OB9WlaOXafzj6IDFr-G_98N_s_LWzsXfw3sF_KyLmfwqq6EQIs1MPt7THg8mBVGGrlEFmCXtWhJFXMOaZmSATU4UYt6ZZsKCbOrxq8NQNy8GmkcVLhoDU6ed7e-2p0UJFUWGedfA3eYYtzfPBcequnijR5gESLMYYdFdJFqPsEh9aA4xdi28gTHrdYUFjK14y2y6N9hP3AwfHRA_YytIZZzOpSpeCrbuW5IFTnghn_JA94NGB3NVG3nhAi0s2WBC5W9bW5JYA6qTHsMS7MCyr_sGYoxc5uPegBwNH15x3Y-TQP_vK1jn1pBKu97QOSsekVr7KbT1Q1fUGhD9d8LGK9fKDxuAYwBRbkc3dL11N9CFF6n8tGYV7tsAHGnb9-Cx0VpvKSuKXunAi-AsNXx-WyCRcP8q6XarVQoK6afZCiHyibeOUzu8KWVKQfpOHIZcAmyIUDPPgq8IV7_POfKFDqqFLy3vV8UPb_iq8bf_8MgoEVsBum7C4dI06k-iCJIy4DgckBitRK23srL7EA-Hac9e-fR8Y4aUzo2Tame8ZUDHHjhE-WAILpQpckDh1fuhTL-5fgN32NuT0F_qkis5YCSoP2zTXlqBPqmB9i-cLrEsU1m2KvHG1ltunSno3XPl-tpV35dZJAkGaVpI1Ss8ph0zPpglV8pyeqfMdFpMa15Aj8XX4S6WcT32ebIln6tbkCuvMe6_EeFUrkt71NhBr5sCYrs58tz9ITdLuW0ECt0ORwQ0xn7RoIzRmr6R27yrf_ORyNbjzWH1ITxGXT_u7ugbTPrMFPLGPkrbuGgZWW7r4KMbG2eAysO5QsyjMNcBrtNZwVUWBYoNGMI7VCFd-HlkncpQS6BvxTIUmO0czKbzanEfFdLbSduYh2IyQU15Lrnck3M6sgcKeVmBM8FwwPxiOdxWyurhyszbcriNb21E-waxKpAHWNiwHGUCMeDgYl158uCoJZbPaL523KvJkJhz7-4FAW9dKwQ_uxY6Xq_apfYtEvmK7G6_HIiU1eUMRf7-R10aQE3GHSyR14ulNov1zfx6JL1Xst6mO-xNuELrPhuJYiPAXzLIz9X9uLlZ6W_AbEDhlSunq1Z-6W4NMX9zO8qZg39j81HRCqQSD9Vd40gd2RFz_kILD96OX2PTtylYCrof07eoRUmKdO24Q6v9dg0VNFp-3zjayvASCpHM1YCSgFT8NavpdMYaM6n7lMgrutzB6XKARyG8EwSbxrFQ7r0FW2SnN3Y0JXtWZ9AOewnJ2Oj1SYQSlvTkAIqiEj686CjFMLgK6FivpQef-Wbv6IBbkB3qSKaAdu-tAtDMxz8xc8MgMZ9J6bG5VsikUd3-YljfX6QoF0PT3o3dHrNddV5yB5wHNtZ9WWn5qBH19n5Qxb2h6E3AqEricBWFQ7Rc2NhwWWFheCUhwDw0AQjAC55IMRVr3LbeTk9o3gJ4rSmisMHcta1YMbdZp-zNgniSmG6oT6DgyKz56bnE9S3bdLXBuFANzfFJi-F4WsuKv9VUy5BYvbZr-UUxkumDUTpcYcNsOCT4FG5qArjO56mxGF1tTe3A40jclJZiJnuPSUjP6rdsh9grInQfhRktll03j3hUi3IGOOQVth-Mqz6SF3RFv7aUIXMlBGZ1bM-NmIdH7xWeIkoSumjzXmemQSqpaQXHlIKKTuKyvfwIBTG3MnWGbbVEwc10MTnPAnBZNjJQN8R67Op8MTu_H1uvA8cgGWSsezOYLE_p5I8HM8BXuAM6mutQ0IEZbJub47tGJg8C9phLROIlsCjRm0lnklhWOEZJS-W22tb0RMfdix0m1qPlI72ge31eYozCe7BjfmpVH4mOCnmnyQbBYUNMskE3ssgSfzB7Pa7uudHNgFVumZGY0UyJNEcJAe9p_xtSsUGBpxOQ9ittEnG9ZarAkyCzW5HShrmUchFHwMg_QCygn6xTqzxTozm0RX2nk9bAeQMSa1zYnwOsBP3NXHtkHfqnak6_ivULLtPDOOTFUbAohucHNdcWlyu-khDIzJc8Pg9S29rnLBWIlDxyeUVKPc7e1oip45iL8GhlbEgmNKGcqfENEyvWukASduuZQq1Q1hYxOq13TqAG4jcTJi-wGUsfKJFAOhbkH0EiE8pR7X1Q5dG7Pg_CPNJb2t4YdBFOu1GIShnl49w3D2kUMJ54ipI7yjSYl2CnPwoQkbHPRawaVi-NlrD55EMbSl1aOF-pRtECIEqU2sIw-1myv4T5ON1Q0lRJFiznrJZgUOolI2Qow2tNEG2UaJnPXzCnbWnwcjhO1hKOpnigfinUmboUtETNciTJUs_Vhr9D80uaxL7vh4ePwCSKfjkiTPbejxqKhuYnnKUez8wvp-HwtU9aHe1YYCK-KHdcp6YA54K9vUF5QBYVg6zUC3c__AR4AEwvEEl_ADVuRs7lf7Cl0Ty2V9xLRpa-qgdQ6W37WP1Gvvls91WVWPnlT6zi2q56phl7M3rExFgHO02Z-KSRf69mFHo52mfvabkXIU-ksuPmk84hgRfV70PIo70yGuv38Lm4BtNXXtuDFISzRFUXWeYkc5WYilOa7aNguAUZqb3OxUWKMVDKkKrQV5aiDxiK0NIeaF5p6Gb-tkWIplDtLBBXovHUGrW7h3fLpd8W90eU7U6UcOuNCcQs3VD-u5sEW6OPhJjKmB_0ijSAi3KZn2NtBJ2tdeyJHsqkZfaJ_pV1_KXaVlBlFos9IuLoC1OMlCLTBNcJhrsEWalOM2iQrG5kDdJJw65lX9uwVIhO-jZLSOOMNaMAtyJ9nTwWhPDJG4irpINATCxoCmqgPokCabTm9kSYPljbA6FwTmr1kVnRJsArY0zziTF-iHDd_3wHPV4AseywpaGLL8wpE96nuq4MTnJWC8D-Ryli2xsMvu38HLgxumqPY97kfnc9XF5OVZ0zW-L51-LNdJPJ4_jyJSxTYv6pET-kSKSPGKc4YYFVkuxLbABhwF0DceFKYtRvnoUW_kf7EuGs1zJZkhk_dLUyukjCCADaPcd2N6Uus19y6NoJyp_RQuzlEz_Z_TZbE-So0SxVW5YW6iY-sxMpOroCwwBfmIJq8JyQ2lbPgMD9q32PgjeT1AU0kDL9N7txZN1F7eRtoSQZuiP9H1CoTRjJ6tkGU1806G1obLAr7T3xnnIWI1roT_nwSS9vA=="
+reposcan-raw/gladiaio/vercel-ai/packages/xai/src/responses/__fixtures__/xai-x-search-tool.1.json:20:          "text": "### What People Are Saying About AI on X (as of Late October 2025)\n\nBased on recent posts on X (formerly Twitter), discussions about AI are buzzing with a mix of excitement, technical deep dives, and cautious optimism. The conversation heavily revolves around **Artificial General Intelligence (AGI)** as the holy grail of AI development, with frequent references to a new paper from AI luminaries like Yoshua Bengio, Eric Schmidt, Gary Marcus, and Max Tegmark. People are debating definitions, progress, limitations, and real-world applications. Here's a breakdown of the main themes from the top relevant posts (focusing on the last month):\n\n#### 1. **Defining AGI and Its Distance from Current AI**\n   - A huge focus is on clarifying what AGI really means. Multiple users cite the aforementioned paper, which defines AGI as an AI system that \"matches or exceeds the cognitive versatility and proficiency of a well-educated adult\" across 10 core cognitive areas (e.g., reasoning, memory, math, language, perception).\n     - Example: @jiqizhixin shared the paper, noting that models like GPT-4 and GPT-5 score poorly (e.g., 0% on long-term memory), emphasizing AGI isn't here yet.\n     - @alex_prompter broke it down simply: GPT-4 is at 27% toward AGI, GPT-5 at 58%, but gaps in continuous learning persist. They called it a \"clear benchmark\" without hype.\n     - @AskPerplexity and @flowersslop echoed this, describing AGI as broadly adaptable like humans, not just narrow tools like today's chatbots.\n   - ASI (Artificial Superintelligence) gets mentioned as the next step beyond AGI—AI surpassing humans in *all* domains, including creativity and strategy. @SciTechera tied it to the \"Singularity,\" where AI self-improves uncontrollably.\n   - Skepticism: @Newaxeman called AI an \"advanced search engine\" aggregating conventional wisdom, questioning deeper intelligence claims.\n\n#### 2. **Progress and Timelines Toward AGI**\n   - Optimism is high but grounded. @bindureddy (CEO of Abacus.AI) boldly predicted AGI (AI replacing humans in digital tasks) is \"just a couple of years away,\" citing missing pieces like context, tools, and self-awareness that labs are tackling.\n   - @slow_developer referenced OpenAI and DeepMind's 5-level AGI framework: Current models are past Level 2 (emerging intelligence) and into early Level 3 (competent in complex tasks with supervision), but not fully autonomous yet.\n   - @timmur_ stressed AGI requires efficient learning across open-ended tasks with minimal data—something no model achieves today, but \"we will solve it eventually.\"\n   - Broader view: @FrnkNlsn recommended the book *Artificial Intelligence: A Modern Approach* by Russell and Norvig for a comprehensive overview, highlighting topics like knowledge representation and multi-agent systems.\n\n#### 3. **Types of AI and Distinctions**\n   - Users are educating on AI's varieties to cut through confusion:\n     - @y00ngipurrs differentiated analytical AI (e.g., for medicine, fraud detection) from generative AI (e.g., ChatGPT for text/art).\n     - @techyoutbe contrasted AI agents (task-specific automators) with \"agentic AI\" (autonomous systems for long-term planning and multi-domain reasoning).\n     - @SukhSandhu listed what AI *is* (data processor, pattern recognizer, task automator) vs. what it's *not* (conscious, emotional, intuitively moral). They warned of biases in training data.\n   - @AITECHio hyped proactive \"AI agents\" that set goals and execute workflows autonomously, predicting one for every task from finance to on-chain automation.\n\n#### 4. **Applications, Projects, and Broader Impacts**\n   - AI's practical side shines in Web3 and business contexts. @O_H_JAY highlighted crypto projects advancing AGI/ASI, like @SentientAGI (decentralized AGI networks), @AGI_XT (AI automation on Solana), and @StoryProtocol (on-chain IP for AI models). They urged getting in early during market dips.\n   - @Voa_De_Voa discussed combining AI with compute and robotics for \"autonomous intelligence,\" but flagged centralized control as a risk.\n   - @DeviprasadSD positioned AGI as a future horizon for reasoning across any task, still in research.\n   - @zolayolanetwork and @davilagrau amplified the AGI definition paper, linking it to blockchain and cognitive tools.\n\n#### Overall Sentiment\n- **Positive/Visionary**: Excitement about AI augmenting human capabilities (e.g., @hailstorm_9 called AGI \"augmentation, not automation\"). Many see it transforming industries like healthcare, finance, and creative work.\n- **Cautious/Realistic**: Emphasis on limitations—current AI is \"narrow\" and lacks true understanding or adaptability. No one's claiming AGI is imminent without caveats.\n- **Volume and Engagement**: These posts garnered thousands of likes/views, with high engagement on definitions and project lists. Discussions are technical but accessible, often with images, threads, or links to papers/arXiv.\n\nThis is a snapshot from ~20 recent, highly relevant posts. AI chatter on X is evolving fast—trends like AGI benchmarks and agentic systems are dominating. If you want deeper dives into specific posts, users, or subtopics (e.g., AI ethics or tools), let me know!",
+reposcan-raw/gladiaio/gladiaflow/.env.example:18:# Generate with `tauri signer generate -w ~/.tauri/gladiaflow.key`.
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/twilio/.env.example:1:GLADIA_API_KEY=<your-gladia-api-key>
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/gladiaflow/.env.example
+# Certificate common name from Keychain Access (e.g. "GladiaFlow Self-Signed").
+MACOS_SIGNING_IDENTITY=
+
+# Tauri reads this at build time; set to the same value as MACOS_SIGNING_IDENTITY
+# when building a signed macOS bundle locally.
+APPLE_SIGNING_IDENTITY=
+
+# Base64-encoded .p12 export (macOS CI: `base64 -i GladiaFlow.p12 | pbcopy`).
+MACOS_CERTIFICATE=
+
+# Password used when exporting the .p12.
+MACOS_CERTIFICATE_PWD=
+
+# Password for the temporary keychain created during CI signing.
+KEYCHAIN_PASSWORD=
+
+# --- Tauri updater artifact signing (optional) ---
+# Generate with `tauri signer generate -w ~/.tauri/gladiaflow.key`.
+# Only needed if you publish auto-updates with signed update bundles.
+TAURI_SIGNING_PRIVATE_KEY=
+TAURI_SIGNING_PRIVATE_KEY_PASSWORD=
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -name ".env*" -type f | xargs cat 2>/dev/null
+OPENAI_API_KEY=""NUXT_OPENAI_API_KEY=xxxxxxx
+NUXT_ASSISTANT_ID=xxxxxxxOPENAI_API_KEY=xxxxxxx
+SENTRY_AUTH_TOKEN=xxxxxxx
+SENTRY_ORG=xxxxxxx
+SENTRY_PROJECT=xxxxxxx
+NEXT_PUBLIC_SENTRY_DSN=xxxxxxx# https://cloud.google.com/docs/authentication/application-default-credentials
+
+# google-auth-library authentication (requires node runtime).
+# Path to the json file with credentials.
+GOOGLE_APPLICATION_CREDENTIALS=""
+
+# Edge-compatible authentication. Values obtained from json credentials file.
+GOOGLE_CLIENT_EMAIL=""
+GOOGLE_PRIVATE_KEY=""
+GOOGLE_PRIVATE_KEY_ID=""
+
+# Vertex configuration
+GOOGLE_VERTEX_LOCATION="" # e.g. "us-central1"
+GOOGLE_VERTEX_PROJECT=""  # e.g. a long number like "555555555555"
+XAI_API_KEY=
+OPENAI_API_KEY=""# You must first activate a Billing Account here: https://platform.openai.com/account/billing/overview
+# Then get your OpenAI API Key here: https://platform.openai.com/api-keys
+OPENAI_API_KEY=""VERCEL_API_KEY=""
+VERCEL_OIDC_TOKEN=""
+
+# If you choose to use external files for attachments, you will need to configure a Vercel Blob Store.
+# Instructions to create a Vercel Blob Store here: https://vercel.com/docs/storage/vercel-blob
+BLOB_READ_WRITE_TOKEN=xxxxxxx
+
+# Required for resumable streams. You can create a Redis store here: https://vercel.com/marketplace/redis
+REDIS_URL=xxxxxx
+OPENAI_API_KEY=""
+# =============================================================================
+# AI SDK — Provider Environment Variables
+# =============================================================================
+# This file lists every environment variable read by the provider packages in
+# `packages/`. Copy to `.env` and fill in only the variables for providers you
+# actually use — none of them are required globally.
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# Alibaba (@ai-sdk/alibaba)
+# -----------------------------------------------------------------------------
+ALIBABA_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Amazon Bedrock (@ai-sdk/amazon-bedrock)
+# -----------------------------------------------------------------------------
+# Use AWS_BEARER_TOKEN_BEDROCK for API-key auth, or the access-key trio below
+# for SigV4. AWS_SESSION_TOKEN is only needed for temporary credentials.
+AWS_BEARER_TOKEN_BEDROCK=""
+AWS_REGION=""
+AWS_ACCESS_KEY_ID=""
+AWS_SECRET_ACCESS_KEY=""
+AWS_SESSION_TOKEN=""
+
+
+# -----------------------------------------------------------------------------
+# Anthropic (@ai-sdk/anthropic)
+# -----------------------------------------------------------------------------
+ANTHROPIC_API_KEY=""
+# Override the default API base URL (optional).
+ANTHROPIC_BASE_URL=""
+
+
+# -----------------------------------------------------------------------------
+# AssemblyAI (@ai-sdk/assemblyai)
+# -----------------------------------------------------------------------------
+ASSEMBLYAI_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Azure OpenAI (@ai-sdk/azure)
+# -----------------------------------------------------------------------------
+AZURE_API_KEY=""
+AZURE_RESOURCE_NAME=""
+
+
+# -----------------------------------------------------------------------------
+# Baseten (@ai-sdk/baseten)
+# -----------------------------------------------------------------------------
+BASETEN_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Black Forest Labs (@ai-sdk/black-forest-labs)
+# -----------------------------------------------------------------------------
+BFL_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# ByteDance / Volcengine Ark (@ai-sdk/bytedance)
+# -----------------------------------------------------------------------------
+ARK_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Cerebras (@ai-sdk/cerebras)
+# -----------------------------------------------------------------------------
+CEREBRAS_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Cohere (@ai-sdk/cohere)
+# -----------------------------------------------------------------------------
+COHERE_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Deepgram (@ai-sdk/deepgram)
+# -----------------------------------------------------------------------------
+DEEPGRAM_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# DeepInfra (@ai-sdk/deepinfra)
+# -----------------------------------------------------------------------------
+DEEPINFRA_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# DeepSeek (@ai-sdk/deepseek)
+# -----------------------------------------------------------------------------
+DEEPSEEK_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# ElevenLabs (@ai-sdk/elevenlabs)
+# -----------------------------------------------------------------------------
+ELEVENLABS_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# fal.ai (@ai-sdk/fal)
+# -----------------------------------------------------------------------------
+# FAL_API_KEY is preferred; FAL_KEY is used as a fallback for compatibility.
+FAL_API_KEY=""
+FAL_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Fireworks (@ai-sdk/fireworks)
+# -----------------------------------------------------------------------------
+FIREWORKS_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Vercel AI Gateway (@ai-sdk/gateway)
+# -----------------------------------------------------------------------------
+# AI_GATEWAY_API_KEY is used outside Vercel deployments. Inside a Vercel
+# deployment, authentication falls back to VERCEL_OIDC_TOKEN automatically.
+# The remaining VERCEL_* values are auto-populated on Vercel and are only
+# needed locally if you want to mirror that environment.
+AI_GATEWAY_API_KEY=""
+VERCEL_OIDC_TOKEN=""
+VERCEL_DEPLOYMENT_ID=""
+VERCEL_ENV=""
+VERCEL_REGION=""
+VERCEL_PROJECT_ID=""
+
+
+# -----------------------------------------------------------------------------
+# Gladia (@ai-sdk/gladia)
+# -----------------------------------------------------------------------------
+GLADIA_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Google Generative AI (@ai-sdk/google)
+# -----------------------------------------------------------------------------
+GOOGLE_GENERATIVE_AI_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Google Vertex AI (@ai-sdk/google-vertex)
+# -----------------------------------------------------------------------------
+# Use GOOGLE_VERTEX_API_KEY for API-key auth. For service-account auth (edge
+# runtime), set GOOGLE_CLIENT_EMAIL + GOOGLE_PRIVATE_KEY (and optionally
+# GOOGLE_PRIVATE_KEY_ID). GOOGLE_VERTEX_PROJECT and GOOGLE_VERTEX_LOCATION
+# identify the target project/region.
+GOOGLE_VERTEX_API_KEY=""
+GOOGLE_VERTEX_PROJECT=""
+GOOGLE_VERTEX_LOCATION=""
+GOOGLE_CLIENT_EMAIL=""
+GOOGLE_PRIVATE_KEY=""
+GOOGLE_PRIVATE_KEY_ID=""
+
+
+# -----------------------------------------------------------------------------
+# Groq (@ai-sdk/groq)
+# -----------------------------------------------------------------------------
+GROQ_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Hugging Face (@ai-sdk/huggingface)
+# -----------------------------------------------------------------------------
+HUGGINGFACE_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Hume (@ai-sdk/hume)
+# -----------------------------------------------------------------------------
+HUME_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# KlingAI (@ai-sdk/klingai)
+# -----------------------------------------------------------------------------
+KLINGAI_ACCESS_KEY=""
+KLINGAI_SECRET_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# LMNT (@ai-sdk/lmnt)
+# -----------------------------------------------------------------------------
+LMNT_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Luma (@ai-sdk/luma)
+# -----------------------------------------------------------------------------
+LUMA_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Mistral (@ai-sdk/mistral)
+# -----------------------------------------------------------------------------
+MISTRAL_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Moonshot AI (@ai-sdk/moonshotai)
+# -----------------------------------------------------------------------------
+MOONSHOT_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# OpenAI (@ai-sdk/openai)
+# -----------------------------------------------------------------------------
+OPENAI_API_KEY=""
+# Override the default API base URL (optional).
+OPENAI_BASE_URL=""
+
+
+# -----------------------------------------------------------------------------
+# Perplexity (@ai-sdk/perplexity)
+# -----------------------------------------------------------------------------
+PERPLEXITY_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Prodia (@ai-sdk/prodia)
+# -----------------------------------------------------------------------------
+PRODIA_TOKEN=""
+
+
+# -----------------------------------------------------------------------------
+# QuiverAI (@ai-sdk/quiverai)
+# -----------------------------------------------------------------------------
+QUIVERAI_API_KEY=""
+# Override the default API base URL (optional).
+QUIVERAI_BASE_URL=""
+
+
+# -----------------------------------------------------------------------------
+# Replicate (@ai-sdk/replicate)
+# -----------------------------------------------------------------------------
+REPLICATE_API_TOKEN=""
+
+
+# -----------------------------------------------------------------------------
+# Rev.ai (@ai-sdk/revai)
+# -----------------------------------------------------------------------------
+REVAI_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Together AI (@ai-sdk/togetherai)
+# -----------------------------------------------------------------------------
+# TOGETHER_AI_API_KEY is deprecated; prefer TOGETHER_API_KEY.
+TOGETHER_API_KEY=""
+TOGETHER_AI_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Vercel v0 (@ai-sdk/vercel)
+# -----------------------------------------------------------------------------
+VERCEL_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# Voyage AI (@ai-sdk/voyage)
+# -----------------------------------------------------------------------------
+VOYAGE_API_KEY=""
+
+
+# -----------------------------------------------------------------------------
+# xAI / Grok (@ai-sdk/xai)
+# -----------------------------------------------------------------------------
+XAI_API_KEY=""
+# You must first activate a Billing Account here: https://platform.openai.com/account/billing/overview
+# Then get your OpenAI API Key here: https://platform.openai.com/account/api-keys
+OPENAI_API_KEY=xxxxxxx
+OPENAI_API_KEY=""# You must first activate a Billing Account here: https://platform.openai.com/account/billing/overview
+# Then get your OpenAI API Key here: https://platform.openai.com/account/api-keys
+OPENAI_API_KEY=xxxxxxx
+
+# You must first create an OpenAI Assistant here: https://platform.openai.com/assistants
+# Then get your Assistant ID here: https://platform.openai.com/assistants
+ASSISTANT_ID=xxxxxxx
+
+# If you choose to use external files for attachments, you will need to configure a Vercel Blob Store.
+# Instructions to create a Vercel Blob Store here: https://vercel.com/docs/storage/vercel-blob
+BLOB_READ_WRITE_TOKEN=xxxxxxx
+
+# Required for reasoning example
+FIREWORKS_API_KEY=xxxxxxx
+
+# Required for resumable streams. You can create a Redis store here: https://vercel.com/marketplace/redis
+REDIS_URL=xxxxxx
+OPENAI_API_KEY=xxxxxxx
+KV_REST_API_URL=xxxxxxx
+KV_REST_API_TOKEN=xxxxxxxOPENAI_API_KEY=""OPENAI_API_KEY=xxxxxxx
+ASSISTANT_ID=xxxxxxxOPENAI_API_KEY=xxxxxxxOPENAI_API_KEY=xxxxxxx
+KV_REST_API_URL=xxxxxxx
+KV_REST_API_TOKEN=xxxxxxxOPENAI_API_KEY=xxxxxxx#!/usr/bin/env bash
+# This file is used by direnv to automatically load the nix develop environment
+# when entering this directory
+
+use flake
+DATABASE_URL="postgresql://compare_stt:compare_stt_dev@localhost:5432/compare_stt?schema=public"
+
+# Vercel Blob (audio upload storage)
+BLOB_READ_WRITE_TOKEN=""
+
+# Sentry (error monitoring)
+NEXT_PUBLIC_SENTRY_DSN=""
+
+# SEO canonical origin (defaults to https://www.gladia.io)
+# NEXT_PUBLIC_SITE_ORIGIN="https://www.gladia.io"
+# Full public URL override including base path if needed
+# NEXT_PUBLIC_SITE_URL="https://www.gladia.io/speech-to-text-api-comparison"
+
+# STT Provider API Keys (server-side only)
+GLADIA_API_KEY=""
+DEEPGRAM_API_KEY=""
+ASSEMBLYAI_API_KEY=""
+ELEVENLABS_API_KEY=""
+SPEECHMATICS_API_KEY=""
+MISTRAL_API_KEY=""
+# Certificate common name from Keychain Access (e.g. "GladiaFlow Self-Signed").
+MACOS_SIGNING_IDENTITY=
+
+# Tauri reads this at build time; set to the same value as MACOS_SIGNING_IDENTITY
+# when building a signed macOS bundle locally.
+APPLE_SIGNING_IDENTITY=
+
+# Base64-encoded .p12 export (macOS CI: `base64 -i GladiaFlow.p12 | pbcopy`).
+MACOS_CERTIFICATE=
+
+# Password used when exporting the .p12.
+MACOS_CERTIFICATE_PWD=
+
+# Password for the temporary keychain created during CI signing.
+KEYCHAIN_PASSWORD=
+
+# --- Tauri updater artifact signing (optional) ---
+# Generate with `tauri signer generate -w ~/.tauri/gladiaflow.key`.
+# Only needed if you publish auto-updates with signed update bundles.
+TAURI_SIGNING_PRIVATE_KEY=
+TAURI_SIGNING_PRIVATE_KEY_PASSWORD=
+GLADIA_API_KEY=
+GLADIA_API_KEY=
+LIVEKIT_URL=
+LIVEKIT_API_KEY=
+LIVEKIT_API_SECRET=
+GLADIA_API_KEY=<your-gladia-api-key>
+NGROK_AUTHTOKEN=<your-ngrok-token>
+NGROK_DOMAIN=<your-ngrok-domain>
+PORT=8080GLADIA_API_KEY=<YOUR_GLADIA_API_KEY>
+# Realtime Multilingual ASR Router - Environment Configuration
+#
+# USAGE:
+# 1. Copy this file to .env in the project root: cp .env.example .env
+# 2. Edit .env with local overrides (.env is gitignored)
+# 3. All variables use the LR_ prefix and are loaded automatically via pydantic-settings
+#
+# A .env file is optional — defaults work for a standard local checkout after models are downloaded.
+
+## Model paths
+
+LR_VAD_MODEL_PATH="models/silero_vad/silero_vad.onnx"
+LR_ASR_MODELS_ROOT="models/streaming_transducers"
+LR_LID_MODEL_PATH="models/voxLingua107-ecapa-tdnn"
+
+## Runtime parameters
+
+# Audio sample rate (must be 16000 for this project)
+LR_SAMPLE_RATE=16000
+
+# Kroko chunk size under LR_ASR_MODELS_ROOT/<chunk_size>/<lang>/ (16, 32, 64, or 128)
+LR_ASR_CHUNK_SIZE=64
+
+# VAD silence duration in seconds (must be > 0)
+LR_VAD_SILENCE_DURATION=0.2
+
+# Silero VAD speech padding in milliseconds
+LR_VAD_SPEECH_PAD_MS=100
+
+# Tail silence before finalizing an ASR segment (seconds)
+LR_ASR_FINAL_TAIL_SILENCE_SECONDS=1.5
+
+# Max allowed token duration overshoot vs processed audio (seconds)
+LR_ASR_TOKEN_DURATION_TOLERANCE=0.25
+
+# LID confidence required to switch languages (0.0–1.0)
+LR_LANGUAGE_SWITCH_CONFIDENCE_THRESHOLD=0.95
+
+# Progressive LID window sizes in seconds (JSON list, ascending)
+LR_PROGRESSIVE_WINDOWS='[1,2,3,5]'
+
+## Logging
+
+# LR_LOG_LEVEL=INFO
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls reposcan-raw/gladiaio/
+compare-stt
+docs
+gladia-cli
+gladia-quiz-app
+gladia-samples
+gladiaflow
+n8n-nodes-gladia
+normalization
+num2words2
+realtime-multilingual-asr-router
+sdk
+skills
+vercel-ai
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "sk-\|ghp_\|gho_\|ghu_\|ghs_\|ghr_\|secret\|api[_-]?key\|token" reposcan-raw/gladiaio/gladia-cli --include="*.go" --include="*.mod" --include="*.sum" | grep -v "test" | head -30
+(no output)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "sk-\|ghp_\|gho_\|ghu_\|ghs_\|ghr_\|secret\|api[_-]?key\|token" reposcan-raw/gladiaio/gladia-samples --include="*.py" --include="*.json" --include="*.yaml" --include="*.yml" | grep -v "test" | grep -v "__pycache__" | head -30
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/twilio/package-lock.json:912:    "node_modules/jsonwebtoken": {
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/twilio/package-lock.json:914:      "resolved": "https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-9.0.3.tgz",
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/twilio/package-lock.json:1409:        "jsonwebtoken": "^9.0.3",
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "sk-\|ghp_\|gho_\|ghu_\|ghs_\|ghr_\|secret\|api[_-]?key\|token" reposcan-raw/gladiaio/n8n-nodes-gladia --include="*.ts" --include="*.json" | grep -v "test" | grep -v "node_modules" | head -30
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:93:				"js-tokens": "^4.0.0",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:1993:				"js-tiktoken": "^1.0.12",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:2152:				"jsonwebtoken": "^9.0.3",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:2442:				"jsonwebtoken": {
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:2547:				"js-tiktoken": "^1.0.12",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:2608:				"js-tiktoken": "^1.0.12",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:2739:				"js-tiktoken": "^1.0.12",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:2805:				"js-tiktoken": "^1.0.12"
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:2883:				"js-tiktoken": "1.0.21",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:3581:			"resolved": "https://registry.npmjs.org/@octokit/auth-token/-/auth-token-6.0.0.tgz",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:3596:				"@octokit/auth-token": "^6.0.0",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:4063:			"resolved": "https://registry.npmjs.org/@tokenizer/inflate/-/inflate-0.4.1.tgz",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:4070:				"token-types": "^6.1.1"
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:4082:			"resolved": "https://registry.npmjs.org/@tokenizer/token/-/token-0.3.0.tgz",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:7060:				"@tokenizer/inflate": "^0.4.1",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:7062:				"token-types": "^6.1.1",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:7739:				"jsonwebtoken": "9.0.3",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:9051:			"resolved": "https://registry.npmjs.org/js-tiktoken/-/js-tiktoken-1.0.21.tgz",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:9061:			"resolved": "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:9177:			"resolved": "https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-9.0.3.tgz",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:9939:			"resolved": "https://registry.npmjs.org/netmask/-/netmask-2.1.1.tgz",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:11181:			"resolved": "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:12191:				"@tokenizer/token": "^0.3.0"
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:12367:			"resolved": "https://registry.npmjs.org/token-types/-/token-types-6.1.2.tgz",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:12374:				"@tokenizer/token": "^0.3.0",
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "sk-\|ghp_\|gho_\|ghu_\|ghs_\|ghr_\|secret\|api[_-]?key\|token" reposcan-raw/gladiaio/normalization --include="*.ts" --include="*.json" | grep -v "test" | grep -v "node_modules" | head -30
+(no output)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "sk-\|ghp_\|gho_\|ghu_\|ghs_\|ghr_\|secret\|api[_-]?key\|token" reposcan-raw/gladiaio/realtime-multilingual-asr-router --include="*.py" --include="*.json" --include="*.yaml" --include="*.yml" | grep -v "test" | grep -v "__pycache__" | head -30
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py:52:KROKO_FILES = ("encoder.onnx", "decoder.onnx", "joiner.onnx", "tokens.txt")
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py:55:# https://huggingface.co/csukuangfj/sherpa-onnx-streaming-zipformer-small-ru-vosk-2025-08-16
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py:56:RU_ZIPFORMER_REPO = "csukuangfj/sherpa-onnx-streaming-zipformer-small-ru-vosk-2025-08-16"
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py:81:#   [u32 len][tokens bytes]
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py:126:    tokens = read_block()
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py:127:    return encoder, decoder, joiner, tokens
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py:146:    encoder, decoder, joiner, tokens_bytes = _read_blocks(payload, endian=endian)
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py:152:    (out_dir / "tokens.txt").write_bytes(tokens_bytes)
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py:322:    print("   Format      : ONNX files on the Hub (encoder, decoder, joiner, tokens.txt)")
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py:27:def tokens_seconds_to_samples(
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py:28:    tokens: list[dict[str, str | float]],
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py:33:    Convert wire-format token timestamps (seconds) to sample-based timestamps.
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py:38:        tokens: List of token dicts with 'text', 'start', 'end' keys (seconds)
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py:47:    sample_tokens: list[SampleTokenTimestamp] = []
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py:50:    for token in tokens:
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py:51:        if not isinstance(token, dict):
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py:52:            raise TypeError("Each token must be a dict")
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py:53:        if "start" not in token or "end" not in token or "text" not in token:
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py:56:        start_seconds = float(token["start"])
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py:57:        end_seconds = float(token["end"])
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py:58:        text = str(token["text"])
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py:66:        sample_tokens.append(
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py:75:    return sample_tokens
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/state.py:28:    tokens: list[TokenTimestamp]
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/state.py:37:            "tokens": [t.to_seconds(sample_rate) for t in self.tokens],
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/state.py:166:        tokens: list[TokenTimestamp],
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/state.py:173:        sample_end = tokens[-1].end_sample if tokens else sample_start
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/state.py:180:            tokens=tokens,
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/coordinator.py:96:                "text_len=%s | tokens_count=%s | latency_ms=%s",
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/coordinator.py:99:                len(asr_result.tokens),
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "sk-\|ghp_\|gho_\|ghu_\|ghs_\|ghr_\|secret\|api[_-]?key\|token" reposcan-raw/gladiaio/docs reposcan-raw/gladiaio/skills --include="*.md" --include="*.mdx" --include="*.ts" --include="*.json" | grep -v "test" | grep -v "node_modules" | head -30
+reposcan-raw/gladiaio/docs/chapters/live-stt/migration-from-v1.mdx:15:In V2, you first generate a unique WebSocket URL with a call to our [POST /v2/live endpoint](/api-reference/v2/live/init), and then connect to it. This URL contains a token that is unique to your live session. You'll be able to resume your session in case of a lost connection, or give the URL to a web client without exposing your Gladia API key.
+reposcan-raw/gladiaio/docs/chapters/live-stt/quickstart.mdx:346:  "url": "wss://api.gladia.io/v2/live?token=636c70f6-92c1-4026-a8b6-0dfe3ecf826f"
+reposcan-raw/gladiaio/docs/chapters/audio-intelligence/audio-to-llm.mdx:137:The input provided to the LLM is the full transcription. All prices are per 1M tokens and include platform fees.
+reposcan-raw/gladiaio/skills/CONTRIBUTING.md:56:3. **Be concise** — agents load the full SKILL.md into context; every token counts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "sk-\|ghp_\|gho_\|ghu_\|ghs_\|ghr_\|secret\|api[_-]?key\|token" reposcan-raw/gladiaio/num2words2 --include="*.rs" --include="*.toml" | head -30
+reposcan-raw/gladiaio/num2words2/rust/num2words2-py/src/lib.rs:549:                        // it is the first token of the currency string ("un").
+reposcan-raw/gladiaio/num2words2/rust/num2words2-py/src/lib.rs:584:        // token raise ValueError / InvalidOperation. The language decides.
+reposcan-raw/gladiaio/num2words2/rust/num2words2-py/src/sentencepath.rs:241:/// consumed into the day token so replacement leaves no orphaned punctuation.
+reposcan-raw/gladiaio/num2words2/rust/num2words2-py/src/sentencepath.rs:565:    // "<n>." the trailing period is consumed into the day token.
+reposcan-raw/gladiaio/num2words2/rust/num2words2-py/src/sentencepath.rs:1134:        // Brazilian Portuguese: a US-style '.' decimal in the token is
+reposcan-raw/gladiaio/num2words2/rust/num2words2-py/src/sentencepath.rs:1138:        // the token's own separator is the faithful, stateless equivalent.
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_mk.rs:694:    /// peeled before `int()`, so the message quotes the unsigned token.
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_sr_latn.rs:266:/// token rather than panicking. Leading zeros are accepted, matching `int`.
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_ne.rs:116://! `int()` of a bad token. All 305 in-scope corpus rows are `ok: true`.
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_be.rs:216://! * `N2WError::Value` — `int()` on a token that is not a decimal integer.
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_be.rs:481:/// Python's `int(s)`, for the tokens `str(float)` / `str(Decimal)` can yield.
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_be.rs:491:/// raises `ValueError`; the message quotes the offending token with `repr`,
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_be.rs:492:/// which for these ASCII tokens is just single quotes.
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_be.rs:1382:    ///   * `cardinal` / `year` feed the raw token to `int("Infinity")` inside
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_be.rs:1389:        let token = if negative { "-Infinity" } else { "Infinity" };
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_be.rs:1394:            "ordinal_num" => Ok(token.to_string()),
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_be.rs:1398:                token
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_ckb.rs:133://!       base 10: 'e'`. The offending token is the single *character*, not the
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_ckb.rs:493:/// Python's `int(s)` for a whole token, as `to_cardinal` calls it on `n` and on
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_ckb.rs:614:            // on, and so reports the whole token rather than 'e' (bug 10).
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_jv.rs:159://!     non-numeric token. Unreachable for any value `str()` renders in plain
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_jv.rs:409:/// Python's `int(s)` on a whole token, with CPython's error text.
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_jv.rs:413:/// forms (`"1E+2"`) would land a non-numeric token and raise `ValueError`,
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_jv.rs:839:    ///     `BigInt::from_str` rejects the token, and this raises
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_lg.rs:50://! non-numeric token, and no overflow check (the 10^9 ceiling degrades to
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_sk.rs:119://! token: on the integer path the sign is stripped before the digit helpers, so
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_sk.rs:122://! or a fractional token carrying an `'e'` feeds `int()` a non-decimal token,
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_sk.rs:281:/// Python `ValueError` from `int()` on a non-numeric token. On the integer
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_sk.rs:284:/// `nan`) or a fractional token carrying an `'e'` feeds `int()` a non-decimal
+reposcan-raw/gladiaio/num2words2/rust/num2words2-core/src/lang_sk.rs:285:/// token, exactly as Python's `Num2Word_SK.to_cardinal` does. Also kept so
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "gladia\|0.1.3\|softwarecitadel\|alexisbouchez" reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml | head -20
+289:      '@ai-sdk/gladia':
+291:        version: link:../../packages/gladia
+2368:  packages/gladia:
+10948:  '@swc/counter@0.1.3':
+11156:  '@types/aws-lambda@8.10.143':
+15709:    resolution: {integrity: sha512-/sM3dO2FOzXjKQhJuo0Q173wf2KOo8t4I8vHy6lF9poUp7bKT0/NHE8fPX23PwfhnykfqnC2xRxOnVw5XuGIaA==}
+16598:    resolution: {integrity: sha512-Q4r8ghd80yhO/0j1O3B2BjweX3fiHg9cdOwjJd2J76Q135c+NDxGCqdYKQ1SKBuFfgWbAUzBfvYjPUEeNgqN1A==}
+19897:  uncrypto@0.1.3:
+20119:  untun@0.1.3:
+20145:  uqr@0.1.3:
+26657:      uncrypto: 0.1.3
+27210:      '@types/aws-lambda': 8.10.143
+29396:      '@swc/counter': 0.1.3
+29444:      '@swc/counter': 0.1.3
+29459:  '@swc/counter@0.1.3': {}
+29475:      '@swc/counter': 0.1.3
+29667:  '@types/aws-lambda@8.10.143': {}
+30164:      uncrypto: 0.1.3
+32546:      uncrypto: 0.1.3
+34491:      uncrypto: 0.1.3
+[0m
+Now I have a complete picture. Let me classify all findings.
+
+## Classification Table
+
+| File / Line | Pattern | Category | Notes |
+|-------------|---------|----------|-------|
+| `vercel-ai/packages/mcp/src/tool/oauth.test.ts:740` | `client_secret: 'secret123'` | **TEST_OR_EXAMPLE** | Vitest fixture, repeated across 30+ test cases |
+| `vercel-ai/packages/mcp/src/tool/oauth.test.ts:905` | `access_token: 'access123'` | **TEST_OR_EXAMPLE** | Vitest fixture |
+| `vercel-ai/packages/mcp/src/tool/oauth.test.ts:908` | `refresh_token: 'refresh123'` | **TEST_OR_EXAMPLE** | Vitest fixture |
+| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts:409` | `access_token: 'expired-access-token'` | **TEST_OR_EXAMPLE** | Vitest fixture |
+| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts:411` | `refresh_token: 'rotating-refresh-token'` | **TEST_OR_EXAMPLE** | Vitest fixture |
+| `vercel-ai/packages/openai/**/*.test.ts` (20+ files) | `apiKey: 'test-api-key'` | **TEST_OR_EXAMPLE** | Vitest fixtures across all OpenAI provider tests |
+| `vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts` | `apiKey: 'test-api-key'` | **TEST_OR_EXAMPLE** | Vitest fixture |
+| `vercel-ai/packages/togetherai/src/togetherai-provider.test.ts` | `apiKey: 'custom-key'`, `'explicit-key'`, `'test-api-key'` | **TEST_OR_EXAMPLE** | Vitest fixtures |
+| `vercel-ai/packages/google-vertex/src/**/*.test.ts` | `apiKey: 'test-api-key'`, `'mocked-token'`, `'mock.jwt.token'`, `'invalid-key'` | **TEST_OR_EXAMPLE** | Vitest fixtures |
+| `vercel-ai/packages/amazon-bedrock/src/**/*.test.ts` | `sessionToken: 'dynamic-session-token'`, `'static-session-token'`, `'test-api-key-123'`, `'test-session-token'`, `'async-session-token'` | **TEST_OR_EXAMPLE** | Vitest fixtures |
+| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:166` | `deniedCIDRs: ['169.254.169.254/32']` | **INTERESTING** | Security test verifying metadata IP blocking (GOOD practice) |
+| `vercel-ai/examples/ai-functions/src/telemetry/**/*.ts` | `secretApiKey: 'sk-secret'` | **TEST_OR_EXAMPLE** | Example/demo code with obvious placeholder |
+| `vercel-ai/packages/workflow/src/test/agent-e2e-workflows.ts` | `apiKey: 'sk-test-key'` | **TEST_OR_EXAMPLE** | E2E test fixture |
+| `vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts` | `apiKey: 'test-api-key'` | **TEST_OR_EXAMPLE** | Gladia SDK test fixture |
+| `vercel-ai/packages/gladia/src/__fixtures__/*.json` | UUIDs, audio URLs | **TEST_OR_EXAMPLE** | Mock API response fixtures |
+| `sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts` | `secretKey = 'DUMMY-KEY-REDIRECT-LEAK-TEST'` | **TEST_OR_EXAMPLE** | Redirect leak test with explicit dummy key |
+| `sdk/packages/sdk-js/src/v2/live/*.test.ts` | `token=created`, `token=abc` | **TEST_OR_EXAMPLE** | WebSocket URL test fixtures |
+| `vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | `encrypted_content: "gAAAAAB..."` | **TEST_OR_EXAMPLE** | OpenAI API response fixture (encrypted test data) |
+| `.env.example` files (multiple repos) | `GLADIA_API_KEY=`, `OPENAI_API_KEY=xxxxxxx` | **TEST_OR_EXAMPLE** | Example config templates with placeholders |
+| `docs/chapters/live-stt/quickstart.mdx:346` | `token=636c70f6-92c1-4026-a8b6-0dfe3ecf826f` | **TEST_OR_EXAMPLE** | Documentation example UUID |
+
+---
+
+## Verdict
+
+| Candidate | REPORT_CANDIDATE |
+|-----------|------------------|
+| REAL_SECRET findings | **no** (0 found) |
+| TEST_OR_EXAMPLE findings | **no** (all confirmed test fixtures / example code) |
+| ENDPOINT_LEAK findings | **no** (only public api.gladia.io URLs in fixtures) |
+| INTERESTING: vercel-sandbox metadata IP block test | **no** (security feature, not vuln) |
+| INTERESTING: npm `gladia` 0.1.3 ownership discrepancy | **no** (already in knowledge base as ACCEPTED OTHER@sdk) |
+
+**SUMMARY**: Zero reportable findings this cycle. All 652 grep hits are test fixtures, example code, documentation examples, or lockfile dependencies. The only previously-known anomaly (npm `gladia` package ownership mismatch) remains unchanged and was already triaged.
