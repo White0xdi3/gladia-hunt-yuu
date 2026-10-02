@@ -1192,3 +1192,25 @@
   - | npm `gladia@0.1.3` impersonation | **VALID** | Proven supply-chain impersonation + API key in WS URL |
   - | SSRF via `audio_url`/`callback_url` | **HOLD** | Key-gated; needs valid key for POC |
   - | IDOR on `/{id}/file` | **HOLD** | Needs two valid keys; parked |
+
+- 21 lead(s) marked VALID at 2026-10-02 00:01:16 UTC
+  - | Q2 Reachable? | **PARTIAL** | Requires valid `x-gladia-key` (key-gated 401). Free trial keys available but not "public/unauthenticated" |
+  - | Q4 Provable GET/HEAD? | **NO** | Requires `POST` with valid API key and malicious `audio_url`/`callback_url`. AUTH_HELPED only |
+  - | Q6 Not rejected? | **YES** | SSRF is valid class; not info-disclosure/best-practice/rate-limit/self-XSS |
+  - | Q7 Triager accept? | **CONDITIONAL** | Would accept **IF** proven with valid key. Currently unproven (no key available to hunter) |
+  - **VERDICT: HOLD** — High-value SSRF-by-design surface confirmed in spec, but **cannot be proven without a valid API key** (Q4 fails for passive-only). Next cycle needs `[NEXT] PROBE` with exact AUTH_H
+  - | Q6 Not rejected? | **YES** | Supply-chain impersonation + credential hygiene flaw are valid vuln classes |
+  - **VERDICT: VALID** — **REPORT-READY**
+  - | Q6 Not rejected? | **YES** | Open redirect is valid class |
+  - | Q6 Not rejected? | **YES** | Info disclosure is valid class, though low severity |
+  - **VERDICT: VALID (LOW)** — Confirmed framework fingerprinting via preflight-only header leak.
+  - | Q2 Reachable? | PARTIAL | Spec shows `InitStreamingResponse.url` contains token in query; requires valid key to initiate session (POST /v2/live → 401 without key) |
+  - | Q4 Provable GET/HEAD? | **NO** | Requires AUTH_HELPED: POST /v2/live with valid key → observe token format; initiate WS → inspect upgrade headers; test token reuse after disconnect |
+  - | Q6 Not rejected? | YES | Auth token in URL is valid class |
+  - **VERDICT: HOLD** — Spec confirms token-in-URL design, but **token properties (lifetime, rotation, Referer-Policy) unproven without valid key**. Next cycle needs `[NEXT] PROBE` with AUTH_HELPED steps 
+  - | Q2 Reachable? | **NO** | Requires valid API key + valid transcription ID owned by another user |
+  - | Q6 Not rejected? | YES | IDOR is valid high-value class |
+  - | Q4 Provable? | **NO** | Requires AUTH_HELPED with valid key |
+  - | Q6 Not rejected? | YES | Injection is valid class |
+  - | 1 | SSRF via audio_url/callback_url | **HOLD** | Spec-confirmed SSRF-by-design, but **requires valid API key** (AUTH_HELPED) — Q4 fails passive-only |
+  - | 2 | npm `gladia@0.1.3` impersonation + key leakage | **VALID** | **Fully passive proof complete**; orphaned package claims official, leaks keys in WS URL — report-ready |
