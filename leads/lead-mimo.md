@@ -1878,3 +1878,47 @@ testability: PASSIVE
 [RISK] api.gladia.io: 72 reason: frozen spec no drift but high-value SSRF-by-design requires stolen/bought key (AUTH_HELPED) to reach 169.254.169.254 → cloud credential theft critical if key obtained
 [RISK] app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap is live and chainable to OAuth code theft → ATO via HUMAN_ONLY post-auth step, highest gate_ease
 [RISK] sdk: 85 reason: orphaned maintainer 404 with "Official" description + WebSocket query key leakage = supply-chain hijack risk critical; passive verifiable, confusion vector with official @gladiaio/sdk@2.1.0; PyPI gladiaio-sdk unverified parity adds additional surface
+## 2026-10-02 13:49:51 UTC [app] (model mimo)
+[PRIO] app.gladia.io: 7.7 attack_surface:8 business_value:8 tech_exposure:9 gate_ease:9 cloud_surface:2 freshness:8
+[PRIO] api.gladia.io: 7.3 attack_surface:9 business_value:9 tech_exposure:8 gate_ease:2 cloud_surface:7 freshness:6
+[PRIO] sdk: 7.1 attack_surface:7 business_value:7 tech_exposure:7 gate_ease:10 cloud_surface:1 freshness:7
+[HYP] Post-auth open redirect via redirect_to enables OAuth authorization code theft and account takeover
+class: OAUTH
+asset: app.gladia.io
+confidence: 85
+reasoning: /signin?redirect_to reflection alive byte-fresh 2026-10-01 (200/27448B, action="/signin?redirect_to=https%3A%2F%2Fevil.example.com"); CSP 0 form-action directives (grep-count=0) = gap confirmed; post-auth 302 honors redirect_to as sole unverified gate (HUMAN_ONLY)
+evidence_needed: Post-auth 302 Location header proving redirect_to=https://evil.example.com honored after successful login with authorized test account
+verify_steps: HUMAN: with authorized test account complete login via https://app.gladia.io/signin?redirect_to=https%3A%2F%2Fevil.example.com and intercept post-auth 302 Location
+impact: External redirect after auth → OAuth authorization code leakage → session hijack/ATO, phishing via trusted domain; High severity
+testability: HUMAN_ONLY
+[HYP] Authenticated SSRF via audio_url to cloud metadata exfiltration
+class: SSRF
+asset: api.gladia.io
+confidence: 78
+reasoning: OpenAPI 14-path spec frozen NO_DRIFT; POST /v2/pre-recorded requires x-gladia-key (401/144B NestJS fresh) but spec defines audio_url param by design; prior RAG confirms SSRF-by-design persists AUTH_HELPED; undocumented /v2/live/health also key-gated informational only
+evidence_needed: With authorized key, audio_url=http://169.254.169.254/latest/meta-data/ triggers server fetch and returns metadata or fetch error timing/dns proving SSRF reach to cloud metadata
+verify_steps: AUTH_HELPED: POST https://api.gladia.io/v2/pre-recorded with header x-gladia-key: <authorized_key> body {"audio_url":"http://169.254.169.254/latest/meta-data/iam/security-credentials/"} compare vs benign audio_url
+impact: Cloud metadata → IAM credentials → full AWS/GCP takeover, cross-tenant data access; Critical
+testability: AUTH_HELPED
+[HYP] PyPI gladiaio-sdk supply chain risk — unverified parity with official npm SDK
+class: OTHER
+asset: sdk
+confidence: 50
+reasoning: PyPI gladiaio-sdk exists per leads; not analyzed in knowledge base; orphaned npm gladia@0.1.3 confirmed malicious pattern (WebSocket key leak); official npm @gladiaio/sdk@2.1.0 active with @gladia.io maintainers; PyPI package maintainer/origin/repo unverified
+evidence_needed: PyPI registry metadata for gladiaio-sdk (maintainers, repo URL, description, latest version); source comparison with @gladiaio/sdk to verify parity or divergence
+verify_steps: PASSIVE: GET https://pypi.org/pypi/gladiaio-sdk/json — inspect maintainers, repo, description, versions; download sdist/wheel and compare source to @gladiaio/sdk@2.1.0 tarball
+impact: Supply chain confusion → developers install malicious/outdated PyPI package → credential leak or RCE; High severity
+testability: PASSIVE
+[FINAL] Post-auth open redirect via redirect_to enables OAuth authorization code theft and account takeover: confidence 85, OAUTH @ app.gladia.io, HUMAN_ONLY, rank 1
+[FINAL] Authenticated SSRF via audio_url to cloud metadata exfiltration: confidence 78, SSRF @ api.gladia.io, AUTH_HELPED, rank 2
+[FINAL] PyPI gladiaio-sdk supply chain risk — unverified parity with official npm SDK: confidence 50, OTHER @ sdk, PASSIVE, rank 3
+[NEXT] PROBE: GET https://pypi.org/pypi/gladiaio-sdk/json — inspect maintainers, repo URL, description, versions; download sdist/wheel and compare source to @gladiaio/sdk@2.1.0 tarball (rotation focus sdk, PASSIVE, ≤1 rps)
+[LEARN] ACCEPTED OTHER @ api.gladia.io: no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec
+[LEARN] ACCEPTED OTHER @ app.gladia.io: no new surface this cycle, re-confirmed static — /signin?redirect_to reflection byte-fresh, CSP 0 form-action directives gap confirmed, OAuth post-auth chain HUMAN_ONLY gate
+[LEARN] ACCEPTED OTHER @ gladia: no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec and inventory timestamps
+[LEARN] ACCEPTED OTHER @ sdk: class alive, re-verified fresh this cycle — orphaned npm gladia@0.1.3 dist-tag latest=0.1.3 shasum cc96f84a unchanged, GitHub user+repo alexisbouchez 404 (orphaned/irrevocable), WebSocket URL query leaks x-gladia-key confirmed in src/client.ts:307; official @gladiaio/sdk@2.1.0 and PyPI gladiaio-sdk require separate analysis
+[LEARN] ACCEPTED SSRF @ api.gladia.io: spec+RAG frozen — SSRF-by-design surface persists (AUTH_HELPED)
+[LEARN] ACCEPTED OAUTH @ app.gladia.io: /signin?redirect_to reflection alive byte-fresh — 0 CSP form-action directives (gap confirmed); post-auth honoring sole unverified gate (HUMAN_ONLY)
+[RISK] api.gladia.io: 72 reason: frozen spec no drift but high-value SSRF-by-design requires stolen/bought key (AUTH_HELPED) to reach 169.254.169.254 → cloud credential theft critical if key obtained
+[RISK] app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap is live and chainable to OAuth code theft → ATO via HUMAN_ONLY post-auth step, highest gate_ease
+[RISK] sdk: 85 reason: orphaned maintainer 404 with "Official" description + WebSocket query key leakage = supply-chain hijack risk critical; passive verifiable, confusion vector with official @gladiaio/sdk@2.1.0; PyPI gladiaio-sdk unverified parity adds additional surface
