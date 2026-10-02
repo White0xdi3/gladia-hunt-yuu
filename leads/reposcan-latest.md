@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-02 12:46:56 UTC =====
+===== REPOSCAN 2026-10-02 13:57:12 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5688 code/config files scanned, 652 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,60 +46,120 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/shopify-mcp/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/repro-test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/image-content/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-ui/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
+[0m$ [0mls -la reposcan-raw/gladiaio/
+total 60
+drwxr-xr-x 15 runner runner 4096 Oct  2 13:50 .
+drwxr-xr-x  4 runner runner 4096 Oct  2 13:50 ..
+drwxr-xr-x  9 runner runner 4096 Oct  2 13:50 compare-stt
+drwxr-xr-x  9 runner runner 4096 Oct  2 13:50 docs
+drwxr-xr-x  7 runner runner 4096 Oct  2 13:50 gladia-cli
+drwxr-xr-x 11 runner runner 4096 Oct  2 13:50 gladia-quiz-app
+drwxr-xr-x 11 runner runner 4096 Oct  2 13:50 gladia-samples
+drwxr-xr-x  9 runner runner 4096 Oct  2 13:50 gladiaflow
+drwxr-xr-x  7 runner runner 4096 Oct  2 13:50 n8n-nodes-gladia
+drwxr-xr-x  8 runner runner 4096 Oct  2 13:50 normalization
+drwxr-xr-x 12 runner runner 4096 Oct  2 13:50 num2words2
+drwxr-xr-x  9 runner runner 4096 Oct  2 13:50 realtime-multilingual-asr-router
+drwxr-xr-x 10 runner runner 4096 Oct  2 13:50 sdk
+drwxr-xr-x  7 runner runner 4096 Oct  2 13:50 skills
+drwxr-xr-x 18 runner runner 4096 Oct  2 13:50 vercel-ai
 [0m
-[0m✱ [0mGrep "deniedCIDRs|169\.254\.169\.254"[90m in reposcan-raw · 4 matches[0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml[90m [limit=30, offset=280][0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [offset=160, limit=30][0m
-### CLASSIFICATION TABLE
-
-| Category | File | Line | Evidence | Classification |
-|----------|------|------|----------|----------------|
-| **TEST_OR_EXAMPLE** | `packages/openai/src/**/*.test.ts` | 48,66,84,40,61,78,14,114,113,778,3310,45,246,381,10,54,13,137,12,17,73 | `apiKey: 'test-api-key'`, `apiKey: 'custom-key'`, `apiKey: 'explicit-key'` | Test fixtures |
-| **TEST_OR_EXAMPLE** | `packages/mcp/src/tool/oauth.test.ts` | 740,905,908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` | OAuth test fixtures |
-| **TEST_OR_EXAMPLE** | `packages/mcp/src/tool/mcp-http-transport.test.ts` | 409,411 | `access_token: 'expired-access-token'`, `refresh_token: 'rotating-refresh-token'` | Test fixtures |
-| **TEST_OR_EXAMPLE** | `packages/amazon-bedrock/src/**/*.test.ts` | 100,128,152,158,331,442,209,55 | `sessionToken: 'test-session-token'`, `'dynamic-session-token'`, `'static-session-token'`, `'async-session-token'`, `apiKey: 'test-api-key-123'`, `nextToken: 'test-token'` | Test fixtures |
-| **TEST_OR_EXAMPLE** | `packages/google-vertex/src/**/*.test.ts` | 5,18,21,68,120,187,405,419,95,134,150 | `token: 'mocked-token'`, `access_token: 'mock.jwt.token'`, `private_key: 'invalid-key'`, `apiKey: 'test-api-key'` | Test fixtures |
-| **TEST_OR_EXAMPLE** | `packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | 36 | `encrypted_content: "gAAAAABplLP7..."` | Test fixture (encrypted) |
-| **TEST_OR_EXAMPLE** | `packages/togetherai/src/*.test.ts` | 99,112,165,7 | `apiKey: 'custom-key'`, `apiKey: 'explicit-key'`, `apiKey: 'test-api-key'` | Test fixtures |
-| **TEST_OR_EXAMPLE** | `packages/assemblyai/src/*.test.ts` | 13,277 | `apiKey: 'test-api-key'` | Test fixtures |
-| **INTERESTING (SECURITY CONTROL)** | `packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166,171 | `deniedCIDRs: ['169.254.169.254/32']`, `subnets: { deny: ['169.254.169.254/32'] }` | **Defense-in-depth: explicit metadata endpoint blocking** |
-| **INTERESTING (INTEGRATION)** | `pnpm-lock.yaml` | 289-291 | `@ai-sdk/gladia: workspace:*` → `link:../../packages/gladia` | Official Vercel AI SDK provider for Gladia |
-| **INTERESTING (INTEGRATION)** | `tsconfig.json` | 70 | `"path": "packages/gladia"` | Monorepo structure |
-| **INTERESTING (INTEGRATION)** | `tools/analyze-downloads/src/analyze-providers.ts` | 21 | `'@ai-sdk/gladia'` in provider list | Confirmed official integration |
-| **INTERESTING (CI)** | `.github/tigent.yml` | 30 | `provider/gladia` in test matrix | CI tests Gladia provider |
-
-### VERDICT LIST
-
-| Candidate | Reportable? | Reason |
-|-----------|-------------|--------|
-| Hardcoded secrets in test files | **NO** | All values are explicit test fixtures (`test-api-key`, `secret123`, `mocked-token`, `invalid-key`) |
-| `169.254.169.254` references | **NO** | **Security control** — sandbox tests verify metadata endpoint is explicitly DENIED |
-| `@ai-sdk/gladia` provider | **NO** | Official Vercel AI SDK integration (upstream vercel/ai repo), not a Gladia-owned secret |
-| No real API keys, tokens, or credentials found | **NO** | Zero live credentials detected |
-
-**OVERALL: REPORT_CANDIDATE = NO**
-
----
-
-**Key insight**: The `vercel-ai` repo is the **upstream Vercel AI SDK monorepo** (github.com/vercel/ai), mirrored under `gladiaio/`. The `@ai-sdk/gladia` provider is an official integration maintained by Vercel. The `deniedCIDRs` test demonstrates **proper SSRF defense** — not a vulnerability.
+[0m$ [0mls -la reposcan-raw/gladiaio/sdk/
+total 328
+drwxr-xr-x 10 runner runner   4096 Oct  2 13:50 .
+drwxr-xr-x 15 runner runner   4096 Oct  2 13:50 ..
+drwxr-xr-x  3 runner runner   4096 Oct  2 13:50 .cursor
+-rw-r--r--  1 runner runner    135 Oct  2 13:50 .editorconfig
+drwxr-xr-x  8 runner runner   4096 Oct  2 13:50 .git
+-rw-r--r--  1 runner runner    212 Oct  2 13:50 .gitattributes
+drwxr-xr-x  3 runner runner   4096 Oct  2 13:50 .github
+-rw-r--r--  1 runner runner    191 Oct  2 13:50 .gitignore
+-rw-r--r--  1 runner runner    113 Oct  2 13:50 .npmrc
+-rw-r--r--  1 runner runner    103 Oct  2 13:50 .prettierignore
+-rw-r--r--  1 runner runner    127 Oct  2 13:50 .prettierrc
+drwxr-xr-x  2 runner runner   4096 Oct  2 13:50 .vscode
+-rw-r--r--  1 runner runner   3032 Oct  2 13:50 CONTRIBUTING.md
+-rw-r--r--  1 runner runner   1063 Oct  2 13:50 LICENSE
+-rw-r--r--  1 runner runner  10963 Oct  2 13:50 README.md
+-rw-r--r--  1 runner runner     98 Oct  2 13:50 audit-ci.jsonc
+-rw-r--r--  1 runner runner 219285 Oct  2 13:50 bun.lock
+-rw-r--r--  1 runner runner     29 Oct  2 13:50 bunfig.toml
+-rw-r--r--  1 runner runner    239 Oct  2 13:50 commitlint.config.cts
+drwxr-xr-x  2 runner runner   4096 Oct  2 13:50 data
+drwxr-xr-x  6 runner runner   4096 Oct  2 13:50 e2e
+-rw-r--r--  1 runner runner   1358 Oct  2 13:50 eslint.config.mjs
+-rw-r--r--  1 runner runner   3525 Oct  2 13:50 nx.json
+-rw-r--r--  1 runner runner   1062 Oct  2 13:50 package.json
+drwxr-xr-x  5 runner runner   4096 Oct  2 13:50 packages
+drwxr-xr-x  3 runner runner   4096 Oct  2 13:50 tools
+-rw-r--r--  1 runner runner     86 Oct  2 13:50 vitest.workspace.mjs
+[0m
+[0m$ [0mls -la reposcan-raw/gladiaio/sdk/packages/
+total 20
+drwxr-xr-x  5 runner runner 4096 Oct  2 13:50 .
+drwxr-xr-x 10 runner runner 4096 Oct  2 13:50 ..
+drwxr-xr-x  3 runner runner 4096 Oct  2 13:50 generator
+drwxr-xr-x  4 runner runner 4096 Oct  2 13:50 sdk-js
+drwxr-xr-x  5 runner runner 4096 Oct  2 13:50 sdk-python
+[0m
+[0m$ [0mcat reposcan-raw/gladiaio/sdk/packages/sdk-js/package.json
+{
+  "name": "@gladiaio/sdk",
+  "description": "Gladia JavaScript/TypeScript SDK",
+  "version": "2.0.0",
+  "author": "Gladia",
+  "license": "MIT",
+  "repository": "github:gladiaio/sdk",
+  "keywords": [
+    "gladia",
+    "sdk",
+    "typescript",
+    "javascript"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "unpkg": "dist/index.iife.js",
+  "jsdelivr": "dist/index.iife.js",
+  "scripts": {
+    "build": "tsdown",
+    "build:watch": "tsdown --watch"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.6",
+    "@types/node": "^20.19.19",
+    "@types/ws": "^8.18.1",
+    "tsdown": "^0.15.6"
+  },
+  "peerDependencies": {
+    "eventemitter3": ">=5",
+    "ws": "5.2.4 || 6.2.3 || 7.5.10 || >=8.8",
+    "undici": ">=5"
+  },
+  "peerDependenciesMeta": {
+    "ws": {
+      "optional": true
+    },
+    "undici": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+[0m
+[0m$ [0mcat reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
+{
+  "name": "@ai-sdk/gladia",
+  "version": "3.0.0-canary.48",
+  "type": "module",
+  "license": "Apache-2.0",
