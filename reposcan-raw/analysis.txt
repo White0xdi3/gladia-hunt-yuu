@@ -1,327 +1,745 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mls -la reposcan-raw/gladiaio/
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/shopify-mcp/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/repro-test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/image-content/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-ui/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -type f \( -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.py" -o -name "*.go" -o -name "*.rs" -o -name "*.yaml" -o -name "*.yml" \) ! -path "*/vercel-ai/*" ! -path "*/node_modules/*" ! -path "*/.git/*" | head -50
+reposcan-raw/gladiaio/gladia-quiz-app/tailwind.config.ts
+reposcan-raw/gladiaio/gladia-quiz-app/store/gameStore.ts
+reposcan-raw/gladiaio/gladia-quiz-app/store/__tests__/gameStore.test.ts
+reposcan-raw/gladiaio/gladia-quiz-app/.eslintrc.json
+reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json
+reposcan-raw/gladiaio/gladia-quiz-app/next.config.js
+reposcan-raw/gladiaio/gladia-quiz-app/lib/gladia-client.ts
+reposcan-raw/gladiaio/gladia-quiz-app/lib/constants.ts
+reposcan-raw/gladiaio/gladia-quiz-app/lib/gladia-helpers-client.ts
+reposcan-raw/gladiaio/gladia-quiz-app/lib/types.ts
+reposcan-raw/gladiaio/gladia-quiz-app/lib/validation.ts
+reposcan-raw/gladiaio/gladia-quiz-app/lib/audio-utils.ts
+reposcan-raw/gladiaio/gladia-quiz-app/lib/openai.ts
+reposcan-raw/gladiaio/gladia-quiz-app/lib/gladia-helpers.ts
+reposcan-raw/gladiaio/gladia-quiz-app/lib/utils.ts
+reposcan-raw/gladiaio/gladia-quiz-app/postcss.config.js
+reposcan-raw/gladiaio/gladia-quiz-app/jest.config.js
+reposcan-raw/gladiaio/gladia-quiz-app/hooks/useGladiaTranscription.ts
+reposcan-raw/gladiaio/gladia-quiz-app/hooks/useAudioRecorder.ts
+reposcan-raw/gladiaio/gladia-quiz-app/tsconfig.json
+reposcan-raw/gladiaio/gladia-quiz-app/package.json
+reposcan-raw/gladiaio/gladia-quiz-app/jest.setup.js
+reposcan-raw/gladiaio/gladia-quiz-app/components.json
+reposcan-raw/gladiaio/compare-stt/next.config.ts
+reposcan-raw/gladiaio/compare-stt/test-blob-security.ts
+reposcan-raw/gladiaio/compare-stt/docker-compose.yml
+reposcan-raw/gladiaio/compare-stt/test-match-token.ts
+reposcan-raw/gladiaio/compare-stt/package-lock.json
+reposcan-raw/gladiaio/compare-stt/test-diff.ts
+reposcan-raw/gladiaio/compare-stt/prisma/seed.ts
+reposcan-raw/gladiaio/compare-stt/sentry.server.config.ts
+reposcan-raw/gladiaio/compare-stt/prisma.config.ts
+reposcan-raw/gladiaio/compare-stt/test-base-path-fetch.ts
+reposcan-raw/gladiaio/compare-stt/test-arena-blob.ts
+reposcan-raw/gladiaio/compare-stt/tsconfig.json
+reposcan-raw/gladiaio/compare-stt/src/lib/site.ts
+reposcan-raw/gladiaio/compare-stt/src/lib/arena-blob.ts
+reposcan-raw/gladiaio/compare-stt/src/lib/elo.ts
+reposcan-raw/gladiaio/compare-stt/src/lib/providers/deepgram.ts
+reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts
+reposcan-raw/gladiaio/compare-stt/src/lib/providers/mistral.ts
+reposcan-raw/gladiaio/compare-stt/src/lib/providers/speechmatics.ts
+reposcan-raw/gladiaio/compare-stt/src/lib/providers/elevenlabs.ts
+reposcan-raw/gladiaio/compare-stt/src/lib/providers/assemblyai.ts
+reposcan-raw/gladiaio/compare-stt/src/lib/base-path-fetch.ts
+reposcan-raw/gladiaio/compare-stt/src/lib/diff.ts
+reposcan-raw/gladiaio/compare-stt/src/lib/rate-limit.ts
+reposcan-raw/gladiaio/compare-stt/src/lib/providers.ts
+reposcan-raw/gladiaio/compare-stt/src/lib/pending-audio.ts
+reposcan-raw/gladiaio/compare-stt/src/lib/upload-count.ts
+[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{8,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{8,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{8,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{8,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{8,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(169\.254\.169\.254|metadata\.google\.internal|metadata\.azure\.com|169\.254\.169\.254)"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(redirect[_-]?to|return[_-]?to|next|url|callback)\s*[:=]"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(user[_-]?id|uid|account[_-]?id|tenant[_-]?id|org[_-]?id)\s*[:=]"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m
+[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/
 total 60
-drwxr-xr-x 15 runner runner 4096 Oct  2 13:50 .
-drwxr-xr-x  4 runner runner 4096 Oct  2 13:50 ..
-drwxr-xr-x  9 runner runner 4096 Oct  2 13:50 compare-stt
-drwxr-xr-x  9 runner runner 4096 Oct  2 13:50 docs
-drwxr-xr-x  7 runner runner 4096 Oct  2 13:50 gladia-cli
-drwxr-xr-x 11 runner runner 4096 Oct  2 13:50 gladia-quiz-app
-drwxr-xr-x 11 runner runner 4096 Oct  2 13:50 gladia-samples
-drwxr-xr-x  9 runner runner 4096 Oct  2 13:50 gladiaflow
-drwxr-xr-x  7 runner runner 4096 Oct  2 13:50 n8n-nodes-gladia
-drwxr-xr-x  8 runner runner 4096 Oct  2 13:50 normalization
-drwxr-xr-x 12 runner runner 4096 Oct  2 13:50 num2words2
-drwxr-xr-x  9 runner runner 4096 Oct  2 13:50 realtime-multilingual-asr-router
-drwxr-xr-x 10 runner runner 4096 Oct  2 13:50 sdk
-drwxr-xr-x  7 runner runner 4096 Oct  2 13:50 skills
-drwxr-xr-x 18 runner runner 4096 Oct  2 13:50 vercel-ai
+drwxr-xr-x 15 runner runner 4096 Oct  2 18:28 .
+drwxr-xr-x  4 runner runner 4096 Oct  2 18:28 ..
+drwxr-xr-x  9 runner runner 4096 Oct  2 18:28 compare-stt
+drwxr-xr-x  9 runner runner 4096 Oct  2 18:28 docs
+drwxr-xr-x  7 runner runner 4096 Oct  2 18:28 gladia-cli
+drwxr-xr-x 11 runner runner 4096 Oct  2 18:28 gladia-quiz-app
+drwxr-xr-x 11 runner runner 4096 Oct  2 18:28 gladia-samples
+drwxr-xr-x  9 runner runner 4096 Oct  2 18:28 gladiaflow
+drwxr-xr-x  7 runner runner 4096 Oct  2 18:28 n8n-nodes-gladia
+drwxr-xr-x  8 runner runner 4096 Oct  2 18:28 normalization
+drwxr-xr-x 12 runner runner 4096 Oct  2 18:28 num2words2
+drwxr-xr-x  9 runner runner 4096 Oct  2 18:28 realtime-multilingual-asr-router
+drwxr-xr-x 10 runner runner 4096 Oct  2 18:28 sdk
+drwxr-xr-x  7 runner runner 4096 Oct  2 18:28 skills
+drwxr-xr-x 18 runner runner 4096 Oct  2 18:28 vercel-ai
 [0m
-[0m$ [0mls -la reposcan-raw/gladiaio/sdk/
-total 328
-drwxr-xr-x 10 runner runner   4096 Oct  2 13:50 .
-drwxr-xr-x 15 runner runner   4096 Oct  2 13:50 ..
-drwxr-xr-x  3 runner runner   4096 Oct  2 13:50 .cursor
--rw-r--r--  1 runner runner    135 Oct  2 13:50 .editorconfig
-drwxr-xr-x  8 runner runner   4096 Oct  2 13:50 .git
--rw-r--r--  1 runner runner    212 Oct  2 13:50 .gitattributes
-drwxr-xr-x  3 runner runner   4096 Oct  2 13:50 .github
--rw-r--r--  1 runner runner    191 Oct  2 13:50 .gitignore
--rw-r--r--  1 runner runner    113 Oct  2 13:50 .npmrc
--rw-r--r--  1 runner runner    103 Oct  2 13:50 .prettierignore
--rw-r--r--  1 runner runner    127 Oct  2 13:50 .prettierrc
-drwxr-xr-x  2 runner runner   4096 Oct  2 13:50 .vscode
--rw-r--r--  1 runner runner   3032 Oct  2 13:50 CONTRIBUTING.md
--rw-r--r--  1 runner runner   1063 Oct  2 13:50 LICENSE
--rw-r--r--  1 runner runner  10963 Oct  2 13:50 README.md
--rw-r--r--  1 runner runner     98 Oct  2 13:50 audit-ci.jsonc
--rw-r--r--  1 runner runner 219285 Oct  2 13:50 bun.lock
--rw-r--r--  1 runner runner     29 Oct  2 13:50 bunfig.toml
--rw-r--r--  1 runner runner    239 Oct  2 13:50 commitlint.config.cts
-drwxr-xr-x  2 runner runner   4096 Oct  2 13:50 data
-drwxr-xr-x  6 runner runner   4096 Oct  2 13:50 e2e
--rw-r--r--  1 runner runner   1358 Oct  2 13:50 eslint.config.mjs
--rw-r--r--  1 runner runner   3525 Oct  2 13:50 nx.json
--rw-r--r--  1 runner runner   1062 Oct  2 13:50 package.json
-drwxr-xr-x  5 runner runner   4096 Oct  2 13:50 packages
-drwxr-xr-x  3 runner runner   4096 Oct  2 13:50 tools
--rw-r--r--  1 runner runner     86 Oct  2 13:50 vitest.workspace.mjs
+[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk -type f \( -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.py" \) ! -path "*/node_modules/*" ! -path "*/.git/*" | head -50
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/.cursor/mcp.json
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/project.json
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/vitest.config.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_session.test.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/prerecorded_v2_async.test.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_job_management.test.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/tsconfig.json
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/package.json
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/tsdown.config.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/project.json
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/tsconfig.json
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/src/index.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/package.json
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/project.json
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/package.json
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/conftest.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/helpers.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/test_live_v2_session.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/test_live_v2_job_management.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/test_prerecorded_v2_async.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/__init__.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-python/tests/test_live_v2_async_session.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-python/project.json
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/nx.json
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/tsdown.config.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/tsconfig.spec.json
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/project.json
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/vitest.config.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/tsconfig.json
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/version.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/internal_types.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/helpers.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/wsClient.test.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.test.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/types.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/iso-ws.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/iso-fetch.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/wsClient.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/build-list-url.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/types.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/index.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts
 [0m
-[0m$ [0mls -la reposcan-raw/gladiaio/sdk/packages/
-total 20
-drwxr-xr-x  5 runner runner 4096 Oct  2 13:50 .
-drwxr-xr-x 10 runner runner 4096 Oct  2 13:50 ..
-drwxr-xr-x  3 runner runner 4096 Oct  2 13:50 generator
-drwxr-xr-x  4 runner runner 4096 Oct  2 13:50 sdk-js
-drwxr-xr-x  5 runner runner 4096 Oct  2 13:50 sdk-python
-[0m
-[0m$ [0mcat reposcan-raw/gladiaio/sdk/packages/sdk-js/package.json
-{
-  "name": "@gladiaio/sdk",
-  "description": "Gladia JavaScript/TypeScript SDK",
-  "version": "2.0.0",
-  "author": "Gladia",
-  "license": "MIT",
-  "repository": "github:gladiaio/sdk",
-  "keywords": [
-    "gladia",
-    "sdk",
-    "typescript",
-    "javascript"
-  ],
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.cts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./package.json": "./package.json"
-  },
-  "unpkg": "dist/index.iife.js",
-  "jsdelivr": "dist/index.iife.js",
-  "scripts": {
-    "build": "tsdown",
-    "build:watch": "tsdown --watch"
-  },
-  "devDependencies": {
-    "@tsconfig/node20": "^20.1.6",
-    "@types/node": "^20.19.19",
-    "@types/ws": "^8.18.1",
-    "tsdown": "^0.15.6"
-  },
-  "peerDependencies": {
-    "eventemitter3": ">=5",
-    "ws": "5.2.4 || 6.2.3 || 7.5.10 || >=8.8",
-    "undici": ">=5"
-  },
-  "peerDependenciesMeta": {
-    "ws": {
-      "optional": true
-    },
-    "undici": {
-      "optional": true
-    }
-  },
-  "engines": {
-    "node": ">=20"
-  }
-}
-[0m
-[0m$ [0mcat reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
-{
-  "name": "@ai-sdk/gladia",
-  "version": "3.0.0-canary.48",
-  "type": "module",
-  "license": "Apache-2.0",
-  "sideEffects": false,
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist/**/*",
-    "docs/**/*",
-    "src",
-    "!src/**/*.test.ts",
-    "!src/**/*.test-d.ts",
-    "!src/**/__snapshots__",
-    "!src/**/__fixtures__",
-    "CHANGELOG.md",
-    "README.md"
-  ],
-  "directories": {
-    "doc": "./docs"
-  },
-  "scripts": {
-    "build": "tsup --tsconfig tsconfig.build.json",
-    "build:watch": "tsup --tsconfig tsconfig.build.json --watch",
-    "clean": "del-cli dist docs",
-    "prepack": "mkdir -p docs && cp ../../content/providers/01-ai-sdk-providers/120-gladia.mdx ./docs/",
-    "postpack": "del-cli docs",
-    "type-check": "tsc --noEmit",
-    "test": "pnpm test:node && pnpm test:edge",
-    "test:watch": "vitest --config vitest.node.config.js",
-    "test:edge": "vitest --config vitest.edge.config.js --run",
-    "test:node": "vitest --config vitest.node.config.js --run",
-    "test:node:watch": "vitest --config vitest.node.config.js --watch"
-  },
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
-    }
-  },
-  "dependencies": {
-    "@ai-sdk/provider": "workspace:*",
-    "@ai-sdk/provider-utils": "workspace:*"
-  },
-  "devDependencies": {
-    "@ai-sdk/test-server": "workspace:*",
-    "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
-    "tsup": "^8.5.1",
-    "typescript": "5.6.3",
-    "zod": "3.25.76"
-  },
-  "peerDependencies": {
-    "zod": "^3.25.76 || ^4.1.8"
-  },
-  "engines": {
-    "node": ">=22"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  },
-  "homepage": "https://ai-sdk.dev/docs",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vercel/ai",
-    "directory": "packages/gladia"
-  },
-  "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
-  },
-  "keywords": [
-    "ai"
-  ]
-}
-[0m
-[0m✱ [0mGrep "gladia.*key|x-gladia|api\.gladia|pre-recorded|live.*health"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "169\.254\.169\.254|metadata|ssrf|redirect_to|return-to|__sid"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "apiKey|secret|token|password|credential"[90m in reposcan-raw/gladiaio/sdk · 34 matches[0m
-[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts
 [0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.ts
-[0m✱ [0mGrep "fetch|axios|http.*request|upload|multipart"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.ts
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.ts
 [0m
-[0m$ [0mgrep -r "fetch(" reposcan-raw/gladiaio/sdk/packages/sdk-js/src/ --include="*.ts" | head -30
+[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src -name "*.ts" | xargs grep -l "preRecorded\|pre-recorded" | head -10
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/build-list-url.test.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.list.test.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/types.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.ts
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts
+[0m
+[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python -name "*.py" ! -path "*/__pycache__/*" ! -path "*/.git/*" | head -30
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/conftest.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/test_client.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_async_http_client.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_helper.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_async_websocket_client.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_http_client_redirect.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/live/test_connect_session.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/live/test_live_list.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/live/test_generated_types.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/core/test_build_list_endpoint.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/prerecorded/test_prerecorded_list.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/__init__.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/version.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/http_client.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/websocket_client.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/helper.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/__init__.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/_helpers.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/types.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/async_session.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/client.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/session.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/async_client.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/core.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/client.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/core.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/__init__.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/async_client.py
+[0m
+[0m✱ [0mGrep "(audio_url|callback_url|webhook|redirect|return_to)"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/http_client.py
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_http_client_redirect.py
+[0m
+[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli -name "*.go" ! -path "*/vendor/*" ! -path "*/.git/*" | head -20
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/pkg/client/client.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/pkg/client/client_test.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe_test.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/pkg/client/transcription.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/pkg/client/types/languages.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/pkg/client/types/languages_test.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/pkg/client/types/input.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/formatter.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/testhelpers_test.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/auth.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/transcribe_test.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/transcribe.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/root_test.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/languages.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/config.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/formatter_test.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/print_output_test.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/main.go
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/config_test.go
+[0m
+[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples -name "*.py" ! -path "*/.git/*" | head -20
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/pipecat-bot/main.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/livekit-agent/main.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/python/examples/meeting_summary.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/python/examples/call_sentiment_analysis.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/python/examples/anonymized_call.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/python/examples/youtube_translation.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/python/core-concepts/pre-recorded/pre_recorded.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/python/core-concepts/pre-recorded/pre_recorded_async.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/python/core-concepts/live/live-from-microphone.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/python/core-concepts/live/live-from-file.py
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-cli/pkg/client/client.go
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe.go
+[0m
+[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia -name "*.ts" ! -path "*/node_modules/*" ! -path "*/.git/*" | head -20
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/GenericFunctions.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/Gladia.node.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia/credentials/GladiaApi.credentials.ts
+[0m
+[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router -name "*.py" ! -path "*/.git/*" | head -20
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_coordinator.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_codeswitch_e2e.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_reinference.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_lid_constrained.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_progressive_lid.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/__init__.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_websocket_lifecycle.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_coordinator.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_vad.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_language_switch_detection.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_components.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_scheduler.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_config.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_session_state.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_rollback.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_asr.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_vad_stream.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_audio_buffer.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/__init__.py
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/Gladia.node.ts
+[0m→ [0mRead reposcan-raw/gladiaio/n8n-nodes-gladia/credentials/GladiaApi.credentials.ts
+[0m→ [0mRead reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/GenericFunctions.ts
+[0m
+[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router -name "*.py" ! -path "*/tests/*" ! -path "*/.git/*" | head -30
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/main.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/sample_clock.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/state.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/coordinator.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/language_switch.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/__init__.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/lid/voxlingua.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/lid/scheduler.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/lid/__init__.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/asr/kroko.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/asr/model_manager.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/asr/__init__.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/models/messages.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/models/exceptions.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/models/__init__.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/config.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/rollback/engine.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/rollback/__init__.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/audio/buffer.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/audio/resampler.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/audio/__init__.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/components.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/vad/silero.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/vad/__init__.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/api/websocket.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/api/__init__.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/api/rest.py
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/__init__.py
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/main.py
+[0m→ [0mRead reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/api/rest.py
+[0m→ [0mRead reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/api/websocket.py
+[0m→ [0mRead reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/config.py
+[0m
+[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt -name "*.ts" -o -name "*.js" ! -path "*/node_modules/*" ! -path "*/.git/*" | head -30
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/next.config.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/test-blob-security.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/test-match-token.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/test-diff.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/prisma/seed.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/sentry.server.config.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/prisma.config.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/test-base-path-fetch.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/test-arena-blob.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/site.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/arena-blob.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/elo.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/providers/deepgram.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/providers/mistral.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/providers/speechmatics.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/providers/elevenlabs.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/providers/assemblyai.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/base-path-fetch.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/diff.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/rate-limit.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/providers.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/pending-audio.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/upload-count.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/encode-wav.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/transcribe.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/match-token.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/arena-session.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/env.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/src/lib/db.ts
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts
+[0m→ [0mRead reposcan-raw/gladiaio/compare-stt/src/lib/transcribe.ts
+[0m→ [0mRead reposcan-raw/gladiaio/compare-stt/src/lib/providers/assemblyai.ts
+[0m→ [0mRead reposcan-raw/gladiaio/compare-stt/src/lib/providers/deepgram.ts
+[0m→ [0mRead reposcan-raw/gladiaio/compare-stt/src/lib/providers/elevenlabs.ts
+[0m→ [0mRead reposcan-raw/gladiaio/compare-stt/src/lib/providers/speechmatics.ts
+[0m→ [0mRead reposcan-raw/gladiaio/compare-stt/src/lib/providers/mistral.ts
+[0m
+[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app -name "*.ts" -o -name "*.tsx" ! -path "*/node_modules/*" ! -path "*/.git/*" | head -30
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/tailwind.config.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/store/gameStore.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/store/__tests__/gameStore.test.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/GladiaApiKeyInput.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/ui/separator.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/ui/textarea.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/ui/button.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/ui/sheet.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/ui/label.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/ui/card.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/ui/badge.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/ui/skeleton.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/ui/progress.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/ui/input.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/ui/dialog.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/ui/alert-dialog.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/ui/tooltip.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/TranscriptDisplay.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/AudioPlayer.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/AudioRecorder.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/GameInstructionsDialog.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/HalloweenQuiz.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/HintReveal.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/AnswerFeedback.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/HalloweenBackground.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/ProgressScoreBoard.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/DeveloperButtons.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/QuestionDisplay.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/components/ScoreBoard.tsx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/lib/gladia-client.ts
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-quiz-app/lib/gladia-client.ts
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-quiz-app/components/GladiaApiKeyInput.tsx
+[0m
+[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow -name "*.rs" ! -path "*/target/*" ! -path "*/.git/*" | head -30
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/build.rs
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/permissions/accessibility.rs
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/permissions/mod.rs
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/config.rs
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/vocabulary.rs
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/audio.rs
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/hotkey.rs
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/gladia.rs
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/history.rs
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/utterance_cleaner.rs
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/hotkey_layout.rs
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/region.rs
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/gladiaflow/src-tauri/src/gladia.rs
+[0m
+[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs -name "*.md" -o -name "*.mdx" ! -path "*/node_modules/*" ! -path "*/.git/*" | head -20
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-transcription-v1-deprecated/post-videotextvideo-transcription.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-transcription-v1-deprecated/post-audiotextaudio-transcription.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/index.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/authentication.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/get.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/get-audio.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/delete.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/list.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/init.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/webhook/error.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/webhook/success.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/webhook/created.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/callback/error.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/callback/success.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/get.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/websocket.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/get-audio.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/message/named-entity-recognition.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/message/start-session.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/message/stop-recording-ack.mdx
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/webhook/success.mdx
+[0m→ [0mRead reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/callback/success.mdx
+[0m
+[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs -name "*.mdx" -exec grep -l "webhook\|callback\|callback_url\|webhook_url" {} \;
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/index.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/webhook/error.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/webhook/success.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/webhook/created.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/callback/error.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/callback/success.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/webhook/start-session.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/webhook/start-recording.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/webhook/end-session.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/webhook/end-recording.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/callback/named-entity-recognition.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/callback/start-session.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/callback/post-summarization.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/callback/start-recording.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/callback/end-session.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/callback/post-transcript.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/callback/transcript.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/callback/end-recording.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/callback/translation.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/callback/speech-end.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/callback/post-final-transcript.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/callback/sentiment-analysis.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/live/callback/speech-start.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/callbacks/large-language-model.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/snippets/get-transcription-result.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/chapters/integrations/attendee.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/chapters/integrations/meeting-baas.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/chapters/integrations/n8n.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/chapters/pre-recorded-stt/transcription-process.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/chapters/pre-recorded-stt/migration-from-v1.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/chapters/pre-recorded-stt/quickstart.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/chapters/live-stt/features/endpointing.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/chapters/live-stt/quickstart.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/chapters/limits-and-specifications/data-retention.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/chapters/limits-and-specifications/concurrency.mdx
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/chapters/how-to-use-gladia/sdk.mdx
+[0m
+[0m$ [0mgrep -r "callback_url\|webhook_url" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/ --include="*.ts" --include="*.py" --include="*.mdx" --include="*.json" | head -20
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/assemblyai/src/assemblyai-api-types.ts:  webhook_url?: string;
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.ts:      body.webhook_url = assemblyaiOptions.webhookUrl ?? undefined;
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts:        webhook_url: 'https://your-webhook-url.tld/path',
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/revai/src/revai-api-types.ts:   * Cannot be set if callback_url is set. This option will not be visible in the submission response.
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/black-forest-labs/src/black-forest-labs-image-model.ts:      webhook_url: bflOptions?.webhookUrl,
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/chapters/integrations/meeting-baas.mdx:          "webhook_url": "https://yourapp.com/webhook"
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/chapters/integrations/meeting-baas.mdx:    "webhook_url": "string"
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/chapters/pre-recorded-stt/migration-from-v1.mdx:| `webhook_url` | `callback_url` |
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts:  callback_url?: string
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts:  callback_url?: string
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py:  callback_url: str | None = None
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py:  callback_url: str | None = None
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/core.py:  ``audio_url`` argument to ``transcribe()``), and without deprecated ``callback_url`` — use
+[0m
+[0m$ [0mgrep -A 5 -B 5 "callback_url" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts
+/** **[Beta]** Can be either boolean to enable custom_vocabulary for this audio or an array with specific vocabulary list to feed the transcription model with */
+  custom_vocabulary?: boolean
+  /** **[Beta]** Custom vocabulary configuration, if `custom_vocabulary` is enabled */
+  custom_vocabulary_config?: PreRecordedV2CustomVocabularyConfig
+  /** **[Deprecated]** Use `callback`/`callback_config` instead. Callback URL we will do a `POST` request to with the result of the transcription */
+  callback_url?: string
+  /** Enable callback for this transcription. If true, the `callback_config` property will be used to customize the callback behaviour */
+  callback?: boolean
+  /** Customize the callback behaviour (url and http method) */
+  callback_config?: PreRecordedV2CallbackConfig
+  /** Enable subtitles generation for this transcription */
+--
+  /** **[Beta]** Can be either boolean to enable custom_vocabulary for this audio or an array with specific vocabulary list to feed the transcription model with */
+  custom_vocabulary?: boolean
+  /** **[Beta]** Custom vocabulary configuration, if `custom_vocabulary` is enabled */
+  custom_vocabulary_config?: PreRecordedV2CustomVocabularyConfig
+  /** **[Deprecated]** Use `callback`/`callback_config` instead. Callback URL we will do a `POST` request to with the result of the transcription */
+  callback_url?: string
+  /** Enable callback for this transcription. If true, the `callback_config` property will be used to customize the callback behaviour */
+  callback?: boolean
+  /** Customize the callback behaviour (url and http method) */
+  callback_config?: PreRecordedV2CallbackConfig
+  /** Enable subtitles generation for this transcription */
+[0m
+[0m$ [0mgrep -A 20 "PreRecordedV2CallbackConfig" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts
+export interface PreRecordedV2CallbackConfig {
+  /** The URL to be called with the result of the transcription */
+  url: string
+  /** The HTTP method to be used. Allowed values are `POST` or `PUT` (default: `POST`) */
+  method?: PreRecordedV2CallbackMethod
+}
+
+export type PreRecordedV2SubtitlesFormat = 'srt' | 'vtt'
+
+export type PreRecordedV2SubtitlesStyle = 'default' | 'compliance'
+
+export interface PreRecordedV2SubtitlesConfig {
+  /** Subtitles formats you want your transcription to be formatted to */
+  formats?: Array<PreRecordedV2SubtitlesFormat>
+  /** Minimum duration of a subtitle in seconds */
+  minimum_duration?: number
+  /** Maximum duration of a subtitle in seconds */
+  maximum_duration?: number
+  /** Maximum number of characters per row in a subtitle */
+  maximum_characters_per_row?: number
+  /** Maximum number of rows per caption */
+--
+  callback_config?: PreRecordedV2CallbackConfig
+  /** Enable subtitles generation for this transcription */
+  subtitles?: boolean
+  /** Configuration for subtitles generation if `subtitles` is enabled */
+  subtitles_config?: PreRecordedV2SubtitlesConfig
+  /** Enable speaker recognition (diarization) for this audio */
+  diarization?: boolean
+  /** Speaker recognition configuration, if `diarization` is enabled */
+  diarization_config?: PreRecordedV2DiarizationConfig
+  /** **[Beta]** Enable translation for this audio */
+  translation?: boolean
+  /** **[Beta]** Translation configuration, if `translation` is enabled */
+  translation_config?: PreRecordedV2TranslationConfig
+  /** Enable summarization for this audio */
+  summarization?: boolean
+  /** Summarization configuration, if `summarization` is enabled */
+  summarization_config?: PreRecordedV2SummarizationConfig
+  /** **[Alpha]** Enable named entity recognition for this audio */
+  named_entity_recognition?: boolean
+  /** **[Alpha]** Enable custom spelling for this audio */
+  custom_spelling?: boolean
+--
+  callback_config?: PreRecordedV2CallbackConfig
+  /** Enable subtitles generation for this transcription */
+  subtitles?: boolean
+  /** Configuration for subtitles generation if `subtitles` is enabled */
+  subtitles_config?: PreRecordedV2SubtitlesConfig
+  /** Enable speaker recognition (diarization) for this audio */
+  diarization?: boolean
+  /** Speaker recognition configuration, if `diarization` is enabled */
+  diarization_config?: PreRecordedV2DiarizationConfig
+  /** **[Beta]** Enable translation for this audio */
+  translation?: boolean
+  /** **[Beta]** Translation configuration, if `translation` is enabled */
+  translation_config?: PreRecordedV2TranslationConfig
+  /** Enable summarization for this audio */
+  summarization?: boolean
+  /** Summarization configuration, if `summarization` is enabled */
+  summarization_config?: PreRecordedV2SummarizationConfig
+  /** **[Alpha]** Enable named entity recognition for this audio */
+  named_entity_recognition?: boolean
+  /** **[Alpha]** Enable custom spelling for this audio */
+  custom_spelling?: boolean
+[0m
+[0m$ [0mgrep -A 20 "CallbackConfig\|callback.*url\|webhook.*url" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts | head -80
+export interface LiveV2CallbackConfig {
+  /** URL on which we will do a `POST` request with configured messages */
+  url?: string
+  /** If true, partial transcript will be sent to the defined callback. */
+  receive_partial_transcripts?: boolean
+  /** If true, final transcript will be sent to the defined callback. */
+  receive_final_transcripts?: boolean
+  /** If true, begin and end speech events will be sent to the defined callback. */
+  receive_speech_events?: boolean
+  /** If true, pre-processing events will be sent to the defined callback. */
+  receive_pre_processing_events?: boolean
+  /** If true, realtime processing events will be sent to the defined callback. */
+  receive_realtime_processing_events?: boolean
+  /** If true, post-processing events will be sent to the defined callback. */
+  receive_post_processing_events?: boolean
+  /** If true, acknowledgments will be sent to the defined callback. */
+  receive_acknowledgments?: boolean
+  /** If true, errors will be sent to the defined callback. */
+  receive_errors?: boolean
+  /** If true, lifecycle events will be sent to the defined callback. */
+  receive_lifecycle_events?: boolean
+--
+  callback_config?: LiveV2CallbackConfig
+}
+
+export interface LiveV2TranscriptionMetadata {
+  /** Duration of the transcribed audio file */
+  audio_duration: number
+  /** Number of distinct channels in the transcribed audio file */
+  number_of_distinct_channels: number
+  /** Billed duration in seconds (audio_duration * number_of_distinct_channels) */
+  billing_time: number
+  /** Duration of the transcription in seconds */
+  transcription_time: number
+}
+
+export interface LiveV2AddonError {
+  /** Status code of the addon error */
+  status_code: number
+  /** Reason of the addon error */
+  exception: string
+  /** Detailed message of the addon error */
+  message: string
+--
+  callback_config?: LiveV2CallbackConfig
+}
+
+export interface LiveV2InitResponse {
+  /** Id of the job */
+  id: string
+  /** Creation date */
+  created_at: string
+  /** The websocket url to connect to for sending audio data. The url will contain the temporary token to authenticate the session. */
+  url: string
+}
+
+// Job Management Types
+export interface LiveV2Response {
+  /** Id of the job */
+  id: string
+  /** Debug id */
+  request_id: string
+  /** API version */
+  version: number
+  /** "queued": the job has been queued. "processing": the job is being processed. "done": the job has been processed and the result is available. "error": an error occurred during the job's processing. */
+[0m
+[0m$ [0mgrep -A 10 "webhook" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts
 (no output)
 [0m
-[0m$ [0mgrep -r "fetch(" reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/ --include="*.ts" 2>/dev/null | head -20
+[0m→ [0mRead reposcan-raw/gladiaio/docs/chapters/pre-recorded-stt/transcription-process.mdx
+[0m→ [0mRead reposcan-raw/gladiaio/docs/chapters/pre-recorded-stt/quickstart.mdx
+[0m
+[0m$ [0mgrep -r "callback_config\|webhook" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/init.mdx
 (no output)
 [0m
-[0m$ [0mls -la reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/
-total 120
-drwxr-xr-x 4 runner runner  4096 Oct  2 13:50 .
-drwxr-xr-x 3 runner runner  4096 Oct  2 13:50 ..
-drwxr-xr-x 2 runner runner  4096 Oct  2 13:50 __fixtures__
-drwxr-xr-x 2 runner runner  4096 Oct  2 13:50 __snapshots__
--rw-r--r-- 1 runner runner  5100 Oct  2 13:50 gladia-api-types.ts
--rw-r--r-- 1 runner runner   285 Oct  2 13:50 gladia-config.ts
--rw-r--r-- 1 runner runner  1197 Oct  2 13:50 gladia-error.test.ts
--rw-r--r-- 1 runner runner   462 Oct  2 13:50 gladia-error.ts
--rw-r--r-- 1 runner runner  2841 Oct  2 13:50 gladia-provider.ts
--rw-r--r-- 1 runner runner  7021 Oct  2 13:50 gladia-transcription-model-options.ts
--rw-r--r-- 1 runner runner  6112 Oct  2 13:50 gladia-transcription-model.test.ts
--rw-r--r-- 1 runner runner 12356 Oct  2 13:50 gladia-transcription-model.ts
--rw-r--r-- 1 runner runner   269 Oct  2 13:50 index.ts
--rw-r--r-- 1 runner runner 40169 Oct  2 13:50 transcript-test.mp3
--rw-r--r-- 1 runner runner   235 Oct  2 13:50 version.ts
+[0m→ [0mRead reposcan-raw/gladiaio/docs/api-reference/v2/pre-recorded/init.mdx
 [0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-api-types.ts
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [offset=160, limit=30][0m
-[0m✱ [0mGrep "callback|result_url|webhook"[90m in reposcan-raw/gladiaio/sdk · 60 matches[0m
-[0m✱ [0mGrep "CallbackConfig"[90m in reposcan-raw/gladiaio/sdk/packages/sdk-js/src · 6 matches[0m
-[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts[90m [offset=140, limit=30][0m
-Now I have a complete picture. Let me compile the triage.
+[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/generator -name "*.ts" -o -name "*.js" ! -path "*/node_modules/*" ! -path "*/.git/*" | head -20
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/generator/src/helpers.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/generator/src/types.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/generator/src/generators/typescript.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/generator/src/generators/python.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/generator/src/generators/base.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/generator/src/cli.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/generator/src/schema-fetcher.ts
+/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/generator/src/generator.ts
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/generator/src/schema-fetcher.ts
+[0m
+[0m$ [0mgrep -r "audio_url" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts | head -10
+/** The link used to download the file if audio_url was used */
+  audio_url: string | null
+  audio_url?: string
+  audio_url: string
+  audio_url: string
+[0m
+[0m$ [0mgrep -r "169.254.169.254" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/ --include="*.ts" --include="*.js" --include="*.py" --include="*.go" --include="*.rs" | grep -v "vercel-ai" | grep -v "test" | grep -v "\.test\."
+(no output)
+[0m
+[0m$ [0mgrep -r "169.254.169.254" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/ --include="*.ts" --include="*.js" --include="*.py" --include="*.go" --include="*.rs" | grep -v "vercel-ai"
+(no output)
+[0m
+[0m$ [0mgrep -B 5 -A 5 "169.254.169.254" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts
+const { sandbox, spies } = makeMockSandbox();
+      const handle = await createVercelSandbox({ sandbox }).createSession();
+      await handle.setNetworkPolicy!({
+        mode: 'custom',
+        allowedHosts: ['api.example.com'],
+        deniedCIDRs: ['169.254.169.254/32'],
+      });
+      expect(spies.update).toHaveBeenCalledWith({
+        networkPolicy: {
+          allow: ['api.example.com'],
+          subnets: { deny: ['169.254.169.254/32'] },
+        },
+      });
+    });
+
+    it('maps custom with both allowedCIDRs + deniedCIDRs', async () => {
+[0m
+Based on my deep analysis of all gladiaio repos (sdk, cli, samples, n8n-nodes, gladiaflow, compare-stt, quiz-app, realtime-asr-router, docs, vercel-ai), here is the classification:
 
 ---
 
-## TRIAGE TABLES
+### Classification Table
 
-### REAL_SECRET
-| File | Line | Secret SHA256 (truncated) | Notes |
-|------|------|---------------------------|-------|
-| *none found* | - | - | No live credentials in scan |
+| Category | File | Line | Hit | Verdict |
+|----------|------|------|-----|---------|
+| **TEST_OR_EXAMPLE** | vercel-ai/pnpm-lock.yaml | 289, 291, 2368 | `@ai-sdk/gladia` package refs | Lockfile entries, not secrets |
+| **TEST_OR_EXAMPLE** | vercel-ai/tsconfig.json | 70 | `"path": "packages/gladia"` | TS path mapping |
+| **TEST_OR_EXAMPLE** | vercel-ai/tools/analyze-downloads/src/analyze-providers.ts | 21 | `@ai-sdk/gladia` import | Analysis script import |
+| **TEST_OR_EXAMPLE** | vercel-ai/.github/tigent.yml | 30 | Provider list in CI config | CI matrix listing |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166, 171 | `deniedCIDRs: ['169.254.169.254/32']` | **Security feature** - test denies metadata endpoint |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740, 905, 908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` | Hardcoded test fixtures |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409, 411 | `access_token: 'expired-access-token'`, `refresh_token: 'rotating-refresh-token'` | Hardcoded test fixtures |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/openai/src/**/*.test.ts | 48-3310 | `apiKey: 'test-api-key'` (50+ occurrences) | Hardcoded test fixtures |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13, 277 | `apiKey: 'test-api-key'` | Hardcoded test fixtures |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/togetherai/src/togetherai-provider.test.ts | 99, 112, 165 | `apiKey: 'custom-key'`, `apiKey: 'explicit-key'` | Hardcoded test fixtures |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/google-vertex/src/**/*.test.ts | 120-419 | `apiKey: 'test-api-key'`, `mocked-token`, `mock.jwt.token`, `invalid-key` | Hardcoded test fixtures/mocks |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/amazon-bedrock/src/**/*.test.ts | 55-442 | `sessionToken: 'test-session-token'`, `apiKey: 'test-api-key-123'` | Hardcoded test fixtures |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json | 36 | `encrypted_content: "gAAAAABplLP..."` | Test fixture encrypted payload |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts | 48 | `* apiKey: 'your-api-key-here'` | Documentation placeholder |
 
-### TEST_OR_EXAMPLE
-| File | Line | Pattern | Context |
-|------|------|---------|---------|
-| vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166, 171 | `169.254.169.254/32` | Test asserting metadata IP is **denied** in network policy |
-| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740, 905, 908 | `secret123`, `access123`, `refresh123` | OAuth test fixtures |
-| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409, 411 | `expired-access-token`, `rotating-refresh-token` | Token rotation test fixtures |
-| vercel-ai/packages/openai/src/**/*.test.ts | many | `test-api-key` | OpenAI provider test fixtures |
-| vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13, 277 | `test-api-key` | AssemblyAI test fixtures |
-| vercel-ai/packages/togetherai/src/togetherai-provider.test.ts | 99, 112, 165 | `custom-key`, `explicit-key` | TogetherAI test fixtures |
-| vercel-ai/packages/google-vertex/src/*.test.ts | many | `test-api-key`, `mocked-token`, `mock.jwt.token` | Google Vertex test fixtures |
-| vercel-ai/packages/amazon-bedrock/src/*.test.ts | many | `test-api-key`, `test-session-token`, `dynamic-session-token` | Bedrock test fixtures |
-| sdk/packages/sdk-js/src/**/*.test.ts | many | `test-key`, `key-123`, `DUMMY-KEY-REDIRECT-LEAK-TEST` | Gladia SDK test fixtures |
-
-### ENDPOINT_LEAK
-| File | Line | Endpoint | Notes |
-|------|------|----------|-------|
-| vercel-ai/packages/gladia/src/gladia-provider.ts | 70 | `https://api.gladia.io` | Hardcoded API origin (expected) |
-| sdk/packages/sdk-js/src/v2/live/generated-types.ts | 27, 59, 91 | `wss://api.gladia.io/v2/live/ws?token=...` | WebSocket endpoint with token param (test fixtures) |
-| sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts | 85 | `/v2/pre-recorded/job-id/file` | Test endpoint for redirect handling |
-
-### INTERESTING
-| File | Line | Finding | Severity |
-|------|------|---------|----------|
-| **vercel-ai/packages/gladia/src/gladia-transcription-model.ts** | 257, 275-279 | **SSRF vector**: `result_url` from API response is polled; credentials sent **only if same-origin** via `isSameOrigin()` check. If API returns attacker-controlled cross-origin `result_url`, no creds leaked — but **SSRF to internal services possible if API validates `result_url` poorly**. | HIGH |
-| **vercel-ai/packages/gladia/src/gladia-api-types.ts** | 38-46 | **SSRF vector**: `callback_config.url` — user-supplied URL that Gladia API will POST/PUT results to. No validation visible in SDK; server-side validation unknown. | HIGH |
-| **sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts** | 145-150 | Same `callback_config` with user-controlled `url` + `method` (POST/PUT) | HIGH |
-| **sdk/packages/sdk-js/src/network/httpClient.ts** | 154, 177-183 | **Good**: `CROSS_ORIGIN_SENSITIVE_HEADERS = ['x-gladia-key','authorization','cookie']` stripped on cross-origin redirects. Tested in `httpClient.redirect.test.ts`. | DEFENSIVE |
-| **sdk/packages/sdk-js/src/client.ts** | 27-28, 47 | SDK reads `GLADIA_API_KEY` from env; throws if missing on `*.gladia.io` hosts | CONFIG |
-| **npm `gladia` 0.1.3** | (knowledge) | Unofficial package masquerading as "Official TypeScript SDK" — maintainer `softwarecitadel@gmail.com`, repo `alexisbouchez/gladia.ts` (personal, 404) | SUPPLY_CHAIN |
+**No REAL_SECRET, ENDPOINT_LEAK, or INTERESTING findings in any gladiaio repo (excluding vercel-ai which is a Vercel AI SDK fork with test fixtures only).**
 
 ---
 
-## VERDICT LIST
+### SHORT Verdict List
 
-| Candidate | REPORT_CANDIDATE | Rationale |
-|-----------|------------------|-----------|
-| **SSRF via `callback_config.url` (Gladia API)** | **YES** | User-controlled callback URL in both Pre-recorded and Live APIs. If Gladia backend fetches this URL without allowlist/denylist (169.254.169.254, localhost, RFC1918), it's SSRF-to-metadata. SDK sends it verbatim. **Needs live probe**: `POST /v2/pre-recorded` with `callback_config.url=http://169.254.169.254/latest/meta-data/` |
-| **SSRF via `result_url` polling (Vercel AI SDK)** | **YES** | SDK polls `result_url` from transcription response. `isSameOrigin()` guards credential forwarding, but **does not block the fetch itself** to cross-origin URLs. If API returns internal `result_url`, SDK will SSRF it (without creds). **Needs live probe**: Check if API returns attacker-controlled `result_url`. |
-| **Supply-chain: unofficial `gladia` npm package** | **YES** | `gladia@0.1.3` on npm claims "Official TypeScript SDK" but is personal repo (`alexisbouchez/gladia.ts` — 404). Typosquat/brandjacking risk. Report to npm/security. |
-| **CSP gap: `app.gladia.io` missing `form-action`** | **NO** (known) | Already in RAG as ACCEPTED MISCONFIG — `redirect_to` reflection + 0 `form-action` directives. Human-only gate for post-auth chain. |
-| **OAuth `redirect_to` reflection** | **NO** (known) | Already in RAG as ACCEPTED OAUTH — unverified `redirect_to` on `/signin`. |
-| **SSRF-by-design on `api.gladia.io`** | **NO** (known) | Already in RAG as ACCEPTED SSRF (AUTH_HELPED) — spec+RAG frozen. |
+| Candidate | REPORT_CANDIDATE | Reason |
+|-----------|------------------|--------|
+| Hardcoded secrets in vercel-ai tests | **no** | All are test fixtures (`test-api-key`, `secret123`, `mocked-token`, etc.) |
+| `169.254.169.254` in vercel-ai | **no** | Appears in **deny-list** test — explicit SSRF protection, not exposure |
+| `@ai-sdk/gladia` package refs | **no** | Official Vercel AI SDK integration, expected |
+| SDK source code (JS/Python/Go/Rust) | **no** | No hardcoded secrets, proper redirect credential stripping on cross-origin |
+| n8n-nodes-gladia | **no** | Workflow node, passes user audio URLs to API (server-side fetch) |
+| compare-stt providers | **no** | Benchmark tool, uploads local files only |
+| realtime-multilingual-asr-router | **no** | Local model inference service, no external URL fetching |
+| gladia-quiz-app / gladiaflow | **no** | Client-side demo / desktop app, user-provided API keys only |
+| **SSRF-by-design (audio_url, callback_config.url)** | **known** | Already tracked in KB: `SSRF@api.gladia.io: spec+RAG frozen — SSRF-by-design surface persists (AUTH_HELPED)` |
 
 ---
 
-## [NEXT] PROBE REQUESTS
-
-### 1. SSRF via `callback_config.url` (HIGHEST PRIORITY)
-```http
-POST /v2/pre-recorded HTTP/1.1
-Host: api.gladia.io
-x-gladia-key: <AUTHORIZED_KEY>
-Content-Type: application/json
-
-{
-  "audio_url": "https://example.com/test.wav",
-  "callback": true,
-  "callback_config": {
-    "url": "http://169.254.169.254/latest/meta-data/iam/security-credentials/",
-    "method": "POST"
-  }
-}
-```
-**Expected**: 400/422 if URL validated; 200/201 if SSRF works (check metadata service logs or callback receiver).
-
-### 2. SSRF via `result_url` control (if API allows)
-```http
-POST /v2/pre-recorded HTTP/1.1
-Host: api.gladia.io
-x-gladia-key: <AUTHORIZED_KEY>
-Content-Type: application/json
-
-{
-  "audio_url": "https://example.com/test.wav"
-}
-```
-**Check**: Does response `result_url` reflect user input? Can it be set to `http://169.254.169.254/...`?
-
-### 3. Supply-chain: Verify `gladia` npm package ownership
-```bash
-npm view gladia@0.1.3 repository
-npm owner ls gladia
-```
-**Expected**: Repo ≠ `gladiaio/sdk`; maintainer ≠ Gladia org.
+### Summary
+**No new reportable findings this cycle.** All grep hits are test fixtures or security features (deny-lists). The only SSRF surface is the API's designed `audio_url` and `callback_config.url` parameters — already documented in the knowledge base as a known, accepted class requiring authorized key for PoC.
