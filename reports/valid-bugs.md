@@ -1221,3 +1221,12 @@
   - | npm `gladia@0.1.3` impersonation | **VALID** | Fully passive proven; supply chain + key leak |
   - | WebSocket token in URL | **HOLD** | Requires valid API key (AUTH_HELPED) |
   - | IDOR on /{id}/file download | **HOLD** | Requires valid key + cross-account test |
+
+- 7 lead(s) marked VALID at 2026-10-02 23:08:57 UTC
+  - **VERDICT**: **VALID (npm venue)** / **HOLD (Gladia venue — needs WS query-param auth proof)**
+  - **VERDICT**: **VALID** (spec-confirmed SSRF-by-design surface, key-gated but exploitable with any valid key)
+  - **VERDICT**: **VALID** (spec-confirmed design flaw: token in WS URL query)
+  - | 1 | npm `gladia@0.1.3` impersonation + WS key leak | **VALID (npm venue)** / **HOLD (Gladia venue)** | Impersonation + credential leak proven passively; Gladia venue needs WS query-param auth proof 
+  - | 3 | api.gladia.io SSRF via `audio_url`/`video_url`/`callback_url` | **VALID** | Spec-confirmed SSRF-by-design (no scheme allowlist, FR/US egress), key-gated but exploitable with any valid key |
+  - | 7 | api.gladia.io WS token in URL query (`?token=<uuid>`) | **VALID** | Spec-confirmed design flaw: bearer token in WS URL leaks via logs/Referer/history |
+  - | api.gladia.io IDOR on `/{id}/file` | Ownership model unknown; needs 2 accounts | **AUTH_HELPED**: Two valid keys + cross-account IDs (not feasible autonomously) |
