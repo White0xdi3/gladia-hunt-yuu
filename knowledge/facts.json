@@ -13,13 +13,13 @@
  },
  "MISCONFIG@api.gladia.io": {
   "first_seen": "2026-08-07",
-  "last_seen": "2026-10-01",
+  "last_seen": "2026-10-02",
   "reason": "/v2/live/health undocumented key-gated endpoint confirmed informational only \u2014 401 NestJS, not in OpenAPI 14-path spec, properly gated, no bypass/data leakage",
   "verdict": "ACCEPTED"
  },
  "MISCONFIG@app.gladia.io": {
   "first_seen": "2026-08-08",
-  "last_seen": "2026-10-01",
+  "last_seen": "2026-10-02",
   "reason": "CSP confirmed fresh \u2014 0 form-action directives (grep-count=0); enables /signin form-action reflection (gap confirmed, not oversight)",
   "verdict": "ACCEPTED"
  },
@@ -37,25 +37,25 @@
  },
  "OAUTH@app.gladia.io": {
   "first_seen": "2026-08-07",
-  "last_seen": "2026-10-01",
+  "last_seen": "2026-10-02",
   "reason": "/signin?redirect_to reflection alive byte-fresh \u2014 0 CSP form-action directives (gap confirmed); post-auth honoring sole unverified gate (HUMAN_ONLY)",
   "verdict": "ACCEPTED"
  },
  "OTHER@api.gladia.io": {
   "first_seen": "2026-08-08",
-  "last_seen": "2026-10-01",
+  "last_seen": "2026-10-02",
   "reason": "no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec",
   "verdict": "ACCEPTED"
  },
  "OTHER@app.gladia.io": {
   "first_seen": "2026-09-30",
-  "last_seen": "2026-10-01",
+  "last_seen": "2026-10-02",
   "reason": "no new surface this cycle, re-confirmed static \u2014 /signin?redirect_to reflection byte-fresh, CSP 0 form-action directives gap confirmed, OAuth post-auth chain HUMAN_ONLY gate",
   "verdict": "ACCEPTED"
  },
  "OTHER@gladia": {
   "first_seen": "2026-09-30",
-  "last_seen": "2026-10-01",
+  "last_seen": "2026-10-02",
   "reason": "no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec and inventory timestamps",
   "verdict": "ACCEPTED"
  },
@@ -73,13 +73,13 @@
  },
  "OTHER@sdk": {
   "first_seen": "2026-08-07",
-  "last_seen": "2026-10-01",
+  "last_seen": "2026-10-02",
   "reason": "class alive, re-verified fresh this cycle \u2014 dist-tag latest=0.1.3, shasum cc96f84a\u2026 unchanged, GitHub API user+repo alexisbouchez 404 (orphaned/irrevocable)",
   "verdict": "ACCEPTED"
  },
  "SSRF@api.gladia.io": {
   "first_seen": "2026-08-07",
-  "last_seen": "2026-10-01",
+  "last_seen": "2026-10-02",
   "reason": "spec+RAG frozen \u2014 SSRF-by-design surface persists (AUTH_HELPED)",
   "verdict": "ACCEPTED"
  }
