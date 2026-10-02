@@ -1,39 +1,16 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-### Classification Tables
+All hits are **TEST_OR_EXAMPLE** — test fixtures, placeholder values, and example configs in the `vercel-ai` integration repo (a fork of Vercel AI SDK with Gladia provider). No real secrets, endpoint leaks, or interesting anomalies.
 
-#### TEST_OR_EXAMPLE (all hits — no real secrets)
-| File | Line | Pattern | Verdict |
-|------|------|---------|---------|
-| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 740, 905, 908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` | Test fixtures |
-| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 409, 411 | `access_token: 'expired-access-token'`, `refresh_token: 'rotating-refresh-token'` | Test fixtures |
-| `vercel-ai/packages/openai/src/**/*.test.ts` | 48, 66, 84, 40, 61, 78, 14, 114, 113, 778, 3310, 45, 246, 381, 10, 54, 12, 17, 73, 13, 137, 12 | `apiKey: 'test-api-key'` (30+ occurrences) | Test fixtures |
-| `vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | `apiKey: 'test-api-key'` | Test fixtures |
-| `vercel-ai/packages/togetherai/src/**/*.test.ts` | 99, 112, 165, 7 | `apiKey: 'custom-key'`, `'explicit-key'`, `'test-api-key'` | Test fixtures |
-| `vercel-ai/packages/google-vertex/src/**/*.test.ts` | 120, 187, 405, 419, 5, 21, 68, 134, 150, 95 | `apiKey: 'test-api-key'`, `token: 'mocked-token'`, `access_token: 'mock.jwt.token'`, `private_key: 'invalid-key'` | Test fixtures/mocks |
-| `vercel-ai/packages/amazon-bedrock/src/**/*.test.ts` | 128, 152, 158, 100, 331, 442, 209, 55 | `sessionToken: 'dynamic-session-token'`, `'static-session-token'`, `'test-session-token'`, `'async-session-token'`, `apiKey: 'test-api-key-123'`, `'test-api-key'`, `nextToken: 'test-token'` | Test fixtures |
-| `vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts` | 48 | `* apiKey: 'your-api-key-here'` | Doc comment example |
+| Category | Files | Lines | Verdict |
+|----------|-------|-------|---------|
+| TEST_OR_EXAMPLE | 20+ test/fixture files | 654 | All `test-api-key`, `secret123`, `mocked-token`, `your-api-key-here` placeholders |
+| ENDPOINT_LEAK | 0 | 0 | — |
+| REAL_SECRET | 0 | 0 | — |
+| INTERESTING | 1 | 2 | `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:166,171` — denies `169.254.169.254/32` (cloud metadata) in tests; **good practice**, not a finding |
 
-#### INTERESTING (config/security posture)
-| File | Line | Finding |
-|------|------|---------|
-| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | `deniedCIDRs: ['169.254.169.254/32']` — metadata endpoint explicitly blocked (good) |
-| `vercel-ai/pnpm-lock.yaml` | 289, 291, 2368 | `@ai-sdk/gladia` linked as local package — official Vercel AI SDK integration confirmed |
-| `vercel-ai/.github/tigent.yml` | 30 | Provider list includes Gladia among 11 providers — supply-chain visibility |
+**SHORT VERDICT**
+- REPORT_CANDIDATE: **no** — zero actionable findings this cycle. The `vercel-ai` repo is an integration wrapper (official per `@ai-sdk/gladia` in lockfile), not core Gladia surface. All hits are test scaffolding.
 
-#### ENDPOINT_LEAK / REAL_SECRET
-**None found.**
-
----
-
-### Verdict List
-
-| Candidate | Category | REPORT_CANDIDATE |
-|-----------|----------|------------------|
-| All `test-api-key` / `secret123` / `mocked-token` fixtures | TEST_OR_EXAMPLE | **no** |
-| Sandbox metadata CIDR deny rules | INTERESTING (defensive) | **no** |
-| `@ai-sdk/gladia` in vercel-ai monorepo | INTERESTING (official integration) | **no** |
-| npm `gladia` 0.1.3 from `alexisbouchez` (personal) | KNOWN (orphaned) | **no** — already tracked in RAG |
-
-**Overall: No new reportable findings this cycle. Delta = 0 new hits. All secrets are test fixtures. Defensive SSRF mitigation (169.254.169.254/32 deny) confirmed in vercel-ai sandbox tests.**
+**NEXT CYCLE**: No passive probes needed. Surface frozen per RAG (`NO_DRIFT` on api.gladia.io/app.gladia.io/gladia.io + SDK dist-tag `latest=0.1.3` unchanged). Only live auth/OAuth tests could unblock — requires authorized key or human OAuth flow.
