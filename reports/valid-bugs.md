@@ -1214,3 +1214,10 @@
   - | Q6 Not rejected? | YES | Injection is valid class |
   - | 1 | SSRF via audio_url/callback_url | **HOLD** | Spec-confirmed SSRF-by-design, but **requires valid API key** (AUTH_HELPED) — Q4 fails passive-only |
   - | 2 | npm `gladia@0.1.3` impersonation + key leakage | **VALID** | **Fully passive proof complete**; orphaned package claims official, leaks keys in WS URL — report-ready |
+
+- 5 lead(s) marked VALID at 2026-10-02 12:56:15 UTC
+  - - **VERDICT: VALID**
+  - | SSRF via audio_url/callback_url | **HOLD** | Requires valid API key (AUTH_HELPED) |
+  - | npm `gladia@0.1.3` impersonation | **VALID** | Fully passive proven; supply chain + key leak |
+  - | WebSocket token in URL | **HOLD** | Requires valid API key (AUTH_HELPED) |
+  - | IDOR on /{id}/file download | **HOLD** | Requires valid key + cross-account test |

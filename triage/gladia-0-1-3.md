@@ -121,3 +121,18 @@ Evidence package: sha256-verified tarball + `npm view` JSON captured in repo kno
 - **Impact**: Supply-chain API key harvesting + irrevocable account takeover risk (P3/P4)
 - **CVSS 3.1**: 7.1 (AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N) — network, low complexity, no auth, user interaction (install), high confidentiality
 - **Channel**: Gladia security channel per scope.yml (https://gladia.io/bug-bounty-report → Google Forms) + npm Trust & Safety
+
+
+## Re-confirmed 2026-10-02 12:56 UTC
+### **LEAD 2: npm package `gladia@0.1.3` impersonation/typosquat + key-in-URL**
+- **Q1 Scope**: YES — npm registry for Official SDKs (Medium priority); impersonation affects Gladia brand/users
+- **Q2 Reachable**: YES — Public npm registry, anyone can `npm install gladia`
+- **Q3 Impact**: YES — Supply chain compromise: developers install unofficial code believing it's official; **src/client.ts:306-308 embeds raw `x-gladia-key` in WebSocket URL query** (`wss://api.gladia.io/v2/live?x-gladia-key=<KEY>`) leaking keys to proxy/access logs/browser history; GitHub repo+user `alexisbouchez` 404 (orphaned/irrevocable takeover risk)
+- **Q4 Passive proof**: YES — **Fully passive verified**: registry metadata (description="Official" vs README="Unofficial"), maintainer `softwarecitadel@gmail.com`, publish date 2025-03-28 (pre-dates `@gladiaio/sdk` 2025-09-09), tarball sha256 `3b23ec7d7a763abc04c52db232d157a982fd3bd969c9f703af3eecad5fa802f2`, GitHub API 404 on user+repo
+- **Q5 Novel**: YES — Human lead confirms reported 2026-08-12, no vendor action; package still live at dist-tag latest
+- **Q6 Not rejected**: YES — Supply chain impersonation + credential hygiene not on rejected list
+- **Q7 Triager accept**: YES — Clear impersonation with locked evidence across 10+ independent reproductions
+- **VERDICT: VALID**
+- **Impact**: Supply-chain API key harvesting + irrevocable account takeover risk; **P3/P4 severity**
+- **CVSS 3.1**: 8.8 (AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N) — High
+- **Channel**: Gladia security channel (https://gladia.io/bug-bounty-report → Google Forms, SSO-gated) + npm Trust & Safety (https://npmjs.com/support)
