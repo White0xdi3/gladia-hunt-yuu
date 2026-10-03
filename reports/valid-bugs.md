@@ -1230,3 +1230,14 @@
   - | 3 | api.gladia.io SSRF via `audio_url`/`video_url`/`callback_url` | **VALID** | Spec-confirmed SSRF-by-design (no scheme allowlist, FR/US egress), key-gated but exploitable with any valid key |
   - | 7 | api.gladia.io WS token in URL query (`?token=<uuid>`) | **VALID** | Spec-confirmed design flaw: bearer token in WS URL leaks via logs/Referer/history |
   - | api.gladia.io IDOR on `/{id}/file` | Ownership model unknown; needs 2 accounts | **AUTH_HELPED**: Two valid keys + cross-account IDs (not feasible autonomously) |
+
+- 9 lead(s) marked VALID at 2026-10-03 08:20:39 UTC
+  - **VERDICT: VALID**
+  - | Q2 Attacker reachable? | **NO (without key)** — All endpoints return 401 without `x-gladia-key`; requires valid API key (AUTH_HELPED) |
+  - | Q4 Passive proof? | **NO** — Cannot prove SSRF without valid key; spec confirms design but no passive confirmation of fetch behavior |
+  - | Q2 Attacker reachable? | **NO (without key)** — Requires valid x-gladia-key to initiate session and get token URL (AUTH_HELPED) |
+  - **VERDICT: HOLD** — Requires valid API key to prove token format and leakage. Passive: OpenAPI spec confirms `wss://api.gladia.io/v2/live?token=<uuid>` design.
+  - | Q4 Passive proof? | **NO** — Requires valid key + valid ID owned by another user |
+  - **VERDICT: HOLD** — Requires AUTH_HELPED with valid key. PARKED in multiple models.
+  - **VERDICT: HOLD** — Requires AUTH_HELPED with valid key.
+  - | npm `gladia@0.1.3` orphaned impersonation + key-in-URL | **VALID** (report-ready) |

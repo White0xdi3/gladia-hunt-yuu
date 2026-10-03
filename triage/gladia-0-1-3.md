@@ -136,3 +136,11 @@ Evidence package: sha256-verified tarball + `npm view` JSON captured in repo kno
 - **Impact**: Supply-chain API key harvesting + irrevocable account takeover risk; **P3/P4 severity**
 - **CVSS 3.1**: 8.8 (AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N) — High
 - **Channel**: Gladia security channel (https://gladia.io/bug-bounty-report → Google Forms, SSO-gated) + npm Trust & Safety (https://npmjs.com/support)
+
+
+## Re-confirmed 2026-10-03 08:20 UTC
+**VERDICT: VALID**  
+**Minimal proof:** `npm view gladia@0.1.3` → description "Official", maintainer `softwarecitadel`, repo `alexisbouchez/gladia.ts` (404 user+repo); tarball src/client.ts:306-308 `searchParams.append('x-gladia-key', apiKey)` → WebSocket URL query leak.  
+**Impact:** Supply-chain API key harvesting + irrevocable account takeover (P3/P4)  
+**CVSS 3.1:** 8.2 (AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N)  
+**Channel:** Gladia security channel (security@gladia.io or bug-bounty-report form) + npm Trust & Safety
