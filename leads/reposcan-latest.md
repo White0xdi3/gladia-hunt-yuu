@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-03 13:30:28 UTC =====
+===== REPOSCAN 2026-10-03 16:18:09 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5693 code/config files scanned, 654 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,120 +46,70 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/shopify-mcp/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/repro-test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/image-content/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-ui/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.test.ts" -o -name "*.test.js" -o -name "*.spec.ts" -o -name "*.spec.js" -o -name "__fixtures__" -o -name "*.fixture.*" | head -20
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/openai.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/togetherai.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/luma.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/cerebras.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/amazon-bedrock.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google-vertex-anthropic.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/fireworks.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/amazon-bedrock-anthropic.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/gateway.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/mistral.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/deepinfra.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/deepseek.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/azure.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/huggingface.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/anthropic.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/xai.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/cohere.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/groq.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google-vertex.test.ts
 [0m
 [0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [limit=30, offset=160][0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts[90m [limit=30, offset=730][0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts[90m [offset=400, limit=30][0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml[90m [offset=280, limit=30][0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml[90m [offset=2360, limit=30][0m
-[0m✱ [0mGlob "**/packages/gladia/**/*.ts"[90m in reposcan-raw/gladiaio/vercel-ai · 11 matches[0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-config.ts
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts
-[0m✱ [0mGlob "**/packages/gladia/src/__fixtures__/*.json"[90m in reposcan-raw/gladiaio/vercel-ai · 3 matches[0m
-[0m✱ [0mGrep "sk-[a-zA-Z0-9]{32,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-upload.json
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-initiate.json
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-result.json
-[0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/
-total 60
-drwxr-xr-x 15 runner runner 4096 Oct  3 13:27 .
-drwxr-xr-x  4 runner runner 4096 Oct  3 13:27 ..
-drwxr-xr-x  9 runner runner 4096 Oct  3 13:27 compare-stt
-drwxr-xr-x  9 runner runner 4096 Oct  3 13:27 docs
-drwxr-xr-x  7 runner runner 4096 Oct  3 13:27 gladia-cli
-drwxr-xr-x 11 runner runner 4096 Oct  3 13:27 gladia-quiz-app
-drwxr-xr-x 11 runner runner 4096 Oct  3 13:27 gladia-samples
-drwxr-xr-x  9 runner runner 4096 Oct  3 13:27 gladiaflow
-drwxr-xr-x  7 runner runner 4096 Oct  3 13:27 n8n-nodes-gladia
-drwxr-xr-x  8 runner runner 4096 Oct  3 13:27 normalization
-drwxr-xr-x 12 runner runner 4096 Oct  3 13:27 num2words2
-drwxr-xr-x  9 runner runner 4096 Oct  3 13:27 realtime-multilingual-asr-router
-drwxr-xr-x 10 runner runner 4096 Oct  3 13:27 sdk
-drwxr-xr-x  7 runner runner 4096 Oct  3 13:27 skills
-drwxr-xr-x 18 runner runner 4096 Oct  3 13:27 vercel-ai
-[0m
-[0m✱ [0mGrep "GLADIA_API_KEY|gladia.*key|x-gladia-key|apiKey.*=.*['\"][a-zA-Z0-9]{20,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "sk-[a-zA-Z0-9]{32,}|ghp_[a-zA-Z0-9]{36}|ghs_[a-zA-Z0-9]{36}|glpat-[a-zA-Z0-9]{20,}|gho_[a-zA-Z0-9]{36}"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "169\.254\.169\.254|metadata\.google\.internal|metadata\.azure\.com|http://localhost|http://127\.0\.0\.1"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "deniedCIDRs|169\.254"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m
-[0m$ [0mgrep -r "deniedCIDRs" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-network-sandbox-session.ts:      const { allowedHosts, allowedCIDRs, deniedCIDRs } = policy;
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-network-sandbox-session.ts:        (deniedCIDRs != null && deniedCIDRs.length > 0)
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-network-sandbox-session.ts:          ...(deniedCIDRs != null && deniedCIDRs.length > 0
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-network-sandbox-session.ts:            ? { deny: [...deniedCIDRs] }
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:    it('maps custom with allowedHosts + deniedCIDRs to combined shape', async () => {
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:        deniedCIDRs: ['169.254.169.254/32'],
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:    it('maps custom with both allowedCIDRs + deniedCIDRs', async () => {
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:        deniedCIDRs: ['10.5.0.0/16'],
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/README.md:  deniedCIDRs: ['169.254.169.254/32'],
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.ts: * - `deniedCIDRs` wins over both, useful for blocking cloud-metadata IPs while
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.ts: * a different allow field. Specifying `'custom'` with only `deniedCIDRs`
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.ts:      deniedCIDRs?: ReadonlyArray<string>;
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.ts:      deniedCIDRs?: ReadonlyArray<string>;
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:test('network policy: custom with both allow + deniedCIDRs is valid', () => {
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['10.5.0.0/16', '169.254.169.254/32'],
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:test('network policy: custom with only deniedCIDRs is a type error', () => {
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['169.254.169.254/32'],
-[0m
-[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio -name "package.json" -exec grep -l "gladia" {} \;
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/javascript/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/twilio/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/discord/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/typescript/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/generator/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/package.json
-[0m
-[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/package.json
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
-[0m✱ [0mGrep "apiKey|api_key|secret|token"[90m in reposcan-raw/gladiaio/sdk · 33 matches[0m
-[0m✱ [0mGrep "alexisbouchez|softwarecitadel|gladia\.ts"[90m in reposcan-raw/gladiaio · 0 matches[0m
-Now I have a complete picture. Let me classify all the hits and produce the verdict.
+### Classification Tables
+
+#### REAL_SECRET
+| File | Line | SHA256 (truncated) | Context |
+|------|------|-------------------|---------|
+| *none* | — | — | No hardcoded live credentials found |
+
+#### TEST_OR_EXAMPLE
+| File | Line | Type | Notes |
+|------|------|------|-------|
+| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740, 905, 908 | test fixture | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` |
+| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409, 411 | test fixture | `expired-access-token`, `rotating-refresh-token` |
+| vercel-ai/packages/openai/src/**/*.test.ts | 13-3310 | test fixture | ~40 occurrences of `apiKey: 'test-api-key'` |
+| vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13, 277 | test fixture | `apiKey: 'test-api-key'` |
+| vercel-ai/packages/togetherai/src/togetherai-provider.test.ts | 99, 112, 165 | test fixture | `custom-key`, `explicit-key`, `test-api-key` |
+| vercel-ai/packages/google-vertex/src/**/*.test.ts | 5, 21, 68, 134, 150, 187, 405, 419, 95 | test fixture | `mocked-token`, `mock.jwt.token`, `invalid-key`, `test-api-key` |
+| vercel-ai/packages/amazon-bedrock/src/**/*.test.ts | 55, 100, 128, 152, 158, 209, 331, 442 | test fixture | `test-session-token`, `dynamic-session-token`, `static-session-token`, `test-api-key-123`, `test-token` |
+| vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts | 48 | doc placeholder | `* apiKey: 'your-api-key-here'` (JSDoc example) |
+| vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json | 36 | test fixture | Encrypted content blob (test data) |
+
+#### ENDPOINT_LEAK
+| File | Line | Endpoint | Notes |
+|------|------|----------|-------|
+| *none* | — | — | No internal/dev/staging endpoints leaked; all refs are to public provider APIs |
+
+#### INTERESTING
+| File | Line | Finding | Risk |
+|------|------|---------|------|
+| vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166, 171 | Explicit SSRF protection: `deniedCIDRs: ['169.254.169.254/32']` blocks cloud metadata endpoint | **Defensive control** — not a vuln; confirms sandbox isolates metadata IP |
+| vercel-ai/.github/tigent.yml | 30 | Provider allowlist for tigent (auto-review bot) | Operational config; no risk |
+| vercel-ai/pnpm-lock.yaml / tsconfig.json | — | `@ai-sdk/gladia` local package link (`link:../../packages/gladia`) | Confirms `@ai-sdk/gladia` is an official provider in this monorepo (not supply-chain risk) |
 
 ---
 
-### CLASSIFICATION TABLES
+### Verdict
 
-#### REAL_SECRET
-| File | Line | Classification | Notes |
-|------|------|----------------|-------|
-| *(none)* | — | — | No hardcoded live credentials found |
+| Candidate | REPORT_CANDIDATE | Reason |
+|-----------|------------------|--------|
+| All `test-api-key` / `secret123` / `mocked-token` fixtures | **no** | Standard test fixtures in `*.test.ts` and `__fixtures__/` |
+| `@ai-sdk/gladia` local package reference | **no** | Official provider in Vercel AI SDK monorepo (gladiaio fork) |
+| SSRF protection `deniedCIDRs: ['169.254.169.254/32']` | **no** | Security hardening, not exposure |
+| No live secrets, no internal endpoints, no misconfig | **no** | — |
 
-#### TEST_OR_EXAMPLE
-| File | Line | Pattern | Notes |
-|------|------|---------|-------|
-| `packages/openai/**/*.test.ts` | multiple | `apiKey: 'test-api-key'` | OpenAI provider test fixtures |
+**Overall: 0 reportable findings this cycle.** Delta is clean (0 new hit lines). All hits are pre-existing test infrastructure in the Vercel AI SDK monorepo.
