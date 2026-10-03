@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-02 23:47:01 UTC =====
+===== REPOSCAN 2026-10-03 02:04:21 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5693 code/config files scanned, 654 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,96 +46,120 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mls -la reposcan-raw/gladiaio/
-total 60
-drwxr-xr-x 15 runner runner 4096 Oct  2 23:46 .
-drwxr-xr-x  4 runner runner 4096 Oct  2 23:46 ..
-drwxr-xr-x  9 runner runner 4096 Oct  2 23:46 compare-stt
-drwxr-xr-x  9 runner runner 4096 Oct  2 23:46 docs
-drwxr-xr-x  7 runner runner 4096 Oct  2 23:46 gladia-cli
-drwxr-xr-x 11 runner runner 4096 Oct  2 23:46 gladia-quiz-app
-drwxr-xr-x 11 runner runner 4096 Oct  2 23:46 gladia-samples
-drwxr-xr-x  9 runner runner 4096 Oct  2 23:46 gladiaflow
-drwxr-xr-x  7 runner runner 4096 Oct  2 23:46 n8n-nodes-gladia
-drwxr-xr-x  8 runner runner 4096 Oct  2 23:46 normalization
-drwxr-xr-x 12 runner runner 4096 Oct  2 23:46 num2words2
-drwxr-xr-x  9 runner runner 4096 Oct  2 23:46 realtime-multilingual-asr-router
-drwxr-xr-x 10 runner runner 4096 Oct  2 23:46 sdk
-drwxr-xr-x  7 runner runner 4096 Oct  2 23:46 skills
-drwxr-xr-x 18 runner runner 4096 Oct  2 23:46 vercel-ai
+[0m$ [0mfind reposcan-raw/gladiaio -type f -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" -o -name "*.py" -o -name "*.rs" -o -name "*.go" -o -name "*.md" -o -name "*.toml" | head -100
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/shopify-mcp/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/repro-test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/image-content/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-ui/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/sse/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/sse/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-info/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-info/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-meta/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-meta/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-definitions/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-definitions/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-resources/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-resources/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/stdio/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/stdio/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/README.md
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/package.json
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/shared/notification-schema.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/chat.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/use-chat-request.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/completion.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/use-object.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/use-chat-tools.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/chat-with-vision.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/nuxt.config.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/README.md
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/package.json
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/tailwind.config.ts
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/postcss.config.js
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/vite.config.ts
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/lib/components/ui/button/index.ts
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/lib/components/ui/textarea/index.ts
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/lib/utils.ts
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/app.d.ts
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/routes/structured-object/schema.ts
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/routes/api/structured-object/+server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/routes/api/chat/+server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/routes/api/completion/+server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/README.md
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/package.json
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/svelte.config.js
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/components.json
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/turbo.json
+reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/next.config.js
+reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/postcss.config.js
+reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/sentry.server.config.ts
+reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/app/api/text/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/instrumentation.ts
+reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/README.md
+reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/package.json
+reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/instrumentation-client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/sentry.edge.config.ts
+reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/tailwind.config.js
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/next.config.js
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/lib/tools/weather-tool.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/lib/weather-utils.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/lib/utils.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/postcss.config.js
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/claude-code/ai-sdk-coding/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/claude-code/weather-approval/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/claude-code/basic/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/claude-code/basic-with-stop/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/claude-code/weather/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/pi/ai-sdk-coding/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/pi/weather-approval/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/pi/basic/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/pi/basic-with-stop/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/pi/weather/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/codex/ai-sdk-coding/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/codex/weather-approval/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/codex/basic/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/codex/basic-with-stop/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/codex/weather/route.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/claude-code/ai-sdk-coding-agent.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/claude-code/weather-agent.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/claude-code/weather-approval-agent.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/claude-code/basic-agent.ts
+reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/pi/ai-sdk-coding-agent.ts
 [0m
-[0m$ [0mgrep -r "169.254.169.254" reposcan-raw/gladiaio/ --include="*.ts" --include="*.js" --include="*.json" --include="*.yaml" --include="*.yml"
-reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:        deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:          subnets: { deny: ['169.254.169.254/32'] },
-reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:      download({ url: new URL('http://169.254.169.254/latest/meta-data/') }),
-reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:        location: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.ts:  // e.g. ::ffff:127.0.0.1 or 64:ff9b::169.254.169.254 are blocked.
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:      .mockResolvedValueOnce(redirectResponse('http://169.254.169.254/'));
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:      .mockResolvedValueOnce(redirectWithBody('http://169.254.169.254/'));
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:      downloadBlob('http://169.254.169.254/latest/meta-data/'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:          location: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://169.254.169.254/latest/meta-data/'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block ::ffff:169.254.169.254', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[::ffff:169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block NAT64 64:ff9b::169.254.169.254 (metadata)', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[64:ff9b::169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block NAT64 local-use 64:ff9b:1::169.254.169.254', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[64:ff9b:1::169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['10.5.0.0/16', '169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:            url: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:        server.calls.some(call => call.requestUrl.includes('169.254.169.254')),
+[0m$ [0mls reposcan-raw/gladiaio/
+compare-stt
+docs
+gladia-cli
+gladia-quiz-app
+gladia-samples
+gladiaflow
+n8n-nodes-gladia
+normalization
+num2words2
+realtime-multilingual-asr-router
+sdk
+skills
+vercel-ai
 [0m
-### Classification Tables
-
-#### REAL_SECRET
-| File | Line | SHA256 (truncated) | Context |
-|------|------|-------------------|---------|
-| *none found* | | | All secrets are test fixtures |
-
-#### TEST_OR_EXAMPLE
-| File | Line | Type | Notes |
-|------|------|------|-------|
-| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740 | test secret | `client_secret: 'secret123'` |
-| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 905 | test token | `access_token: 'access123'` |
-| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 908 | test token | `refresh_token: 'refresh123'` |
-| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409 | test token | `access_token: 'expired-access-token'` |
-| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 411 | test token | `refresh_token: 'rotating-refresh-token'` |
-| vercel-ai/packages/openai/src/**/*.test.ts | multiple | test key | `apiKey: 'test-api-key'` (20+ occurrences) |
-| vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json | 36 | fixture | `encrypted_content: "gAAAAABplLP75yhVf0v4..."` |
-| vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13,277 | test key | `apiKey: 'test-api-key'` / `'custom-key'` |
-| vercel-ai/packages/togetherai/src/**/*.test.ts | multiple | test key | `apiKey: 'test-api-key'`, `'custom-key'`, `'explicit-key'` |
-| vercel-ai/packages/google-vertex/src/**/*.test.ts | multiple | test key/token | `apiKey: 'test-api-key'`, mocked tokens |
-| vercel-ai/packages/amazon-bedrock/src/**/*.test.ts | multiple | test token | `sessionToken: 'test-session-token'`, `'dynamic-session-token'` |
-| vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts | 48 | comment | Example: `apiKey: 'your-api-key-here'` |
-| vercel-ai/packages/prodia/src/prodia-video-model.test.ts | | test URL | `http://169.254.169.254/latest/meta-data/` (SSRF test) |
-
-#### ENDPOINT_LEAK
-| File | Line | Endpoint | Notes |
-|------|------|----------|-------|
-| *none found* | | | No internal/dev/staging URLs leaked |
-
-#### INTERESTING
-| File | Line | Finding | Severity |
-|------|------|---------|----------|
-| vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166,171 | SSRF defense test: `deniedCIDRs: ['169.254.169.254/32']` | ✅ Good - confirms metadata IP blocking |
-| vercel-ai/packages/ai/src/util/download/download.test.ts | | SSRF test vectors targeting `169.254.169.254` | ✅ Good - tests metadata blocking |
-| vercel-ai/packages/provider-utils/src/validate-download-url.ts | | Comment documents IPv4-mapped IPv6 & NAT64 metadata IP blocking | ✅ Good - comprehensive SSRF defense |
-| vercel-ai/packages/provider-utils/src/validate-download-url.test.ts | | Tests for `::ffff:169.254.169.254`, `64:ff9b::169.254.169.254` blocking | ✅ Good - IPv6 metadata blocking |
-| vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts | | Sandbox network deny list includes `169.254.169.254/32` | ✅ Good - defense in depth |
-| vercel-ai/pnpm-lock.yaml | 289-291 | `@ai-sdk/gladia` linked as local package `../../packages/gladia` | ℹ️ Confirms vercel-ai Gladia integration |
-| vercel-ai/.github/tigent.yml | 30 | Provider list includes `provider/gladia` (not shown but implied by lockfile) | ℹ️ CI integration |
-| vercel-ai/tools/analyze-downloads/src/analyze-providers.ts | 21 | Imports `@ai-sdk/gladia` for download analysis | ℹ️ Tooling reference |
-
----
-
-### Verdict List
-
-| Candidate | REPORT_CANDIDATE | Reason |
-|-----------|------------------|--------|
-| Hardcoded secrets in test files | **no** | All are `test-api-key`, `secret123`, `access123` — obvious fixtures |
-| Cloud metadata IP (169.254.169.254) in tests | **no** | Defensive test vectors proving SSRF protection, not vulnerability |
-| `@ai-sdk/gladia` vercel-ai integration | **no** | Official org integration, already documented in RAG |
-| No live endpoints, keys, or internal URLs leaked | **no** | Scan clean for actual secrets |
-
-**Overall: No reportable findings this cycle.** The 169.254.169.254 references are *positive* — they demonstrate the codebase actively tests SSRF defenses against cloud metadata endpoints. All other hits are test fixtures or documented integrations.
