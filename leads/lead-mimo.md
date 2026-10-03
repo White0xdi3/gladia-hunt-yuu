@@ -1965,3 +1965,4 @@ testability: PASSIVE
 [RISK] app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap is live and chainable to OAuth code theft → ATO via HUMAN_ONLY post-auth step, highest gate_ease
 [RISK] sdk: 85 reason: orphaned maintainer 404 with "Official" description + WebSocket query key leakage = supply-chain hijack risk critical; passive verifiable, confusion vector with official @gladiaio/sdk@2.1.0; PyPI gladiaio-sdk unverified parity adds additional surface
 ## 2026-10-03 05:12:11 UTC [api] (model mimo)
+## 2026-10-03 11:36:59 UTC [app] (model mimo)
