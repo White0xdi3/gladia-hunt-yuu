@@ -1,7 +1,7 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -50
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
@@ -22,958 +22,108 @@ reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/sse/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/sse/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-info/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-info/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-meta/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-meta/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-definitions/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-definitions/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-resources/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-resources/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/stdio/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/stdio/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/package.json
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/shared/notification-schema.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/chat.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/use-chat-request.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/completion.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/use-object.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/use-chat-tools.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/chat-with-vision.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/nuxt.config.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/package.json
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/tailwind.config.ts
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/postcss.config.js
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/vite.config.ts
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/lib/components/ui/button/index.ts
 [0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [limit=30, offset=160][0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts[90m [offset=735, limit=30][0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts[90m [limit=20, offset=405][0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml[90m [limit=20, offset=285][0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "gladia" reposcan-raw/gladiaio/vercel-ai/packages/gladia 2>/dev/null | head -50
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:# @ai-sdk/gladia
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- 7948763: fix(provider/gladia): Invalid `model` param removed
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- 7948763: fix(provider/gladia): Invalid `model` parameter being passed
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:  fix(provider/gladia): `experimental_transcribe` fails with valid Buffer
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- 84d4b2b: fix (provider/gladia): correct workspace dependencies
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- cf822aa: feat(providers/gladia): add transcribe
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- 84d4b2b: fix (provider/gladia): correct workspace dependencies
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- cf822aa: feat(providers/gladia): add transcribe
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:import { GladiaTranscriptionModel } from './gladia-transcription-model';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:        'x-gladia-key': loadApiKey({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:      `ai-sdk/gladia/${VERSION}`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:      provider: `gladia.transcription`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:      url: ({ path }) => `https://api.gladia.io${path}`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:export const gladia = createGladia();
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:export { createGladia, gladia } from './gladia-provider';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:export type { GladiaProvider, GladiaProviderSettings } from './gladia-provider';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:export type { GladiaTranscriptionModelOptions } from './gladia-transcription-model-options';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:// https://docs.gladia.io/api-reference/v2/pre-recorded/init
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:export const gladiaTranscriptionModelOptionsSchema = z.object({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:  typeof gladiaTranscriptionModelOptionsSchema
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:export const gladiaErrorDataSchema = z.object({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:export type GladiaErrorData = z.infer<typeof gladiaErrorDataSchema>;
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:export const gladiaFailedResponseHandler = createJsonErrorResponseHandler({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:  errorSchema: gladiaErrorDataSchema,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:import { GladiaTranscriptionModel } from './gladia-transcription-model';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:import { createGladia } from './gladia-provider';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:  fs.readFileSync('src/__fixtures__/gladia-upload.json', 'utf8'),
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:  fs.readFileSync('src/__fixtures__/gladia-initiate.json', 'utf8'),
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:  fs.readFileSync('src/__fixtures__/gladia-result.json', 'utf8'),
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:  'https://api.gladia.io/v2/upload': {
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:  'https://api.gladia.io/v2/pre-recorded': {},
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:  server.urls['https://api.gladia.io/v2/pre-recorded'].response = {
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:      server.urls['https://api.gladia.io/v2/pre-recorded'].response = {
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:      expect(pollCall!.requestHeaders['x-gladia-key']).toBeUndefined();
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:        'x-gladia-key': 'test-api-key',
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:        `ai-sdk/gladia/0.0.0-test`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:        url: ({ path }) => `https://api.gladia.io${path}`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:        url: ({ path }) => `https://api.gladia.io${path}`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:        url: ({ path }) => `https://api.gladia.io${path}`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:import type { GladiaConfig } from './gladia-config';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:import { gladiaFailedResponseHandler } from './gladia-error';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:import { gladiaTranscriptionModelOptionsSchema } from './gladia-transcription-model-options';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:import type { GladiaTranscriptionInitiateAPITypes } from './gladia-api-types';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:    const gladiaOptions = await parseProviderOptions({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:      provider: 'gladia',
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:      schema: gladiaTranscriptionModelOptionsSchema,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:    if (gladiaOptions) {
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:      body.context_prompt = gladiaOptions.contextPrompt ?? undefined;
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:      body.custom_vocabulary = gladiaOptions.customVocabulary ?? undefined;
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:      body.detect_language = gladiaOptions.detectLanguage ?? undefined;
 [0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/gladia/
-total 72
-drwxr-xr-x  3 runner runner  4096 Oct  3 19:50 .
-drwxr-xr-x 68 runner runner  4096 Oct  3 19:50 ..
--rw-r--r--  1 runner runner 26407 Oct  3 19:50 CHANGELOG.md
--rw-r--r--  1 runner runner  1376 Oct  3 19:50 README.md
--rw-r--r--  1 runner runner  2030 Oct  3 19:50 package.json
-drwxr-xr-x  4 runner runner  4096 Oct  3 19:50 src
--rw-r--r--  1 runner runner   139 Oct  3 19:50 tsconfig.build.json
--rw-r--r--  1 runner runner   404 Oct  3 19:50 tsconfig.json
--rw-r--r--  1 runner runner   337 Oct  3 19:50 tsup.config.ts
--rw-r--r--  1 runner runner   119 Oct  3 19:50 turbo.json
--rw-r--r--  1 runner runner   328 Oct  3 19:50 vitest.edge.config.js
--rw-r--r--  1 runner runner   320 Oct  3 19:50 vitest.node.config.js
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "test-api-key\|secret123\|access123\|refresh123\|mocked-token\|custom-key\|explicit-key" reposcan-raw/gladiaio/vercel-ai --include="*.test.ts" | wc -l
+492
 [0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
-[0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/
-total 120
-drwxr-xr-x 4 runner runner  4096 Oct  3 19:50 .
-drwxr-xr-x 3 runner runner  4096 Oct  3 19:50 ..
-drwxr-xr-x 2 runner runner  4096 Oct  3 19:50 __fixtures__
-drwxr-xr-x 2 runner runner  4096 Oct  3 19:50 __snapshots__
--rw-r--r-- 1 runner runner  5100 Oct  3 19:50 gladia-api-types.ts
--rw-r--r-- 1 runner runner   285 Oct  3 19:50 gladia-config.ts
--rw-r--r-- 1 runner runner  1197 Oct  3 19:50 gladia-error.test.ts
--rw-r--r-- 1 runner runner   462 Oct  3 19:50 gladia-error.ts
--rw-r--r-- 1 runner runner  2841 Oct  3 19:50 gladia-provider.ts
--rw-r--r-- 1 runner runner  7021 Oct  3 19:50 gladia-transcription-model-options.ts
--rw-r--r-- 1 runner runner  6112 Oct  3 19:50 gladia-transcription-model.test.ts
--rw-r--r-- 1 runner runner 12356 Oct  3 19:50 gladia-transcription-model.ts
--rw-r--r-- 1 runner runner   269 Oct  3 19:50 index.ts
--rw-r--r-- 1 runner runner 40169 Oct  3 19:50 transcript-test.mp3
--rw-r--r-- 1 runner runner   235 Oct  3 19:50 version.ts
-[0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts
-[0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/
-total 32
-drwxr-xr-x 2 runner runner  4096 Oct  3 19:50 .
-drwxr-xr-x 4 runner runner  4096 Oct  3 19:50 ..
--rw-r--r-- 1 runner runner   145 Oct  3 19:50 gladia-initiate.json
--rw-r--r-- 1 runner runner 15491 Oct  3 19:50 gladia-result.json
--rw-r--r-- 1 runner runner   292 Oct  3 19:50 gladia-upload.json
-[0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-initiate.json
-[0m
-[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio -type f \( -name "*.env*" -o -name "*.secret*" -o -name "*secret*" -o -name "*credential*" -o -name "*token*" \) 2>/dev/null | head -20
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/.env.example
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/.env.example
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/.env.local.example
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/next-google-vertex/.env.local.example
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/xai-tts-demo/.env.example
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/next-workflow/.env.local.example
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/fastify/.env.example
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/node-http-server/.env.example
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/next/.env.local.example
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/nest/.env.example
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/next-agent/.env.local.example
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/generate-text/openai/cached-prompt-tokens.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/generate-text/google/modality-token-details.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/generate-text/anthropic/auth-token.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/stream-text/openai/cached-prompt-tokens.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/stream-text/openai/output-object-token-usage.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/stream-text/google/modality-token-details.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/.env.example
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/next-fastapi/.env.local.example
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/hono/.env.example
-[0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/examples/mcp/.env.example
-[0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/
-total 328
-drwxr-xr-x 10 runner runner   4096 Oct  3 19:50 .
-drwxr-xr-x 15 runner runner   4096 Oct  3 19:50 ..
-drwxr-xr-x  3 runner runner   4096 Oct  3 19:50 .cursor
--rw-r--r--  1 runner runner    135 Oct  3 19:50 .editorconfig
-drwxr-xr-x  8 runner runner   4096 Oct  3 19:50 .git
--rw-r--r--  1 runner runner    212 Oct  3 19:50 .gitattributes
-drwxr-xr-x  3 runner runner   4096 Oct  3 19:50 .github
--rw-r--r--  1 runner runner    191 Oct  3 19:50 .gitignore
--rw-r--r--  1 runner runner    113 Oct  3 19:50 .npmrc
--rw-r--r--  1 runner runner    103 Oct  3 19:50 .prettierignore
--rw-r--r--  1 runner runner    127 Oct  3 19:50 .prettierrc
-drwxr-xr-x  2 runner runner   4096 Oct  3 19:50 .vscode
--rw-r--r--  1 runner runner   3032 Oct  3 19:50 CONTRIBUTING.md
--rw-r--r--  1 runner runner   1063 Oct  3 19:50 LICENSE
--rw-r--r--  1 runner runner  10963 Oct  3 19:50 README.md
--rw-r--r--  1 runner runner     98 Oct  3 19:50 audit-ci.jsonc
--rw-r--r--  1 runner runner 219285 Oct  3 19:50 bun.lock
--rw-r--r--  1 runner runner     29 Oct  3 19:50 bunfig.toml
--rw-r--r--  1 runner runner    239 Oct  3 19:50 commitlint.config.cts
-drwxr-xr-x  2 runner runner   4096 Oct  3 19:50 data
-drwxr-xr-x  6 runner runner   4096 Oct  3 19:50 e2e
--rw-r--r--  1 runner runner   1358 Oct  3 19:50 eslint.config.mjs
--rw-r--r--  1 runner runner   3525 Oct  3 19:50 nx.json
--rw-r--r--  1 runner runner   1062 Oct  3 19:50 package.json
-drwxr-xr-x  5 runner runner   4096 Oct  3 19:50 packages
-drwxr-xr-x  3 runner runner   4096 Oct  3 19:50 tools
--rw-r--r--  1 runner runner     86 Oct  3 19:50 vitest.workspace.mjs
-[0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/
-total 20
-drwxr-xr-x  5 runner runner 4096 Oct  3 19:50 .
-drwxr-xr-x 10 runner runner 4096 Oct  3 19:50 ..
-drwxr-xr-x  3 runner runner 4096 Oct  3 19:50 generator
-drwxr-xr-x  4 runner runner 4096 Oct  3 19:50 sdk-js
-drwxr-xr-x  5 runner runner 4096 Oct  3 19:50 sdk-python
-[0m
-[0m$ [0mgrep -r "api.gladia.io\|x-gladia-key\|GLADIA_API_KEY" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/ 2>/dev/null | head -30
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:  it('injects x-gladia-key when apiKey is set', () => {
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-key']).toBe('key-123')
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-key']).toBe('abc')
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-key']).toBe('abc')
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts: * x-gladia-key must not be forwarded on cross-origin redirects.
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:  it('does not forward x-gladia-key when HttpClient follows a cross-origin redirect', async () => {
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:        'x-gladia-key': secretKey,
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(originCaptured[0]?.headers['x-gladia-key']).toBe(secretKey)
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-key']).toBeUndefined()
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:  it('does not forward x-gladia-key when preRecorded.getFile follows a cross-origin redirect', async () => {
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-key']).toBeUndefined()
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:  it('does not forward x-gladia-key when live.getFile follows a cross-origin redirect', async () => {
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-key']).toBeUndefined()
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.ts:const CROSS_ORIGIN_SENSITIVE_HEADERS = new Set(['x-gladia-key', 'authorization', 'cookie'])
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts:  first: 'https://api.gladia.io/v2/live?offset=0&limit=20',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts:  current: 'https://api.gladia.io/v2/live?offset=0&limit=20',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts:    apiUrl: 'https://api.gladia.io',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts:    httpHeaders: { 'x-gladia-key': 'test-key' },
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts:    const parsed = new URL(String(url), 'https://api.gladia.io')
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts:    const next = 'https://api.gladia.io/v2/live?offset=20&limit=20&status=done'
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts:    apiUrl: 'https://api.gladia.io',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts:    httpHeaders: { 'x-gladia-key': 'test-key' },
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts:      url: 'wss://api.gladia.io/v2/live/ws?token=created',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts:    expect(createSessionSpy).toHaveBeenCalledWith('wss://api.gladia.io/v2/live/ws?token=created')
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts:      url: 'wss://api.gladia.io/v2/live/ws?token=created',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts:      url: 'wss://api.gladia.io/v2/live/ws?token=abc',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts:      url: 'wss://api.gladia.io/v2/live/ws?token=abc',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts:    expect(mockCreateSession).toHaveBeenCalledWith('wss://api.gladia.io/v2/live/ws?token=created')
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts:      url: 'wss://api.gladia.io/v2/live/ws?token=created',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/build-list-url.test.ts:    const next = 'https://api.gladia.io/v2/pre-recorded?status=done&offset=20&limit=20'
-[0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/generator/
-total 28
-drwxr-xr-x 3 runner runner 4096 Oct  3 19:50 .
-drwxr-xr-x 5 runner runner 4096 Oct  3 19:50 ..
--rw-r--r-- 1 runner runner  160 Oct  3 19:50 README.md
--rw-r--r-- 1 runner runner  698 Oct  3 19:50 package.json
--rw-r--r-- 1 runner runner  547 Oct  3 19:50 project.json
-drwxr-xr-x 3 runner runner 4096 Oct  3 19:50 src
--rw-r--r-- 1 runner runner  137 Oct  3 19:50 tsconfig.json
-[0m
-[0m$ [0mcat /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/generator/src/*
-import { Command } from 'commander'
-import * as process from 'process'
-import { Generator } from './generator.ts'
-
-interface CliOptions {
-  url: string
-}
-
-const program = new Command()
-
-program
-  .name('gladia-generator')
-  .description('Generate SDK code from OpenAPI schema')
-  .version('1.0.0')
-  .option('-u, --url <url>', 'OpenAPI schema URL', 'https://api.gladia.io/openapi.json')
-  .action(async (options: CliOptions) => {
-    try {
-      const generator = new Generator({
-        schemaUrl: options.url,
-      })
-
-      await generator.generate()
-      console.log('✅ Code generation completed successfully!')
-    } catch (error) {
-      console.error('❌ Generation failed:', error)
-      process.exit(1)
-    }
-  })
-
-program.parse()
-import { BaseGenerator } from './generators/base.ts'
-import { PythonGenerator } from './generators/python.ts'
-import { TypeScriptGenerator } from './generators/typescript.ts'
-import { buildListParamsSchema, collectAllReferencedObject } from './helpers.ts'
-import { fetchSchema } from './schema-fetcher.ts'
-import type {
-  LiveV2Schemas,
-  OpenAPIObject,
-  PreRecordedV2Schemas,
-  ReferencedSchemaObject,
-} from './types.ts'
-
-export interface GeneratorOptions {
-  schemaUrl: string
-}
-
-export class Generator {
-  private options: GeneratorOptions
-  private generators: BaseGenerator[] = []
-
-  constructor(options: GeneratorOptions) {
-    this.options = options
-    this.generators.push(new TypeScriptGenerator())
-    this.generators.push(new PythonGenerator())
-  }
-
-  async generate(): Promise<void> {
-    console.log(`Fetching OpenAPI schema from: ${this.options.schemaUrl}`)
-    const openapi = await fetchSchema(this.options.schemaUrl)
-    console.log(`Schema loaded`)
-
-    // Live V2
-    const liveV2Schemas = this.preProcessSchemaForLiveV2(openapi)
-    for (const generator of this.generators) {
-      await generator.generateLiveV2(liveV2Schemas)
-    }
-
-    // Pre-recorded V2
-    const preRecordedV2Schemas = this.preProcessSchemaForPreRecordedV2(openapi)
-    for (const generator of this.generators) {
-      await generator.generatePreRecordedV2(preRecordedV2Schemas)
-    }
-  }
-
-  private preProcessSchemaForLiveV2(openapi: OpenAPIObject): LiveV2Schemas {
-    const initRequestRef = `#/components/schemas/StreamingRequest`
-    const initResponseRef = `#/components/schemas/InitStreamingResponse`
-    const getResponseRef = `#/components/schemas/StreamingResponse`
-    const listResponseRef = `#/components/schemas/ListStreamingResponse`
-    const listParamsKey = 'ListParams'
-    const wsMessagesRef: string[] = []
-    const callbackMessagesRef: string[] = []
-    const webhookMessagesRef: string[] = []
-    const referencedTypes: Map<string, ReferencedSchemaObject> = new Map()
-
-    collectAllReferencedObject({ $ref: initRequestRef }, openapi, referencedTypes)
-    collectAllReferencedObject({ $ref: initResponseRef }, openapi, referencedTypes)
-    collectAllReferencedObject({ $ref: getResponseRef }, openapi, referencedTypes)
-    collectAllReferencedObject({ $ref: listResponseRef }, openapi, referencedTypes)
-
-    buildListParamsSchema(
-      openapi,
-      '/v2/live',
-      listParamsKey,
-      'Query parameters for listing live transcription jobs',
-      referencedTypes
-    )
-
-    for (const key of Object.keys(openapi.components?.schemas ?? {})) {
-      if (key.match(/^CallbackLive.*Message$/)) {
-        const ref = `#/components/schemas/${key}`
-        callbackMessagesRef.push(ref)
-        collectAllReferencedObject({ $ref: ref }, openapi, referencedTypes)
-
-        const wsRef = `#/components/schemas/${key.replace('CallbackLive', '')}`
-        wsMessagesRef.push(wsRef)
-        collectAllReferencedObject({ $ref: wsRef }, openapi, referencedTypes)
-      } else if (key.match(/^WebhookLive.*Payload$/)) {
-        const ref = `#/components/schemas/${key}`
-        webhookMessagesRef.push(ref)
-        collectAllReferencedObject({ $ref: ref }, openapi, referencedTypes)
-      }
-    }
-
-    return referencedTypes.entries().reduce<LiveV2Schemas>(
-      (acc, [ref, refObject]) => {
-        if (ref === initRequestRef) {
-          refObject.typeName = `Init${refObject.typeName}`
-          acc.initRequest = refObject
-        } else if (ref === initResponseRef) {
-          acc.initResponse = refObject
-        } else if (ref === getResponseRef) {
-          acc.getResponse = refObject
-        } else if (ref === listResponseRef) {
-          acc.listResponse = refObject
-        } else if (ref === listParamsKey) {
-          acc.listParams = refObject
-        } else if (wsMessagesRef.includes(ref)) {
-          acc.wsMessages.push(refObject)
-        } else if (callbackMessagesRef.includes(ref)) {
-          acc.callbackMessages.push(refObject)
-        } else if (webhookMessagesRef.includes(ref)) {
-          refObject.typeName = refObject.typeName.replace(/Payload/, 'Message')
-          acc.webhookMessages.push(refObject)
-        } else {
-          acc.referencedTypes.push(refObject)
-        }
-
-        this.renameObjectForLiveV2(refObject)
-
-        return acc
-      },
-      {
-        initRequest: referencedTypes.get(initRequestRef)!,
-        initResponse: referencedTypes.get(initResponseRef)!,
-        getResponse: referencedTypes.get(getResponseRef)!,
-        listResponse: referencedTypes.get(listResponseRef)!,
-        listParams: referencedTypes.get(listParamsKey)!,
-        wsMessages: [],
-        callbackMessages: [],
-        webhookMessages: [],
-        referencedTypes: [],
-      }
-    )
-  }
-
-  private renameObjectForLiveV2(refObject: ReferencedSchemaObject): void {
-    refObject.typeName = refObject.typeName.replace(/(live|streaming|dto|supported|s?enum$)/gi, '')
-    if (refObject.schema.enum) {
-      refObject.typeName = refObject.typeName.replace(/(s$)/gi, '')
-    }
-    refObject.typeName = `LiveV2${refObject.typeName}`
-  }
-
-  private preProcessSchemaForPreRecordedV2(openapi: OpenAPIObject): PreRecordedV2Schemas {
-    const uploadRequestKey = 'UploadRequest'
-    const uploadResponseRef = `#/components/schemas/AudioUploadResponse`
-    const initRequestRef = `#/components/schemas/InitTranscriptionRequest`
-    const initResponseRef = `#/components/schemas/InitPreRecordedTranscriptionResponse`
-    const resultResponseRef = `#/components/schemas/PreRecordedResponse`
-    const listResponseRef = `#/components/schemas/ListPreRecordedResponse`
-    const listParamsKey = 'ListParams'
-
-    const rootRefs = [
-      uploadResponseRef,
-      initRequestRef,
-      initResponseRef,
-      resultResponseRef,
-      listResponseRef,
-    ]
-    const referencedTypes: Map<string, ReferencedSchemaObject> = new Map()
-
-    for (const ref of rootRefs) {
-      collectAllReferencedObject({ $ref: ref }, openapi, referencedTypes)
-    }
-    const uploadRequestBody = openapi.paths?.['/v2/upload']?.post?.requestBody
-
-    const uploadRequestSchema =
-      uploadRequestBody && !('$ref' in uploadRequestBody)
-        ? uploadRequestBody.content?.['application/json']?.schema
-        : undefined
-
-    if (uploadRequestSchema && !('$ref' in uploadRequestSchema)) {
-      referencedTypes.set(uploadRequestKey, {
-        originalName: uploadRequestKey,
-        typeName: uploadRequestKey,
-        description: 'Upload request body',
-        schema: uploadRequestSchema as ReferencedSchemaObject,
-      })
-    }
-
-    buildListParamsSchema(
-      openapi,
-      '/v2/pre-recorded',
-      listParamsKey,
-      'Query parameters for listing pre-recorded transcription jobs',
-      referencedTypes
-    )
-
-    return referencedTypes.entries().reduce<PreRecordedV2Schemas>(
-      (acc, [ref, refObject]) => {
-        if (ref === uploadRequestKey) {
-          acc.uploadRequest = refObject
-        } else if (ref === uploadResponseRef) {
-          acc.uploadResponse = refObject
-        } else if (ref === initRequestRef) {
-          acc.initRequest = refObject
-        } else if (ref === initResponseRef) {
-          acc.initResponse = refObject
-        } else if (ref === resultResponseRef) {
-          acc.resultResponse = refObject
-        } else if (ref === listResponseRef) {
-          acc.listResponse = refObject
-        } else if (ref === listParamsKey) {
-          acc.listParams = refObject
-        } else {
-          acc.referencedTypes.push(refObject)
-        }
-
-        this.renameObjectForPreRecordedV2(refObject)
-
-        return acc
-      },
-      {
-        uploadRequest: referencedTypes.get(uploadRequestKey)!,
-        uploadResponse: referencedTypes.get(uploadResponseRef)!,
-        initRequest: referencedTypes.get(initRequestRef)!,
-        initResponse: referencedTypes.get(initResponseRef)!,
-        resultResponse: referencedTypes.get(resultResponseRef)!,
-        listResponse: referencedTypes.get(listResponseRef)!,
-        listParams: referencedTypes.get(listParamsKey)!,
-        referencedTypes: [],
-      }
-    )
-  }
-
-  private renameObjectForPreRecordedV2(refObject: ReferencedSchemaObject): void {
-    refObject.typeName = refObject.typeName.replace(/(pre.?recorded|dto|supported|s?enum$)/gi, '')
-    if (refObject.schema.enum) {
-      refObject.typeName = refObject.typeName.replace(/(s$)/gi, '')
-    }
-    refObject.typeName = `PreRecordedV2${refObject.typeName}`
-  }
-}
-import { existsSync } from 'fs'
-import { isReferenceObject } from 'openapi3-ts/oas31'
-import * as path from 'path'
-
-import {
-  type OpenAPIObject,
-  type ReferencedSchemaObject,
-  type ReferenceObject,
-  type SchemaObject,
-  type SchemaObjectRefLess,
-  type SchemaOrReference,
-} from './types.ts'
-
-export { isReferenceObject }
-
-export function getSdkFolder(sdk: string) {
-  const folder = path.join(new URL('.', import.meta.url).pathname, '..', '..', sdk)
-  if (!existsSync(folder)) {
-    throw new Error(`No folder found for sdk ${sdk} at path ${folder}`)
-  }
-  return folder
-}
-
-export function isReferencedSchemaObject(
-  schema: SchemaObjectRefLess | ReferencedSchemaObject
-): schema is ReferencedSchemaObject {
-  return Boolean(
-    'originalName' in schema &&
-      schema['originalName'] &&
-      'typeName' in schema &&
-      schema['typeName'] &&
-      'schema' in schema &&
-      schema['schema']
-  )
-}
-
-export function collectAllReferencedObject(
-  { $ref, description, summary }: ReferenceObject,
-  openapi: OpenAPIObject,
-  acc: Map<string, ReferencedSchemaObject>
-): void {
-  // Check if this reference is already processed
-  if (acc.has($ref)) {
-    return
-  }
-
-  const refParts = $ref.split('/')
-  const name = refParts[refParts.length - 1]
-  let currentDescription = description
-  let currentSummary = summary
-
-  // Follow the reference chain to find the final schema
-  let referencedObject = openapi.components?.schemas?.[name]
-
-  // Follow reference chain without collecting intermediate references
-  while (isReferenceObject(referencedObject)) {
-    currentDescription ||= referencedObject.description
-    currentSummary ||= referencedObject.summary
-    const nextRefParts: string[] = referencedObject.$ref.split('/')
-    const nextName: string = nextRefParts[nextRefParts.length - 1]
-    referencedObject = openapi.components?.schemas?.[nextName]
-  }
-
-  if (!referencedObject) {
-    throw new Error(`Invalid ref: ${$ref}`)
-  }
-
-  const schemaRefLess = convertSchemaToRefLess(referencedObject, openapi, acc)
-
-  const referencedSchema: ReferencedSchemaObject = {
-    originalName: name,
-    typeName: name,
-    description: currentDescription,
-    summary: currentSummary,
-    schema: schemaRefLess,
-  }
-
-  acc.set($ref, referencedSchema)
-}
-
-function convertSchemaToRefLess(
-  schema: SchemaObject,
-  openapi: OpenAPIObject,
-  acc: Map<string, ReferencedSchemaObject>
-): SchemaObjectRefLess {
-  const {
-    $ref,
-    allOf,
-    oneOf,
-    anyOf,
-    not,
-    items,
-    properties,
-    additionalProperties,
-    propertyNames,
-    prefixItems,
-    ...rest
-  } = schema
-
-  const result: SchemaObjectRefLess = { ...rest }
-
-  // Process allOf
-  if (allOf) {
-    result.allOf = allOf.map((item: SchemaObject | ReferenceObject) =>
-      processSchemaOrReference(item, openapi, acc)
-    )
-  }
-
-  // Process oneOf
-  if (oneOf) {
-    result.oneOf = oneOf.map((item: SchemaObject | ReferenceObject) =>
-      processSchemaOrReference(item, openapi, acc)
-    )
-  }
-
-  // Process anyOf
-  if (anyOf) {
-    result.anyOf = anyOf.map((item: SchemaObject | ReferenceObject) =>
-      processSchemaOrReference(item, openapi, acc)
-    )
-  }
-
-  // Process not
-  if (not) {
-    result.not = processSchemaOrReference(not, openapi, acc)
-  }
-
-  // Process items
-  if (items) {
-    result.items = processSchemaOrReference(items, openapi, acc)
-  }
-
-  // Process properties
-  if (properties) {
-    result.properties = {}
-    for (const [key, value] of Object.entries(properties)) {
-      result.properties[key] = processSchemaOrReference(value, openapi, acc)
-    }
-  }
-
-  // Process additionalProperties
-  if (additionalProperties) {
-    if (typeof additionalProperties === 'boolean') {
-      result.additionalProperties = additionalProperties
-    } else {
-      result.additionalProperties = processSchemaOrReference(additionalProperties, openapi, acc)
-    }
-  }
-
-  // Process propertyNames
-  if (propertyNames) {
-    result.propertyNames = processSchemaOrReference(propertyNames, openapi, acc)
-  }
-
-  // Process prefixItems
-  if (prefixItems) {
-    result.prefixItems = prefixItems.map((item: SchemaObject | ReferenceObject) =>
-      processSchemaOrReference(item, openapi, acc)
-    )
-  }
-
-  return result
-}
-
-function processSchemaOrReference(
-  schemaOrRef: SchemaObject | ReferenceObject,
-  openapi: OpenAPIObject,
-  acc: Map<string, ReferencedSchemaObject>
-): SchemaOrReference {
-  if (isReferenceObject(schemaOrRef)) {
-    // Process the reference and add to accumulator
-    collectAllReferencedObject(schemaOrRef, openapi, acc)
-
-    // Find the processed reference in accumulator
-    const found = acc.get(schemaOrRef.$ref)
-    if (!found) {
-      throw new Error(`Failed to process reference: ${schemaOrRef.$ref}`)
-    }
-
-    return found
-  } else {
-    // Convert SchemaObject to SchemaObjectRefLess
-    return convertSchemaToRefLess(schemaOrRef, openapi, acc)
-  }
-}
-
-/**
- * Build a synthetic object schema from OpenAPI path operation query parameters.
- * Also adds an optional `url` field for following pagination `next` links (SDK UX).
- */
-export function buildListParamsSchema(
-  openapi: OpenAPIObject,
-  pathKey: string,
-  originalName: string,
-  description: string,
-  acc: Map<string, ReferencedSchemaObject>
-): ReferencedSchemaObject {
-  const operation = openapi.paths?.[pathKey]?.get
-  if (!operation) {
-    throw new Error(`Missing GET operation for path ${pathKey}`)
-  }
-
-  const properties: { [propertyName: string]: SchemaOrReference } = {}
-  const parameters = operation.parameters ?? []
-
-  for (const param of parameters) {
-    if (isReferenceObject(param)) {
-      throw new Error(`Parameter $ref not supported for list params: ${param.$ref}`)
-    }
-    if (param.in !== 'query') {
-      continue
-    }
-    if (!param.schema) {
-      throw new Error(`Missing schema for query parameter ${param.name} on ${pathKey}`)
-    }
-
-    const propSchema = processSchemaOrReference(
-      param.schema as SchemaObject | ReferenceObject,
-      openapi,
-      acc
-    )
-    if (param.description) {
-      propSchema.description = param.description
-    }
-    properties[param.name] = propSchema
-  }
-
-  // SDK-only pagination helper: follow absolute `next` / `first` / `current` URLs
-  properties['url'] = {
-    type: 'string',
-    format: 'uri',
-    description:
-      'Absolute pagination URL (`next`, `first`, or `current` from a previous list response). When set, other filters are ignored.',
-  }
-
-  const schema: SchemaObjectRefLess = {
-    type: 'object',
-    properties,
-  }
-
-  const referenced: ReferencedSchemaObject = {
-    originalName,
-    typeName: originalName,
-    description,
-    schema,
-  }
-  acc.set(originalName, referenced)
-  return referenced
-}
-import type { OpenAPIObject } from './types.ts'
-
-export async function fetchSchema(url: string): Promise<OpenAPIObject> {
-  try {
-    const response = await fetch(url)
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch schema: ${response.status} ${response.statusText}`)
-    }
-
-    const contentType = response.headers.get('content-type')
-    if (!contentType?.includes('application/json')) {
-      throw new Error(`Expected JSON content type, got: ${contentType}`)
-    }
-
-    const schema = (await response.json()) as OpenAPIObject
-
-    // Basic validation
-    if (!schema.openapi) {
-      throw new Error('Invalid OpenAPI schema: missing openapi field')
-    }
-
-    if (!schema.paths) {
-      throw new Error('Invalid OpenAPI schema: missing paths field')
-    }
-
-    return schema
-  } catch (error) {
-    if (error instanceof Error) {
-      throw new Error(`Schema fetch failed: ${error.message}`)
-    }
-    throw new Error('Unknown error occurred while fetching schema')
-  }
-}
-/**
- * OpenAPI Schema Types - Using official types from openapi3-ts
- */
-
-import type { OpenAPIObject, ReferenceObject, SchemaObject } from 'openapi3-ts/oas31'
-
-export type { OpenAPIObject, ReferenceObject, SchemaObject }
-
-export type SchemaOrReference = SchemaObjectRefLess | ReferencedSchemaObject
-
-export type ReferencedSchemaObject = {
-  originalName: string
-  typeName: string
-  description?: string
-  summary?: string
-  schema: SchemaObjectRefLess
-}
-
-export type SchemaObjectRefLess = Omit<
-  SchemaObject,
-  | '$ref'
-  | 'allOf'
-  | 'oneOf'
-  | 'anyOf'
-  | 'not'
-  | 'items'
-  | 'properties'
-  | 'additionalProperties'
-  | 'propertyNames'
-  | 'prefixItems'
-> & {
-  allOf?: SchemaOrReference[]
-  oneOf?: SchemaOrReference[]
-  anyOf?: SchemaOrReference[]
-  not?: SchemaOrReference
-  items?: SchemaOrReference
-  properties?: { [propertyName: string]: SchemaOrReference }
-  additionalProperties?: SchemaOrReference | boolean
-  propertyNames?: SchemaOrReference
-  prefixItems?: SchemaOrReference[]
-  nullable?: boolean
-}
-
-export type LiveV2Schemas = {
-  initRequest: ReferencedSchemaObject
-  initResponse: ReferencedSchemaObject
-  getResponse: ReferencedSchemaObject
-  listResponse: ReferencedSchemaObject
-  listParams: ReferencedSchemaObject
-  wsMessages: ReferencedSchemaObject[]
-  callbackMessages: ReferencedSchemaObject[]
-  webhookMessages: ReferencedSchemaObject[]
-  referencedTypes: ReferencedSchemaObject[]
-}
-
-export type PreRecordedV2Schemas = {
-  uploadRequest: ReferencedSchemaObject
-  uploadResponse: ReferencedSchemaObject
-  initRequest: ReferencedSchemaObject
-  initResponse: ReferencedSchemaObject
-  resultResponse: ReferencedSchemaObject
-  listResponse: ReferencedSchemaObject
-  listParams: ReferencedSchemaObject
-  referencedTypes: ReferencedSchemaObject[]
-}
-cat: /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/packages/generator/src/generators: Is a directory
-[0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/
-total 60
-drwxr-xr-x 15 runner runner 4096 Oct  3 19:50 .
-drwxr-xr-x  4 runner runner 4096 Oct  3 19:50 ..
-drwxr-xr-x  9 runner runner 4096 Oct  3 19:50 compare-stt
-drwxr-xr-x  9 runner runner 4096 Oct  3 19:50 docs
-drwxr-xr-x  7 runner runner 4096 Oct  3 19:50 gladia-cli
-drwxr-xr-x 11 runner runner 4096 Oct  3 19:50 gladia-quiz-app
-drwxr-xr-x 11 runner runner 4096 Oct  3 19:50 gladia-samples
-drwxr-xr-x  9 runner runner 4096 Oct  3 19:50 gladiaflow
-drwxr-xr-x  7 runner runner 4096 Oct  3 19:50 n8n-nodes-gladia
-drwxr-xr-x  8 runner runner 4096 Oct  3 19:50 normalization
-drwxr-xr-x 12 runner runner 4096 Oct  3 19:50 num2words2
-drwxr-xr-x  9 runner runner 4096 Oct  3 19:50 realtime-multilingual-asr-router
-drwxr-xr-x 10 runner runner 4096 Oct  3 19:50 sdk
-drwxr-xr-x  7 runner runner 4096 Oct  3 19:50 skills
-drwxr-xr-x 18 runner runner 4096 Oct  3 19:50 vercel-ai
-[0m
-[0m$ [0mgrep -r "sk-\|gladia_[a-zA-Z0-9]\{20,\}\|x-gladia-key.*[a-zA-Z0-9]\{20,\}" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio --include="*.ts" --include="*.js" --include="*.json" --include="*.yaml" --include="*.yml" --include="*.py" --include="*.go" --include="*.rs" --include="*.toml" 2>/dev/null | grep -v "test\|example\|placeholder\|test-key\|key-123\|abc\|secret123\|your-api-key\|YOUR_API_KEY" | head -20
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:  mdast-util-gfm-task-list-item@2.0.0:
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:  micromark-extension-gfm-task-list-item@2.1.0:
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:  mdast-util-gfm-task-list-item@2.0.0:
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:      mdast-util-gfm-task-list-item: 2.0.0
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:  micromark-extension-gfm-task-list-item@2.1.0:
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:      micromark-extension-gfm-task-list-item: 2.1.0
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json:      "encrypted_content": "gAAAAABplLP75yhVf0v4856Geb-oLdsjDPhdISdmBJvCNP9Su2ib_UJkknntI-GqAeBDF59lGgLqPE4lDYfm5q7IhjCloCkaGycZGBo9GHcLdpuKj63e_CyVxYFNZdP4HYXKpKQZbbz7blA_nATSTNNN-PQpQ1DYWjYfq6uAxEUrm-4PUPSorUPWIiByyqIGDgHt-byUa3HxQ0MPQtuYrmL6yfwyTCE0JEglK1XGR1z-d9QgVUWSC3LkgLGMN8kpF8nST89bbZQmVwgpQqfq4QTMifXnJdXBDrm9jIRBwisdKWeLfOEQnQY3a00wXgMv-LncN9j_uJQiwKptZnIOggMGntAsxJSBXDLJxIU5NGtzBNy3vPi7lUE6P517_I9TIi4CX2zNHe6YCy_IEVRu22qoQkNernu0hvPRm-odD1zfRYjbBIKnCXhQwU9Q3IvXxF7M_CZoamXmYSt0uxvDmfgvMjgzeAzhc_s_YL_y5V9sBPXQDDkpZ1peYKQ76c91nYzjphoLkeH8erALhgwSUULffOTzAKsy5embGlvx9X_8pT5MQohxQOTP5ceDTz5OxoPv_tbE6NcJ8fC4PY9MGcBNxNje-Ut6W6xa9NwhNJ77rh8MUSfKjZsH5N8hnelCS8ibEcbOfhgR5b779KxQrosHLRxw04_R4CR-2yncBPnPXRnmW5zZnNphU6pnbMvBoDNR4n-RlzD-siLAQia7SsJShm_KLYBdRndxAn0bgWBBVerbxV9TE7xFJGXLRTBdurg1-PKW53RiCSI_18D_5UAy3Vm-oJ7zrGSNaaHcr163mvW8vZkEEbAweYFsSSGTrTit-3_qSGTphVcx0j2r18pGoi3ZRyLUV-w9uZF-cfQugdRQ8R2IAVPqzSlWTQ8yGQdeVlZJQF7w2K8QlS-IVRw7m3jcutJL3C49NPothMi8Q8fj0CDClCLKRmN7z0mI4oir178FjRlpGZ3e3Nora4fUinlQbZZtQRBcGghVU-BbZtOfkrUWYTeEh3SSmpEsfsk5JV6QFD8Ppd5a4mZ31DarK8uIgkZoCMfo7bY0bT7zc-sECVNOvrQGRUdjRpbcl57S15yWh194yimzcKKj3qNOM2mCr1fKSwEFkBC0aSo8P1_wLWFH6diMzpq5fStOpRw-yG7bkOm3ufmkNOS1ZYVSA7-FTO6j9zCeAlxwmcyBgWVkj1MCxfDfoIkNtUi05B4-Pl9dsyU0WBJCaQs3u_uvsAom0tOdpcUUgyRsJWgdWOBvcPr23FgFPxz28xD66vQk6d_d7NswC02cErGRhdugASFPU1RdFJr4DkZbcoB1P-SgBf9ypjgrN3VW55af60TEJxNbcYSJuZDsJTGYAQy-2PSX8sWtcmXa2TFZeHN4rh7bz2TUAXvsE3LMXJ0WxthTvXG3UxEgULGiC90jnrek9Hn8b8OZdKJsje0FagzHpOt5617gUTjeJHQ0kkBNUW6x2Uz53nzumd8foXp0_3iXBMw6Jjc19-Lh9OvJxB_sI9_rc1iH9rSqBj_j4VrIsiOqqA9Ud1A22vtGLwAAayPdVc9m-CFmUt6GwrAKFhyduybwFVsbN-RCBGLXWgF-TXu7i_JNT9MY5tbhvd_9GFcju3pFSJIUSDFlUVmT-I9u5m3rXgtOjJYLxTCby-qNoimr-LCpujibC8mtiFis2tLVVxcuanSkzKwMhQIqIbjjxPd78jCmYRwQrHk7K3h3tsbVddKZ9V9VnRvczJlWvBoI_CoLShg-x5o0RHfDZSWQfT63mjQyB9mRiKsnuyypssLk28h_vHjypqFRKOgksUZno9K2i14USqfpDeg3KGjrwmmsN0XfPa09wGzTz8EuP5CiyvZise7Y4nqhLQBlX5GN0Og4wBOSqnfpnmoIBlrESo5Xo59DyrrLI8KkgR0FeX1AiNRw1YzXrI7NwHqO-5-VT7cuX9IkJXe-t1agZXB4jpzbEkYeczEG8Op1tJHOyo-yfCzmoiWg9OPnN5OtM68H68y_336BzJNkosUdFJsOEFWAWLYiP75dkly9i_ODAqxlSSLgsmIE8RsRBXRbaxmc9y4H1nnIXVDH1565phsji3_Mvk1YfOM2iNnUaH6nPmAvTwajMJ6JBuUOMVcPcY0PLlzpuYRDDtFocxeyw_RSe7Vig3uxvH-C-in_41I4OLESX0seqkF26yQaPJCWnY58nOMLRWGcZw5qkUoEV8e0c9fhhPDwJEfRWfakJidOw5QB5xY00UBKL0ydvEIAFJD9eoinwJFsedlHzBLfdArJruCv3Hv9blxpzDHbxDxvuHygPfOnvbTkE6zPn1nhE0qqkSTZ-C3s3-_XgKks8T-xIood69IcfXibv8R3zeXho82sgkHuD4J8yK4sGilJw1s6XOpiJReu78mVn83Iae_nsf1b_V2IOE1qQVm7AtDUDGOEj3NbLFaH2tZNFy2No9GRYZd0u7IQiCjfHuat7xTfnG_nmrZvJEwVkVFNgdFJYhyj8VCKue-sWXB2Y0qK9x5nPrqyjlX7x4A9WpmjAKVs-uitqYhVM-8MQA1J4RIfXmMvhaqobU_Cl5hYzJyMVkUBgwYj8x-FsmBrRBXtlG6FxmQRE91nCM3RRuNuZXkYYhdo1tEht1lSsJUTMsdCRTrRw0nHiXM4s5pjSIA2IuFidnECHuvOvwOI7wMUXM8agwC1sWKwmYG75LKg5F9JgQnSm_2mkp0VSk5V0heSx1uc59E7RyDvclMGle7Wwg6txGkcE8FjicupHpGx3mmyN3wt2RYwhhtbOe5fhSTiXps7iSctJdreSjYMfFLhLthnf7p_vr4Ef7UhsX8nZ2rKRAChqzg0-rmWQoOZUbTX7vb-DesHqW01giqzcmP0FhceUGPkA_krStcoMWD5EhQxVxpl5voOB-gL2xp0PJLkAzhhFlblaW8qCggYbZEouR03DVXj0CDHyukwj28n2hs6mEaX98Zwmg33LRb3V--iiCUcY5d2hU9QzLekuGgu-gR-gN0Ig3pNl0wjWB6jkSJDqq4lpMWMf8hvnMdEJCZeJ8SjXeOjL2wcaTH68tgIem0RvP17Yi3kDbdkKfFETqnVfp_-u5YlA0pGKlrLz17O7oFRWmcbhySCiLMRKqhAyVEoHA3wj8UJCq1VF95v3l3ME_WmiHjslvnehheM-R39ilbQW4UTCeYC6rEAUZfsAjbg6IqzAci_3O1BEL7SLULquxdcOSlAyC9ufbyrvy9BIrpuoCmoES7gm4B8jeGStz5122sQH54fclV4CO4CRKK3PQagZ4iGpBsYNTUmc4wIq4SDKSgzR1BMoV-i59J2VyeWI6OIMoRkSy2YgBjIVo6C4PLrXT3hsRYjv_NHZaLZlpSwmoSXz8JY716or3sVT7ALxbiO8F7XujKe3fcqd7NQ9hASfyFWzw0dHlm_R3Bghd4YQKV-3eJ0IeH33uEyLFcooH3ZTMl42oUVB8CilpU3a4xL-QDcazXBeH7FYS6GcvgUB3AdDUUiFkaFe-lpC_3G8EFUZo6EbfmGbyn1G5VXjjQ2342tcu2FkDPowWLD5GErD_etB81FnUquLKeuzzHX82qv6SFTsFXoPhN8grvswrzdnr2tqS8KeNYQoye9sS0YzXAWS9H4BmOzE63FvQMwYymWIhG6VXZpA1n-3LcfFQqSAMkQpgOApRIZKilUNPFsgrsLPc4hRlAtNvGWmZ54IozQxpgDK3Wr3etqmYiOixg0WDQg6m7rVHEVtWaXDDHgH9E5GSiqD2JhqGpT_9tKN1NJchdbhbB6Mbsk7qKpyYYrIM1qkvF_8OqpiC4e1_CYvvkBFxawwyopbtZozNS40-pBIkVP5lnjNgqZcvaxZYNUkKMrIiIHAIteIiJKAb_qwKyDnUcW7ABp_npxtTQ6eLPrGzkroCwYjzp5FffjGMhy5BNtgeYHeGr0KalxTMBd99PN16WNbIuwZHQsb2e-xDuwuuKTrl_V5lUrSGYVV8U3Rz4Obp3YJ84QbMuzSzmIEbxmxeUFGThXgxIATjuRu0waKoXFWQpXUhdx_VX26sRzMc_vu_MZpIt59VvPWiT9B1DfAfjDYCzOnShY_5JlB2W-J_8Of9ojSHwM6eF9EohqnXbbkIdbhvsbnLTvzu1X2btgDyCwMEajMewFckrZc1SInt_wsL-v_MNNpmvXfVyOQI9GGRkWsBQtSPjBXD8cBJ2sVkMTq0an_KeuEMCTBmRSvSZ9tyxJcG-Eu3CUL9i9jPYF14n4VeF8yRWddKvEG_H5M8fJXz7jvPY9IwQwhCrAPF1VF5g0luqxpQ-YZngabhWbtzBw4gdXQHd2x880O1GwoRgwAMtOK4wVkR-xaikIbCLDNJUFPYqTyEwIGHCzEGRA5etYCFxnoT_uTpveiOZ7xCJMdFAk6256U-6E5ajZP1jSbQh_boK8O5P6DSkQj8nwPD5_8gedlZz3RCk8BFvBBEdt2FFrl_d4VDRcE_d9YCZZrfMCJd00rErUdCmEVyVWHLyQJ9urBFgt0rqeqHsHWPwIMNNqd838W4O52jHW4foMdpu8mAg7SJf0xE5ng12Y9jCUr5ScyZzBj8j09U9wfTDZ-8G3g8FH5Mtf8c8c5egO5go6FcbVpxZ3ZlISmJvx3NSeQpw7OgDDD_458Hc7bqkzuc55A1BWRUXbTjI9hSc-pkco6DXiJb4lhEeS59QqBF1Rapfz2OJ7vqL6g0KV8TCHMvxy6N89Jgt9L9H9WLSRRr11QMLEWgehlZ0hdTszWbjXkcOLgP6aqWeUEd_uagQxhVaiyIBlGIzaeyeUJA76-rvGltopf51h9NDSS-KLXgqBHzPaRgw0wEtgTWPnxznluaQTjUiAHIsH8RQ0O8YKBhKUuBtzNAZ1RlhqFTUa7g4eXfvxrInpGt37r7Us81Hgecy4qddNSsKD3j7xdztHKNKqgXVZY6Mm3BouRjpoVtAlSTvdqY1CNIxwurxscjjy9swM5p3SjNSioXTd7OkwWsD9Ah5oNnWX5KIjgccs5nDsTZm-y4cHbR2-uj45SlNWUKhQI-fSINa1qI2jJ_pW6DtQRIk7-KvmPB8VoHj8yfSliPMEMHFU8DGx74dbMutbLjdk6vfYOZ5Mg6WaYdJBysVoNPwOcYngjIOlqZ6Lgon6cblX4VcfFTO2qw5bvcJ1QBpjzc3YRQ6iNAhIRMTn4375R07wdUvRkyC6WcTgeYi3dilLi8b5Ya8GlNP5p79gqj513xIbInav5C8PKNncgcJFi6zrCpFw93TLlmevCuMDtnRBSq_V2pTAvdn1385es_MNR948nTNUMUYu2wZNLnzLCCHpUiJoBLELzv-OsROgLeT4HhTNxUOyN_a5U8N8thR6sF6o8lAWYZa7U9QGDbKYNNk5LnfxrYgrS9AgmvXtxfn60BuWizSEenvp0N_K_QOt-_AQ5iNJM6UnVMY5mlKgCRdd4KmTZDcSh5POtdWj8KX3sNnlXlDz1aKrDhkR6VFnZ7HmKXbjbkAgINiPtgCANA_oggcMl4Gt1B3elIzSPN1jWrUVJX8JPs4uDuDHbLzcPgkv8EeSTfysilY4FvZS2ZQ1dcXv6gcdVJx3m3WXZoJfNxg4NOiUQJxFkj0_uK75VMye20T01_79scAiLIHRUvuCWNiGh-vcLpx1wGUKr7HyRLdCQubqxEX9wQi4pgoJ0NsxRQnzXUEA134tPzEW2ZGSPxSXicNFDs9HsmvnLdXVLY-ppwchbIUnYq68Zv7l3NKrHFZPxUMD8eY7_6NfQUHmuJ5YRG3Gz4wnigthFXWf5Q9_tHQNM4hzwlv2kBWNmeqRzfo56h6C0CrYts_2iyaWDk2RJYSKTuqWcmpDd4P9lEwFTL_nBfkpEaqHyxWzwxGlAfX76pJ5NeQc068C62SYgeTR7WRZ6y0VesUa3I5ICAfMRGXBDAyKJswj39B94KCwJlI77tN6WyM917eJ2TR3LcYF7gb99rdmxUqVgiwQCKEfk0GtIVTydhWHuzXiOq8iKzD4FngtZHGkVASg_wEhig1dNuAvAi2KlFmFGD_7jjtplwwvN1Gt0JnVe0saFf25L89ZmpqhrsUWo5xmcA_zPSP_-_zkQedsxV2c60Qg3WdUjr6NbvpXxXZjcVzcHZ82j-rAC-duZC_Vl7yoygaD1fsfoSnY4A_KUKhiZ0onqxjgr0ITkJnm7bg6OOLjO8TIjdO5JUEy9w3UazHFkAGT1QmB3m6Q_OLVjArvXr-sbZm83KIMNOPZnkXvGLCrmAZ3cBAZ0uIM-MekMK1xOr7djV7liOQL3sXEzSDmFDqp-JeUdvuJcPkoqSW-6Zylv6WXbUD-_WcMN3fkks6Uq3TFuhuu2r7S0WZSrygK9zrRvbMPyQyM4ob-V6R1TR9UuLyCiCFJKpLDumoxTUfZ9RmQ6IwZnXfWBtwBiZKu3Wt157bg1UXDPW2BGGgMp19pPcDTz0JlKHF481NJTA1AxV_uztnae3orKVg_kNMDAPSKCElwG4ja6VG9wkv_4_2JQRU8NS4r0iXYoCAJ16p6PpG7tqHS1_CtFvjD441LaXaMOXYNhbGhLrWh44jsYpicqmW-PEzq0_RgtWsZ8VdY1s0HGcpmuDrdIfOvALL2ujjz7B7CjcVUsz9XsT0f5ZogO2jE8Td9SRMGM-uzZvfuC8TRTRbDSVgtfUatp8yo_zKjdVRdZijKSWjpx-latKZKt2DKL78Dz5KAbMUDTC0DNMAUKT3UtdMQpfP6ePUYfkD3dSOiWHxHpLEkhNRz0lHfBZ4pSit0QlZExL7yBjdY4npd21ViRwkzuMyfqdkYbXM1_u-qzZYG6pbdFOvsP8C4bwQVUuf2d0BNnv1wXw-H3nZCKBhKQrE64apv0vPs0RdM6i_fJunOP74YEiHT-DiNNvGQ6BVbQJ-IIAShJdBBZDd3qMe2JraDRLKfoHlX4e1uAbeyTou8vgFk73o-dJ817Gg9FrbDNr30N5x1aSqnzXOyvS5Ct_J5geiaqV4M9hyMnKihCcjqzXhIrr7qT3pNzdG7IYl5P5xKn7u7oifr_v8Z0lT0_LRySySqgmSAhChTDIusw0o_EbVeqmfhLD8Pl-WzqRHJ78cVH_CE2E-vnO_m7fnta5Q2FnaciRjVahCaW9OqT_n3l1lspXaHUSzG0dEERRP4KL8eqF1Lkc5Woe5WLIfoqqJaG_Pe-UsxF0QBqRl4yWqzEETHlVaNs18YNtityqGzgG7GO-D10hXkoLXHde760r4gjGqbBbIX6sRqucULeb6YBS7EUwDBZyNJaLOh7Rmht0rpLe0_5yxcQFAls9QkE4wfozZXPX9Gm7K7k7GWE_vpuaW6brwPgRS-5E-4EsAj90og3dY-vohP0sxXnowvS9mSVhbVsS1nkZQ3OGn_9g-rr_XQrqfLLLZKQEr7NBiTePVpW_3KpIHSFM8eYw0KpoY5FU27K-ROIBZCesuyoCpBECt-dzan4sMZQi1Dp1uusMnSchwjHH-wl5xs0PNbV8gRelquK7ixDSOIb2rTkA6hbnW_bMEq62M0tQNJaslSEwOEkISjlyxD0uKgDrs1JHpco-Q8EzDiDi0gh-2s-oUhoG_UvMustSy0ReTqC5FGyDmTZWwMVPO0xZvNkcR0qluKEmtPFo7kyDhK6nauIlqlK5zXWL5uLOca6ElUsC8PflGYtBQhitu8QyyxzMSP7yf0suG_Mszyy2gKKpQLSZ2kDwEqfzl-pSp2h2a9a_564F6u_ldNoq3B_zEnp-DCvGguCjGENpthjtr8UHRDQfzugNJyP518kY3A5Hg37zwtip0V7KQGcTDl1OrSsPhcutjx0M9eNWzkzz147lJE_mvyD0-YRjkXogI6LX-A4NQrq_DAt7SpPa32_oqDeLK16Cr-ZhrYeeRIKS1Cz4x5oFkQriBDqaKLac25sZFLQdWIQyhNmJHZFQ7fJSDCH0mSOr8sW_4QV_SyZydBPQuur8ohBvb4iTTlP3kWZX6TQM_8KGo2yE2QjiNVmnoPlSpNV6BFeetYanUzVpMSk4HSQlErMUE__Xnt6t2hjFIGPsdBOynLcR8tn2xiwbJGzGUfre3fLjha9v4Xzd4hCEeq-82nlqfW9ufjaWgGRS8ZmCiG9GnAY1jd3PDEB18U6TnWQ9p1uXRSZ40SdTc25Y4rCcFGsbnhtAuwnYbXv6dAN_smkg-y9ZatfFYkwI-ZVApdQpGq7FAVoHDy3wO1XUpPUp1QKXaPKkplXAjjnnmMtbJRImEXmtNv0kP1CxX3LJkVizBPV6_Wrsq8tIvN5UH7oCAbU_PeHbw_0vJgN6S9GYkrFH4wFpNyTxs3uGBhqUZc3g0zVOfcWdiTWic8WwQgQCdg8hBzCJXnVmCi6u0ysnuEnHRWSJ2_qTYj-C9P5SnObTCi8BxDNp9NWn1ot3bcpXuy6ZhtVKYCYfd3En3SN3516mX_NDtClaeEJRCtS-SeL9e9uuiRaz6o9AMQlcJLR5CKAvbQ5D6g5hPJ07NwIh0RiVpe4TtW5YtjWax2mhsrXXbNTbnV__3Qr1W7ggox396i-UwVNzx6j4brBYSPssVBARNsY-nN4yQ_fSPcgGrFYSgUpPnbu5qV8SPsCGmIjgS0-eTQ6nZETX6RDWVpgqAsBVGrETudiNbsIRA2A1-IgwJSuvjTwFRBIRabG6snG-LHiJeKcQaHFodLP3cm9UgPZvTXkfaJQTj6QgswjoAZgcxeAu6y_JRK_rNlSAc-PRY2MC3lC0MpCHgtm6JuWOyEF_Hv5QW3QT58QcnpmvERLS4-JlquLBjoHilEDs_4h8-TUqO0IgCzRo_fb_O1b1F7RmrN6QTP2QSpOt5RiczoT3py5YzS4dcanPFd8cSTO--dZsI9_MIc6NybDTtbTlmzIgKQfGNyJV-vkD_B6kz6DnPMszZoqgzNQR7Jw28PR_Ntp66DW9B3q8zshhsihBKW5dRz_oHTAJIiUu-HGeSAR1neDfFkZeYB6R22xoZZQU2gGO2digwngAkF_PPhHqY4M3LWbiip9aaqhU5zaRPI72UtC-zgR25S6PQXjlH8EPoJBSScnV_tVYFHR9TaN33vVQDraz74e2JiDGujwAASbVMcvsd0VEI_SW0JqZI0BDaY4-KDuAiYn3eKhTLvvm0e564kNYBqxbOKrb0JZ5zvH_TbRuuNaiqb-1NBgWCk1hykUKKCeDzwJ73KSnJa9NcbQgiWZcdijR5G5D58q0hi42HgIzuM5rij8_4LyS29go7bgFr7DUx8QUQDoUunJcv9GK4ZZQYuZ0iztlvTrStTJv34-cWGRdU6VOOfiLmQJR-1hhVQ2E0JxbyCxz5NJGxHFJA3nSaOMeqJ_0TUg8SVl7gTFfuInsO-gAjUbrIurxWv3a4_AIulOdDbYNFciU97iydL1mlI3kf5NrxZRsTreXc4Y5atSB5WNsL_f8cwztPqgOY-09P2TuCEWrRc5D-q6NrbsYxLAdWndtp7GiHlFd7lSrzZ6m_5mi2YSeT_ph2QIjn71_DnPosWzleULW-wTsxiPcBnrGwzydYoFVDDz0-wcHZCtW20Bb3i53V98HBokL9IlifkVVWVtxXWlE9JXgaoTfYG2B3aHLPKEEmZefUlXnlO6N0HH8nB9pDm18fddA_pD4f_YJjvVktJjt2bP_OQojrCHlRG-qqBONaiquaLr-Fjc0aZXangVEjUaFIVJLu86ogxgkJaii38D9aso11X0uHvwmiB933emQUHgwN5bhMZbn7lH5c4Gt1RgVIkqC5EiA-k3g1SlwPlEEDcd9VqVXp7kxB5TrofDT8Gaevh4zXvza7xjTez4Sm1t5IvecdVyFHTiZvNOmwFQfqw8Xl1H3hs-mxGJTI0vmpWLybi3IaWrGABsCJBIiWa4YCTga0bG_gtq338gnz7HJwkXVL1Kg9zUG7nMnui3Qet_1HxVHSDSi870oN9FdpU6J8BWtldsmZwZGZ_y-zpPLG8SIo7c0_V2pimrVIrSjauFXPWgevAdRQY5WNNL9R__BzmbIC47JC-B_Ub8i1dNJvybEkUjK_KG5u65-74kV-gQmcZNd81Rdt8Ile0j1-3hCWcgg5aWro0ckBsdQT_J8q2pla2z5fy9eLu0Y-7Cqcszqu3FzIkvm8VbqltfuKpKcbCtheKVvni7P7721Wv_IlNcap5bLJA1WgZQ8bMD1jsSn6doU7BqK7OULCxS6fJ_STx-L41uk91GYizyAmQKPZwuaMb_LnHH0_0HH0YpMBh-15jYZ-HWpbPhueUPZqpXzYCdWaZNUam0PfnUIX0j_z_xJJ2rTrEhQLb2pANloBT35sj8n2uZpNXfy0kQCKzbJ9P9RK792DZLZSC6JGjLf1ukkmswrsX_mrE2_kttKKR4XopQu49mawCDfNpfUlrWCwdeXYf06kaAk84miWB_pqX_dWdcvaGvHbLf_5HgBp0WNEXMvb6D-PUzmofmXtqE4TuxSqQCelhut-rjm5fMqCH8SJofxe0DHIZ1D1DeVh9q_oSFXsbK9BRQQG5Ud5B2vWX-g8k0IoMBfRnRvSa6wpE1f2QrmzbYyWl1o3J_Ye3TLoeLgHZNxNeItEtFPjpbhRfxYa8fouVV-1gLQkBC1I0YKOjXUbM8L8wDWi3Niq6QZDHmbIlUYVUdC4jVBkvlqp79t-CFZVW4iA-PUJd9mOXdEa4anj_I8qs60Rp3NhIfsbEY3sNndwMOEsCQwZNVJ2CaABpyW6O3klG-td_GohvVOGD3-JRbg1BwfBXZ0M6DY8Ijn81TVz2Jp8vXLULdX_0MpllgKRRxFRoEgY2EAzAa8Dz--20k8xQiPdBQY43rtd7QiW4cEF6ifOfQZxzuDI3dyD7vWwqfU3QdSYbySyLqBPjE5hVYxF6To349VxgXmvizAhQ4kWEetY3U0CY3vV6lGDGdN04ZxdmnrpVyaj8OHLSslC_a1kgou2-dIwDoAS83z4qMQkIN9BQB2qYatipaNVHUAd6Yizih0xzwslj8yWMzGsnhqbXHqbXmNdzekrYP3ggEqT4V7t581cxKhkEH5v80dhzhOz2c3BF3vqgzxFIyCxN5H3hMxJdTkrfL7NtceaxfdilFcnINDuc5fRTURvJAtGJ-f3MlOG9qGneLV-IxTLv4MMC0FIdQyoKIPJLK_XkL7iOJn1VRTrIgqVOOd-WB0pWeAeTyMyzdx9STyVKJ75DpB7h30_l2vYrPB7XhPnWdPaOr0eIVg0MBkgUas8cEapCA8-cebArzEwyR-kE_7m5SXearTbRtTTYuB0F5K4vrjOLEu16uoDCnVY0Lhn0201BAKmteyuxf3EZk63CAkWU4iqhW4omGP8yS0T3hZzAMgTkgraJbEKoqWW9xU9JxrO5-TkXFDUojQvqFKOL6__0tnwfak-VtRHvPdI6nLgGHU9laxqUkpfFE9mrxeGdqPN1_qBKoqUWWh0-Q6l8sjLRRKNJEf1QUF4PeJ7x6nBvHO4WBfvsUn5gOvhfh0QtpMNGVXkLClRRWwcbzZxIMUQa-UKKTjXyMeAMe81DrZfgA1FkvcMjYr7AFOVhmzLcOYvLzF2BGLUUM1buVdL_IHCrqt58kpWgIF1LplG2ZObGO4gL_tQZlqzdJMHE1ucT-900dMsJoR3FDbXtupduoSqPsLf0KRkRw8wxjkBFkf-wxprI3rvQV8ozo4gVdT-Bd0v8YUTkOk4YXNczkzqrCjDsPbyDypMCcVSjglOzf1vwUSfFFLJurZtaTxvBJ14iUqvpNPx4mpph67eJC1YGEoOmDPxY5c-EKRv-9tbw65DyY7s5R2yjh_x7TMddFpl201PO4uzufF1dHXOab0PNxKwq7iXPYD40AahzEMNhqSauJ8B5ZzjveJ_B7BaGwJJODKbDZkI4DT1j2C0PE0T2nP-7X-sVMkjT5hw2aQQiOjWmGdNS_fMNl1RR2PTxe4EywGVTWqQLgxUJKva18DWLxEg74uDy0i9YfkaaMpwH7tMnvRuAIUN3bxB9Sanwchf19Cp-NS74uPACgEcF4-wA1UkQt3kFFWzdp6UntLo0DiuUMRYtMUVQeEE32Smd-M83Rvu-VQt-5uB_Sn4AAgQXMSXq9u4F4pcyshLhRYmXUIJDJ1Ri_dXov_UhUQPb9VxQMvLup5F-xoIR8_6YCw-WUDpd8CuepOb7IuvMy5ZVE8L62ize582S4VAxZ28uiWXD2f95zv9RFtkLpFhI4mJcb34mC1rQotRhNeMfn2zYpBle24MRDT7xylggGuJ0cuVKP5Urn2GzcxP_L9x7n5tuXOpYxwsWWZ0jdGKJG0nf3liExitv_LbvRvEeOGMAEGn0_wgmeG87S3MeHe8gTKm0ik_NcOasgM6wgLU0Oo7YT3m8JRhv-sfzpEDN3mnfrNWebQ1AWuyjsuUxTcxoE0nUnKcslp6wVGvII1e5zb4M4ZuE3NIUBjZhuKOAAQukEjhx1-s0GEE0bj-E3dlKvoyGhaC66vK0UXe3xbo0P6A0Qijb2pyGUpo1hP_jERmZ3J5ZgbLhEe65whNSLKeM_WYtQiDvjKQe6h1P5nTbQX2eR4_laUS4XKer-vU1v-94zl21Zz6ioNQpvP7brsybAOQmgCDtsUosk-EWGmqa3jONgfk3223HACLGcaMwJAMZEfBMurb7HQpAaSc7K5A9i5j3fUny1kq9acT0Cx1bwr1JvJNv9ErllPy2u1cH5nbBpjQQQLRhFCL3_qy7JWI9C7cA6AlwldXdogD0N8aWmhYr9tEJbNmJZ03LXSKpAIsyaJgi5AsewpMg28-mRS9Rr-Zi5rck8Sb-QarBNERFrqSzIJvxm5K3SrdmESBksStvBYBSCvu6f6AjbQmeiiosTo-PSAIaIJXtmB6UuT7BExm3BKcZ-aZNM81G_tpBM71nStDii61xmCZxP5Nv9xLG2S3D8BSewPKk2OkTGvT7NB4yPPgNiQskKVsOP9gt603qB1Nx0VISb-oRG7HCxH8uzILjxInAI_jfv5sfzcnS3ohEZPLHtwN2zfjtNhbcM8bhecYa1MYIIi4qdN7R8MSePnQgqqWr2SlGS-8QrxSP66lu6kVlZxk9_EJqN8R0X3DsEaxmkgwoo3IyUdsOyEJDJalJRZQGvrQJeFjUL7esZLGmDRv8oHMe-MyQlB8ldPPDuOH5fcRSjCY4kdHVwEAeXM5riqdpILpXOwoT8e97nGiXEu66E17iy85E--TRU0Vn9lu1TqShIbjwRcWV_0wjxGK0vtlznXHZV99y4Hry2dL-CuV6zCrhI8DPr2H8nKQlHaAB4q5GucS0ITpLRu_8TEUFhb5gbOFVaPxJzFUMaXhgD_WjxCnOyGuQQkMo8dopiTuRAjwrPHwSB0PHkm0psoaRRPqgrt9YThM6HfmagsJD1E3h4vbgj3P8g-TIfr3dhKVvgQ8YokQLcdU7U_Ej0VMpnUV8g2cVGmYNCeutGkhLZrYAJ2uJlOO-SDnmMmgB1gtB0OyItQjCd1aNKhvgG1bX7Mp8qXY9WY-qWmtrsMXpPOzfLX7gNxfu4mcVEBl3S68bO5T_7Fz1yt7WL7-dXMLfwmTDpzVoajiUJsvMwpsln-QEXh_PCUaA3DJbBEXc5GuhqWhkm4y-NobnZwlxZjtu2ES4TPocTQVLURqV9JqqwRo5Yy4194rUOk26iJjv-aAuqyYGyS_rzMHugSD59rxbsWHBqlTXKwev2MOT_4jQn1A8XZuuUjIYg82cDrGcmZ6e8zuPEjLCG_5BSVL9rYLrYQA-0T1qEhgk0BXikb3fsYJZNrdQc50z99b2QjS72H2Yl8iT22DgxOWA5dpuYxBpHAHQEw2kTbYeGcg0wBY_pywboP4dprCzDK0DSRHk7KasxVgMXblv7okiFc03pAli9WpUTXbdaE0Go96TH7dgPpdlpdfjlCBI9-xsTL_ifu5C_3Emf_OBRXuB1fogTJOvA7NUB0sKGExCG95cl8IpKgKVE-j9JJmXBiQzmgPPXfJkWlPBF-MuZ0cnQIVHEsGvL4x1NHpBRMlNT3oMoZkxl8GDyq46Mp1Oik2xU_h6WLEgsqvVyXvI-IkMZaXjNGlFyIClyYUUQxyuLwxAq3nduEe25Ltk4mp-ayaBMAkGAfrkyMEX74f6ke5duc4cr0_WS323Cb1w3u-5qLh7AiAbhtN9Wr0w7XrP6_TEgSzG1zrJjYFk81c0wXLwvrNDRmRtFWrT6gSQgV6oJP89ghEt1ALs9id01cbhRNNQPMe6utbosbS-K0U-1mJyl9sM26GZ3WBpCJP_tbrrJ2S09Gc-89mNpA98g1DXdvW0ENkAGwiDL41gO6pbgaqtMjEzipDhl0NocLnMkcHtJ5Iucmk6HRL5YbNZG2TLsD36WqClNFRXn3JHFjiZRELUDmnWqSRK5u8bo59juCyqKF3gBmxEdhU82yvXfC5aGjgYzP7seCgBiSUcqZOVpBXBhKXK0g47TrJJR4k7_waocAh-1fPNBY1HecG6g6CIawLF_DAcm-jzlkJBkgJX2LeDx0S2qNekdJkLsvlR8rKq-eqNtkI1153h0aHeITzxD2qADD8wuOhMfYfWfcp7d85w5qz2Bhw9s_dJrGkC66sOcC3RxxXAEBNc_JgODdfdeSXxTslkgsFtIY6XFxltOba_-R5axA07zlODGBbpZ2_dE3Vm12mvWBIOnt7eejywlB4okmAQPn8fhv52iv1YIM_BpEbC7JZuoxOyrba9ZIECftncAVyoqaoCUTMIk_eS0XHhasnihZPlFnJUcjh7CCQtG0PueaTsfj10VR5bdzDl2LZotUeKv6v_-6gggjXsTZRMU8j3ZaNkkup0iZCPit0rutRK02oKOCyY4pnsdsXgCbGGO-cJEKFT44V2jyu_Tzkz_UgyAu0xdBHlxHtxczAhlm-thTqYztRNAwOSmZrepfas1RwZ-RugcdofT6nsVTq4Gvh3VvltCgIUDw81exPxCsRtm6vAf0i_4z9IOju-ZXz3CpBnbAUKX4LDbaA96ZYfIBsN5cdQQQURSiod-_WZ22HcwVl5Dr7DXa_56hN6VpiAJNzdd-HelfkFOET4_WkuJTpGV8UUpCH68c2LyOJhSpMkP20a5v5F0H3wyA7kHK8fjwPlcvY54pNSVSH7zBVCgkhsUa92B7YZm_yXR-5S2cnwgmDUDKkxgg3OuwGbISGd4Q-JUHkaiyO6DMpSg-NeJH17truSIlOjvOOMVSOJwi4b3D1rdfOBU4LZUXBzckwgaP2FVhc1KkVk5wWh89y1bcJOOmjcR8dbdgzCy44Tfsv_saxxDyejf2c9D9SyaCZg-adNk14UxYEnNPylNVHJ_guyJbUac5Ksxq7ASkP7CEPEDsJ0nGfNVsNGse2erqSXcpPU3xZzI10Ink0XdtBQe1I4dh_2Qe1IJeyUeCdZymIQkF7Wuu9-rCLmpJboIOlv3uQQf4J8xWpUVqmdhwpTQeIsM_l38GrFLiLco6iU856oko90Se13Uykg9pNABNFv5GakH0bXyQ5EAfFHRapQDoSMScF51uNvXh8wVmRbQZFtDJ9u-ztedKySplQ7EQP8SCeuxIFiQhMgT_dy4qXBqTI-y9A7KAv3xCnaJ_bX7rUAKbMs5ugTxOdDtIQY9x2aczdcOX0FqJf9G9p4vL9OCLxwveAIyQV6OV49nG3CuXEHF5Svezm2GjV72GxHff4ysGuJuy8LtLl6Kdv8k0vXk4MK5_meqpSuQfZi3fSF3uzYiz3U53f1s1JR3O8AwNl6JYMxdX-Gf6K1GU05yvKfVpHGFqwKr-zz42KqvXsVPlzf5fAMV-Z0wYJhdkv7YWuzDCA2w4W5EAIDdvKk07E5JQuDHtFLrF8VojW0wM_XxQ-X0h5j6nwEVnY5IzJFcplelVz0hvVs_3z77p8QlUn2VZrfPdu8QPv3NPwNjx9whF8cwNbOErEp3D8oyMqR_asfSJC8lnsdn1gnPGSztft8jVdwKME_55r7WIMwfjvpSxaG6oA280_x7qW_KFoyycelb8BBzYK345UsjLGOtOI1C6b0DoPdOfPi9S39eErGwS-oSw-ZGNP4-dqonysP0izEElp0Oxo2Nr4xtgenA4FOSkb4FPnEguT5fHHM5Z6Itp81raWEOr26TqHlRGgSmqiRHykVWfhU5gk8lVfhWpOfk-Y1PogxJa8kFr3_0jeHHSmXF74abWtNyRn0imfbPnNGLL15GXrpa-NxMeW-I8Kk6xkJxSQZMQqDc1LCxUWb_rymEuRqnQmaEWfn0LZCLu5lh6j4EOPi2lOryWpIhzQYAw3jC7IzeQlPng3e7004k7S3VBe7m6HTmcS8hm9fXi6NzwOYRQF2rygjbP-0scQo2EUAsC4p7BLaXCpqp-Onh4ILo6byfW5CfjKnMa_VqO-bGwIrSMd1GyRVVVoWRuFMj_pfYi3RmY8Ne9UNS-8j-_JTMmArZTVxsYyohv8GTWybxl7zInql41xHPawdrU8W4H8xE8MvrhlR7YasVgufjxbZfr7GTM95-lFB94iDRcyVrwIFemUgUjY9UBkiYSKDxCJOqxntyedVob2zaWPc6bnTewcefCnBQhpLLvx4PqQocZKLb-G2rOghjDhYfbyhcxgd1tOho_J34EHsOKKMAW0LU3b197o9SIvDGiDC8-NfsFFMpT3WE72U8iBmon5QQLLy7_g9jrTHq3ca2fZ2zSknZ08fIQKPKqY-pYRAxvxYy_46GFzHGuGi4yCP71GoXl-v81o8z2G3E7jbwABwIF9pSOpDTIeL0dZhLswnF8BiGGCSynmgAEFyG3IrO45mqEkuAhQkliX2BtNoBW1Bcz9pKEpr3PXMWQrG24pe3h3Z7W7P1lkfO4-nGBhgBBw9bbanJiECofwoSTdGUJ1vQjlSF7_UPL5E9Yxe2ObStvDV1ub14hdK0QVPtm-qadauxATHE1DgRJN-UpUb1_cSpcBbKlKkAJqFhtfn0UVzLIu8W6RwdWoenVWWEQuqYs9u1ztdYriXaU25v86iU5PtMIHv_N3xyxREs-bbZv9S_hzflmJ6GNJWoGTuCLgYmjbglU_6ykA6umG4WhqnuvrUhYiqbHt5W2jhB27_Vo6C-biI-vZeho18A4T1bGJuK-mbkL_N_6gs_fzETJVqaUmq6Mm9YuXW1D4T1GiruVBwwSU_wjk5exdB8Fq4uSLCOgyP-bSktrHEDDuOAYXK02PyVsdam4fNeBFF_M7hoiqxbjn0hbPKxeLIj3mUsWVvGTYq6g7S1Ga8xdlsblVxJc0-mnkRaSKUF6oLsKm5kCUnD8qMax2kSfCQvjOOv_QmRZmy0E-g4JVHagl8S41FWGV0jLIbTljaUOr8R3MVsmr_Rf2dt-odj8BvnFvIxCQWiLbhg1jDLnTZzEpOmZIIDGL1gSvXnOgvyMacNvjEan3FELFumPUWhj6E0LHwAAhBC7P21HAFQGTqFTvWXjj2ajJuMH5puFATOYlmejb0mO1XzSuE6akBI1zP3WeAGnr4OEb-KXxmiHNYIU1Spr6BBgvgZwKg9_l_rV0oJKXLMGZ1GTTgeVbti7sjRBfdCkPoPeiWx4LB_rWL9h_REcHQ_eldFjQlD76lVmiYfdGsL-bo6gcFA5ZHgr56hT5eRzWNQ9PpShK1rv_hanRd1-CchR7Cj7aEhT0eBVu4SErcM3gOlvFqzoQqknAYvpQBn0NxCIKWNnhS7fPY5FFcmU9hXcX39HkU3u_BZMkNUr1KFv9gkI2wn5a-acTfdo1Q_8W-N9mxMxfQbWaPcj1PdeAzBFXQK2O5eJrhEviFe-b0BuIFTe_RuiBE9gp8DqYP4e2daHzfwdK-c572zThxuudInN9MmVJfrlEJ0y5Hx7TX5LicQ4YbRGHV7VC2QIcuxHp92B18fPoBPhcYqf_Fv45GIkuYt9mmoHg4J0rfEDqZX3CeJL7yi-RJWmmsTqsUIDUb2ZrzwqzB0F70fx2hHBGUSrfek8HiHCnTl4Uihzs3u3NF-OQ5T6Nhte_5YY2m_npWWgqQvYSTGXw5VO5qSMvydMRnqOPe_WEw8iodyBXE54BBQVRghmys5EuY4ZjWfxEXySjywufqWrCbea4BAhM10LjwOiFBorQrdj5rZw0apGMIkq5QO_TLHfWxWAU1XEs6J_cyb3jWXrokPyWhTotFZHVH9Lo5uTyfbmTDk9x4UzGBPOr8GCsTofbjUlD95ZFxHkHltTsbHsAlvowqr1WAdanDqZu4EtwaltMHS71IRQkLydpDj-fUmWSXyAGKDcMvrsV0fd8FvUGzfyRssX7OrzS9JNXtn5YEO8j89Q51AS0fo5D7J9qtf4a37H5Xq6XynOctjdFmlzy077dkrDckkdDv8n6-pbL0w_CRGSymq_UftbyEvfVlzxthYSQOA6bDXHhNC0EZVMrEWG59A02wYn8jPJdEWN71fbLv8ZWkufaVGkDkylMmI4c_4oIUExoalPppUsDRzCQs-myCwtepWBu3CLAYx3i98RRR6kHBm2zsdTNmWds-oSub_x0Vdqrc9NWgr9HJfgbo_S4waQT0ojcZkLtozrQKSnLsGYtdmHjqIWlZP24oq_0JT6VmoQDrHMP6NqsxHaBZYqENK-zdbxyVA6IX3edDcBhWNO1YYVlmXjez4zgnA4llJCe9ksUSv5NsEu9p8OSMecRiHR9NN1SDh7GoWgfPr02uzmwzJAH48poIZLB5YynjO5uVYBP8CbMInvCJZ8g30nZG4DZaBXJdVOmD4ho8I1hVhdQWXYA_B93mYWoLKUtPrSVvKVyAabEREbjG0ctkfhFTAXOrnrqbXlqW2IiOu79MzWl0oBy1AwOa4LZb_nQ_eICJocoGl86qXY2RMVHpKP_xK3vgQEgWIfvEmxQz9ShfWq0sW8QAC00paWvcVYoB571D6IqMCr6cF2nGT6vvv0VbvKadG9bUE5ZHPN0MN4ATOvLgGw6Sb6-AwFTWyZL9va1Kz6lMW2RWy5eKJyOxEJk2YltinlP370Oa2sabIOF2Okx0HxlTAr4gXfLfr2t2We06640DgWSMpE_J5U4XQzpmmH_jk1_yFF1wnEhHgXveL9OZMgVWEANl6E3oMF6Oy6g5hoJ6e4QC7FkmX7tLJOacstT3WXyLj_oXXCEfvcsbjFNBpUG44YPODLR4bTM2N_aGQMIDPt7uxJVI__2GKV9dG_WUA9C852WOc59i_tSCFB2VU8uzT-DDr5ahEOSFSboNPkRWbg9JhuAT8-hIl3s0zfDJkwOjxiBeS7QiPuJ6C9vugOu34sQ_AuM9g994nkzK7OcRmZt_EW_AZ7b5-icyLuO-mN4j6f7FmycL8P9oaZnRnzP9oFsriH5zmauwjzM3CArNYmI3-U8FMBpJyK76wn8SywP0SXYI5lEHM-tmBXxv1mXmlGEqQg-larBsVMHmDdTbQwg9x0Q7kAbh8MomUxdnccQ2_NLrPCoNzKFbBV0htfshVP9luaBB2Fb0ITPHD7nnymPtu5-wiJB44u8YWE8wZwE4T0V8N5F91xk1-TU-K640sWa9U8vFfBb310udZXiZu1WiJFRJpTjYaBiZ10wVG7mBUnBKQXAjWW1XhY8hGDvC0CQGT5gD2NATkT24XHNfBW_QHklNna4CUmolrWicvHl6JnRzE50F01lpiwhuXRO53jqT4UoMn-qmpChlaaC5Q4Y9krOb-CXzkfl9ITV5fpv0H04LGK9JM4z88oDqkaDRBDN6GTX9A_UwnK-G5PXy0jPD8XljhXNGg4_A6ekEFjEirV8jJErMYXKpcmCFWQRAbFKrQ1vf4cX6ZJ7dD-23vhMxcoN0-VvVGZFrs0dn4ipZ319vb7MbcLlf7v6bbH2K-N1ZLSkl792UR_Ws0TnZhlXfsIrD9-eW9PK__32SxSTZMTKmwJ337DUr6-oJlvwZJ5fvm6Ht1vK5XeWdv5HfUmlsPopKLILTRFKZx-8NUZLu5D_jTnkuvFMXFHFeTNJOnL4ZAzsabCyFEk8B1OfZ_14BIpGpqE-yeT5ob_M_twNFyXUAe5em1cEup34oDPZ_sc6NeaM8RFmu7Pg5b-lq0fvcxzK20quYweQ7i1pD9INUAPpExUaFfpWkDqhuoGe0_gaMhRIM9h8nF5XtSnaK95BjSFdP0msRhhLVDhNCpBJNbXuX7j1NlRsYVuQ1k5iri5KKwjtOV4FRaQraGF3PAjch_c43-V5coBYobs08a5kSsVnsNrD4mYll0DDTN3cSFfKVZoXLs4grCgFmTteaL07p3Fe5akLtGgnvxnr18PUCv12ek455fDIH5GOwxg4ESa-pkYYq48TtwNVSuEfSLr66rRKCU0KBukvlBKhUKd-i5bRlb6yo8WSaGrIxmrQJpr7AnR55yW8Kii2poYS2zOQjI7Q4I_2uLaJ-UBhWBUkRkA_hSqE9Mxfh5E6zurXAU-X3DJVnQHOOgC3Z4D-oEd363QukztN0tJUHCFf--62g95ywckduZ3BRuEgQIxivt_ZzZA4le9Pxd7gxyN9MWr9mVKjKIrJSW7EPEB5KxpRGHuqH11goNMNfMX3XfSuD3L59Ois1B8xuf4Eaqq1zeHdZRNjcyGS2rn6mThNzyY2XdZHJiJcNpLmWO4bqq2GXeSFGiqhnByMD5zK3RyNmhx0VItIbymEN3CTkmeex1btsYdav-QGqq58DYN4zIacoZV7roADUiWOm_mAP8BexjQ66JL4mqxubmxLsw0Gqx40_1nGP8xMWM2Gp_dhWhsXZVbB45eOxiynCRDGGurd8V1hnenvem5pqKaJpOgNZzDTcLWKbsHRF2iAfaecsccKFNTa1J8u81_fXG4wcz5iwK9cUQrFbDH99RllR_YmCHUSMtlFLGPCN6oRZWBNnp8X3i0hoC1TsPldk8E5TK4Iw5Iu24AqUYp6qPf_aaLGUg0BJBHMZUFLUEmt-GiteAnri5QbrWJrGvuzZm8g9CGdsGTpTtEB0mDDw9XuhEAMGQjRq3Msw9pT6OBgd6SiuswVoZKLEdIjWcyOGaRO4ZWrC6BMeQvBg2zlmaJmxThAbYQoM0mmcbiCQ7k_39HMRT0FHeWTG5lA39H03Ncc4jByCl-ksOk2B3Osd6QEo2NkqkxpqXe80d8cZaZk5KryVbQ4Ywd4dXL1ZhN89XKgUdIqN6ZjDldK-d5h0MSTTF9eHHDmWXUZbAst7D1ZdR0UZxF8ux_zNhChMSvm4dXOhFqwD36nUBfvDjuRnO1qgc82Ascf-dVACc23-CSdSmI7txMUgPI2N7r0Hc94QDOSMMsLidIlQe8qZWYldbtODRisjufQAv8fYBvZgD2n_wfHqmGr-zbxoLoSdZRKjt2AgKO2Pj-ecHi41eByTq6jthNQ_uCuUyANPk610zxIBPn5lXwKgiowhGTu0LFhFwl-GZ1Ozg4tE1nhZASmAaaQzj8nysPjw1lYzofjLdcSdKiWHPRnMydBQdNk14tHNaIYvBumCWHiaujN-V_O_kZC-J9y-yWts65kOmfoUziZ9ODa0dJnXIGT_AKhfCcwUiq8DbYF5gaL0SfY9MKwOyT_Bn1i8-hIpqTY-PXsLtaZdYBVe1DVsF0VcCdl2biJCKuj438j9rDz3g6mUN3d_5SrwWPpm96wbs3mwzCcGRX3HzwGY7Sqb3DDGMwvZEJto2LyyIogCU8ovAFgKZNdBHLrtwoMLKQ42K_yCMz8rJZsrZaZzhTPuFJL3aco4_nh9SkBfxSMl6mk696FFEulEbFKoDiq4SMWKhOyzDEyINgDoHnvB8HmJwWLIcNZ67dnOScpAQuv5HyX6amAedZIvOYuH5iBoBqnTwnjwbvlo4i_dPk5OYnvb3XuU2xEkc3ArSkpgXfAmQNVsG2BFDUevqzl3E1SAJwH68VfA9MJqL4OaEkqPuSi2sgDrtRe-m7SJlFj_83UtmSC83NfTzvNiprasV50TNBzYYVOaaVVLRQGAB7gKqMS6uib5bC3Zaiq9kwrapzESuDfiIyYhiFtFFiE41a8c-YYVj6SeG0IDDCMV8Zub2zHMHqKpV3zcey3EvNEI82JmQJqgeE5TRJZXqmSFetb_hzPWcvOjTR0qQMBny4kwidu81_Acn9yCFa918nF_AmziZgfe4vaSptdxOgZoywIPexHJENg_WxjwhFBOXRCizdXrpHr_7STngp-KNHb9t8WSwTXbP2-oU5ugMq9jEPg5l9O2ohQux7GMMaruYR2i8PvueSMHeMuYPFkm0tmuXZUMQDAYQXWRXGoFjmKeHBPEhUR2MlqtrJ6vQt12TVqUTih02Apqj1LOpAqBZHY5_m53M-8K1NpLvPnNkMS_M4jHKYq_oPchyf_kY_RdDz798JCb-mOVD8CCeb0WyRvKg3Nc7jzwVeWFszev48yi3voK2HTzfdH8hezANK_rGwP6NfbTWpE3A2489m4AsEYgczfVNK9NsaGuOfQ1igJhfarhRhJnj90PvcLfHHIuas4h_xpFbkE7tXqhiQJwg8aT7xl8FUSkftO_qe5nQwfBoyWRzZ8sYAZeBC3Rgwmqhyy6QShgEhlt2ACC9HoYj-w_xOyadwm7NJqqAoW1p2mTKpE1xu2QyXh4sw2qNEGakNF58UfVlbvbrQ__9ftZgHo-qIS7Xa2XEAzmeioplkJaSsqf8cNtNMSg6lXoBx0XXzYitJ5WzDP29Fz510NCT-53qIsc3wX5mPL5gjHeLMVrQALhNDz08UIzHv-6p2OmTSDU7KZgf84heZP2UYAYI1Cj29G9XpApH0tZhCUYK2R7QxozpcLecmwZ3FgMf4_WYTBKv-wK8Lsc3HDLqu4P7fdnjiqnU_EsAiciTkWAcyYwGhqk8L2Og3uHhuEVrx2zMj_gFRd9Cp0qfU4y9Xpo1N8MFr8rNMVT-P4dg0in6IOskUGdqqdTR1i5T-f0KQ_IaWwfJ-JVKIiv7EUoqizIAKoLqqQeimosiZJJVqob6r3mUL0TAq1CCIexlnX6PwEijlGRP9ewfBkd_Z2IPHdUAhwQif8yroWJbSKZbCOD6wp4pkX2K3Fs4XeP4tm94yCI_XLkA29W2A128s9tHxDOyrJlfK0EQ34m48Sbi_Rga4MaB0bCapiLpJ9Xscg94jsGXarCRwJhf6_QnjF2X7TOrEry15pfR7vzcuN6UbdIvhE3_7t5ESLcH0w5WdjintqCwJJbGEEOayBvxVPRQqlMX-K9iG0mao3LLGgmQMpGrFRYxiHuxUpVTwtj9_SyM6Q_fy7RtXewfrX4RrQtcQvBN1Sek5DtRBOnEFUzcjgYoghMglQwHBJD1QlZu5jTyVI1keT5qdnq0Tlbsit3I13ouxjE0BMHdScJSMuIe_nAMlcFXp8JRKeFZpBSD_xJy7dLP3zNXO0W5mfn_efIRO9Qk2LUx9tUXsTbYZymCaXhdjXHNOXsWQJftTznnImSFDk0bYci4EacNBGyA-aTnUs9KHpmXLujZKwzghClqfq2uY0C1-W8Jk0zWePJdUjhfAF0neYh1bY_l0fd9ojbuipKsfWLkkxw9G3zs0tyNKSeWX2ZDfet3lWMV9JOuZRiqmuN2STr8tEn18IWM2gv6Yhn-XdMQNIeGw0yIE-MkaSqQ_XT9Lluw-eE--l5hqr_ovSB0GKqRBHuOeO83Afmyer83vF0JmvoRtcHCyFSY2OHoabk_xQ06F3DdA58fzGUYUtNSh4uNUr-tEWRSf0dTvHkZKbvwcAaSvXJAD6kmYF3GQZsLipLq4o4luVqyFlRTLb_LS_nHodmnfGW0p5gSEkWA1N9g9BsQ-UaINnxU6rSoTSzaf0l9GyRwSGA3JNklcmBfIhiJeSz-M_pDZNGO_NGWxQN-a_RDVUfLh6o2fHEQvSDCQj0v3CkC-e6L7cyIZQSwXYvMhefUJDi6EDNDMcKC3eYa-IwkONnHkmfSL7kw7xiNS-DFQgxx7W4Nq77AyQXTvpjqmTFo_RyyAGN4VCAZL1VorDkD-iT9UAOVnZYPdY4cNIcC4lGZPiCYHo2Wi8Su1GabMa5hhwAHW8GgxoqAri21f9jNE3XvmtrOvquM-YXAj7fd7tvabKPN5WQkFOofT0IeHHkQVsmdoW0bWZmuy0LCMoVK8I8FlKhN35VamDS0SgcAn5daxBAJAEQUNnWuTivOFkw1ffCurljzsZmjJcvIrOWynsnp1-kl1oZiumJgTGX6spajh7jxfeYE3UBNfPhVyOtpMIkEDIFiPDnkXoBPQOflBr2eaW5VVwFcFhpMI2hQCnm-Ob8u2KAlSzmQwHwFOo21dOV7f2xYq6jQKemEY1U4HQ36Zw6xb9eEeGuYqUZo6SMDdaQnJaDIY1P8-I45SDTlIfvWgo9TNG9yIZ1HsF4Jc7cuc4sJf7jsBi7zxwD4o31QL5KAhxw3ISzSl9POLCLnosZG64BUkBQfrQcKT2yCTSwRlMh_CpyE49eiKXaObVONAa4IQrnVZrI_Dop8cU5vdO0tw03l89y-Rw6sYoZ5BeWoMpz6ghdEcqjAXRo9A5KKU81FI9Nb7j6bZL9vHF9gMyYamHPaFzNNM3YhbjdS-wca1LZMlsolpGEA8P9DdhZEfGf7mQZumAe4dc6BFn_KeYrJmz2Fjsegt3Qt6KKA4FutXVQNbRJWIVstTnwRL97xJW-EJtSM1mWS6cMlrvynCpueHdMr2zvjOjz7SkOEtggIb5zdgndhSNjbVhKQcp6t3852tocjRrvr1-7Sh1nbepG0NmZVHNFZ1tTIk5Zza45eGg3oaSpW01ipth5nR_geNCSbuy-yFSOorE-Yb5jadrWl89-epApdG2IDqn83-2AR2G4bvlKnKAzI23uh1vzHxjXAMD3G19DaLaoeIe1RPjeMMHm4CZVn68MlicRBUwcXPiNJyVfNfSDhER4upyTvVCgxmX98QwPQ-47GY4pBaSlZxgO-E0S4o4INiTThIQdsj-ffad7LeD8KhTvyx8GGcchd-WJc73ugtytHhFfRLhDB44_7pSR_tB5yHrYws3iiMaIypvzvCYdArEAX1aG8FboID_UH2RFRBnVvn1A4pt0cXjyQc0umlVG_4xR7ZC1vAYXgzl9ZPSfQt39HdpXIpZGqSbeTN6gUxJM45pusEwDKkCocR_J4cwkN8pb-P7s6rCpsKMw0lmdOqd535zCN9vu0w-AUufJCvix-S2sHpUcExfPdJcv_2FKr4Nl1wTlLvk9nbYV4BexzfE7zknjfrFZh78Kb_h1xwLb97cxXtSowYFZgteldiblyvfkp_-eSOw58Tq2DytwRdpQYDo0XoBej-cmF04tNsufzshrGObGP1qe-IPNLniyI6_HIZZ7fqy3ANJyDZqP-8ogDgMz9IJFJVr5drwQoUaafydlNNemXNKurQumhxLYze28C7vT_irq3lB6HY0nN1BPDCHu3Br8CXZtb8JW8e-XUVUP0C3vxe7YTgP9nDbl--_sEqNrA_e1SGN8inn-xcmvMfN-mQZvwc4ZDkgoYp5tzaOpwLgB-c8dug0wvMPz0He5u9KJKt3Enr3GvTSxvjSB4IdkA1DEeffFJYdFjVeZ6IpXGaNDaKkZBoBq-Swye-u8bhI4SYm6UaCzHusXVccMldp1i-03eSNN1bzuZ_tbJXcgpRjRKQ3EW4cS7cKmFeoUBUBv6pyOyyJW4T5e8OwVnYRH3IjUJkVo3YRXTvsd3-W4lBaBmwWYjUqHQlFe5_BCCVmwnyev52nI3V9Z6O06ZyvIkhCzErWBxLzS-sWfjNt-ZFzhlOAhTTmOZyva6aCJ3VJb_kH_tD3BmSMZf_vC4chz9rKrivhKHAWSn_ObxxJuvzCpEcb8zJcltjWj4xeAMYVJ1-zLf5LRFl9_ZczZrRnLXrmx10ETawuINYYKwSrL6eMRm5txaFJG6XF5lJj-Ctkf5wWJovgfwRx7_JGV7IGgBWNLLm54gK5P5DeoabDYKEGsQin85k6HrkFTMeXbPP58wCjhdpd5zPqQllzZQrzRycdideQhR50lRc-UFJHupNFRfXymnN5JBynE3pxzLFZfbs7UhNngG3igLQtJwbYwwhUXpbvYmmmBI7s2XsszwYzxJ0X_xM8w_8HKON9mFg3-pmPPdpPtxU6RQo_0Z-YSo2kW4oLxF7OaMkwjOSY31p6uQ8UC6qfsitMm_J2TaEsW5g4UHNaWQBy6wZHFaVaxjyYs2rHsUqYEtMUcGeiIxt_3IWNfi9TnA_JCUIM4jddTIJTqJenZQMjwFQeDaBDx2iFaUSOcbv1OZRwdZlBT9n-zRNDps--92cHILe7pRWB_GsaXAxXcPPlhHJj6YFAIukGvE16t64SuenBRWClwlhHLnSjRiXBlVFXxzUnGBuYsa_ePLadNQlYTyddGSP3v_wu-Pn0QbkhebKiNky5SXI-7bh88GL3EpQKQXvr88O7hYgFgUGW83vwxsbf8gOkodtjoZ6NGNQLhmXWCEiGwzlkKH0Fl68ASC4jKpqGqxINGxzSTb6k7hR0_gAF9gtAtBssMvrteRaZX4OmOwfnKS0rm1Vm1whsya63kiPyrQgUPmbOihgy0K9KjdUM8-KFjujQ7u05sp_Ynx8ykmA82INRenKgqh_dNZ6WR6PShecoObEaAv9uLvY4qSRD094uLZ08ZbnZGNWOs-hqr4VogFW7mGCDWNNHndW09g_Mv0XdNMqWaNPrwxLD7sbtKMdCI6Iwsm3dRExSphpKABiVKk93B0neh1eRnayePQBimtTGJLQTSYAB8igQoIdlAHdzx87Rtc9K7aPTXAQQEpZht3bHsRUdar3Y6kFxcEb8yhLpbbhWPaRc5KCOM6Lb0Vp5XhVvYZGM47vTKlxPfyZ9FDGXDs0hFkAhiq7efeXxAYhPFfjnXwt7YyDbCzqvjRuX_MmcK7uICr7cXf_GDfbSFw9riwnVyydPx2V9wRr2MAcMlx9387hStZaw0HpxyE7waplnMgPMpeUpkhe9Uv8nsczYxlVkaXA1GG04UgbzsAym04OqMauepXhmAbc4KlOO04H2vRxt44UyUTnLh4Bv-05Pgnx8YKpdCOskZwoJEfVGp3wN8YZSWUF-yM-dg_uyQffVdcaQ9wZl25DSxt0wMgTNy_eJZPkc6X2eq4cUKTXsVZThvWICQ9wsv9Z1vh2Nlg19G7JkoePEhDEeQ_lWpO43gI8dziTMBgl_vaHDapTPdckCPILzMXXQvd3IuA4J1JOKWyuyYI2aa6eAjwYnWSFH227QYjmLXTaeFE1ryf11qk1JvBOOdr34NLKuHzCC5fRk62MmjyhBXWG2FcZkpiJdESsjKHVRxgcCGpT-cIE7DPBQdjjRMuXu5Ui57socP5jERLspDPrj26_TIBKxTEfiLj5v9odRpU3jYJHs4AqRc6zkJo78-aRWGg9uK-EjUEoKrjOVBWIU_n_dE9ofBR4UVPi6rhNZ2P6QjwCZpkT49SN3xBVBBDm8JlpWlw3k94rh6MzoBMKpI2Zx9PKC7w7htwb9K9snc431Ck69oOgr4_YbYOort47iUUoYhh2r6bKwfB2_Gp8MacNHc9KIImS1IvIfOYjP6yYQBDuJ19LFIAPWjxBtmfZwTEHWkEwAhPYPZT_3csjnYbHwvXnBPCj8aaP6CNTDPzDPp8uOu4ce013aW3Atq0mqXpO-sgJsjwaiUWehR3X1WQMWHWbQ11CVUVTfNx_3y5hTV-f1j2jSxVGKDPBz7Ucyba5TX8fOo6xSzQRawuaj8mgHK-_Zdv1QxwSeUMi84ZxJmmQITsVG6x8DmjO5RbPU4u59xtEMvDtYFov7stZBpWKoGLxB_G2od9DFbw8qvmuQwhA9RwePH1Cekzjm6bxdpdSISJWcQLglLpWneUPqBKF1cFRnwbc7rQkumvWO-Bn_28xS68M9qzjMQ9ZllxoARnOSHto_FeAwdiSOa1bn8TeM0RvffaIZZOhE9rRH2ICgtq7TzyzvQAeEJbryt6Iq2Obv3r6Ude9fpGk9q5a9zvJxloQT-DA0N3sPRm4JtpXCq0o5e7V4SNXFu34j5tOHlqHPgJyDaF16gh-H7wuQLPszbWbfvPucrEI4VqyLBMfdqKh3TEyM2D8iQpmmehqIOXJjegQfn6toITjvvKL4Yhz8DJcCDSA3w2NgSIGb3viZlBiI5-U5Lli9Lr2fBidXXGMgshyJ5eRgy_dinvlLCLJ4CY_3PiCX7ke5xvjffxo0qqow9Arm2wMWfF2JgDaL3Sd3KGpp-wcJpSNecOKFzq0Wc2z83FOIg9Y_E1no_pa2f7DVL9FsY3jjrtmWtx654jimeH6wu4gjai0kMw5xlgZ2GR-y81on9C_htZGLZPLbP1vL8GZRMMavHrak8OfL29AFCY5K7Tz4ayan5mw9xfuBDJkxeaQkR3mmS0l-LM9b5Lje-BqJ6lYUzEES_V8qL6XgSwrYwgXWFz1CaKka3M0Kli59GuLZliGEjU-nTWVqlasLTN7QDPvcNTjDkiDhO69ztI0AQ5aMwpJTx-TfI27i89ZHJDCmSgS4ixImq_0BD7FYKvmv5wfE5UE7i57ySENK3wei0j9rcEQNUwGg6RByw6HW-bU9BnzscrwYMlAJjVdUqAV_xBJ-dqR56g9lSzDruWkDsS1xiplS8doJc0phP_Oggtu-HLJIf1KGxzjYczEIs0-PqhO2I4jhniVJ5xKV48xM-MeMi_TAlR-qVUm-bfejiRWGBOprwo2M3aGgK851LYtpoPsqsHRXGCLAlvNumNCZ_V5c0yxFrlnyn8HQ9yCABbyKqIa7DrudtOwsoGQPSGdZ98pFfh587JJOtsPkg0LhwqBcKakszntbMG4WW80VXSikkdueuLPNxBiTn0CEg77wIQdl_g0KBPsJSq5sOTxFT1TtQ_RrpV1ChAqFtdnoPNSA41hZ5zTGEW42XXdcXmaC29dPO9YR7v21-X0G8UiMV0UsWjDGS6heq9qj4MJTlJW81limlDrO951IO4zdQng9_ODVx3vMXkcViy4bKxzzYYOcaGAtrWRgLlN6h5hDTXFDqVgrul46Tq-ILclgqxE_Ot0uRDdcIc30UalkYQMox52j3O6n_0EF-ZPaiJZfkRHDs2iQs1MihJsuUYnR0_Ja9qSYSRBhhO6nBV9E9JXEtcX20vsPF4B3AozO6yfaqswQPdq-v627JxmoW8gg-kn3aGaJP9deQOKC5DNN3C_wXU3LVQ9ULkSMqe4tFIIM8rISY3XcHb5Tkqjs1-RlElJawquh9Cw-aYP36NuXWzCf6gDYZ7llj3B2CUUDTvNA-seF4PRMXPSnI1p5G7gLdIRsX3x5s5IIetXQJObQK4VpvGfM4g3cJw4QkGf8dLB5gpH6MxMp2OCG9zhdAPgRuU69nY9fXyjPDGiWHuA_WH3TRvlv-Fssm9Tqwggen3bthNdm9P4D5HMdJfDOwxc1ZLTIoPUk7aj2D9_Btk2b4w1sIiiG4f84ykcy2CINg7uaryxDMBuzH4g6Z6cFOwG_ArQVWh4E5Wh4kuM0TEr1GMH1xoPjsEkQ7NVCdUUn0I9JllRFEI6bDkPPkAU3x3KeOwxaoIleFzLyJThXNJyQjW_H_p8doLpqGqXxThp4X8fTM3-geHZ3S82nVZ4g6AnqyfMgX0JUg3yvuHU_1aVQ-t5Py_vvRkMO4Uxv2RWsIw7rbxuOV7PnS3gX8SMGLBWEbhbAdIRhQhjVEdKcrLMicN5CdhSV62XnEcJYTmAE6TjQox3UofXf9_RPmtspC46iCd1i3u3_657XoI9DkFKKra6Qj1K1ZeALwoQEQDzNVVXp4tsZYsTPBbj5-NrpAhY4dx1slIZkCUTuP2jSZ9NJlI6DuO_0gVl7mS30Ht-93BVdGliACU7rQEsLTzjVNBuqDlUPDhyHhqQ-YAOhZAfBdA3GAYt3xVyUXRbJqbjg3EKFeTZXjTURoOW42Tt1tDZpxnFerz0XdPD2mJ47wL6ZKkKroEPGOL6SJkUWFG7nAkpRo325oMsjpmdEs9B_vVBUf82urirZmIl_XJ_TH9qGVS2LvIVvTCVDv69U7fGjLCYqab9x7SF0lBq5HhDq_C5sMDs1-zkGhCznbQ90VrV52j4uAPqfMhUp24zvAoByZjO7M3q2C_Xir2xDEkTjktDIHNtaGc_Yd30JFiioafgY-Iowkkgvj7UrLJ2eQSpvmj3ZMIwb1J9lLQ3Fp_DvfxsOAdtdllGLyNOsTq7eWUdeizxMC23bG_AE8oC6P9uwYs8MnH91y-Z5EXgeTI1pIuAwKULXMXq46xLD1jH_mWfuxclNUlzIrdoKId0ULQ48H-OS5R1wjetpTd_NCCkTFxm70pWelXhqTPn2KuLoMPBWfO20IrbyLXZqqp-6Ey9OVnNP0Se2K6H0LrK5y8NkBssTjoj4DEwUguXx8TO09owEY9DnfYfrbPpWBCQuCC_TO21rP4DKPSr2NN2ZYIhXFyincR4ar56SyDg9_sqnpQQHY1R-dB532u1BqczSJ08oLRlgRiWObhzQ-VFDBrK7O84tJBVgJpWrpapN49o067K2ao5zzO4VH7CxG0AqTDysJjtdtJgb0cVhL2dJ_WA1Whq2TM0iV2CZpTeDSO9spHPOr4JfFaGrbkleX1K9A497tDbnos_R4KmkjJVCVGq24Ol1P5Zu2JhafdD9sEuaLSgt4b1T6cBUQ3tEQB4jtrQJZ7WTQxGnDOd7naFMCtkOySRKvwwdiHmQwhso9WhNoSoszqOeksACn-6BgZDUMRWY99Z5wkU6GsogOI3aS__z4AloCghC00_VIGCApp4DQv589YhD0ZPL0wy49KjcguiZrB5jIlwdLyxbzQQ3ng80HOPDDgD-eiir8GKaADsw5_5S8SnF8BGFm1g8crNhm8q64aXWpr5fB6uzP29ja9hr8T6hz2tWr9mLJV1P0Oqot6fzaSc65hZ9T6TtzK8dgth6Q6iXM6gZU33LAdT1pKg0_fR9s28gTIYuYuNe5UkRw1VoA5OwhUBC39S5343IDahcuJVbVQvSUKPzQzNJiDcxSerq3bzmkAp5yJLctzxs9Eul4ZJG0YyOVHeuhrcmTDbzHhNcyHhYqVMX5AhjMop-mdk0SgTZpBjcVBjxkn7YZgh2nEt5AlBXLZ5rrGADl4B4rbB3rEpPhZD40oRYgtqG-wwxl1e74GVZ99oiUPwkQucDGZsRqdPUNzb6vE4YsbAqTy29_sXBfr8RSgSy0sC1JQvXs751lYzWKVIqJ6UVzZcsu_-DJh3qo23IoCbZUWYgP8PEV8LrVzr_4yK1ptOim-889PFDVP3lpWZkmcdO4pJy1WimLVhzaRc2u3DRb3u3Kg_yNPPN4k-pZQO1fJZqSuZV6q_t0rJdydiQ-XROPa0uXNNa9Sr7E1ouGaB-1SI5emzrsryH1ijNt_vxZ5llWd5EjEUU2ck861eOATsM15FNrYJkMJIBDnV9-uwamJk-d1UZPwyWlhs90N9Id_FriF8Ln8vLImaKlFrhdeNFEWYrMJPHn7SXMnAUT4BIk5N9c8akmHcJn5LgBGy6NvODHuin6yAQZAsFtyYU0izZorhDUkHej9pjqi7_-KvTKY_U6cbo4jBRO_RehP8NRB0DPyZgwbtZkSwaSHKnW8xVOKRbi3X3u3eUh_rZYcoyfm3NgV72N-OkZkEvpgIWDyCR5Jt7gzuWI02LbBksGSMnz9uKyUq1cgB__drm2B2biVZY9fjg2Gwi9w87jSVHzXbwg9aCj3cc7-lwjAZeAuZGIL9XLhT45PJ4Ge3E1Oyd_C7oYJdSjKRuffAzJfpu-piTJ3D2Bg-_dGu9db_2aT84z6OZyg-htCO4h97Hd0FEJhKkNNqFkJ_9vFZMRDj6sQLVMoT7S4LVOePKE-g2bP_sBej0MaOdU-SDGOHOR0bxxh36EVxFctYt2jwq6rNp7_jUcSFc8paJ5MCPIksgPD1EpUVx-xuSd6lAw3FNl3GihYE8AkUR4xLB3QvBUhSMPoyB9s41Z2KfHxv5mpotyqJJG-dm3K4TPIZPSdefpVMpvjBclX0P6WHVG_YhccZz7KIgc2hsRMam82cyVG1RE9nVPQxpu3dlNSbkToI2NfiCa388CSw_7JnuD6baCQRaMMc1vWe8OMDgKhiZhsn5JE5Hb0NDaxxK7PUZXCeHHApoOItNzXyyAU8XsvTTWDi5FHY843COcmePJitm6VjrYoeRmZ2AIxNkXhlgCy67d9FrIuK6J-K1W9_9XRGXVrnJMXqmXEspw60Gh3KeomtgVonPnqXXNksaOMiVHUADJ0Qr4OvkONP7Lq5T9ZSkj0h5POt6mu7UQv4ajSnPlzU3BrkdAgY9AU3w8MH9IKD9lYOZITRl2Gpdsr9gfPkBuKEhx-urGBd7sUEqQEi_uYKIdJF-OhCIZy2wknctjrbcm72U9kMUq19-_DUiZ811dNon-zSSuDUlbej4a51ocK7AfXVgTx-SvSpGMUNzbB489uKWzNKF6gPwgNLmYm7w8GFoJSc5wWUiMauzqBW9SMCpfvZ5VFk55ync8Ur81XW5DffBRxxlEihHCvGyIan9-gnqVKvN1gm_fHyvhnl-UE_iO4GGjapaYd_pF9NYQZQxCO5Acvpe73IhgrK_Yss5dt6cgM9_WpWKNcsW91jrLnz2713luNi5fq1WB0YHXMSOzhVxL6c039INxotoPbPo8U9lukVsOeBsUkv_N4PKWRnC63VvQfnmWcvfhAVh-3No9GWgvp5hriHjbkk91o_ypeQfsU7RQMABmujVukztekdGqGdG2eCzTXHBiPvXej8ZtaCCka6ZSilkfuctfleuQhbxg0O7_RPjh3IEjmle4T5zL5wA6VX4g4sfU5lmghMph3nOA1SLqioYgv_TnjFs31H36-Xipp180kUJujOdDb7SZTPtnBWlpkFiNVaCIbDro24tc_xs8fCMTZE2qQ9GoKeaBvzfiLiS3DrC3wcYPvZX2G812JBX_7N--Y4fEqcM4nwnhkVtmRoaAqUTnf1BsCLA2K6BT0Yd9EpRoepXnY9OXwBLks3CI1cmcM4tF_6RvzJHHPZ0thDIUSPLOqg70YOnHGef7KFES-Opun1_cO7nuVpzdPceCkseftQzZaNWhA-ANWwym-jwYv6Z0hXGViAz0IffuxGoJ9K_TcLNviEcfZ0nDNDVv9gW5Ik-llV3lZ7nTq_CwvEu6TwSrfLJzilxjrZaUThuYSCMNpbpSU6HKL9i3n1WR-o2-OmOHHPwTDjHeyAAXc4bKXJhKYrDX2_Lc0R7sGbvqyS0N3SqmmBK_1NlP1FuiWNM1nW0J5IPAsszKqgZvSM9HDG7J5YP9Ye4LjhJgBjhqLr3-VxHuWCikvxXfSUMUFGRqCC30SzKaHDY7kHKcXA13kZndjtfnT2TX-6OLa2ZcmYVzXLzooQGUaR8Wa0_SlMnF4Rwa41HDn7yPkwe5Sphj2ony8sr0NYCAZ5-5JzTY93Hy57kYMdydwVNJS4YavwGZm6xtKahi7CdbESQ6JxaqEq436RFwOWF92p6niKwz416KQHXnlsbKltNeS_w_zkcJ-RHRnb5GVZEu4X6XD3Un1qjhGL-AHaH8fJO_Ffp-q2EFYDTOzAgXVawxxOGoMAdKnVTJuqOpLsTHLcda_D1XVg0ADQZUMasNPzOGqqqNtCcbtvcJCaTHKw6tX-mLkpprnbn-eWnrfKCqOUfklPra3XBrtKbPWu3AKRYURoXx6xMEzQdiZfKwUgs11Mn8fMWKIhNfQ_bZ3PFf9eANjypb0P7CHlc6EHubrO62BoglmwJF7ZRn6MyW5mJkCSXzdZTa-MxER-M5R-4yTjnxCtOIhEKdbH_VjxbC_Oczb_rBNL0TyMPcWw7pmRSBd0ZaQ39_mpk67S_BNM0G3xaMUk7xmsMPXTWmyvkWIJgH_zNhY3AmtW9OJR_FDm9jz-NFrbPW4JBo3qopNeeScDyh9qt2pWh3IIXXymuPvkP8mncVLcRg-wnh_nG6oUft5K3S26cRmoepz0Y0vJFU4e8YdGAOlwpb4_AvEJ_TdUZqN4IigE1d3O2FaU_H9eLLFBAmhN07S-3KCFsA55xuLVdA3rlDPqw5tizniMBiDMCjqH2xymu7_OxyUZlra4YSRQQf33_JuOp7ZNWOHpJIAeuiG-5VNrpUyGe6t1tV-BGCwjeAGnNe__bA9azVDz51HXsd0cnDMWSugxm7gFfyzUUhbHM5b6Nd6dn02S8HCKGCBmPepLyg0-K0DgBGLavQIxRFBnEcib65SeqKraYPFEU-QobJiAWJYLxUOKg253TIMbGzYF73m3Q7FUEubxAwfrhAa_dmBmW_FkLnRE_xuncrIsZZMGIgA9bJWCRVO8BaU_Sl8d2Ger1UTSJ_g_LaSQyWq64f9PtBpC_SgyBSdvtMpLmUSfdeYPb3C3kvxatRI9ElEZ7mSy_BkAcEZkyjpc25Fd7sQWgPd4xXA5toYDm9ol-0IoeLFRC-s-GZ8-FaGs-o4DJm88V4rmonIzK8B9J9Uw5ybDLOoWEnMqxWAGEAT5E1TZx4D3oyBKlkAG2ktRCauNRqSnUpKdJY5_mOR-Bsbqc-Ovod2Ya3FxZzPfG0S-rBxdm0QwV4EvabrwJXSiEPGg4-La-iBqHFMCyWSkZXwmR3JfClQYS1spyeIraVqIVtZQovI88qiz_lcNi68XgIJcil8t8FVCTLrhKQOumCMEnzNj3J5J9ynL4sW2e4IyelknFRQ7mWQdUd8aVNCnlkCkNDTkdBnsxDxEkd6hbv5lJQI1Bg2dLhEKWhKrpND9-bdOBvOFb4Z2CfTsZPeI5KdkFPyHqwOrnuB6XLXFiKpTumDR2vS5DCxL9gG4gHxCHlG1mGFfCLQZj6JM04wuSvf4yQ09H5KWgg-WDQXuTWqoEgI2moQuGIge-43Hv90XoVyTC00Zhaez3hZbHfTp7pzEwtE-ouqe6fIPmBoxiRmVG9K_6uwRspFYm3TkThXPmZ-nlJ3cYHeA9pGEyDJMPLCpf9-FdQp9LhX19RQKv8i9-TA2aA5xNIENKxOfERiQU0Mms04KWtY_lvHev82mpqDpoBglMLtB_8Y_IBp_QTMgXKk8oqSlSbDSg9XF2V4A6hAKoB7HmpjAvn9Rkqo56ehkZ3KS-NBGOg85cdk3PNmdjR1mZPwkqgHEv69dhHDteMdyRvgYfnfraP7xGDQ1ZpdS93lKa5ePd2-02hKuUyq1w51zGP2HCo1C4HfbalRI5KJ1YYpKykIEsflMgnEpuEVQD6ZwTHQJwxQyltSUkmh4EjzV7dCN4LxosfSyewEHTOfO7Px2A0bdyuYiWaU93hB9qxawXAP-eLqLFmcxkSEQUEyxo5DBWZBcDpAjZ_smZSynjUKRh6FpK_MWKSERPS0miLWl_UE-gmUkdExrqTxIxkQYqvF4hjYS3Ny75vPVBtXgcZrCZ9445m1jQklbk6tUw06jCcxjws6REfxUggI3MLz_FOGbFLRnViB_D5IZhcTE22Chj3Cij4xtW8beSwqBiWIGLnkGxT15VaSI_CezVKG30HZ0yOUtJEK-LhefnIOk87tcX8B1dOQhc1f6l5q2QF5hYWPc6Yb9AluL2hc07JWXVePzLvHPMThxsUQWnoXvsI1X_iuPUnfbCOj8tybMMyWaHAGMFmTHxqIWK31v95ATPm0Jbvf6Z5Fz0R6afQEw5EpCe6G0gyhTx9C1hkv2ZZczS17ZptrtTT676J0Wel5yTIa6fg30I75ZKCIRCc5GzHSlwtsPG3kT5_wy5gf-fji18pSExrA31VB8guoXuwOJZEMuY1bdopWCkCsPWI6h4dL2-Oa2bnEk-6CqJRr10pfdxDZS4TgZIzD-h7Fr1ZmaTq0aRBenKUk8I-9gbgVlL6_HTB38hvQwJtseIPh_j2DGFl6n3xW5arnjNBIJdOrdnV3WmiT_Kc7VfCT0SjSG2iuCT2z2jsAdOASZ7N8Q9hQ1Mknr6w8ZrUhqStUO7u4QHEQg-XcX2cHC6pM4D8XUP3sxyk8olAjGOBQDK-NHGG8_ehfAHnqRlLD1pnEkIRxk5WDHkomR5UwqnNlJ93YFEVnzA1gPbhPniBTxayeTXkpfMthMzsid0B-sFj5_AgERaZNLZ8UBgze-3iagUs0eX9fb0gyHB5ajVV1lGThckUnlrRsHIN-8WW73seqQMm3GFDuj0REuahlh1QoYKfg1RE1Ftw9CVW8hAtB-uMewfOO8Mdps6GEjKmT3j64wuJ_vm8B7dKfDv3EBXs8bBVb8yXbEsM-WTgxiAe1nzPBw6B78ij_HUj-hR2swmZxLnIFLHLJBlLcj5eJyfd0gNpD61uxTTaqWYTdrLyjWL-4vZyYm-ToYYV7c3t2N5J8Qjc-GiL47pVlf0Aw9SwLPsimgPM8GhLIItpTU6R7_la_bTuVpp__qi7d2wdHSB6HB8Wwt_4TOWCsmDKKoS8bH3z6Jafjpaho2-klAwHJRjRxk_8tlJtsow3lXmJ1X_yKGX0asOvC2aCvroGARTilNHjbDibzrJkFuYG-oauRJRB7e6SE_Nt6vwfIsB0lRkjTJ0_ufaFbR15NWTjWb4X39U_y33YeKdmETk4txMS-irtRExFOHHEPbJUbIcBnEU3eoG1XWN9onHnzdlN5-dwLUfi-lJLNz4cL9eWACynRYrRr3dTZuOJeNnARBQIXvBn3-LcLsSeDfj50yNi13TuLekR--nQkXaYmVgizh6fIGbPi1iYmbcgRMUexjaPX1D3fo77HIxam5Vxm7j5cRTZB70VAfNNXRYUtopBvUANSwKcqJ_Dr_ifqtjufDBupFAKrdmg6rAYN_hROSIFJeFF8UqaGZUgqlFakZYLtN9AcqFUIpBTQK93ByqK4qm156M6tGrxRNqa62H9FmgtTPNWvdZZE7uhlOZhrDuZ-auBlUANgLyYo59t3cAv5orilFPVdWLXUDMds2ftZm-txwDq30UIbbEYVg-gDjrji4SW4xJnoVU1R_D3CXzH5EarJv23V2unm5i92X6KG88GV_pFLQiYKhshkA5uLNxjpVvLEYHLpMIOZ8y7UKA8Ytg60iKJ2TtdSVNsplp00op2Vb950sfwdCfBMF1Qsz_b0NiqUrDm8UFvWW1gEU9_YvyBYqeEf7gd0RbTZNQt-voFgs1rwr__hH1oX-zSpYlvilWnkfFw5TsuYHxTq5ZyxGpsVr8wkiXgGPr2gJJ2b7Ah_Ar9NglyH_spc5E2YM9LR81UEh24Pl1r_TkgJmadLVcwQ9ocw4Jg_f1je7IwBQ5klLw1cG26QwpIPKkAVPq6tY56prZq6mjOW8cD2jBY_55QRqqFGDfVIzqtG_GF0T7emPaDFxnoeUZlO53AWZPqn6A-LZ-t1FA-gqVzG8zzfdZd_tcEys31alO0UjJhcg46SJR6NMjUbO8arrmYYKeq3zVQdUmmPRap05TBrIVkqSnC8UVVHgqoq0hL_fx6lbctBKffnMVtbPHUA17WFNY9AqjKzPgz9JakmcovMW35b84NO-nMJtBdfhkHsK7x-RhjS52YZyIHmZX_Gg3vqRwsM0asoNXkF6WDlk7LQG-ralJLoJqWXh5aEojDhhsGtpeTHDCji0aJRvRjR4w7tQdFWm3gHGCrzJnpcSNAIQ4rvSMdL3Etuxqr3MRTj-N5BaCNQ6D0zqzmz878pdeso1uQp1PytozmvlG2QF-kNhbrBDiZYWGoAonCCOgTHUDUF42RR_hoizyQr0y9rbM2zB8n3W0o_rMrT5yozGNFvp74XBzAk6PTMPp641z1XUo_6xnsxk69qaUYisHeV2JolkiWS5fcruK1GLiVkTRh-Jo36rI4dR4KU-IXGRN1MS1eHzC0N3WUu6lDJbS4JwB8sgDuriwmmp-Ogmj-ozaYKcCVintPUO6AhQ8Ew4Uz1PzusbP-JF26_IcATGVbC_ThI0QpxZ-m6GQv-cpqZDcWnBOgS00olfhZZHIwfNcTyXZ5_fn44Af5i73I9-hLjMygr_8Aune7HtsfUV2eKGpdQ7mbauuYafe5EQKopBftcVWey_oMbO0Xz2SLKrPQGmqVmCROg-HSeDKT6kvj55BNWU1pAPgVn3pRNJ_HtuIOGa23sbB8FlJZviNlsCmOX3KIf7aKVLJFFlNcm1dhPyD1HwHZ8sBPsG2gXYCpplUWbqeMsqjkKyylbHJfuFcLD6zTKSQ0BY1yyAOlXyZZzkylod66mnwx_EgHrH5K8OB9WlaOXafzj6IDFr-G_98N_s_LWzsXfw3sF_KyLmfwqq6EQIs1MPt7THg8mBVGGrlEFmCXtWhJFXMOaZmSATU4UYt6ZZsKCbOrxq8NQNy8GmkcVLhoDU6ed7e-2p0UJFUWGedfA3eYYtzfPBcequnijR5gESLMYYdFdJFqPsEh9aA4xdi28gTHrdYUFjK14y2y6N9hP3AwfHRA_YytIZZzOpSpeCrbuW5IFTnghn_JA94NGB3NVG3nhAi0s2WBC5W9bW5JYA6qTHsMS7MCyr_sGYoxc5uPegBwNH15x3Y-TQP_vK1jn1pBKu97QOSsekVr7KbT1Q1fUGhD9d8LGK9fKDxuAYwBRbkc3dL11N9CFF6n8tGYV7tsAHGnb9-Cx0VpvKSuKXunAi-AsNXx-WyCRcP8q6XarVQoK6afZCiHyibeOUzu8KWVKQfpOHIZcAmyIUDPPgq8IV7_POfKFDqqFLy3vV8UPb_iq8bf_8MgoEVsBum7C4dI06k-iCJIy4DgckBitRK23srL7EA-Hac9e-fR8Y4aUzo2Tame8ZUDHHjhE-WAILpQpckDh1fuhTL-5fgN32NuT0F_qkis5YCSoP2zTXlqBPqmB9i-cLrEsU1m2KvHG1ltunSno3XPl-tpV35dZJAkGaVpI1Ss8ph0zPpglV8pyeqfMdFpMa15Aj8XX4S6WcT32ebIln6tbkCuvMe6_EeFUrkt71NhBr5sCYrs58tz9ITdLuW0ECt0ORwQ0xn7RoIzRmr6R27yrf_ORyNbjzWH1ITxGXT_u7ugbTPrMFPLGPkrbuGgZWW7r4KMbG2eAysO5QsyjMNcBrtNZwVUWBYoNGMI7VCFd-HlkncpQS6BvxTIUmO0czKbzanEfFdLbSduYh2IyQU15Lrnck3M6sgcKeVmBM8FwwPxiOdxWyurhyszbcriNb21E-waxKpAHWNiwHGUCMeDgYl158uCoJZbPaL523KvJkJhz7-4FAW9dKwQ_uxY6Xq_apfYtEvmK7G6_HIiU1eUMRf7-R10aQE3GHSyR14ulNov1zfx6JL1Xst6mO-xNuELrPhuJYiPAXzLIz9X9uLlZ6W_AbEDhlSunq1Z-6W4NMX9zO8qZg39j81HRCqQSD9Vd40gd2RFz_kILD96OX2PTtylYCrof07eoRUmKdO24Q6v9dg0VNFp-3zjayvASCpHM1YCSgFT8NavpdMYaM6n7lMgrutzB6XKARyG8EwSbxrFQ7r0FW2SnN3Y0JXtWZ9AOewnJ2Oj1SYQSlvTkAIqiEj686CjFMLgK6FivpQef-Wbv6IBbkB3qSKaAdu-tAtDMxz8xc8MgMZ9J6bG5VsikUd3-YljfX6QoF0PT3o3dHrNddV5yB5wHNtZ9WWn5qBH19n5Qxb2h6E3AqEricBWFQ7Rc2NhwWWFheCUhwDw0AQjAC55IMRVr3LbeTk9o3gJ4rSmisMHcta1YMbdZp-zNgniSmG6oT6DgyKz56bnE9S3bdLXBuFANzfFJi-F4WsuKv9VUy5BYvbZr-UUxkumDUTpcYcNsOCT4FG5qArjO56mxGF1tTe3A40jclJZiJnuPSUjP6rdsh9grInQfhRktll03j3hUi3IGOOQVth-Mqz6SF3RFv7aUIXMlBGZ1bM-NmIdH7xWeIkoSumjzXmemQSqpaQXHlIKKTuKyvfwIBTG3MnWGbbVEwc10MTnPAnBZNjJQN8R67Op8MTu_H1uvA8cgGWSsezOYLE_p5I8HM8BXuAM6mutQ0IEZbJub47tGJg8C9phLROIlsCjRm0lnklhWOEZJS-W22tb0RMfdix0m1qPlI72ge31eYozCe7BjfmpVH4mOCnmnyQbBYUNMskE3ssgSfzB7Pa7uudHNgFVumZGY0UyJNEcJAe9p_xtSsUGBpxOQ9ittEnG9ZarAkyCzW5HShrmUchFHwMg_QCygn6xTqzxTozm0RX2nk9bAeQMSa1zYnwOsBP3NXHtkHfqnak6_ivULLtPDOOTFUbAohucHNdcWlyu-khDIzJc8Pg9S29rnLBWIlDxyeUVKPc7e1oip45iL8GhlbEgmNKGcqfENEyvWukASduuZQq1Q1hYxOq13TqAG4jcTJi-wGUsfKJFAOhbkH0EiE8pR7X1Q5dG7Pg_CPNJb2t4YdBFOu1GIShnl49w3D2kUMJ54ipI7yjSYl2CnPwoQkbHPRawaVi-NlrD55EMbSl1aOF-pRtECIEqU2sIw-1myv4T5ON1Q0lRJFiznrJZgUOolI2Qow2tNEG2UaJnPXzCnbWnwcjhO1hKOpnigfinUmboUtETNciTJUs_Vhr9D80uaxL7vh4ePwCSKfjkiTPbejxqKhuYnnKUez8wvp-HwtU9aHe1YYCK-KHdcp6YA54K9vUF5QBYVg6zUC3c__AR4AEwvEEl_ADVuRs7lf7Cl0Ty2V9xLRpa-qgdQ6W37WP1Gvvls91WVWPnlT6zi2q56phl7M3rExFgHO02Z-KSRf69mFHo52mfvabkXIU-ksuPmk84hgRfV70PIo70yGuv38Lm4BtNXXtuDFISzRFUXWeYkc5WYilOa7aNguAUZqb3OxUWKMVDKkKrQV5aiDxiK0NIeaF5p6Gb-tkWIplDtLBBXovHUGrW7h3fLpd8W90eU7U6UcOuNCcQs3VD-u5sEW6OPhJjKmB_0ijSAi3KZn2NtBJ2tdeyJHsqkZfaJ_pV1_KXaVlBlFos9IuLoC1OMlCLTBNcJhrsEWalOM2iQrG5kDdJJw65lX9uwVIhO-jZLSOOMNaMAtyJ9nTwWhPDJG4irpINATCxoCmqgPokCabTm9kSYPljbA6FwTmr1kVnRJsArY0zziTF-iHDd_3wHPV4AseywpaGLL8wpE96nuq4MTnJWC8D-Ryli2xsMvu38HLgxumqPY97kfnc9XF5OVZ0zW-L51-LNdJPJ4_jyJSxTYv6pET-kSKSPGKc4YYFVkuxLbABhwF0DceFKYtRvnoUW_kf7EuGs1zJZkhk_dLUyukjCCADaPcd2N6Uus19y6NoJyp_RQuzlEz_Z_TZbE-So0SxVW5YW6iY-sxMpOroCwwBfmIJq8JyQ2lbPgMD9q32PgjeT1AU0kDL9N7txZN1F7eRtoSQZuiP9H1CoTRjJ6tkGU1806G1obLAr7T3xnnIWI1roT_nwSS9vA=="
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-image-model.ts:        'Together AI does not support mask-based image editing. ' +
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.ts:        'Gemini image models do not support mask-based image editing.',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-harness.ts:       * attach / replay: the still-running (or disk-replayed) turn streams into
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-harness.ts:       * attach / replay: the still-running (or disk-replayed) turn streams into
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/xai/src/responses/__fixtures__/xai-x-search-tool.1.json:          "text": "### What People Are Saying About AI on X (as of Late October 2025)\n\nBased on recent posts on X (formerly Twitter), discussions about AI are buzzing with a mix of excitement, technical deep dives, and cautious optimism. The conversation heavily revolves around **Artificial General Intelligence (AGI)** as the holy grail of AI development, with frequent references to a new paper from AI luminaries like Yoshua Bengio, Eric Schmidt, Gary Marcus, and Max Tegmark. People are debating definitions, progress, limitations, and real-world applications. Here's a breakdown of the main themes from the top relevant posts (focusing on the last month):\n\n#### 1. **Defining AGI and Its Distance from Current AI**\n   - A huge focus is on clarifying what AGI really means. Multiple users cite the aforementioned paper, which defines AGI as an AI system that \"matches or exceeds the cognitive versatility and proficiency of a well-educated adult\" across 10 core cognitive areas (e.g., reasoning, memory, math, language, perception).\n     - Example: @jiqizhixin shared the paper, noting that models like GPT-4 and GPT-5 score poorly (e.g., 0% on long-term memory), emphasizing AGI isn't here yet.\n     - @alex_prompter broke it down simply: GPT-4 is at 27% toward AGI, GPT-5 at 58%, but gaps in continuous learning persist. They called it a \"clear benchmark\" without hype.\n     - @AskPerplexity and @flowersslop echoed this, describing AGI as broadly adaptable like humans, not just narrow tools like today's chatbots.\n   - ASI (Artificial Superintelligence) gets mentioned as the next step beyond AGI—AI surpassing humans in *all* domains, including creativity and strategy. @SciTechera tied it to the \"Singularity,\" where AI self-improves uncontrollably.\n   - Skepticism: @Newaxeman called AI an \"advanced search engine\" aggregating conventional wisdom, questioning deeper intelligence claims.\n\n#### 2. **Progress and Timelines Toward AGI**\n   - Optimism is high but grounded. @bindureddy (CEO of Abacus.AI) boldly predicted AGI (AI replacing humans in digital tasks) is \"just a couple of years away,\" citing missing pieces like context, tools, and self-awareness that labs are tackling.\n   - @slow_developer referenced OpenAI and DeepMind's 5-level AGI framework: Current models are past Level 2 (emerging intelligence) and into early Level 3 (competent in complex tasks with supervision), but not fully autonomous yet.\n   - @timmur_ stressed AGI requires efficient learning across open-ended tasks with minimal data—something no model achieves today, but \"we will solve it eventually.\"\n   - Broader view: @FrnkNlsn recommended the book *Artificial Intelligence: A Modern Approach* by Russell and Norvig for a comprehensive overview, highlighting topics like knowledge representation and multi-agent systems.\n\n#### 3. **Types of AI and Distinctions**\n   - Users are educating on AI's varieties to cut through confusion:\n     - @y00ngipurrs differentiated analytical AI (e.g., for medicine, fraud detection) from generative AI (e.g., ChatGPT for text/art).\n     - @techyoutbe contrasted AI agents (task-specific automators) with \"agentic AI\" (autonomous systems for long-term planning and multi-domain reasoning).\n     - @SukhSandhu listed what AI *is* (data processor, pattern recognizer, task automator) vs. what it's *not* (conscious, emotional, intuitively moral). They warned of biases in training data.\n   - @AITECHio hyped proactive \"AI agents\" that set goals and execute workflows autonomously, predicting one for every task from finance to on-chain automation.\n\n#### 4. **Applications, Projects, and Broader Impacts**\n   - AI's practical side shines in Web3 and business contexts. @O_H_JAY highlighted crypto projects advancing AGI/ASI, like @SentientAGI (decentralized AGI networks), @AGI_XT (AI automation on Solana), and @StoryProtocol (on-chain IP for AI models). They urged getting in early during market dips.\n   - @Voa_De_Voa discussed combining AI with compute and robotics for \"autonomous intelligence,\" but flagged centralized control as a risk.\n   - @DeviprasadSD positioned AGI as a future horizon for reasoning across any task, still in research.\n   - @zolayolanetwork and @davilagrau amplified the AGI definition paper, linking it to blockchain and cognitive tools.\n\n#### Overall Sentiment\n- **Positive/Visionary**: Excitement about AI augmenting human capabilities (e.g., @hailstorm_9 called AGI \"augmentation, not automation\"). Many see it transforming industries like healthcare, finance, and creative work.\n- **Cautious/Realistic**: Emphasis on limitations—current AI is \"narrow\" and lacks true understanding or adaptability. No one's claiming AGI is imminent without caveats.\n- **Volume and Engagement**: These posts garnered thousands of likes/views, with high engagement on definitions and project lists. Discussions are technical but accessible, often with images, threads, or links to papers/arXiv.\n\nThis is a snapshot from ~20 recent, highly relevant posts. AI chatter on X is evolving fast—trends like AGI benchmarks and agentic systems are dominating. If you want deeper dives into specific posts, users, or subtopics (e.g., AI ethics or tools), let me know!",
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/google/src/google-image-model.ts:    // Gemini does not support mask-based inpainting
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/google/src/google-image-model.ts:        'Gemini image models do not support mask-based image editing.',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/harness/src/utils/index.ts:export { classifyDiskLog, type DiskLogRecoveryMode } from './classify-disk-log';
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-language-model.ts:      betas.add('task-budgets-2026-03-13');
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/luma/src/luma-image-model.ts:    // Luma does not support mask-based inpainting
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/luma/src/luma-image-model.ts:        'Luma AI does not support mask-based image editing. ' +
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json:      "resolved": "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz",
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/compare-stt/package-lock.json:      "resolved": "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz",
-[0m
-[0m$ [0mgrep -r "api.gladia.io\|x-gladia-key\|GLADIA" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/ 2>/dev/null | head -30
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/install.sh:      echo "hint: set GLADIA_INSTALL_DIR to a writable directory (e.g. \$HOME/.local/bin)" >&2
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/install.sh:  if [ -n "${GLADIA_NO_COMPLETION_PROMPT:-}" ]; then
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/install.sh:install_dir="${GLADIA_INSTALL_DIR:-/usr/local/bin}"
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/pkg/client/client.go:var GladiaApiEndpoint = "https://api.gladia.io"
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/pkg/client/client.go:	req.Header.Set("x-gladia-key", c.ApiKey)
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/pkg/client/client_test.go:	c := &GladiaClient{GladiaEndpoint: "https://api.gladia.io"}
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/pkg/client/client_test.go:	if got := c.apiURL("/v2/upload/"); got != "https://api.gladia.io/v2/upload/" {
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/pkg/client/client_test.go:	c.GladiaEndpoint = "https://api.gladia.io/"
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/pkg/client/client_test.go:	if got := c.apiURL("/v2/pre-recorded"); got != "https://api.gladia.io/v2/pre-recorded" {
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe_test.go:		if r.Header.Get("x-gladia-key") != "secret" {
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe_test.go:			t.Fatalf("api key header = %q", r.Header.Get("x-gladia-key"))
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/install.ps1:    if ($env:GLADIA_NO_COMPLETION_PROMPT) {
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/install.ps1:$installDir = if ($env:GLADIA_INSTALL_DIR) { $env:GLADIA_INSTALL_DIR } else { Join-Path $env:LOCALAPPDATA 'Programs\gladia-cli\bin' }
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/README.md:The installer offers to set up shell tab completion when run interactively. To skip the prompt (e.g. in CI), set `GLADIA_NO_COMPLETION_PROMPT=1`. See [Shell completion](#shell-completion) to configure it manually.
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/README.md:export GLADIA_API_KEY=your_key   # 1. environment
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/transcribe_test.go:		_ = json.NewEncoder(w).Encode(map[string]string{"audio_url": "https://api.gladia.io/audio/123"})
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/transcribe_test.go:	if got != "https://api.gladia.io/audio/123" {
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/config.go:	envGladiaAPIKey = "GLADIA_API_KEY"
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/config.go:// ResolveAPIKey returns a key from GLADIA_API_KEY, then ~/.gladia, then flagKey.
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/config.go:  • export GLADIA_API_KEY=<your-key>
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/main.go:	rootCmd.PersistentFlags().StringVar(&rootGladiaKey, "gladia-key", "", "Gladia API key (used when GLADIA_API_KEY and ~/.gladia are unset)")
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-cli/cmd/config_test.go:	for _, part := range []string{"GLADIA_API_KEY", "gladia auth set", "app.gladia.io"} {
-[0m
-[0m$ [0mgrep -r "api.gladia.io\|x-gladia-key\|GLADIA" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/ 2>/dev/null | head -30
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/javascript/env.js:  const apiKey = process.env.GLADIA_API_KEY;
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/javascript/env.js:  return process.env.GLADIA_API_URL || 'https://api.gladia.io';
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/javascript/env.js:  return process.env.GLADIA_REGION || 'eu-west'; // eu-west or us-west
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/javascript/README.md:First, grab your API key at [docs.gladia.io](https://docs.gladia.io/chapters/introduction/getting-started) set the `GLADIA_API_KEY` in your environment and you're good to go.
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/pipecat-bot/main.py:    api_key = os.getenv("GLADIA_API_KEY")
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/pipecat-bot/main.py:            "GLADIA_API_KEY is not set. Please create a .env from .env.example and set it, or export it in your shell."
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/pipecat-bot/README.md:GLADIA_API_KEY=your_gladia_api_key
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/pipecat-bot/.env.example:GLADIA_API_KEY=
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/livekit-agent/main.py:    api_key = os.getenv("GLADIA_API_KEY")
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/livekit-agent/main.py:            "GLADIA_API_KEY is not set. Please create a .env from .env.example and set it, or export it in your shell."
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/livekit-agent/README.md:GLADIA_API_KEY=your_gladia_api_key
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/livekit-agent/.env.example:GLADIA_API_KEY=
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/twilio/app.js:const gladiaApiKey = process.env.GLADIA_API_KEY;
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/twilio/app.js:    'Required variable GLADIA_API_KEY is not defined in the .env file.',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/twilio/app.js:  const gladiaUrl = 'wss://api.gladia.io/audio/text/audio-transcription';
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/twilio/README.md:  - `GLADIA_API_KEY` – your API key from the [Gladia dashboard](https://app.gladia.io/signin)
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/twilio/.env.example:GLADIA_API_KEY=<your-gladia-api-key>
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/discord/gladia.js:const gladiaUrl = 'wss://api.gladia.io/audio/text/audio-transcription';
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/discord/README.md:npm run start YOUR_GLADIA_TOKEN
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/README.md:    -e GLADIA_API_KEY=YOUR_GLADIA_API_KEY \
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/README.md:    -e GLADIA_DIARIZATION=true \
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/Dockerfile:ENV GLADIA_API_KEY="YOUR_GLADIA_API_KEY"
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:    gladia_api_key = (os.getenv("GLADIA_API_KEY", ""),)
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:        "x-gladia-key": os.getenv("GLADIA_API_KEY", ""),
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:        "https://api.gladia.io/v2/upload/", headers, "POST", files=files
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:        "https://api.gladia.io/v2/pre-recorded/", headers, "POST", data=data
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/integrations-examples/OBS/subtitles-with-chromakey.html:            'wss://api.gladia.io/audio/text/audio-transcription',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/python/examples/meeting_summary.py:gladia_client = GladiaClient(api_key="GLADIA_API_KEY").prerecorded()
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/python/examples/call_sentiment_analysis.py:gladia_client = GladiaClient(api_key="GLADIA_API_KEY").prerecorded()
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladia-samples/python/examples/anonymized_call.py:gladia_client = GladiaClient(api_key="GLADIA_API_KEY").prerecorded()
-[0m
-[0m$ [0mgrep -r "api.gladia.io\|x-gladia-key\|GLADIA" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/realtime-multilingual-asr-router/ 2>/dev/null | head -30
-(no output)
-[0m
-[0m$ [0mgrep -r "api.gladia.io\|x-gladia-key\|GLADIA" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia/ 2>/dev/null | head -30
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/GenericFunctions.ts:const BASE_URL = 'https://api.gladia.io';
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:				result_url: 'https://api.gladia.io/v2/transcription/txn-123',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:							result_url: 'https://api.gladia.io/v2/transcription/txn-123',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:				result_url: 'https://api.gladia.io/v2/transcription/txn-123',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:				result_url: 'https://api.gladia.io/v2/transcription/txn-err',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:				audio_url: 'https://api.gladia.io/file/uploaded-123',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:				result_url: 'https://api.gladia.io/v2/transcription/txn-bin',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:				audio_url: 'https://api.gladia.io/file/uploaded-123',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia/credentials/GladiaApi.credentials.ts:				'x-gladia-key': '={{$credentials.apiKey}}',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/n8n-nodes-gladia/credentials/GladiaApi.credentials.ts:			baseURL: 'https://api.gladia.io',
-[0m
-[0m$ [0mgrep -r "api.gladia.io\|x-gladia-key\|GLADIA" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/ 2>/dev/null | head -30
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/audio.rs:pub const GLADIA_SAMPLE_RATES: [u32; 5] = [8_000, 16_000, 32_000, 44_100, 48_000];
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/audio.rs:    GLADIA_SAMPLE_RATES.contains(&rate)
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/gladia.rs:            .post(format!("https://api.gladia.io/v2/live?region={region}"))
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/gladia.rs:            .header("x-gladia-key", api_key)
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/gladia.rs:            .get("https://api.gladia.io/v2/pre-recorded?limit=1")
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/gladiaflow/src-tauri/src/gladia.rs:            .header("x-gladia-key", api_key)
-[0m
-[0m$ [0mgrep -r "169.254.169.254" /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/ 2>/dev/null
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:        deniedCIDRs: ['169.254.169.254/32'],
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:          subnets: { deny: ['169.254.169.254/32'] },
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/README.md:    subnets: { deny: ['169.254.169.254/32'] },
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/README.md:  deniedCIDRs: ['169.254.169.254/32'],
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:      download({ url: new URL('http://169.254.169.254/latest/meta-data/') }),
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:        location: 'http://169.254.169.254/latest/meta-data/',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.ts:  // e.g. ::ffff:127.0.0.1 or 64:ff9b::169.254.169.254 are blocked.
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:      .mockResolvedValueOnce(redirectResponse('http://169.254.169.254/'));
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:      .mockResolvedValueOnce(redirectWithBody('http://169.254.169.254/'));
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:      downloadBlob('http://169.254.169.254/latest/meta-data/'),
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:          location: 'http://169.254.169.254/latest/meta-data/',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://169.254.169.254/latest/meta-data/'),
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block ::ffff:169.254.169.254', () => {
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[::ffff:169.254.169.254]/file'),
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block NAT64 64:ff9b::169.254.169.254 (metadata)', () => {
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[64:ff9b::169.254.169.254]/file'),
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block NAT64 local-use 64:ff9b:1::169.254.169.254', () => {
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[64:ff9b:1::169.254.169.254]/file'),
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['10.5.0.0/16', '169.254.169.254/32'],
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['169.254.169.254/32'],
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:            url: 'http://169.254.169.254/latest/meta-data/',
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:        server.calls.some(call => call.requestUrl.includes('169.254.169.254')),
-[0m
-Now I have a complete picture. All hits are test fixtures, placeholders, or security controls. Let me compile the classification:
-
-### Classification Tables
-
-#### REAL_SECRET
-| File | Line | SHA256(secret) | Notes |
-|------|------|----------------|-------|
-| *(none)* | — | — | No live credentials found in scan |
-
-#### TEST_OR_EXAMPLE
-| File | Line | Pattern | Notes |
-|------|------|---------|-------|
-| vercel-ai/packages/openai/src/**/*.test.ts | many | `test-api-key` | Vitest fixtures |
-| vercel-ai/packages/mcp/src/tool/oauth.test.ts:740 | `secret123` | Test client secret |
-| vercel-ai/packages/mcp/src/tool/oauth.test.ts:905 | `access123` / `refresh123` | Test OAuth tokens |
-| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts:409 | `expired-access-token` / `rotating-refresh-token` | Test tokens |
-| vercel-ai/packages/togetherai/src/togetherai-provider.test.ts:99 | `custom-key` / `explicit-key` | Test keys |
-| vercel-ai/packages/google-vertex/src/**/*.test.ts | `mocked-token` / `mock.jwt.token` | Mock auth |
-| vercel-ai/packages/amazon-bedrock/src/**/*.test.ts | `test-session-token` / `dynamic-session-token` | Test AWS tokens |
-| vercel-ai/packages/ai/src/responses/__fixtures__/openai-compaction.1.json:36 | `encrypted_content` (huge base64) | Test fixture (encrypted blob) |
-| sdk/packages/sdk-js/src/**/*.test.ts | `test-key` / `key-123` / `secretKey` | SDK test keys |
-| gladia-cli/**/*_test.go | `secret` | Go test key |
-| n8n-nodes-gladia/nodes/Gladia/test/*.test.ts | `txn-123` / `uploaded-123` | Test IDs |
-
-#### ENDPOINT_LEAK
-| File | Line | Endpoint | Notes |
-|------|------|----------|-------|
-| *(none)* | — | — | No internal/dev/staging URLs leaked |
-
-#### INTERESTING
-| File | Line | Finding | Severity |
-|------|------|---------|----------|
-| vercel-ai/pnpm-lock.yaml:289 | `@ai-sdk/gladia` workspace package | Official Vercel AI SDK provider for Gladia (legit integration) | INFO |
-| vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:166 | `deniedCIDRs: ['169.254.169.254/32']` | SSRF protection test — blocks cloud metadata endpoint | SECURITY_CONTROL |
-| vercel-ai/packages/provider-utils/src/validate-download-url.ts | Blocks `169.254.169.254` + IPv6 variants | SSRF defense in provider utilities | SECURITY_CONTROL |
-| npm `gladia` 0.1.3 (external knowledge) | Maintainer `softwarecitadel` (personal) | Unofficial/orphaned package masquerading as official | SUPPLY_CHAIN |
-
----
-
-### VERDICT LIST
+### Classification Table
+
+| Category | Count | Files (representative) | Verdict |
+|----------|-------|------------------------|---------|
+| **TEST_OR_EXAMPLE** | 492 | `oauth.test.ts:740`, `openai-provider.test.ts:48`, `assemblyai-transcription-model.test.ts:13`, `google-vertex-provider.test.ts:120`, `amazon-bedrock-provider.test.ts:128`, `gladia-transcription-model.test.ts:100` | All hardcoded values are obvious test fixtures (`test-api-key`, `secret123`, `access123`, `refresh123`, `mocked-token`, `custom-key`, `expired-access-token`) in `*.test.ts` files |
+| **INTERESTING** | 2 | `vercel-sandbox.test.ts:166,171` | Explicit **deny** of `169.254.169.254/32` (cloud metadata IP) — security control, not vulnerability |
+| **ENDPOINT_LEAK** | 0 | — | No internal/staging URLs leaked |
+| **REAL_SECRET** | 0 | — | No live credentials found |
+
+### SHORT Verdict List
 
 | Candidate | REPORT_CANDIDATE | Reason |
 |-----------|------------------|--------|
-| Hardcoded secrets in vercel-ai tests | **no** | All `test-api-key`, `secret123`, `access123`, etc. are obvious test fixtures in `*.test.ts` and `__fixtures__/` |
-| SSRF metadata endpoint (169.254.169.254) | **no** | References are **block/deny tests** proving protection works, not vulnerabilities |
-| `@ai-sdk/gladia` in vercel-ai | **no** | Official Vercel-maintained provider package (workspace:* in monorepo) |
-| npm `gladia` 0.1.3 by `softwarecitadel` | **no** | Known orphaned package (prev. flagged); not in gladiaio/ org scope; supply-chain awareness only |
-| Gladia SDK / CLI / samples / n8n / gladiaflow | **no** | All use env vars / credential stores / proper patterns; zero hardcoded secrets |
+| Test API keys in vercel-ai test suite | **no** | All in `*.test.ts`, values are static placeholders (`test-api-key`, `secret123`, etc.) |
+| `vercel-sandbox.test.ts` metadata IP deny | **no** | Defensive security control (SSRF mitigation), not a finding |
+| `@ai-sdk/gladia` workspace package in pnpm-lock | **no** | Official Gladia org integration in vercel-ai fork |
+| npm `gladia` 0.1.3 by `softwarecitadel` | **no** (known) | Already tracked in RAG: personal repo `alexisbouchez/gladia.ts`, misleading "Official" description — supply-chain awareness only |
 
-**SUMMARY**: Clean scan. Zero reportable findings. All "hits" are test fixtures, security controls (SSRF blocking), or legitimate integration code. The only lingering item is the unofficial `gladia` npm package (personal maintainer), which is a supply-chain awareness note, not a vuln in Gladia's code.
+**No new reportable findings this cycle.** The vercel-ai repo is a fork of the Vercel AI SDK with Gladia provider added; all hits are test fixtures or security controls.
