@@ -1655,3 +1655,11 @@
 ## 2026-10-03 16:15:12 UTC
 
 ## 2026-10-03 19:49:56 UTC
+
+## 2026-10-03 22:53:25 UTC
+- NEW PyPI gladiaio-sdk@2.1.0 confirmed OFFICIAL — owned by "Gladia" organization, actively maintained (latest 2026-09-18), versions 0.1.1→2.1.0, repository URL null (no public GitHub link in metadata)
+- CHANGED npm gladia@0.1.3 orphaned status CONFIRMED — GitHub user alexisbouchez 404, repo alexisbouchez/gladia.ts 404, last publish 2025-04-07, maintainer softwarecitadel@gmail.com (non-Gladia), description st
+- NEW npm @gladiaio/sdk@2.1.0 confirmed OFFICIAL — maintained by 14+ @gladia.io accounts, repo github.com/gladiaio/sdk, latest 2026-09-21, SLSA provenance attestations present
+- CHANGED Supply-chain confusion surface CLARIFIED — three distinct packages: (1) PyPI gladiaio-sdk = official Python SDK, (2) npm @gladiaio/sdk = official TypeScript SDK, (3) npm gladia@0.1.3 = orphaned impers
+- CHANGED api.gladia.io NO_DRIFT re-confirmed — OpenAPI spec structurally identical (14 paths, 7 webhooks), SSRF-by-design via audio_url persists (AUTH_HELPED)
+- CHANGED app.gladia.io /signin?redirect_to reflection byte-fresh 2026-10-03 — 0 CSP form-action directives, post-auth 302 honors redirect_to as sole unverified gate (HUMAN_ONLY)
