@@ -1241,3 +1241,20 @@
   - **VERDICT: HOLD** — Requires AUTH_HELPED with valid key. PARKED in multiple models.
   - **VERDICT: HOLD** — Requires AUTH_HELPED with valid key.
   - | npm `gladia@0.1.3` orphaned impersonation + key-in-URL | **VALID** (report-ready) |
+
+- 15 lead(s) marked VALID at 2026-10-03 21:31:00 UTC
+  - | **Q2 Attacker reachable?** | PARTIAL — All endpoints are **key-gated** (401 without `x-gladia-key`). Requires valid API key (AUTH_HELPED). Not public/unauthenticated. |
+  - | **Q4 Provable without invasive testing?** | NO — Requires valid API key to test (AUTH_HELPED). Passive probes only show 401. |
+  - | **Q7 Triager would accept?** | CONDITIONAL — Only with valid API key for PoC. Without key: **HOLD (AUTH_HELPED gate)**. With key + confirmed internal fetch: **VALID**. |
+  - | **Q7 Triager would accept?** | YES for **npm Trust & Safety venue** (impersonation policy). For **Gladia program venue**: CONDITIONAL — only if `wss://api.gladia.io/v2/live` actually accepts `x-glad
+  - **Verdict: VALID (npm venue) / HOLD (Gladia venue pending WS query-param auth test)**
+  - | **Q4 Provable without invasive testing?** | NO — Passive confirms reflection into form action. **Post-auth behavior unobservable without valid Google SSO session (HUMAN_ONLY).** |
+  - | **Q4 Provable without invasive testing?** | NO — Requires valid API key to initiate session and observe token format (AUTH_HELPED). Passive only sees 401. |
+  - | **Q7 Triager would accept?** | CONDITIONAL — With valid key + observed token in URL + Referer leakage: **VALID**. Without key: **HOLD**. |
+  - | **Q2 Attacker reachable?** | NO — All endpoints **key-gated** (401 without `x-gladia-key`). Requires valid key + valid transcription ID owned by another user. |
+  - | **Q4 Provable without invasive testing?** | NO — Requires valid key + cross-account test (AUTH_HELPED). |
+  - | **Q7 Triager would accept?** | CONDITIONAL — Only with valid key proving cross-account access. Without: **HOLD**. |
+  - **Verdict: HOLD** — *Spec-only hypothesis. Needs AUTH_HELPED with valid key to test cross-account resource isolation.*
+  - | **SSRF via audio_url/video_url/callback_url** | **HOLD** | High-value SSRF-by-design confirmed by spec+RAG; key-gated (AUTH_HELPED). Needs valid `x-gladia-key` for PoC. |
+  - | **npm `gladia@0.1.3` orphaned impersonation + key-in-URL** | **VALID (npm venue)** / **HOLD (Gladia venue)** | Fully passive proof: impersonation metadata + tarball key leakage + orphaned repo (404)
+  - | **IDOR on `/{id}/file`** | **HOLD** | Spec-only; needs AUTH_HELPED with valid key for cross-account test. |
