@@ -1,31 +1,1665 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-**Classification Table**
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls reposcan-raw/gladiaio/
+compare-stt
+docs
+gladia-cli
+gladia-quiz-app
+gladia-samples
+gladiaflow
+n8n-nodes-gladia
+normalization
+num2words2
+realtime-multilingual-asr-router
+sdk
+skills
+vercel-ai
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "169.254.169.254" reposcan-raw/gladiaio/ --include="*.ts" --include="*.js" --include="*.json" --include="*.yaml" --include="*.yml"
+reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:166:        deniedCIDRs: ['169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:171:          subnets: { deny: ['169.254.169.254/32'] },
+reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:14:      download({ url: new URL('http://169.254.169.254/latest/meta-data/') }),
+reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:38:        location: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.ts:203:  // e.g. ::ffff:127.0.0.1 or 64:ff9b::169.254.169.254 are blocked.
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:79:      .mockResolvedValueOnce(redirectResponse('http://169.254.169.254/'));
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:108:      .mockResolvedValueOnce(redirectWithBody('http://169.254.169.254/'));
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:237:      downloadBlob('http://169.254.169.254/latest/meta-data/'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:261:          location: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:131:        validateDownloadUrl('http://169.254.169.254/latest/meta-data/'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:184:    it('should block ::ffff:169.254.169.254', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:186:        validateDownloadUrl('http://[::ffff:169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:268:    it('should block NAT64 64:ff9b::169.254.169.254 (metadata)', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:270:        validateDownloadUrl('http://[64:ff9b::169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:274:    it('should block NAT64 local-use 64:ff9b:1::169.254.169.254', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:276:        validateDownloadUrl('http://[64:ff9b:1::169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:68:    deniedCIDRs: ['10.5.0.0/16', '169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:77:    deniedCIDRs: ['169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:462:            url: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:470:        server.calls.some(call => call.requestUrl.includes('169.254.169.254')),
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json 2>/dev/null || echo "Not found"
+{
+  "name": "@ai-sdk/gladia",
+  "version": "3.0.0-canary.48",
+  "type": "module",
+  "license": "Apache-2.0",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "src",
+    "!src/**/*.test.ts",
+    "!src/**/*.test-d.ts",
+    "!src/**/__snapshots__",
+    "!src/**/__fixtures__",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "directories": {
+    "doc": "./docs"
+  },
+  "scripts": {
+    "build": "tsup --tsconfig tsconfig.build.json",
+    "build:watch": "tsup --tsconfig tsconfig.build.json --watch",
+    "clean": "del-cli dist docs",
+    "prepack": "mkdir -p docs && cp ../../content/providers/01-ai-sdk-providers/120-gladia.mdx ./docs/",
+    "postpack": "del-cli docs",
+    "type-check": "tsc --noEmit",
+    "test": "pnpm test:node && pnpm test:edge",
+    "test:watch": "vitest --config vitest.node.config.js",
+    "test:edge": "vitest --config vitest.edge.config.js --run",
+    "test:node": "vitest --config vitest.node.config.js --run",
+    "test:node:watch": "vitest --config vitest.node.config.js --watch"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@ai-sdk/provider": "workspace:*",
+    "@ai-sdk/provider-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@ai-sdk/test-server": "workspace:*",
+    "@types/node": "22.19.19",
+    "@vercel/ai-tsconfig": "workspace:*",
+    "tsup": "^8.5.1",
+    "typescript": "5.6.3",
+    "zod": "3.25.76"
+  },
+  "peerDependencies": {
+    "zod": "^3.25.76 || ^4.1.8"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "homepage": "https://ai-sdk.dev/docs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vercel/ai",
+    "directory": "packages/gladia"
+  },
+  "bugs": {
+    "url": "https://github.com/vercel/ai/issues"
+  },
+  "keywords": [
+    "ai"
+  ]
+}
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/sdk -name "package.json" -exec cat {} \;
+{
+  "name": "@gladiaio/sdk-e2e-node-esm",
+  "description": "E2E SDK Node ESM",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@gladiaio/sdk": "workspace:*",
+    "@gladiaio/sdk-e2e-javascript-fixtures": "workspace:*"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.2",
+    "@types/node": "^22.18.8",
+    "vitest": "^4.1.8",
+    "undici": "^7.22.0",
+    "ws": "^8.19.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
+{
+  "name": "@gladiaio/sdk-e2e-javascript-fixtures",
+  "description": "E2E SDK JavaScript Fixtures",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsdown",
+    "build:watch": "tsdown --watch"
+  },
+  "devDependencies": {
+    "@gladiaio/sdk": "workspace:*",
+    "@tsconfig/node20": "^20.1.6",
+    "@types/node": "^20.19.19",
+    "tsdown": "^0.14.2"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  }
+}
+{
+  "name": "@gladiaio/sdk-e2e-node-cjs",
+  "description": "E2E SDK Node CJS",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@gladiaio/sdk": "workspace:*",
+    "@gladiaio/sdk-e2e-javascript-fixtures": "workspace:*"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+{
+  "name": "@gladiaio/sdk",
+  "description": "Gladia JavaScript/TypeScript SDK",
+  "version": "2.0.0",
+  "author": "Gladia",
+  "license": "MIT",
+  "repository": "github:gladiaio/sdk",
+  "keywords": [
+    "gladia",
+    "sdk",
+    "typescript",
+    "javascript"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "unpkg": "dist/index.iife.js",
+  "jsdelivr": "dist/index.iife.js",
+  "scripts": {
+    "build": "tsdown",
+    "build:watch": "tsdown --watch"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.6",
+    "@types/node": "^20.19.19",
+    "@types/ws": "^8.18.1",
+    "tsdown": "^0.15.6"
+  },
+  "peerDependencies": {
+    "eventemitter3": ">=5",
+    "ws": "5.2.4 || 6.2.3 || 7.5.10 || >=8.8",
+    "undici": ">=5"
+  },
+  "peerDependenciesMeta": {
+    "ws": {
+      "optional": true
+    },
+    "undici": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+{
+  "name": "@gladiaio/generator",
+  "description": "Code generator for Gladia SDK from OpenAPI schema",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node --experimental-strip-types src/cli.ts && nx run-many -t format:write && nx run-many -t lint:write"
+  },
+  "dependencies": {
+    "case-anything": "^3.1.2",
+    "commander": "^14.0.1",
+    "openapi3-ts": "^4.5.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.2",
+    "@types/node": "^22.18.8",
+    "@typescript-eslint/eslint-plugin": "^8.46.0",
+    "@typescript-eslint/parser": "^8.46.0",
+    "eslint": "^9.37.0",
+    "prettier": "^3.6.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
+{
+  "name": "gladia-sdk",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "e2e/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@commitlint/types": "^20.0.0",
+    "@eslint/js": "^9.37.0",
+    "@nx/eslint": "^21.6.3",
+    "@nx/eslint-plugin": "^21.6.3",
+    "@nx/js": "21.6.3",
+    "@nx/vite": "^21.6.3",
+    "@nx/web": "21.6.3",
+    "@nxlv/python": "^21.2.0",
+    "@swc-node/register": "~1.11.1",
+    "@swc/core": "~1.13.5",
+    "@swc/helpers": "~0.5.17",
+    "@types/node": "20.19.9",
+    "@vitest/coverage-v8": "^4.1.8",
+    "@vitest/ui": "^4.1.8",
+    "eslint": "^9.37.0",
+    "jiti": "2.6.1",
+    "nx": "^21.6.3",
+    "prettier": "^3.6.2",
+    "tslib": "^2.8.1",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.0",
+    "vite": "^7.1.9",
+    "vitest": "^4.1.8"
+  },
+  "scripts": {
+    "release": "node tools/scripts/release.mjs",
+    "publish": "node tools/scripts/publish.mjs"
+  }
+}
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "apiKey\|secret\|token\|password\|credential" reposcan-raw/gladiaio/sdk --include="*.ts" --include="*.js" --include="*.json" | grep -v test | grep -v ".test." | grep -v "test-api-key" | head -30
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/internal_types.ts:18:type OptionalGladiaClientOptions = 'apiKey' | 'region'
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts:727:  /** The websocket url to connect to for sending audio data. The url will contain the temporary token to authenticate the session. */
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/types.ts:119:  apiKey?: string
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts:27:  if (!options?.apiKey && url.hostname.endsWith('.gladia.io')) {
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts:28:    throw new Error(`You have to set your "apiKey" or define a proxy "apiUrl".`)
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts:47:  apiKey: getEnv('GLADIA_API_KEY'),
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts:107:    if (mergedOptions.apiKey) {
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts:109:        'x-gladia-key': mergedOptions.apiKey,
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts:127:    if (mergedOptions.apiKey) {
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts:129:        'x-gladia-key': mergedOptions.apiKey,
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "apiKey\|secret\|token\|password" reposcan-raw/gladiaio/gladia-cli --include="*.go" | head -20
+reposcan-raw/gladiaio/gladia-cli/pkg/client/client.go:19:func NewGladiaClient(apiKey string, verbose bool, cliVersion string) *GladiaClient {
+reposcan-raw/gladiaio/gladia-cli/pkg/client/client.go:24:		ApiKey:         apiKey,
+reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe_test.go:18:		if r.Header.Get("x-gladia-key") != "secret" {
+reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe_test.go:34:	c := NewGladiaClient("secret", false, "dev")
+reposcan-raw/gladiaio/gladia-cli/cmd/root_test.go:37:	cmd.SetArgs([]string{"auth", "set", "my-secret"})
+reposcan-raw/gladiaio/gladia-cli/cmd/root_test.go:49:	if key != "my-secret" {
+reposcan-raw/gladiaio/gladia-cli/cmd/config_test.go:108:		if err := SaveGladiaKeyToFile("  secret-key  \n"); err != nil {
+reposcan-raw/gladiaio/gladia-cli/cmd/config_test.go:118:	if string(data) != "secret-key\n" {
+reposcan-raw/gladiaio/gladia-cli/cmd/config_test.go:119:		t.Fatalf("file content = %q, want %q", data, "secret-key\n")
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "apiKey\|secret\|token\|password" reposcan-raw/gladiaio/gladia-samples --include="*.py" | head -20
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:36:async def google_sign_in(email, password, driver):
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:57:    driver.save_screenshot("screenshots/password.png")
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:59:    # Find the password input field and enter the password
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:60:    password_field = driver.find_element(By.NAME, "Passwd")
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:61:    password_field.click()
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:62:    password_field.send_keys(password)
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:65:    password_field.send_keys(Keys.RETURN)
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:131:    password = os.getenv("GMAIL_USER_PASSWORD", "")
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:134:    if email == "" or password == "":
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:135:        print("No email or password specified")
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:144:    await google_sign_in(email, password, driver)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "apiKey\|secret\|token" reposcan-raw/gladiaio/n8n-nodes-gladia --include="*.ts" | head -20
+reposcan-raw/gladiaio/n8n-nodes-gladia/credentials/GladiaApi.credentials.ts:20:			name: 'apiKey',
+reposcan-raw/gladiaio/n8n-nodes-gladia/credentials/GladiaApi.credentials.ts:31:				'x-gladia-key': '={{$credentials.apiKey}}',
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "apiKey\|secret\|token" reposcan-raw/gladiaio/gladiaflow --include="*.rs" | head -20
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/config.rs:660:        let malformed = r#"{"api_key":"secret""#;
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/config.rs:684:            api_key: Some("secret".to_string()),
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/config.rs:696:        assert_eq!(loaded.api_key.as_deref(), Some("secret"));
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/config.rs:705:            api_key: Some("secret".to_string()),
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/config.rs:724:        let malformed = r#"{"api_key":"secret""#;
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/config.rs:738:            api_key: Some("secret".to_string()),
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/config.rs:748:            Some("secret")
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/config.rs:756:        let malformed = r#"{"api_key":"secret""#;
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/config.rs:772:        let malformed = r#"{"api_key":"secret""#;
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/hotkey.rs:402:/// Maps a single-modifier hotkey token to its macOS device-dependent flag mask
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/hotkey.rs:404:/// for composites or any token that isn't a lone modifier.
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/hotkey.rs:544:    fn rejects_unknown_token() {
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/hotkey_layout.rs:1://! Resolves logical (layout) key tokens to physical `keyboard_types::Code` values
+reposcan-raw/gladiaio/gladiaflow/src-tauri/src/hotkey_layout.rs:6:/// Map a persisted logical key token to a physical `Code` for global shortcut registration.
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "apiKey\|secret\|token" reposcan-raw/gladiaio/realtime-multilingual-asr-router --include="*.py" | head -20
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py:52:KROKO_FILES = ("encoder.onnx", "decoder.onnx", "joiner.onnx", "tokens.txt")
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py:81:#   [u32 len][tokens bytes]
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py:126:    tokens = read_block()
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py:127:    return encoder, decoder, joiner, tokens
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py:146:    encoder, decoder, joiner, tokens_bytes = _read_blocks(payload, endian=endian)
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py:152:    (out_dir / "tokens.txt").write_bytes(tokens_bytes)
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py:322:    print("   Format      : ONNX files on the Hub (encoder, decoder, joiner, tokens.txt)")
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_coordinator.py:28:        return ASRStreamResult(text="", tokens=[], timestamps=[], is_final=False)
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_coordinator.py:56:            return ASRStreamResult(text="", tokens=[], timestamps=[], is_final=False)
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_coordinator.py:60:            tokens=[text],
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_coordinator.py:69:            tokens=result.tokens,
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_codeswitch_e2e.py:59:            return ASRStreamResult(text="", tokens=[], timestamps=[], is_final=False)
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_codeswitch_e2e.py:63:            tokens=[text],
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_codeswitch_e2e.py:72:            tokens=[text],
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_codeswitch_e2e.py:139:                "asr_token_duration_tolerance": 0.25,
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_codeswitch_e2e.py:245:    assert final_fr.get("text") or final_fr.get("tokens")
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_reinference.py:63:            return ASRStreamResult(text="", tokens=[], timestamps=[], is_final=False)
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_reinference.py:66:            tokens=[self._text],
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_reinference.py:75:            tokens=result.tokens,
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_reinference.py:103:            return ASRStreamResult(text="", tokens=[], timestamps=[], is_final=False)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "apiKey\|secret\|token" reposcan-raw/gladiaio/docs --include="*.md" --include="*.mdx" | head -20
+reposcan-raw/gladiaio/docs/snippets/get-transcription-result.mdx:12:  apiKey: 'YOUR_GLADIA_API_KEY',
+reposcan-raw/gladiaio/docs/chapters/pre-recorded-stt/quickstart.mdx:50:const gladiaClient = new GladiaClient({ apiKey: "YOUR_GLADIA_API_KEY" });
+reposcan-raw/gladiaio/docs/chapters/pre-recorded-stt/quickstart.mdx:74:const gladiaClient = new GladiaClient({ apiKey: "YOUR_GLADIA_API_KEY" });
+reposcan-raw/gladiaio/docs/chapters/pre-recorded-stt/quickstart.mdx:139:const gladiaClient = new GladiaClient({ apiKey: "YOUR_GLADIA_API_KEY" });
+reposcan-raw/gladiaio/docs/chapters/pre-recorded-stt/quickstart.mdx:180:const gladiaClient = new GladiaClient({ apiKey: "YOUR_GLADIA_API_KEY" });
+reposcan-raw/gladiaio/docs/chapters/live-stt/migration-from-v1.mdx:15:In V2, you first generate a unique WebSocket URL with a call to our [POST /v2/live endpoint](/api-reference/v2/live/init), and then connect to it. This URL contains a token that is unique to your live session. You'll be able to resume your session in case of a lost connection, or give the URL to a web client without exposing your Gladia API key.
+reposcan-raw/gladiaio/docs/chapters/live-stt/quickstart.mdx:68:  apiKey: <YOUR_GLADIA_API_KEY>,
+reposcan-raw/gladiaio/docs/chapters/live-stt/quickstart.mdx:346:  "url": "wss://api.gladia.io/v2/live?token=636c70f6-92c1-4026-a8b6-0dfe3ecf826f"
+reposcan-raw/gladiaio/docs/chapters/migrations/from-deepgram.mdx:79:  apiKey: process.env.GLADIA_API_KEY,
+reposcan-raw/gladiaio/docs/chapters/migrations/from-assembly.mdx:68:  apiKey: process.env.ASSEMBLYAI_API_KEY!,
+reposcan-raw/gladiaio/docs/chapters/migrations/from-assembly.mdx:88:  apiKey: process.env.GLADIA_API_KEY,
+reposcan-raw/gladiaio/docs/chapters/introduction/models.mdx:40:const gladiaClient = new GladiaClient({ apiKey: "YOUR_GLADIA_API_KEY" });
+reposcan-raw/gladiaio/docs/chapters/how-to-use-gladia/sdk.mdx:42:const gladia = new GladiaClient({ apiKey: "YOUR_GLADIA_API_KEY" });
+reposcan-raw/gladiaio/docs/chapters/how-to-use-gladia/sdk.mdx:93:const gladia = new GladiaClient({ apiKey: "YOUR_GLADIA_API_KEY" });
+reposcan-raw/gladiaio/docs/chapters/audio-intelligence/audio-to-llm.mdx:141:The input provided to the LLM is the full transcription. All prices are per 1M tokens and include platform fees.
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "sk-\|ghp_\|gho_\|ghu_\|ghs_\|github_pat_\|gladia.*key\|api.*key" reposcan-raw/gladiaio/ --include="*.json" --include="*.yaml" --include="*.yml" --include="*.toml" --include="*.env*" | grep -v test | grep -v ".test." | grep -v "YOUR_" | grep -v "example" | head -30
+...output truncated...
 
-| Category | File | Line | Classification | Notes |
-|----------|------|------|----------------|-------|
-| Config/Dependency | vercel-ai/pnpm-lock.yaml | 289, 291, 2368 | CONFIG | `@ai-sdk/gladia` local package link |
-| Config | vercel-ai/tsconfig.json | 70 | CONFIG | Path mapping for packages/gladia |
-| Code | vercel-ai/tools/analyze-downloads/src/analyze-providers.ts | 21 | CODE | Import reference |
-| CI Config | vercel-ai/.github/tigent.yml | 30 | CONFIG | Provider list for CI |
-| **INTERESTING** | **vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts** | **166, 171** | **INTERESTING** | **SSRF protection test: explicit deny of `169.254.169.254/32` (cloud metadata)** |
-| Test/Fixture | vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740, 905, 908 | TEST_OR_EXAMPLE | `secret123`, `access123`, `refresh123` |
-| Test/Fixture | vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409, 411 | TEST_OR_EXAMPLE | `expired-access-token`, `rotating-refresh-token` |
-| Test/Fixture | vercel-ai/packages/openai/src/**/*.test.ts | 48-3310 | TEST_OR_EXAMPLE | Repeated `test-api-key` |
-| Test/Fixture | vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json | 36 | TEST_OR_EXAMPLE | Fixture `encrypted_content` (base64) |
-| Test/Fixture | vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13, 277 | TEST_OR_EXAMPLE | `test-api-key` |
-| Test/Fixture | vercel-ai/packages/togetherai/src/togetherai-provider.test.ts | 99, 112, 165 | TEST_OR_EXAMPLE | `custom-key`, `explicit-key`, `test-api-key` |
-| Test/Fixture | vercel-ai/packages/google-vertex/src/**/*.test.ts | 120-419 | TEST_OR_EXAMPLE | `test-api-key`, `mocked-token`, `mock.jwt.token`, `invalid-key` |
-| Test/Fixture | vercel-ai/packages/amazon-bedrock/src/**/*.test.ts | 48-442 | TEST_OR_EXAMPLE | `test-api-key`, `dynamic-session-token`, `static-session-token`, `async-session-token`, `test-session-token` |
+Full output saved to: /home/runner/.local/share/opencode/tool-output/tool_1064da6d4001nGkVqtoAtAusWp
 
-**Verdict List**
+reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json:9992:      "resolved": "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz",
+reposcan-raw/gladiaio/compare-stt/package-lock.json:9399:      "resolved": "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:9939:			"resolved": "https://registry.npmjs.org/netmask/-/netmask-2.1.1.tgz",
+reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:11181:			"resolved": "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz",
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "sk_live\|sk_test\|rk_live\|rk_test\|gladia_[a-zA-Z0-9]\{20,\}" reposcan-raw/gladiaio/ --include="*.json" --include="*.yaml" --include="*.yml" --include="*.toml" --include="*.env*" 2>/dev/null | head -20
+(no output)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml | grep -A 20 "packages/gladia"
+version: link:../../packages/gladia
+      '@ai-sdk/google':
+        specifier: workspace:*
+        version: link:../../packages/google
+      '@ai-sdk/google-vertex':
+        specifier: workspace:*
+        version: link:../../packages/google-vertex
+      '@ai-sdk/groq':
+        specifier: workspace:*
+        version: link:../../packages/groq
+      '@ai-sdk/harness':
+        specifier: workspace:*
+        version: link:../../packages/harness
+      '@ai-sdk/harness-claude-code':
+        specifier: workspace:*
+        version: link:../../packages/harness-claude-code
+      '@ai-sdk/harness-codex':
+        specifier: workspace:*
+        version: link:../../packages/harness-codex
+      '@ai-sdk/harness-pi':
+        specifier: workspace:*
+--
+  packages/gladia:
+    dependencies:
+      '@ai-sdk/provider':
+        specifier: workspace:*
+        version: link:../provider
+      '@ai-sdk/provider-utils':
+        specifier: workspace:*
+        version: link:../provider-utils
+    devDependencies:
+      '@ai-sdk/test-server':
+        specifier: workspace:*
+        version: link:../test-server
+      '@types/node':
+        specifier: 22.19.19
+        version: 22.19.19
+      '@vercel/ai-tsconfig':
+        specifier: workspace:*
+        version: link:../../tools/tsconfig
+      tsup:
+        specifier: ^8.5.1
+        version: 8.5.1(@swc/core@1.15.3(@swc/helpers@0.5.21))(jiti@2.7.0)(postcss@8.5.14)(tsx@4.22.0)(typescript@5.6.3)(yaml@2.9.0)
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls reposcan-raw/gladiaio/skills/
+CLAUDE.md
+CONTRIBUTING.md
+LICENSE
+README.md
+plugins
+skills-lock.json
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/skills/README.md
+# Gladia Skills
+
+Official AI agent skills from the Gladia team for integrating speech-to-text transcription into your applications.
+
+## Installation
+
+### Claude Code
+
+Add the marketplace and install the plugin:
+
+```
+/plugin marketplace add gladiaio/skills
+/plugin install gladia
+```
+
+### Cursor
+
+1. Open Cursor Settings (Cmd+Shift+J / Ctrl+Shift+J)
+2. Navigate to **Rules, Skills, Subagents** → **Rules** → **Add Rule** → **Import from GitHub**
+3. Enter: `https://github.com/gladiaio/skills.git`
+
+Skills are automatically discovered and used by the agent based on context. When you ask questions about Gladia transcription, the agent will select the relevant skill.
+
+### Any Agent (via skills CLI)
+
+```bash
+npx skills add gladiaio/skills
+```
+
+## Available Skills
+
+All skills default to **SDK-based integration** (`@gladiaio/sdk` for JS/TS, `gladiaio-sdk` for Python). Raw REST/WebSocket is only used as a fallback when the SDK cannot satisfy the requirement.
+
+| Skill                                 | When it activates                                                                                      |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **gladia-pre-recorded-transcription** | Batch processing audio files, file uploads, URL transcription, diarization, PII redaction, subtitles   |
+| **gladia-live-transcription**         | Real-time streaming, WebSocket sessions, voice agents, meeting recorders, call centers                 |
+| **gladia-audio-intelligence**         | Feature-specific setup for diarization, translation, NER, PII redaction, subtitles, summarization      |
+| **gladia-sdk-integration**            | Installing/configuring the JS/TS or Python SDK, client setup, error handling, SDK vs raw API decisions |
+| **gladia-troubleshooting**            | Errors, common gotchas, performance issues, format problems, billing questions                         |
+| **gladia-documentation-auto**         | General-purpose fallback — comprehensive reference auto-synced from docs.gladia.io                     |
+
+## How It Works
+
+Skills are **not** slash commands — they are automatically discovered from the `description` field in each skill's frontmatter. When you ask your AI agent a question related to Gladia, it matches your query against skill descriptions and loads the relevant skill(s).
+
+## Keeping Skills Up to Date
+
+The `gladia-documentation-auto` skill is automatically synced from [docs.gladia.io](https://docs.gladia.io) via a daily GitHub Actions workflow. When the documentation changes, a PR is opened to update the skill content.
+
+To update skills in your project:
+
+```bash
+npx skills update
+```
+
+## Resources
+
+- [Gladia Documentation](https://docs.gladia.io)
+- [Support Center](https://support.gladia.io)
+- [JavaScript SDK](https://www.npmjs.com/package/@gladiaio/sdk)
+- [Python SDK](https://pypi.org/project/gladiaio-sdk/)
+- [SDK Source Code](https://github.com/gladiaio/sdk)
+- [Code Samples](https://github.com/gladiaio/gladia-samples)
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on adding or modifying skills.
+
+## License
+
+MIT
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls reposcan-raw/gladiaio/skills/plugins/
+gladia
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/skills/plugins/gladia -name "*.md" -exec head -50 {} \;
+# Gladia Plugin
+
+Official AI agent skills from the Gladia team for integrating speech-to-text transcription into your applications.
+
+## Skills
+
+All skills default to **SDK-based integration** (`@gladiaio/sdk` for JS/TS, `gladiaio-sdk` for Python). Raw REST/WebSocket is documented as a fallback only.
+
+| Skill                               | Description                                                                                                                                  |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `gladia-pre-recorded-transcription` | Batch transcription of audio files and URLs with audio intelligence features (SDK-first)                                                     |
+| `gladia-using-cli`                  | Terminal transcription with gladia-cli; transcribe files/URLs and answer questions from transcript output                                    |
+| `gladia-live-transcription`         | Real-time streaming transcription for voice agents, meetings, and call centers (SDK-first)                                                   |
+| `gladia-audio-intelligence`         | Configure audio intelligence features (diarization, translation, NER, PII, subtitles, summarization) for pre-recorded and live transcription |
+| `gladia-sdk-integration`            | Installing/configuring the official SDKs; SDK vs raw API decision guide                                                                      |
+| `gladia-troubleshooting`            | Common gotchas, error resolution, and verification checklists (SDK-first diagnostics)                                                        |
+| `gladia-documentation-auto`         | Auto-synced comprehensive reference from docs.gladia.io                                                                                      |
+
+## How Skills Are Discovered
+
+Skills are automatically selected by your AI agent based on the `description` field in each `SKILL.md` frontmatter. You don't need to manually activate them — just ask questions related to Gladia and the agent will pick the right skill.
+
+## Resources
+
+- [Gladia Documentation](https://docs.gladia.io)
+- [Gladia Support Center](https://support.gladia.io)
+- [Code Samples](https://github.com/gladiaio/gladia-samples)
+- [SDK Repository](https://github.com/gladiaio/sdk)
+# Managing Live Sessions
+
+Reference for retrieving, listing, downloading, and deleting live sessions after initialization.
+
+## Contents
+
+- Get a Single Session
+- List Sessions
+- List Query Parameters
+- Download Recorded Audio
+- Delete a Session
+
+## Get a Single Session
+
+Fetch the status and full result payload for one live session:
+
+```typescript
+const session = await client.liveV2().get(sessionId);
+console.log(session.status); // "queued" | "processing" | "done" | "error"
+console.log(session.result?.transcription?.full_transcript);
+```
+
+```python
+session = client.live().get(session_id)
+print(session.status)
+print(session.result.transcription.full_transcript)
+```
+
+Raw REST: `GET /v2/live/:id`
+
+## List Sessions
+
+Retrieve sessions with optional filters. The response is paginated.
+
+```typescript
+const page = await client.liveV2().list({
+  offset: 0,
+  limit: 20,
+  status: ["done"],
+  after_date: "2026-01-01T00:00:00Z",
+  before_date: "2026-06-01T00:00:00Z",
+  custom_metadata: { userId: "abc123" },
+});
+
+for (const session of page.items) {
+  console.log(session.id, session.status);
+}
+
+// page.next is the URL for the next page (null when last page)
+```
+# Session Configuration Reference
+
+Complete configuration reference for options passed to `startSession()` (JS) / `start_session()` (Python).
+
+## Contents
+
+- JavaScript/TypeScript Full Configuration Example
+- Python Typed Request Example
+- Related References
+
+## JavaScript/TypeScript Full Configuration Example
+
+```typescript
+const session = client.liveV2().startSession({
+  // Model
+  model: "solaria-1",
+
+  // Audio format (MUST match your audio stream exactly)
+  encoding: "wav/pcm", // wav/pcm | wav/alaw | wav/ulaw
+  sample_rate: 16000, // Hz (8000, 16000, 44100, 48000)
+  bit_depth: 16, // 8 or 16
+  channels: 1, // 1 (mono) or 2 (stereo; billed as 2x duration)
+
+  // Language
+  language_config: {
+    languages: ["en"], // 1-5 expected languages
+    code_switching: false, // Detect language changes mid-speech
+  },
+
+  // Pre-processing
+  pre_processing: {
+    audio_enhancer: true, // Noise reduction
+    speech_threshold: 0.5, // VAD threshold (0.0-1.0)
+  },
+
+  // Real-time features
+  realtime_processing: {
+    custom_vocabulary: true,
+    custom_vocabulary_config: { vocabulary: [...] },
+    translation: true,
+    translation_config: { target_languages: ["fr"] },
+    named_entity_recognition: true,
+    sentiment_analysis: true,
+  },
+
+  // Post-processing (runs after stop_recording)
+  post_processing: {
+    summarization: true,
+    summarization_config: { type: "bullet_points" },
+  },
+# Recommended Parameters by Use Case
+
+Best parameter configurations for real-time transcription depending on your application type.
+
+## Contents
+
+- Endpointing and VAD Tuning
+- Voice Agents (low latency, fast turn detection)
+- Meeting Recorders (accuracy, post-processing)
+- Call Centers (telephony audio, analytics)
+- Live Subtitles / Captions (display-ready text)
+- Multi-Language Conversations (code switching)
+- Region Selection (eu-west, us-west)
+
+## Endpointing and VAD Tuning
+
+### `endpointing` (seconds)
+
+How long a silence must last before Gladia closes the current utterance and emits a final transcript.
+
+- **Default:** `0.05` — **Range:** `0.01` to `10`
+
+This is the core latency-versus-accuracy tradeoff in live transcription. Lower values produce faster final segments but can split utterances at short pauses. Higher values produce cleaner segments but add latency.
+
+| Use case         | Recommended value | Why                                    |
+| ---------------- | ----------------- | -------------------------------------- |
+| Voice agent      | `0.05` - `0.1`    | Fast turn detection                    |
+| Call center      | `0.1` - `0.3`     | Snappy but tolerates telephony gaps    |
+| Live subtitles   | `0.2` - `0.4`     | Readable chunks without too much delay |
+| Meeting recorder | `0.3` - `0.5`     | Complete sentences before closing      |
+
+### `maximum_duration_without_endpointing` (seconds)
+
+Hard cap on utterance length when no silence is detected.
+
+- **Default:** `5` — **Range:** `5` to `60`
+
+Use lower values for voice agents (fast turn taking) and higher values for long-form capture (meetings and webinars).
+
+### `speech_threshold` (0.0 - 1.0)
+
+Located in `pre_processing.speech_threshold`. Controls how confident VAD must be before opening an utterance.
+
+- **Default:** `0.5` — **Range:** `0.0` to `1.0`
+- Low value (for example `0.3`) increases sensitivity and may trigger on noise
+- High value (for example `0.7`) is more conservative and may miss faint speech
+
+Raise `speech_threshold` in noisy environments and lower it only for quiet, low-volume speakers.
+
+## Voice Agents
+# WebSocket Message Types
+
+Complete reference for all WebSocket messages received during a live transcription session.
+
+## Contents
+
+- Message Format
+- Lifecycle Events (start_session, start_recording, end_recording, end_session)
+- Transcript Events (partial and final transcripts)
+- Speech Events (speech_start, speech_end)
+- Real-time Intelligence Events (translation, sentiment_analysis, named_entity_recognition)
+- Post-Processing Events (post_transcript, post_final_transcript, post_summarization)
+- Acknowledgment Events (audio_chunk, stop_recording)
+- SDK Event Mapping
+- Error Messages
+
+## Message Format
+
+All messages are JSON with a `type` field:
+
+```json
+{
+  "type": "transcript",
+  "data": { ... }
+}
+```
+
+## Lifecycle Events
+
+### `start_session`
+
+Sent when the session is initialized (HTTP init complete).
+
+```json
+{
+  "type": "start_session",
+  "data": {
+    "id": "session-uuid"
+  }
+}
+```
+
+### `start_recording`
+
+Sent when the WebSocket is connected and ready to receive audio.
+
+```json
+{
+  "type": "start_recording",
+  "data": {}
+---
+name: gladia-live-transcription
+description: Real-time speech-to-text streaming with Gladia via WebSocket. Use when the user needs live transcription, builds a voice agent, meeting recorder, call center integration, live subtitles, or any application streaming audio for low-latency partial and final transcripts. Always prefer the official SDK; fall back to raw WebSocket/REST only when SDK cannot satisfy the requirement.
+license: MIT
+---
+
+# Live Transcription
+
+Gladia's live API transcribes audio in real-time over WebSocket.
+
+> **SDK-first**: always use the official SDK — see [gladia-sdk-integration](../gladia-sdk-integration/SKILL.md) for policy, setup, and fallback criteria.
+
+## When to Use
+
+- Real-time transcription for microphone, telephony, or broadcast streams
+- Voice agents, meeting assistants, call center tools, or live subtitles
+- Live audio intelligence (translation, sentiment, NER)
+
+**When NOT to use:** If the user has a pre-existing audio/video file or URL to transcribe after the fact, use the [gladia-pre-recorded-transcription skill](../gladia-pre-recorded-transcription/SKILL.md) instead. Pre-recorded supports additional features like speaker diarization and PII redaction that are unavailable in live mode.
+
+## References
+
+Consult these resources as needed:
+
+- ./references/recommended-params.md -- Use-case presets and tuning
+- ./references/session-config.md -- Full `startSession()` config (JS + Python)
+- ./references/managing-sessions.md -- `get`, `list`, `getFile`, `delete`
+- ./references/websocket-events.md -- WebSocket event reference
+- ../gladia-audio-intelligence/SKILL.md -- Feature availability
+- ../gladia-audio-intelligence/references/live-audio-intelligence.md -- Live feature details
+- ../gladia-sdk-integration/SKILL.md -- Setup, config, SDK vs raw API
+- ../gladia-sdk-integration/references/sdk-versions.md -- Current SDK versions
+- ../gladia-troubleshooting/SKILL.md -- Errors and diagnostics
+
+## API Endpoints (reference — prefer SDK methods)
+
+| Endpoint                | Method | SDK equivalent                |
+| ----------------------- | ------ | ----------------------------- |
+| `/v2/live`              | POST   | `startSession()`              |
+| `/v2/live`              | GET    | `list()`                      |
+| `/v2/live/:id`          | GET    | `get(id)`                     |
+| `/v2/live/:id`          | DELETE | `delete(id)`                  |
+| `/v2/live/:id/file`     | GET    | `getFile(id)`                 |
+| WebSocket URL from init | —      | `sendAudio()` / `session.on()` |
+
+## Session Lifecycle
+
+SDK flow: `startSession()` -> `sendAudio()` -> receive transcript events -> `stopRecording()` -> `get(id)` for final result.
+
+## Quick Start
+# Delivery and Response Reference
+
+Reference for the pre-recorded job response shape and asynchronous delivery events.
+
+## Contents
+
+- Response Structure
+- Callback Events
+- Webhook Events
+
+## Response Structure
+
+```json
+{
+  "id": "job-uuid",
+  "status": "done",
+  "result": {
+    "transcription": {
+      "full_transcript": "Hello, welcome to the meeting...",
+      "utterances": [
+        {
+          "text": "Hello, welcome to the meeting",
+          "language": "en",
+          "start": 0.5,
+          "end": 2.1,
+          "speaker": 0,
+          "words": [{ "word": "Hello", "start": 0.5, "end": 0.8, "confidence": 0.98 }]
+        }
+      ]
+    },
+    "diarization": {},
+    "translation": {},
+    "summarization": {},
+    "sentiment_analysis": {}
+  }
+}
+```
+
+## Callback Events
+
+Callbacks are sent to the `callback_url` in your transcription request body:
+
+- `transcription.success` — job completed successfully
+- `transcription.error` — job failed
+
+## Webhook Events
+
+Webhooks are configured in Dashboard -> Account -> Webhooks:
+
+- `transcription.created` — job queued
+# Transcription Options Reference
+
+Complete configuration reference for all pre-recorded transcription options passed as the second argument to `transcribe()`.
+
+## Contents
+
+- Language Configuration
+- Audio Intelligence Options (full example)
+- Delivery (callbacks)
+
+For client-level config (retry, timeouts, HTTP headers), see [gladia-sdk-integration](../../gladia-sdk-integration/SKILL.md#configuration-options). For detailed audio intelligence feature docs, see [gladia-audio-intelligence](../../gladia-audio-intelligence/SKILL.md).
+
+## Full Options Example (JavaScript/TypeScript)
+
+```typescript
+const result = await client.preRecorded().transcribe(audioInput, {
+  // Language
+  language_config: {
+    languages: ["en", "fr"], // Expected languages (ISO 639-1)
+    code_switching: true, // Detect language changes mid-speech
+  },
+
+  // Audio Intelligence
+  diarization: true, // Speaker identification
+  diarization_config: { number_of_speakers: 3 },
+  translation: true,
+  translation_config: { target_languages: ["fr", "es"] },
+  summarization: true,
+  summarization_config: { type: "bullet_points" },
+  sentiment_analysis: true,
+  named_entity_recognition: true,
+  subtitles: true,
+  subtitles_config: { formats: ["srt", "vtt"] },
+  pii_redaction: true,
+  pii_redaction_config: {
+    policy: "mask",
+    entities: ["person", "location", "phone_number"],
+  },
+  audio_to_llm: true,
+  audio_to_llm_config: { prompts: ["Summarize the key decisions made"] },
+  custom_vocabulary: true,
+  custom_vocabulary_config: {
+    vocabulary: [
+      { value: "Gladia", intensity: 0.5 },
+      { value: "Kubernetes", pronunciations: ["koo-ber-net-eez"] },
+    ],
+  },
+
+  // Delivery
+  callback_url: "https://your-server.com/webhook",
+# Managing Pre-Recorded Jobs
+
+Reference for retrieving, listing, downloading, and deleting pre-recorded transcription jobs.
+
+## Contents
+
+- Get a Single Job
+- List Jobs
+- List Query Parameters
+- Download Original Audio
+- Delete a Job
+
+## Get a Single Job
+
+Fetch the status and full result payload for one job:
+
+```typescript
+const job = await client.preRecorded().get(jobId);
+console.log(job.status); // "queued" | "processing" | "done" | "error"
+console.log(job.result?.transcription?.full_transcript);
+```
+
+```python
+job = client.prerecorded().get(job_id)
+print(job.status)
+print(job.result.transcription.full_transcript)
+```
+
+Raw REST: `GET /v2/pre-recorded/:id`
+
+## List Jobs
+
+Retrieve jobs with optional filters. The response is paginated.
+
+```typescript
+const page = await client.preRecorded().list({
+  offset: 0,
+  limit: 20,
+  status: ["done"],
+  after_date: "2026-01-01T00:00:00Z",
+  before_date: "2026-06-01T00:00:00Z",
+  custom_metadata: { userId: "abc123" },
+});
+
+for (const job of page.items) {
+  console.log(job.id, job.status);
+}
+
+// page.next is the URL for the next page (null when last page)
+```
+---
+name: gladia-pre-recorded-transcription
+description: Transcribe pre-recorded audio files or URLs with Gladia. Use when the user needs batch/async transcription, speaker diarization, subtitles (SRT/VTT), PII redaction, translation, NER, summarization, audio-to-LLM, or any audio intelligence on pre-recorded content. Always prefer the official SDK; fall back to raw REST only when SDK cannot satisfy the requirement.
+license: MIT
+---
+
+# Pre-Recorded Transcription
+
+Gladia's pre-recorded API transcribes audio and video files asynchronously.
+
+> **SDK-first**: always use the official SDK — see [gladia-sdk-integration](../gladia-sdk-integration/SKILL.md) for policy, setup, and fallback criteria.
+
+## When to Use
+
+- Existing audio/video files or URLs (including social/video links)
+- Batch or asynchronous transcription workflows
+- Pre-recorded-only features: diarization, PII redaction, subtitles
+
+**When NOT to use:** If the user needs real-time / live transcription of a stream, microphone, or ongoing audio feed, use the [gladia-live-transcription skill](../gladia-live-transcription/SKILL.md) instead. Live transcription uses WebSocket sessions, not the pre-recorded API. If the user has gladia-cli installed and wants a quick terminal workflow without writing code, use [gladia-using-cli](../gladia-using-cli/SKILL.md) instead.
+
+## References
+
+Consult these resources as needed:
+
+- ./references/transcription-options.md -- Full options (JS + Python)
+- ./references/managing-jobs.md -- `get`, `list`, `getFile`, `delete`
+- ./references/delivery-and-response.md -- Response shape and events
+- ../gladia-audio-intelligence/SKILL.md -- Feature availability and config
+- ../gladia-using-cli/SKILL.md -- Terminal workflow with gladia-cli
+- ../gladia-sdk-integration/SKILL.md -- Setup, config, SDK vs raw API
+- ../gladia-sdk-integration/references/sdk-versions.md -- Current SDK versions
+- ../gladia-troubleshooting/SKILL.md -- Errors and diagnostics
+
+## API Endpoints (reference — prefer SDK methods instead)
+
+| Endpoint                    | Method | SDK equivalent                          |
+| --------------------------- | ------ | --------------------------------------- |
+| `/v2/upload`                | POST   | `transcribe()` auto-uploads local files |
+| `/v2/pre-recorded`          | POST   | `create()` / `transcribe()`             |
+| `/v2/pre-recorded`          | GET    | `list()`                                |
+| `/v2/pre-recorded/:id`      | GET    | `get()` / `poll()` / `transcribe()`     |
+| `/v2/pre-recorded/:id`      | DELETE | `delete()`                              |
+| `/v2/pre-recorded/:id/file` | GET    | `getFile()`                             |
+
+## Workflow
+
+### Recommended (SDK)
+
+The SDK `transcribe()` method handles upload, job creation, and polling in one call. Use this by default.
+
+# JavaScript / TypeScript SDK
+
+Patterns and details specific to the `@gladiaio/sdk` package.
+
+## Contents
+
+- Package Info
+- Browser Usage (ESM, IIFE, API key security via proxy)
+- File Upload in Browsers
+- Node.js Specifics (file paths, WebSocket for Node < 22, streaming from file/mic)
+- Untyped API
+- TypeScript Types
+- Error Handling
+- Live Session Event Typing
+- CDN / IIFE Bundle
+- Package Size
+
+## Package Info
+
+- **npm**: [@gladiaio/sdk](https://www.npmjs.com/package/@gladiaio/sdk)
+- **Version**: 2.1.0
+- **Runtime**: Node.js 20+, Bun, browsers
+- **Bundle formats**: ESM, CJS, IIFE (via unpkg/jsdelivr)
+- **Dependencies**: 0 runtime deps
+- **Peer deps**: `ws` (only for Node < 22, which lacks native WebSocket)
+
+## Browser Usage
+
+The SDK works in browsers out of the box. Use ESM imports or the IIFE bundle:
+
+```html
+<script src="https://unpkg.com/@gladiaio/sdk/dist/index.iife.js"></script>
+<script>
+  const client = new GladiaSDK.GladiaClient({ apiKey: "..." });
+</script>
+```
+
+### API Key Security in Browsers
+
+Never expose your API key in client-side code for production. Instead, use a proxy:
+
+```typescript
+// Point the SDK at your backend proxy (no apiKey needed)
+const client = new GladiaClient({
+  apiUrl: "https://your-server.com/api/gladia",
+});
+```
+
+Your backend proxy adds the `x-gladia-key` header before forwarding to `api.gladia.io`.
+
+# Python SDK
+
+Patterns and details specific to the `gladiaio-sdk` package.
+
+## Contents
+
+- Package Info
+- Sync vs Async (including async live session)
+- Client Method Aliases
+- Typed Request Objects (dataclass-style and dict alternative)
+- File Input Types
+- Session ID Access
+- Error Types
+- Event Handling (pyee EventEmitter pattern)
+- Streaming Audio from File
+- Streaming from Microphone (PyAudio)
+- Response Access
+- Package Structure (exports)
+
+## Package Info
+
+- **PyPI**: [gladiaio-sdk](https://pypi.org/project/gladiaio-sdk/)
+- **Version**: 2.1.0
+- **Runtime**: Python 3.10+
+- **Dependencies**: httpx, websockets, pyee
+
+## Sync vs Async
+
+The Python SDK provides both synchronous and asynchronous clients:
+
+```python
+from gladiaio_sdk import GladiaClient
+
+client = GladiaClient(api_key="YOUR_KEY")
+
+# Sync
+result = client.prerecorded().transcribe("audio.mp3", options)
+
+# Async
+result = await client.prerecorded_async().transcribe("audio.mp3", options)
+```
+
+### Async live session
+
+```python
+import asyncio
+from gladiaio_sdk import GladiaClient, LiveV2InitRequest, LiveV2LanguageConfig
+
+async def main():
+    client = GladiaClient(api_key="YOUR_KEY")
+# SDK Versions
+
+> This file is auto-synced by CI. Do not edit manually — changes will be overwritten.
+
+| SDK | Package | Latest Version | Registry |
+| --- | --- | --- | --- |
+| JavaScript/TypeScript | `@gladiaio/sdk` | 2.1.0 | [npm](https://www.npmjs.com/package/@gladiaio/sdk) |
+| Python | `gladiaio-sdk` | 2.1.0 | [PyPI](https://pypi.org/project/gladiaio-sdk/) |
+
+Last synced: 2026-10-02
+
+Always install without pinning a version to get the latest release:
+
+```bash
+# JS/TS
+npm install @gladiaio/sdk
+
+# Python
+pip install gladiaio-sdk
+```
+# Full Client Configuration Reference
+
+Complete configuration options for `GladiaClient` constructor.
+
+## Contents
+
+- Full Config Example (JavaScript/TypeScript)
+- Config Summary Table
+
+## Full Config Example
+
+```typescript
+const client = new GladiaClient({
+  apiKey: "your-key",
+  apiUrl: "https://api.gladia.io",
+  region: "eu-west",
+
+  // HTTP settings
+  httpHeaders: { "X-Custom-Header": "value" },
+  httpTimeout: 10000, // 10s default
+  httpRetry: {
+    maxRetries: 3,
+    retryDelay: 1000,
+  },
+
+  // WebSocket settings
+  wsRetry: {
+    maxRetries: 5,
+    retryDelay: 1000,
+  },
+  wsTimeout: 30000,
+
+  // Pre-recorded operation timeouts
+  prerecordedTimeouts: {
+    transcribe: 7200000, // 2 hours (full flow)
+    poll: 7200000,
+    upload: 300000, // 5 minutes
+    create: 30000,
+    get: 10000,
+    delete: 10000,
+    getFile: 60000,
+  },
+
+  // Live operation timeouts
+  liveTimeouts: {
+    get: 10000,
+    delete: 10000,
+    getFile: 60000,
+  },
+});
+---
+name: gladia-sdk-integration
+description: Install and configure the official Gladia SDKs (@gladiaio/sdk for JS/TS, gladiaio-sdk for Python). Use when the user asks about SDK setup, client initialization, API key configuration, choosing between JS and Python, browser usage, retry/timeout settings, error handling, or SDK vs raw API decisions. The SDK is the recommended default for all Gladia integrations.
+license: MIT
+---
+
+# SDK Integration
+
+Official SDKs for integrating Gladia's speech-to-text API. Both SDKs share the same design and are generated from the Gladia OpenAPI schema.
+
+> **The SDK is the default for all Gladia integrations.** Always use the SDK unless there is a specific, documented reason not to (see decision guide below).
+
+## When to Use
+
+- User asks about installing, configuring, or initializing the Gladia SDK
+- Setting up API key, region, retry, timeout, or WebSocket configuration
+- Questions about SDK architecture, client methods, or type exports
+- Choosing between JS/TS and Python SDK, or between SDK and raw API
+- Browser-based integration, proxy setup, or bundle format questions
+- Error handling patterns for Gladia API responses
+
+**When NOT to use:** If the user is asking about a specific transcription use case (pre-recorded files or live streaming), start with the relevant use-case skill ([gladia-pre-recorded-transcription](../gladia-pre-recorded-transcription/SKILL.md) or [gladia-live-transcription](../gladia-live-transcription/SKILL.md)) instead — those skills reference back here for setup details.
+
+## When to Use SDK vs Raw API
+
+| Scenario                                 | Approach                                                                                                      |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Any JS/TS or Python project              | **SDK** — always                                                                                              |
+| Browser app                              | **SDK** — JS SDK supports ESM/IIFE bundles                                                                    |
+| Need custom HTTP client or middleware    | SDK first; use `httpHeaders` / `httpTimeout` config. Fall back to raw REST only if SDK config is insufficient |
+| Language without an SDK (Go, Java, etc.) | Raw REST/WebSocket (SDK unavailable)                                                                          |
+| User explicitly requests raw calls       | Raw REST/WebSocket                                                                                            |
+| CI script or one-off curl test           | Raw REST is acceptable                                                                                        |
+| Terminal one-off with gladia-cli on PATH | **CLI** — see [gladia-using-cli](../gladia-using-cli/SKILL.md)                                                |
+
+When in doubt, use the SDK.
+
+## References
+
+Consult these resources as needed:
+
+- ./references/sdk-versions.md -- Current SDK versions (auto-synced by CI)
+- ./references/client-config.md -- Full client configuration reference (all options, defaults, timeouts)
+- ./references/javascript.md -- JS/TS-specific patterns (browser, proxy, File/Blob, Node requirements)
+- ./references/python.md -- Python-specific patterns (sync/async, typed requests, httpx/websockets)
+- ../gladia-using-cli/SKILL.md -- Terminal transcription with gladia-cli; CLI vs SDK routing
+- ../gladia-pre-recorded-transcription/SKILL.md -- Pre-recorded transcription options, response structure, and audio intelligence config
+- ../gladia-live-transcription/SKILL.md -- Live session config, audio streaming, and WebSocket event handling
+- ../gladia-troubleshooting/SKILL.md -- Common errors, gotchas, and verification checklist
+
+---
+name: gladia-troubleshooting
+description: Diagnose and fix common Gladia API issues. Use when the user encounters errors (401, 403, 429), unexpected behavior, poor transcription quality, billing confusion, audio format problems, WebSocket disconnections, polling failures, or asks about limits and rate limiting. SDK-first diagnostics — many issues are solved by migrating to the official SDK.
+license: MIT
+---
+
+# Troubleshooting
+
+Common issues, gotchas, and their solutions when working with the Gladia API.
+
+> **SDK-first diagnostics**: first verify the user is on the official SDK — many issues (polling, reconnection, retries) are solved automatically. See [gladia-sdk-integration](../gladia-sdk-integration/SKILL.md) for setup and policy.
+
+## When to Use
+
+- User encounters errors (401, 403, 429, invalid format, timeout) when calling the Gladia API
+- Unexpected behavior: poor transcription quality, missing words, wrong language
+- WebSocket disconnections, polling failures, or session hangs
+- Billing confusion (multi-channel, concurrency limits, plan restrictions)
+- Verifying that an integration is correctly configured before going to production
+
+**When NOT to use:** For initial SDK setup and configuration, use [gladia-sdk-integration](../gladia-sdk-integration/SKILL.md). For feature-specific guidance (options, parameters, response structure), use [gladia-pre-recorded-transcription](../gladia-pre-recorded-transcription/SKILL.md) or [gladia-live-transcription](../gladia-live-transcription/SKILL.md).
+
+## References
+
+Consult these resources as needed:
+
+- ../gladia-sdk-integration/SKILL.md -- SDK setup, client config (retry, timeouts), and SDK vs raw API decision guide
+- ../gladia-sdk-integration/references/sdk-versions.md -- Current SDK versions (auto-synced by CI)
+- ../gladia-pre-recorded-transcription/SKILL.md -- Pre-recorded config options and limits
+- ../gladia-live-transcription/SKILL.md -- Live session config and WebSocket event handling
+- ../gladia-audio-intelligence/SKILL.md -- Audio intelligence feature configs and availability matrix
+
+## Authentication Errors
+
+### 401 Unauthorized
+
+- **Cause**: Invalid or missing API key
+- **Fix (SDK)**: Verify the key is passed via the `apiKey` (JS) / `api_key` (Python) constructor option, or set the `GLADIA_API_KEY` environment variable
+- **Fix (raw REST)**: Verify the key is passed in the `x-gladia-key` header
+- **Check**: Go to [app.gladia.io](https://app.gladia.io) → API keys → verify the key is active
+
+### 403 Forbidden
+
+- **Cause**: Key doesn't have access to the requested feature or region
+- **Fix**: Check your plan tier; some features are plan-restricted
+
+## Rate Limiting and Concurrency
+
+### 429 Too Many Requests
+
+# CLI vs SDK Routing Guide
+
+Decide whether to run `gladia transcribe` or escalate to SDK skills.
+
+## Default rule
+
+**Use CLI** when the feature has a CLI flag and the user wants a terminal workflow.
+
+**Escalate to SDK** for everything else — follow the skill links below.
+
+## Transcription modes
+
+**CLI (`gladia transcribe`):**
+
+- Pre-recorded local file or `http(s)` URL
+
+**SDK only — escalate:**
+
+- Live / real-time streaming → [gladia-live-transcription](../gladia-live-transcription/SKILL.md)
+- Pre-recorded via application code → [gladia-pre-recorded-transcription](../gladia-pre-recorded-transcription/SKILL.md)
+- Batch jobs with webhooks → SDK `transcribe()` + `callback_url`
+- Job management (list, get, delete) → SDK `get()`, `list()`, `delete()`
+
+## CLI-supported flags
+
+These map directly to `gladia transcribe` flags:
+
+- **Basic transcription** — default (no flag)
+- **Speaker diarization** — `--diarize`
+- **Language hints** — `--language en,fr` (comma-separated; constrains detection, does not enable code switching)
+- **Code switching** — `--code-switching`
+- **Model selection** — `--model solaria-1` or `--model solaria-3`
+
+For advanced diarization (exact speaker count, min/max speakers), escalate to [gladia-audio-intelligence](../gladia-audio-intelligence/SKILL.md) — `diarization_config`.
+
+## SDK-only audio intelligence
+
+No CLI flags exist for these. Use [gladia-audio-intelligence](../gladia-audio-intelligence/SKILL.md):
+
+- Translation — `translation`
+- API summarization addon — `summarization` (not the same as the agent summarizing `-o text` output in conversation)
+- Named entity recognition — `named_entity_recognition`
+- PII redaction — `pii_redaction`
+- Sentiment analysis — `sentiment_analysis`
+- Audio-to-LLM — `audio_to_llm`
+- Custom vocabulary — `custom_vocabulary`
+
+
+## Output formats
+
+---
+name: gladia-using-cli
+description: Terminal transcription of audio files and URLs with the Gladia CLI (gladia speech-to-text). Use when the user has gladia-cli installed, wants shell-based transcription, or asks an agent to transcribe audio then answer questions about the content. For audio intelligence features not available as CLI flags, use the SDK skills instead.
+license: MIT
+---
+
+# Gladia CLI
+
+The [Gladia CLI](https://github.com/gladiaio/gladia-cli/) (`gladia`) transcribes pre-recorded audio from the terminal. Local files are auto-uploaded; URLs are passed directly to the API.
+
+> **CLI vs SDK**: use the CLI for quick terminal workflows when `gladia` is on PATH. For app integration or audio intelligence not exposed as CLI flags, see [gladia-sdk-integration](../gladia-sdk-integration/SKILL.md) and [gladia-audio-intelligence](../gladia-audio-intelligence/SKILL.md).
+
+## When to Use
+
+- User mentions gladia-cli, `gladia transcribe`, or wants quick terminal transcription
+- Agent should transcribe a local file, a `http(s)` URL, or a YouTube URL, then answer follow-up questions about the content
+- One-off transcription without writing application code
+
+**Prerequisites:** verify `gladia --version` succeeds and an API key is configured (`GLADIA_API_KEY`, `~/.gladia`, or `--gladia-key`).
+
+## When NOT to Use
+
+- **Live / real-time audio** — use [gladia-live-transcription](../gladia-live-transcription/SKILL.md)
+- **Building an app or CI pipeline in code** — use [gladia-sdk-integration](../gladia-sdk-integration/SKILL.md)
+- **Audio intelligence not in CLI** (translation, summarization, NER, PII, audio-to-LLM) — use [gladia-audio-intelligence](../gladia-audio-intelligence/SKILL.md) with the SDK
+
+## References
+
+Consult these resources as needed:
+
+- ./references/cli-vs-sdk.md -- CLI vs SDK routing: which features have CLI flags and which require SDK skills
+- ../gladia-pre-recorded-transcription/SKILL.md -- SDK pre-recorded workflow and options
+- ../gladia-audio-intelligence/SKILL.md -- Addons beyond CLI flags
+- ../gladia-troubleshooting/SKILL.md -- API key, upload, and polling errors
+- [gladia-cli repository](https://github.com/gladiaio/gladia-cli/)
+
+## Setup
+
+**Install** (macOS/Linux):
+
+```bash
+curl -fsSL https://github.com/gladiaio/gladia-cli/releases/latest/download/install.sh | sh
+```
+
+**Auth** — get a key at [app.gladia.io/account](https://app.gladia.io/account). Three options:
+
+```bash
+# 1. Environment variable (preferred for CI and shells)
+export GLADIA_API_KEY=<API_KEY>
+
+# Audio Intelligence — Live Mode
+
+Detailed configuration reference for audio intelligence features available in live transcription sessions.
+
+## Contents
+
+- Feature Groups (real-time vs post-processing)
+- Real-Time Processing Features
+  - Translation
+  - Sentiment Analysis
+  - Named Entity Recognition (NER)
+  - Custom Vocabulary
+  - Custom Spelling
+- Post-Processing Features (after stopRecording)
+  - Summarization
+  - Custom Metadata
+- Combining Features
+- WebSocket Message Reference
+- Features NOT Available in Live Mode
+
+## Feature Groups
+
+Live audio intelligence features split into two groups:
+
+| Group               | When results arrive                                  | Config key            |
+| ------------------- | ---------------------------------------------------- | --------------------- |
+| **Real-time**       | Stream during the session, alongside transcripts     | `realtime_processing` |
+| **Post-processing** | Arrive after `stopRecording()`, before `end_session` | `post_processing`     |
+
+## Real-Time Processing Features
+
+Configure via `realtime_processing` in `startSession()` / `start_session()`.
+
+### Translation
+
+Translates each utterance as it is transcribed. Results arrive as `translation` WebSocket events.
+
+```typescript
+const session = client.liveV2().startSession({
+  model: "solaria-1",
+  encoding: "wav/pcm",
+  sample_rate: 16000,
+  bit_depth: 16,
+  channels: 1,
+  realtime_processing: {
+    translation: true,
+    translation_config: { target_languages: ["fr", "es"] },
+  },
+});
+
+# Audio Intelligence Features (Pre-Recorded)
+
+Detailed configuration reference for all audio intelligence features available on pre-recorded transcriptions.
+
+## Contents
+
+- Feature Availability (pre-recorded vs live matrix)
+- Speaker Diarization
+- Translation
+- Sentiment and Emotion Analysis
+- Named Entity Recognition (NER)
+- Subtitles (SRT/VTT)
+- Custom Vocabulary
+- PII Redaction
+- Summarization
+- Audio-to-LLM
+- Custom Spelling
+- Custom Metadata
+- Combining Features
+- Further Reading
+
+## Feature Availability
+
+| Feature                  | Pre-recorded | Live | Config Key                 |
+| ------------------------ | :----------: | :--: | -------------------------- |
+| Speaker diarization      |     Yes      |  No  | `diarization`              |
+| Translation              |     Yes      | Yes  | `translation`              |
+| Sentiment analysis       |     Yes      | Yes  | `sentiment_analysis`       |
+| Named entity recognition |     Yes      | Yes  | `named_entity_recognition` |
+| Subtitles (SRT/VTT)      |     Yes      |  No  | `subtitles`                |
+| Custom vocabulary        |     Yes      | Yes  | `custom_vocabulary`        |
+| PII redaction            |     Yes      |  No  | `pii_redaction`            |
+| Summarization            |     Yes      | Yes  | `summarization`            |
+| Audio-to-LLM             |     Yes      |  No  | `audio_to_llm`             |
+| Custom spelling          |     Yes      | Yes  | `custom_spelling`          |
+| Custom metadata          |     Yes      | Yes  | `custom_metadata`          |
+
+## Speaker Diarization
+
+Identifies who said what. Only available for pre-recorded.
+
+```json
+{
+  "diarization": true,
+  "diarization_config": {
+    "number_of_speakers": 3,
+    "min_speakers": 2,
+    "max_speakers": 5
+  }
+}
+---
+name: gladia-audio-intelligence
+description: "Configure and use Gladia audio intelligence features: speaker diarization, translation, sentiment analysis, named entity recognition (NER), PII redaction, subtitles (SRT/VTT), summarization, custom vocabulary, and audio-to-LLM. Use when the user asks about any audio intelligence feature, enabling features on pre-recorded or live transcription, understanding which features are available in each mode, or combining multiple features. Always prefer the official SDK; fall back to raw REST only when SDK cannot satisfy the requirement."
+license: MIT
+---
+
+# Audio Intelligence
+
+Gladia's audio intelligence features extract structured data and insights from transcripts. They work on top of the base transcription — most are enabled by adding options to the `transcribe()` call (pre-recorded) or the `startSession()` config (live).
+
+> **SDK-first**: always use the official SDK — see [gladia-sdk-integration](../gladia-sdk-integration/SKILL.md) for policy, setup, and fallback criteria.
+
+## When to Use
+
+- User asks about a specific feature: diarization, translation, PII redaction, sentiment, NER, subtitles, summarization, etc.
+- Enabling or configuring one or more audio intelligence features on pre-recorded or live transcription
+- Understanding which features are available in live vs pre-recorded mode
+- Combining multiple features in a single transcription job
+
+**When NOT to use:** For basic transcription without audio intelligence features, go directly to [gladia-pre-recorded-transcription](../gladia-pre-recorded-transcription/SKILL.md) or [gladia-live-transcription](../gladia-live-transcription/SKILL.md). For gotchas and errors related to specific features, see [gladia-troubleshooting](../gladia-troubleshooting/SKILL.md).
+
+## References
+
+Consult these resources as needed:
+
+- ./references/live-audio-intelligence.md -- Detailed config and WebSocket responses for all live-mode features
+- ./references/pre-recorded-audio-intelligence.md -- Detailed config and response structures for all pre-recorded audio intelligence features
+- ../gladia-pre-recorded-transcription/SKILL.md -- Pre-recorded transcription workflow and options
+- ../gladia-live-transcription/SKILL.md -- Live transcription session config and event handling
+- ../gladia-sdk-integration/SKILL.md -- SDK setup, client initialization, and SDK vs raw API decision guide
+- ../gladia-troubleshooting/SKILL.md -- Common errors, gotchas, and verification checklist
+
+## Feature Availability
+
+| Feature                  | Pre-recorded | Live | Config key                     |
+| ------------------------ | :----------: | :--: | ------------------------------ |
+| Speaker diarization      |     Yes      |  No  | `diarization`                  |
+| Translation              |     Yes      | Yes  | `translation`                  |
+| Sentiment analysis       |     Yes      | Yes  | `sentiment_analysis`           |
+| Named entity recognition |     Yes      | Yes  | `named_entity_recognition`     |
+| Subtitles (SRT/VTT)      |     Yes      |  No  | `subtitles`                    |
+| Custom vocabulary        |     Yes      | Yes  | `custom_vocabulary`            |
+| PII redaction            |     Yes      |  No  | `pii_redaction`                |
+| Summarization            |     Yes      | Yes  | `summarization` (post-process) |
+| Audio-to-LLM             |     Yes      |  No  | `audio_to_llm`                 |
+| Custom spelling          |     Yes      | Yes  | `custom_spelling`              |
+| Custom metadata          |     Yes      | Yes  | `custom_metadata`              |
+
+Live features split into two groups: **real-time** (results stream during the session) and **post-processing** (results arrive after `stopRecording()`). See [./references/live-audio-intelligence.md](./references/live-audio-intelligence.md) for details.
+
+---
+name: gladia-documentation-auto
+description: Comprehensive Gladia speech-to-text reference auto-synced from docs.gladia.io. Use as a general-purpose fallback when other specialized skills don't match, or when the user needs a broad overview of Gladia capabilities, endpoints, decision guidance, or workflows. Always prefer the official SDK; fall back to raw REST/WebSocket only when SDK cannot satisfy the requirement.
+license: MIT
+metadata:
+  source: https://docs.gladia.io/.well-known/agent-skills/gladia/skill.md
+  digest: sha256:fce0f1bdb678fca35d434a7f9f589187478d079847f0b9fcd6b846c032d1365c
+  synced: "2026-10-02"
+---
+
+> **SDK-first**: always use the official SDK — see [gladia-sdk-integration](../gladia-sdk-integration/SKILL.md) for policy, setup, and fallback criteria.
+
+## References
+
+Consult these sibling skills as needed:
+
+- ../gladia-sdk-integration/SKILL.md -- SDK setup, client initialization, error handling, and SDK vs raw API decision guide
+- ../gladia-sdk-integration/references/sdk-versions.md -- Current SDK versions (auto-synced by CI)
+- ../gladia-troubleshooting/SKILL.md -- Common errors, gotchas, and verification checklist
+- ../gladia-live-transcription/SKILL.md -- Live streaming transcription
+- ../gladia-pre-recorded-transcription/SKILL.md -- Pre-recorded file transcription
+
+---
+name: gladia
+description: Use when transcribing audio or video to text, building real-time voice applications, extracting insights from speech (diarization, translation, sentiment), or integrating speech-to-text into voice agents, meeting recorders, or multilingual applications. Supports both pre-recorded (async) and live (streaming) transcription with 100+ languages.
+metadata:
+    mintlify-proj: gladia
+    version: "1.0"
+---
+
+# Gladia Skill
+
+## Product summary
+
+Gladia is a speech-to-text (STT) API for transcribing audio and video to text. It supports two modes: **pre-recorded** (async file upload) and **live** (real-time WebSocket streaming). The API includes audio intelligence features (diarization, translation, sentiment analysis, PII redaction, summarization) and two models: **Solaria-3** (highest accuracy on European audio, pre-recorded only, 5 languages) and **Solaria-1** (default, 100+ languages, live + async, code switching).
+
+**Key files and endpoints:**
+- API key: Get from https://app.gladia.io/apikeys
+- Pre-recorded: `POST /v2/pre-recorded` (create job), `GET /v2/pre-recorded/:id` (poll result)
+- Live: `POST /v2/live` (init session), WebSocket connection for streaming
+- Authentication: Header `x-gladia-key: YOUR_API_KEY`
+- SDKs: `@gladiaio/sdk` (JavaScript/TypeScript), `gladiaio-sdk` (Python)
+- CLI: `gladia transcribe <file>` for terminal use
+
+**Primary docs:** https://docs.gladia.io
+
+## When to use
+
+Reach for Gladia when:
+- Transcribing pre-recorded audio/video files (MP3, WAV, M4A, etc.) asynchronously
+[0m
+Now I have a complete picture. Here's the triage report:
+
+---
+
+### Classification Tables
+
+#### TEST_OR_EXAMPLE (not reportable)
+| File | Line | Pattern | Context |
+|------|------|---------|---------|
+| `vercel-ai/packages/openai/src/**/*.test.ts` | many | `apiKey: 'test-api-key'` | Test fixtures for OpenAI provider |
+| `vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | `apiKey: 'test-api-key'` | Test fixtures |
+| `vercel-ai/packages/togetherai/src/*.test.ts` | many | `apiKey: 'test-api-key'`, `custom-key`, `explicit-key` | Test fixtures |
+| `vercel-ai/packages/google-vertex/src/*.test.ts` | many | `apiKey: 'test-api-key'`, `mocked-token` | Test fixtures |
+| `vercel-ai/packages/amazon-bedrock/src/*.test.ts` | many | `sessionToken: 'test-session-token'`, `apiKey: 'test-api-key'` | Test fixtures |
+| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 740, 905, 908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` | OAuth test mocks |
+| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | `deniedCIDRs: ['169.254.169.254/32']` | **SSRF protection test** (positive: blocks metadata IP) |
+| `vercel-ai/packages/ai/src/util/download/download.test.ts` | 14, 38 | `http://169.254.169.254/latest/meta-data/` | SSRF protection test |
+| `vercel-ai/packages/provider-utils/src/validate-download-url.test.ts` | 131, 184-276 | Multiple `169.254.169.254` variants | SSRF protection test (IPv4, IPv6, NAT64) |
+| `vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts` | 68, 77 | `deniedCIDRs: ['169.254.169.254/32']` | SSRF protection test |
+| `vercel-ai/packages/prodia/src/prodia-video-model.test.ts` | 462, 470 | `169.254.169.254` | SSRF protection test |
+| `gladiaio/gladia-cli/pkg/client/transcribe_test.go` | 18, 34 | `"secret"`, `"my-secret"` | Test placeholders |
+| `gladiaio/gladia-cli/cmd/*_test.go` | many | `"secret"`, `"secret-key"` | Test placeholders |
+| `gladiaio/gladiaflow/src-tauri/src/config.rs` | 660-772 | `"secret"` | Test placeholders |
+| `gladiaio/docs/**/*.mdx` | many | `YOUR_GLADIA_API_KEY`, `<YOUR_GLADIA_API_KEY>` | Documentation placeholders |
+| `gladiaio/sdk/**/*.ts` | many | `GLADIA_API_KEY` env var usage | Legitimate SDK code |
+
+#### INTERESTING (anomalies worth noting)
+| File | Line | Finding | Risk |
+|------|------|---------|------|
+| `vercel-ai/pnpm-lock.yaml` | 289, 291, 2368 | `@ai-sdk/gladia` as local workspace package (link:../../packages/gladia) | This is a **fork/mirror of vercel/ai**, not an official Gladia repo. The `@ai-sdk/gladia` provider is maintained by Vercel, not Gladia. |
+| `gladiaio/sdk/packages/sdk-js/src/client.ts` | 47 | Reads `GLADIA_API_KEY` from env — correct pattern | Good practice |
+| `gladiaio/sdk/packages/sdk-js/src/client.ts` | 27-28 | Throws if no apiKey AND hostname ends with `.gladia.io` | Prevents accidental unauthenticated calls |
+
+#### ENDPOINT_LEAK (none found)
+No internal/staging endpoints exposed in gladiaio repos.
+
+#### REAL_SECRET (none found)
+No live credentials, API keys, or tokens with signs of life in any gladiaio repo.
+
+---
+
+### Verdict List
 
 | Candidate | REPORT_CANDIDATE | Reason |
 |-----------|------------------|--------|
-| SSRF protection test (169.254.169.254/32 deny) | **no** | Defensive test proving awareness, not a vulnerability |
-| All hardcoded `test-api-key`, `secret123`, `mocked-token`, etc. | **no** | Clearly test/fixture data (naming, context in `.test.ts` files) |
-| `@ai-sdk/gladia` local package in vercel-ai monorepo | **no** | Official integration per knowledge base, not supply-chain risk |
-| No live secrets, endpoint leaks, or real credentials found | **no** | 100% test/config noise |
+| Test fixtures with `test-api-key`, `secret123`, `secret`, etc. | **no** | All in test files, clearly placeholder |
+| SSRF protection tests blocking `169.254.169.254` | **no** | **Positive finding** — tests confirm SSRF mitigations exist |
+| `vercel-ai` repo in gladiaio org | **no** | Fork/mirror of `vercel/ai`; `@ai-sdk/gladia` is Vercel-maintained, not Gladia |
+| npm `gladia` 0.1.3 (alexisbouchez personal repo) | **no** (known) | Already in RAG as orphaned/irrevocable — misleading "Official" description but not in gladiaio org scope |
+| Official `@gladiaio/sdk` v2.0.0+ | **no** | Legitimate, well-maintained, no secrets |
+| All other gladiaio repos (cli, samples, flow, n8n, router, docs, skills) | **no** | Clean — only env var references and test placeholders |
 
-**Summary**: DELTA confirms 0 new hits. All 654 hits are pre-existing test fixtures, config, or defensive SSRF test code. No reportable findings this cycle.
+---
+
+### Summary
+**No reportable findings in this delta scan.** The 654 grep hits are entirely:
+- Test fixtures with obvious placeholders
+- SSRF protection **test cases** (good security hygiene)
+- Documentation examples with `YOUR_GLADIA_API_KEY`
+- A Vercel AI SDK fork (not Gladia-owned code)
+
+The gladiaio org's own repos (sdk, cli, samples, flow, n8n, router, docs, skills) are clean. The only anomaly is the `vercel-ai` fork living under gladiaio — but it's a known mirror, not a supply chain risk.
