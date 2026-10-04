@@ -1671,3 +1671,11 @@
 - CHANGED Supply-chain confusion surface CLARIFIED — three distinct packages: (1) PyPI gladiaio-sdk=official Python, (2) npm @gladiaio/sdk=official TS, (3) npm gladia@0.1.3=orphaned impersonator with WS key lea
 - CHANGED api.gladia.io NO_DRIFT re-confirmed — OpenAPI 14 paths/7 webhooks identical, SSRF-by-design via audio_url persists (AUTH_HELPED)
 - CHANGED app.gladia.io /signin?redirect_to reflection byte-fresh 2026-10-03 — 0 CSP form-action directives, post-auth 302 honors redirect_to as sole unverified gate (HUMAN_ONLY)
+
+## 2026-10-04 09:43:03 UTC
+- NEW PyPI gladiaio-sdk@2.1.0 confirmed OFFICIAL — owned by "Gladia" org, active (2026-09-18), versions 0.1.1→2.1.0, repo URL null (no public GitHub link in metadata)
+- CHANGED npm gladia@0.1.3 orphaned status CONFIRMED — GitHub user+repo alexisbouchez 404, last publish 2025-04-07, maintainer softwarecitadel@gmail.com (non-Gladia), "Official" description
+- NEW npm @gladiaio/sdk@2.1.0 confirmed OFFICIAL — 14+ @gladia.io maintainers, repo github.com/gladiaio/sdk, latest 2026-09-21, SLSA provenance
+- CHANGED Supply-chain confusion surface CLARIFIED — three distinct packages: (1) PyPI gladiaio-sdk=official Python, (2) npm @gladiaio/sdk=official TS, (3) npm gladia@0.1.3=orphaned impersonator with WS key lea
+- CHANGED api.gladia.io NO_DRIFT re-confirmed — OpenAPI 14 paths/7 webhooks identical, SSRF-by-design via audio_url persists (AUTH_HELPED)
+- CHANGED app.gladia.io /signin?redirect_to reflection byte-fresh 2026-10-03 — 0 CSP form-action directives, post-auth 302 honors redirect_to as sole unverified gate (HUMAN_ONLY)
