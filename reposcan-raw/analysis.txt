@@ -1,61 +1,590 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/
-total 60
-drwxr-xr-x 15 runner runner 4096 Oct  4 21:33 .
-drwxr-xr-x  4 runner runner 4096 Oct  4 21:33 ..
-drwxr-xr-x  9 runner runner 4096 Oct  4 21:33 compare-stt
-drwxr-xr-x  9 runner runner 4096 Oct  4 21:33 docs
-drwxr-xr-x  7 runner runner 4096 Oct  4 21:33 gladia-cli
-drwxr-xr-x 11 runner runner 4096 Oct  4 21:33 gladia-quiz-app
-drwxr-xr-x 11 runner runner 4096 Oct  4 21:33 gladia-samples
-drwxr-xr-x  9 runner runner 4096 Oct  4 21:33 gladiaflow
-drwxr-xr-x  7 runner runner 4096 Oct  4 21:33 n8n-nodes-gladia
-drwxr-xr-x  8 runner runner 4096 Oct  4 21:33 normalization
-drwxr-xr-x 12 runner runner 4096 Oct  4 21:33 num2words2
-drwxr-xr-x  9 runner runner 4096 Oct  4 21:33 realtime-multilingual-asr-router
-drwxr-xr-x 10 runner runner 4096 Oct  4 21:33 sdk
-drwxr-xr-x  7 runner runner 4096 Oct  4 21:33 skills
-drwxr-xr-x 18 runner runner 4096 Oct  4 21:33 vercel-ai
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -name "*.test.ts" -o -name "*.test.tsx" -o -name "*.spec.ts" -o -name "*.spec.tsx" | head -20
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/openai.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/togetherai.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/luma.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/cerebras.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/amazon-bedrock.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google-vertex-anthropic.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/fireworks.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/amazon-bedrock-anthropic.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/gateway.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/mistral.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/deepinfra.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/deepseek.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/azure.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/huggingface.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/anthropic.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/xai.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/cohere.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/groq.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google-vertex.test.ts
 [0m
-[0m✱ [0mGrep "(api[_-]?key|secret|token|password)\s*[:=]\s*['\"][^'\"]{20,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(sk-|gh[pousr]_)[A-Za-z0-9]{20,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
-[0m✱ [0mGlob "**/*.{ts,js,json,yaml,yml,py,go,rs,toml}"[90m in reposcan-raw/gladiaio/sdk · 100 matches[0m
-[0m✱ [0mGrep "(api[_-]?key|secret|token|password)\s*[:=]\s*['\"][^'\"]{20,}"[90m in reposcan-raw/gladiaio/sdk · 0 matches[0m
-[0m✱ [0mGrep "(sk-|gh[pousr]_)[A-Za-z0-9]{20,}"[90m in reposcan-raw/gladiaio/sdk · 0 matches[0m
-[0m✱ [0mGrep "169\.254\.169\.254"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [offset=160, limit=30][0m
-**CLASSIFICATION TABLES**
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "169.254.169.254" reposcan-raw/gladiaio/ --include="*.ts" --include="*.json" --include="*.yaml" --include="*.yml"
+reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:        deniedCIDRs: ['169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:          subnets: { deny: ['169.254.169.254/32'] },
+reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:      download({ url: new URL('http://169.254.169.254/latest/meta-data/') }),
+reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:        location: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.ts:  // e.g. ::ffff:127.0.0.1 or 64:ff9b::169.254.169.254 are blocked.
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:      .mockResolvedValueOnce(redirectResponse('http://169.254.169.254/'));
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:      .mockResolvedValueOnce(redirectWithBody('http://169.254.169.254/'));
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:      downloadBlob('http://169.254.169.254/latest/meta-data/'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:          location: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://169.254.169.254/latest/meta-data/'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block ::ffff:169.254.169.254', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[::ffff:169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block NAT64 64:ff9b::169.254.169.254 (metadata)', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[64:ff9b::169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block NAT64 local-use 64:ff9b:1::169.254.169.254', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[64:ff9b:1::169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['10.5.0.0/16', '169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:            url: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:        server.calls.some(call => call.requestUrl.includes('169.254.169.254')),
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml | head -300
+lockfileVersion: '9.0'
 
-| Category | File | Line | Finding | SHA256 (truncated) |
-|----------|------|------|---------|-------------------|
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740 | `client_secret: 'secret123'` | `4a7e9d...` |
-|  | vercel-ai/packages/mcp/src/tool/oauth.test.ts | 905 | `access_token: 'access123'` | `e3b0c4...` |
-|  | vercel-ai/packages/mcp/src/tool/oauth.test.ts | 908 | `refresh_token: 'refresh123'` | `a591a6...` |
-|  | vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409 | `access_token: 'expired-access-token'` | `f7c3bc...` |
-|  | vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 411 | `refresh_token: 'rotating-refresh-token'` | `8e4d8f...` |
-|  | vercel-ai/packages/openai/src/**/*.test.ts | 48+ | `apiKey: 'test-api-key'` (20+ occurrences) | `d41d8c...` |
-|  | vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13,277 | `apiKey: 'test-api-key'` | `d41d8c...` |
-|  | vercel-ai/packages/togetherai/src/togetherai-provider.test.ts | 99,112,165 | `apiKey: 'custom-key'`, `explicit-key` | `various` |
-|  | vercel-ai/packages/google-vertex/src/**/*.test.ts | 120+ | `apiKey: 'test-api-key'`, `mocked-token`, `mock.jwt.token` | `various` |
-|  | vercel-ai/packages/amazon-bedrock/src/**/*.test.ts | 100+ | `sessionToken: 'test-session-token'`, `apiKey: 'test-api-key-123'` | `various` |
-|  | vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json | 36 | `encrypted_content` (fixture) | `gAAAAA...` |
-| **INTERESTING** | vercel-ai/pnpm-lock.yaml | 289,291,2368 | `@ai-sdk/gladia` workspace package (official Vercel integration) | N/A |
-|  | vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166,171 | SSRF protection: `deniedCIDRs: ['169.254.169.254/32']` (metadata endpoint block) | N/A |
-|  | vercel-ai/tools/analyze-downloads/src/analyze-providers.ts | 21 | `@ai-sdk/gladia` import in provider analysis | N/A |
-| **ENDPOINT_LEAK** | — | — | None found | — |
-| **REAL_SECRET** | — | — | None found | — |
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
-**VERDICTS**
+overrides:
+  tinyexec: 1.0.2
+  oxlint: 1.56.0
+
+importers:
+
+  .:
+    devDependencies:
+      '@changesets/cli':
+        specifier: 2.27.10
+        version: 2.27.10
+      '@playwright/test':
+        specifier: ^1.60.0
+        version: 1.60.0
+      del-cli:
+        specifier: ^5.1.0
+        version: 5.1.0
+      husky:
+        specifier: ^9.1.7
+        version: 9.1.7
+      konsistent:
+        specifier: 0.0.1-alpha.20
+        version: 0.0.1-alpha.20
+      konsistent-provider:
+        specifier: workspace:*
+        version: link:tools/konsistent-provider
+      lint-staged:
+        specifier: ^15.5.1
+        version: 15.5.2
+      next:
+        specifier: 15.0.7
+        version: 15.0.7(@opentelemetry/api@1.9.1)(@playwright/test@1.60.0)(react-dom@19.0.0-rc-cc1ec60d0d-20240607(react@19.0.0-rc-cc1ec60d0d-20240607))(react@19.0.0-rc-cc1ec60d0d-20240607)(sass@1.90.0)
+      oxfmt:
+        specifier: ^0.41.0
+        version: 0.41.0
+      oxlint:
+        specifier: 1.56.0
+        version: 1.56.0
+      playwright:
+        specifier: ^1.60.0
+        version: 1.60.0
+      publint:
+        specifier: 0.2.12
+        version: 0.2.12
+      react:
+        specifier: 19.0.0-rc-cc1ec60d0d-20240607
+        version: 19.0.0-rc-cc1ec60d0d-20240607
+      react-dom:
+        specifier: 19.0.0-rc-cc1ec60d0d-20240607
+        version: 19.0.0-rc-cc1ec60d0d-20240607(react@19.0.0-rc-cc1ec60d0d-20240607)
+      turbo:
+        specifier: 2.4.4
+        version: 2.4.4
+      typescript:
+        specifier: 5.8.3
+        version: 5.8.3
+      ultracite:
+        specifier: 7.3.2
+        version: 7.3.2(oxlint@1.56.0)
+      update-ts-references:
+        specifier: ^3.6.0
+        version: 3.6.2
+      vitest:
+        specifier: 4.1.5
+        version: 4.1.5(@edge-runtime/vm@5.0.0)(@opentelemetry/api@1.9.1)(@types/node@22.19.19)(jsdom@26.1.0)(msw@2.14.6(@types/node@22.19.19)(typescript@5.8.3))(vite@7.3.3(@types/node@22.19.19)(jiti@2.7.0)(less@4.4.0)(lightningcss@1.32.0)(sass@1.90.0)(terser@5.47.1)(tsx@4.22.0)(yaml@2.9.0))
+
+  examples/ai-e2e-next:
+    dependencies:
+      '@ai-sdk/amazon-bedrock':
+        specifier: workspace:*
+        version: link:../../packages/amazon-bedrock
+      '@ai-sdk/anthropic':
+        specifier: workspace:*
+        version: link:../../packages/anthropic
+      '@ai-sdk/azure':
+        specifier: workspace:*
+        version: link:../../packages/azure
+      '@ai-sdk/cohere':
+        specifier: workspace:*
+        version: link:../../packages/cohere
+      '@ai-sdk/deepseek':
+        specifier: workspace:*
+        version: link:../../packages/deepseek
+      '@ai-sdk/fireworks':
+        specifier: workspace:*
+        version: link:../../packages/fireworks
+      '@ai-sdk/google':
+        specifier: workspace:*
+        version: link:../../packages/google
+      '@ai-sdk/google-vertex':
+        specifier: workspace:*
+        version: link:../../packages/google-vertex
+      '@ai-sdk/groq':
+        specifier: workspace:*
+        version: link:../../packages/groq
+      '@ai-sdk/mcp':
+        specifier: workspace:*
+        version: link:../../packages/mcp
+      '@ai-sdk/mistral':
+        specifier: workspace:*
+        version: link:../../packages/mistral
+      '@ai-sdk/openai':
+        specifier: workspace:*
+        version: link:../../packages/openai
+      '@ai-sdk/otel':
+        specifier: workspace:*
+        version: link:../../packages/otel
+      '@ai-sdk/perplexity':
+        specifier: workspace:*
+        version: link:../../packages/perplexity
+      '@ai-sdk/provider':
+        specifier: workspace:*
+        version: link:../../packages/provider
+      '@ai-sdk/provider-utils':
+        specifier: workspace:*
+        version: link:../../packages/provider-utils
+      '@ai-sdk/react':
+        specifier: workspace:*
+        version: link:../../packages/react
+      '@ai-sdk/rsc':
+        specifier: workspace:*
+        version: link:../../packages/rsc
+      '@ai-sdk/valibot':
+        specifier: workspace:*
+        version: link:../../packages/valibot
+      '@ai-sdk/xai':
+        specifier: workspace:*
+        version: link:../../packages/xai
+      '@langfuse/otel':
+        specifier: ^4.6.1
+        version: 4.6.1(@opentelemetry/api@1.9.1)(@opentelemetry/core@2.7.1(@opentelemetry/api@1.9.1))(@opentelemetry/exporter-trace-otlp-http@0.211.0(@opentelemetry/api@1.9.1))(@opentelemetry/sdk-trace-base@2.7.1(@opentelemetry/api@1.9.1))
+      '@langfuse/tracing':
+        specifier: ^5.3.0
+        version: 5.3.0(@opentelemetry/api@1.9.1)
+      '@modelcontextprotocol/sdk':
+        specifier: ^1.29.0
+        version: 1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
+      '@opentelemetry/sdk-trace-node':
+        specifier: ^2.7.1
+        version: 2.7.1(@opentelemetry/api@1.9.1)
+      '@radix-ui/react-collapsible':
+        specifier: ^1.1.12
+        version: 1.1.12(@types/react-dom@18.3.7(@types/react@18.3.28))(@types/react@18.3.28)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@radix-ui/react-use-controllable-state':
+        specifier: ^1.2.2
+        version: 1.2.2(@types/react@18.3.28)(react@18.3.1)
+      '@valibot/to-json-schema':
+        specifier: ^1.7.0
+        version: 1.7.0(valibot@1.1.0(typescript@5.8.3))
+      '@vercel/blob':
+        specifier: ^0.26.0
+        version: 0.26.0
+      '@vercel/sandbox':
+        specifier: ^2.0.1
+        version: 2.1.1
+      ai:
+        specifier: workspace:*
+        version: link:../../packages/ai
+      class-variance-authority:
+        specifier: ^0.7.1
+        version: 0.7.1
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      lucide-react:
+        specifier: ^0.545.0
+        version: 0.545.0(react@18.3.1)
+      next:
+        specifier: ^15.5.18
+        version: 15.5.18(@opentelemetry/api@1.9.1)(@playwright/test@1.60.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.90.0)
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-markdown:
+        specifier: 9.0.1
+        version: 9.0.1(@types/react@18.3.28)(react@18.3.1)
+      redis:
+        specifier: ^4.7.1
+        version: 4.7.1
+      resumable-stream:
+        specifier: ^2.2.12
+        version: 2.2.12
+      streamdown:
+        specifier: ^1.6.11
+        version: 1.6.11(@types/mdast@4.0.4)(micromark-util-types@2.0.2)(micromark@4.0.2)(react@18.3.1)
+      tailwind-merge:
+        specifier: ^3.6.0
+        version: 3.6.0
+      tailwindcss-animate:
+        specifier: ^1.0.7
+        version: 1.0.7(tailwindcss@3.4.19(tsx@4.22.0)(yaml@2.9.0))
+      valibot:
+        specifier: 1.1.0
+        version: 1.1.0(typescript@5.8.3)
+      zod:
+        specifier: 3.25.76
+        version: 3.25.76
+    devDependencies:
+      '@types/node':
+        specifier: 22.19.19
+        version: 22.19.19
+      '@types/react':
+        specifier: ^18.3.28
+        version: 18.3.28
+      '@types/react-dom':
+        specifier: ^18.3.7
+        version: 18.3.7(@types/react@18.3.28)
+      autoprefixer:
+        specifier: ^10.5.0
+        version: 10.5.0(postcss@8.5.14)
+      postcss:
+        specifier: ^8.5.14
+        version: 8.5.14
+      tailwindcss:
+        specifier: ^3.4.19
+        version: 3.4.19(tsx@4.22.0)(yaml@2.9.0)
+      typescript:
+        specifier: 5.8.3
+        version: 5.8.3
+
+  examples/ai-functions:
+    dependencies:
+      '@ai-sdk/alibaba':
+        specifier: workspace:*
+        version: link:../../packages/alibaba
+      '@ai-sdk/amazon-bedrock':
+        specifier: workspace:*
+        version: link:../../packages/amazon-bedrock
+      '@ai-sdk/anthropic':
+        specifier: workspace:*
+        version: link:../../packages/anthropic
+      '@ai-sdk/anthropic-aws':
+        specifier: workspace:*
+        version: link:../../packages/anthropic-aws
+      '@ai-sdk/assemblyai':
+        specifier: workspace:*
+        version: link:../../packages/assemblyai
+      '@ai-sdk/azure':
+        specifier: workspace:*
+        version: link:../../packages/azure
+      '@ai-sdk/baseten':
+        specifier: workspace:*
+        version: link:../../packages/baseten
+      '@ai-sdk/black-forest-labs':
+        specifier: workspace:*
+        version: link:../../packages/black-forest-labs
+      '@ai-sdk/bytedance':
+        specifier: workspace:*
+        version: link:../../packages/bytedance
+      '@ai-sdk/cerebras':
+        specifier: workspace:*
+        version: link:../../packages/cerebras
+      '@ai-sdk/cohere':
+        specifier: workspace:*
+        version: link:../../packages/cohere
+      '@ai-sdk/deepgram':
+        specifier: workspace:*
+        version: link:../../packages/deepgram
+      '@ai-sdk/deepinfra':
+        specifier: workspace:*
+        version: link:../../packages/deepinfra
+      '@ai-sdk/deepseek':
+        specifier: workspace:*
+        version: link:../../packages/deepseek
+      '@ai-sdk/devtools':
+        specifier: workspace:^
+        version: link:../../packages/devtools
+      '@ai-sdk/elevenlabs':
+        specifier: workspace:*
+        version: link:../../packages/elevenlabs
+      '@ai-sdk/fal':
+        specifier: workspace:*
+        version: link:../../packages/fal
+      '@ai-sdk/fireworks':
+        specifier: workspace:*
+        version: link:../../packages/fireworks
+      '@ai-sdk/gateway':
+        specifier: workspace:*
+        version: link:../../packages/gateway
+      '@ai-sdk/gladia':
+        specifier: workspace:*
+        version: link:../../packages/gladia
+      '@ai-sdk/google':
+        specifier: workspace:*
+        version: link:../../packages/google
+      '@ai-sdk/google-vertex':
+        specifier: workspace:*
+        version: link:../../packages/google-vertex
+      '@ai-sdk/groq':
+        specifier: workspace:*
+        version: link:../../packages/groq
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/vercel-ai/packages/gladia/
+total 72
+drwxr-xr-x  3 runner runner  4096 Oct  4 23:05 .
+drwxr-xr-x 68 runner runner  4096 Oct  4 23:05 ..
+-rw-r--r--  1 runner runner 26407 Oct  4 23:05 CHANGELOG.md
+-rw-r--r--  1 runner runner  1376 Oct  4 23:05 README.md
+-rw-r--r--  1 runner runner  2030 Oct  4 23:05 package.json
+drwxr-xr-x  4 runner runner  4096 Oct  4 23:05 src
+-rw-r--r--  1 runner runner   139 Oct  4 23:05 tsconfig.build.json
+-rw-r--r--  1 runner runner   404 Oct  4 23:05 tsconfig.json
+-rw-r--r--  1 runner runner   337 Oct  4 23:05 tsup.config.ts
+-rw-r--r--  1 runner runner   119 Oct  4 23:05 turbo.json
+-rw-r--r--  1 runner runner   328 Oct  4 23:05 vitest.edge.config.js
+-rw-r--r--  1 runner runner   320 Oct  4 23:05 vitest.node.config.js
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
+{
+  "name": "@ai-sdk/gladia",
+  "version": "3.0.0-canary.48",
+  "type": "module",
+  "license": "Apache-2.0",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "docs/**/*",
+    "src",
+    "!src/**/*.test.ts",
+    "!src/**/*.test-d.ts",
+    "!src/**/__snapshots__",
+    "!src/**/__fixtures__",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "directories": {
+    "doc": "./docs"
+  },
+  "scripts": {
+    "build": "tsup --tsconfig tsconfig.build.json",
+    "build:watch": "tsup --tsconfig tsconfig.build.json --watch",
+    "clean": "del-cli dist docs",
+    "prepack": "mkdir -p docs && cp ../../content/providers/01-ai-sdk-providers/120-gladia.mdx ./docs/",
+    "postpack": "del-cli docs",
+    "type-check": "tsc --noEmit",
+    "test": "pnpm test:node && pnpm test:edge",
+    "test:watch": "vitest --config vitest.node.config.js",
+    "test:edge": "vitest --config vitest.edge.config.js --run",
+    "test:node": "vitest --config vitest.node.config.js --run",
+    "test:node:watch": "vitest --config vitest.node.config.js --watch"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@ai-sdk/provider": "workspace:*",
+    "@ai-sdk/provider-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@ai-sdk/test-server": "workspace:*",
+    "@types/node": "22.19.19",
+    "@vercel/ai-tsconfig": "workspace:*",
+    "tsup": "^8.5.1",
+    "typescript": "5.6.3",
+    "zod": "3.25.76"
+  },
+  "peerDependencies": {
+    "zod": "^3.25.76 || ^4.1.8"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "homepage": "https://ai-sdk.dev/docs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vercel/ai",
+    "directory": "packages/gladia"
+  },
+  "bugs": {
+    "url": "https://github.com/vercel/ai/issues"
+  },
+  "keywords": [
+    "ai"
+  ]
+}
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/sdk/
+total 328
+drwxr-xr-x 10 runner runner   4096 Oct  4 23:05 .
+drwxr-xr-x 15 runner runner   4096 Oct  4 23:05 ..
+drwxr-xr-x  3 runner runner   4096 Oct  4 23:05 .cursor
+-rw-r--r--  1 runner runner    135 Oct  4 23:05 .editorconfig
+drwxr-xr-x  8 runner runner   4096 Oct  4 23:05 .git
+-rw-r--r--  1 runner runner    212 Oct  4 23:05 .gitattributes
+drwxr-xr-x  3 runner runner   4096 Oct  4 23:05 .github
+-rw-r--r--  1 runner runner    191 Oct  4 23:05 .gitignore
+-rw-r--r--  1 runner runner    113 Oct  4 23:05 .npmrc
+-rw-r--r--  1 runner runner    103 Oct  4 23:05 .prettierignore
+-rw-r--r--  1 runner runner    127 Oct  4 23:05 .prettierrc
+drwxr-xr-x  2 runner runner   4096 Oct  4 23:05 .vscode
+-rw-r--r--  1 runner runner   3032 Oct  4 23:05 CONTRIBUTING.md
+-rw-r--r--  1 runner runner   1063 Oct  4 23:05 LICENSE
+-rw-r--r--  1 runner runner  10963 Oct  4 23:05 README.md
+-rw-r--r--  1 runner runner     98 Oct  4 23:05 audit-ci.jsonc
+-rw-r--r--  1 runner runner 219285 Oct  4 23:05 bun.lock
+-rw-r--r--  1 runner runner     29 Oct  4 23:05 bunfig.toml
+-rw-r--r--  1 runner runner    239 Oct  4 23:05 commitlint.config.cts
+drwxr-xr-x  2 runner runner   4096 Oct  4 23:05 data
+drwxr-xr-x  6 runner runner   4096 Oct  4 23:05 e2e
+-rw-r--r--  1 runner runner   1358 Oct  4 23:05 eslint.config.mjs
+-rw-r--r--  1 runner runner   3525 Oct  4 23:05 nx.json
+-rw-r--r--  1 runner runner   1062 Oct  4 23:05 package.json
+drwxr-xr-x  5 runner runner   4096 Oct  4 23:05 packages
+drwxr-xr-x  3 runner runner   4096 Oct  4 23:05 tools
+-rw-r--r--  1 runner runner     86 Oct  4 23:05 vitest.workspace.mjs
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/sdk/packages/
+total 20
+drwxr-xr-x  5 runner runner 4096 Oct  4 23:05 .
+drwxr-xr-x 10 runner runner 4096 Oct  4 23:05 ..
+drwxr-xr-x  3 runner runner 4096 Oct  4 23:05 generator
+drwxr-xr-x  4 runner runner 4096 Oct  4 23:05 sdk-js
+drwxr-xr-x  5 runner runner 4096 Oct  4 23:05 sdk-python
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/sdk/packages/sdk-js/package.json
+{
+  "name": "@gladiaio/sdk",
+  "description": "Gladia JavaScript/TypeScript SDK",
+  "version": "2.0.0",
+  "author": "Gladia",
+  "license": "MIT",
+  "repository": "github:gladiaio/sdk",
+  "keywords": [
+    "gladia",
+    "sdk",
+    "typescript",
+    "javascript"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "unpkg": "dist/index.iife.js",
+  "jsdelivr": "dist/index.iife.js",
+  "scripts": {
+    "build": "tsdown",
+    "build:watch": "tsdown --watch"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.6",
+    "@types/node": "^20.19.19",
+    "@types/ws": "^8.18.1",
+    "tsdown": "^0.15.6"
+  },
+  "peerDependencies": {
+    "eventemitter3": ">=5",
+    "ws": "5.2.4 || 6.2.3 || 7.5.10 || >=8.8",
+    "undici": ">=5"
+  },
+  "peerDependenciesMeta": {
+    "ws": {
+      "optional": true
+    },
+    "undici": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+[0m
+### Classification Tables
+
+| File | Line | Pattern | Classification | Notes |
+|------|------|---------|----------------|-------|
+| pnpm-lock.yaml | 289, 291 | `@ai-sdk/gladia` workspace link | TEST_OR_EXAMPLE | Local workspace dependency in vercel/ai monorepo |
+| tsconfig.json | 70 | path mapping for gladia | TEST_OR_EXAMPLE | TypeScript config for monorepo |
+| analyze-providers.ts | 21 | `@ai-sdk/gladia` import | TEST_OR_EXAMPLE | Provider analysis script |
+| tigent.yml | 30 | provider list | TEST_OR_EXAMPLE | Test configuration |
+| vercel-sandbox.test.ts | 166, 171 | `deniedCIDRs: ['169.254.169.254/32']` | INTERESTING | **SSRF protection test** - explicitly blocks metadata endpoint |
+| oauth.test.ts | 740, 905, 908 | `secret123`, `access123`, `refresh123` | TEST_OR_EXAMPLE | Hardcoded test fixtures |
+| mcp-http-transport.test.ts | 409, 411 | `expired-access-token`, `rotating-refresh-token` | TEST_OR_EXAMPLE | Test fixtures |
+| openai provider tests | 48-381 | `test-api-key` (20+ occurrences) | TEST_OR_EXAMPLE | Test fixtures |
+| openai fixtures | 36 | encrypted_content base64 | TEST_OR_EXAMPLE | Test fixture (encrypted payload) |
+| assemblyai tests | 13, 277 | `test-api-key` | TEST_OR_EXAMPLE | Test fixtures |
+| togetherai tests | 99, 112, 165 | `custom-key`, `explicit-key`, `test-api-key` | TEST_OR_EXAMPLE | Test fixtures |
+| google-vertex tests | 120, 187, 405, 419 | `test-api-key`, `mocked-token`, `invalid-key`, `mock.jwt.token` | TEST_OR_EXAMPLE | Test fixtures + mocks |
+| amazon-bedrock tests | 100-442 | `test-session-token`, `dynamic-session-token`, `static-session-token`, `test-api-key-123`, `async-session-token` | TEST_OR_EXAMPLE | Test fixtures |
+
+| File | Line | Pattern | Classification | Notes |
+|------|------|---------|----------------|-------|
+| download.test.ts | - | `http://169.254.169.254/latest/meta-data/` | INTERESTING | SSRF protection test - tests blocking |
+| validate-download-url.ts | - | Comment blocking 169.254.169.254 | INTERESTING | SSRF protection implementation |
+| fetch-with-validated-redirects.test.ts | - | Mock redirect to metadata endpoint | INTERESTING | SSRF protection test |
+| download-blob.test.ts | - | Test download from metadata endpoint | INTERESTING | SSRF protection test |
+| validate-download-url.test.ts | - | Multiple tests blocking metadata IP variants | INTERESTING | Comprehensive SSRF protection |
+| harness-v1-network-sandbox-session.test-d.ts | - | `deniedCIDRs: ['169.254.169.254/32']` | INTERESTING | SSRF protection config |
+| prodia-video-model.test.ts | - | Test calls to metadata endpoint | INTERESTING | SSRF protection test |
+
+---
+
+### Verdict List
 
 | Candidate | REPORT_CANDIDATE | Reason |
-|-----------|-----------------|--------|
-| `@ai-sdk/gladia` in Vercel AI SDK | **no** | Official Vercel-maintained integration (github.com/vercel/ai), not a Gladia-owned supply chain risk |
-| SSRF protection test (169.254.169.254 deny) | **no** | Security feature test in Vercel sandbox, not a vulnerability |
-| All test/fixture secrets | **no** | Clearly test values (`test-api-key`, `secret123`, `access123`, etc.) |
-| `gladia` 0.1.3 npm package (alexisbouchez) | **no** | Already tracked in RAG as ORPHANED_PERSONAL_REPO — registry description "Official" vs README "Unofficial" mismatch known |
+|-----------|------------------|--------|
+| Hardcoded credentials in test files | **no** | All are `test-*`, `mock-*`, `secret123`, `access123` fixtures |
+| `169.254.169.254` references | **no** | All in **SSRF protection tests** that explicitly **block** metadata endpoint |
+| `@ai-sdk/gladia` in vercel-ai | **no** | Official Vercel AI SDK provider package (maintained in `vercel/ai`, not `gladiaio`) |
+| npm `gladia` 0.1.3 package | **no** | Known from prior scan — `alexisbouchez/gladia.ts` personal repo, unverified ownership; **INTERESTING** for supply-chain but not a secret leak |
 
-**SUMMARY**: Delta = 0 new hits. All findings are pre-existing test fixtures or known supply-chain observations. No actionable secrets, endpoint leaks, or new attack surface this cycle.
+---
+
+### Key Findings (High-Value)
+
+1. **SSRF Protection Confirmed Active**: The vercel-ai SDK has comprehensive tests blocking `169.254.169.254` (AWS/GCP/Azure metadata) across multiple packages (`provider-utils`, `sandbox-vercel`, `harness`, `prodia`). This is a **defense**, not a vulnerability.
+
+2. **Package Identity Clarification**: 
+   - `@ai-sdk/gladia` = Vercel AI SDK's Gladia provider (official integration, `vercel/ai` repo)
+   - `@gladiaio/sdk` = Gladia's official SDK (`gladiaio/sdk` repo, v2.0.0)
+   - `gladia` 0.1.3 on npm = Unofficial/personal package (`alexisbouchez/gladia.ts`) — **supply-chain risk if typo-squatted**
+
+3. **No Live Secrets**: Zero `REAL_SECRET` findings. All credential-like strings are test fixtures with no production validity.
+
+[NEXT] No live probes needed — passive recon exhausted for this cycle.

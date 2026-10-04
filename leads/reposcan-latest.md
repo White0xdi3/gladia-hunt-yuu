@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-04 21:35:11 UTC =====
+===== REPOSCAN 2026-10-04 23:07:14 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5693 code/config files scanned, 654 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,61 +46,120 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/
-total 60
-drwxr-xr-x 15 runner runner 4096 Oct  4 21:33 .
-drwxr-xr-x  4 runner runner 4096 Oct  4 21:33 ..
-drwxr-xr-x  9 runner runner 4096 Oct  4 21:33 compare-stt
-drwxr-xr-x  9 runner runner 4096 Oct  4 21:33 docs
-drwxr-xr-x  7 runner runner 4096 Oct  4 21:33 gladia-cli
-drwxr-xr-x 11 runner runner 4096 Oct  4 21:33 gladia-quiz-app
-drwxr-xr-x 11 runner runner 4096 Oct  4 21:33 gladia-samples
-drwxr-xr-x  9 runner runner 4096 Oct  4 21:33 gladiaflow
-drwxr-xr-x  7 runner runner 4096 Oct  4 21:33 n8n-nodes-gladia
-drwxr-xr-x  8 runner runner 4096 Oct  4 21:33 normalization
-drwxr-xr-x 12 runner runner 4096 Oct  4 21:33 num2words2
-drwxr-xr-x  9 runner runner 4096 Oct  4 21:33 realtime-multilingual-asr-router
-drwxr-xr-x 10 runner runner 4096 Oct  4 21:33 sdk
-drwxr-xr-x  7 runner runner 4096 Oct  4 21:33 skills
-drwxr-xr-x 18 runner runner 4096 Oct  4 21:33 vercel-ai
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -name "*.test.ts" -o -name "*.test.tsx" -o -name "*.spec.ts" -o -name "*.spec.tsx" | head -20
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/openai.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/togetherai.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/luma.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/cerebras.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/amazon-bedrock.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google-vertex-anthropic.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/fireworks.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/amazon-bedrock-anthropic.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/gateway.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/mistral.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/deepinfra.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/deepseek.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/azure.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/huggingface.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/anthropic.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/xai.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/cohere.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/groq.test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/e2e/google-vertex.test.ts
 [0m
-[0m✱ [0mGrep "(api[_-]?key|secret|token|password)\s*[:=]\s*['\"][^'\"]{20,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(sk-|gh[pousr]_)[A-Za-z0-9]{20,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
-[0m✱ [0mGlob "**/*.{ts,js,json,yaml,yml,py,go,rs,toml}"[90m in reposcan-raw/gladiaio/sdk · 100 matches[0m
-[0m✱ [0mGrep "(api[_-]?key|secret|token|password)\s*[:=]\s*['\"][^'\"]{20,}"[90m in reposcan-raw/gladiaio/sdk · 0 matches[0m
-[0m✱ [0mGrep "(sk-|gh[pousr]_)[A-Za-z0-9]{20,}"[90m in reposcan-raw/gladiaio/sdk · 0 matches[0m
-[0m✱ [0mGrep "169\.254\.169\.254"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [offset=160, limit=30][0m
-**CLASSIFICATION TABLES**
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "169.254.169.254" reposcan-raw/gladiaio/ --include="*.ts" --include="*.json" --include="*.yaml" --include="*.yml"
+reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:        deniedCIDRs: ['169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:          subnets: { deny: ['169.254.169.254/32'] },
+reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:      download({ url: new URL('http://169.254.169.254/latest/meta-data/') }),
+reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:        location: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.ts:  // e.g. ::ffff:127.0.0.1 or 64:ff9b::169.254.169.254 are blocked.
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:      .mockResolvedValueOnce(redirectResponse('http://169.254.169.254/'));
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:      .mockResolvedValueOnce(redirectWithBody('http://169.254.169.254/'));
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:      downloadBlob('http://169.254.169.254/latest/meta-data/'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:          location: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://169.254.169.254/latest/meta-data/'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block ::ffff:169.254.169.254', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[::ffff:169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block NAT64 64:ff9b::169.254.169.254 (metadata)', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[64:ff9b::169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block NAT64 local-use 64:ff9b:1::169.254.169.254', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[64:ff9b:1::169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['10.5.0.0/16', '169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:            url: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:        server.calls.some(call => call.requestUrl.includes('169.254.169.254')),
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml | head -300
+lockfileVersion: '9.0'
 
-| Category | File | Line | Finding | SHA256 (truncated) |
-|----------|------|------|---------|-------------------|
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740 | `client_secret: 'secret123'` | `4a7e9d...` |
-|  | vercel-ai/packages/mcp/src/tool/oauth.test.ts | 905 | `access_token: 'access123'` | `e3b0c4...` |
-|  | vercel-ai/packages/mcp/src/tool/oauth.test.ts | 908 | `refresh_token: 'refresh123'` | `a591a6...` |
-|  | vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409 | `access_token: 'expired-access-token'` | `f7c3bc...` |
-|  | vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 411 | `refresh_token: 'rotating-refresh-token'` | `8e4d8f...` |
-|  | vercel-ai/packages/openai/src/**/*.test.ts | 48+ | `apiKey: 'test-api-key'` (20+ occurrences) | `d41d8c...` |
-|  | vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13,277 | `apiKey: 'test-api-key'` | `d41d8c...` |
-|  | vercel-ai/packages/togetherai/src/togetherai-provider.test.ts | 99,112,165 | `apiKey: 'custom-key'`, `explicit-key` | `various` |
-|  | vercel-ai/packages/google-vertex/src/**/*.test.ts | 120+ | `apiKey: 'test-api-key'`, `mocked-token`, `mock.jwt.token` | `various` |
-|  | vercel-ai/packages/amazon-bedrock/src/**/*.test.ts | 100+ | `sessionToken: 'test-session-token'`, `apiKey: 'test-api-key-123'` | `various` |
-|  | vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json | 36 | `encrypted_content` (fixture) | `gAAAAA...` |
-| **INTERESTING** | vercel-ai/pnpm-lock.yaml | 289,291,2368 | `@ai-sdk/gladia` workspace package (official Vercel integration) | N/A |
-|  | vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166,171 | SSRF protection: `deniedCIDRs: ['169.254.169.254/32']` (metadata endpoint block) | N/A |
-|  | vercel-ai/tools/analyze-downloads/src/analyze-providers.ts | 21 | `@ai-sdk/gladia` import in provider analysis | N/A |
-| **ENDPOINT_LEAK** | — | — | None found | — |
-| **REAL_SECRET** | — | — | None found | — |
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
-**VERDICTS**
+overrides:
+  tinyexec: 1.0.2
+  oxlint: 1.56.0
 
-| Candidate | REPORT_CANDIDATE | Reason |
-|-----------|-----------------|--------|
-| `@ai-sdk/gladia` in Vercel AI SDK | **no** | Official Vercel-maintained integration (github.com/vercel/ai), not a Gladia-owned supply chain risk |
-| SSRF protection test (169.254.169.254 deny) | **no** | Security feature test in Vercel sandbox, not a vulnerability |
-| All test/fixture secrets | **no** | Clearly test values (`test-api-key`, `secret123`, `access123`, etc.) |
-| `gladia` 0.1.3 npm package (alexisbouchez) | **no** | Already tracked in RAG as ORPHANED_PERSONAL_REPO — registry description "Official" vs README "Unofficial" mismatch known |
+importers:
 
-**SUMMARY**: Delta = 0 new hits. All findings are pre-existing test fixtures or known supply-chain observations. No actionable secrets, endpoint leaks, or new attack surface this cycle.
+  .:
+    devDependencies:
+      '@changesets/cli':
+        specifier: 2.27.10
+        version: 2.27.10
+      '@playwright/test':
+        specifier: ^1.60.0
+        version: 1.60.0
+      del-cli:
+        specifier: ^5.1.0
+        version: 5.1.0
+      husky:
+        specifier: ^9.1.7
+        version: 9.1.7
+      konsistent:
+        specifier: 0.0.1-alpha.20
+        version: 0.0.1-alpha.20
+      konsistent-provider:
+        specifier: workspace:*
+        version: link:tools/konsistent-provider
+      lint-staged:
+        specifier: ^15.5.1
+        version: 15.5.2
+      next:
+        specifier: 15.0.7
+        version: 15.0.7(@opentelemetry/api@1.9.1)(@playwright/test@1.60.0)(react-dom@19.0.0-rc-cc1ec60d0d-20240607(react@19.0.0-rc-cc1ec60d0d-20240607))(react@19.0.0-rc-cc1ec60d0d-20240607)(sass@1.90.0)
+      oxfmt:
+        specifier: ^0.41.0
+        version: 0.41.0
+      oxlint:
+        specifier: 1.56.0
+        version: 1.56.0
+      playwright:
+        specifier: ^1.60.0
+        version: 1.60.0
+      publint:
+        specifier: 0.2.12
+        version: 0.2.12
+      react:
+        specifier: 19.0.0-rc-cc1ec60d0d-20240607
+        version: 19.0.0-rc-cc1ec60d0d-20240607
+      react-dom:
+        specifier: 19.0.0-rc-cc1ec60d0d-20240607
+        version: 19.0.0-rc-cc1ec60d0d-20240607(react@19.0.0-rc-cc1ec60d0d-20240607)
+      turbo:
+        specifier: 2.4.4
+        version: 2.4.4
+      typescript:
+        specifier: 5.8.3
+        version: 5.8.3
+      ultracite:
+        specifier: 7.3.2
+        version: 7.3.2(oxlint@1.56.0)
+      update-ts-references:
+        specifier: ^3.6.0
+        version: 3.6.2
+      vitest:
+        specifier: 4.1.5
+        version: 4.1.5(@edge-runtime/vm@5.0.0)(@opentelemetry/api@1.9.1)(@types/node@22.19.19)(jsdom@26.1.0)(msw@2.14.6(@types/node@22.19.19)(typescript@5.8.3))(vite@7.3.3(@types/node@22.19.19)(jiti@2.7.0)(less@4.4.0)(lightningcss@1.32.0)(sass@1.90.0)(terser@5.47.1)(tsx@4.22.0)(yaml@2.9.0))
+
