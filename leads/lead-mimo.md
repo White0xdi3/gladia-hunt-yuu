@@ -2225,3 +2225,41 @@ testability: AUTH_HELPED
 [RISK] api.gladia.io: 72 reason: frozen spec no drift but high-value SSRF-by-design requires stolen/bought key (AUTH_HELPED) to reach 169.254.169.254 → cloud credential theft critical if key obtained
 [RISK] app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap is live and chainable to OAuth code theft → ATO via HUMAN_ONLY post-auth step, highest gate_ease
 [RISK] sdk: 85 reason: orphaned maintainer 404 with "Official" description + WebSocket query key leakage = supply-chain hijack risk critical; passive verifiable, confusion vector with official @gladiaio/sdk@2.1.0; PyPI gladiaio-sdk verified official adds clarity but not risk reduction for npm gladia@0.1.3
+## 2026-10-04 19:35:57 UTC [api] (model mimo)
+[PRIO] api.gladia.io, 7.30, attack=7 business=10 tech=6 gate=3 cloud=10 fresh=7
+[PRIO] app.gladia.io, 7.75, attack=8 business=9 tech=7 gate=9 cloud=2 fresh=9
+[PRIO] sdk, 7.90, attack=8 business=9 tech=7 gate=10 cloud=3 fresh=8
+[HYP] Authenticated SSRF via audio_url to cloud metadata exfiltration
+class: SSRF
+asset: api.gladia.io
+confidence: 78
+reasoning: OpenAPI 14-path spec frozen NO_DRIFT; POST /v2/pre-recorded requires x-gladia-key (401/144B NestJS fresh) but spec defines audio_url param by design; prior RAG confirms SSRF-by-design persists AUTH_HELPED; undocumented /v2/live/health also key-gated informational only
+evidence_needed: With authorized key, audio_url=http://169.254.169.254/latest/meta-data/ triggers server fetch and returns metadata or fetch error timing/dns proving SSRF reach to cloud metadata
+verify_steps: AUTH_HELPED: POST https://api.gladia.io/v2/pre-recorded with header x-gladia-key: <authorized_key> body {"audio_url":"http://169.254.169.254/latest/meta-data/iam/security-credentials/"} compare vs benign audio_url
+impact: Cloud metadata → IAM credentials → full AWS/GCP takeover, cross-tenant data access; Critical
+testability: AUTH_HELPED
+[HYP] Post-auth open redirect via redirect_to enables OAuth authorization code theft and account takeover
+class: OAUTH
+asset: app.gladia.io
+confidence: 85
+class: OTHER
+asset: sdk
+confidence: 97
+reasoning: npm gladia@0.1.3 dist-tag latest=0.1.3 shasum cc96f84a… unchanged since 2025-04-07, description "Official TypeScript SDK for Gladia", GitHub user+repo alexisbouchez/gladia.ts both 404 (orphaned/irrevocable); src/client.ts:307 confirms wsUrl.searchParams.append('x-gladia-key', this.apiKey) → WebSocket URL query leak; official @gladiaio/sdk@2.1.0 separate org with 14+ Gladia maintainers; PyPI gladiaio-sdk@2.1.0 owned by "Gladia" org, active, no key leak in WebSocket (uses header auth)
+evidence_needed: PyPI gladiaio-sdk registry metadata (maintainers=Gladia org, versions); source diff vs @gladiaio/sdk@2.1.0 tarball confirming no WS query key leak; browser devtools Network tab showing x-gladia-key in wss:// URL query on gladia@0.1.3 live.connect()
+verify_steps: PASSIVE: GET https://pypi.org/pypi/gladiaio-sdk/json — inspect maintainers=Gladia org, versions; download sdist/wheel and compare source to @gladiaio/sdk@2.1.0 tarball (no WS query key leak); LOCAL: install gladia@0.1.3, init client with test key, open devtools Network tab on live.connect() → verify x-gladia-key in wss:// URL query
+impact: Supply chain confusion → developers install malicious/outdated package → credential leak via WebSocket query (logs/proxies/history) or RCE; Critical (orphaned + "Official" description + key leak)
+testability: PASSIVE
+[FINAL] 1. Orphaned npm gladia@0.1.3 impersonates official SDK and leaks raw API key in WebSocket URL query (confidence 97, OTHER @ sdk, PASSIVE)
+[FINAL] 2. Post-auth open redirect via redirect_to enables OAuth authorization code theft and account takeover (confidence 85, OAUTH @ app.gladia.io, HUMAN_ONLY)
+[FINAL] 3. Authenticated SSRF via audio_url to cloud metadata exfiltration (confidence 78, SSRF @ api.gladia.io, AUTH_HELPED)
+[NEXT] PROBE: PASSIVE verify PyPI gladiaio-sdk official status and source diff — GET https://pypi.org/pypi/gladiaio-sdk/json (inspect maintainers, versions, repo_url); download sdist, extract and compare src/ to @gladiaio/sdk@2.1.0 tarball for WebSocket auth method (header vs query param)
+[LEARN] ACCEPTED OTHER @ sdk: class alive, re-verified fresh this cycle — orphaned npm gladia@0.1.3 dist-tag latest=0.1.3 shasum cc96f84a… unchanged, GitHub user+repo alexisbouchez 404 (orphaned/irrevocable), WebSocket URL query leaks x-gladia-key confirmed in src/client.ts:307; official @gladiaio/sdk@2.1.0 and PyPI gladiaio-sdk@2.1.0 verified separate/official
+[LEARN] ACCEPTED OAUTH @ app.gladia.io: /signin?redirect_to reflection alive byte-fresh — 0 CSP form-action directives (gap confirmed); post-auth honoring sole unverified gate (HUMAN_ONLY)
+[LEARN] ACCEPTED SSRF @ api.gladia.io: spec+RAG frozen — SSRF-by-design surface persists (AUTH_HELPED)
+[LEARN] ACCEPTED MISCONFIG @ app.gladia.io: CSP confirmed fresh — 0 form-action directives (grep-count=0); enables /signin form-action reflection (gap confirmed, not oversight)
+[LEARN] ACCEPTED MISCONFIG @ api.gladia.io: /v2/live/health undocumented key-gated endpoint confirmed informational only — 401 NestJS, not in OpenAPI 14-path spec, properly gated, no bypass/data leakage
+[LEARN] ACCEPTED OTHER @ api.gladia.io: no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec
+[RISK] api.gladia.io: 72 reason: frozen spec no drift but high-value SSRF-by-design requires stolen/bought key (AUTH_HELPED) to reach 169.254.169.254 → cloud credential theft critical if key obtained
+[RISK] app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap is live and chainable to OAuth code theft → ATO via HUMAN_ONLY post-auth step, highest gate_ease
+[RISK] sdk: 85 reason: orphaned maintainer 404 with "Official" description + WebSocket query key leakage = supply-chain hijack risk critical; passive verifiable, confusion vector with official @gladiaio/sdk@2.1.0; PyPI gladiaio-sdk verified official adds clarity but not risk reduction for npm gladia@0.1.3
