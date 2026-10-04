@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-04 13:19:20 UTC =====
+===== REPOSCAN 2026-10-04 15:28:10 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5693 code/config files scanned, 654 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,120 +46,120 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mfind /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw -type f -name "*.ts" -o -name "*.js" -o -name "*.py" -o -name "*.go" -o -name "*.rs" -o -name "*.yaml" -o -name "*.yml" -o -name "*.json" -o -name "*.toml" | head -100
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/shopify-mcp/client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/repro-test.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/image-content/client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-ui/server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/sse/client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/sse/server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-info/client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-info/server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-meta/client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-meta/server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-definitions/client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-definitions/server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-resources/client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-resources/server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/stdio/client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/stdio/server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/mcp/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/shared/notification-schema.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/tsconfig.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/chat.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/use-chat-request.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/completion.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/use-object.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/use-chat-tools.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/chat-with-vision.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/tsconfig.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/nuxt.config.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/tailwind.config.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/postcss.config.js
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/tsconfig.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/vite.config.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/lib/components/ui/button/index.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/lib/components/ui/textarea/index.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/lib/utils.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/app.d.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/routes/structured-object/schema.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/routes/api/structured-object/+server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/routes/api/chat/+server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/routes/api/completion/+server.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/svelte.config.js
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/components.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/turbo.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/next.config.js
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/postcss.config.js
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/sentry.server.config.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/app/api/text/route.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/instrumentation.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/tsconfig.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/package.json
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/instrumentation-client.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/sentry.edge.config.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/tailwind.config.js
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/next.config.js
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/lib/tools/weather-tool.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/lib/weather-utils.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/lib/utils.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/postcss.config.js
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/claude-code/ai-sdk-coding/route.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/claude-code/weather-approval/route.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/claude-code/basic/route.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/claude-code/basic-with-stop/route.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/claude-code/weather/route.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/pi/ai-sdk-coding/route.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/pi/weather-approval/route.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/pi/basic/route.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/pi/basic-with-stop/route.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/pi/weather/route.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/codex/ai-sdk-coding/route.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/codex/weather-approval/route.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/codex/basic/route.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/codex/basic-with-stop/route.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/codex/weather/route.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/claude-code/ai-sdk-coding-agent.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/claude-code/weather-agent.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/claude-code/weather-approval-agent.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/claude-code/basic-agent.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/pi/ai-sdk-coding-agent.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/pi/weather-agent.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/pi/weather-approval-agent.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/pi/basic-agent.ts
-/home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/codex/ai-sdk-coding-agent.ts
-[0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/
+[0m$ [0mls -la reposcan-raw/gladiaio/
 total 60
-drwxr-xr-x  4 runner runner  4096 Oct  4 13:14 .
-drwxr-xr-x 11 runner runner  4096 Oct  4 13:15 ..
--rw-r--r--  1 runner runner 13559 Oct  4 13:15 analysis.txt
-drwxr-xr-x 15 runner runner  4096 Oct  4 13:14 gladiaio
--rw-r--r--  1 runner runner    40 Oct  4 13:15 grep-delta.txt
--rw-r--r--  1 runner runner  8115 Oct  4 13:15 grep-hits.prev.txt
--rw-r--r--  1 runner runner  8115 Oct  4 13:15 grep-hits.txt
-drwxr-xr-x  2 runner runner  4096 Oct  4 13:14 npm
--rw-r--r--  1 runner runner  6124 Oct  4 13:15 rag.txt
+drwxr-xr-x 15 runner runner 4096 Oct  4 15:23 .
+drwxr-xr-x  4 runner runner 4096 Oct  4 15:23 ..
+drwxr-xr-x  9 runner runner 4096 Oct  4 15:23 compare-stt
+drwxr-xr-x  9 runner runner 4096 Oct  4 15:23 docs
+drwxr-xr-x  7 runner runner 4096 Oct  4 15:23 gladia-cli
+drwxr-xr-x 11 runner runner 4096 Oct  4 15:23 gladia-quiz-app
+drwxr-xr-x 11 runner runner 4096 Oct  4 15:23 gladia-samples
+drwxr-xr-x  9 runner runner 4096 Oct  4 15:23 gladiaflow
+drwxr-xr-x  7 runner runner 4096 Oct  4 15:23 n8n-nodes-gladia
+drwxr-xr-x  8 runner runner 4096 Oct  4 15:23 normalization
+drwxr-xr-x 12 runner runner 4096 Oct  4 15:23 num2words2
+drwxr-xr-x  9 runner runner 4096 Oct  4 15:23 realtime-multilingual-asr-router
+drwxr-xr-x 10 runner runner 4096 Oct  4 15:23 sdk
+drwxr-xr-x  7 runner runner 4096 Oct  4 15:23 skills
+drwxr-xr-x 18 runner runner 4096 Oct  4 15:23 vercel-ai
 [0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/
-total 60
-drwxr-xr-x 15 runner runner 4096 Oct  4 13:14 .
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(169\.254\.169\.254|localhost|127\.0\.0\.1|internal|staging|dev\.)[^'"\s]*\.gladia"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(debug|test|staging|internal)\s*[:=]\s*true"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(x-gladia-key|x_gladia_key|gladia.*key)"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml[90m [limit=30, offset=280][0m
+[0m
+[0m$ [0mls -la reposcan-raw/gladiaio/vercel-ai/packages/gladia/
+total 72
+drwxr-xr-x  3 runner runner  4096 Oct  4 15:23 .
+drwxr-xr-x 68 runner runner  4096 Oct  4 15:23 ..
+-rw-r--r--  1 runner runner 26407 Oct  4 15:23 CHANGELOG.md
+-rw-r--r--  1 runner runner  1376 Oct  4 15:23 README.md
+-rw-r--r--  1 runner runner  2030 Oct  4 15:23 package.json
+drwxr-xr-x  4 runner runner  4096 Oct  4 15:23 src
+-rw-r--r--  1 runner runner   139 Oct  4 15:23 tsconfig.build.json
+-rw-r--r--  1 runner runner   404 Oct  4 15:23 tsconfig.json
+-rw-r--r--  1 runner runner   337 Oct  4 15:23 tsup.config.ts
+-rw-r--r--  1 runner runner   119 Oct  4 15:23 turbo.json
+-rw-r--r--  1 runner runner   328 Oct  4 15:23 vitest.edge.config.js
+-rw-r--r--  1 runner runner   320 Oct  4 15:23 vitest.node.config.js
+[0m
+[0m$ [0mls -la reposcan-raw/gladiaio/sdk/
+total 328
+drwxr-xr-x 10 runner runner   4096 Oct  4 15:23 .
+drwxr-xr-x 15 runner runner   4096 Oct  4 15:23 ..
+drwxr-xr-x  3 runner runner   4096 Oct  4 15:23 .cursor
+-rw-r--r--  1 runner runner    135 Oct  4 15:23 .editorconfig
+drwxr-xr-x  8 runner runner   4096 Oct  4 15:23 .git
+-rw-r--r--  1 runner runner    212 Oct  4 15:23 .gitattributes
+drwxr-xr-x  3 runner runner   4096 Oct  4 15:23 .github
+-rw-r--r--  1 runner runner    191 Oct  4 15:23 .gitignore
+-rw-r--r--  1 runner runner    113 Oct  4 15:23 .npmrc
+-rw-r--r--  1 runner runner    103 Oct  4 15:23 .prettierignore
+-rw-r--r--  1 runner runner    127 Oct  4 15:23 .prettierrc
+drwxr-xr-x  2 runner runner   4096 Oct  4 15:23 .vscode
+-rw-r--r--  1 runner runner   3032 Oct  4 15:23 CONTRIBUTING.md
+-rw-r--r--  1 runner runner   1063 Oct  4 15:23 LICENSE
+-rw-r--r--  1 runner runner  10963 Oct  4 15:23 README.md
+-rw-r--r--  1 runner runner     98 Oct  4 15:23 audit-ci.jsonc
+-rw-r--r--  1 runner runner 219285 Oct  4 15:23 bun.lock
+-rw-r--r--  1 runner runner     29 Oct  4 15:23 bunfig.toml
+-rw-r--r--  1 runner runner    239 Oct  4 15:23 commitlint.config.cts
+drwxr-xr-x  2 runner runner   4096 Oct  4 15:23 data
+drwxr-xr-x  6 runner runner   4096 Oct  4 15:23 e2e
+-rw-r--r--  1 runner runner   1358 Oct  4 15:23 eslint.config.mjs
+-rw-r--r--  1 runner runner   3525 Oct  4 15:23 nx.json
+-rw-r--r--  1 runner runner   1062 Oct  4 15:23 package.json
+drwxr-xr-x  5 runner runner   4096 Oct  4 15:23 packages
+drwxr-xr-x  3 runner runner   4096 Oct  4 15:23 tools
+-rw-r--r--  1 runner runner     86 Oct  4 15:23 vitest.workspace.mjs
+[0m
+[0m$ [0mls -la reposcan-raw/gladiaio/sdk/packages/
+total 20
+drwxr-xr-x  5 runner runner 4096 Oct  4 15:23 .
+drwxr-xr-x 10 runner runner 4096 Oct  4 15:23 ..
+drwxr-xr-x  3 runner runner 4096 Oct  4 15:23 generator
+drwxr-xr-x  4 runner runner 4096 Oct  4 15:23 sdk-js
+drwxr-xr-x  5 runner runner 4096 Oct  4 15:23 sdk-python
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
+[0m
+[0m$ [0mls -la reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/
+total 120
+drwxr-xr-x 4 runner runner  4096 Oct  4 15:23 .
+drwxr-xr-x 3 runner runner  4096 Oct  4 15:23 ..
+drwxr-xr-x 2 runner runner  4096 Oct  4 15:23 __fixtures__
+drwxr-xr-x 2 runner runner  4096 Oct  4 15:23 __snapshots__
+-rw-r--r-- 1 runner runner  5100 Oct  4 15:23 gladia-api-types.ts
+-rw-r--r-- 1 runner runner   285 Oct  4 15:23 gladia-config.ts
+-rw-r--r-- 1 runner runner  1197 Oct  4 15:23 gladia-error.test.ts
+-rw-r--r-- 1 runner runner   462 Oct  4 15:23 gladia-error.ts
+-rw-r--r-- 1 runner runner  2841 Oct  4 15:23 gladia-provider.ts
+-rw-r--r-- 1 runner runner  7021 Oct  4 15:23 gladia-transcription-model-options.ts
+-rw-r--r-- 1 runner runner  6112 Oct  4 15:23 gladia-transcription-model.test.ts
+-rw-r--r-- 1 runner runner 12356 Oct  4 15:23 gladia-transcription-model.ts
+-rw-r--r-- 1 runner runner   269 Oct  4 15:23 index.ts
+-rw-r--r-- 1 runner runner 40169 Oct  4 15:23 transcript-test.mp3
+-rw-r--r-- 1 runner runner   235 Oct  4 15:23 version.ts
+[0m
+[0m$ [0mls -la reposcan-raw/gladiaio/sdk/packages/sdk-js/
+total 52
+drwxr-xr-x 4 runner runner 4096 Oct  4 15:23 .
+drwxr-xr-x 5 runner runner 4096 Oct  4 15:23 ..
+-rw-r--r-- 1 runner runner 2418 Oct  4 15:23 CHANGELOG.md
+-rw-r--r-- 1 runner runner 4607 Oct  4 15:23 README.md
+-rw-r--r-- 1 runner runner 1107 Oct  4 15:23 package.json
+-rw-r--r-- 1 runner runner  882 Oct  4 15:23 project.json
+drwxr-xr-x 2 runner runner 4096 Oct  4 15:23 scripts
+drwxr-xr-x 4 runner runner 4096 Oct  4 15:23 src
+-rw-r--r-- 1 runner runner  574 Oct  4 15:23 tsconfig.json
+-rw-r--r-- 1 runner runner  515 Oct  4 15:23 tsconfig.spec.json
+-rw-r--r-- 1 runner runner  496 Oct  4 15:23 tsdown.config.ts
+-rw-r--r-- 1 runner runner  720 Oct  4 15:23 vitest.config.ts
+[0m
