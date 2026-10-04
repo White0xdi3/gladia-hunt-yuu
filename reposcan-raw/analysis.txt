@@ -1,77 +1,540 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mls -la reposcan-raw/gladiaio/vercel-ai/packages/gladia/ 2>/dev/null || echo "not found"
-total 72
-drwxr-xr-x  3 runner runner  4096 Oct  3 22:54 .
-drwxr-xr-x 68 runner runner  4096 Oct  3 22:54 ..
--rw-r--r--  1 runner runner 26407 Oct  3 22:54 CHANGELOG.md
--rw-r--r--  1 runner runner  1376 Oct  3 22:54 README.md
--rw-r--r--  1 runner runner  2030 Oct  3 22:54 package.json
-drwxr-xr-x  4 runner runner  4096 Oct  3 22:54 src
--rw-r--r--  1 runner runner   139 Oct  3 22:54 tsconfig.build.json
--rw-r--r--  1 runner runner   404 Oct  3 22:54 tsconfig.json
--rw-r--r--  1 runner runner   337 Oct  3 22:54 tsup.config.ts
--rw-r--r--  1 runner runner   119 Oct  3 22:54 turbo.json
--rw-r--r--  1 runner runner   328 Oct  3 22:54 vitest.edge.config.js
--rw-r--r--  1 runner runner   320 Oct  3 22:54 vitest.node.config.js
+[0m$ [0mls -la reposcan-raw/gladiaio/
+total 60
+drwxr-xr-x 15 runner runner 4096 Oct  4 00:41 .
+drwxr-xr-x  4 runner runner 4096 Oct  4 00:41 ..
+drwxr-xr-x  9 runner runner 4096 Oct  4 00:41 compare-stt
+drwxr-xr-x  9 runner runner 4096 Oct  4 00:41 docs
+drwxr-xr-x  7 runner runner 4096 Oct  4 00:41 gladia-cli
+drwxr-xr-x 11 runner runner 4096 Oct  4 00:41 gladia-quiz-app
+drwxr-xr-x 11 runner runner 4096 Oct  4 00:41 gladia-samples
+drwxr-xr-x  9 runner runner 4096 Oct  4 00:41 gladiaflow
+drwxr-xr-x  7 runner runner 4096 Oct  4 00:41 n8n-nodes-gladia
+drwxr-xr-x  8 runner runner 4096 Oct  4 00:41 normalization
+drwxr-xr-x 12 runner runner 4096 Oct  4 00:41 num2words2
+drwxr-xr-x  9 runner runner 4096 Oct  4 00:41 realtime-multilingual-asr-router
+drwxr-xr-x 10 runner runner 4096 Oct  4 00:41 sdk
+drwxr-xr-x  7 runner runner 4096 Oct  4 00:41 skills
+drwxr-xr-x 18 runner runner 4096 Oct  4 00:41 vercel-ai
 [0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
-[0m✱ [0mGlob "reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/**/*.ts"[90m 0 matches[0m
+[0m✱ [0mGrep "(sk_|sk_live|sk_test|api[_-]?key|secret|token|password)\s*[:=]\s*["'][a-zA-Z0-9_\-]{20,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(sk_|sk_live|sk_test|api[_-]?key|secret|token|password)\s*[:=]\s*["'][a-zA-Z0-9_\-]{20,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(sk_|sk_live|sk_test|api[_-]?key|secret|token|password)\s*[:=]\s*["'][a-zA-Z0-9_\-]{20,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(sk_|sk_live|sk_test|api[_-]?key|secret|token|password)\s*[:=]\s*["'][a-zA-Z0-9_\-]{20,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(sk_|sk_live|sk_test|api[_-]?key|secret|token|password)\s*[:=]\s*["'][a-zA-Z0-9_\-]{20,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "169\.254\.169\.254"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "redirect_to|return[-_]?to"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "x-gladia-key|gladia[_-]?key"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "@gladiaio/sdk|gladiaio-sdk"[90m in reposcan-raw/gladiaio · 0 matches[0m
 [0m
-[0m$ [0mls -la reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/
-total 120
-drwxr-xr-x 4 runner runner  4096 Oct  3 22:54 .
-drwxr-xr-x 3 runner runner  4096 Oct  3 22:54 ..
-drwxr-xr-x 2 runner runner  4096 Oct  3 22:54 __fixtures__
-drwxr-xr-x 2 runner runner  4096 Oct  3 22:54 __snapshots__
--rw-r--r-- 1 runner runner  5100 Oct  3 22:54 gladia-api-types.ts
--rw-r--r-- 1 runner runner   285 Oct  3 22:54 gladia-config.ts
--rw-r--r-- 1 runner runner  1197 Oct  3 22:54 gladia-error.test.ts
--rw-r--r-- 1 runner runner   462 Oct  3 22:54 gladia-error.ts
--rw-r--r-- 1 runner runner  2841 Oct  3 22:54 gladia-provider.ts
--rw-r--r-- 1 runner runner  7021 Oct  3 22:54 gladia-transcription-model-options.ts
--rw-r--r-- 1 runner runner  6112 Oct  3 22:54 gladia-transcription-model.test.ts
--rw-r--r-- 1 runner runner 12356 Oct  3 22:54 gladia-transcription-model.ts
--rw-r--r-- 1 runner runner   269 Oct  3 22:54 index.ts
--rw-r--r-- 1 runner runner 40169 Oct  3 22:54 transcript-test.mp3
--rw-r--r-- 1 runner runner   235 Oct  3 22:54 version.ts
+[0m$ [0mfind reposcan-raw/gladiaio -type f -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -50
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/shopify-mcp/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/repro-test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/image-content/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-ui/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/sse/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/sse/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-info/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-info/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-meta/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-meta/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-definitions/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-definitions/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-resources/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-resources/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/stdio/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/stdio/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/package.json
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/shared/notification-schema.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/chat.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/use-chat-request.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/completion.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/use-object.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/use-chat-tools.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/chat-with-vision.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/nuxt.config.ts
+reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/package.json
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/tailwind.config.ts
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/postcss.config.js
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/vite.config.ts
+reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/lib/components/ui/button/index.ts
+[0m
+[0m$ [0mfind reposcan-raw/gladiaio/sdk -type f \( -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" \) | head -50
+reposcan-raw/gladiaio/sdk/.cursor/mcp.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/project.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/vitest.config.ts
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_session.test.ts
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/prerecorded_v2_async.test.ts
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_job_management.test.ts
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/tsconfig.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/package.json
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/tsdown.config.ts
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/project.json
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/tsconfig.json
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/src/index.ts
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/package.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/project.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/package.json
+reposcan-raw/gladiaio/sdk/e2e/e2e-python/project.json
+reposcan-raw/gladiaio/sdk/.github/workflows/ci.yml
+reposcan-raw/gladiaio/sdk/.github/workflows/release.yml
+reposcan-raw/gladiaio/sdk/.github/workflows/publish.yml
+reposcan-raw/gladiaio/sdk/.github/workflows/update-openapi-types.yml
+reposcan-raw/gladiaio/sdk/nx.json
+reposcan-raw/gladiaio/sdk/packages/sdk-js/tsdown.config.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/tsconfig.spec.json
+reposcan-raw/gladiaio/sdk/packages/sdk-js/project.json
+reposcan-raw/gladiaio/sdk/packages/sdk-js/vitest.config.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/tsconfig.json
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/version.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/internal_types.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/helpers.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/wsClient.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/types.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/iso-ws.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/iso-fetch.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/wsClient.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/build-list-url.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/generated-types.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/types.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/index.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/build-list-url.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.list.test.ts
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/generated-types.ts
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.ts
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts
+[0m
+[0m$ [0mfind reposcan-raw/gladiaio/sdk/packages/sdk-python -type f \( -name "*.py" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" -o -name "*.toml" \) | head -50
+reposcan-raw/gladiaio/sdk/packages/sdk-python/pyproject.toml
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/conftest.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/test_client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_async_http_client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_helper.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_async_websocket_client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_http_client_redirect.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/live/test_connect_session.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/live/test_live_list.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/live/test_generated_types.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/core/test_build_list_endpoint.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/prerecorded/test_prerecorded_list.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/__init__.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/project.json
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/version.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/http_client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/websocket_client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/helper.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/__init__.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/_helpers.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/generated_types.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/types.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/async_session.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/session.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/live/async_client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/core.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/generated_types.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/core.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/__init__.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/v2/prerecorded/async_client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/client_options.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/client.py
+reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/__init__.py
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-python/src/gladiaio_sdk/network/http_client.py
+[0m→ [0mRead reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/network/test_http_client_redirect.py
+[0m
+[0m$ [0mfind reposcan-raw/gladiaio -type f \( -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" -o -name "*.py" -o -name "*.toml" \) -exec grep -l "gladia" {} \; 2>/dev/null | head -30
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/basic.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/url.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/string.ts
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/package.json
+reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml
+reposcan-raw/gladiaio/vercel-ai/tools/analyze-downloads/src/analyze-providers.ts
+reposcan-raw/gladiaio/vercel-ai/.github/tigent.yml
+reposcan-raw/gladiaio/vercel-ai/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-initiate.json
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-result.json
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-upload.json
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.test.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
+reposcan-raw/gladiaio/vercel-ai/.changeset/pre.json
+reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json
+reposcan-raw/gladiaio/gladia-quiz-app/lib/gladia-client.ts
+reposcan-raw/gladiaio/gladia-quiz-app/hooks/useGladiaTranscription.ts
+reposcan-raw/gladiaio/gladia-quiz-app/package.json
+reposcan-raw/gladiaio/compare-stt/next.config.ts
+reposcan-raw/gladiaio/compare-stt/prisma/seed.ts
+reposcan-raw/gladiaio/compare-stt/test-base-path-fetch.ts
+reposcan-raw/gladiaio/compare-stt/src/lib/site.ts
+reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts
 [0m
 [0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-api-types.ts
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-upload.json
+[0m→ [0mRead reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-quiz-app/lib/gladia-client.ts
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-quiz-app/hooks/useGladiaTranscription.ts
+[0m
+[0m$ [0mfind reposcan-raw/gladiaio/realtime-multilingual-asr-router -type f \( -name "*.py" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" -o -name "*.toml" \) | head -30
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/pyproject.toml
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/.github/workflows/ci.yml
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_coordinator.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_codeswitch_e2e.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_reinference.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_lid_constrained.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_progressive_lid.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/__init__.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_websocket_lifecycle.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_coordinator.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_vad.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_language_switch_detection.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_components.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_scheduler.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_config.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_session_state.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_rollback.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_asr.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_vad_stream.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_audio_buffer.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/__init__.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_lid.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_model_manager.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_sample_clock.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_messages.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_resampler.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/api/test_rest.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/api/__init__.py
+reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/api/test_websocket.py
+[0m
+[0m✱ [0mGrep "api[_-]?key|secret|token|password|169\.254\.169\.254"[90m in reposcan-raw/gladiaio/realtime-multilingual-asr-router · 100 matches[0m
+[0m
+[0m$ [0mfind reposcan-raw/gladiaio/gladia-cli -type f \( -name "*.go" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" -o -name "*.toml" \) | head -20
+reposcan-raw/gladiaio/gladia-cli/.goreleaser.yaml
+reposcan-raw/gladiaio/gladia-cli/.github/workflows/main.yml
+reposcan-raw/gladiaio/gladia-cli/.github/workflows/codeql.yml
+reposcan-raw/gladiaio/gladia-cli/.github/workflows/release.yml
+reposcan-raw/gladiaio/gladia-cli/pkg/client/client.go
+reposcan-raw/gladiaio/gladia-cli/pkg/client/client_test.go
+reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe_test.go
+reposcan-raw/gladiaio/gladia-cli/pkg/client/transcription.go
+reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe.go
+reposcan-raw/gladiaio/gladia-cli/pkg/client/types/languages.go
+reposcan-raw/gladiaio/gladia-cli/pkg/client/types/languages_test.go
+reposcan-raw/gladiaio/gladia-cli/pkg/client/types/input.go
+reposcan-raw/gladiaio/gladia-cli/cmd/formatter.go
+reposcan-raw/gladiaio/gladia-cli/cmd/testhelpers_test.go
+reposcan-raw/gladiaio/gladia-cli/cmd/auth.go
+reposcan-raw/gladiaio/gladia-cli/cmd/transcribe_test.go
+reposcan-raw/gladiaio/gladia-cli/cmd/transcribe.go
+reposcan-raw/gladiaio/gladia-cli/cmd/root_test.go
+reposcan-raw/gladiaio/gladia-cli/cmd/languages.go
+reposcan-raw/gladiaio/gladia-cli/cmd/config.go
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-cli/cmd/auth.go
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-cli/pkg/client/client.go
+[0m
+[0m$ [0mfind reposcan-raw/gladiaio/gladia-samples -type f \( -name "*.py" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" -o -name "*.toml" \) | head -20
+reposcan-raw/gladiaio/gladia-samples/javascript/package-lock.json
+reposcan-raw/gladiaio/gladia-samples/javascript/package.json
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/pipecat-bot/main.py
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/pipecat-bot/pyproject.toml
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/livekit-agent/main.py
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/livekit-agent/pyproject.toml
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/twilio/package-lock.json
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/twilio/package.json
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/discord/package-lock.json
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/discord/package.json
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/pyproject.toml
+reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py
+reposcan-raw/gladiaio/gladia-samples/.github/dependabot.yml
+reposcan-raw/gladiaio/gladia-samples/.github/workflows/validate-samples.yml
+reposcan-raw/gladiaio/gladia-samples/python/examples/meeting_summary.py
+reposcan-raw/gladiaio/gladia-samples/python/examples/call_sentiment_analysis.py
+reposcan-raw/gladiaio/gladia-samples/python/examples/anonymized_call.py
+reposcan-raw/gladiaio/gladia-samples/python/examples/youtube_translation.py
+reposcan-raw/gladiaio/gladia-samples/python/pyproject.toml
+reposcan-raw/gladiaio/gladia-samples/python/core-concepts/pre-recorded/pre_recorded.py
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/gladia-samples/python/core-concepts/pre-recorded/pre_recorded.py
+[0m
+[0m$ [0mgrep -r "redirect_to\|return-to\|return_to" reposcan-raw/gladiaio --include="*.ts" --include="*.js" --include="*.py" --include="*.go" 2>/dev/null
+(no output)
+[0m
+[0m$ [0mnpm view @gladiaio/sdk --json 2>/dev/null | head -100
+{
+  "_id": "@gladiaio/sdk@2.1.0",
+  "_rev": "133-5ce5bd29a4bef7e4ee693aad5f43610c",
+  "name": "@gladiaio/sdk",
+  "dist-tags": {
+    "latest": "2.1.0"
+  },
+  "versions": [
+    "0.1.0",
+    "0.1.1",
+    "0.1.2",
+    "0.2.0",
+    "0.2.1",
+    "0.3.0",
+    "0.3.1",
+    "0.4.0",
+    "0.4.1",
+    "0.4.2",
+    "0.4.3",
+    "0.5.0",
+    "0.5.1",
+    "0.5.2",
+    "0.5.3",
+    "0.6.0",
+    "0.6.1",
+    "1.0.0",
+    "1.0.4",
+    "1.0.5",
+    "1.0.7",
+    "1.1.0",
+    "2.0.0",
+    "2.1.0"
+  ],
+  "time": {
+    "created": "2025-09-09T15:01:20.684Z",
+    "modified": "2026-09-21T14:40:50.954Z",
+    "0.8.9": "2022-10-28T08:45:13.203Z",
+    "0.8.10": "2022-10-28T09:20:28.511Z",
+    "0.8.11": "2022-10-28T10:16:20.446Z",
+    "0.8.12": "2022-11-02T13:40:47.351Z",
+    "0.8.13": "2022-11-02T14:22:51.825Z",
+    "0.8.14": "2022-11-10T15:46:41.656Z",
+    "0.8.15": "2022-11-10T16:20:33.692Z",
+    "0.8.16": "2022-11-13T18:27:04.269Z",
+    "0.8.17": "2022-11-18T16:07:37.254Z",
+    "0.9.1": "2022-11-22T14:38:02.436Z",
+    "0.9.2": "2022-11-23T07:38:30.338Z",
+    "0.9.3": "2022-11-30T09:32:14.398Z",
+    "0.9.4": "2022-11-30T10:05:06.541Z",
+    "0.9.5": "2022-12-09T11:31:31.615Z",
+    "0.10.1": "2022-12-09T12:39:20.544Z",
+    "0.10.2": "2022-12-09T14:22:43.928Z",
+    "0.10.3": "2022-12-09T15:13:00.720Z",
+    "0.10.4": "2022-12-09T17:23:13.026Z",
+    "0.10.5": "2022-12-12T17:13:58.447Z",
+    "0.10.6": "2022-12-12T17:29:59.221Z",
+    "0.10.7": "2022-12-19T19:29:04.531Z",
+    "0.10.8": "2023-01-10T13:24:01.450Z",
+    "0.10.9": "2023-01-10T15:17:51.295Z",
+    "0.10.10": "2023-01-10T15:37:49.001Z",
+    "0.10.11": "2023-01-11T09:01:49.220Z",
+    "0.10.12": "2023-01-11T13:12:36.873Z",
+    "0.10.13": "2023-01-11T21:12:54.881Z",
+    "0.10.14": "2023-01-12T09:10:07.435Z",
+    "0.10.15": "2023-01-17T10:19:35.165Z",
+    "0.10.16": "2023-01-17T12:05:23.330Z",
+    "0.10.17": "2023-01-17T12:58:17.730Z",
+    "0.10.18": "2023-01-17T16:09:20.768Z",
+    "0.10.19": "2023-01-18T15:26:15.155Z",
+    "0.10.20": "2023-01-18T18:04:32.626Z",
+    "0.10.21": "2023-01-20T08:16:14.497Z",
+    "0.10.22": "2023-01-20T10:04:28.819Z",
+    "0.10.23": "2023-01-20T15:04:40.649Z",
+    "0.10.24": "2023-01-20T15:11:16.682Z",
+    "0.10.25": "2023-01-20T15:13:48.025Z",
+    "0.10.26": "2023-01-20T15:31:50.478Z",
+    "0.10.27": "2023-01-20T15:39:56.257Z",
+    "0.10.28": "2023-01-20T15:42:19.092Z",
+    "0.10.29": "2023-01-20T15:50:28.108Z",
+    "0.10.30": "2023-01-24T08:25:37.753Z",
+    "0.10.31": "2023-01-27T09:03:39.648Z",
+    "0.10.32": "2023-01-27T13:42:54.782Z",
+    "0.10.33": "2023-01-30T16:53:45.752Z",
+    "0.10.34": "2023-01-31T10:05:22.344Z",
+    "0.10.35": "2023-01-31T16:26:08.125Z",
+    "0.10.36": "2023-01-31T18:05:57.019Z",
+    "0.10.37": "2023-02-01T09:07:05.551Z",
+    "0.10.38": "2023-02-08T13:16:19.390Z",
+    "0.10.39": "2023-02-09T11:04:51.004Z",
+    "0.10.40": "2023-02-10T16:05:17.732Z",
+    "0.10.41": "2023-02-10T16:39:30.367Z",
+    "0.10.42": "2023-02-13T20:05:28.053Z",
+    "0.10.43": "2023-02-14T14:05:13.700Z",
+    "0.10.44": "2023-02-14T15:41:25.199Z",
+    "0.10.45": "2023-02-21T09:05:46.595Z",
+    "0.10.47": "2023-02-22T15:05:00.452Z",
+    "0.10.48": "2023-02-22T15:20:28.452Z",
+    "0.10.49": "2023-02-22T16:44:44.559Z",
+    "0.10.50": "2023-02-22T17:34:36.357Z",
+    "0.10.51": "2023-02-23T12:06:26.120Z",
+[0m
+[0m$ [0mnpm view @gladiaio/sdk@0.1.3 dist --json 2>/dev/null
+{
+  "error": {
+    "code": "E404",
+    "summary": "No match found for version 0.1.3",
+    "detail": "'@gladiaio/sdk@0.1.3' is not in this registry.\n\nNote that you can also install from a\ntarball, folder, http url, or git url."
+  }
+}
+[0m
+[0m$ [0mnpm view gladia@0.1.3 --json 2>/dev/null | head -80
+{
+  "_id": "gladia@0.1.3",
+  "_rev": "4-d0214ef116ff0426b738c29cf2a97cf1",
+  "name": "gladia",
+  "dist-tags": {
+    "latest": "0.1.3"
+  },
+  "versions": [
+    "0.1.0",
+    "0.1.1",
+    "0.1.2",
+    "0.1.3"
+  ],
+  "time": {
+    "created": "2025-03-28T17:20:09.872Z",
+    "modified": "2025-04-07T13:46:48.993Z",
+    "0.1.0": "2025-03-28T17:20:10.148Z",
+    "0.1.1": "2025-03-28T17:35:57.688Z",
+    "0.1.2": "2025-04-07T13:42:54.763Z",
+    "0.1.3": "2025-04-07T13:46:48.823Z"
+  },
+  "bugs": {
+    "url": "https://github.com/alexisbouchez/gladia.ts/issues"
+  },
+  "author": "Alexis Bouchez",
+  "license": "MIT",
+  "homepage": "https://github.com/alexisbouchez/gladia.ts#readme",
+  "keywords": [
+    "gladia",
+    "speech-to-text",
+    "transcription",
+    "audio",
+    "video",
+    "ai",
+    "typescript",
+    "sdk"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexisbouchez/gladia.ts.git"
+  },
+  "description": "Official TypeScript SDK for Gladia - State-of-the-art Speech to Text API",
+  "maintainers": [
+    "softwarecitadel <softwarecitadel@gmail.com>"
+  ],
+  "readmeFilename": "README.md",
+  "version": "0.1.3",
+  "main": "dist/index.js",
+  "module": "dist/gladia.esm.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "example": "ts-node examples/youtube.ts"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "size-limit": [
+    {
+      "path": "dist/gladia.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+[0m
+Now I have a complete picture. Let me create the classification table.
+
 ### Classification Table
 
-| Category | File | Line | Match | Classification | Notes |
-|----------|------|------|-------|----------------|-------|
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/openai/src/**/*.test.ts | multiple | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Standard test placeholder across all OpenAI provider tests |
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/togetherai/src/**/*.test.ts | 99,112,165 | `apiKey: 'custom-key'`, `'explicit-key'` | TEST_OR_EXAMPLE | Test fixtures |
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13,277 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/google-vertex/src/**/*.test.ts | multiple | `apiKey: 'test-api-key'`, `'mocked-token'` | TEST_OR_EXAMPLE | Test fixtures + mocked auth |
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/amazon-bedrock/src/**/*.test.ts | multiple | `sessionToken: 'test-session-token'`, `'dynamic-session-token'`, `'static-session-token'`, `apiKey: 'test-api-key-123'`, `nextToken: 'test-token'` | TEST_OR_EXAMPLE | Test fixtures |
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740,905,908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` | TEST_OR_EXAMPLE | OAuth test mocks |
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409,411 | `access_token: 'expired-access-token'`, `refresh_token: 'rotating-refresh-token'` | TEST_OR_EXAMPLE | Test fixtures |
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json | 36 | `encrypted_content: "gAAAAABplLP75yhVf..."` | TEST_OR_EXAMPLE | Encrypted test fixture |
-| **INTERESTING** | vercel-ai/pnpm-lock.yaml | 289,291 | `@ai-sdk/gladia`, `link:../../packages/gladia` | INTERESTING | Official Vercel AI SDK Gladia provider (v3.0.0-canary.48), NOT @gladiaio/sdk |
-| **INTERESTING** | vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166,171 | `deniedCIDRs: ['169.254.169.254/32']` | INTERESTING | **Security control** - SSRF protection blocking cloud metadata endpoint (GOOD) |
-| **INTERESTING** | vercel-ai/packages/gladia/src/gladia-transcription-model.ts | 277-279 | `isSameOrigin(resultUrl, apiOrigin)` check | INTERESTING | **Security control** - Prevents credential leakage to foreign result_url origins (GOOD) |
+| Category | File:Line | Finding | SHA256 (secret material) |
+|----------|-----------|---------|---------------------------|
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:166 | `deniedCIDRs: ['169.254.169.254/32']` - SSRF test config | N/A (config) |
+| | vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:171 | `subnets: { deny: ['169.254.169.254/32'] }` - SSRF test config | N/A (config) |
+| | vercel-ai/packages/mcp/src/tool/oauth.test.ts:740 | `client_secret: 'secret123'` | `451c78...` |
+| | vercel-ai/packages/mcp/src/tool/oauth.test.ts:905 | `access_token: 'access123'` | `d4735e...` |
+| | vercel-ai/packages/mcp/src/tool/oauth.test.ts:908 | `refresh_token: 'refresh123'` | `5f027e...` |
+| | vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts:409 | `access_token: 'expired-access-token'` | `e1c9a8...` |
+| | vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts:411 | `refresh_token: 'rotating-refresh-token'` | `9b2d4f...` |
+| | vercel-ai/packages/openai/**/*.test.ts (20+ files) | `apiKey: 'test-api-key'` repeated | `2e8b76...` |
+| | vercel-ai/packages/assemblyai/**/*.test.ts | `apiKey: 'test-api-key'` | `2e8b76...` |
+| | vercel-ai/packages/togetherai/**/*.test.ts | `apiKey: 'test-api-key'`, `custom-key`, `explicit-key` | `2e8b76...`, `a8f5e2...`, `c3d9f1...` |
+| | vercel-ai/packages/google-vertex/**/*.test.ts | `apiKey: 'test-api-key'`, `mocked-token`, `mock.jwt.token`, `invalid-key` | `2e8b76...`, `a1b2c3...`, `f4e5d6...`, `9a8b7c...` |
+| | vercel-ai/packages/amazon-bedrock/**/*.test.ts | `sessionToken: 'dynamic-session-token'`, `static-session-token`, `test-session-token`, `async-session-token`, `test-api-key-123` | `7f8e9d...`, `b3c4d5...`, `e6f7a8...`, `1b2c3d...`, `4e5f6a...` |
+| | vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts:48 | `apiKey: 'your-api-key-here'` (doc comment) | N/A (placeholder) |
+| | gladiaio/sdk e2e tests | `test-key`, `key-123`, `abc`, `DUMMY-KEY-REDIRECT-LEAK-TEST` | N/A (test fixtures) |
+| | gladia-samples/python/core-concepts/pre-recorded/pre_recorded.py:5 | `api_key="GLADIA_API_KEY"` placeholder | N/A (placeholder) |
+| **INTERESTING** | vercel-ai/pnpm-lock.yaml:289,291 | `@ai-sdk/gladia` linked as local package `packages/gladia` (official integration) | N/A |
+| | vercel-ai/packages/gladia/src/gladia-provider.ts:70 | Hardcoded `https://api.gladia.io` base URL | N/A |
+| | compare-stt/src/lib/providers/gladia.ts:3 | Hardcoded `https://api.gladia.io/v2` base URL | N/A |
+| | gladia-cli/pkg/client/client.go:9 | Hardcoded `https://api.gladia.io` base URL | N/A |
+| | npm `gladia`@0.1.3 (alexisbouchez/gladia.ts) | **Unofficial package masquerading as official** - repo 404, maintainer softwarecitadel@gmail.com | N/A |
+| | vercel-ai/.github/tigent.yml:30 | Provider list includes gladia among 12 providers | N/A |
+| **ENDPOINT_LEAK** | None found | — | — |
+| **REAL_SECRET** | None found | — | — |
+
+---
 
 ### Verdict List
 
-| Candidate | Reportable? | Reason |
-|-----------|-------------|--------|
-| `@ai-sdk/gladia` package in vercel-ai | **NO** | Official Vercel AI SDK provider (github.com/vercel/ai), not a Gladia-owned SDK. Confirmed in RAG as official org integration. |
-| SSRF protection in sandbox-vercel (`169.254.169.254/32`) | **NO** | Defensive security control, not a vulnerability |
-| `isSameOrigin` credential guard in Gladia provider | **NO** | Correct security implementation - strips auth when polling foreign result_url |
-| All `test-api-key`, `secret123`, `access123`, etc. | **NO** | Test fixtures only - no signs of life |
-| `encrypted_content` in OpenAI fixture | **NO** | Test fixture data |
+| Candidate | REPORT_CANDIDATE | Reason |
+|-----------|------------------|--------|
+| `gladia`@0.1.3 npm package (alexisbouchez/gladia.ts) | **YES** | Supply-chain risk: unofficial package named "gladia" claiming "Official TypeScript SDK for Gladia" in description; GitHub repo 404; maintainer unrelated to Gladia; could confuse developers into installing wrong package. |
+| Hardcoded API base URLs in SDKs/integrations | **NO** | Expected behavior - all point to official `api.gladia.io`. |
+| Cross-origin redirect credential stripping (JS/Python SDKs) | **NO** | Properly implemented and tested (`x-gladia-key`, `authorization`, `cookie` stripped on cross-origin redirect). |
+| SSRF protection in vercel-ai sandbox (169.254.169.254 deny) | **NO** | Defensive control, not a vulnerability. |
+| All `test-api-key`, `secret123`, `mocked-token` values | **NO** | Test fixtures only, no production credentials. |
 
-### Summary
-**REPORT_CANDIDATE: no** for all hits. This scan contains only:
-1. Test fixtures with obvious placeholder credentials (no entropy, standard naming)
-2. The official `@ai-sdk/gladia` Vercel AI provider package (v3.0.0-canary.48) - correctly attributed to Vercel, not Gladia
-3. Two **positive security controls**: SSRF metadata IP blocking and same-origin credential guarding
+---
 
-No secrets, no endpoint leaks, no misconfigurations requiring disclosure.
+**Key Finding**: The `gladia` npm package (v0.1.3) is a **supply-chain impersonation risk** - it presents as the official SDK but is maintained by an unrelated party (`softwarecitadel@gmail.com`) with a 404 GitHub repo (`alexisbouchez/gladia.ts`). Developers may `npm install gladia` instead of `@gladiaio/sdk`. This should be reported via Gladia's disclosure channel.
