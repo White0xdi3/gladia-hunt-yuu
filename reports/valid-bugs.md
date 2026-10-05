@@ -1268,3 +1268,9 @@
   - | Q7 Triager accept? | **CONDITIONAL** | Only with valid keys |
   - | SSRF via audio_url/video_url/callback_url | api.gladia.io | **HOLD** | Spec confirms SSRF-by-design; needs valid key for POC |
   - | **npm gladia@0.1.3 impersonation + key-in-URL** | npm registry | **VALID** | **Reported 2026-08-12, report-ready, awaiting vendor** |
+
+- 4 lead(s) marked VALID at 2026-10-05 22:48:12 UTC
+  - | Q2 Attacker reach? | **CONDITIONAL** — endpoint is key-gated (401 without `x-gladia-key`). Needs valid API key (AUTH_HELPED). |
+  - | Q7 Triager accept? | **HOLD** — genuine high-value vulnerability class, but **cannot be validated without a valid API key**. Passive-only gate fails (Q4). |
+  - **VERDICT: HOLD** — OpenAPI explicitly shows `InitStreamingResponse.url = "wss://api.gladia.io/v2/live?token=<uuid>"`. Token is bearer-equivalent for live session. **Requires AUTH_HELPED: POST /v2/liv
+  - | Q2 Attacker reach? | **CONDITIONAL** — key-gated (requires valid `x-gladia-key`). Cross-account test needs two keys. |
