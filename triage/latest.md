@@ -1,5 +1,5 @@
-===== TRIAGE 2026-10-04 21:39:34 UTC =====
+===== TRIAGE 2026-10-05 01:02:59 UTC =====
 [0m
 > build · nemotron-3-ultra-free
 [0m
-No leads were provided. Please share the leads you want me to triage.
+You didn't provide the leads to evaluate. Please paste the leads (URLs, endpoints, findings) you want me to triage against the 7-Question Gate.
