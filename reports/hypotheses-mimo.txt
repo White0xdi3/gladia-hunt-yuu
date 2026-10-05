@@ -1,4 +1,4 @@
-## 2026-10-05 08:56:55 UTC [gladia] (model mimo)
+## 2026-10-05 18:23:26 UTC [api] (model mimo)
 [PRIO] sdk, 7.90, attack=8 business=9 tech=7 gate=10 cloud=3 fresh=8
 [PRIO] app.gladia.io, 7.75, attack=8 business=9 tech=7 gate=9 cloud=2 fresh=9
 [PRIO] api.gladia.io, 7.30, attack=7 business=10 tech=6 gate=3 cloud=10 fresh=7
