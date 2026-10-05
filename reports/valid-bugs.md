@@ -1258,3 +1258,13 @@
   - | **SSRF via audio_url/video_url/callback_url** | **HOLD** | High-value SSRF-by-design confirmed by spec+RAG; key-gated (AUTH_HELPED). Needs valid `x-gladia-key` for PoC. |
   - | **npm `gladia@0.1.3` orphaned impersonation + key-in-URL** | **VALID (npm venue)** / **HOLD (Gladia venue)** | Fully passive proof: impersonation metadata + tarball key leakage + orphaned repo (404)
   - | **IDOR on `/{id}/file`** | **HOLD** | Spec-only; needs AUTH_HELPED with valid key for cross-account test. |
+
+- 8 lead(s) marked VALID at 2026-10-05 07:16:05 UTC
+  - | Q4 Passive proof? | **NO** | Requires POST with valid key to observe server-side fetch behavior (error/timing diff) |
+  - | Q7 Triager accept? | **CONDITIONAL** | Only with valid key POC; theoretical "SSRF-by-design" without key |
+  - **VERDICT: VALID** — **Reported 2026-08-12, awaiting vendor response.**
+  - **VERDICT: HOLD** — Design flaw confirmed by spec (token in URL). Cannot verify Referrer-Policy or token rotation without valid key to initiate WS session.
+  - | Q2 Reachable? | **AUTH_HELPED** | Requires valid `x-gladia-key` |
+  - | Q7 Triager accept? | **CONDITIONAL** | Only with valid keys |
+  - | SSRF via audio_url/video_url/callback_url | api.gladia.io | **HOLD** | Spec confirms SSRF-by-design; needs valid key for POC |
+  - | **npm gladia@0.1.3 impersonation + key-in-URL** | npm registry | **VALID** | **Reported 2026-08-12, report-ready, awaiting vendor** |
