@@ -1,325 +1,118 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/
-total 60
-drwxr-xr-x 15 runner runner 4096 Oct  5 01:59 .
-drwxr-xr-x  4 runner runner 4096 Oct  5 01:59 ..
-drwxr-xr-x  9 runner runner 4096 Oct  5 01:59 compare-stt
-drwxr-xr-x  9 runner runner 4096 Oct  5 01:59 docs
-drwxr-xr-x  7 runner runner 4096 Oct  5 01:59 gladia-cli
-drwxr-xr-x 11 runner runner 4096 Oct  5 01:59 gladia-quiz-app
-drwxr-xr-x 11 runner runner 4096 Oct  5 01:59 gladia-samples
-drwxr-xr-x  9 runner runner 4096 Oct  5 01:59 gladiaflow
-drwxr-xr-x  7 runner runner 4096 Oct  5 01:59 n8n-nodes-gladia
-drwxr-xr-x  8 runner runner 4096 Oct  5 01:59 normalization
-drwxr-xr-x 12 runner runner 4096 Oct  5 01:59 num2words2
-drwxr-xr-x  9 runner runner 4096 Oct  5 01:59 realtime-multilingual-asr-router
-drwxr-xr-x 10 runner runner 4096 Oct  5 01:59 sdk
-drwxr-xr-x  7 runner runner 4096 Oct  5 01:59 skills
-drwxr-xr-x 18 runner runner 4096 Oct  5 01:59 vercel-ai
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'secret123'
+e037daaf131045d87cfc764f23bd3eb0ebdcbb9ac09519ccbd9df70519b8a9f0  -
 [0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml[90m [limit=30, offset=280][0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml[90m [offset=2360, limit=30][0m
-[0m✱ [0mGlob "**/packages/gladia/**/*"[90m in reposcan-raw/gladiaio/vercel-ai · 24 matches[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'access123'
+75c4c1744760a0376b32c146084b54c2687abc087f95317f6bed4f452142e8d9  -
 [0m
-[0m$ [0mnpm view @gladiaio/sdk --json 2>/dev/null | head -100
-{
-  "_id": "@gladiaio/sdk@2.1.0",
-  "_rev": "133-5ce5bd29a4bef7e4ee693aad5f43610c",
-  "name": "@gladiaio/sdk",
-  "dist-tags": {
-    "latest": "2.1.0"
-  },
-  "versions": [
-    "0.1.0",
-    "0.1.1",
-    "0.1.2",
-    "0.2.0",
-    "0.2.1",
-    "0.3.0",
-    "0.3.1",
-    "0.4.0",
-    "0.4.1",
-    "0.4.2",
-    "0.4.3",
-    "0.5.0",
-    "0.5.1",
-    "0.5.2",
-    "0.5.3",
-    "0.6.0",
-    "0.6.1",
-    "1.0.0",
-    "1.0.4",
-    "1.0.5",
-    "1.0.7",
-    "1.1.0",
-    "2.0.0",
-    "2.1.0"
-  ],
-  "time": {
-    "created": "2025-09-09T15:01:20.684Z",
-    "modified": "2026-09-21T14:40:50.954Z",
-    "0.8.9": "2022-10-28T08:45:13.203Z",
-    "0.8.10": "2022-10-28T09:20:28.511Z",
-    "0.8.11": "2022-10-28T10:16:20.446Z",
-    "0.8.12": "2022-11-02T13:40:47.351Z",
-    "0.8.13": "2022-11-02T14:22:51.825Z",
-    "0.8.14": "2022-11-10T15:46:41.656Z",
-    "0.8.15": "2022-11-10T16:20:33.692Z",
-    "0.8.16": "2022-11-13T18:27:04.269Z",
-    "0.8.17": "2022-11-18T16:07:37.254Z",
-    "0.9.1": "2022-11-22T14:38:02.436Z",
-    "0.9.2": "2022-11-23T07:38:30.338Z",
-    "0.9.3": "2022-11-30T09:32:14.398Z",
-    "0.9.4": "2022-11-30T10:05:06.541Z",
-    "0.9.5": "2022-12-09T11:31:31.615Z",
-    "0.10.1": "2022-12-09T12:39:20.544Z",
-    "0.10.2": "2022-12-09T14:22:43.928Z",
-    "0.10.3": "2022-12-09T15:13:00.720Z",
-    "0.10.4": "2022-12-09T17:23:13.026Z",
-    "0.10.5": "2022-12-12T17:13:58.447Z",
-    "0.10.6": "2022-12-12T17:29:59.221Z",
-    "0.10.7": "2022-12-19T19:29:04.531Z",
-    "0.10.8": "2023-01-10T13:24:01.450Z",
-    "0.10.9": "2023-01-10T15:17:51.295Z",
-    "0.10.10": "2023-01-10T15:37:49.001Z",
-    "0.10.11": "2023-01-11T09:01:49.220Z",
-    "0.10.12": "2023-01-11T13:12:36.873Z",
-    "0.10.13": "2023-01-11T21:12:54.881Z",
-    "0.10.14": "2023-01-12T09:10:07.435Z",
-    "0.10.15": "2023-01-17T10:19:35.165Z",
-    "0.10.16": "2023-01-17T12:05:23.330Z",
-    "0.10.17": "2023-01-17T12:58:17.730Z",
-    "0.10.18": "2023-01-17T16:09:20.768Z",
-    "0.10.19": "2023-01-18T15:26:15.155Z",
-    "0.10.20": "2023-01-18T18:04:32.626Z",
-    "0.10.21": "2023-01-20T08:16:14.497Z",
-    "0.10.22": "2023-01-20T10:04:28.819Z",
-    "0.10.23": "2023-01-20T15:04:40.649Z",
-    "0.10.24": "2023-01-20T15:11:16.682Z",
-    "0.10.25": "2023-01-20T15:13:48.025Z",
-    "0.10.26": "2023-01-20T15:31:50.478Z",
-    "0.10.27": "2023-01-20T15:39:56.257Z",
-    "0.10.28": "2023-01-20T15:42:19.092Z",
-    "0.10.29": "2023-01-20T15:50:28.108Z",
-    "0.10.30": "2023-01-24T08:25:37.753Z",
-    "0.10.31": "2023-01-27T09:03:39.648Z",
-    "0.10.32": "2023-01-27T13:42:54.782Z",
-    "0.10.33": "2023-01-30T16:53:45.752Z",
-    "0.10.34": "2023-01-31T10:05:22.344Z",
-    "0.10.35": "2023-01-31T16:26:08.125Z",
-    "0.10.36": "2023-01-31T18:05:57.019Z",
-    "0.10.37": "2023-02-01T09:07:05.551Z",
-    "0.10.38": "2023-02-08T13:16:19.390Z",
-    "0.10.39": "2023-02-09T11:04:51.004Z",
-    "0.10.40": "2023-02-10T16:05:17.732Z",
-    "0.10.41": "2023-02-10T16:39:30.367Z",
-    "0.10.42": "2023-02-13T20:05:28.053Z",
-    "0.10.43": "2023-02-14T14:05:13.700Z",
-    "0.10.44": "2023-02-14T15:41:25.199Z",
-    "0.10.45": "2023-02-21T09:05:46.595Z",
-    "0.10.47": "2023-02-22T15:05:00.452Z",
-    "0.10.48": "2023-02-22T15:20:28.452Z",
-    "0.10.49": "2023-02-22T16:44:44.559Z",
-    "0.10.50": "2023-02-22T17:34:36.357Z",
-    "0.10.51": "2023-02-23T12:06:26.120Z",
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'refresh123'
+c03d63ce06d28b2de84fab9f124cb0bef60800e5771a9dcca81cee347e4a646b  -
 [0m
-[0m$ [0mnpm view gladia --json 2>/dev/null | head -100
-{
-  "_id": "gladia@0.1.3",
-  "_rev": "4-d0214ef116ff0426b738c29cf2a97cf1",
-  "name": "gladia",
-  "dist-tags": {
-    "latest": "0.1.3"
-  },
-  "versions": [
-    "0.1.0",
-    "0.1.1",
-    "0.1.2",
-    "0.1.3"
-  ],
-  "time": {
-    "created": "2025-03-28T17:20:09.872Z",
-    "modified": "2025-04-07T13:46:48.993Z",
-    "0.1.0": "2025-03-28T17:20:10.148Z",
-    "0.1.1": "2025-03-28T17:35:57.688Z",
-    "0.1.2": "2025-04-07T13:42:54.763Z",
-    "0.1.3": "2025-04-07T13:46:48.823Z"
-  },
-  "bugs": {
-    "url": "https://github.com/alexisbouchez/gladia.ts/issues"
-  },
-  "author": "Alexis Bouchez",
-  "license": "MIT",
-  "homepage": "https://github.com/alexisbouchez/gladia.ts#readme",
-  "keywords": [
-    "gladia",
-    "speech-to-text",
-    "transcription",
-    "audio",
-    "video",
-    "ai",
-    "typescript",
-    "sdk"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alexisbouchez/gladia.ts.git"
-  },
-  "description": "Official TypeScript SDK for Gladia - State-of-the-art Speech to Text API",
-  "maintainers": [
-    "softwarecitadel <softwarecitadel@gmail.com>"
-  ],
-  "readmeFilename": "README.md",
-  "version": "0.1.3",
-  "main": "dist/index.js",
-  "module": "dist/gladia.esm.js",
-  "types": "dist/index.d.ts",
-  "engines": {
-    "node": ">=14"
-  },
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
-    "example": "ts-node examples/youtube.ts"
-  },
-  "peerDependencies": {},
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "size-limit": [
-    {
-      "path": "dist/gladia.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/gladia.esm.js",
-      "limit": "10 KB"
-    }
-  ],
-  "devDependencies": {
-    "@size-limit/preset-small-lib": "^11.2.0",
-    "@types/node": "^20.11.24",
-    "husky": "^9.1.7",
-    "size-limit": "^11.2.0",
-    "ts-node": "^10.9.2",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.8.1",
-    "typescript": "^5.8.2"
-  },
-  "gitHead": "1304e5ad4ea8b507c8c58b23f31b5f22dbd689b9",
-  "_nodeVersion": "20.19.0",
-  "_npmVersion": "10.8.2",
-  "dist": {
-    "integrity": "sha512-56NWQ9pEVyd/E+jwafDydzcopimFayKQatP6oz0tL5EF5v9aQLAQ6P03H93nEqZCiD10UqqZMR1c6GaC3YBztw==",
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'expired-access-token'
+6b082dce487317d2c712ef8047ddcb6d724f4f06409779d5fb591642079990e7  -
 [0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/README.md
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'rotating-refresh-token'
+b27e0811900a0317efea7ee72de200c80290920fd0667a4c974e3a152d1b08a8  -
 [0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/sdk/
-total 328
-drwxr-xr-x 10 runner runner   4096 Oct  5 01:59 .
-drwxr-xr-x 15 runner runner   4096 Oct  5 01:59 ..
-drwxr-xr-x  3 runner runner   4096 Oct  5 01:59 .cursor
--rw-r--r--  1 runner runner    135 Oct  5 01:59 .editorconfig
-drwxr-xr-x  8 runner runner   4096 Oct  5 01:59 .git
--rw-r--r--  1 runner runner    212 Oct  5 01:59 .gitattributes
-drwxr-xr-x  3 runner runner   4096 Oct  5 01:59 .github
--rw-r--r--  1 runner runner    191 Oct  5 01:59 .gitignore
--rw-r--r--  1 runner runner    113 Oct  5 01:59 .npmrc
--rw-r--r--  1 runner runner    103 Oct  5 01:59 .prettierignore
--rw-r--r--  1 runner runner    127 Oct  5 01:59 .prettierrc
-drwxr-xr-x  2 runner runner   4096 Oct  5 01:59 .vscode
--rw-r--r--  1 runner runner   3032 Oct  5 01:59 CONTRIBUTING.md
--rw-r--r--  1 runner runner   1063 Oct  5 01:59 LICENSE
--rw-r--r--  1 runner runner  10963 Oct  5 01:59 README.md
--rw-r--r--  1 runner runner     98 Oct  5 01:59 audit-ci.jsonc
--rw-r--r--  1 runner runner 219285 Oct  5 01:59 bun.lock
--rw-r--r--  1 runner runner     29 Oct  5 01:59 bunfig.toml
--rw-r--r--  1 runner runner    239 Oct  5 01:59 commitlint.config.cts
-drwxr-xr-x  2 runner runner   4096 Oct  5 01:59 data
-drwxr-xr-x  6 runner runner   4096 Oct  5 01:59 e2e
--rw-r--r--  1 runner runner   1358 Oct  5 01:59 eslint.config.mjs
--rw-r--r--  1 runner runner   3525 Oct  5 01:59 nx.json
--rw-r--r--  1 runner runner   1062 Oct  5 01:59 package.json
-drwxr-xr-x  5 runner runner   4096 Oct  5 01:59 packages
-drwxr-xr-x  3 runner runner   4096 Oct  5 01:59 tools
--rw-r--r--  1 runner runner     86 Oct  5 01:59 vitest.workspace.mjs
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'test-api-key'
+4e02bfe33f4d46f34367973e50b264c5e0cb59dfcef190a44b48079fd8eaf48b  -
 [0m
-[0m→ [0mRead reposcan-raw/gladiaio/sdk/package.json
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'custom-key'
+908493dd043eb3a7343a12aad766ac94147dcccf1804d282acfdb0dc856a6a8e  -
 [0m
-[0m$ [0mnpm view @gladiaio/sdk repository --json 2>/dev/null
-{
-  "url": "git+https://github.com/gladiaio/sdk.git",
-  "type": "git"
-}
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'explicit-key'
+658ea44b60432e723abd8361427186c6570aa4108d5eb5fa69d6223836f8ee4f  -
 [0m
-[0m$ [0mnpm view @gladiaio/sdk author --json 2>/dev/null
-"Gladia"
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'mocked-token'
+bdb98daeeb62f010cc450ce19e84657c989f520572ce6712d7c048ea4c05e0bf  -
 [0m
----
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'mock.jwt.token'
+656c62c2684701f5d770dedbbfe48e7205ef9bdc6a0766a20da68fdfb69ed3ae  -
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'invalid-key'
+44bdfffc2f4ac6029380e3db2908da5003f69a314a4f891c3ab828cabd89b6f6  -
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'dynamic-session-token'
+6040eea8519b1812492e31cee99ed1a899a7f49b704d7bf917af9f789e206144  -
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'static-session-token'
+ab7b5569fd2867bf715fde03067536212f796726350a4fb17f450100a729ee25  -
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'test-api-key-123'
+77322dca9217fdb6d398179bf370a4e7ce11d3bce52928514dcda884247e387a  -
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'test-session-token'
+83103937e9dc93516ce2129900339a49d90d0a3d86c14b36a058acd956aa9f4b  -
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'async-session-token'
+d1f70139e65dd60ebdbe5e7657a45e84623f6f78116879cc7c690076f437a342  -
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'test-token'
+eeeec30f1f0ea0b0beb5265ca8c3f2ab702cd73b51825c3e36882365b751f4fb  -
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && sha256sum <<< 'your-api-key-here'
+26ab7d43ab0668ba99bfe9b5d3cffc0a64277d0a3c7791ca7d40fa3054d25d4d  -
+[0m
+### TEST_OR_EXAMPLE (test/fixture data — not reportable)
 
-### CLASSIFICATION TABLES
-
-#### TEST_OR_EXAMPLE (all test/fixture data — not reportable)
-
-| File | Line | Pattern | SHA256(prefix) |
-|------|------|---------|----------------|
-| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 740 | `client_secret: 'secret123'` | `4a44dc` |
-| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 905 | `access_token: 'access123'` | `a3dd2e` |
-| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 908 | `refresh_token: 'refresh123'` | `e6c0a4` |
-| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 409 | `access_token: 'expired-access-token'` | `8f7b3a` |
-| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 411 | `refresh_token: 'rotating-refresh-token'` | `1c9d5f` |
-| `vercel-ai/packages/openai/**/*.test.ts` | multiple | `apiKey: 'test-api-key'` | `6e8b1f` |
-| `vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13,277 | `apiKey: 'test-api-key'` | `6e8b1f` |
-| `vercel-ai/packages/togetherai/src/togetherai-provider.test.ts` | 99,112,165 | `apiKey: 'custom-key'`, `apiKey: 'explicit-key'` | `a1b2c3` |
-| `vercel-ai/packages/google-vertex/**/*.test.ts` | multiple | `apiKey: 'test-api-key'`, `token: 'mocked-token'` | `6e8b1f` / `9f2a4e` |
-| `vercel-ai/packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts` | 68,150 | `access_token: 'mock.jwt.token'` | `5d3e8a` |
-| `vercel-ai/packages/amazon-bedrock/**/*.test.ts` | multiple | `sessionToken: 'dynamic-session-token'`, `sessionToken: 'static-session-token'`, `apiKey: 'test-api-key-123'` | various |
-| `vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | 36 | `encrypted_content: "gAAAAABplLP75yhV..."` | `b8f2c1` |
-
-#### INTERESTING (supply-chain / config anomalies)
-
-| File | Line | Finding | Risk |
-|------|------|---------|------|
-| **npm: `gladia@0.1.3`** | — | Claims "Official TypeScript SDK for Gladia" but repo=`alexisbouchez/gladia.ts` (personal), maintainer=`softwarecitadel@gmail.com`, README title="Unofficial TypeScript SDK" — **misleading officiality, supply-chain risk** | HIGH |
-| `vercel-ai/pnpm-lock.yaml` | 289-291 | `@ai-sdk/gladia` workspace package = Vercel's official AI SDK integration, NOT owned by Gladia | MEDIUM (context) |
-| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166,171 | `deniedCIDRs: ['169.254.169.254/32']` — SSRF **protection** present (not a leak) | INFO |
-| `vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts` | 48 | Doc comment `apiKey: 'your-api-key-here'` — placeholder only | LOW |
-
-#### REAL_SECRET
-*None found — all hits are test fixtures or placeholders.*
-
-#### ENDPOINT_LEAK
-*None found — no internal/staging URLs leaked.*
+| File | Line | Secret SHA256 | Context |
+|------|------|---------------|---------|
+| `packages/mcp/src/tool/oauth.test.ts` | 740 | e037daaf131045d87cfc764f23bd3eb0ebdcbb9ac09519ccbd9df70519b8a9f0 | `client_secret: 'secret123'` |
+| `packages/mcp/src/tool/oauth.test.ts` | 905 | 75c4c1744760a0376b32c146084b54c2687abc087f95317f6bed4f452142e8d9 | `access_token: 'access123'` |
+| `packages/mcp/src/tool/oauth.test.ts` | 908 | c03d63ce06d28b2de84fab9f124cb0bef60800e5771a9dcca81cee347e4a646b | `refresh_token: 'refresh123'` |
+| `packages/mcp/src/tool/mcp-http-transport.test.ts` | 409 | 6b082dce487317d2c712ef8047ddcb6d724f4f06409779d5fb591642079990e7 | `access_token: 'expired-access-token'` |
+| `packages/mcp/src/tool/mcp-http-transport.test.ts` | 411 | b27e0811900a0317efea7ee72de200c80290920fd0667a4c974e3a152d1b08a8 | `refresh_token: 'rotating-refresh-token'` |
+| `packages/openai/**/*.test.ts` (14 files) | various | 4e02bfe33f4d46f34367973e50b264c5e0cb59dfcef190a44b48079fd8eaf48b | `apiKey: 'test-api-key'` |
+| `packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | 4e02bfe33f4d46f34367973e50b264c5e0cb59dfcef190a44b48079fd8eaf48b | `apiKey: 'test-api-key'` |
+| `packages/togetherai/src/togetherai-provider.test.ts` | 99 | 908493dd043eb3a7343a12aad766ac94147dcccf1804d282acfdb0dc856a6a8e | `apiKey: 'custom-key'` |
+| `packages/togetherai/src/togetherai-provider.test.ts` | 112 | 908493dd043eb3a7343a12aad766ac94147dcccf1804d282acfdb0dc856a6a8e | `apiKey: 'custom-key'` |
+| `packages/togetherai/src/togetherai-provider.test.ts` | 165 | 658ea44b60432e723abd8361427186c6570aa4108d5eb5fa69d6223836f8ee4f | `apiKey: 'explicit-key'` |
+| `packages/togetherai/src/reranking/togetherai-reranking-model.test.ts` | 7 | 4e02bfe33f4d46f34367973e50b264c5e0cb59dfcef190a44b48079fd8eaf48b | `apiKey: 'test-api-key'` |
+| `packages/google-vertex/src/google-vertex-provider.test.ts` | 120 | 4e02bfe33f4d46f34367973e50b264c5e0cb59dfcef190a44b48079fd8eaf48b | `apiKey: 'test-api-key'` |
+| `packages/google-vertex/src/google-vertex-provider-base.test.ts` | 187, 405, 419 | 4e02bfe33f4d46f34367973e50b264c5e0cb59dfcef190a44b48079fd8eaf48b | `apiKey: 'test-api-key'` |
+| `packages/google-vertex/src/google-vertex-auth-google-auth-library.test.ts` | 5, 21 | bdb98daeeb62f010cc450ce19e84657c989f520572ce6712d7c048ea4c05e0bf | `token: 'mocked-token'` |
+| `packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts` | 68, 150 | 656c62c2684701f5d770dedbbfe48e7205ef9bdc6a0766a20da68fdfb69ed3ae | `access_token: 'mock.jwt.token'` |
+| `packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts` | 134 | 44bdfffc2f4ac6029380e3db2908da5003f69a314a4f891c3ab828cabd89b6f6 | `private_key: 'invalid-key'` |
+| `packages/google-vertex/src/edge/google-vertex-provider-edge.test.ts` | 95 | 4e02bfe33f4d46f34367973e50b264c5e0cb59dfcef190a44b48079fd8eaf48b | `apiKey: 'test-api-key'` |
+| `packages/amazon-bedrock/src/amazon-bedrock-provider.test.ts` | 128, 152 | 6040eea8519b1812492e31cee99ed1a899a7f49b704d7bf917af9f789e206144 | `sessionToken: 'dynamic-session-token'` |
+| `packages/amazon-bedrock/src/amazon-bedrock-provider.test.ts` | 158 | ab7b5569fd2867bf715fde03067536212f796726350a4fb17f450100a729ee25 | `sessionToken: 'static-session-token'` |
+| `packages/amazon-bedrock/src/amazon-bedrock-sigv4-fetch.test.ts` | 100 | 77322dca9217fdb6d398179bf370a4e7ce11d3bce52928514dcda884247e387a | `sessionToken: 'test-session-token'` |
+| `packages/amazon-bedrock/src/amazon-bedrock-sigv4-fetch.test.ts` | 331 | 83103937e9dc93516ce2129900339a49d90d0a3d86c14b36a058acd956aa9f4b | `sessionToken: 'async-session-token'` |
+| `packages/amazon-bedrock/src/amazon-bedrock-sigv4-fetch.test.ts` | 442 | d1f70139e65dd60ebdbe5e7657a45e84623f6f78116879cc7c690076f437a342 | `apiKey: 'test-api-key-123'` |
+| `packages/amazon-bedrock/src/mantle/bedrock-mantle-provider.test.ts` | 209 | 4e02bfe33f4d46f34367973e50b264c5e0cb59dfcef190a44b48079fd8eaf48b | `apiKey: 'test-api-key'` |
+| `packages/amazon-bedrock/src/reranking/amazon-bedrock-reranking-model.test.ts` | 55 | eeeec30f1f0ea0b0beb5265ca8c3f2ab702cd73b51825c3e36882365b751f4fb | `nextToken: 'test-token'` |
 
 ---
 
-### VERDICT LIST
+### INTERESTING (supply-chain / config / SSRF defenses)
 
-| Candidate | REPORT_CANDIDATE | Rationale |
-|-----------|------------------|-----------|
-| `gladia@0.1.3` npm package (misleading "Official" claim, personal repo, unaffiliated maintainer) | **YES** | Supply-chain confusion: developers may install `gladia` thinking it's the official Gladia SDK when it's an unaffiliated personal package. Report via Gladia's disclosure channel. |
-| `@ai-sdk/gladia` (Vercel AI SDK integration) | NO | Legitimate Vercel-maintained provider integration; not a Gladia-owned asset. |
-| All test fixtures (`test-api-key`, `secret123`, `mock.jwt.token`, etc.) | NO | Standard test patterns; no live credentials. |
-| `deniedCIDRs: ['169.254.169.254/32']` | NO | Defensive SSRF mitigation in Vercel sandbox tests — positive security control. |
+| File | Line | Finding |
+|------|------|---------|
+| `pnpm-lock.yaml` | 289, 291, 2368 | `@ai-sdk/gladia` workspace package linked from `packages/gladia` — official org integration (vercel-ai mono) |
+| `tsconfig.json` | 70 | `"path": "packages/gladia"` — confirms local package structure |
+| `tools/analyze-downloads/src/analyze-providers.ts` | 21 | `@ai-sdk/gladia` listed as analyzed provider |
+| `.github/tigent.yml` | 30 | CI matrix includes `provider/gladia` implicitly via provider list |
+| `packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | **SSRF defense**: explicit deny `169.254.169.254/32` (AWS/GCP/Azure metadata) in test + config |
+| `packages/amazon-bedrock/src/amazon-bedrock-provider.ts` | 48 | Doc placeholder `apiKey: 'your-api-key-here'` (sha256: 26ab7d43ab0668ba99bfe9b5d3cffc0a64277d0a3c7791ca7d40fa3054d25d4d) — source file, not test |
+| `packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | 36 | Encrypted test fixture `encrypted_content: "gAAAAAB..."` (Fernet/AES) |
 
 ---
 
-**NEXT ACTION**: If you want to validate the `gladia@0.1.3` supply-chain risk further, check whether the `alexisbouchez/gladia.ts` GitHub repo exists and its relationship to Gladia. No live probes needed for the other findings.
+### ENDPOINT_LEAK / REAL_SECRET
+**None found.** All credential-like strings are test fixtures or placeholders.
+
+---
+
+### VERDICT
+
+| Candidate | REPORT_CANDIDATE | Reason |
+|-----------|------------------|--------|
+| Hardcoded secrets in test files | **no** | All `test-api-key`, `secret123`, `mock.jwt.token`, etc. are test fixtures |
+| `@ai-sdk/gladia` in vercel-ai | **no** | Official org repo (`gladiaio/vercel-ai`), workspace-linked, not a leak |
+| `gladia` npm package (0.1.3) | **no** | Already tracked in RAG: maintainer `softwarecitadel`, repo `alexisbouchez/gladia.ts` 404 — known orphaned/irrevocable personal package, not a secret |
+| SSRF deny-list for 169.254.169.254 | **no** | Defensive code, not a vulnerability |
+| `apiKey: 'your-api-key-here'` in source doc | **no** | Documentation placeholder |
+
+**No reportable findings this cycle.**
