@@ -1274,3 +1274,12 @@
   - | Q7 Triager accept? | **HOLD** — genuine high-value vulnerability class, but **cannot be validated without a valid API key**. Passive-only gate fails (Q4). |
   - **VERDICT: HOLD** — OpenAPI explicitly shows `InitStreamingResponse.url = "wss://api.gladia.io/v2/live?token=<uuid>"`. Token is bearer-equivalent for live session. **Requires AUTH_HELPED: POST /v2/liv
   - | Q2 Attacker reach? | **CONDITIONAL** — key-gated (requires valid `x-gladia-key`). Cross-account test needs two keys. |
+
+- 7 lead(s) marked VALID at 2026-10-06 21:46:43 UTC
+  - **VERDICT: VALID**
+  - **VERDICT: HOLD** — Needs AUTH_HELPED: `POST /v2/live` with valid key → inspect `url` token format, test WS upgrade Referer headers, verify token invalidation post-disconnect
+  - | npm `gladia@0.1.3` impersonation + key-in-URL | **VALID** | None — report-ready |
+  - | SSRF via audio_url/video_url/callback_url | **HOLD** | Valid API key for POC |
+  - | WS token in URL query | **HOLD** | Valid API key to init session |
+  - | IDOR on /{id}/file | **HOLD** | Valid key + cross-account ID |
+  - | /v1/history query-param injection | **HOLD** | Valid API key |
