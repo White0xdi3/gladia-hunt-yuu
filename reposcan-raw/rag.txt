@@ -1,7 +1,7 @@
 === KNOWLEDGE BASE (RAG) ===
 # Knowledge Base (deduped facts -- one row per class@asset, updated in place)
 
-- [REJECTED] AUTH@api.gladia.io: no-key POST /v2/pre-recorded still 401/144 NestJS no bypass this cycle (first 2026-08-07, last 2026-09-29)
+- [REJECTED] AUTH@api.gladia.io: no-key POST /v2/pre-recorded still 401/144 NestJS no bypass this cycle (first 2026-08-07, last 2026-10-06)
 - [REJECTED] AUTH@app.gladia.io: return-to cookie (unsigned base64url JSON `{"url":"/"}`) tampering does NOT yield open redirect — server resets to `{"url":"/"}` on tamper (tamper-reset confirmed 90+ cycles) (first 2026-08-07, last 2026-08-20)
 - [ACCEPTED] MISCONFIG@api.gladia.io: /v2/live/health undocumented key-gated endpoint confirmed informational only — 401 NestJS, not in OpenAPI 14-path spec, properly gated, no bypass/data leakage (first 2026-08-07, last 2026-10-06)
 - [ACCEPTED] MISCONFIG@app.gladia.io: CSP confirmed fresh — 0 form-action directives (grep-count=0); enables /signin form-action reflection (gap confirmed, not oversight) (first 2026-08-08, last 2026-10-06)
