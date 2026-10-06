@@ -1,7 +1,7 @@
 
-===== REPOSCAN 2026-10-06 10:30:13 UTC =====
+===== REPOSCAN 2026-10-06 15:10:26 UTC =====
 ## Grep hits:
-SCAN SUMMARY: 5695 code/config files scanned, 654 hits
+SCAN SUMMARY: 5696 code/config files scanned, 654 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:291: version: link:../../packages/gladia
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:2368: packages/gladia:
@@ -46,53 +46,27 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-## Classification Tables
-
-### REAL_SECRET
-| File | Line | SHA256(prefix) | Notes |
-|------|------|----------------|-------|
-| *(none)* | | | No hardcoded live credentials found |
-
-### TEST_OR_EXAMPLE
-| File | Line | Pattern | Context |
-|------|------|---------|---------|
-| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740 | `client_secret: 'secret123'` | Test fixture |
-| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts | 905 | `access_token: 'access123'` | Test fixture |
-| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts | 908 | `refresh_token: 'refresh123'` | Test fixture |
-| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409 | `access_token: 'expired-access-token'` | Test fixture |
-| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 411 | `refresh_token: 'rotating-refresh-token'` | Test fixture |
-| reposcan-raw/gladiaio/vercel-ai/packages/openai/**/*.test.ts | 15+ | `apiKey: 'test-api-key'` | Test fixtures (all OpenAI provider tests) |
-| reposcan-raw/gladiaio/vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13, 277 | `apiKey: 'test-api-key'` | Test fixtures |
-| reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test.ts | 99, 112, 165 | `apiKey: 'custom-key'`, `apiKey: 'explicit-key'` | Test fixtures |
-| reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/reranking/togetherai-reranking-model.test.ts | 7 | `apiKey: 'test-api-key'` | Test fixture |
-| reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/**/*.test.ts | 5+ | `apiKey: 'test-api-key'`, `token: 'mocked-token'`, `access_token: 'mock.jwt.token'`, `private_key: 'invalid-key'` | Test fixtures/mocks |
-| reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/**/*.test.ts | 128+ | `sessionToken: 'dynamic-session-token'`, `sessionToken: 'static-session-token'`, `sessionToken: 'test-session-token'`, `sessionToken: 'async-session-token'`, `apiKey: 'test-api-key-123'`, `apiKey: 'test-api-key'`, `nextToken: 'test-token'` | Test fixtures |
-| reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts | 48 | `apiKey: 'your-api-key-here'` | Inline documentation example (comment) |
-| reposcan-raw/gladiaio/vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json | 36 | `encrypted_content: "gAAAAABplLP7..."` | Test fixture (Fernet-encrypted blob) |
-
-### ENDPOINT_LEAK
-| File | Line | Value | Notes |
-|------|------|-------|-------|
-| *(none)* | | | No internal/dev/staging endpoints leaked |
-
-### INTERESTING
-| File | Line | Finding | Risk Note |
-|------|------|---------|-----------|
-| reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166, 171 | `deniedCIDRs: ['169.254.169.254/32']`, `subnets: { deny: ['169.254.169.254/32'] }` | **Positive**: Actively blocking AWS/GCP metadata endpoint in sandbox tests — SSRF mitigation present |
-| reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml | 289, 291, 2368 | `@ai-sdk/gladia` linked as local package | Confirms `@ai-sdk/gladia` = official Vercel AI SDK integration (per RAG) |
-| reposcan-raw/gladiaio/vercel-ai/tools/analyze-downloads/src/analyze-providers.ts | 21 | `'@ai-sdk/gladia'` import | Provider analysis includes Gladia |
-| reposcan-raw/gladiaio/vercel-ai/.github/tigent.yml | 30 | Provider list includes openai, anthropic, google, azure, bedrock, xai, mistral, cohere, groq, deepseek, fireworks | CI tests multi-provider matrix |
-
----
-
-## Verdict List
-
-| Candidate | REPORT_CANDIDATE | Reason |
-|-----------|------------------|--------|
-| Hardcoded secrets in test files | **no** | All are obvious test fixtures (`test-api-key`, `secret123`, `mocked-token`, etc.) |
-| `@ai-sdk/gladia` in vercel-ai | **no** | Official integration confirmed by RAG; local package link in monorepo |
-| SSRF metadata blocking in sandbox tests | **no** | Defensive control — **good practice**, not a finding |
-| `gladia` npm package (0.1.3, maintainer softwarecitadel) | **no** | Already tracked in RAG as unofficial/personal repo; not in gladiaio/ org |
-| OpenAPI/endpoint leaks | **no** | None found in this scan |
-
-**Overall**: No reportable findings this cycle. All hits are test fixtures, documentation examples, or positive security controls (metadata endpoint blocking). The `@ai-sdk/gladia` integration is official per RAG.
+[0m$ [0mfind reposcan-raw/gladiaio/vercel-ai/packages/gladia -name "*.ts" -o -name "*.js" -o -name "*.json" 2>/dev/null | head -30
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/tsup.config.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/vitest.node.config.js
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/version.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-config.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-initiate.json
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-result.json
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/__fixtures__/gladia-upload.json
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-api-types.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.test.ts
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/vitest.edge.config.js
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/tsconfig.build.json
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/turbo.json
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts
+[91m[1mError: [0m{"message":"Streaming response failed: [503] Upstream error from Nvidia: Service temporarily overloaded","type":"server_error"}
