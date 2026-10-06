@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-05 22:45:55 UTC =====
+===== REPOSCAN 2026-10-06 00:50:56 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5695 code/config files scanned, 654 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,120 +46,49 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/shopify-mcp/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/repro-test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/image-content/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-ui/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "169.254.169.254" reposcan-raw/gladiaio/vercel-ai/ --include="*.ts" --include="*.js" --include="*.json" --include="*.yaml" --include="*.yml"
-reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:        deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:          subnets: { deny: ['169.254.169.254/32'] },
-reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:      download({ url: new URL('http://169.254.169.254/latest/meta-data/') }),
-reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:        location: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.ts:  // e.g. ::ffff:127.0.0.1 or 64:ff9b::169.254.169.254 are blocked.
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:      .mockResolvedValueOnce(redirectResponse('http://169.254.169.254/'));
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:      .mockResolvedValueOnce(redirectWithBody('http://169.254.169.254/'));
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:      downloadBlob('http://169.254.169.254/latest/meta-data/'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:          location: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://169.254.169.254/latest/meta-data/'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block ::ffff:169.254.169.254', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[::ffff:169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block NAT64 64:ff9b::169.254.169.254 (metadata)', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[64:ff9b::169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block NAT64 local-use 64:ff9b:1::169.254.169.254', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[64:ff9b:1::169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['10.5.0.0/16', '169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:            url: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:        server.calls.some(call => call.requestUrl.includes('169.254.169.254')),
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -maxdepth 2 -type d | grep -v vercel-ai | head -20
-reposcan-raw/gladiaio
-reposcan-raw/gladiaio/gladia-quiz-app
-reposcan-raw/gladiaio/gladia-quiz-app/store
-reposcan-raw/gladiaio/gladia-quiz-app/.cursor
-reposcan-raw/gladiaio/gladia-quiz-app/components
-reposcan-raw/gladiaio/gladia-quiz-app/lib
-reposcan-raw/gladiaio/gladia-quiz-app/.git
-reposcan-raw/gladiaio/gladia-quiz-app/app
-reposcan-raw/gladiaio/gladia-quiz-app/public
-reposcan-raw/gladiaio/gladia-quiz-app/hooks
-reposcan-raw/gladiaio/gladia-quiz-app/scripts
-reposcan-raw/gladiaio/compare-stt
-reposcan-raw/gladiaio/compare-stt/.cursor
-reposcan-raw/gladiaio/compare-stt/test-audio
-reposcan-raw/gladiaio/compare-stt/prisma
-reposcan-raw/gladiaio/compare-stt/.git
-reposcan-raw/gladiaio/compare-stt/logos
-reposcan-raw/gladiaio/compare-stt/public
-reposcan-raw/gladiaio/compare-stt/src
-reposcan-raw/gladiaio/num2words2
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "sk-\|ghp_\|gho_\|ghu_\|ghs_\|github_pat_\|gladia.*key\|api.*key\|secret\|token" reposcan-raw/gladiaio --include="*.ts" --include="*.js" --include="*.json" --include="*.yaml" --include="*.yml" --include="*.env*" | grep -v vercel-ai | grep -v test | grep -v ".test." | grep -v "test-api-key" | head -50
-reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json:        "@csstools/css-tokenizer": "^3.0.3",
-reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json:        "js-tokens": "^4.0.0",
-reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json:        "@csstools/css-tokenizer": "^3.0.4"
-reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json:        "@csstools/css-tokenizer": "^3.0.4"
-reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json:        "@csstools/css-tokenizer": "^3.0.4"
-reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json:    "node_modules/@csstools/css-tokenizer": {
-reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json:      "resolved": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-3.0.4.tgz",
-reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json:    "node_modules/js-tokens": {
-reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json:      "resolved": "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz",
-reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json:        "js-tokens": "^3.0.0 || ^4.0.0"
-reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json:      "resolved": "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz",
-reposcan-raw/gladiaio/gladia-quiz-app/lib/gladia-client.ts:export const GLADIA_API_KEY_STORAGE = 'gladia_api_key';
-reposcan-raw/gladiaio/compare-stt/package-lock.json:        "js-tokens": "^4.0.0",
-reposcan-raw/gladiaio/compare-stt/package-lock.json:    "node_modules/js-tokens": {
-reposcan-raw/gladiaio/compare-stt/package-lock.json:      "resolved": "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz",
-reposcan-raw/gladiaio/compare-stt/package-lock.json:        "js-tokens": "^3.0.0 || ^4.0.0"
-reposcan-raw/gladiaio/compare-stt/package-lock.json:      "resolved": "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz",
-reposcan-raw/gladiaio/compare-stt/src/lib/arena-blob.ts:/** Validate the unsuffixed pathname before issuing a client upload token. */
-reposcan-raw/gladiaio/compare-stt/src/lib/arena-blob.ts: * Extract the store id from a Vercel Blob read-write token (`vercel_blob_rw_<storeId>_…`).
-reposcan-raw/gladiaio/compare-stt/src/lib/arena-blob.ts: * Throws a plain Error: a missing or malformed token is a server misconfiguration, not a bad request.
-reposcan-raw/gladiaio/compare-stt/src/lib/arena-blob.ts:  token: string | undefined = process.env.BLOB_READ_WRITE_TOKEN
-reposcan-raw/gladiaio/compare-stt/src/lib/arena-blob.ts:  if (!token) {
-reposcan-raw/gladiaio/compare-stt/src/lib/arena-blob.ts:  const storeId = token.split("_")[3];
-reposcan-raw/gladiaio/compare-stt/src/lib/arena-blob.ts:  options?: { storeId?: string; token?: string }
-reposcan-raw/gladiaio/compare-stt/src/lib/arena-blob.ts:  const storeId = options?.storeId ?? getBlobStoreId(options?.token);
-reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts:    headers: { "x-gladia-key": apiKey },
-reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts:      "x-gladia-key": apiKey,
-reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts:      headers: { "x-gladia-key": apiKey },
-reposcan-raw/gladiaio/compare-stt/src/lib/rate-limit.ts: * defense-in-depth layer on top of the DB-backed single-use token and
-reposcan-raw/gladiaio/compare-stt/src/lib/match-token.ts: * a deploy boundary. Legacy tokens get issuedAt = 0 so the minimum-delay
-reposcan-raw/gladiaio/compare-stt/src/lib/match-token.ts:export function verifyMatchToken(token: string): MatchTokenPayload | null {
-reposcan-raw/gladiaio/compare-stt/src/lib/match-token.ts:  const parts = token.split(".");
-reposcan-raw/gladiaio/compare-stt/src/lib/match-token.ts:export function hashMatchToken(token: string): string {
-reposcan-raw/gladiaio/compare-stt/src/lib/match-token.ts:  return crypto.createHash("sha256").update(token).digest("hex");
-reposcan-raw/gladiaio/compare-stt/src/app/api/vote/route.ts:import { verifyMatchToken, hashMatchToken } from "@/lib/match-token";
-reposcan-raw/gladiaio/compare-stt/src/app/api/vote/route.ts:        { error: "Invalid or tampered match token" },
-reposcan-raw/gladiaio/compare-stt/src/app/api/vote/route.ts:    // issuedAt === 0 means a legacy 4-part token issued before this deploy;
-reposcan-raw/gladiaio/compare-stt/src/app/api/vote/route.ts:    const tokenHash = hashMatchToken(matchToken);
-reposcan-raw/gladiaio/compare-stt/src/app/api/vote/route.ts:    // Use an interactive transaction for atomicity: the token claim
-reposcan-raw/gladiaio/compare-stt/src/app/api/vote/route.ts:    // in a single serializable step. This prevents both token replay
-reposcan-raw/gladiaio/compare-stt/src/app/api/vote/route.ts:        where: { tokenHash, consumedAt: null },
-reposcan-raw/gladiaio/compare-stt/src/app/api/vote/route.ts:      // Legacy tokens (pre-deploy) won't be in the table at all.
-reposcan-raw/gladiaio/compare-stt/src/app/api/vote/route.ts:      // If the token exists but was already consumed, reject.
-reposcan-raw/gladiaio/compare-stt/src/app/api/vote/route.ts:        const exists = await tx.matchToken.findUnique({ where: { tokenHash } });
-reposcan-raw/gladiaio/compare-stt/src/app/api/vote/route.ts:          return { error: "This match token has already been used to vote.", status: 409 } as const;
-reposcan-raw/gladiaio/compare-stt/src/app/api/vote/route.ts:        // Not in the table → legacy token; proceed with just the session cap.
-reposcan-raw/gladiaio/compare-stt/src/app/api/transcribe/route.ts:import { signMatchToken, hashMatchToken } from "@/lib/match-token";
-reposcan-raw/gladiaio/compare-stt/src/app/api/transcribe/route.ts:    // Fetch by pathname so the SDK builds our store URL (token never leaves to a client host)
-reposcan-raw/gladiaio/compare-stt/src/app/api/transcribe/route.ts:        tokenHash: hashMatchToken(matchToken),
-reposcan-raw/gladiaio/compare-stt/src/scripts/purge-fraudulent-votes.ts: *   1. Duplicate provider pairs within the same session (token replay)
+Based on the scan delta (0 new hits) and full grep results, here's the classification:
+
+---
+
+### TEST_OR_EXAMPLE (56 hits — all test/fixture data)
+
+| File | Line | Pattern | Reason |
+|------|------|---------|--------|
+| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 740, 905, 908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` | Test fixtures |
+| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 409, 411 | `access_token: 'expired-access-token'`, `refresh_token: 'rotating-refresh-token'` | Test fixtures |
+| `vercel-ai/packages/openai/src/**/*.test.ts` | 28 locations | `apiKey: 'test-api-key'` | Test fixtures |
+| `vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | `apiKey: 'test-api-key'` | Test fixtures |
+| `vercel-ai/packages/togetherai/src/**/*.test.ts` | 4 locations | `apiKey: 'custom-key'`, `apiKey: 'explicit-key'`, `apiKey: 'test-api-key'` | Test fixtures |
+| `vercel-ai/packages/google-vertex/src/**/*.test.ts` | 7 locations | `apiKey: 'test-api-key'`, `token: 'mocked-token'`, `access_token: 'mock.jwt.token'`, `private_key: 'invalid-key'` | Test fixtures |
+| `vercel-ai/packages/amazon-bedrock/src/**/*.test.ts` | 8 locations | `sessionToken: 'dynamic-session-token'`, `sessionToken: 'static-session-token'`, `apiKey: 'test-api-key'`, `apiKey: 'your-api-key-here'`, `sessionToken: 'test-session-token'`, `sessionToken: 'async-session-token'`, `apiKey: 'test-api-key-123'`, `nextToken: 'test-token'` | Test fixtures + doc example |
+
+---
+
+### INTERESTING (3 hits)
+
+| File | Line | Finding | Significance |
+|------|------|---------|--------------|
+| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | `deniedCIDRs: ['169.254.169.254/32']`, `subnets: { deny: ['169.254.169.254/32'] }` | **SSRF defense-in-depth**: Explicit block of AWS/GCP/Azure metadata endpoint in test config — shows awareness of cloud metadata SSRF risk |
+| `vercel-ai/pnpm-lock.yaml` | 289, 291 | `@ai-sdk/gladia` linked as local package `packages/gladia` | **Official integration confirmed**: Vercel AI SDK's Gladia provider lives in Gladia's own monorepo (`gladiaio/vercel-ai`), not a third-party fork |
+| `vercel-ai/.github/tigent.yml` | 30 | Lists 11 AI providers including `provider/gladia` (implied by package) | CI/CD matrix covers Gladia as a first-class provider |
+
+---
+
+### ENDPOINT_LEAK (0 hits)
+No internal/dev/staging URLs or non-*.gladia.io API endpoints found.
+
+---
+
+### REAL_SECRET (0 hits)
+No hardcoded credentials with signs of life. All secret-like values are obvious test placeholders (`test-api-key`, `secret123`, `mocked-token`, `invalid-key`, `your-api-key-here`).
+
+---
+
+## VERDICT
+
+| Candidate | REPORT_CANDIDATE | Rationale |
+|-----------|------------------|-----------|
+| Test fixtures across 9 provider packages | **no** | All values are static test literals, no entropy, no rotation history |
+| SSRF metadata block in vercel-sandbox | **no** | Defensive control, not a vulnerability |
+| `@ai-sdk/gladia` in Gladia-owned monorepo | **no** | Confirms official integration; supply-chain risk LOW (owned by Gladia) |
+| **Overall** | **no** | **Zero reportable findings this cycle**. Passive recon exhausted per RAG. Next cycle requires authorized key (SSRF surface) or human OAuth flow test (post-auth `redirect_to` chain).
