@@ -2456,3 +2456,4 @@ testability: AUTH_HELPED
 [RISK] app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap is live and chainable to OAuth code theft → ATO via HUMAN_ONLY post-auth step, highest gate_ease  
 [RISK] sdk: 85 reason: orphaned maintainer 404 with "Official" description + WebSocket query key leakage = supply-chain hijack risk critical; passive verifiable, confusion vector with official @gladiaio/sdk@2.1.0; PyPI gladiaio-sdk verified official adds clarity but not risk reduction for npm gladia@0.1.3
 ## 2026-10-06 07:36:47 UTC [sdk] (model mimo)
+## 2026-10-06 15:06:31 UTC [gladia] (model mimo)
