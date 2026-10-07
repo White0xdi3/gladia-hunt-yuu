@@ -1283,3 +1283,9 @@
   - | WS token in URL query | **HOLD** | Valid API key to init session |
   - | IDOR on /{id}/file | **HOLD** | Valid key + cross-account ID |
   - | /v1/history query-param injection | **HOLD** | Valid API key |
+
+- 4 lead(s) marked VALID at 2026-10-07 08:57:07 UTC
+  - **VERDICT: VALID**
+  - **VERDICT: HOLD** — SSRF-by-design spec confirmed (frozen 100+ cycles), but requires valid `x-gladia-key` for POC. No unauthenticated bypass.
+  - **VERDICT: HOLD** — Spec-confirmed complex query parsing (NestJS deep-parse); needs valid key to test `custom_metadata[__proto__]` etc.
+  - | 1 | npm `gladia@0.1.3` impersonation + key-in-WS-URL | **VALID** | Proven passively: false "Official" claim + orphaned repo + API key in URL query |
