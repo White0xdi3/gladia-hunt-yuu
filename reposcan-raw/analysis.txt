@@ -1,61 +1,183 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/
+[0m$ [0mls -la reposcan-raw/gladiaio/
 total 60
-drwxr-xr-x 15 runner runner 4096 Oct  7 15:35 .
-drwxr-xr-x  4 runner runner 4096 Oct  7 15:35 ..
-drwxr-xr-x  9 runner runner 4096 Oct  7 15:35 compare-stt
-drwxr-xr-x  9 runner runner 4096 Oct  7 15:35 docs
-drwxr-xr-x  7 runner runner 4096 Oct  7 15:35 gladia-cli
-drwxr-xr-x 11 runner runner 4096 Oct  7 15:35 gladia-quiz-app
-drwxr-xr-x 11 runner runner 4096 Oct  7 15:35 gladia-samples
-drwxr-xr-x  9 runner runner 4096 Oct  7 15:35 gladiaflow
-drwxr-xr-x  7 runner runner 4096 Oct  7 15:35 n8n-nodes-gladia
-drwxr-xr-x  8 runner runner 4096 Oct  7 15:35 normalization
-drwxr-xr-x 12 runner runner 4096 Oct  7 15:35 num2words2
-drwxr-xr-x  9 runner runner 4096 Oct  7 15:35 realtime-multilingual-asr-router
-drwxr-xr-x 10 runner runner 4096 Oct  7 15:35 sdk
-drwxr-xr-x  7 runner runner 4096 Oct  7 15:35 skills
-drwxr-xr-x 18 runner runner 4096 Oct  7 15:35 vercel-ai
+drwxr-xr-x 15 runner runner 4096 Oct  7 16:34 .
+drwxr-xr-x  4 runner runner 4096 Oct  7 16:34 ..
+drwxr-xr-x  9 runner runner 4096 Oct  7 16:34 compare-stt
+drwxr-xr-x  9 runner runner 4096 Oct  7 16:34 docs
+drwxr-xr-x  7 runner runner 4096 Oct  7 16:34 gladia-cli
+drwxr-xr-x 11 runner runner 4096 Oct  7 16:34 gladia-quiz-app
+drwxr-xr-x 11 runner runner 4096 Oct  7 16:34 gladia-samples
+drwxr-xr-x  9 runner runner 4096 Oct  7 16:34 gladiaflow
+drwxr-xr-x  7 runner runner 4096 Oct  7 16:34 n8n-nodes-gladia
+drwxr-xr-x  8 runner runner 4096 Oct  7 16:34 normalization
+drwxr-xr-x 12 runner runner 4096 Oct  7 16:34 num2words2
+drwxr-xr-x  9 runner runner 4096 Oct  7 16:34 realtime-multilingual-asr-router
+drwxr-xr-x 10 runner runner 4096 Oct  7 16:34 sdk
+drwxr-xr-x  7 runner runner 4096 Oct  7 16:34 skills
+drwxr-xr-x 18 runner runner 4096 Oct  7 16:34 vercel-ai
 [0m
-All 654 hits are from `vercel-ai` repo only — test/fixture data with obvious placeholders. Classifying:
+[0m$ [0mgrep -r "gladia" reposcan-raw/gladiaio/sdk --include="*.json" --include="*.ts" --include="*.js" 2>/dev/null | head -50
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_session.test.ts:} from '@gladiaio/sdk'
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_session.test.ts:import { parseAudioFile, sendAudioFile } from '@gladiaio/sdk-e2e-javascript-fixtures'
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/prerecorded_v2_async.test.ts:} from '@gladiaio/sdk'
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/prerecorded_v2_async.test.ts:import { getDataFile } from '@gladiaio/sdk-e2e-javascript-fixtures'
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_job_management.test.ts:import { GladiaClient, type LiveV2Response } from '@gladiaio/sdk'
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_job_management.test.ts:import { parseAudioFile, sendAudioFile } from '@gladiaio/sdk-e2e-javascript-fixtures'
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/package.json:  "name": "@gladiaio/sdk-e2e-node-esm",
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/package.json:    "@gladiaio/sdk": "workspace:*",
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/package.json:    "@gladiaio/sdk-e2e-javascript-fixtures": "workspace:*"
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/src/index.ts:import type { LiveV2InitRequest, LiveV2Session } from '@gladiaio/sdk'
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/package.json:  "name": "@gladiaio/sdk-e2e-javascript-fixtures",
+reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/package.json:    "@gladiaio/sdk": "workspace:*",
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/package.json:  "name": "@gladiaio/sdk-e2e-node-cjs",
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/package.json:    "@gladiaio/sdk": "workspace:*",
+reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/package.json:    "@gladiaio/sdk-e2e-javascript-fixtures": "workspace:*"
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    const gladiaClient = new GladiaClient({
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    gladiaClient.liveV2()
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(call.httpHeaders['x-gladia-version']).toContain(`SdkJavascript/${SDK_VERSION}`)
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    const gladiaClient = new GladiaClient({
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    gladiaClient.liveV2()
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-version']).toBe(`MyApp/1.2.3 SdkJavascript/${SDK_VERSION}`)
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:  it('injects x-gladia-key when apiKey is set', () => {
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    const gladiaClient = new GladiaClient({ apiKey: 'key-123' })
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    gladiaClient.liveV2()
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-key']).toBe('key-123')
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    const gladiaClient = new GladiaClient({ httpHeaders: { 'x-base': 'a' }, apiKey: 'abc' })
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    gladiaClient.liveV2({ httpHeaders: { 'x-override': 'b' } })
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-key']).toBe('abc')
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-version']).toContain(`SdkJavascript/${SDK_VERSION}`)
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:  it('per-call options merge with gladia version', () => {
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    const gladiaClient = new GladiaClient({
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:      httpHeaders: { 'x-gladia-version': 'GladiaClient/1.2.3' },
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    gladiaClient.liveV2({ httpHeaders: { 'x-gladia-version': 'LiveClient/4.5.6' } })
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-key']).toBe('abc')
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-version']).toContain(
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts: * x-gladia-key must not be forwarded on cross-origin redirects.
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:  it('does not forward x-gladia-key when HttpClient follows a cross-origin redirect', async () => {
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:        'x-gladia-key': secretKey,
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:        'x-gladia-version': 'SdkJavascript/test',
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(originCaptured[0]?.headers['x-gladia-key']).toBe(secretKey)
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-key']).toBeUndefined()
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-version']).toBe('SdkJavascript/test')
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:  it('does not forward x-gladia-key when preRecorded.getFile follows a cross-origin redirect', async () => {
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    const gladia = new GladiaClient({
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    const bytes = await gladia.preRecorded().getFile('job-id')
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-key']).toBeUndefined()
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:  it('does not forward x-gladia-key when live.getFile follows a cross-origin redirect', async () => {
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    const gladia = new GladiaClient({
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    const bytes = await gladia.live().getFile('job-id')
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-key']).toBeUndefined()
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [offset=160, limit=30][0m
+[0m
+[0m$ [0mnpm view gladia@0.1.3 2>/dev/null | head -30
+gladia@0.1.3 | MIT | deps: none | versions: 4
+Official TypeScript SDK for Gladia - State-of-the-art Speech to Text API
+https://github.com/alexisbouchez/gladia.ts#readme
 
-### TEST_OR_EXAMPLE (all 654 hits — not reportable)
+keywords: gladia, speech-to-text, transcription, audio, video, ai, typescript, sdk
 
-| File | Line | Pattern | Reason |
-|------|------|---------|--------|
-| `vercel-ai/packages/openai/src/**/*.test.ts` | 48, 66, 84, 113, 778, 3310, etc. | `apiKey: 'test-api-key'` | Hardcoded test placeholder |
-| `vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | `apiKey: 'test-api-key'` | Hardcoded test placeholder |
-| `vercel-ai/packages/togetherai/src/togetherai-provider.test.ts` | 99, 112, 165 | `apiKey: 'custom-key'` / `explicit-key` | Hardcoded test placeholder |
-| `vercel-ai/packages/google-vertex/src/**/*.test.ts` | 120, 187, 405, 419, 95 | `apiKey: 'test-api-key'` | Hardcoded test placeholder |
-| `vercel-ai/packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts` | 68, 134, 150 | `mock.jwt.token` / `invalid-key` | Mock/fixture data |
-| `vercel-ai/packages/amazon-bedrock/src/**/*.test.ts` | 128, 152, 158, 331, 442, 209 | `sessionToken: 'dynamic-session-token'` etc. | Hardcoded test placeholder |
-| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 740, 905, 908 | `client_secret: 'secret123'` / `access_token: 'access123'` / `refresh_token: 'refresh123'` | Obvious test values |
-| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 409, 411 | `expired-access-token` / `rotating-refresh-token` | Obvious test values |
-| `vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | 36 | `encrypted_content: "gAAAAAB..."` | Test fixture (encrypted blob) |
-| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | `deniedCIDRs: ['169.254.169.254/32']` | SSRF protection test, not vuln |
-| `vercel-ai/pnpm-lock.yaml` | 289, 291, 2368 | `@ai-sdk/gladia` local package ref | Dependency config, not secret |
+dist
+.tarball: https://registry.npmjs.org/gladia/-/gladia-0.1.3.tgz
+.shasum: cc96f84a200c0fd49a71e919391f9b659c39f3e9
+.integrity: sha512-56NWQ9pEVyd/E+jwafDydzcopimFayKQatP6oz0tL5EF5v9aQLAQ6P03H93nEqZCiD10UqqZMR1c6GaC3YBztw==
+.unpackedSize: 225.8 kB
 
-### INTERESTING (supply-chain signal)
+maintainers:
+- softwarecitadel <softwarecitadel@gmail.com>
 
-| File | Line | Note |
-|------|------|------|
-| `vercel-ai/pnpm-lock.yaml` | 289, 291, 2368 | Local package `@ai-sdk/gladia` linked — confirms vercel-ai integrates Gladia as official provider (per KNOWLEDGE) |
+dist-tags:
+latest: 0.1.3
+
+published a year ago by softwarecitadel <softwarecitadel@gmail.com>
+[0m
+[0m$ [0mnpm view @gladiaio/sdk@latest 2>/dev/null | head -20
+@gladiaio/sdk@2.1.0 | MIT | deps: none | versions: 24
+Gladia JavaScript/TypeScript SDK
+https://github.com/gladiaio/sdk#readme
+
+keywords: gladia, sdk, typescript, javascript
+
+dist
+.tarball: https://registry.npmjs.org/@gladiaio/sdk/-/sdk-2.1.0.tgz
+.shasum: 7c0ec413a1cff8f7e0d3d54a41ec4ab165802f47
+.integrity: sha512-Wh4gI8mnsEny/mq3hco1Hy/M2ckQfuLaYNLOX22J2+m0LTiP+U466Y5TemDZML+v78Y+9NpDnVwkPwVowBetTg==
+.unpackedSize: 868.1 kB
+
+maintainers:
+- clement-gladia <ccharmet@gladia.io>
+- gladia-admin <tech-certified@gladia.io>
+- commarla <lcommarieu@gladia.io>
+- hugo_gladia <himbert@gladia.io>
+- tnesztler <picobuntu@gmail.com>
+- amorin_gladia <amorin@gladia.io>
+[0m
+[0m$ [0mgrep -r "gladia" reposcan-raw/gladiaio/vercel-ai/.github/tigent.yml
+provider/openai, provider/anthropic, provider/google, provider/google-vertex, provider/azure, provider/amazon-bedrock, provider/xai, provider/mistral, provider/cohere, provider/groq, provider/deepseek, provider/fireworks, provider/togetherai, provider/perplexity, provider/replicate, provider/huggingface, provider/cerebras, provider/deepinfra, provider/baseten, provider/fal, provider/luma, provider/black-forest-labs, provider/gateway, provider/vercel, provider/assemblyai, provider/deepgram, provider/elevenlabs, provider/gladia, provider/hume, provider/lmnt, provider/revai, provider/openai-compatible, provider/community.
+[0m
+### CLASSIFICATION TABLES
 
 ---
 
-### REAL_SECRET: **none**  
-### ENDPOINT_LEAK: **none**  
+#### TEST_OR_EXAMPLE (654 hits — all test/fixture data)
+
+| File | Line | Pattern | Context |
+|------|------|---------|---------|
+| `vercel-ai/packages/openai/src/**/*.test.ts` | 30+ | `test-api-key` | Vitest fixtures for OpenAI provider |
+| `vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | `test-api-key` | AssemblyAI provider tests |
+| `vercel-ai/packages/togetherai/src/*.test.ts` | 99, 112, 165 | `custom-key`, `explicit-key`, `test-api-key` | TogetherAI provider tests |
+| `vercel-ai/packages/google-vertex/src/*.test.ts` | 120, 187, 405, 419 | `test-api-key` | Google Vertex provider tests |
+| `vercel-ai/packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts` | 68, 134, 150 | `mock.jwt.token`, `invalid-key`, `mocked-token` | Auth edge test fixtures |
+| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 740, 905, 908 | `secret123`, `access123`, `refresh123` | OAuth test fixtures |
+| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 409, 411 | `expired-access-token`, `rotating-refresh-token` | MCP transport tests |
+| `vercel-ai/packages/amazon-bedrock/src/*.test.ts` | 100, 152, 158, 331, 442, 209, 55 | `dynamic-session-token`, `static-session-token`, `async-session-token`, `test-api-key-123`, `test-session-token`, `test-token`, `nextToken` | Bedrock provider tests |
+| `vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | 36 | `encrypted_content` (base64) | Test fixture (encrypted payload) |
+| `sdk/packages/sdk-js/src/client.test.ts` | multiple | `key-123`, `abc`, `secretKey` | Gladia SDK client tests |
+| `sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts` | multiple | `secretKey` | Redirect protection tests |
+
+**Verdict**: All are test constants/fixtures — **NOT REPORTABLE**
 
 ---
 
-**VERDICT**
+#### INTERESTING (5 findings)
 
-| Candidate | REPORT_CANDIDATE |
-|-----------|------------------|
-| Any secret in vercel-ai test files | **no** — all `test-*`, `secret123`, `mock.*`, fixture data |
-| `@ai-sdk/gladia` local package | **no** — known official integration, supply-chain metadata only |
-| SSRF test `deniedCIDRs: 169.254.169.254/32` | **no** — defensive test, not vulnerability |
+| File | Line | Finding | Risk |
+|------|------|---------|------|
+| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | SSRF defense test: `deniedCIDRs: ['169.254.169.254/32']` — verifies cloud metadata IP blocked | **Defensive** (good) |
+| `vercel-ai/pnpm-lock.yaml` | 289, 291, 2368 | `@ai-sdk/gladia` linked as local package (`link:../../packages/gladia`) — official Vercel AI SDK integration for Gladia | **Architecture** |
+| `vercel-ai/.github/tigent.yml` | 30 | `provider/gladia` listed among 30+ providers in provider matrix | **Architecture** |
+| `vercel-ai/tools/analyze-downloads/src/analyze-providers.ts` | 21 | Imports `@ai-sdk/gladia` for download analytics | **Observability** |
+| **npm: `gladia@0.1.3`** | — | **Misleading package**: claims "Official TypeScript SDK for Gladia" but maintainer=`softwarecitadel` (personal), repo=`alexisbouchez/gladia.ts` — **NOT official**. Official SDK is `@gladiaio/sdk@2.1.0` (Gladia org maintainers) | **Supply-chain / Brand confusion** |
 
-**No reportable findings this cycle.** Passive recon exhausted per KNOWLEDGE (`OTHER@program: passive recon exhausted`).
+---
+
+#### ENDPOINT_LEAK
+*None found*
+
+---
+
+#### REAL_SECRET
+*None found* — all hardcoded values are test fixtures with no signs of life (e.g., `test-api-key`, `secret123`, `mocked-token`)
+
+---
+
+### VERDICT LIST
+
+| Candidate | REPORT_CANDIDATE | Reason |
+|-----------|------------------|--------|
+| `gladia@0.1.3` npm package (misleading "Official" claim) | **yes** | Brand confusion / supply-chain risk; unofficial package masquerading as official — report to npm/Gladia security |
+| SSRF defense test (169.254.169.254 blocked) | no | Defensive control, not a vuln |
+| `@ai-sdk/gladia` Vercel integration | no | Official integration, expected |
+| All test fixtures (`test-api-key`, `secret123`, etc.) | no | Test data, no signs of life |
+
+---
+
+### [NEXT] PROBE (if authorized)
+```
+GET https://registry.npmjs.org/gladia/0.1.3
+→ Confirm maintainer/repo metadata hasn't changed
+→ Check if `gladia` package has any dependents (download stats)
+```
