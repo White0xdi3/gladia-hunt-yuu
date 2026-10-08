@@ -1289,3 +1289,16 @@
   - **VERDICT: HOLD** — SSRF-by-design spec confirmed (frozen 100+ cycles), but requires valid `x-gladia-key` for POC. No unauthenticated bypass.
   - **VERDICT: HOLD** — Spec-confirmed complex query parsing (NestJS deep-parse); needs valid key to test `custom_metadata[__proto__]` etc.
   - | 1 | npm `gladia@0.1.3` impersonation + key-in-WS-URL | **VALID** | Proven passively: false "Official" claim + orphaned repo + API key in URL query |
+
+- 11 lead(s) marked VALID at 2026-10-08 22:16:15 UTC
+  - **VERDICT: VALID**
+  - | Q2 Reachable? | **PARTIAL** — key-gated (401 without `x-gladia-key`); needs valid API key |
+  - | Q4 Passive proof? | **NO** — requires `AUTH_HELPED` (valid key + POST with internal URL); probe results show 401 without key |
+  - | Q6 Not rejected? | **YES** — open redirect is valid class |
+  - | Q7 Triager accept? | **YES** — valid misconfig, Low severity |
+  - **VERDICT: VALID**
+  - | Q4 Passive proof? | **NO** — needs two valid keys (different users) to test cross-account access |
+  - **VERDICT: HOLD** — Requires two valid API keys (different tenants) for POC.
+  - | npm `gladia@0.1.3` impersonation + key-in-URL | **VALID** | Passive proof complete; supply-chain + credential hygiene |
+  - | SSRF via `audio_url`/`callback_url` | **HOLD** | Needs valid API key (AUTH_HELPED) |
+  - | `x-powered-by: Express` on preflight | **VALID** | Passive proven; Low severity |
