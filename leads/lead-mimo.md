@@ -2685,3 +2685,48 @@ testability: PASSIVE
 [RISK] app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap live and chainable to OAuth code theft → ATO via HUMAN_ONLY post-auth step; state parameter unverified adds CSRF linking risk
 [RISK] sdk: 68 reason: orphaned gladia@0.1.3 impersonation + WebSocket key leak = supply-chain hijack medium-high (namespace claimable); official @gladiaio/sdk supply-chain hardened (SLSA) but prototype pollution audit pending
 ## 2026-10-08 01:53:52 UTC [app] (model mimo)
+## 2026-10-08 08:54:58 UTC [sdk] (model mimo)
+[PRIO] app.gladia.io, 7.60, attack=8 business=8 tech=9 gate=9 cloud=2 fresh=7
+[PRIO] api.gladia.io, 7.20, attack=9 business=9 tech=8 gate=2 cloud=7 fresh=5
+[PRIO] sdk, 6.40, attack=7 business=6 tech=6 gate=10 cloud=1 fresh=6
+[PRIO] gladia.io, 3.35, attack=3 business=3 tech=2 gate=8 cloud=1 fresh=2
+[HYP] OAuth state parameter missing enables CSRF on Google auth flow leading to account linking
+class: OAUTH
+asset: app.gladia.io
+confidence: 72
+reasoning: /signin?redirect_to reflection confirmed byte-fresh with 0 CSP form-action; OAuth /auth/google/callback uses FIXED redirect_uri with PKCE S256 but state parameter presence/unverified not confirmed; missing state allows attacker to force victim's browser to complete OAuth linking attacker's account
+evidence_needed: Intercept /auth/google request — confirm state param absent or static; complete flow as victim with attacker-controlled redirect_to to prove account linking
+verify_steps: PASSIVE: GET https://app.gladia.io/signin?redirect_to=https%3A%2F%2Fevil.example.com observe form→/auth/google redirect; check for state param in authorize URL; HUMAN: with two test accounts, initiate flow as victim with attacker's redirect_to to prove linking
+impact: Victim's Gladia account linked to attacker's Google identity → full ATO; High
+testability: HUMAN_ONLY
+[HYP] Webhook callback_config.url SSRF to cloud metadata via format:uri validation bypass
+class: SSRF
+asset: api.gladia.io
+confidence: 78
+reasoning: OpenAPI spec defines 7 webhook endpoints accepting callback_config.url with format:uri only (no scheme allowlist); audio_url SSRF already confirmed AUTH_HELPED; webhook delivery runs server-side fetch with same validation gap; spec frozen NO_DRIFT confirms persistence
+evidence_needed: With authorized key, POST webhook registration with callback_config.url=http://169.254.169.254/latest/meta-data/ proves SSRF reach to IMDS
+verify_steps: AUTH_HELPED: POST https://api.gladia.io/v2/pre-recorded with x-gladia-key header and body {"audio_url":"https://example.com/audio.wav","callback_config":{"url":"http://169.254.169.254/latest/meta-data/iam/security-credentials/"}} observe callback fetch timing/DNS
+impact: Cloud metadata → IAM credentials → full cloud takeover, cross-tenant data access; Critical
+testability: AUTH_HELPED
+[HYP] Official npm @gladiaio/sdk prototype pollution via WebSocket message handling leads to RCE in consumer apps
+class: OTHER
+asset: sdk
+confidence: 58
+reasoning: Official @gladiaio/sdk@2.1.0 (14+ @gladia.io maintainers, SLSA provenance) uses WebSocket for live transcription; message handlers may merge attacker-controlled transcript objects into prototype chain; npm gladia@0.1.3 orphaned leak is separate vector
+evidence_needed: Download @gladiaio/sdk@2.1.3 tarball, audit src/live.ts or equivalent for Object.assign/merge on WebSocket message payloads without prototype guards
+verify_steps: PASSIVE: GET https://registry.npmjs.org/@gladiaio/sdk/latest verify dist-tag=2.1.3, download tarball shasum, grep -R "Object.assign\|_.merge\|\.prototype\|__proto__" dist/ for prototype pollution sinks in WebSocket message handlers
+impact: Supply-chain RCE in any app using @gladiaio/sdk live transcription via malicious server message; High
+testability: PASSIVE
+[FINAL] 1. Webhook callback_config.url SSRF to cloud metadata via format:uri validation bypass (confidence 78, SSRF @ api.gladia.io, AUTH_HELPED)
+[FINAL] 2. OAuth state parameter missing enables CSRF on Google auth flow leading to account linking (confidence 72, OAUTH @ app.gladia.io, HUMAN_ONLY)
+[FINAL] 3. Official npm @gladiaio/sdk prototype pollution via WebSocket message handling leads to RCE in consumer apps (confidence 58, OTHER @ sdk, PASSIVE)
+[NEXT] PROBE: GET https://registry.npmjs.org/@gladiaio/sdk/latest verify dist-tag=2.1.3, download tarball shasum, grep -R "Object.assign\|_.merge\|\.prototype\|__proto__" dist/ for prototype pollution sinks in WebSocket message handlers
+[LEARN] ACCEPTED SSRF @ api.gladia.io: webhook callback_config.url accepts format:uri without scheme allowlist — SSRF surface extends beyond audio_url (AUTH_HELPED)
+[LEARN] ACCEPTED OAUTH @ app.gladia.io: /signin?redirect_to reflection alive byte-fresh — 0 CSP form-action directives (gap confirmed); post-auth honoring sole unverified gate (HUMAN_ONLY); state parameter presence unverified
+[LEARN] ACCEPTED OTHER @ sdk: official @gladiaio/sdk@2.1.0 confirmed separate from orphaned gladia@0.1.3 — 14+ @gladia.io maintainers, SLSA provenance, repo github.com/gladiaio/sdk
+[LEARN] ACCEPTED OTHER @ npm gladia@0.1.3: class alive, re-verified fresh this cycle — dist-tag latest=0.1.3, description "Official", GitHub API user+repo alexisbouchez 404 (orphaned/irrevocable)
+[LEARN] ACCEPTED MISCONFIG @ api.gladia.io: /v2/live/health undocumented key-gated endpoint confirmed informational only — 401 NestJS, not in OpenAPI 14-path spec, properly gated, no bypass/data leakage
+[LEARN] ACCEPTED MISCONFIG @ app.gladia.io: CSP confirmed fresh — 0 form-action directives (grep-count=0); enables /signin form-action reflection (gap confirmed, not oversight)
+[RISK] api.gladia.io: 73 reason: frozen spec but dual SSRF vectors (audio_url + webhook callback_config.url) both AUTH_HELPED to 169.254.169.254 → cloud credential theft critical if key obtained
+[RISK] app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap live and chainable to OAuth code theft → ATO via HUMAN_ONLY post-auth step; state parameter unverified adds CSRF linking risk
+[RISK] sdk: 68 reason: orphaned gladia@0.1.3 impersonation + WebSocket key leak = supply-chain hijack medium-high (namespace claimable); official @gladiaio/sdk supply-chain hardened (SLSA) but prototype pollution audit pending
