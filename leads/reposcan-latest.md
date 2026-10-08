@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-08 08:58:55 UTC =====
+===== REPOSCAN 2026-10-08 09:07:47 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5694 code/config files scanned, 654 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,40 +46,73 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
+[0m$ [0mls -la reposcan-raw/gladiaio/
+total 60
+drwxr-xr-x 15 runner runner 4096 Oct  8 09:04 .
+drwxr-xr-x  4 runner runner 4096 Oct  8 09:04 ..
+drwxr-xr-x  9 runner runner 4096 Oct  8 09:04 compare-stt
+drwxr-xr-x  9 runner runner 4096 Oct  8 09:04 docs
+drwxr-xr-x  7 runner runner 4096 Oct  8 09:04 gladia-cli
+drwxr-xr-x 11 runner runner 4096 Oct  8 09:04 gladia-quiz-app
+drwxr-xr-x 11 runner runner 4096 Oct  8 09:04 gladia-samples
+drwxr-xr-x  9 runner runner 4096 Oct  8 09:04 gladiaflow
+drwxr-xr-x  7 runner runner 4096 Oct  8 09:04 n8n-nodes-gladia
+drwxr-xr-x  8 runner runner 4096 Oct  8 09:04 normalization
+drwxr-xr-x 12 runner runner 4096 Oct  8 09:04 num2words2
+drwxr-xr-x  9 runner runner 4096 Oct  8 09:04 realtime-multilingual-asr-router
+drwxr-xr-x 10 runner runner 4096 Oct  8 09:04 sdk
+drwxr-xr-x  7 runner runner 4096 Oct  8 09:04 skills
+drwxr-xr-x 18 runner runner 4096 Oct  8 09:04 vercel-ai
+[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "169\.254\.169\.254"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(localhost|127\.0\.0\.1|0\.0\.0\.0|internal|staging|dev\.)\.(gladia|api)"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "sk-[a-zA-Z0-9]{20,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
+[0m✱ [0mGrep "(gladia[_-]?key|x-gladia-key)"[90m in reposcan-raw/gladiaio · 0 matches[0m
 ### Classification Tables
 
-#### TEST_OR_EXAMPLE (57 hits)
-| File | Line | Pattern | Reason |
-|------|------|---------|--------|
-| `packages/mcp/src/tool/oauth.test.ts` | 740, 905, 908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` | Test fixtures — obviously fake values |
-| `packages/mcp/src/tool/mcp-http-transport.test.ts` | 409, 411 | `access_token: 'expired-access-token'`, `refresh_token: 'rotating-refresh-token'` | Test fixtures |
-| `packages/openai/**/*.test.ts` | 20+ occurrences | `apiKey: 'test-api-key'` | Test fixtures — repeated across OpenAI provider tests |
-| `packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | `apiKey: 'test-api-key'` | Test fixtures |
-| `packages/togetherai/src/**/*.test.ts` | 4 occurrences | `apiKey: 'custom-key'`, `apiKey: 'explicit-key'`, `apiKey: 'test-api-key'` | Test fixtures |
-| `packages/google-vertex/src/**/*.test.ts` | 7 occurrences | `apiKey: 'test-api-key'`, `token: 'mocked-token'`, `access_token: 'mock.jwt.token'`, `private_key: 'invalid-key'` | Test mocks/fixtures |
-| `packages/amazon-bedrock/src/**/*.test.ts` | 7 occurrences | `sessionToken: 'dynamic-session-token'`, `sessionToken: 'static-session-token'`, `apiKey: 'test-api-key'`, `nextToken: 'test-token'` | Test fixtures |
-| `packages/amazon-bedrock/src/amazon-bedrock-provider.ts` | 48 | `apiKey: 'your-api-key-here'` | Documentation comment example |
-| `packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | 36 | `encrypted_content: "gAAAAAB..."` | Test fixture (encrypted test vector) |
-| `pnpm-lock.yaml`, `tsconfig.json`, `analyze-providers.ts`, `.github/tigent.yml` | 5 hits | `@ai-sdk/gladia`, `packages/gladia` | Dependency/config references — not secrets |
+#### TEST_OR_EXAMPLE (all hits from vercel-ai test files)
+| File | Line | Pattern | Context |
+|------|------|---------|---------|
+| vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166, 171 | `169.254.169.254/32` | SSRF denial test (CIDR blocklist) |
+| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740, 905, 908 | `secret123`, `access123`, `refresh123` | OAuth test fixtures |
+| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409, 411 | `expired-access-token`, `rotating-refresh-token` | Token rotation test fixtures |
+| vercel-ai/packages/openai/src/**/*.test.ts | 48, 66, 84, 14, 114, 778, 3310, 45, 246, 381, 10, 54, 12, 17, 73 | `test-api-key` | OpenAI provider test keys |
+| vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13, 277 | `test-api-key` | AssemblyAI test key |
+| vercel-ai/packages/togetherai/src/*.test.ts | 99, 112, 165, 7 | `custom-key`, `explicit-key`, `test-api-key` | TogetherAI test keys |
+| vercel-ai/packages/google-vertex/src/*.test.ts | 120, 187, 405, 419, 5, 21, 68, 134, 150, 95 | `test-api-key`, `mocked-token`, `mock.jwt.token`, `invalid-key` | Google Vertex test auth |
+| vercel-ai/packages/amazon-bedrock/src/*.test.ts | 128, 152, 158, 100, 331, 442, 209, 55 | `dynamic-session-token`, `static-session-token`, `test-api-key-123`, `test-token` | Bedrock test tokens |
+| vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json | 36 | `gAAAAABplLP7...` | Encrypted content fixture (fernet) |
+| vercel-ai/pnpm-lock.yaml | 289, 291, 2368 | `@ai-sdk/gladia` link: | Official org integration (known) |
 
-#### INTERESTING (2 hits)
+#### INTERESTING
 | File | Line | Finding |
 |------|------|---------|
-| `packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | SSRF protection test explicitly denies `169.254.169.254/32` (cloud metadata endpoint) — shows security awareness |
-| `pnpm-lock.yaml` / `tsconfig.json` | 289, 291, 2368, 70 | `@ai-sdk/gladia` local package link — confirms official Vercel AI SDK integration in this monorepo |
+| vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166, 171 | Explicit SSRF test denying 169.254.169.254 — confirms metadata awareness |
+| vercel-ai/pnpm-lock.yaml | 289, 291, 2368 | `@ai-sdk/gladia` workspace package — official Vercel AI SDK integration |
+| (npm registry) | — | `gladia` 0.1.3 by `softwarecitadel` — README says "Unofficial" but description "Official"; GH repo alexisbouchez 404 (orphaned) |
 
-#### REAL_SECRET: **0 hits**
-#### ENDPOINT_LEAK: **0 hits**
+#### REAL_SECRET
+*(none)*
+
+#### ENDPOINT_LEAK
+*(none beyond known api.gladia.io/app.gladia.io)*
 
 ---
 
-### Verdict
-
+### Verdict List
 | Candidate | REPORT_CANDIDATE | Reason |
 |-----------|------------------|--------|
-| Hardcoded secrets in test files | **no** | All values are test fixtures/mocks (`test-api-key`, `secret123`, `mocked-token`, etc.) — no signs of life |
-| `@ai-sdk/gladia` integration | **no** | Official integration, already known (RAG: `vercel-ai @ai-sdk/gladia = official org integration`) |
-| SSRF protection test for 169.254.169.254 | **no** | Defensive control, not a vulnerability |
-| npm `gladia` 0.1.3 (unofficial) | **no** | Already tracked in RAG (`orphaned/irrevocable`, maintainer `softwarecitadel`) |
+| vercel-ai test fixtures (all) | **no** | All `test-*`, `secret123`, `mock.*`, fixture data |
+| SSRF test (169.254.169.254 blocklist) | **no** | Defensive test, not vulnerability |
+| `@ai-sdk/gladia` in vercel-ai | **no** | Official integration, documented in RAG |
+| npm `gladia` 0.1.3 (softwarecitadel) | **no** | Known orphaned pkg (RAG: `OTHER@sdk` accepted), not a secret leak |
 
-**Summary**: Zero reportable findings this cycle. All 654 grep hits are test fixtures, mocks, documentation examples, or known-configuration references. No live secrets, endpoint leaks, or new attack surface detected.
+---
+
+**No new reportable findings this cycle.** All delta hits are test fixtures or previously documented surfaces. Passive recon remains exhausted per RAG `OTHER@program`.
