@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-08 09:07:47 UTC =====
+===== REPOSCAN 2026-10-08 16:30:13 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5694 code/config files scanned, 654 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,73 +46,120 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mls -la reposcan-raw/gladiaio/
-total 60
-drwxr-xr-x 15 runner runner 4096 Oct  8 09:04 .
-drwxr-xr-x  4 runner runner 4096 Oct  8 09:04 ..
-drwxr-xr-x  9 runner runner 4096 Oct  8 09:04 compare-stt
-drwxr-xr-x  9 runner runner 4096 Oct  8 09:04 docs
-drwxr-xr-x  7 runner runner 4096 Oct  8 09:04 gladia-cli
-drwxr-xr-x 11 runner runner 4096 Oct  8 09:04 gladia-quiz-app
-drwxr-xr-x 11 runner runner 4096 Oct  8 09:04 gladia-samples
-drwxr-xr-x  9 runner runner 4096 Oct  8 09:04 gladiaflow
-drwxr-xr-x  7 runner runner 4096 Oct  8 09:04 n8n-nodes-gladia
-drwxr-xr-x  8 runner runner 4096 Oct  8 09:04 normalization
-drwxr-xr-x 12 runner runner 4096 Oct  8 09:04 num2words2
-drwxr-xr-x  9 runner runner 4096 Oct  8 09:04 realtime-multilingual-asr-router
-drwxr-xr-x 10 runner runner 4096 Oct  8 09:04 sdk
-drwxr-xr-x  7 runner runner 4096 Oct  8 09:04 skills
-drwxr-xr-x 18 runner runner 4096 Oct  8 09:04 vercel-ai
+[0m$ [0mcat reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | head -180 | tail -20
+const { sandbox, spies } = makeMockSandbox();
+      const handle = await createVercelSandbox({ sandbox }).createSession();
+      await handle.setNetworkPolicy!({
+        mode: 'custom',
+        allowedHosts: ['api.example.com'],
+        deniedCIDRs: ['169.254.169.254/32'],
+      });
+      expect(spies.update).toHaveBeenCalledWith({
+        networkPolicy: {
+          allow: ['api.example.com'],
+          subnets: { deny: ['169.254.169.254/32'] },
+        },
+      });
+    });
+
+    it('maps custom with both allowedCIDRs + deniedCIDRs', async () => {
+      const { sandbox, spies } = makeMockSandbox();
+      const handle = await createVercelSandbox({ sandbox }).createSession();
+      await handle.setNetworkPolicy!({
+        mode: 'custom',
 [0m
-[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(api[_-]?key|secret|token|password|credential)\s*[:=]\s*['\"][^'\"]{10,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "169\.254\.169\.254"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(localhost|127\.0\.0\.1|0\.0\.0\.0|internal|staging|dev\.)\.(gladia|api)"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "sk-[a-zA-Z0-9]{20,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(gladia[_-]?key|x-gladia-key)"[90m in reposcan-raw/gladiaio · 0 matches[0m
-### Classification Tables
+[0m$ [0mcat reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts | sed -n '735,750p'
+code_challenge_methods_supported: ['S256'],
+  };
 
-#### TEST_OR_EXAMPLE (all hits from vercel-ai test files)
-| File | Line | Pattern | Context |
-|------|------|---------|---------|
-| vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166, 171 | `169.254.169.254/32` | SSRF denial test (CIDR blocklist) |
-| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740, 905, 908 | `secret123`, `access123`, `refresh123` | OAuth test fixtures |
-| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409, 411 | `expired-access-token`, `rotating-refresh-token` | Token rotation test fixtures |
-| vercel-ai/packages/openai/src/**/*.test.ts | 48, 66, 84, 14, 114, 778, 3310, 45, 246, 381, 10, 54, 12, 17, 73 | `test-api-key` | OpenAI provider test keys |
-| vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13, 277 | `test-api-key` | AssemblyAI test key |
-| vercel-ai/packages/togetherai/src/*.test.ts | 99, 112, 165, 7 | `custom-key`, `explicit-key`, `test-api-key` | TogetherAI test keys |
-| vercel-ai/packages/google-vertex/src/*.test.ts | 120, 187, 405, 419, 5, 21, 68, 134, 150, 95 | `test-api-key`, `mocked-token`, `mock.jwt.token`, `invalid-key` | Google Vertex test auth |
-| vercel-ai/packages/amazon-bedrock/src/*.test.ts | 128, 152, 158, 100, 331, 442, 209, 55 | `dynamic-session-token`, `static-session-token`, `test-api-key-123`, `test-token` | Bedrock test tokens |
-| vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json | 36 | `gAAAAABplLP7...` | Encrypted content fixture (fernet) |
-| vercel-ai/pnpm-lock.yaml | 289, 291, 2368 | `@ai-sdk/gladia` link: | Official org integration (known) |
+  const validClientInfo = {
+    client_id: 'client123',
+    client_secret: 'secret123',
+    redirect_uris: ['http://localhost:3000/callback'],
+    client_name: 'Test Client',
+  };
 
-#### INTERESTING
-| File | Line | Finding |
-|------|------|---------|
-| vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166, 171 | Explicit SSRF test denying 169.254.169.254 — confirms metadata awareness |
-| vercel-ai/pnpm-lock.yaml | 289, 291, 2368 | `@ai-sdk/gladia` workspace package — official Vercel AI SDK integration |
-| (npm registry) | — | `gladia` 0.1.3 by `softwarecitadel` — README says "Unofficial" but description "Official"; GH repo alexisbouchez 404 (orphaned) |
-
-#### REAL_SECRET
-*(none)*
-
-#### ENDPOINT_LEAK
-*(none beyond known api.gladia.io/app.gladia.io)*
-
----
-
-### Verdict List
-| Candidate | REPORT_CANDIDATE | Reason |
-|-----------|------------------|--------|
-| vercel-ai test fixtures (all) | **no** | All `test-*`, `secret123`, `mock.*`, fixture data |
-| SSRF test (169.254.169.254 blocklist) | **no** | Defensive test, not vulnerability |
-| `@ai-sdk/gladia` in vercel-ai | **no** | Official integration, documented in RAG |
-| npm `gladia` 0.1.3 (softwarecitadel) | **no** | Known orphaned pkg (RAG: `OTHER@sdk` accepted), not a secret leak |
-
----
-
-**No new reportable findings this cycle.** All delta hits are test fixtures or previously documented surfaces. Passive recon remains exhausted per RAG `OTHER@program`.
+  it('generates authorization URL with PKCE challenge', async () => {
+    const { authorizationUrl, codeVerifier } = await startAuthorization(
+      'https://auth.example.com',
+      {
+        metadata: undefined,
+        clientInformation: validClientInfo,
+[0m
+[0m$ [0mnpm view @gladiaio/sdk --json 2>/dev/null | head -60
+{
+  "_id": "@gladiaio/sdk@2.1.0",
+  "_rev": "133-5ce5bd29a4bef7e4ee693aad5f43610c",
+  "name": "@gladiaio/sdk",
+  "dist-tags": {
+    "latest": "2.1.0"
+  },
+  "versions": [
+    "0.1.0",
+    "0.1.1",
+    "0.1.2",
+    "0.2.0",
+    "0.2.1",
+    "0.3.0",
+    "0.3.1",
+    "0.4.0",
+    "0.4.1",
+    "0.4.2",
+    "0.4.3",
+    "0.5.0",
+    "0.5.1",
+    "0.5.2",
+    "0.5.3",
+    "0.6.0",
+    "0.6.1",
+    "1.0.0",
+    "1.0.4",
+    "1.0.5",
+    "1.0.7",
+    "1.1.0",
+    "2.0.0",
+    "2.1.0"
+  ],
+  "time": {
+    "created": "2025-09-09T15:01:20.684Z",
+    "modified": "2026-09-21T14:40:50.954Z",
+    "0.8.9": "2022-10-28T08:45:13.203Z",
+    "0.8.10": "2022-10-28T09:20:28.511Z",
+    "0.8.11": "2022-10-28T10:16:20.446Z",
+    "0.8.12": "2022-11-02T13:40:47.351Z",
+    "0.8.13": "2022-11-02T14:22:51.825Z",
+    "0.8.14": "2022-11-10T15:46:41.656Z",
+    "0.8.15": "2022-11-10T16:20:33.692Z",
+    "0.8.16": "2022-11-13T18:27:04.269Z",
+    "0.8.17": "2022-11-18T16:07:37.254Z",
+    "0.9.1": "2022-11-22T14:38:02.436Z",
+    "0.9.2": "2022-11-23T07:38:30.338Z",
+    "0.9.3": "2022-11-30T09:32:14.398Z",
+    "0.9.4": "2022-11-30T10:05:06.541Z",
+    "0.9.5": "2022-12-09T11:31:31.615Z",
+    "0.10.1": "2022-12-09T12:39:20.544Z",
+    "0.10.2": "2022-12-09T14:22:43.928Z",
+    "0.10.3": "2022-12-09T15:13:00.720Z",
+    "0.10.4": "2022-12-09T17:23:13.026Z",
+    "0.10.5": "2022-12-12T17:13:58.447Z",
+    "0.10.6": "2022-12-12T17:29:59.221Z",
+    "0.10.7": "2022-12-19T19:29:04.531Z",
+    "0.10.8": "2023-01-10T13:24:01.450Z",
+    "0.10.9": "2023-01-10T15:17:51.295Z",
+    "0.10.10": "2023-01-10T15:37:49.001Z",
+[0m
+[0m$ [0mnpm view gladia --json 2>/dev/null | head -40
+{
+  "_id": "gladia@0.1.3",
+  "_rev": "4-d0214ef116ff0426b738c29cf2a97cf1",
+  "name": "gladia",
+  "dist-tags": {
+    "latest": "0.1.3"
+  },
+  "versions": [
+    "0.1.0",
+    "0.1.1",
+    "0.1.2",
+    "0.1.3"
+  ],
+  "time": {
