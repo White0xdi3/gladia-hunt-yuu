@@ -2776,3 +2776,4 @@ testability: PASSIVE
 [RISK] app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap live and chainable to OAuth code theft → ATO via HUMAN_ONLY post-auth step; state parameter unverified adds CSRF linking risk
 [RISK] sdk: 68 reason: orphaned gladia@0.1.3 impersonation + WebSocket key leak = supply-chain hijack medium-high (namespace claimable); official @gladiaio/sdk supply-chain hardened (SLSA) but prototype pollution audit pending
 ## 2026-10-08 22:02:55 UTC [api] (model mimo)
+## 2026-10-09 02:06:33 UTC [app] (model mimo)
