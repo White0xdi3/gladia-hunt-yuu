@@ -3523,3 +3523,13 @@ https://api.gladia.io/api/graphql -> HTTP 404
 https://app.gladia.io/graphql -> HTTP 405
 https://app.gladia.io/v2/graphql -> 200 introspection_live=False
 https://app.gladia.io/api/graphql -> HTTP 405
+
+## 2026-10-09 08:58:37 UTC
+
+### GraphQL introspection probe
+https://api.gladia.io/graphql -> HTTP 404
+https://api.gladia.io/v2/graphql -> HTTP 404
+https://api.gladia.io/api/graphql -> HTTP 404
+https://app.gladia.io/graphql -> HTTP 405
+https://app.gladia.io/v2/graphql -> 200 introspection_live=False
+https://app.gladia.io/api/graphql -> HTTP 405

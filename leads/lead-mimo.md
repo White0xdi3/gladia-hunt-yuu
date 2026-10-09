@@ -2777,3 +2777,4 @@ testability: PASSIVE
 [RISK] sdk: 68 reason: orphaned gladia@0.1.3 impersonation + WebSocket key leak = supply-chain hijack medium-high (namespace claimable); official @gladiaio/sdk supply-chain hardened (SLSA) but prototype pollution audit pending
 ## 2026-10-08 22:02:55 UTC [api] (model mimo)
 ## 2026-10-09 02:06:33 UTC [app] (model mimo)
+## 2026-10-09 08:58:17 UTC [sdk] (model mimo)
