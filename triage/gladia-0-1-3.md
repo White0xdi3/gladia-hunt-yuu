@@ -168,3 +168,19 @@ Evidence package: sha256-verified tarball + `npm view` JSON captured in repo kno
 **CVSS 3.1:** 7.5 (AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N) — High  
 **Minimal proof:** `npm view gladia@0.1.3 description repository.url maintainer` + tarball `src/client.ts:306-308` showing `searchParams.append('x-gladia-key', apiKey)`  
 **Channel:** Gladia security form (https://gladia.io/bug-bounty-report) + npm Trust & Safety
+
+
+## Re-confirmed 2026-10-09 09:19 UTC
+### Lead 1: npm `gladia@0.1.3` impersonation + key-in-WebSocket-URL
+**Q1** YES — npm registry is in scope (scope.yml: npm_packages includes `gladia`)  
+**Q2** YES — public package, anyone can `npm install gladia`  
+**Q3** YES — supply-chain impersonation (false "Official" claim) + credential leakage (raw API key in WS URL query string leaks to proxy/access logs, browser history)  
+**Q4** YES — fully passive: `npm view gladia@0.1.3`, tarball inspection, GitHub API 404 on user+repo, source confirms `searchParams.append('x-gladia-key', apiKey)`  
+**Q5** YES — not previously reported to Gladia (human reported 2026-08-12 but npm Trust & Safety track separate; no vendor action yet)  
+**Q6** YES — not on rejected list (impersonation + credential exposure are actionable)  
+**Q7** YES — reasonable triager accepts: orphaned package at dist-tag latest, irrevocable takeover risk, active harm to developers  
+**VERDICT: VALID**  
+**Proof:** `npm view gladia@0.1.3 description repository.url maintainer` + tarball `src/client.ts:306-308` + GitHub API 404 on alexisbouchez  
+**Impact:** Supply-chain API key harvesting + account takeover risk  
+**CVSS 3.1:** 7.5 (AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N)  
+**Channel:** Gladia bug bounty form (https://gladia.io/bug-bounty-report) + npm Trust & Safety (https://npmjs.com/support)

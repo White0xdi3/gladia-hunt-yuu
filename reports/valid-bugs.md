@@ -1302,3 +1302,9 @@
   - | npm `gladia@0.1.3` impersonation + key-in-URL | **VALID** | Passive proof complete; supply-chain + credential hygiene |
   - | SSRF via `audio_url`/`callback_url` | **HOLD** | Needs valid API key (AUTH_HELPED) |
   - | `x-powered-by: Express` on preflight | **VALID** | Passive proven; Low severity |
+
+- 4 lead(s) marked VALID at 2026-10-09 09:19:53 UTC
+  - **VERDICT: VALID**
+  - **VERDICT: VALID** (design flaw, passive evidence from spec)
+  - | npm `gladia@0.1.3` impersonation + key-in-URL | **VALID** | Passive, report-ready, supply-chain + credential leak |
+  - | WebSocket token in URL query param | **VALID** | Spec-confirmed design flaw, token leaks via Referer/logs |
