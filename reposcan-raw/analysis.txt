@@ -1,42 +1,30 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mwc -l reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts
-273 reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/shopify-mcp/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/repro-test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/image-content/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-ui/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
 [0m
 [0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [limit=30, offset=160][0m
-All hits are in `vercel-ai/` (a fork/integration repo, not core Gladia). Classification:
-
-### TEST_OR_EXAMPLE (all 654 hits)
-
-| File | Line | Pattern | Verdict |
-|------|------|---------|---------|
-| `packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | `169.254.169.254/32` in `deniedCIDRs`/`subnets.deny` | **Security control** - test verifies metadata endpoint is *blocked* |
-| `packages/mcp/src/tool/oauth.test.ts` | 740, 905, 908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` | Test fixtures |
-| `packages/mcp/src/tool/mcp-http-transport.test.ts` | 409, 411 | `access_token: 'expired-access-token'`, `refresh_token: 'rotating-refresh-token'` | Test fixtures |
-| `packages/openai/src/**/*.test.ts` | 48-3310 | `apiKey: 'test-api-key'` (40+ occurrences) | Test fixtures |
-| `packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | `apiKey: 'test-api-key'` | Test fixtures |
-| `packages/togetherai/src/*.test.ts` | 99, 112, 165 | `apiKey: 'custom-key'`, `'explicit-key'`, `'test-api-key'` | Test fixtures |
-| `packages/google-vertex/src/*.test.ts` | 120-419 | `apiKey: 'test-api-key'`, `token: 'mocked-token'`, `access_token: 'mock.jwt.token'` | Test fixtures |
-| `packages/amazon-bedrock/src/*.test.ts` | 100-442 | `sessionToken: 'test-session-token'`, `apiKey: 'test-api-key-123'` | Test fixtures |
-| `pnpm-lock.yaml` | 289, 291, 2368 | `@ai-sdk/gladia` workspace link | Dependency reference |
-| `tsconfig.json` | 70 | `"path": "packages/gladia"` | Workspace config |
-| `tools/analyze-downloads/src/analyze-providers.ts` | 21 | `'@ai-sdk/gladia'` | Analysis script |
-| `.github/tigent.yml` | 30 | Provider list including gladia | CI config |
-
-### REAL_SECRET: **0**
-### ENDPOINT_LEAK: **0**
-### INTERESTING: **0** (the `169.254.169.254` entries are defensive tests, not vulnerabilities)
-
----
-
-**VERDICT**
-
-| Candidate | REPORT_CANDIDATE |
-|-----------|------------------|
-| Any hardcoded secret | **no** — all are test fixtures with placeholder values |
-| SSRF to metadata endpoint | **no** — tests explicitly *deny* `169.254.169.254/32` |
-| `@ai-sdk/gladia` supply chain | **no** — official Vercel AI SDK integration, workspace-linked |
-| `gladia` npm package (alexisbouchez) | **no** — already tracked in RAG as orphaned personal repo |
-
-**No reportable findings this cycle.** Passive recon exhausted; only live probes remain (SSRF with valid key, OAuth `redirect_to` flow with human).
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts[90m [limit=30, offset=730][0m
+[93m[1m! [0mpermission requested: external_directory (/home/runner/work/gladiaio/vercel-ai/packages/openai/src/responses/__fixtures__/*); auto-rejecting
+[0m✗ [0mRead /home/runner/work/gladiaio/vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json failed[90m [offset=30, limit=20][0m
+[91m[1mError: [0mThe user rejected permission to use this specific tool call.
