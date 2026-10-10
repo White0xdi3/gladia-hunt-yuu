@@ -1326,3 +1326,15 @@
   - **VERDICT: HOLD** — Auth-gated SSRF surface confirmed by spec+RAG (format:uri no allowlist, FR/US egress, 7 webhook paths), but passive validation impossible. Requires `AUTH_HELPED` probe with valid k
   - **VERDICT: VALID**
   - | 2 | npm `gladia@0.1.3` impersonation + key-in-URL | **VALID** | Passive proof complete; supply-chain + credential leakage; report-ready |
+
+- 10 lead(s) marked VALID at 2026-10-10 22:43:34 UTC
+  - **VERDICT: VALID**
+  - **VERDICT: HOLD** — Needs valid `x-gladia-key` for PoC.
+  - **VERDICT: HOLD** — Needs valid key for session init + WS handshake inspection.
+  - **VERDICT: HOLD** — Needs two valid API keys for cross-tenant test.
+  - **VERDICT: HOLD** — Needs valid key for injection testing.
+  - | 1 | npm `gladia@0.1.3` impersonation + key-in-URL | **VALID** | PASSIVE (complete) | Report to npm Trust & Safety + Gladia security |
+  - | 2 | SSRF via audio_url/video_url/callback_url | **HOLD** | AUTH_HELPED | Need valid `x-gladia-key` for PoC |
+  - | 3 | WS token in URL query param leakage | **HOLD** | AUTH_HELPED | Need valid key for session init |
+  - | 8 | IDOR on /{id}/file download | **HOLD** | AUTH_HELPED (2 keys) | Need two valid keys cross-account |
+  - | 9 | Query-param injection /v1/history | **HOLD** | AUTH_HELPED | Need valid key |

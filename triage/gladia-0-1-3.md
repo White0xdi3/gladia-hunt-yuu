@@ -196,3 +196,11 @@ Evidence package: sha256-verified tarball + `npm view` JSON captured in repo kno
 2. `curl -s https://api.github.com/repos/alexisbouchez/gladia.ts` → 404 (user+repo both 404)
 3. Tarball inspection: `src/client.ts:306-308` → `wsUrl.searchParams.append('x-gladia-key', this.apiKey)` + `new WebSocket(wsUrl.toString())`
 4. Compare with official `@gladiaio/sdk` → uses POST `/v2/live` then connects to short-lived `session.url` (no key in URL)
+
+
+## Re-confirmed 2026-10-10 22:43 UTC
+**VERDICT: VALID**  
+**Minimal proof:** `npm view gladia@0.1.3 description repository.url maintainer` + tarball `src/client.ts:306-308` showing `searchParams.append('x-gladia-key', apiKey)` + `npm view @gladiaio/sdk` for official comparison  
+**Impact:** Supply-chain API key harvesting + account takeover risk (orphaned namespace)  
+**CVSS 3.1:** 7.4 (AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N) — P3/P4  
+**Channel:** npm Trust & Safety (primary) + Gladia security@gladia.io (secondary per scope.yml)
