@@ -1308,3 +1308,16 @@
   - **VERDICT: VALID** (design flaw, passive evidence from spec)
   - | npm `gladia@0.1.3` impersonation + key-in-URL | **VALID** | Passive, report-ready, supply-chain + credential leak |
   - | WebSocket token in URL query param | **VALID** | Spec-confirmed design flaw, token leaks via Referer/logs |
+
+- 11 lead(s) marked VALID at 2026-10-10 07:19:32 UTC
+  - | Q2 | **NO** — requires valid `x-gladia-key` (AUTH_HELPED); no unauthenticated access |
+  - | Q4 | **NO** — requires authenticated POST with valid key; cannot prove passively |
+  - **VERDICT: HOLD** — High-value target but **cannot prove without valid API key**. Auth-gated SSRF is real risk but needs AUTH_HELPED validation.
+  - | Q2 | **NO** — token only issued after authenticated `POST /v2/live` with valid key |
+  - | Q4 | **NO** — requires valid key to initiate session and observe token format |
+  - **VERDICT: HOLD** — Design flaw confirmed in spec, but **token issuance requires valid API key**. Cannot prove token leakage without initiating live session.
+  - | Q2 | **NO** — requires valid `x-gladia-key` + valid transcription ID from another user |
+  - **VERDICT: HOLD** — Spec suggests risk but **zero evidence without two valid keys**. Purely speculative.
+  - | Q4 | **NO** — requires valid key to test injection payloads |
+  - | SSRF via audio_url/video_url/callback_url | **HOLD** | High-value, spec-confirmed, but **requires valid API key** (AUTH_HELPED) |
+  - | WS token in URL query param | **HOLD** | Design flaw in spec, but **token issuance requires valid key** |
