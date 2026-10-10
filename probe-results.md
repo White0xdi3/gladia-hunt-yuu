@@ -3590,3 +3590,14 @@ https://api.gladia.io/api/graphql -> HTTP 404
 https://app.gladia.io/graphql -> HTTP 405
 https://app.gladia.io/v2/graphql -> 200 introspection_live=False
 https://app.gladia.io/api/graphql -> HTTP 405
+
+## 2026-10-10 18:34:08 UTC
+https://api.gladia.io/v2/pre-recorded -> HTTP 401
+https://app.gladia.io/signin?redirect_to=https%3A%2F%2Fevil.example.com -> 200 len=? type=text/html; charset=utf-8
+### GraphQL introspection probe
+https://api.gladia.io/graphql -> HTTP 404
+https://api.gladia.io/v2/graphql -> HTTP 404
+https://api.gladia.io/api/graphql -> HTTP 404
+https://app.gladia.io/graphql -> HTTP 405
+https://app.gladia.io/v2/graphql -> 200 introspection_live=False
+https://app.gladia.io/api/graphql -> HTTP 405
