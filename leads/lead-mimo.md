@@ -2961,3 +2961,4 @@ testability: HUMAN_ONLY
 [RISK] api.gladia.io: 73 reason: frozen spec but dual SSRF vectors (audio_url + webhook callback_config.url) both AUTH_HELPED to 169.254.169.254 → cloud credential theft critical if key obtained
 [RISK] app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap live and chainable to OAuth code theft → ATO via HUMAN_ONLY post-auth step; state parameter unverified adds CSRF linking risk
 [RISK] sdk: 97 reason: orphaned gladia@0.1.3 at dist-tag latest impersonates official SDK and leaks raw API key in WebSocket URL query → supply-chain key theft for any misinstalled package; official @gladiaio/sdk hardened (SLSA) but namespace confusion persists
+## 2026-10-10 13:39:17 UTC [gladia] (model mimo)
