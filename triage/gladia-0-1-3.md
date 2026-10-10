@@ -184,3 +184,15 @@ Evidence package: sha256-verified tarball + `npm view` JSON captured in repo kno
 **Impact:** Supply-chain API key harvesting + account takeover risk  
 **CVSS 3.1:** 7.5 (AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N)  
 **Channel:** Gladia bug bounty form (https://gladia.io/bug-bounty-report) + npm Trust & Safety (https://npmjs.com/support)
+
+
+## Re-confirmed 2026-10-10 13:55 UTC
+**VERDICT: VALID**  
+**Impact:** Medium-High (P3/P4) — developers installing impersonated "official" SDK leak API keys via WS URL; orphaned package = irrevocable takeover risk  
+**CVSS 3.1:** AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N = **7.1 High** (supply-chain + credential exposure)  
+**Channel:** Gladia security channel per scope.yml → `https://gladia.io/bug-bounty-report` (Google Forms, SSO-gated)  
+**Proof steps (passive, already complete):**
+1. `npm view gladia@0.1.3 description repository.url maintainer` → "Official TypeScript SDK for Gladia" + personal repo/maintainer
+2. `curl -s https://api.github.com/repos/alexisbouchez/gladia.ts` → 404 (user+repo both 404)
+3. Tarball inspection: `src/client.ts:306-308` → `wsUrl.searchParams.append('x-gladia-key', this.apiKey)` + `new WebSocket(wsUrl.toString())`
+4. Compare with official `@gladiaio/sdk` → uses POST `/v2/live` then connects to short-lived `session.url` (no key in URL)

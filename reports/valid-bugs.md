@@ -1321,3 +1321,8 @@
   - | Q4 | **NO** — requires valid key to test injection payloads |
   - | SSRF via audio_url/video_url/callback_url | **HOLD** | High-value, spec-confirmed, but **requires valid API key** (AUTH_HELPED) |
   - | WS token in URL query param | **HOLD** | Design flaw in spec, but **token issuance requires valid key** |
+
+- 3 lead(s) marked VALID at 2026-10-10 13:55:55 UTC
+  - **VERDICT: HOLD** — Auth-gated SSRF surface confirmed by spec+RAG (format:uri no allowlist, FR/US egress, 7 webhook paths), but passive validation impossible. Requires `AUTH_HELPED` probe with valid k
+  - **VERDICT: VALID**
+  - | 2 | npm `gladia@0.1.3` impersonation + key-in-URL | **VALID** | Passive proof complete; supply-chain + credential leakage; report-ready |
