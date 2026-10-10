@@ -2,6 +2,7 @@
 
 - [REJECTED] AUTH@api.gladia.io: no-key POST /v2/pre-recorded still 401/144 NestJS no bypass this cycle (first 2026-08-07, last 2026-10-06)
 - [REJECTED] AUTH@app.gladia.io: return-to cookie (unsigned base64url JSON `{"url":"/"}`) tampering does NOT yield open redirect — server resets to `{"url":"/"}` on tamper (tamper-reset confirmed 90+ cycles) (first 2026-08-07, last 2026-08-20)
+- [ACCEPTED] AUTH@sdk: orphaned npm gladia@0.1.3 at dist-tag latest leaks raw API key in WebSocket URL query — supply-chain key theft vector confirmed alive (first 2026-10-10, last 2026-10-10)
 - [ACCEPTED] MISCONFIG@api.gladia.io: /v2/live/health undocumented key-gated endpoint confirmed informational only — 401 NestJS, not in OpenAPI 14-path spec, properly gated, no bypass/data leakage (first 2026-08-07, last 2026-10-10)
 - [ACCEPTED] MISCONFIG@app.gladia.io: CSP confirmed fresh — 0 form-action directives (grep-count=0); enables /signin form-action reflection (gap confirmed, not oversight) (first 2026-08-08, last 2026-10-10)
 - [ACCEPTED] MISCONFIG@gladia.io: bug-bounty-report endpoint redirects to Google Forms (auth-gated via Google SSO) — confirmed submission channel for reports. (first 2026-08-11, last 2026-08-15)

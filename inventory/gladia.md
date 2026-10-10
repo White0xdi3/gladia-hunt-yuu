@@ -1725,3 +1725,9 @@
 ## 2026-10-09 20:55:18 UTC
 
 ## 2026-10-10 00:49:04 UTC
+
+## 2026-10-10 07:03:35 UTC
+- NEW npm @gladiaio/sdk@2.1.0 confirmed OFFICIAL — 14+ @gladia.io maintainers, repo github.com/gladiaio/sdk, SLSA provenance, latest 2026-09-21
+- CHANGED Supply-chain confusion surface CLARIFIED — three distinct packages: (1) PyPI gladiaio-sdk=official Python, (2) npm @gladiaio/sdk=official TS, (3) npm gladia@0.1.3=orphaned impersonator with WS key lea
+- CHANGED app.gladia.io /signin?redirect_to reflection byte-fresh 2026-10-03 — 0 CSP form-action directives, post-auth 302 honors redirect_to as sole unverified gate (HUMAN_ONLY)
+- CHANGED api.gladia.io NO_DRIFT re-confirmed — OpenAPI 14 paths/7 webhooks identical, SSRF-by-design via audio_url + callback_config.url persists (AUTH_HELPED)
