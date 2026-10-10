@@ -1,258 +1,85 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "test-api-key\|custom-key\|explicit-key\|mocked-token\|mock.jwt.token\|invalid-key\|dynamic-session-token\|static-session-token\|async-session-token\|test-api-key-123" reposcan-raw/gladiaio/vercel-ai --include="*.ts" --include="*.json" | head -50
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/generate-text/openai/tool-order.ts:  apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/generate-text/google/tool-order.ts:  apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/generate-text/anthropic/tool-order.ts:  apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/files/openai-files.test.ts:    const provider = createOpenAI({ apiKey: 'test-api-key' });
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/files/openai-files.test.ts:    const provider = createOpenAI({ apiKey: 'test-api-key' });
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/files/openai-files.test.ts:    const provider = createOpenAI({ apiKey: 'test-api-key' });
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/files/openai-files.test.ts:    const provider = createOpenAI({ apiKey: 'test-api-key' });
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/files/openai-files.test.ts:    const provider = createOpenAI({ apiKey: 'test-api-key' });
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/files/openai-files.test.ts:      apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/files/openai-files.test.ts:      authorization: 'Bearer test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/files/openai-files.test.ts:    const provider = createOpenAI({ apiKey: 'test-api-key' });
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/files/openai-files.test.ts:    const provider = createOpenAI({ apiKey: 'test-api-key' });
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/openai-provider.test.ts:        apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/openai-provider.test.ts:        apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/openai-provider.test.ts:        apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/image/openai-image-model.test.ts:const provider = createOpenAI({ apiKey: 'test-api-key' });
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/image/openai-image-model.test.ts:      apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/image/openai-image-model.test.ts:      authorization: 'Bearer test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/chat/openai-chat-language-model.test.ts:  apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/chat/openai-chat-language-model.test.ts:      apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/chat/openai-chat-language-model.test.ts:      authorization: 'Bearer test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/chat/openai-chat-language-model.test.ts:      apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/chat/openai-chat-language-model.test.ts:      authorization: 'Bearer test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/completion/openai-completion-language-model.test.ts:  apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/completion/openai-completion-language-model.test.ts:    const provider = createOpenAI({ apiKey: 'test-api-key' });
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/completion/openai-completion-language-model.test.ts:      apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/completion/openai-completion-language-model.test.ts:      authorization: 'Bearer test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/completion/openai-completion-language-model.test.ts:      apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/completion/openai-completion-language-model.test.ts:      authorization: 'Bearer test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/speech/openai-speech-model.test.ts:const provider = createOpenAI({ apiKey: 'test-api-key' });
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/speech/openai-speech-model.test.ts:      apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/speech/openai-speech-model.test.ts:      authorization: 'Bearer test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/embedding/openai-embedding-model.test.ts:const provider = createOpenAI({ apiKey: 'test-api-key' });
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/embedding/openai-embedding-model.test.ts:      apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/embedding/openai-embedding-model.test.ts:      authorization: 'Bearer test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/skills/openai-skills.test.ts:const provider = createOpenAI({ apiKey: 'test-api-key' });
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/skills/openai-skills.test.ts:        authorization: 'Bearer test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/transcription/openai-transcription-model.test.ts:const provider = createOpenAI({ apiKey: 'test-api-key' });
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/transcription/openai-transcription-model.test.ts:      apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/transcription/openai-transcription-model.test.ts:      authorization: 'Bearer test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts:const provider = createAssemblyAI({ apiKey: 'test-api-key' });
-reposcan-raw/gladiaio/vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts:      apiKey: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts:      authorization: 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/reranking/togetherai-reranking-model.test.ts:const provider = createTogetherAI({ apiKey: 'test-api-key' });
-reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/reranking/togetherai-reranking-model.test.ts:          "authorization": "Bearer test-api-key",
-reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/reranking/togetherai-reranking-model.test.ts:          "authorization": "Bearer test-api-key",
-reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test.ts:        apiKey: 'custom-key',
-reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test.ts:        apiKey: 'custom-key',
-reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test.ts:      const provider = createTogetherAI({ apiKey: 'explicit-key' });
-reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test.ts:        apiKey: 'explicit-key',
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find . -name "reposcan-raw" -type d 2>/dev/null | head -5
+./reposcan-raw
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -n "mocked-token\|mock.jwt.token\|invalid-key\|dynamic-session-token\|static-session-token\|async-session-token\|test-api-key-123\|nextToken\|secret123\|access123\|refresh123\|expired-access-token\|rotating-refresh-token" reposcan-raw/gladiaio/vercel-ai --include="*.ts" -r
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:740:    client_secret: 'secret123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:905:    access_token: 'access123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:908:    refresh_token: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:924:    client_secret: 'secret123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:957:    expect(body.get('client_secret')).toBe('secret123');
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1034:        access_token: 'access123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1104:    expect(body.get('client_secret')).toBe('secret123');
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1161:    access_token: 'newaccess123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1167:    refresh_token: 'newrefresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1179:    client_secret: 'secret123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1193:      refreshToken: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1213:    expect(body.get('refresh_token')).toBe('refresh123');
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1215:    expect(body.get('client_secret')).toBe('secret123');
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1229:      refreshToken: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1271:    expect(body.get('refresh_token')).toBe('refresh123');
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1288:    const refreshToken = 'refresh123';
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1303:        access_token: 'newaccess123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1310:        refreshToken: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1329:        refreshToken: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1343:      refreshToken: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1370:      refreshToken: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1388:    client_secret: 'secret123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1426:        client_secret: 'secret123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1674:            access_token: 'access123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1677:            refresh_token: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1747:            access_token: 'new-access123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1767:      refresh_token: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:1789:    expect(body.get('refresh_token')).toBe('refresh123');
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:2221:            access_token: 'access123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:2224:            refresh_token: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:2291:            access_token: 'new-access123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:2309:      refresh_token: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:2332:    expect(body.get('refresh_token')).toBe('refresh123');
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:2442:        client_secret: 'secret123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:2475:    access_token: 'access123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts:2478:    refresh_token: 'refresh123',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts:409:      access_token: 'expired-access-token',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts:411:      refresh_token: 'rotating-refresh-token',
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts:444:          if (headers.get('authorization') === 'Bearer expired-access-token') {
-reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts:509:            refresh_token: `rotating-refresh-token-${refreshRequests.length}`,
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/responses/openai-responses-prepare-tools.test.ts:1132:                      value: 'secret123',
-reposcan-raw/gladiaio/vercel-ai/packages/openai/src/responses/openai-responses-prepare-tools.test.ts:1161:                      "value": "secret123",
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-auth-google-auth-library.test.ts:5:const getAccessToken = vi.fn().mockResolvedValue({ token: 'mocked-token' });
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-auth-google-auth-library.test.ts:21:    getAccessToken.mockResolvedValue({ token: 'mocked-token' });
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-auth-google-auth-library.test.ts:29:    expect(token).toBe('mocked-token');
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts:68:      json: () => Promise.resolve({ access_token: 'mock.jwt.token' }),
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts:134:      private_key: 'invalid-key',
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts:150:      json: () => Promise.resolve({ access_token: 'mock.jwt.token' }),
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts:200:      json: () => Promise.resolve({ access_token: 'mock.jwt.token' }),
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts:228:      json: () => Promise.resolve({ access_token: 'mock.jwt.token' }),
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts:275:      json: () => Promise.resolve({ access_token: 'mock.jwt.token' }),
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts:293:      json: () => Promise.resolve({ access_token: 'mock.jwt.token' }),
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.test.ts:128:        sessionToken: 'dynamic-session-token',
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.test.ts:152:        sessionToken: 'dynamic-session-token',
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.test.ts:158:        sessionToken: 'static-session-token',
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.test.ts:447:          sessionToken: 'dynamic-session-token',
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-sigv4-fetch.test.ts:331:        sessionToken: 'async-session-token',
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-sigv4-fetch.test.ts:357:    expect(headers['x-amz-security-token']).toEqual('async-session-token');
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-sigv4-fetch.test.ts:442:    const apiKey = 'test-api-key-123';
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-sigv4-fetch.test.ts:459:        Authorization: 'Bearer test-api-key-123',
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/reranking/amazon-bedrock-reranking-api.ts:6:  nextToken?: string;
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/reranking/amazon-bedrock-reranking-api.ts:41:      nextToken: z.string().optional(),
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/reranking/amazon-bedrock-reranking-model.test.ts:55:            nextToken: 'test-token',
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/reranking/amazon-bedrock-reranking-model.test.ts:67:          "nextToken": "test-token",
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/reranking/amazon-bedrock-reranking-model.test.ts:185:            nextToken: 'test-token',
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/reranking/amazon-bedrock-reranking-model.test.ts:197:          "nextToken": "test-token",
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/reranking/amazon-bedrock-reranking-model.ts:71:        nextToken: amazonBedrockOptions?.nextToken,
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/reranking/amazon-bedrock-reranking-model-options.ts:12:   * If the total number of results was greater than could fit in a response, a token is returned in the nextToken field. You can enter that token in this field to return the next batch of results.
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/reranking/amazon-bedrock-reranking-model-options.ts:14:  nextToken?: string;
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/reranking/amazon-bedrock-reranking-model-options.ts:26:       * If the total number of results was greater than could fit in a response, a token is returned in the nextToken field. You can enter that token in this field to return the next batch of results.
-reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/reranking/amazon-bedrock-reranking-model-options.ts:28:      nextToken: z.string().optional(),
-reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-provider.test.ts:10:  generateKlingAIAuthToken: vi.fn().mockResolvedValue('mock-jwt-token'),
-reposcan-raw/gladiaio/vercel-ai/packages/anthropic-aws/src/anthropic-aws-fetch.test.ts:331:        sessionToken: 'async-session-token',
-reposcan-raw/gladiaio/vercel-ai/packages/anthropic-aws/src/anthropic-aws-fetch.test.ts:357:    expect(headers['x-amz-security-token']).toEqual('async-session-token');
-reposcan-raw/gladiaio/vercel-ai/packages/anthropic-aws/src/anthropic-aws-fetch.test.ts:395:    const apiKey = 'test-api-key-123';
-reposcan-raw/gladiaio/vercel-ai/packages/anthropic-aws/src/anthropic-aws-fetch.test.ts:412:        'x-api-key': 'test-api-key-123',
-reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-provider.test.ts:965:      const testApiKey = 'test-api-key-123';
+[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/
+total 48
+drwxr-xr-x  4 runner runner 4096 Oct 10 18:40 .
+drwxr-xr-x 11 runner runner 4096 Oct 10 18:40 ..
+-rw-r--r--  1 runner runner  187 Oct 10 18:40 analysis.txt
+drwxr-xr-x 15 runner runner 4096 Oct 10 18:40 gladiaio
+-rw-r--r--  1 runner runner   40 Oct 10 18:40 grep-delta.txt
+-rw-r--r--  1 runner runner 8115 Oct 10 18:40 grep-hits.prev.txt
+-rw-r--r--  1 runner runner 8115 Oct 10 18:40 grep-hits.txt
+drwxr-xr-x  2 runner runner 4096 Oct 10 18:40 npm
+-rw-r--r--  1 runner runner 6319 Oct 10 18:40 rag.txt
 [0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [offset=160, limit=30][0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml[90m [limit=50, offset=280][0m
-[0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/ | head -40
-total 272
-drwxr-xr-x 68 runner runner 4096 Oct 10 18:34 .
-drwxr-xr-x 18 runner runner 4096 Oct 10 18:34 ..
-drwxr-xr-x  6 runner runner 4096 Oct 10 18:34 ai
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 alibaba
-drwxr-xr-x  5 runner runner 4096 Oct 10 18:34 amazon-bedrock
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 angular
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 anthropic
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 anthropic-aws
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 assemblyai
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 azure
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 baseten
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 black-forest-labs
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 bytedance
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 cerebras
-drwxr-xr-x  4 runner runner 4096 Oct 10 18:34 codemod
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 cohere
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 deepgram
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 deepinfra
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 deepseek
-drwxr-xr-x  5 runner runner 4096 Oct 10 18:34 devtools
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 elevenlabs
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 fal
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 fireworks
-drwxr-xr-x  4 runner runner 4096 Oct 10 18:34 gateway
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 gladia
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 google
-drwxr-xr-x  6 runner runner 4096 Oct 10 18:34 google-vertex
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 groq
-drwxr-xr-x  6 runner runner 4096 Oct 10 18:34 harness
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 harness-claude-code
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 harness-codex
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 harness-pi
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 huggingface
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 hume
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 klingai
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 langchain
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 llamaindex
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 lmnt
-drwxr-xr-x  3 runner runner 4096 Oct 10 18:34 luma
-[0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/gladia/
-total 72
-drwxr-xr-x  3 runner runner  4096 Oct 10 18:34 .
-drwxr-xr-x 68 runner runner  4096 Oct 10 18:34 ..
--rw-r--r--  1 runner runner 26407 Oct 10 18:34 CHANGELOG.md
--rw-r--r--  1 runner runner  1376 Oct 10 18:34 README.md
--rw-r--r--  1 runner runner  2030 Oct 10 18:34 package.json
-drwxr-xr-x  4 runner runner  4096 Oct 10 18:34 src
--rw-r--r--  1 runner runner   139 Oct 10 18:34 tsconfig.build.json
--rw-r--r--  1 runner runner   404 Oct 10 18:34 tsconfig.json
--rw-r--r--  1 runner runner   337 Oct 10 18:34 tsup.config.ts
--rw-r--r--  1 runner runner   119 Oct 10 18:34 turbo.json
--rw-r--r--  1 runner runner   328 Oct 10 18:34 vitest.edge.config.js
--rw-r--r--  1 runner runner   320 Oct 10 18:34 vitest.node.config.js
-[0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
-[0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/
-total 120
-drwxr-xr-x 4 runner runner  4096 Oct 10 18:34 .
-drwxr-xr-x 3 runner runner  4096 Oct 10 18:34 ..
-drwxr-xr-x 2 runner runner  4096 Oct 10 18:34 __fixtures__
-drwxr-xr-x 2 runner runner  4096 Oct 10 18:34 __snapshots__
--rw-r--r-- 1 runner runner  5100 Oct 10 18:34 gladia-api-types.ts
--rw-r--r-- 1 runner runner   285 Oct 10 18:34 gladia-config.ts
--rw-r--r-- 1 runner runner  1197 Oct 10 18:34 gladia-error.test.ts
--rw-r--r-- 1 runner runner   462 Oct 10 18:34 gladia-error.ts
--rw-r--r-- 1 runner runner  2841 Oct 10 18:34 gladia-provider.ts
--rw-r--r-- 1 runner runner  7021 Oct 10 18:34 gladia-transcription-model-options.ts
--rw-r--r-- 1 runner runner  6112 Oct 10 18:34 gladia-transcription-model.test.ts
--rw-r--r-- 1 runner runner 12356 Oct 10 18:34 gladia-transcription-model.ts
--rw-r--r-- 1 runner runner   269 Oct 10 18:34 index.ts
--rw-r--r-- 1 runner runner 40169 Oct 10 18:34 transcript-test.mp3
--rw-r--r-- 1 runner runner   235 Oct 10 18:34 version.ts
-[0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/.github/tigent.yml
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/tools/analyze-downloads/src/analyze-providers.ts[90m [limit=50][0m
-Now I have full context. All hits are test fixtures or known legitimate integrations. Let me produce the classification tables.
+[0m→ [0mRead reposcan-raw/analysis.txt
+[0m→ [0mRead reposcan-raw/grep-hits.txt
+### Classification Tables
+
+#### TEST_OR_EXAMPLE (52 hits — test/fixture/mock data in `.test.ts` / `__fixtures__`)
+
+| File | Line | Pattern | Classification |
+|------|------|---------|----------------|
+| `packages/mcp/src/tool/oauth.test.ts` | 740 | `client_secret: 'secret123'` | TEST_OR_EXAMPLE |
+| `packages/mcp/src/tool/oauth.test.ts` | 905 | `access_token: 'access123'` | TEST_OR_EXAMPLE |
+| `packages/mcp/src/tool/oauth.test.ts` | 908 | `refresh_token: 'refresh123'` | TEST_OR_EXAMPLE |
+| `packages/mcp/src/tool/mcp-http-transport.test.ts` | 409 | `access_token: 'expired-access-token'` | TEST_OR_EXAMPLE |
+| `packages/mcp/src/tool/mcp-http-transport.test.ts` | 411 | `refresh_token: 'rotating-refresh-token'` | TEST_OR_EXAMPLE |
+| `packages/openai/src/openai-provider.test.ts` | 48,66,84 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
+| `packages/openai/src/files/openai-files.test.ts` | 40,61,78 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
+| `packages/openai/src/image/openai-image-model.test.ts` | 14,114 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
+| `packages/openai/src/chat/openai-chat-language-model.test.ts` | 113,778,3310 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
+| `packages/openai/src/completion/openai-completion-language-model.test.ts` | 45,246,381 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
+| `packages/openai/src/speech/openai-speech-model.test.ts` | 10,54 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
+| `packages/openai/src/embedding/openai-embedding-model.test.ts` | 13,137 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
+| `packages/openai/src/skills/openai-skills.test.ts` | 12 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
+| `packages/openai/src/transcription/openai-transcription-model.test.ts` | 17,73 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
+| `packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | 36 | `encrypted_content: "gAAAAABpl..."` | TEST_OR_EXAMPLE |
+| `packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13,277 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
+| `packages/togetherai/src/togetherai-provider.test.ts` | 99,112,165 | `apiKey: 'custom-key'/'explicit-key'` | TEST_OR_EXAMPLE |
+| `packages/togetherai/src/reranking/togetherai-reranking-model.test.ts` | 7 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
+| `packages/google-vertex/src/google-vertex-provider.test.ts` | 120 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
+| `packages/google-vertex/src/google-vertex-provider-base.test.ts` | 187,405,419 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
+| `packages/google-vertex/src/google-vertex-auth-google-auth-library.test.ts` | 5,21 | `token: 'mocked-token'` | TEST_OR_EXAMPLE |
+| `packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts` | 68,150 | `access_token: 'mock.jwt.token'` | TEST_OR_EXAMPLE |
+| `packages/google-vertex/src/edge/google-vertex-auth-edge.test.ts` | 134 | `private_key: 'invalid-key'` | TEST_OR_EXAMPLE |
+| `packages/google-vertex/src/edge/google-vertex-provider-edge.test.ts` | 95 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
+| `packages/amazon-bedrock/src/amazon-bedrock-provider.test.ts` | 128,152,158 | `sessionToken: 'dynamic-session-token'/'static-session-token'` | TEST_OR_EXAMPLE |
+| `packages/amazon-bedrock/src/amazon-bedrock-provider.ts` | 48 | `apiKey: 'your-api-key-here'` (doc comment) | TEST_OR_EXAMPLE |
+| `packages/amazon-bedrock/src/amazon-bedrock-sigv4-fetch.test.ts` | 100,331,442 | `sessionToken: 'test-session-token'/'async-session-token'`, `apiKey: 'test-api-key-123'` | TEST_OR_EXAMPLE |
+| `packages/amazon-bedrock/src/mantle/bedrock-mantle-provider.test.ts` | 209 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
+| `packages/amazon-bedrock/src/reranking/amazon-bedrock-reranking-model.test.ts` | 55 | `nextToken: 'test-token'` | TEST_OR_EXAMPLE |
+
+#### INTERESTING (9 hits — config/integration refs, SSRF defense test)
+
+| File | Line | Pattern | Notes |
+|------|------|---------|-------|
+| `pnpm-lock.yaml` | 289 | `'@ai-sdk/gladia'` | Official Vercel AI SDK integration (org-owned) |
+| `pnpm-lock.yaml` | 291 | `version: link:../../packages/gladia` | Local workspace package link |
+| `pnpm-lock.yaml` | 2368 | `packages/gladia:` | Package definition in lockfile |
+| `tsconfig.json` | 70 | `"path": "packages/gladia"` | TS path alias for local package |
+| `tools/analyze-downloads/src/analyze-providers.ts` | 21 | `'@ai-sdk/gladia'` | Provider analysis script reference |
+| `.github/tigent.yml` | 30 | `provider/gladia` (in provider list) | CI provider matrix includes Gladia |
+| `packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166 | `deniedCIDRs: ['169.254.169.254/32']` | **SSRF defense test** — explicitly blocks cloud metadata IP |
+| `packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 171 | `subnets: { deny: ['169.254.169.254/32'] }` | Same — defense-in-depth test |
+
+#### ENDPOINT_LEAK: *none*
+
+#### REAL_SECRET: *none* — no live credentials, all values are test fixtures or placeholders
 
 ---
 
-### CLASSIFICATION TABLES
+### Verdict
 
-#### TEST_OR_EXAMPLE (654 hits — all test fixtures in `*.test.ts` / `*.test.tsx` / examples)
-| File Pattern | Secret-like Strings | Context |
-|---|---|---|
-| `packages/**/*.test.ts` | `test-api-key`, `custom-key`, `explicit-key`, `mocked-token`, `mock.jwt.token`, `invalid-key`, `dynamic-session-token`, `static-session-token`, `async-session-token`, `test-api-key-123` | Unit test fixtures for provider auth headers |
-| `packages/mcp/src/tool/oauth.test.ts` | `secret123`, `access123`, `refresh123`, `newaccess123`, `newrefresh123`, `expired-access-token`, `rotating-refresh-token` | OAuth flow test vectors |
-| `packages/openai/src/responses/*.test.ts` | `secret123` | Tool calling test fixtures |
-| `packages/amazon-bedrock/**/*.test.ts` | `sessionToken` variants, `nextToken: 'test-token'` | Pagination / SigV4 test fixtures |
-| `examples/**/*.ts` | `test-api-key` | Example code snippets |
+| Candidate | Category | REPORT_CANDIDATE | Reason |
+|-----------|----------|------------------|--------|
+| `@ai-sdk/gladia` integration (vercel-ai) | INTERESTING | **no** | Official org integration, already documented in RAG |
+| SSRF defense test (`169.254.169.254/32` deny list) | INTERESTING | **no** | Positive security control, not a vulnerability |
+| Orphaned `gladia@0.1.3` npm package | AUTH (known) | **yes** | **Pre-existing** — supply-chain key theft vector (API key in WS URL), tracked in RAG as `ACCEPTED AUTH@sdk` |
+| All test fixtures (`test-api-key`, `secret123`, `mocked-token`, etc.) | TEST_OR_EXAMPLE | **no** | Standard test patterns, no signs of life |
 
-#### INTERESTING (2 items)
-| File | Finding | Notes |
-|---|---|---|
-| `packages/sandbox-vercel/src/vercel-sandbox.test.ts:166,171` | `deniedCIDRs: ['169.254.169.254/32']` | **SSRF defense** — explicit deny of AWS/GCP/Azure metadata endpoint; not a leak |
-| `packages/gladia/` (entire dir) + `pnpm-lock.yaml:289-291` + `analyze-providers.ts:21` | `@ai-sdk/gladia` provider package | **Legit integration** — Vercel AI SDK's official Gladia transcription provider (`createGladia()` uses `x-gladia-key` header, targets `api.gladia.io`); already in KB as `vercel-ai @ai-sdk/gladia = official org integration` |
-
-#### ENDPOINT_LEAK
-| — | None new — all `api.gladia.io` endpoints already enumerated in KB (14-path OpenAPI spec, frozen) |
-
-#### REAL_SECRET
-| — | **Zero** — every hit is a test fixture or known-legit package reference |
-
----
-
-### VERDICT LIST
-
-| Candidate | REPORT_CANDIDATE | Reason |
-|---|---|---|
-| Hardcoded `test-api-key` / `secret123` / `mocked-token` etc. | **no** | All in `*.test.ts` or `examples/` — test fixtures only |
-| `deniedCIDRs: ['169.254.169.254/32']` | **no** | SSRF *protection* (deny-list), not exposure |
-| `@ai-sdk/gladia` provider in `vercel-ai` monorepo | **no** | Official Vercel AI SDK integration (KB confirmed); distinct from orphaned `gladia@0.1.3` npm package |
-| Orphaned `gladia@0.1.3` on npm | **no** | **Already ACCEPTED in KB** (supply-chain key theft vector, reported 2026-10-10) — no new finding this cycle |
-
----
-
-**Bottom line:** No new reportable findings. Passive recon remains exhausted per KB `OTHER@program`. Next cycle only unblocks with authorized key (SSRF) or human OAuth test (post-auth `redirect_to` chain).
+**Delta verdict**: 0 new findings this scan. Passive recon exhausted — no new attack surface. The only reportable item remains the pre-existing orphaned npm package (`gladia@0.1.3`), already in RAG.
