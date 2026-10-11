@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-11 15:42:30 UTC =====
+===== REPOSCAN 2026-10-11 15:48:37 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5694 code/config files scanned, 654 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,7 +46,7 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.ts" -o -name "*.json" -o -name "*.yaml" | head -20
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
@@ -68,98 +68,98 @@ reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
 [0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/
-total 272
-drwxr-xr-x 68 runner runner 4096 Oct 11 15:38 .
-drwxr-xr-x 18 runner runner 4096 Oct 11 15:38 ..
-drwxr-xr-x  6 runner runner 4096 Oct 11 15:38 ai
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 alibaba
-drwxr-xr-x  5 runner runner 4096 Oct 11 15:38 amazon-bedrock
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 angular
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 anthropic
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 anthropic-aws
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 assemblyai
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 azure
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 baseten
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 black-forest-labs
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 bytedance
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 cerebras
-drwxr-xr-x  4 runner runner 4096 Oct 11 15:38 codemod
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 cohere
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 deepgram
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 deepinfra
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 deepseek
-drwxr-xr-x  5 runner runner 4096 Oct 11 15:38 devtools
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 elevenlabs
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 fal
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 fireworks
-drwxr-xr-x  4 runner runner 4096 Oct 11 15:38 gateway
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 gladia
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 google
-drwxr-xr-x  6 runner runner 4096 Oct 11 15:38 google-vertex
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 groq
-drwxr-xr-x  6 runner runner 4096 Oct 11 15:38 harness
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 harness-claude-code
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 harness-codex
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 harness-pi
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 huggingface
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 hume
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 klingai
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 langchain
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 llamaindex
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 lmnt
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 luma
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 mcp
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 mistral
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 moonshotai
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 open-responses
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 openai
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 openai-compatible
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 otel
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 perplexity
-drwxr-xr-x  4 runner runner 4096 Oct 11 15:38 policy-opa
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 prodia
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 provider
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 provider-utils
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 quiverai
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 react
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 replicate
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 revai
-drwxr-xr-x  5 runner runner 4096 Oct 11 15:38 rsc
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 sandbox-just-bash
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 sandbox-vercel
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 svelte
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 test-server
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 togetherai
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 tui
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 valibot
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 vercel
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 voyage
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 vue
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 workflow
-drwxr-xr-x  3 runner runner 4096 Oct 11 15:38 xai
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "169.254.169.254" reposcan-raw/gladiaio/vercel-ai --include="*.ts" --include="*.json" -n
+reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:166:        deniedCIDRs: ['169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:171:          subnets: { deny: ['169.254.169.254/32'] },
+reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:14:      download({ url: new URL('http://169.254.169.254/latest/meta-data/') }),
+reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:38:        location: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.ts:203:  // e.g. ::ffff:127.0.0.1 or 64:ff9b::169.254.169.254 are blocked.
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:79:      .mockResolvedValueOnce(redirectResponse('http://169.254.169.254/'));
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:108:      .mockResolvedValueOnce(redirectWithBody('http://169.254.169.254/'));
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:237:      downloadBlob('http://169.254.169.254/latest/meta-data/'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:261:          location: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:131:        validateDownloadUrl('http://169.254.169.254/latest/meta-data/'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:184:    it('should block ::ffff:169.254.169.254', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:186:        validateDownloadUrl('http://[::ffff:169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:268:    it('should block NAT64 64:ff9b::169.254.169.254 (metadata)', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:270:        validateDownloadUrl('http://[64:ff9b::169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:274:    it('should block NAT64 local-use 64:ff9b:1::169.254.169.254', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:276:        validateDownloadUrl('http://[64:ff9b:1::169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:68:    deniedCIDRs: ['10.5.0.0/16', '169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:77:    deniedCIDRs: ['169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:462:            url: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:470:        server.calls.some(call => call.requestUrl.includes('169.254.169.254')),
 [0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/gladia/
-total 72
-drwxr-xr-x  3 runner runner  4096 Oct 11 15:38 .
-drwxr-xr-x 68 runner runner  4096 Oct 11 15:38 ..
--rw-r--r--  1 runner runner 26407 Oct 11 15:38 CHANGELOG.md
--rw-r--r--  1 runner runner  1376 Oct 11 15:38 README.md
--rw-r--r--  1 runner runner  2030 Oct 11 15:38 package.json
-drwxr-xr-x  4 runner runner  4096 Oct 11 15:38 src
--rw-r--r--  1 runner runner   139 Oct 11 15:38 tsconfig.build.json
--rw-r--r--  1 runner runner   404 Oct 11 15:38 tsconfig.json
--rw-r--r--  1 runner runner   337 Oct 11 15:38 tsup.config.ts
--rw-r--r--  1 runner runner   119 Oct 11 15:38 turbo.json
--rw-r--r--  1 runner runner   328 Oct 11 15:38 vitest.edge.config.js
--rw-r--r--  1 runner runner   320 Oct 11 15:38 vitest.node.config.js
-[0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/README.md
-[0m
-[0m$ [0mls -la /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu/reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/
-total 120
-drwxr-xr-x 4 runner runner  4096 Oct 11 15:38 .
-drwxr-xr-x 3 runner runner  4096 Oct 11 15:38 ..
-drwxr-xr-x 2 runner runner  4096 Oct 11 15:38 __fixtures__
-drwxr-xr-x 2 runner runner  4096 Oct 11 15:38 __snapshots__
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "sk-" reposcan-raw/gladiaio --include="*.ts" --include="*.json" --include="*.yaml" -n
+...output truncated...
+
+Full output saved to: /home/runner/.local/share/opencode/tool-output/tool_12ba50c900019xFwgdANu6DGSM
+
+reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-image-model.test.ts:432:      'Together AI does not support mask-based image editing. ' +
+reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-image-model.ts:72:        'Together AI does not support mask-based image editing. ' +
+reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.ts:250:        'Gemini image models do not support mask-based image editing.',
+reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.test.ts:486:      const maskData = 'base64-mask-image';
+reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.test.ts:528:                    "bytesBase64Encoded": "base64-mask-image",
+reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.test.ts:591:          data: 'base64-mask-image',
+reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.test.ts:630:                    "bytesBase64Encoded": "base64-mask-image",
+reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.test.ts:660:          data: 'base64-mask-image',
+reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.test.ts:1230:            data: 'base64-mask-image',
+reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.test.ts:1240:        'Gemini image models do not support mask-based image editing.',
+reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:9:          apiKey: 'sk-x',
+reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:17:      CODEX_API_KEY: 'sk-x',
+reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:25:      { openai: { apiKey: 'sk-direct', organization: 'org_1' } },
+reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:26:      { OPENAI_API_KEY: 'sk-env' },
+reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:28:    expect(env.CODEX_API_KEY).toBe('sk-direct');
+reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:51:    const env = resolveCodexEnv(undefined, { OPENAI_API_KEY: 'sk-auto' });
+reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:52:    expect(env).toEqual({ CODEX_API_KEY: 'sk-auto' });
+reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:57:      OPENAI_API_KEY: 'sk-auto',
+reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:61:      CODEX_API_KEY: 'sk-auto',
+reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-harness.ts:908:       * attach / replay: the still-running (or disk-replayed) turn streams into
+reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-harness.ts:1372:       * attach / replay: the still-running (or disk-replayed) turn streams into
+reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:9:      { anthropic: { apiKey: 'sk-explicit' } },
+reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:10:      { ANTHROPIC_API_KEY: 'sk-process', AI_GATEWAY_API_KEY: 'gw-key' },
+reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:13:    expect(env).toEqual({ ANTHROPIC_API_KEY: 'sk-explicit' });
+reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:20:        ANTHROPIC_API_KEY: 'sk-process',
+reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:26:      ANTHROPIC_API_KEY: 'sk-process',
+reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:55:      { ANTHROPIC_API_KEY: 'sk-auto' },
+reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:58:    expect(env).toEqual({ ANTHROPIC_API_KEY: 'sk-auto' });
+reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:65:        ANTHROPIC_API_KEY: 'sk-auto',
+reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:71:      ANTHROPIC_API_KEY: 'sk-auto',
+reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:102:    const helper = vi.fn(() => 'sk-from-helper');
+reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:105:      { ANTHROPIC_API_KEY: 'sk-static' },
+reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:108:    expect(env.ANTHROPIC_API_KEY).toBe('sk-static');
+reposcan-raw/gladiaio/vercel-ai/packages/xai/src/responses/__fixtures__/xai-x-search-tool.1.json:20:          "text": "### What People Are Saying About AI on X (as of Late October 2025)\n\nBased on recent posts on X (formerly Twitter), discussions about AI are buzzing with a mix of excitement, technical deep dives, and cautious optimism. The conversation heavily revolves around **Artificial General Intelligence (AGI)** as the holy grail of AI development, with frequent references to a new paper from AI luminaries like Yoshua Bengio, Eric Schmidt, Gary Marcus, and Max Tegmark. People are debating definitions, progress, limitations, and real-world applications. Here's a breakdown of the main themes from the top relevant posts (focusing on the last month):\n\n#### 1. **Defining AGI and Its Distance from Current AI**\n   - A huge focus is on clarifying what AGI really means. Multiple users cite the aforementioned paper, which defines AGI as an AI system that \"matches or exceeds the cognitive versatility and proficiency of a well-educated adult\" across 10 core cognitive areas (e.g., reasoning, memory, math, language, perception).\n     - Example: @jiqizhixin shared the paper, noting that models like GPT-4 and GPT-5 score poorly (e.g., 0% on long-term memory), emphasizing AGI isn't here yet.\n     - @alex_prompter broke it down simply: GPT-4 is at 27% toward AGI, GPT-5 at 58%, but gaps in continuous learning persist. They called it a \"clear benchmark\" without hype.\n     - @AskPerplexity and @flowersslop echoed this, describing AGI as broadly adaptable like humans, not just narrow tools like today's chatbots.\n   - ASI (Artificial Superintelligence) gets mentioned as the next step beyond AGI—AI surpassing humans in *all* domains, including creativity and strategy. @SciTechera tied it to the \"Singularity,\" where AI self-improves uncontrollably.\n   - Skepticism: @Newaxeman called AI an \"advanced search engine\" aggregating conventional wisdom, questioning deeper intelligence claims.\n\n#### 2. **Progress and Timelines Toward AGI**\n   - Optimism is high but grounded. @bindureddy (CEO of Abacus.AI) boldly predicted AGI (AI replacing humans in digital tasks) is \"just a couple of years away,\" citing missing pieces like context, tools, and self-awareness that labs are tackling.\n   - @slow_developer referenced OpenAI and DeepMind's 5-level AGI framework: Current models are past Level 2 (emerging intelligence) and into early Level 3 (competent in complex tasks with supervision), but not fully autonomous yet.\n   - @timmur_ stressed AGI requires efficient learning across open-ended tasks with minimal data—something no model achieves today, but \"we will solve it eventually.\"\n   - Broader view: @FrnkNlsn recommended the book *Artificial Intelligence: A Modern Approach* by Russell and Norvig for a comprehensive overview, highlighting topics like knowledge representation and multi-agent systems.\n\n#### 3. **Types of AI and Distinctions**\n   - Users are educating on AI's varieties to cut through confusion:\n     - @y00ngipurrs differentiated analytical AI (e.g., for medicine, fraud detection) from generative AI (e.g., ChatGPT for text/art).\n     - @techyoutbe contrasted AI agents (task-specific automators) with \"agentic AI\" (autonomous systems for long-term planning and multi-domain reasoning).\n     - @SukhSandhu listed what AI *is* (data processor, pattern recognizer, task automator) vs. what it's *not* (conscious, emotional, intuitively moral). They warned of biases in training data.\n   - @AITECHio hyped proactive \"AI agents\" that set goals and execute workflows autonomously, predicting one for every task from finance to on-chain automation.\n\n#### 4. **Applications, Projects, and Broader Impacts**\n   - AI's practical side shines in Web3 and business contexts. @O_H_JAY highlighted crypto projects advancing AGI/ASI, like @SentientAGI (decentralized AGI networks), @AGI_XT (AI automation on Solana), and @StoryProtocol (on-chain IP for AI models). They urged getting in early during market dips.\n   - @Voa_De_Voa discussed combining AI with compute and robotics for \"autonomous intelligence,\" but flagged centralized control as a risk.\n   - @DeviprasadSD positioned AGI as a future horizon for reasoning across any task, still in research.\n   - @zolayolanetwork and @davilagrau amplified the AGI definition paper, linking it to blockchain and cognitive tools.\n\n#### Overall Sentiment\n- **Positive/Visionary**: Excitement about AI augmenting human capabilities (e.g., @hailstorm_9 called AGI \"augmentation, not automation\"). Many see it transforming industries like healthcare, finance, and creative work.\n- **Cautious/Realistic**: Emphasis on limitations—current AI is \"narrow\" and lacks true understanding or adaptability. No one's claiming AGI is imminent without caveats.\n- **Volume and Engagement**: These posts garnered thousands of likes/views, with high engagement on definitions and project lists. Discussions are technical but accessible, often with images, threads, or links to papers/arXiv.\n\nThis is a snapshot from ~20 recent, highly relevant posts. AI chatter on X is evolving fast—trends like AGI benchmarks and agentic systems are dominating. If you want deeper dives into specific posts, users, or subtopics (e.g., AI ethics or tools), let me know!",
+reposcan-raw/gladiaio/vercel-ai/packages/google/src/google-image-model.test.ts:423:            data: 'base64-mask-image',
+reposcan-raw/gladiaio/vercel-ai/packages/google/src/google-image-model.test.ts:900:            data: 'base64-mask-image',
+reposcan-raw/gladiaio/vercel-ai/packages/google/src/google-image-model.test.ts:910:        'Gemini image models do not support mask-based image editing.',
+reposcan-raw/gladiaio/vercel-ai/packages/google/src/google-image-model.ts:230:    // Gemini does not support mask-based inpainting
+reposcan-raw/gladiaio/vercel-ai/packages/google/src/google-image-model.ts:233:        'Gemini image models do not support mask-based image editing.',
+reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:49:            id: 'test-task-id-123',
+reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:53:    'https://ark.ap-southeast.bytepluses.com/api/v3/contents/generations/tasks/test-task-id-123':
+reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:58:            id: 'test-task-id-123',
+reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:359:          taskId: 'test-task-id-123',
+reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:883:                id: 'failed-task-id',
+reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:892:          if (urlString.includes('/tasks/failed-task-id')) {
+reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:895:                id: 'failed-task-id',
+reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:937:                id: 'no-video-task-id',
+reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:946:          if (urlString.includes('/tasks/no-video-task-id')) {
+reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:949:                id: 'no-video-task-id',
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/serialize-model-options.test.ts:15:        headers: () => ({ 'x-api-key': 'sk-test' }),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/serialize-model-options.test.ts:29:        headers: { 'x-api-key': 'sk-test' },
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/serialize-model-options.test.ts:41:        headers: () => ({ authorization: 'Bearer sk-test' }),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/serialize-model-options.test.ts:50:        headers: { authorization: 'Bearer sk-test' },
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/serialize-model-options.test.ts:103:          headers: async () => ({ 'x-api-key': 'sk-test' }),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/serialize-model-options.test.ts:115:          headers: () => Promise.resolve({ 'x-api-key': 'sk-test' }),
+reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:12:    task_id: 'task-abc-123',
+reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:25:    task_id: 'task-abc-123',
+reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:142:    [`${TEST_BASE_URL}/v1/videos/motion-control/task-abc-123`]: {
+reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:155:    [`${TEST_BASE_URL}/v1/videos/text2video/task-abc-123`]: {
+reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:168:    [`${TEST_BASE_URL}/v1/videos/image2video/task-abc-123`]: {
+reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:526:        `${TEST_BASE_URL}/v1/videos/text2video/task-abc-123`,
+reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:871:        `${TEST_BASE_URL}/v1/videos/image2video/task-abc-123`,
+reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:1196:          taskId: 'task-abc-123',
+reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:1241:        `${TEST_BASE_URL}/v1/videos/motion-control/task-abc-123`
+reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:1249:            task_id: 'task-abc-123',
+reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:1267:        `${TEST_BASE_URL}/v1/videos/motion-control/task-abc-123`
+reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:1300:        `${TEST_BASE_URL}/v1/videos/motion-control/task-abc-123`
+reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:1308:            task_id: 'task-abc-123',
