@@ -3052,3 +3052,45 @@ testability: PASSIVE
 [RISK] api.gladia.io: 73 reason: frozen spec but dual SSRF vectors (audio_url + webhook callback_config.url) both AUTH_HELPED to 169.254.169.254 → cloud credential theft critical if key obtained
 [RISK] app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap live and chainable to OAuth code theft → ATO via HUMAN_ONLY post-auth step; state parameter unverified adds CSRF linking risk
 [RISK] sdk: 97 reason: orphaned gladia@0.1.3 at dist-tag latest impersonates official SDK and leaks raw API key in WebSocket URL query → supply-chain key theft for any misinstalled package; official @gladiaio/sdk hardened (SLSA) but namespace confusion persists
+## 2026-10-11 01:50:55 UTC [sdk] (model mimo)
+[PRIO] sdk, 8.15, attack=9 business=8 tech=7 gate=10 cloud=6 fresh=9  
+[PRIO] api.gladia.io, 7.20, attack=9 business=9 tech=8 gate=2 cloud=7 fresh=5  
+[PRIO] app.gladia.io, 7.75, attack=8 business=8 tech=9 gate=10 cloud=2 fresh=7  
+[HYP] Orphaned npm gladia@0.1.3 leaks raw API key in WebSocket URL query enabling supply-chain key theft
+class: AUTH
+asset: sdk
+confidence: 97
+reasoning: Orphaned package gladia@0.1.3 (dist-tag latest, shasum cc96f84a…) impersonates official SDK; createRealTimeTranscription() constructs wsUrl with `wsUrl.searchParams.append('x-gladia-key', this.apiKey)` embedding raw key in query; GitHub user/repo alexisbouchez 404 confirms irrevocable orphan; any `npm install gladia` pulls this instead of @gladiaio/sdk
+evidence_needed: Confirmed via npm pack + grep — WebSocket URL query contains raw API key
+verify_steps: PASSIVE: npm pack gladia@0.1.3 && tar -xzf *.tgz && grep -R "wsUrl.searchParams.append.*x-gladia-key" package/dist/
+impact: Supply-chain API key theft for any user installing `gladia` instead of `@gladiaio/sdk`; leads to unauthorized transcription, data access, billing fraud; High
+testability: PASSIVE
+[HYP] Webhook callback_config.url SSRF to cloud metadata via format:uri validation bypass
+class: SSRF
+asset: api.gladia.io
+confidence: 78
+reasoning: OpenAPI spec defines callback_config.url with format:uri only (no scheme allowlist) for both /v2/pre-recorded and /v2/live; audio_url SSRF already confirmed AUTH_HELPED; webhook delivery runs server-side fetch with same validation gap; spec frozen NO_DRIFT confirms persistence
+evidence_needed: With authorized key, POST webhook registration with callback_config.url=http://169.254.169.254/latest/meta-data/ proves SSRF reach to IMDS
+verify_steps: AUTH_HELPED: POST https://api.gladia.io/v2/pre-recorded with x-gladia-key header and body {"audio_url":"https://example.com/audio.wav","callback_config":{"url":"http://169.254.169.254/latest/meta-data/iam/security-credentials/"}} observe callback fetch timing/DNS
+impact: Cloud metadata → IAM credentials → full cloud takeover, cross-tenant data access; Critical
+testability: AUTH_HELPED
+[HYP] OAuth state parameter missing enables CSRF on Google auth flow leading to account linking
+class: OAUTH
+asset: app.gladia.io
+confidence: 72
+reasoning: /signin?redirect_to reflection confirmed byte-fresh with 0 CSP form-action; OAuth /auth/google/callback uses FIXED redirect_uri with PKCE S256 but state parameter presence/unverified not confirmed; missing state allows attacker to force victim's browser to complete OAuth linking attacker's account
+evidence_needed: Intercept /auth/google request — confirm state param absent or static; complete flow as victim with attacker-controlled redirect_to to prove account linking
+verify_steps: PASSIVE: GET https://app.gladia.io/signin?redirect_to=https%3A%2F%2Fevil.example.com observe form→/auth/google redirect; check for state param in authorize URL; HUMAN: with two test accounts, initiate flow as victim with attacker's redirect_to to prove linking
+impact: Victim's Gladia account linked to attacker's Google identity → full ATO; High
+testability: HUMAN_ONLY
+[FINAL] 1. Orphaned npm gladia@0.1.3 leaks raw API key in WebSocket URL query enabling supply-chain key theft (confidence 97, AUTH @ sdk, PASSIVE)
+[FINAL] 2. Webhook callback_config.url SSRF to cloud metadata via format:uri validation bypass (confidence 78, SSRF @ api.gladia.io, AUTH_HELPED)
+[FINAL] 3. OAuth state parameter missing enables CSRF on Google auth flow leading to account linking (confidence 72, OAUTH @ app.gladia.io, HUMAN_ONLY)
+[NEXT] PROBE: GET https://app.gladia.io/signin?redirect_to=https%3A%2F%2Fevil.example.com observe form→/auth/google redirect; check for state param in authorize URL
+[LEARN] ACCEPTED AUTH @ sdk: orphaned npm gladia@0.1.3 at dist-tag latest leaks raw API key in WebSocket URL query — supply-chain key theft vector confirmed alive via static analysis (npm pack + grep)
+[LEARN] ACCEPTED OTHER @ sdk: official @gladiaio/sdk@2.1.0 uses secure session-init flow (POST /v2/live → session URL) — no raw key in WebSocket query; 14+ @gladia.io maintainers, SLSA provenance, repo github.com/gladiaio/sdk
+[LEARN] ACCEPTED SSRF @ api.gladia.io: spec+RAG frozen — SSRF-by-design surface persists (AUTH_HELPED)
+[LEARN] ACCEPTED OAUTH @ app.gladia.io: /signin?redirect_to reflection alive byte-fresh — 0 CSP form-action directives (gap confirmed); post-auth honoring sole unverified gate (HUMAN_ONLY); state parameter presence unverified
+[RISK] api.gladia.io: 73 reason: frozen spec but dual SSRF vectors (audio_url + webhook callback_config.url) both AUTH_HELPED to 169.254.169.254 → cloud credential theft critical if key obtained
+[RISK] app.gladia.io: 78 reason: unauthed open-redirect reflection + 0 form-action CSP gap live and chainable to OAuth code theft → ATO via HUMAN_ONLY post-auth step; state parameter unverified adds CSRF linking risk
+[RISK] sdk: 97 reason: orphaned gladia@0.1.3 at dist-tag latest impersonates official SDK and leaks raw API key in WebSocket URL query → supply-chain key theft for any misinstalled package; official @gladiaio/sdk hardened (SLSA) but namespace confusion persists

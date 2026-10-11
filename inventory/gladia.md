@@ -1741,3 +1741,5 @@
 - CHANGED api.gladia.io NO_DRIFT re-confirmed — OpenAPI 14 paths/7 webhooks identical, SSRF-by-design via audio_url + callback_config.url persists (AUTH_HELPED)
 
 ## 2026-10-10 22:28:40 UTC
+
+## 2026-10-11 01:51:05 UTC
