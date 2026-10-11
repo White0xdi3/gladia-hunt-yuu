@@ -1,359 +1,41 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.ts" -o -name "*.json" -o -name "*.yaml" | head -20
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/shopify-mcp/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/repro-test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/image-content/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-ui/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "169.254.169.254" reposcan-raw/gladiaio/vercel-ai --include="*.ts" --include="*.json" -n
-reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:166:        deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:171:          subnets: { deny: ['169.254.169.254/32'] },
-reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:14:      download({ url: new URL('http://169.254.169.254/latest/meta-data/') }),
-reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:38:        location: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.ts:203:  // e.g. ::ffff:127.0.0.1 or 64:ff9b::169.254.169.254 are blocked.
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:79:      .mockResolvedValueOnce(redirectResponse('http://169.254.169.254/'));
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:108:      .mockResolvedValueOnce(redirectWithBody('http://169.254.169.254/'));
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:237:      downloadBlob('http://169.254.169.254/latest/meta-data/'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:261:          location: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:131:        validateDownloadUrl('http://169.254.169.254/latest/meta-data/'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:184:    it('should block ::ffff:169.254.169.254', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:186:        validateDownloadUrl('http://[::ffff:169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:268:    it('should block NAT64 64:ff9b::169.254.169.254 (metadata)', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:270:        validateDownloadUrl('http://[64:ff9b::169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:274:    it('should block NAT64 local-use 64:ff9b:1::169.254.169.254', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:276:        validateDownloadUrl('http://[64:ff9b:1::169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:68:    deniedCIDRs: ['10.5.0.0/16', '169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:77:    deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:462:            url: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:470:        server.calls.some(call => call.requestUrl.includes('169.254.169.254')),
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "sk-" reposcan-raw/gladiaio --include="*.ts" --include="*.json" --include="*.yaml" -n
-...output truncated...
+### Classification Tables
 
-Full output saved to: /home/runner/.local/share/opencode/tool-output/tool_12ba50c900019xFwgdANu6DGSM
-
-reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-image-model.test.ts:432:      'Together AI does not support mask-based image editing. ' +
-reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-image-model.ts:72:        'Together AI does not support mask-based image editing. ' +
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.ts:250:        'Gemini image models do not support mask-based image editing.',
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.test.ts:486:      const maskData = 'base64-mask-image';
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.test.ts:528:                    "bytesBase64Encoded": "base64-mask-image",
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.test.ts:591:          data: 'base64-mask-image',
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.test.ts:630:                    "bytesBase64Encoded": "base64-mask-image",
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.test.ts:660:          data: 'base64-mask-image',
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.test.ts:1230:            data: 'base64-mask-image',
-reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/google-vertex-image-model.test.ts:1240:        'Gemini image models do not support mask-based image editing.',
-reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:9:          apiKey: 'sk-x',
-reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:17:      CODEX_API_KEY: 'sk-x',
-reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:25:      { openai: { apiKey: 'sk-direct', organization: 'org_1' } },
-reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:26:      { OPENAI_API_KEY: 'sk-env' },
-reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:28:    expect(env.CODEX_API_KEY).toBe('sk-direct');
-reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:51:    const env = resolveCodexEnv(undefined, { OPENAI_API_KEY: 'sk-auto' });
-reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:52:    expect(env).toEqual({ CODEX_API_KEY: 'sk-auto' });
-reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:57:      OPENAI_API_KEY: 'sk-auto',
-reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-auth.test.ts:61:      CODEX_API_KEY: 'sk-auto',
-reposcan-raw/gladiaio/vercel-ai/packages/harness-codex/src/codex-harness.ts:908:       * attach / replay: the still-running (or disk-replayed) turn streams into
-reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-harness.ts:1372:       * attach / replay: the still-running (or disk-replayed) turn streams into
-reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:9:      { anthropic: { apiKey: 'sk-explicit' } },
-reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:10:      { ANTHROPIC_API_KEY: 'sk-process', AI_GATEWAY_API_KEY: 'gw-key' },
-reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:13:    expect(env).toEqual({ ANTHROPIC_API_KEY: 'sk-explicit' });
-reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:20:        ANTHROPIC_API_KEY: 'sk-process',
-reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:26:      ANTHROPIC_API_KEY: 'sk-process',
-reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:55:      { ANTHROPIC_API_KEY: 'sk-auto' },
-reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:58:    expect(env).toEqual({ ANTHROPIC_API_KEY: 'sk-auto' });
-reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:65:        ANTHROPIC_API_KEY: 'sk-auto',
-reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:71:      ANTHROPIC_API_KEY: 'sk-auto',
-reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:102:    const helper = vi.fn(() => 'sk-from-helper');
-reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:105:      { ANTHROPIC_API_KEY: 'sk-static' },
-reposcan-raw/gladiaio/vercel-ai/packages/harness-claude-code/src/claude-code-auth.test.ts:108:    expect(env.ANTHROPIC_API_KEY).toBe('sk-static');
-reposcan-raw/gladiaio/vercel-ai/packages/xai/src/responses/__fixtures__/xai-x-search-tool.1.json:20:          "text": "### What People Are Saying About AI on X (as of Late October 2025)\n\nBased on recent posts on X (formerly Twitter), discussions about AI are buzzing with a mix of excitement, technical deep dives, and cautious optimism. The conversation heavily revolves around **Artificial General Intelligence (AGI)** as the holy grail of AI development, with frequent references to a new paper from AI luminaries like Yoshua Bengio, Eric Schmidt, Gary Marcus, and Max Tegmark. People are debating definitions, progress, limitations, and real-world applications. Here's a breakdown of the main themes from the top relevant posts (focusing on the last month):\n\n#### 1. **Defining AGI and Its Distance from Current AI**\n   - A huge focus is on clarifying what AGI really means. Multiple users cite the aforementioned paper, which defines AGI as an AI system that \"matches or exceeds the cognitive versatility and proficiency of a well-educated adult\" across 10 core cognitive areas (e.g., reasoning, memory, math, language, perception).\n     - Example: @jiqizhixin shared the paper, noting that models like GPT-4 and GPT-5 score poorly (e.g., 0% on long-term memory), emphasizing AGI isn't here yet.\n     - @alex_prompter broke it down simply: GPT-4 is at 27% toward AGI, GPT-5 at 58%, but gaps in continuous learning persist. They called it a \"clear benchmark\" without hype.\n     - @AskPerplexity and @flowersslop echoed this, describing AGI as broadly adaptable like humans, not just narrow tools like today's chatbots.\n   - ASI (Artificial Superintelligence) gets mentioned as the next step beyond AGI—AI surpassing humans in *all* domains, including creativity and strategy. @SciTechera tied it to the \"Singularity,\" where AI self-improves uncontrollably.\n   - Skepticism: @Newaxeman called AI an \"advanced search engine\" aggregating conventional wisdom, questioning deeper intelligence claims.\n\n#### 2. **Progress and Timelines Toward AGI**\n   - Optimism is high but grounded. @bindureddy (CEO of Abacus.AI) boldly predicted AGI (AI replacing humans in digital tasks) is \"just a couple of years away,\" citing missing pieces like context, tools, and self-awareness that labs are tackling.\n   - @slow_developer referenced OpenAI and DeepMind's 5-level AGI framework: Current models are past Level 2 (emerging intelligence) and into early Level 3 (competent in complex tasks with supervision), but not fully autonomous yet.\n   - @timmur_ stressed AGI requires efficient learning across open-ended tasks with minimal data—something no model achieves today, but \"we will solve it eventually.\"\n   - Broader view: @FrnkNlsn recommended the book *Artificial Intelligence: A Modern Approach* by Russell and Norvig for a comprehensive overview, highlighting topics like knowledge representation and multi-agent systems.\n\n#### 3. **Types of AI and Distinctions**\n   - Users are educating on AI's varieties to cut through confusion:\n     - @y00ngipurrs differentiated analytical AI (e.g., for medicine, fraud detection) from generative AI (e.g., ChatGPT for text/art).\n     - @techyoutbe contrasted AI agents (task-specific automators) with \"agentic AI\" (autonomous systems for long-term planning and multi-domain reasoning).\n     - @SukhSandhu listed what AI *is* (data processor, pattern recognizer, task automator) vs. what it's *not* (conscious, emotional, intuitively moral). They warned of biases in training data.\n   - @AITECHio hyped proactive \"AI agents\" that set goals and execute workflows autonomously, predicting one for every task from finance to on-chain automation.\n\n#### 4. **Applications, Projects, and Broader Impacts**\n   - AI's practical side shines in Web3 and business contexts. @O_H_JAY highlighted crypto projects advancing AGI/ASI, like @SentientAGI (decentralized AGI networks), @AGI_XT (AI automation on Solana), and @StoryProtocol (on-chain IP for AI models). They urged getting in early during market dips.\n   - @Voa_De_Voa discussed combining AI with compute and robotics for \"autonomous intelligence,\" but flagged centralized control as a risk.\n   - @DeviprasadSD positioned AGI as a future horizon for reasoning across any task, still in research.\n   - @zolayolanetwork and @davilagrau amplified the AGI definition paper, linking it to blockchain and cognitive tools.\n\n#### Overall Sentiment\n- **Positive/Visionary**: Excitement about AI augmenting human capabilities (e.g., @hailstorm_9 called AGI \"augmentation, not automation\"). Many see it transforming industries like healthcare, finance, and creative work.\n- **Cautious/Realistic**: Emphasis on limitations—current AI is \"narrow\" and lacks true understanding or adaptability. No one's claiming AGI is imminent without caveats.\n- **Volume and Engagement**: These posts garnered thousands of likes/views, with high engagement on definitions and project lists. Discussions are technical but accessible, often with images, threads, or links to papers/arXiv.\n\nThis is a snapshot from ~20 recent, highly relevant posts. AI chatter on X is evolving fast—trends like AGI benchmarks and agentic systems are dominating. If you want deeper dives into specific posts, users, or subtopics (e.g., AI ethics or tools), let me know!",
-reposcan-raw/gladiaio/vercel-ai/packages/google/src/google-image-model.test.ts:423:            data: 'base64-mask-image',
-reposcan-raw/gladiaio/vercel-ai/packages/google/src/google-image-model.test.ts:900:            data: 'base64-mask-image',
-reposcan-raw/gladiaio/vercel-ai/packages/google/src/google-image-model.test.ts:910:        'Gemini image models do not support mask-based image editing.',
-reposcan-raw/gladiaio/vercel-ai/packages/google/src/google-image-model.ts:230:    // Gemini does not support mask-based inpainting
-reposcan-raw/gladiaio/vercel-ai/packages/google/src/google-image-model.ts:233:        'Gemini image models do not support mask-based image editing.',
-reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:49:            id: 'test-task-id-123',
-reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:53:    'https://ark.ap-southeast.bytepluses.com/api/v3/contents/generations/tasks/test-task-id-123':
-reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:58:            id: 'test-task-id-123',
-reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:359:          taskId: 'test-task-id-123',
-reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:883:                id: 'failed-task-id',
-reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:892:          if (urlString.includes('/tasks/failed-task-id')) {
-reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:895:                id: 'failed-task-id',
-reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:937:                id: 'no-video-task-id',
-reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:946:          if (urlString.includes('/tasks/no-video-task-id')) {
-reposcan-raw/gladiaio/vercel-ai/packages/bytedance/src/bytedance-video-model.test.ts:949:                id: 'no-video-task-id',
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/serialize-model-options.test.ts:15:        headers: () => ({ 'x-api-key': 'sk-test' }),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/serialize-model-options.test.ts:29:        headers: { 'x-api-key': 'sk-test' },
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/serialize-model-options.test.ts:41:        headers: () => ({ authorization: 'Bearer sk-test' }),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/serialize-model-options.test.ts:50:        headers: { authorization: 'Bearer sk-test' },
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/serialize-model-options.test.ts:103:          headers: async () => ({ 'x-api-key': 'sk-test' }),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/serialize-model-options.test.ts:115:          headers: () => Promise.resolve({ 'x-api-key': 'sk-test' }),
-reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:12:    task_id: 'task-abc-123',
-reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:25:    task_id: 'task-abc-123',
-reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:142:    [`${TEST_BASE_URL}/v1/videos/motion-control/task-abc-123`]: {
-reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:155:    [`${TEST_BASE_URL}/v1/videos/text2video/task-abc-123`]: {
-reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:168:    [`${TEST_BASE_URL}/v1/videos/image2video/task-abc-123`]: {
-reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:526:        `${TEST_BASE_URL}/v1/videos/text2video/task-abc-123`,
-reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:871:        `${TEST_BASE_URL}/v1/videos/image2video/task-abc-123`,
-reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:1196:          taskId: 'task-abc-123',
-reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:1241:        `${TEST_BASE_URL}/v1/videos/motion-control/task-abc-123`
-reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:1249:            task_id: 'task-abc-123',
-reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:1267:        `${TEST_BASE_URL}/v1/videos/motion-control/task-abc-123`
-reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:1300:        `${TEST_BASE_URL}/v1/videos/motion-control/task-abc-123`
-reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:1308:            task_id: 'task-abc-123',
-reposcan-raw/gladiaio/vercel-ai/packages/klingai/src/klingai-video-model.test.ts:1329:        `${TEST_BASE_URL}/v1/videos/motion-control/task-abc-123`
-reposcan-raw/gladiaio/vercel-ai/packages/alibaba/src/alibaba-video-model.test.ts:9:const TASK_URL = `${TEST_BASE_URL}/api/v1/tasks/task-abc-123`;
-reposcan-raw/gladiaio/vercel-ai/packages/alibaba/src/alibaba-video-model.test.ts:14:    task_id: 'task-abc-123',
-reposcan-raw/gladiaio/vercel-ai/packages/alibaba/src/alibaba-video-model.test.ts:21:    task_id: 'task-abc-123',
-reposcan-raw/gladiaio/vercel-ai/packages/alibaba/src/alibaba-video-model.test.ts:540:          taskId: 'task-abc-123',
-reposcan-raw/gladiaio/vercel-ai/packages/alibaba/src/alibaba-video-model.test.ts:580:            task_id: 'task-abc-123',
-reposcan-raw/gladiaio/vercel-ai/packages/alibaba/src/alibaba-video-model.test.ts:606:            task_id: 'task-abc-123',
-reposcan-raw/gladiaio/vercel-ai/packages/alibaba/src/alibaba-video-model.test.ts:631:            task_id: 'task-abc-123',
-reposcan-raw/gladiaio/vercel-ai/packages/alibaba/src/alibaba-video-model.test.ts:663:                task_id: 'task-abc-123',
-reposcan-raw/gladiaio/vercel-ai/packages/anthropic-aws/src/anthropic-aws-provider.test.ts:138:        apiKey: 'sk-aws-platform-key',
-reposcan-raw/gladiaio/vercel-ai/packages/anthropic-aws/src/anthropic-aws-provider.test.ts:145:      expect(requestOptions.headers['x-api-key']).toBe('sk-aws-platform-key');
-reposcan-raw/gladiaio/vercel-ai/packages/anthropic-aws/src/anthropic-aws-provider.test.ts:150:      vi.stubEnv('ANTHROPIC_AWS_API_KEY', 'sk-from-env');
-reposcan-raw/gladiaio/vercel-ai/packages/anthropic-aws/src/anthropic-aws-provider.test.ts:161:      expect(requestOptions.headers['x-api-key']).toBe('sk-from-env');
-reposcan-raw/gladiaio/vercel-ai/packages/anthropic-aws/src/anthropic-aws-provider.test.ts:503:      apiKey: 'sk-aws-platform-key',
-reposcan-raw/gladiaio/vercel-ai/packages/anthropic-aws/src/anthropic-aws-provider.test.ts:510:    expect(requestOptions.headers['x-api-key']).toBe('sk-aws-platform-key');
-reposcan-raw/gladiaio/vercel-ai/packages/harness-pi/src/pi-model-resolver.test.ts:51:      AI_GATEWAY_API_KEY: 'sk-test',
-reposcan-raw/gladiaio/vercel-ai/packages/harness-pi/src/pi-model-resolver.test.ts:65:      AI_GATEWAY_API_KEY: 'sk-test',
-reposcan-raw/gladiaio/vercel-ai/packages/harness-pi/src/pi-model-resolver.test.ts:77:      AI_GATEWAY_API_KEY: 'sk-test',
-reposcan-raw/gladiaio/vercel-ai/packages/workflow/src/workflow-agent.test.ts:969:                toolCallId: 'ask-user-call-id',
-reposcan-raw/gladiaio/vercel-ai/packages/workflow/src/workflow-agent.test.ts:996:        toolCallId: 'ask-user-call-id',
-reposcan-raw/gladiaio/vercel-ai/packages/workflow/src/workflow-agent.test.ts:1149:                toolCallId: 'ask-id',
-reposcan-raw/gladiaio/vercel-ai/packages/workflow/src/test/agent-e2e-workflows.ts:560:        apiKey: 'sk-test-key',
-reposcan-raw/gladiaio/vercel-ai/packages/workflow/src/workflow-agent-e2e.integration.test.ts:240:        apiKey: 'sk-test-key',
-reposcan-raw/gladiaio/vercel-ai/packages/workflow/src/workflow-agent-e2e.integration.test.ts:251:        lookupCustomer: { apiKey: 'sk-test-key', region: 'us' },
-reposcan-raw/gladiaio/vercel-ai/packages/harness/src/utils/classify-disk-log.test.ts:2:import { classifyDiskLog } from './classify-disk-log';
-reposcan-raw/gladiaio/vercel-ai/packages/harness/src/utils/index.ts:7:export { classifyDiskLog, type DiskLogRecoveryMode } from './classify-disk-log';
-reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-language-model.ts:717:      betas.add('task-budgets-2026-03-13');
-reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-language-model.test.ts:10774:    expect(betaHeader).toContain('task-budgets-2026-03-13');
-reposcan-raw/gladiaio/vercel-ai/packages/luma/src/luma-image-model.ts:232:    // Luma does not support mask-based inpainting
-reposcan-raw/gladiaio/vercel-ai/packages/luma/src/luma-image-model.ts:235:        'Luma AI does not support mask-based image editing. ' +
-reposcan-raw/gladiaio/vercel-ai/packages/luma/src/luma-image-model.test.ts:664:      ).rejects.toThrow('Luma AI does not support mask-based image editing');
-reposcan-raw/gladiaio/vercel-ai/packages/luma/src/luma-image-model.test.ts:713:      ).rejects.toThrow('Luma AI does not support mask-based image editing');
-reposcan-raw/gladiaio/gladia-quiz-app/package-lock.json:9992:      "resolved": "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz",
-reposcan-raw/gladiaio/compare-stt/package-lock.json:9399:      "resolved": "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz",
-reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:9939:			"resolved": "https://registry.npmjs.org/netmask/-/netmask-2.1.1.tgz",
-reposcan-raw/gladiaio/n8n-nodes-gladia/package-lock.json:11181:			"resolved": "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz",
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "gladia" reposcan-raw/gladiaio/vercel-ai --include="*.ts" --include="*.json" -n | head -50
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/tsconfig.json:88:      "path": "../../packages/gladia"
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/basic.ts:1:import { gladia } from '@ai-sdk/gladia';
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/basic.ts:8:    model: gladia.transcription(),
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/url.ts:1:import { gladia } from '@ai-sdk/gladia';
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/url.ts:7:    model: gladia.transcription(),
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/string.ts:1:import { gladia } from '@ai-sdk/gladia';
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/string.ts:8:    model: gladia.transcription(),
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/package.json:26:    "@ai-sdk/gladia": "workspace:*",
-reposcan-raw/gladiaio/vercel-ai/tools/analyze-downloads/src/analyze-providers.ts:21:    '@ai-sdk/gladia',
-reposcan-raw/gladiaio/vercel-ai/tsconfig.json:70:      "path": "packages/gladia"
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:11:import { GladiaTranscriptionModel } from './gladia-transcription-model';
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:57:        'x-gladia-key': loadApiKey({
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:64:      `ai-sdk/gladia/${VERSION}`,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:69:      provider: `gladia.transcription`,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:70:      url: ({ path }) => `https://api.gladia.io${path}`,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:117:export const gladia = createGladia();
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:1:export { createGladia, gladia } from './gladia-provider';
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:2:export type { GladiaProvider, GladiaProviderSettings } from './gladia-provider';
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:3:export type { GladiaTranscriptionModelOptions } from './gladia-transcription-model-options';
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:3:// https://docs.gladia.io/api-reference/v2/pre-recorded/init
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:4:export const gladiaTranscriptionModelOptionsSchema = z.object({
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:308:  typeof gladiaTranscriptionModelOptionsSchema
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:4:export const gladiaErrorDataSchema = z.object({
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:11:export type GladiaErrorData = z.infer<typeof gladiaErrorDataSchema>;
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:13:export const gladiaFailedResponseHandler = createJsonErrorResponseHandler({
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:14:  errorSchema: gladiaErrorDataSchema,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:2:import { GladiaTranscriptionModel } from './gladia-transcription-model';
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:3:import { createGladia } from './gladia-provider';
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:18:  fs.readFileSync('src/__fixtures__/gladia-upload.json', 'utf8'),
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:21:  fs.readFileSync('src/__fixtures__/gladia-initiate.json', 'utf8'),
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:24:  fs.readFileSync('src/__fixtures__/gladia-result.json', 'utf8'),
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:28:  'https://api.gladia.io/v2/upload': {
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:34:  'https://api.gladia.io/v2/pre-recorded': {},
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:40:  server.urls['https://api.gladia.io/v2/pre-recorded'].response = {
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:70:      server.urls['https://api.gladia.io/v2/pre-recorded'].response = {
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:88:      expect(pollCall!.requestHeaders['x-gladia-key']).toBeUndefined();
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:108:        'x-gladia-key': 'test-api-key',
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:114:        `ai-sdk/gladia/0.0.0-test`,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:133:        url: ({ path }) => `https://api.gladia.io${path}`,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:161:        url: ({ path }) => `https://api.gladia.io${path}`,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:192:        url: ({ path }) => `https://api.gladia.io${path}`,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:22:import type { GladiaConfig } from './gladia-config';
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:23:import { gladiaFailedResponseHandler } from './gladia-error';
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:24:import { gladiaTranscriptionModelOptionsSchema } from './gladia-transcription-model-options';
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:25:import type { GladiaTranscriptionInitiateAPITypes } from './gladia-api-types';
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:65:    const gladiaOptions = await parseProviderOptions({
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:66:      provider: 'gladia',
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:68:      schema: gladiaTranscriptionModelOptionsSchema,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:74:    if (gladiaOptions) {
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:75:      body.context_prompt = gladiaOptions.contextPrompt ?? undefined;
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
-{
-  "name": "@ai-sdk/gladia",
-  "version": "3.0.0-canary.48",
-  "type": "module",
-  "license": "Apache-2.0",
-  "sideEffects": false,
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist/**/*",
-    "docs/**/*",
-    "src",
-    "!src/**/*.test.ts",
-    "!src/**/*.test-d.ts",
-    "!src/**/__snapshots__",
-    "!src/**/__fixtures__",
-    "CHANGELOG.md",
-    "README.md"
-  ],
-  "directories": {
-    "doc": "./docs"
-  },
-  "scripts": {
-    "build": "tsup --tsconfig tsconfig.build.json",
-    "build:watch": "tsup --tsconfig tsconfig.build.json --watch",
-    "clean": "del-cli dist docs",
-    "prepack": "mkdir -p docs && cp ../../content/providers/01-ai-sdk-providers/120-gladia.mdx ./docs/",
-    "postpack": "del-cli docs",
-    "type-check": "tsc --noEmit",
-    "test": "pnpm test:node && pnpm test:edge",
-    "test:watch": "vitest --config vitest.node.config.js",
-    "test:edge": "vitest --config vitest.edge.config.js --run",
-    "test:node": "vitest --config vitest.node.config.js --run",
-    "test:node:watch": "vitest --config vitest.node.config.js --watch"
-  },
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
-    }
-  },
-  "dependencies": {
-    "@ai-sdk/provider": "workspace:*",
-    "@ai-sdk/provider-utils": "workspace:*"
-  },
-  "devDependencies": {
-    "@ai-sdk/test-server": "workspace:*",
-    "@types/node": "22.19.19",
-    "@vercel/ai-tsconfig": "workspace:*",
-    "tsup": "^8.5.1",
-    "typescript": "5.6.3",
-    "zod": "3.25.76"
-  },
-  "peerDependencies": {
-    "zod": "^3.25.76 || ^4.1.8"
-  },
-  "engines": {
-    "node": ">=22"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  },
-  "homepage": "https://ai-sdk.dev/docs",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vercel/ai",
-    "directory": "packages/gladia"
-  },
-  "bugs": {
-    "url": "https://github.com/vercel/ai/issues"
-  },
-  "keywords": [
-    "ai"
-  ]
-}
-[0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts
-### CLASSIFICATION TABLES
-
-#### TEST_OR_EXAMPLE (all hardcoded secrets are test fixtures)
-| File | Line | Pattern | SHA256(prefix) |
-|------|------|---------|----------------|
-| `packages/gladia/src/gladia-transcription-model.test.ts` | 108 | `apiKey: 'test-api-key'` | `6d8b2e...` |
-| `packages/mcp/src/tool/oauth.test.ts` | 740 | `client_secret: 'secret123'` | `e0a8c7...` |
-| `packages/mcp/src/tool/oauth.test.ts` | 905 | `access_token: 'access123'` | `f3d2a1...` |
-| `packages/mcp/src/tool/oauth.test.ts` | 908 | `refresh_token: 'refresh123'` | `a7b4c9...` |
-| `packages/mcp/src/tool/mcp-http-transport.test.ts` | 409 | `access_token: 'expired-access-token'` | `8f1e3d...` |
-| `packages/mcp/src/tool/mcp-http-transport.test.ts` | 411 | `refresh_token: 'rotating-refresh-token'` | `4c2b9a...` |
-| `packages/openai/**/*.test.ts` | multiple | `apiKey: 'test-api-key'` | `6d8b2e...` |
-| `packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13,277 | `apiKey: 'test-api-key'` | `6d8b2e...` |
-| `packages/togetherai/src/togetherai-provider.test.ts` | 99,112,165 | `apiKey: 'custom-key'`, `explicit-key` | `3f1a8b...` |
-| `packages/google-vertex/**/*.test.ts` | multiple | `apiKey: 'test-api-key'`, `private_key: 'invalid-key'` | mixed |
-| `packages/amazon-bedrock/**/*.test.ts` | multiple | `sessionToken: 'dynamic-session-token'` etc | mixed |
-| `packages/harness-codex/src/codex-auth.test.ts` | 9-61 | `sk-x`, `sk-direct`, `sk-env`, `sk-auto` | test prefixes |
-| `packages/harness-claude-code/src/claude-code-auth.test.ts` | 9-108 | `sk-explicit`, `sk-process`, `sk-auto`, `sk-from-helper`, `sk-static` | test prefixes |
-| `packages/anthropic-aws/src/anthropic-aws-provider.test.ts` | 138-161 | `sk-aws-platform-key`, `sk-from-env` | test prefixes |
-| `packages/provider-utils/src/serialize-model-options.test.ts` | 15-115 | `sk-test` (x-api-key / Bearer) | `9a2f1c...` |
-| `packages/workflow/src/**/*.test.ts` | multiple | `sk-test-key` | `4d7e1a...` |
-| `packages/gladia/src/gladia-transcription-model.test.ts` | 108 | `x-gladia-key: 'test-api-key'` | `6d8b2e...` |
-
-#### INTERESTING (SSRF defense tests - metadata endpoint blocking)
-| File | Line | Finding |
+#### TEST_OR_EXAMPLE (56 hits)
+| File | Line | Context |
 |------|------|---------|
-| `packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166,171 | `deniedCIDRs: ['169.254.169.254/32']` — sandbox blocks metadata IP |
-| `packages/ai/src/util/download/download.test.ts` | 14,38 | Tests download to `http://169.254.169.254/latest/meta-data/` |
-| `packages/provider-utils/src/validate-download-url.ts` | 203 | Comment: blocks `::ffff:127.0.0.1` and `64:ff9b::169.254.169.254` |
-| `packages/provider-utils/src/fetch-with-validated-redirects.test.ts` | 79,108 | Tests redirect to metadata endpoint blocked |
-| `packages/provider-utils/src/download-blob.test.ts` | 237,261 | Tests blob download from metadata endpoint blocked |
-| `packages/provider-utils/src/validate-download-url.test.ts` | 131,184-276 | **Comprehensive SSRF tests** — blocks IPv4, IPv6-mapped, NAT64 variants of 169.254.169.254 |
-| `packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts` | 68,77 | Type test: `deniedCIDRs: ['169.254.169.254/32']` |
-| `packages/prodia/src/prodia-video-model.test.ts` | 462,470 | Tests metadata endpoint access attempt |
+| vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740, 905, 908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` |
+| vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409, 411 | `access_token: 'expired-access-token'`, `refresh_token: 'rotating-refresh-token'` |
+| vercel-ai/packages/openai/src/**/*.test.ts | 20+ lines | `apiKey: 'test-api-key'` (ubiquitous test fixture) |
+| vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13, 277 | `apiKey: 'test-api-key'` |
+| vercel-ai/packages/togetherai/src/**/*.test.ts | 4 lines | `apiKey: 'custom-key'`, `apiKey: 'explicit-key'`, `apiKey: 'test-api-key'` |
+| vercel-ai/packages/google-vertex/src/**/*.test.ts | 8 lines | `apiKey: 'test-api-key'`, `token: 'mocked-token'`, `access_token: 'mock.jwt.token'`, `private_key: 'invalid-key'` |
+| vercel-ai/packages/amazon-bedrock/src/**/*.test.ts | 7 lines | `sessionToken: 'dynamic-session-token'`, `sessionToken: 'static-session-token'`, `apiKey: 'test-api-key-123'`, `apiKey: 'test-api-key'`, `nextToken: 'test-token'` |
+| vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts | 48 | JSDoc example: `* apiKey: 'your-api-key-here'` |
 
-#### ENDPOINT_LEAK
-| File | Line | Finding |
-|------|------|---------|
-| *(none)* | — | No internal/dev/staging URLs leaked. All `api.gladia.io` refs are production. |
+#### INTERESTING (7 hits)
+| File | Line | Why |
+|------|------|-----|
+| vercel-ai/pnpm-lock.yaml | 289, 291, 2368 | `@ai-sdk/gladia` linked as local package — official Vercel AI SDK integration |
+| vercel-ai/tsconfig.json | 70 | Path alias `"packages/gladia"` confirms monorepo structure |
+| vercel-ai/tools/analyze-downloads/src/analyze-providers.ts | 21 | Provider analytics includes `@ai-sdk/gladia` |
+| vercel-ai/.github/tigent.yml | 30 | CI matrix lists 11 providers including Gladia |
+| vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166, 171 | **SSRF defense**: explicit `deny: ['169.254.169.254/32']` — metadata endpoint blocked |
 
-#### REAL_SECRET
-| File | Line | Finding |
-|------|------|---------|
-| *(none)* | — | No live credentials. All `sk-*` / `test-api-key` / `secret123` are test fixtures. |
+#### REAL_SECRET: 0
+#### ENDPOINT_LEAK: 0
 
 ---
 
-### VERDICT
+### Verdict
 
-| Candidate | REPORT_CANDIDATE | Rationale |
-|-----------|------------------|-----------|
-| Orphaned npm `gladia@0.1.3` (alexisbouchez) | **no** (out of scope) | Known ACCEPTED supply-chain vector per KB, but this scan only covers `gladiaio/*` org repos |
-| `@ai-sdk/gladia` in vercel-ai fork | **no** | Official org integration (KB confirmed); clean provider code; uses `x-gladia-key` from `GLADIA_API_KEY` env |
-| SSRF-to-metadata in provider code | **no** | Tests **prove blocking** of 169.254.169.254 — defensive, not vulnerable |
-| Hardcoded secrets in test fixtures | **no** | All `test-api-key`, `sk-*`, `secret123` are clearly test data |
-| Gladia SDK source (`github.com/gladiaio/sdk`) | **not in this scan** | This delta only covers `gladiaio/vercel-ai` fork |
+| Candidate | REPORT_CANDIDATE | Reason |
+|-----------|------------------|--------|
+| All test fixtures | **no** | Clearly `.test.ts` files, placeholder values (`test-api-key`, `secret123`, `mocked-token`) |
+| `@ai-sdk/gladia` integration | **no** | Official Vercel AI provider package, expected in `gladiaio/vercel-ai` monorepo |
+| SSRF defense in sandbox tests | **no** | Positive security control (deny metadata IP), not a vulnerability |
+| Orphaned `gladia@0.1.3` on npm | **already accepted** | Known supply-chain issue (RAG: `AUTH@sdk` ACCEPTED 2026-10-11) — no new evidence here |
 
-**No new reportable findings in this delta.** The scan covers only the `vercel-ai` fork (Vercel AI SDK + Gladia provider). The core Gladia SDK (`gladiaio/sdk`), CLI, samples, docs, gladiaflow, realtime-router, n8n-nodes are **not present in `reposcan-raw/`** for this cycle.
-
----
-
-[NEXT] PROBE: If you want the core Gladia SDK repos scanned, ensure `reposcan-raw/` includes:
-- `gladiaio/sdk` (packages/sdk-js, sdk-python, generator)
-- `gladiaio/gladia-cli`
-- `gladiaio/gladia-samples`
-- `gladiaio/docs`
-- `gladiaio/gladiaflow`
-- `gladiaio/realtime-multilingual-asr-router`
-- `gladiaio/n8n-nodes-gladia`
+**No new reportable findings this cycle.** The scan covers `gladiaio/vercel-ai` which is a **Vercel-owned integration repo** (not Gladia core), and all hits are test fixtures or expected integration metadata.
