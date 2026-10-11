@@ -56,7 +56,7 @@
  "OTHER@app.gladia.io": {
   "first_seen": "2026-09-30",
   "last_seen": "2026-10-11",
-  "reason": "no new surface this cycle, re-confirmed static \u2014 /signin?redirect_to reflection byte-fresh, CSP 0 form-action directives gap confirmed, OAuth post-auth chain HUMAN_ONLY gate",
+  "reason": "no new surface this cycle, re-confirmed static \u2014 /signin?redirect_to reflection byte-fresh, CSP 0 form-action directives gap confirmed, OAuth post-auth chain uses state+PKCE not redirect_to reflection",
   "verdict": "ACCEPTED"
  },
  "OTHER@gladia": {
