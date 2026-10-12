@@ -14,3 +14,19 @@
 **Impact:** Token theft → unauthorized live sessions, audio data access  
 **CVSS 3.1:** 6.5 (AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N)  
 **Channel:** Gladia bug bounty form
+
+
+## Re-confirmed 2026-10-12 00:39 UTC
+**VERDICT: VALID**  
+**Minimal read-only proof:** GET https://api.gladia.io/openapi.json → `audio_url`/`video_url`/`callback_config.url` all `format:uri` no `pattern`/`enum`; GET https://api.gladia.io/v1/models → `{"datacenters":[{"region":"FR"},{"region":"US"}]}`  
+**Impact:** Cloud metadata access, internal service enumeration, data exfiltration via callback POST  
+**CVSS 3.1:** 7.5 (AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N) — High  
+**Channel:** Gladia security channel (security@gladia.io or bug-bounty-report form per scope.yml)
+
+
+## Re-confirmed 2026-10-12 00:39 UTC
+**VERDICT: VALID**  
+**Minimal read-only proof:** GET https://api.gladia.io/openapi.json → `InitStreamingResponse.url` contains `token` query param  
+**Impact:** Unauthorized live transcription sessions, real-time audio access  
+**CVSS 3.1:** 6.5 (AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N) — Medium  
+**Channel:** Gladia security channel

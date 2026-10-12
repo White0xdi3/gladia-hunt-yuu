@@ -204,3 +204,11 @@ Evidence package: sha256-verified tarball + `npm view` JSON captured in repo kno
 **Impact:** Supply-chain API key harvesting + account takeover risk (orphaned namespace)  
 **CVSS 3.1:** 7.4 (AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N) — P3/P4  
 **Channel:** npm Trust & Safety (primary) + Gladia security@gladia.io (secondary per scope.yml)
+
+
+## Re-confirmed 2026-10-12 00:39 UTC
+**VERDICT: VALID**  
+**Minimal read-only proof:** `npm view gladia@0.1.3` → description "Official…", maintainer `softwarecitadel@gmail.com`, repo `github.com/alexisbouchez/gladia.ts` (404), README "Unofficial"; tarball `src/client.ts:306-308` embeds key in `wss://api.gladia.io/v2/live?x-gladia-key=<key>`  
+**Impact:** Supply-chain API key harvesting, irrevocable account takeover risk  
+**CVSS 3.1:** 7.1 (AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N) — High  
+**Channel:** npm Trust & Safety (npmjs.com/support) + Gladia security channel

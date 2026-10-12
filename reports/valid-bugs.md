@@ -1338,3 +1338,11 @@
   - | 3 | WS token in URL query param leakage | **HOLD** | AUTH_HELPED | Need valid key for session init |
   - | 8 | IDOR on /{id}/file download | **HOLD** | AUTH_HELPED (2 keys) | Need two valid keys cross-account |
   - | 9 | Query-param injection /v1/history | **HOLD** | AUTH_HELPED | Need valid key |
+
+- 6 lead(s) marked VALID at 2026-10-12 00:39:39 UTC
+  - **VERDICT: VALID**
+  - **VERDICT: VALID**
+  - **VERDICT: VALID**
+  - | SSRF audio_url/callback | **VALID** | High, key-gated POC needed |
+  - | npm gladia@0.1.3 impersonation | **VALID** | High, fully passive, report-ready |
+  - | WS token in URL | **VALID** | Medium, spec-confirmed |
