@@ -1,534 +1,61 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mfind reposcan-raw/gladiaio -type f -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" -o -name "*.py" -o -name "*.go" -o -name "*.rs" -o -name "*.toml" | head -100
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/shopify-mcp/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/repro-test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/image-content/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-ui/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/sse/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/sse/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-info/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-info/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-meta/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-meta/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-definitions/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/tool-definitions/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-resources/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-resources/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/stdio/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/stdio/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/package.json
-reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/shared/notification-schema.ts
-reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/tsconfig.json
-reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/chat.ts
-reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/use-chat-request.ts
-reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/completion.ts
-reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/use-object.ts
-reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/use-chat-tools.ts
-reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/server/api/chat-with-vision.ts
-reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/tsconfig.json
-reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/nuxt.config.ts
-reposcan-raw/gladiaio/vercel-ai/examples/nuxt-openai/package.json
-reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/tailwind.config.ts
-reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/postcss.config.js
-reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/tsconfig.json
-reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/vite.config.ts
-reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/lib/components/ui/button/index.ts
-reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/lib/components/ui/textarea/index.ts
-reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/lib/utils.ts
-reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/app.d.ts
-reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/routes/structured-object/schema.ts
-reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/routes/api/structured-object/+server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/routes/api/chat/+server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/src/routes/api/completion/+server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/package.json
-reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/svelte.config.js
-reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/components.json
-reposcan-raw/gladiaio/vercel-ai/examples/sveltekit-openai/turbo.json
-reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/next.config.js
-reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/postcss.config.js
-reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/sentry.server.config.ts
-reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/app/api/text/route.ts
-reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/instrumentation.ts
-reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/tsconfig.json
-reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/package.json
-reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/instrumentation-client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/sentry.edge.config.ts
-reposcan-raw/gladiaio/vercel-ai/examples/next-openai-telemetry-sentry/tailwind.config.js
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/next.config.js
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/lib/tools/weather-tool.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/lib/weather-utils.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/lib/utils.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/postcss.config.js
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/claude-code/ai-sdk-coding/route.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/claude-code/weather-approval/route.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/claude-code/basic/route.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/claude-code/basic-with-stop/route.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/claude-code/weather/route.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/pi/ai-sdk-coding/route.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/pi/weather-approval/route.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/pi/basic/route.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/pi/basic-with-stop/route.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/pi/weather/route.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/codex/ai-sdk-coding/route.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/codex/weather-approval/route.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/codex/basic/route.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/codex/basic-with-stop/route.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/app/api/harness/codex/weather/route.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/claude-code/ai-sdk-coding-agent.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/claude-code/weather-agent.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/claude-code/weather-approval-agent.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/claude-code/basic-agent.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/pi/ai-sdk-coding-agent.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/pi/weather-agent.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/pi/weather-approval-agent.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/pi/basic-agent.ts
-reposcan-raw/gladiaio/vercel-ai/examples/harness-e2e-next/agent/harness/codex/ai-sdk-coding-agent.ts
-[0m
 [0m$ [0mls -la reposcan-raw/gladiaio/
 total 60
-drwxr-xr-x 15 runner runner 4096 Oct 12 00:32 .
-drwxr-xr-x  4 runner runner 4096 Oct 12 00:32 ..
-drwxr-xr-x  9 runner runner 4096 Oct 12 00:32 compare-stt
-drwxr-xr-x  9 runner runner 4096 Oct 12 00:32 docs
-drwxr-xr-x  7 runner runner 4096 Oct 12 00:32 gladia-cli
-drwxr-xr-x 11 runner runner 4096 Oct 12 00:32 gladia-quiz-app
-drwxr-xr-x 11 runner runner 4096 Oct 12 00:32 gladia-samples
-drwxr-xr-x  9 runner runner 4096 Oct 12 00:32 gladiaflow
-drwxr-xr-x  7 runner runner 4096 Oct 12 00:32 n8n-nodes-gladia
-drwxr-xr-x  8 runner runner 4096 Oct 12 00:32 normalization
-drwxr-xr-x 12 runner runner 4096 Oct 12 00:32 num2words2
-drwxr-xr-x  9 runner runner 4096 Oct 12 00:32 realtime-multilingual-asr-router
-drwxr-xr-x 10 runner runner 4096 Oct 12 00:32 sdk
-drwxr-xr-x  7 runner runner 4096 Oct 12 00:32 skills
-drwxr-xr-x 18 runner runner 4096 Oct 12 00:32 vercel-ai
+drwxr-xr-x 15 runner runner 4096 Oct 12 00:36 .
+drwxr-xr-x  4 runner runner 4096 Oct 12 00:36 ..
+drwxr-xr-x  9 runner runner 4096 Oct 12 00:36 compare-stt
+drwxr-xr-x  9 runner runner 4096 Oct 12 00:36 docs
+drwxr-xr-x  7 runner runner 4096 Oct 12 00:36 gladia-cli
+drwxr-xr-x 11 runner runner 4096 Oct 12 00:36 gladia-quiz-app
+drwxr-xr-x 11 runner runner 4096 Oct 12 00:36 gladia-samples
+drwxr-xr-x  9 runner runner 4096 Oct 12 00:36 gladiaflow
+drwxr-xr-x  7 runner runner 4096 Oct 12 00:36 n8n-nodes-gladia
+drwxr-xr-x  8 runner runner 4096 Oct 12 00:36 normalization
+drwxr-xr-x 12 runner runner 4096 Oct 12 00:36 num2words2
+drwxr-xr-x  9 runner runner 4096 Oct 12 00:36 realtime-multilingual-asr-router
+drwxr-xr-x 10 runner runner 4096 Oct 12 00:36 sdk
+drwxr-xr-x  7 runner runner 4096 Oct 12 00:36 skills
+drwxr-xr-x 18 runner runner 4096 Oct 12 00:36 vercel-ai
 [0m
-[0m✱ [0mGrep "(sk-[a-zA-Z0-9]{32,}|ghp_[a-zA-Z0-9]{36}|gl_[a-zA-Z0-9]{32,}|xoxb-[a-zA-Z0-9-]{30,}|AIza[0-9A-Za-z_-]{35})"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(169\.254\.169\.254|metadata\.google\.internal|169\.254\.169\.254)"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(api_key|apikey|secret|token|password)\s*[:=]\s*["'][^"']{20,}"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "(gladia\.io|api\.gladia\.io|app\.gladia\.io)"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m
-[0m$ [0mgrep -r "test-api-key\|mock.*token\|fake.*key\|example.*key" reposcan-raw/gladiaio --include="*.ts" --include="*.js" --include="*.py" --include="*.json" | wc -l
-527
-[0m
-[0m$ [0mgrep -r "gladia" reposcan-raw/gladiaio/sdk --include="*.ts" --include="*.json" | head -50
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_session.test.ts:} from '@gladiaio/sdk'
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_session.test.ts:import { parseAudioFile, sendAudioFile } from '@gladiaio/sdk-e2e-javascript-fixtures'
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/prerecorded_v2_async.test.ts:} from '@gladiaio/sdk'
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/prerecorded_v2_async.test.ts:import { getDataFile } from '@gladiaio/sdk-e2e-javascript-fixtures'
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_job_management.test.ts:import { GladiaClient, type LiveV2Response } from '@gladiaio/sdk'
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_job_management.test.ts:import { parseAudioFile, sendAudioFile } from '@gladiaio/sdk-e2e-javascript-fixtures'
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/package.json:  "name": "@gladiaio/sdk-e2e-node-esm",
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/package.json:    "@gladiaio/sdk": "workspace:*",
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/package.json:    "@gladiaio/sdk-e2e-javascript-fixtures": "workspace:*"
-reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/src/index.ts:import type { LiveV2InitRequest, LiveV2Session } from '@gladiaio/sdk'
-reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/package.json:  "name": "@gladiaio/sdk-e2e-javascript-fixtures",
-reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/package.json:    "@gladiaio/sdk": "workspace:*",
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/package.json:  "name": "@gladiaio/sdk-e2e-node-cjs",
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/package.json:    "@gladiaio/sdk": "workspace:*",
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/package.json:    "@gladiaio/sdk-e2e-javascript-fixtures": "workspace:*"
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    const gladiaClient = new GladiaClient({
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    gladiaClient.liveV2()
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(call.httpHeaders['x-gladia-version']).toContain(`SdkJavascript/${SDK_VERSION}`)
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    const gladiaClient = new GladiaClient({
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    gladiaClient.liveV2()
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-version']).toBe(`MyApp/1.2.3 SdkJavascript/${SDK_VERSION}`)
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:  it('injects x-gladia-key when apiKey is set', () => {
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    const gladiaClient = new GladiaClient({ apiKey: 'key-123' })
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    gladiaClient.liveV2()
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-key']).toBe('key-123')
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    const gladiaClient = new GladiaClient({ httpHeaders: { 'x-base': 'a' }, apiKey: 'abc' })
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    gladiaClient.liveV2({ httpHeaders: { 'x-override': 'b' } })
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-key']).toBe('abc')
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-version']).toContain(`SdkJavascript/${SDK_VERSION}`)
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:  it('per-call options merge with gladia version', () => {
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    const gladiaClient = new GladiaClient({
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:      httpHeaders: { 'x-gladia-version': 'GladiaClient/1.2.3' },
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    gladiaClient.liveV2({ httpHeaders: { 'x-gladia-version': 'LiveClient/4.5.6' } })
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-key']).toBe('abc')
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-version']).toContain(
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts: * x-gladia-key must not be forwarded on cross-origin redirects.
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:  it('does not forward x-gladia-key when HttpClient follows a cross-origin redirect', async () => {
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:        'x-gladia-key': secretKey,
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:        'x-gladia-version': 'SdkJavascript/test',
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(originCaptured[0]?.headers['x-gladia-key']).toBe(secretKey)
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-key']).toBeUndefined()
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-version']).toBe('SdkJavascript/test')
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:  it('does not forward x-gladia-key when preRecorded.getFile follows a cross-origin redirect', async () => {
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    const gladia = new GladiaClient({
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    const bytes = await gladia.preRecorded().getFile('job-id')
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-key']).toBeUndefined()
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:  it('does not forward x-gladia-key when live.getFile follows a cross-origin redirect', async () => {
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    const gladia = new GladiaClient({
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    const bytes = await gladia.live().getFile('job-id')
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-key']).toBeUndefined()
-[0m
-[0m$ [0mgrep -r "x-gladia-key\|gladia.*key\|api.*key" reposcan-raw/gladiaio/sdk --include="*.ts" | head -30
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:      apiKey: 'test-key',
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:      apiKey: 'test-key',
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:  it('injects x-gladia-key when apiKey is set', () => {
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    const gladiaClient = new GladiaClient({ apiKey: 'key-123' })
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-key']).toBe('key-123')
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-key']).toBe('abc')
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-key']).toBe('abc')
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts: * x-gladia-key must not be forwarded on cross-origin redirects.
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:  it('does not forward x-gladia-key when HttpClient follows a cross-origin redirect', async () => {
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:        'x-gladia-key': secretKey,
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(originCaptured[0]?.headers['x-gladia-key']).toBe(secretKey)
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-key']).toBeUndefined()
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:  it('does not forward x-gladia-key when preRecorded.getFile follows a cross-origin redirect', async () => {
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-key']).toBeUndefined()
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:  it('does not forward x-gladia-key when live.getFile follows a cross-origin redirect', async () => {
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-key']).toBeUndefined()
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.test.ts:        apiKey: 'test-key',
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.test.ts:      new URL(`${BASE}/query-test?apiKey=test-key&version=1.0`),
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.ts:const CROSS_ORIGIN_SENSITIVE_HEADERS = new Set(['x-gladia-key', 'authorization', 'cookie'])
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts:    apiKey: 'test-key',
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts:    httpHeaders: { 'x-gladia-key': 'test-key' },
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts:    apiKey: 'test-key',
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts:    httpHeaders: { 'x-gladia-key': 'test-key' },
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.list.test.ts:    apiKey: 'test-key',
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.list.test.ts:    httpHeaders: { 'x-gladia-key': 'test-key' },
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/types.ts:   * The server will have to act as a proxy to https://api.gladia.io and only add the header "x-gladia-key" with your API key.
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts:      return [lcKey.startsWith('x-gladia-') ? lcKey : key, value]
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts:        'x-gladia-key': mergedOptions.apiKey,
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.ts:        'x-gladia-key': mergedOptions.apiKey,
-[0m
-[0m$ [0mgrep -r "gladia" reposcan-raw/gladiaio/gladia-cli --include="*.go" | head -30
-reposcan-raw/gladiaio/gladia-cli/pkg/client/client.go:var GladiaApiEndpoint = "https://api.gladia.io"
-reposcan-raw/gladiaio/gladia-cli/pkg/client/client.go:	req.Header.Set("x-gladia-key", c.ApiKey)
-reposcan-raw/gladiaio/gladia-cli/pkg/client/client.go:	req.Header.Set("x-gladia-version", "cli/"+c.CLIVersion)
-reposcan-raw/gladiaio/gladia-cli/pkg/client/client_test.go:	c := &GladiaClient{GladiaEndpoint: "https://api.gladia.io"}
-reposcan-raw/gladiaio/gladia-cli/pkg/client/client_test.go:	if got := c.apiURL("/v2/upload/"); got != "https://api.gladia.io/v2/upload/" {
-reposcan-raw/gladiaio/gladia-cli/pkg/client/client_test.go:	c.GladiaEndpoint = "https://api.gladia.io/"
-reposcan-raw/gladiaio/gladia-cli/pkg/client/client_test.go:	if got := c.apiURL("/v2/pre-recorded"); got != "https://api.gladia.io/v2/pre-recorded" {
-reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe_test.go:		if r.Header.Get("x-gladia-key") != "secret" {
-reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe_test.go:			t.Fatalf("api key header = %q", r.Header.Get("x-gladia-key"))
-reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe_test.go:		if r.Header.Get("x-gladia-version") != "cli/dev" {
-reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe_test.go:			t.Fatalf("version header = %q", r.Header.Get("x-gladia-version"))
-reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe_test.go:			if r.Header.Get("x-gladia-version") != "cli/dev" {
-reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe_test.go:				t.Fatalf("version header = %q", r.Header.Get("x-gladia-version"))
-reposcan-raw/gladiaio/gladia-cli/pkg/client/types/languages.go:			return nil, fmt.Errorf("unknown language %q (use ISO 639-1 codes, e.g. en,fr; run: gladia languages)", code)
-reposcan-raw/gladiaio/gladia-cli/pkg/client/types/languages.go:// gladiaLanguageDisplayTags maps Gladia API codes that are not valid BCP 47 tags
-reposcan-raw/gladiaio/gladia-cli/pkg/client/types/languages.go:var gladiaLanguageDisplayTags = map[string]string{
-reposcan-raw/gladiaio/gladia-cli/pkg/client/types/languages.go:	if tag, ok := gladiaLanguageDisplayTags[code]; ok {
-reposcan-raw/gladiaio/gladia-cli/pkg/client/types/languages_test.go:func TestDisplayLanguageName_gladiaCodes(t *testing.T) {
-reposcan-raw/gladiaio/gladia-cli/cmd/formatter.go:	gladia "github.com/gladiaio/gladia-cli/pkg/client"
-reposcan-raw/gladiaio/gladia-cli/cmd/formatter.go:func PrintTXTTranscription(response gladia.TranscriptionResult) {
-reposcan-raw/gladiaio/gladia-cli/cmd/formatter.go:func PrintTXTDiarizedTranscription(response gladia.TranscriptionResult) {
-reposcan-raw/gladiaio/gladia-cli/cmd/formatter.go:func PrintTableTranscription(response gladia.TranscriptionResult) {
-reposcan-raw/gladiaio/gladia-cli/cmd/formatter.go:func PrintJSONTranscription(response gladia.TranscriptionResult) {
-reposcan-raw/gladiaio/gladia-cli/cmd/formatter.go:func PrintJSONSimplifiedTranscription(response gladia.TranscriptionResult) {
-reposcan-raw/gladiaio/gladia-cli/cmd/formatter.go:func PrintCSVTranscription(response gladia.TranscriptionResult) {
-reposcan-raw/gladiaio/gladia-cli/cmd/formatter.go:func PrintSRTTranscription(response gladia.TranscriptionResult) {
-reposcan-raw/gladiaio/gladia-cli/cmd/formatter.go:func PrintSRTDiarizedTranscription(response gladia.TranscriptionResult) {
-reposcan-raw/gladiaio/gladia-cli/cmd/formatter.go:func PrintVTTTranscription(response gladia.TranscriptionResult) {
-reposcan-raw/gladiaio/gladia-cli/cmd/formatter.go:func PrintVTTDiarizedTranscription(response gladia.TranscriptionResult) {
-reposcan-raw/gladiaio/gladia-cli/cmd/formatter.go:func PrintSummarization(response gladia.TranscriptionResult) {
-[0m
-[0m$ [0mgrep -r "gladia" reposcan-raw/gladiaio/gladia-samples --include="*.py" | head -30
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/pipecat-bot/main.py:from pipecat.services.gladia.config import GladiaInputParams, MessagesConfig
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/pipecat-bot/main.py:from pipecat.services.gladia.stt import GladiaSTTService
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/livekit-agent/main.py:from livekit.plugins.gladia.stt import STT as GladiaSTT
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:    gladia_api_key = (os.getenv("GLADIA_API_KEY", ""),)
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:    if gladia_api_key == "":
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:        print("Create one for free at https://app.gladia.io/")
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:        "x-gladia-key": os.getenv("GLADIA_API_KEY", ""),
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:        "https://api.gladia.io/v2/upload/", headers, "POST", files=files
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py:        "https://api.gladia.io/v2/pre-recorded/", headers, "POST", data=data
-reposcan-raw/gladiaio/gladia-samples/python/examples/meeting_summary.py:# !pip install gladiaio-sdk
-reposcan-raw/gladiaio/gladia-samples/python/examples/meeting_summary.py:from gladiaio_sdk import GladiaClient
-reposcan-raw/gladiaio/gladia-samples/python/examples/meeting_summary.py:# Create your account and get your API key in 30 seconds at https://docs.gladia.io/chapters/introduction/getting-started
-reposcan-raw/gladiaio/gladia-samples/python/examples/meeting_summary.py:gladia_client = GladiaClient(api_key="GLADIA_API_KEY").prerecorded()
-reposcan-raw/gladiaio/gladia-samples/python/examples/meeting_summary.py:transcription = gladia_client.transcribe(
-reposcan-raw/gladiaio/gladia-samples/python/examples/meeting_summary.py:    # check all the summarization options at https://docs.gladia.io/chapters/audio-intelligence/summarization
-reposcan-raw/gladiaio/gladia-samples/python/examples/call_sentiment_analysis.py:# !pip install gladiaio-sdk
-reposcan-raw/gladiaio/gladia-samples/python/examples/call_sentiment_analysis.py:from gladiaio_sdk import GladiaClient
-reposcan-raw/gladiaio/gladia-samples/python/examples/call_sentiment_analysis.py:# Create your account and get your API key in 30 seconds at https://docs.gladia.io/chapters/introduction/getting-started
-reposcan-raw/gladiaio/gladia-samples/python/examples/call_sentiment_analysis.py:gladia_client = GladiaClient(api_key="GLADIA_API_KEY").prerecorded()
-reposcan-raw/gladiaio/gladia-samples/python/examples/call_sentiment_analysis.py:transcription = gladia_client.transcribe(
-reposcan-raw/gladiaio/gladia-samples/python/examples/call_sentiment_analysis.py:        # check all the supported languages at https://docs.gladia.io/chapters/language/supported-languages#supported-languages
-reposcan-raw/gladiaio/gladia-samples/python/examples/call_sentiment_analysis.py:        # check all the sentiment/emotion supported at https://docs.gladia.io/chapters/audio-intelligence/sentiment-analysis#sentiment-and-emotion-analysis
-reposcan-raw/gladiaio/gladia-samples/python/examples/anonymized_call.py:# !pip install gladiaio-sdk
-reposcan-raw/gladiaio/gladia-samples/python/examples/anonymized_call.py:from gladiaio_sdk import GladiaClient
-reposcan-raw/gladiaio/gladia-samples/python/examples/anonymized_call.py:# Create your account and get your API key in 30 seconds ! [Click here](https://docs.gladia.io/chapters/introduction/getting-started) to get started.
-reposcan-raw/gladiaio/gladia-samples/python/examples/anonymized_call.py:gladia_client = GladiaClient(api_key="GLADIA_API_KEY").prerecorded()
-reposcan-raw/gladiaio/gladia-samples/python/examples/anonymized_call.py:transcription = gladia_client.transcribe(
-reposcan-raw/gladiaio/gladia-samples/python/examples/anonymized_call.py:            # Check all the supported entity types at https://docs.gladia.io/chapters/audio-intelligence/pii-redaction
-reposcan-raw/gladiaio/gladia-samples/python/examples/youtube_translation.py:# !pip install gladiaio-sdk
-reposcan-raw/gladiaio/gladia-samples/python/examples/youtube_translation.py:from gladiaio_sdk import GladiaClient
-[0m
-[0m$ [0mgrep -r "gladia" reposcan-raw/gladiaio/n8n-nodes-gladia --include="*.ts" | head -30
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/GenericFunctions.ts:const BASE_URL = 'https://api.gladia.io';
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/GenericFunctions.ts:export async function gladiaApiRequest(
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/GenericFunctions.ts:		headers: { 'x-gladia-version': `n8n-nodes/${packageVersion}`, ...headers },
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/GenericFunctions.ts:		'gladiaApi',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/GenericFunctions.ts:export async function gladiaApiUpload(
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/GenericFunctions.ts:		headers: { 'x-gladia-version': `n8n-nodes/${packageVersion}` },
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/GenericFunctions.ts:		'gladiaApi',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:	const gladiaApiRequestSpy = jest.spyOn(GenericFunctions, 'gladiaApiRequest');
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:	const gladiaApiUploadSpy = jest.spyOn(GenericFunctions, 'gladiaApiUpload');
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:					audioUrl: 'http://files.gladia.io/example/audio-transcription/split_infinity.wav',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:			gladiaApiRequestSpy.mockResolvedValueOnce({
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:				result_url: 'https://api.gladia.io/v2/transcription/txn-123',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:			expect(gladiaApiRequestSpy).toHaveBeenCalledWith('POST', '/v2/transcription', {
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:				audio_url: 'http://files.gladia.io/example/audio-transcription/split_infinity.wav',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:							result_url: 'https://api.gladia.io/v2/transcription/txn-123',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:					audioUrl: 'http://files.gladia.io/example/audio-transcription/split_infinity.wav',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:			gladiaApiRequestSpy.mockResolvedValueOnce({
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:				result_url: 'https://api.gladia.io/v2/transcription/txn-123',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:			expect(gladiaApiRequestSpy).toHaveBeenCalledTimes(1);
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:					audioUrl: 'http://files.gladia.io/example/audio-transcription/split_infinity.wav',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:			gladiaApiRequestSpy.mockResolvedValueOnce({
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:				result_url: 'https://api.gladia.io/v2/transcription/txn-err',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:			gladiaApiUploadSpy.mockResolvedValueOnce({
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:				audio_url: 'https://api.gladia.io/file/uploaded-123',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:			gladiaApiRequestSpy.mockResolvedValueOnce({
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:				result_url: 'https://api.gladia.io/v2/transcription/txn-bin',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:			expect(gladiaApiUploadSpy).toHaveBeenCalledWith(
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:			expect(gladiaApiRequestSpy).toHaveBeenCalledWith('POST', '/v2/transcription', {
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:				audio_url: 'https://api.gladia.io/file/uploaded-123',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:					audioUrl: 'http://files.gladia.io/example/audio-transcription/split_infinity.wav',
-[0m
-[0m$ [0mgrep -r "gladia" reposcan-raw/gladiaio/gladiaflow --include="*.rs" | head -30
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/permissions/accessibility.rs:const CURRENT_TCC_BUNDLE_ID: &str = "io.gladia.gladiaflow";
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/permissions/accessibility.rs:const LEGACY_TCC_BUNDLE_IDS: &[&str] = &["io.gladiaflow.app"];
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/permissions/accessibility.rs:        let results = [("io.gladia.gladiaflow", true), ("io.gladiaflow.app", false)];
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/permissions/accessibility.rs:        let results = [("io.gladia.gladiaflow", false), ("io.gladiaflow.app", true)];
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/config.rs:    base.join("gladiaflow").join("config.json")
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/config.rs:/// Used internally (e.g. as the fallback in `init_gladia_session`); the
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/config.rs:                "gladiaflow-config-test-{}-{unique}",
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:mod gladia;
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:use gladia::GladiaClient;
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:    pub gladia: Arc<TokioMutex<GladiaClient>>,
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:async fn init_gladia_session(
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:    let gladia = state.gladia.lock().await;
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:    gladia.set_audio_format(sample_rate, 1, 16).await;
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:    gladia
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:async fn test_gladia_connection(
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:    let gladia = state.gladia.lock().await;
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:    gladia
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:        host == "gladia.io"
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:                .strip_suffix(".gladia.io")
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:    fn accepts_trusted_gladia_urls() {
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:            "https://gladia.io/",
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:            "https://app.gladia.io/apikeys",
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:            "https://docs.gladia.io/chapters/audio-intelligence/custom-vocabulary",
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:            "https://app.gladia.io/transcriptions/live/session-id?source=gladiaflow",
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:            "https://nested.internal.gladia.io/path",
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:            "http://app.gladia.io/apikeys",
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:            "https://evilgladia.io/phish",
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:            "https://app.gladia.io.evil.example/phish",
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:            "https://app.gladia.io@evil.example/phish",
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs:            "https://attacker@app.gladia.io/phish",
-[0m
-[0m$ [0mgrep -r "gladia" reposcan-raw/gladiaio/realtime-multilingual-asr-router --include="*.py" | head -30
-(no output)
-[0m
-[0m$ [0mgrep -r "gladia" reposcan-raw/gladiaio/docs --include="*.md" --include="*.mdx" | head -30
-reposcan-raw/gladiaio/docs/api-reference/authentication.mdx:Once you got your API key, pass it in the header `x-gladia-key`, like this:
-reposcan-raw/gladiaio/docs/api-reference/authentication.mdx:  --url https://api.gladia.io/v2/transcription \
-reposcan-raw/gladiaio/docs/api-reference/authentication.mdx:  --header 'x-gladia-key: YOUR_GLADIA_API_KEY'
-reposcan-raw/gladiaio/docs/api-reference/callbacks/large-language-model.mdx:  --url https://api.gladia.io/v1/callbacks/large-language-model \
-reposcan-raw/gladiaio/docs/api-reference/callbacks/large-language-model.mdx:  --header 'x-gladia-key: <GLADIA_API_KEY>' \
-reposcan-raw/gladiaio/docs/api-reference/callbacks/large-language-model.mdx:  --url https://api.gladia.io/v1/callbacks/large-language-model \
-reposcan-raw/gladiaio/docs/api-reference/callbacks/large-language-model.mdx:  --header 'x-gladia-key: <GLADIA_API_KEY>' \
-reposcan-raw/gladiaio/docs/snippets/setup-account.mdx:You will first need to create your account. Sign-up to [app.gladia.io](https://app.gladia.io/?utm_campaign=197609689-Website&utm_source=documentation&utm_content=sign-up). You can sign-up through Google
-reposcan-raw/gladiaio/docs/snippets/setup-account.mdx:Now that you signed up, login to app.gladia.io and go to the [API keys section](https://app.gladia.io/apikeys). We should have already
-reposcan-raw/gladiaio/docs/snippets/integrations-cards.mdx:  href="/chapters/how-to-use-gladia/sdk"
-reposcan-raw/gladiaio/docs/snippets/getting-started-playground.mdx:[Gladia's playground](https://app.gladia.io/?utm_campaign=197609689-Website&utm_source=documentation&utm_content=sign-up
-reposcan-raw/gladiaio/docs/snippets/get-transcription-result.mdx:import { GladiaClient } from '@gladiaio/sdk';
-reposcan-raw/gladiaio/docs/snippets/get-transcription-result.mdx:const gladiaClient = new GladiaClient({
-reposcan-raw/gladiaio/docs/snippets/get-transcription-result.mdx:const result = await gladiaClient.preRecorded().poll("YOUR_TRANSCRIPTION_JOB_ID");
-reposcan-raw/gladiaio/docs/snippets/get-transcription-result.mdx:from gladiaio_sdk import GladiaClient
-reposcan-raw/gladiaio/docs/snippets/get-transcription-result.mdx:gladia_client = GladiaClient(api_key="YOUR_GLADIA_API_KEY").prerecorded()
-reposcan-raw/gladiaio/docs/snippets/get-transcription-result.mdx:# Use job.id from gladia_client.create(...)
-reposcan-raw/gladiaio/docs/snippets/get-transcription-result.mdx:result = gladia_client.poll("YOUR_TRANSCRIPTION_JOB_ID")
-reposcan-raw/gladiaio/docs/snippets/get-transcription-result.mdx:  You can configure webhooks at https://app.gladia.io/webhooks to be notified when your transcriptions are done.
-reposcan-raw/gladiaio/docs/snippets/samples.mdx:    href="https://github.com/gladiaio/gladia-samples/tree/main/typescript"
-reposcan-raw/gladiaio/docs/snippets/samples.mdx:    href="https://github.com/gladiaio/gladia-samples/tree/main/python"
-reposcan-raw/gladiaio/docs/snippets/samples.mdx:    href="https://github.com/gladiaio/gladia-samples/tree/main/javascript-browser"
-reposcan-raw/gladiaio/docs/README.md:Welcome to [Gladia Documentation](https://docs.gladia.io)
-reposcan-raw/gladiaio/docs/chapters/integrations/zapier.mdx:  [zapier.com/apps/gladia-ca229109/integrations](https://zapier.com/apps/gladia-ca229109/integrations).
-reposcan-raw/gladiaio/docs/chapters/integrations/zapier.mdx:  <Card title="Get your API key" href="https://app.gladia.io/apikeys" icon="key">
-reposcan-raw/gladiaio/docs/chapters/integrations/zapier.mdx:    href="https://zapier.com/apps/gladia-ca229109/integrations"
-reposcan-raw/gladiaio/docs/chapters/integrations/attendee.mdx:  [docs.gladia.io](https://docs.gladia.io/). Attendee is open source on GitHub:
-reposcan-raw/gladiaio/docs/chapters/integrations/attendee.mdx:1. [Sign up for a Gladia account](https://app.gladia.io/auth/signup) if you don't have one
-reposcan-raw/gladiaio/docs/chapters/integrations/attendee.mdx:2. Copy your key from the Gladia dashboard: [app.gladia.io/apikeys](https://app.gladia.io/apikeys)
-reposcan-raw/gladiaio/docs/chapters/integrations/attendee.mdx:  <img src="/assets/images/attendee-gladia-credentials.png" alt="Gladia Credentials card in the Attendee Settings → Credentials page" />
-[0m
-[0m$ [0mgrep -r "gladia" reposcan-raw/gladiaio/skills --include="*.py" --include="*.ts" | head -30
-(no output)
-[0m
-[0m$ [0mgrep -r "gladia" reposcan-raw/gladiaio/compare-stt --include="*.py" --include="*.ts" | head -30
-reposcan-raw/gladiaio/compare-stt/next.config.ts:/** Canonical public URL on www.gladia.io (requires marketing vercel rewrite). */
-reposcan-raw/gladiaio/compare-stt/next.config.ts:const PUBLIC_APP_URL = `https://www.gladia.io${BASE_PATH}`;
-reposcan-raw/gladiaio/compare-stt/next.config.ts: * never only on gladia.io — so a missing/outdated marketing rewrite cannot
-reposcan-raw/gladiaio/compare-stt/next.config.ts:  // www.gladia.io that slash path is not rewritten to this app (Webflow
-reposcan-raw/gladiaio/compare-stt/next.config.ts:    // PostHog reverse proxy — same hosts as gladia-marketing vercel.json.
-reposcan-raw/gladiaio/compare-stt/next.config.ts:  org: "gladia-p2",
-reposcan-raw/gladiaio/compare-stt/prisma/seed.ts:  { name: "Gladia", slug: "gladia", logoUrl: "/providers/gladia.svg" },
-reposcan-raw/gladiaio/compare-stt/test-base-path-fetch.ts:const origin = "https://www.gladia.io";
-reposcan-raw/gladiaio/compare-stt/src/lib/site.ts:  process.env.NEXT_PUBLIC_SITE_ORIGIN ?? "https://www.gladia.io"
-reposcan-raw/gladiaio/compare-stt/src/lib/site.ts:export const CITATION_DOMAIN = "www.gladia.io";
-reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts:const GLADIA_BASE = "https://api.gladia.io/v2";
-reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts:    headers: { "x-gladia-key": apiKey },
-reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts:      "x-gladia-key": apiKey,
-reposcan-raw/gladiaio/compare-stt/src/lib/providers/gladia.ts:      headers: { "x-gladia-key": apiKey },
-reposcan-raw/gladiaio/compare-stt/src/lib/base-path-fetch.ts:/** Base path used when the app is mounted under www.gladia.io/speech-to-text-api-comparison */
-reposcan-raw/gladiaio/compare-stt/src/lib/base-path-fetch.ts:    const u = new URL(url, origin ?? "https://www.gladia.io");
-reposcan-raw/gladiaio/compare-stt/src/lib/providers.ts:  { name: "Gladia", slug: "gladia", logoUrl: "/providers/gladia.svg", color: "#947AFC", model: "Solaria-3" },
-reposcan-raw/gladiaio/compare-stt/src/lib/transcribe.ts:import { transcribeWithGladia } from "./providers/gladia";
-reposcan-raw/gladiaio/compare-stt/src/lib/transcribe.ts:  gladia: transcribeWithGladia,
-reposcan-raw/gladiaio/compare-stt/src/lib/transcribe.ts:    gladia: "Gladia",
-reposcan-raw/gladiaio/compare-stt/src/lib/leaderboard-articles.ts:    url: "https://www.gladia.io/blog/best-speech-to-text-apis",
-reposcan-raw/gladiaio/compare-stt/src/lib/leaderboard-articles.ts:    url: "https://www.gladia.io/blog/best-open-source-speech-to-text-models",
-reposcan-raw/gladiaio/compare-stt/src/lib/tracking.ts: * Tracking IDs — keep in sync with gladia-marketing
-reposcan-raw/gladiaio/compare-stt/test-providers.ts:const SLUGS = ["gladia", "deepgram", "assemblyai", "elevenlabs", "speechmatics", "mistral"];
-[0m
-[0m$ [0mgrep -r "gladia" reposcan-raw/gladiaio/normalization --include="*.py" --include="*.ts" | head -30
-reposcan-raw/gladiaio/normalization/normalization/cli.py:        default="gladia-3",
-reposcan-raw/gladiaio/normalization/normalization/cli.py:        help="Built-in preset name or path to a YAML file (default: gladia-3).",
-reposcan-raw/gladiaio/normalization/normalization/pipeline/loader.py:    - A preset name (e.g. ``"gladia-3"``): loads the corresponding YAML from
-reposcan-raw/gladiaio/normalization/normalization/languages/finnish/replacements.py:Keys and values use the same ASCII-folded surface form as the rest of the gladia-3
-reposcan-raw/gladiaio/normalization/tests/e2e/default_pipeline_test.py:    pipeline = load_pipeline("gladia-3", "default")
-reposcan-raw/gladiaio/normalization/tests/e2e/default_pipeline_test.py:    pipeline = load_pipeline("gladia-3", "unknown")
-reposcan-raw/gladiaio/normalization/tests/e2e/default_pipeline_test.py:    pipeline = load_pipeline("gladia-3", "default")
-reposcan-raw/gladiaio/normalization/tests/e2e/default_pipeline_test.py:    pipeline = load_pipeline("gladia-3", "default")
-reposcan-raw/gladiaio/normalization/tests/e2e/default_pipeline_test.py:    pipeline = load_pipeline("gladia-3", "default")
-reposcan-raw/gladiaio/normalization/tests/e2e/normalization_test.py:# gladia_3
-reposcan-raw/gladiaio/normalization/tests/e2e/normalization_test.py:_GLADIA_3_DIR = _FILES_DIR / "gladia-3"
-reposcan-raw/gladiaio/normalization/tests/e2e/normalization_test.py:def _make_gladia_3_test(language: str, cases: list[NormalizationTest]):
-reposcan-raw/gladiaio/normalization/tests/e2e/normalization_test.py:        pipeline = _load_pipeline("gladia-3", language)
-reposcan-raw/gladiaio/normalization/tests/e2e/normalization_test.py:    _test.__name__ = f"test_gladia_3_{language}"
-reposcan-raw/gladiaio/normalization/tests/e2e/normalization_test.py:    globals()[f"test_gladia_3_{_language}"] = _make_gladia_3_test(
-reposcan-raw/gladiaio/normalization/tests/e2e/latency_test.py:_SAMPLE_TEXT = "I love gladia S.T.T."
-reposcan-raw/gladiaio/normalization/tests/e2e/latency_test.py:def test_gladia_3_latency(language: str) -> None:
-reposcan-raw/gladiaio/normalization/tests/e2e/latency_test.py:    pipeline = load_pipeline("gladia-3", language)
-reposcan-raw/gladiaio/normalization/tests/unit/languages/german_voxpopuli_normalization_test.py:    return load_pipeline("gladia-3", "de")
-reposcan-raw/gladiaio/normalization/tests/unit/languages/english_number_normalizer_test.py:def test_words_to_num_through_gladia_3_pipeline(text: str, expected: str) -> None:
-reposcan-raw/gladiaio/normalization/tests/unit/languages/english_number_normalizer_test.py:    pipeline = load_pipeline("gladia-3", "en")
-[0m
-[0m$ [0mgrep -r "gladia" reposcan-raw/gladiaio/num2words2 --include="*.py" --include="*.ts" | head -30
-reposcan-raw/gladiaio/num2words2/migration/migrate_to_num2words2.py:        "https://github.com/gladiaio/num2words2/blob/main/MIGRATION_GUIDE.md"
-reposcan-raw/gladiaio/num2words2/tests/test_252_ordinal_words.py:"""Wrong ordinal words in major languages (gladiaio/num2words2#252)."""
-reposcan-raw/gladiaio/num2words2/tests/test_south_asian_numbers.py:"""South-Asian number words below a hundred (gladiaio/num2words2#247) and
-reposcan-raw/gladiaio/num2words2/tests/test_south_asian_numbers.py:above a crore (gladiaio/num2words2#147)."""
-reposcan-raw/gladiaio/num2words2/tests/test_215_below_maxval.py:"""Correct words all the way up to maxval() (gladiaio/num2words2#215).
-reposcan-raw/gladiaio/num2words2/tests/test_large_scales.py:"""Scale words above a million (gladiaio/num2words2#147).
-reposcan-raw/gladiaio/num2words2/tests/test_244_typing.py:"""The package's typing surface (gladiaio/num2words2#244)."""
-reposcan-raw/gladiaio/num2words2/tests/test_238_lang_codes.py:"""Language codes resolve case-insensitively, BCP-47 style (gladiaio/num2words2#238)."""
-reposcan-raw/gladiaio/num2words2/tests/test_259_ordinal_words.py:"""Regression tests for gladiaio/num2words2#259: leftover ordinal words."""
-reposcan-raw/gladiaio/num2words2/tests/test_currency_native_nouns.py:"""gladiaio/num2words2#222: currency nouns are the language's own, in its
-reposcan-raw/gladiaio/num2words2/tests/test_157_missing_methods.py:"""gladiaio/num2words2#157: modes and input types that raised AttributeError
-reposcan-raw/gladiaio/num2words2/tests/test_currency_numeral_forms.py:"""gladiaio/num2words2#253: a numeral before a currency noun takes its
-reposcan-raw/gladiaio/num2words2/tests/test_205_leading_zeros.py:"""Leading zeros of the fractional part are read (gladiaio/num2words2#205).
-reposcan-raw/gladiaio/num2words2/tests/test_158_edge_input_errors.py:"""gladiaio/num2words2#158: edge inputs (fractional / negative ordinals,
-reposcan-raw/gladiaio/num2words2/tests/test_maxval_contract.py:"""maxval(lang) matches what the converter does (gladiaio/num2words2#159).
-reposcan-raw/gladiaio/num2words2/tests/test_maxval_contract.py:# gladiaio/num2words2#203: these recursed over their top scale word with no
-reposcan-raw/gladiaio/num2words2/tests/test_156_str_decimal_parity.py:"""gladiaio/num2words2#156: str and Decimal input must read the same number
-reposcan-raw/gladiaio/num2words2/tests/test_248_compound_ordinals.py:"""Compound and large ordinals are real words (gladiaio/num2words2#248)."""
-reposcan-raw/gladiaio/num2words2/tests/test_issue_160_whitespace.py:"""Regression tests for gladiaio/num2words2#160: stray whitespace and empty
-reposcan-raw/gladiaio/num2words2/tests/test_doc_examples.py:``--help`` epilog (gladiaio/num2words2#240):
-reposcan-raw/gladiaio/num2words2/tests/test_doc_examples.py:    accepts (gladiaio/num2words2#241: 30 were missing)."""
-reposcan-raw/gladiaio/num2words2/tests/test_migration_script.py:to a module that does not exist (gladiaio/num2words2#239).
-reposcan-raw/gladiaio/num2words2/tests/lang/test_ce.py:        # gladiaio/num2words2#159: used to return the string "NOT IMPLEMENTED".
-reposcan-raw/gladiaio/num2words2/tests/lang/test_km.py:        # gladiaio/num2words2#147: words (or OverflowError), not digits.
-reposcan-raw/gladiaio/num2words2/tests/lang/test_is.py:        # gladiaio/num2words2#169: floats/strings printed the forms tuple.
-reposcan-raw/gladiaio/num2words2/tests/lang/test_is.py:        # gladiaio/num2words2#185: 1-4 agree with the noun (króna/evra f,
-reposcan-raw/gladiaio/num2words2/tests/lang/test_ha.py:        # gladiaio/num2words2#207: str(value - int(value)) carried binary
-reposcan-raw/gladiaio/num2words2/tests/lang/test_cy.py:# gladiaio/num2words2#162: each unit is named once, in the counted form
-reposcan-raw/gladiaio/num2words2/tests/lang/test_cy.py:        # gladiaio/num2words2#159: OverflowError, not NotImplementedError.
-reposcan-raw/gladiaio/num2words2/tests/lang/test_cy.py:        # gladiaio/num2words2#180: the int path said "minws".
-[0m
-[0m$ [0mgrep -r "files.gladia.io" reposcan-raw/gladiaio --include="*.ts" --include="*.py" --include="*.json"
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:					audioUrl: 'http://files.gladia.io/example/audio-transcription/split_infinity.wav',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:				audio_url: 'http://files.gladia.io/example/audio-transcription/split_infinity.wav',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:					audioUrl: 'http://files.gladia.io/example/audio-transcription/split_infinity.wav',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:					audioUrl: 'http://files.gladia.io/example/audio-transcription/split_infinity.wav',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:					audioUrl: 'http://files.gladia.io/example/audio-transcription/split_infinity.wav',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:				audio_url: 'http://files.gladia.io/example/audio-transcription/split_infinity.wav',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:					audioUrl: 'http://files.gladia.io/example/audio-transcription/split_infinity.wav',
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts:					audioUrl: 'http://files.gladia.io/example/audio-transcription/split_infinity.wav',
-[0m
-[0m$ [0mgrep -r "x-gladia-key" reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.ts
-const CROSS_ORIGIN_SENSITIVE_HEADERS = new Set(['x-gladia-key', 'authorization', 'cookie'])
-[0m
-### CLASSIFICATION TABLES
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [offset=160, limit=30][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml[90m [offset=285, limit=20][0m
+### Classification Tables
 
-#### REAL_SECRET
-| File | Line | SHA256(secret) | Context |
-|------|------|----------------|---------|
-| *(none found)* | | | |
+#### TEST_OR_EXAMPLE (630+ lines — all test/fixture data)
+| File | Line | Pattern | Notes |
+|------|------|---------|-------|
+| `vercel-ai/packages/openai/src/**/*.test.ts` | 48,66,84,10,54,13,137,12,17,73,113,778,3310,45,246,381 | `apiKey: 'test-api-key'` | Vitest unit tests |
+| `vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13,277 | `apiKey: 'test-api-key'` | Unit tests |
+| `vercel-ai/packages/togetherai/src/**/*.test.ts` | 99,112,165,7 | `apiKey: 'custom-key'`, `apiKey: 'explicit-key'`, `apiKey: 'test-api-key'` | Unit tests |
+| `vercel-ai/packages/google-vertex/src/**/*.test.ts` | 120,187,405,419,5,21,68,134,150,95 | `apiKey: 'test-api-key'`, `mocked-token`, `mock.jwt.token`, `invalid-key` | Unit tests + mocks |
+| `vercel-ai/packages/amazon-bedrock/src/**/*.test.ts` | 128,152,158,100,331,442,209,55 | `sessionToken: 'dynamic-session-token'`, `static-session-token`, `test-session-token`, `async-session-token`, `test-api-key-123`, `test-api-key`, `test-token` | Unit tests |
+| `vercel-ai/packages/mcp/src/tool/oauth.test.ts` | 740,905,908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` | OAuth test fixtures |
+| `vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts` | 409,411 | `access_token: 'expired-access-token'`, `refresh_token: 'rotating-refresh-token'` | Token rotation tests |
+| `vercel-ai/packages/amazon-bedrock/src/amazon-bedrock-provider.ts` | 48 | `* apiKey: 'your-api-key-here'` | JSDoc example comment |
+| `vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | 36 | `encrypted_content: "gAAAAAB..."` | Encrypted test fixture |
 
-#### TEST_OR_EXAMPLE
-| File | Line | Pattern | Verdict |
-|------|------|---------|---------|
-| reposcan-raw/gladiaio/vercel-ai/packages/openai/src/**/*.test.ts | 45+ | `test-api-key` | Test fixture |
-| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740,905,908 | `secret123`, `access123`, `refresh123` | Test fixture |
-| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409,411 | `expired-access-token`, `rotating-refresh-token` | Test fixture |
-| reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/**/*.test.ts | 5+ | `mocked-token`, `mock.jwt.token`, `invalid-key` | Test fixture |
-| reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/**/*.test.ts | 100+ | `test-session-token`, `dynamic-session-token`, `static-session-token` | Test fixture |
-| reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test.ts | 99,112,165 | `custom-key`, `explicit-key`, `test-api-key` | Test fixture |
-| reposcan-raw/gladiaio/vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13,277 | `test-api-key` | Test fixture |
-| reposcan-raw/gladiaio/sdk/packages/sdk-js/src/**/*.test.ts | multiple | `test-key`, `key-123`, `abc`, `secretKey` | Test fixture |
-| reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe_test.go | | `secret` | Test fixture |
-| reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts | | `http://files.gladia.io/example/...` | Public example asset |
-| **Total test-fixture hits** | **~654** | | **All benign** |
+#### INTERESTING (2 lines — security feature, not vuln)
+| File | Line | Pattern | Notes |
+|------|------|---------|-------|
+| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | `deniedCIDRs: ['169.254.169.254/32']`, `subnets: { deny: ['169.254.169.254/32'] }` | **Security feature**: sandbox explicitly blocks cloud metadata IP (AWS/GCP/Azure). This is a defense-in-depth control, not a vulnerability. |
 
-#### ENDPOINT_LEAK
-| File | Line | Endpoint | Notes |
-|------|------|----------|-------|
-| reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts | 7+ | `http://files.gladia.io/example/audio-transcription/split_infinity.wav` | Public example file, not sensitive |
-| Multiple repos | — | `https://api.gladia.io`, `https://app.gladia.io` | Public API/dashboard endpoints |
-
-#### INTERESTING
-| File | Line | Finding | Risk |
-|------|------|---------|------|
-| reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml | 289,291 | `@ai-sdk/gladia` linked as local package `packages/gladia` | **Official org integration** (per RAG) |
-| reposcan-raw/gladiaio/vercel-ai/.github/tigent.yml | 30 | `provider/gladia` listed among AI providers | Confirms integration |
-| reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166,171 | `deniedCIDRs: ['169.254.169.254/32']` | **Security control** (SSRF mitigation), not leak |
-| reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.ts | — | `CROSS_ORIGIN_SENSITIVE_HEADERS` includes `x-gladia-key` | **Good practice**: strips key on cross-origin redirect |
-| reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs | — | URL allowlist for `*.gladia.io` with phishing test cases | **Good practice**: anti-phishing validation |
-| **npm registry (external)** | — | `gladia@0.1.3` (dist-tag `latest`), maintainer `softwarecitadel`, repo `alexisbouchez/gladia.ts` (404) | **SUPPLY-CHAIN RISK**: Orphaned personal pkg at `latest` leaks API key in WS URL query — **ACCEPTED in RAG** |
+#### ENDPOINT_LEAK / REAL_SECRET
+| Category | Count |
+|----------|-------|
+| ENDPOINT_LEAK | 0 |
+| REAL_SECRET | 0 |
 
 ---
 
-### VERDICT LIST
+### Verdict
 
 | Candidate | REPORT_CANDIDATE | Reason |
 |-----------|------------------|--------|
-| REAL_SECRET hits | **no** | Zero live credentials found |
-| TEST_OR_EXAMPLE (654 hits) | **no** | All test fixtures with obviously fake values |
-| ENDPOINT_LEAK (files.gladia.io) | **no** | Public example audio asset |
-| `@ai-sdk/gladia` in vercel-ai | **no** | Official org integration, not a vulnerability |
-| Sandbox 169.254.169.254 deny list | **no** | Security control (SSRF mitigation) |
-| SDK cross-origin header stripping | **no** | Good security practice |
-| Gladiaflow URL allowlist | **no** | Good security practice |
-| **Orphaned npm `gladia@0.1.3`** | **yes** | **Supply-chain key theft vector** — personal pkg at `latest` dist-tag, GitHub 404, leaks raw API key in WebSocket URL query. **Already ACCEPTED in RAG (2026-10-10/12)**. Report via program disclosure channel. |
+| `test-api-key` / `secret123` / `mocked-token` / etc. | **no** | All are test fixtures in Vitest unit tests across provider packages |
+| `deniedCIDRs: ['169.254.169.254/32']` | **no** | Security feature — sandbox network policy explicitly denies cloud metadata endpoint |
+| `@ai-sdk/gladia` workspace package | **no** | Official Vercel AI SDK provider integration (documented in RAG) |
+| `gladia@0.1.3` orphaned npm package | **no** | Already tracked in RAG as `[ACCEPTED] AUTH@sdk` — supply-chain vector, not new |
 
----
-
-### SUMMARY
-- **No new vulnerabilities** in this scan cycle (delta = 0 new hit lines)
-- **One pre-existing supply-chain risk** (orphaned `gladia@0.1.3` npm package) remains alive and reportable
-- All Gladia org repos show **good security hygiene**: test-only secrets, cross-origin header protection, SSRF mitigations, anti-phishing URL validation
-- The `@ai-sdk/gladia` integration in vercel-ai is **legitimate official integration**
+**DELTA**: 0 new hit lines vs previous scan — **no new findings this cycle**.
