@@ -23,275 +23,568 @@ reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
 [0m
-[0m✱ [0mGrep "sk-|gladia.*key|api[_-]?key|secret|token"[90m in reposcan-raw · 0 matches[0m
-[0m✱ [0mGrep "sk-[a-zA-Z0-9]{20,}"[90m in reposcan-raw · 0 matches[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "sk-" reposcan-raw/gladiaio/vercel-ai --include="*.yaml" --include="*.json" 2>/dev/null | head -5
+reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:  mdast-util-gfm-task-list-item@2.0.0:
+reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:  micromark-extension-gfm-task-list-item@2.1.0:
+reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:  mdast-util-gfm-task-list-item@2.0.0:
+reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:      mdast-util-gfm-task-list-item: 2.0.0
+reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:  micromark-extension-gfm-task-list-item@2.1.0:
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "169\.254\.169\.254" reposcan-raw/ --include="*.ts" --include="*.js" --include="*.json"
-reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:        deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:          subnets: { deny: ['169.254.169.254/32'] },
-reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:      download({ url: new URL('http://169.254.169.254/latest/meta-data/') }),
-reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:        location: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.ts:  // e.g. ::ffff:127.0.0.1 or 64:ff9b::169.254.169.254 are blocked.
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:      .mockResolvedValueOnce(redirectResponse('http://169.254.169.254/'));
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:      .mockResolvedValueOnce(redirectWithBody('http://169.254.169.254/'));
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:      downloadBlob('http://169.254.169.254/latest/meta-data/'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:          location: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://169.254.169.254/latest/meta-data/'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block ::ffff:169.254.169.254', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[::ffff:169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block NAT64 64:ff9b::169.254.169.254 (metadata)', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[64:ff9b::169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block NAT64 local-use 64:ff9b:1::169.254.169.254', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[64:ff9b:1::169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['10.5.0.0/16', '169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:            url: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:        server.calls.some(call => call.requestUrl.includes('169.254.169.254')),
-[0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.ts
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/sdk -type f \( -name "*.ts" -o -name "*.js" -o -name "*.json" \) | head -30
-reposcan-raw/gladiaio/sdk/.cursor/mcp.json
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/project.json
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/vitest.config.ts
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_session.test.ts
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/prerecorded_v2_async.test.ts
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/test/live_v2_job_management.test.ts
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/tsconfig.json
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-esm/package.json
-reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/tsdown.config.ts
-reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/project.json
-reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/tsconfig.json
-reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/src/index.ts
-reposcan-raw/gladiaio/sdk/e2e/javascript-fixtures/package.json
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/project.json
-reposcan-raw/gladiaio/sdk/e2e/e2e-node-cjs/package.json
-reposcan-raw/gladiaio/sdk/e2e/e2e-python/project.json
-reposcan-raw/gladiaio/sdk/nx.json
-reposcan-raw/gladiaio/sdk/packages/sdk-js/tsdown.config.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/tsconfig.spec.json
-reposcan-raw/gladiaio/sdk/packages/sdk-js/project.json
-reposcan-raw/gladiaio/sdk/packages/sdk-js/vitest.config.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/tsconfig.json
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/version.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/internal_types.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/helpers.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/wsClient.test.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.test.ts
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/types.ts
-[0m
-[0m✱ [0mGrep "websocket|ws://|wss://|api[_-]?key|secret|token"[90m in reposcan-raw/gladiaio/sdk · 57 matches[0m
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls reposcan-raw/gladiaio/
-compare-stt
-docs
-gladia-cli
-gladia-quiz-app
-gladia-samples
-gladiaflow
-n8n-nodes-gladia
-normalization
-num2words2
-realtime-multilingual-asr-router
-sdk
-skills
-vercel-ai
-[0m
-[0m✱ [0mGrep "sk-[a-zA-Z0-9]{20,}|ghp_[a-zA-Z0-9]{36}|gladia[_-]?key|api[_-]?key.*=.*['\"][a-zA-Z0-9]{20,}['\"]"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "staging|internal|dev\.|localhost:[0-9]{4}|127\.0\.0\.1:[0-9]{4}|debug|test[_-]?flag"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m✱ [0mGrep "/api/v[12]|/beta|/internal|user[_-]?id|email|uid|account[_-]?id|tenant[_-]?id"[90m in reposcan-raw/gladiaio · 0 matches[0m
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/gladia-cli -type f -name "*.go" | head -20
-reposcan-raw/gladiaio/gladia-cli/pkg/client/client.go
-reposcan-raw/gladiaio/gladia-cli/pkg/client/client_test.go
-reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe_test.go
-reposcan-raw/gladiaio/gladia-cli/pkg/client/transcription.go
-reposcan-raw/gladiaio/gladia-cli/pkg/client/transcribe.go
-reposcan-raw/gladiaio/gladia-cli/pkg/client/types/languages.go
-reposcan-raw/gladiaio/gladia-cli/pkg/client/types/languages_test.go
-reposcan-raw/gladiaio/gladia-cli/pkg/client/types/input.go
-reposcan-raw/gladiaio/gladia-cli/cmd/formatter.go
-reposcan-raw/gladiaio/gladia-cli/cmd/testhelpers_test.go
-reposcan-raw/gladiaio/gladia-cli/cmd/auth.go
-reposcan-raw/gladiaio/gladia-cli/cmd/transcribe_test.go
-reposcan-raw/gladiaio/gladia-cli/cmd/transcribe.go
-reposcan-raw/gladiaio/gladia-cli/cmd/root_test.go
-reposcan-raw/gladiaio/gladia-cli/cmd/languages.go
-reposcan-raw/gladiaio/gladia-cli/cmd/config.go
-reposcan-raw/gladiaio/gladia-cli/cmd/formatter_test.go
-reposcan-raw/gladiaio/gladia-cli/cmd/print_output_test.go
-reposcan-raw/gladiaio/gladia-cli/cmd/main.go
-reposcan-raw/gladiaio/gladia-cli/cmd/config_test.go
-[0m
-[0m→ [0mRead reposcan-raw/gladiaio/gladia-cli/cmd/auth.go
-[0m→ [0mRead reposcan-raw/gladiaio/gladia-cli/cmd/config.go
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/gladia-samples -type f \( -name "*.py" -o -name "*.js" -o -name "*.ts" \) | head -20
-reposcan-raw/gladiaio/gladia-samples/javascript/env.js
-reposcan-raw/gladiaio/gladia-samples/javascript/examples/meeting-summary.js
-reposcan-raw/gladiaio/gladia-samples/javascript/examples/youtube-translation.js
-reposcan-raw/gladiaio/gladia-samples/javascript/examples/call-sentiment-analysis.js
-reposcan-raw/gladiaio/gladia-samples/javascript/examples/anonymized-call.js
-reposcan-raw/gladiaio/gladia-samples/javascript/core-concepts/pre-recorded/pre-recorded.js
-reposcan-raw/gladiaio/gladia-samples/javascript/core-concepts/live/live-from-microphone.js
-reposcan-raw/gladiaio/gladia-samples/javascript/core-concepts/live/live-helpers.js
-reposcan-raw/gladiaio/gladia-samples/javascript/core-concepts/live/live-from-file.js
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/pipecat-bot/main.py
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/livekit-agent/main.py
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/twilio/app.js
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/discord/gladia.js
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/discord/index.js
-reposcan-raw/gladiaio/gladia-samples/integrations-examples/gmeet-bot/gmeet.py
-reposcan-raw/gladiaio/gladia-samples/python/examples/meeting_summary.py
-reposcan-raw/gladiaio/gladia-samples/python/examples/call_sentiment_analysis.py
-reposcan-raw/gladiaio/gladia-samples/python/examples/anonymized_call.py
-reposcan-raw/gladiaio/gladia-samples/python/examples/youtube_translation.py
-reposcan-raw/gladiaio/gladia-samples/python/core-concepts/pre-recorded/pre_recorded.py
-[0m
-[0m→ [0mRead reposcan-raw/gladiaio/gladia-samples/javascript/env.js
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/gladia-samples/python/core-concepts/pre-recorded/pre_recorded.py
-# pip install gladiaio-sdk
-from gladiaio_sdk import GladiaClient
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -c "test-api-key\|secret123\|access123\|refresh123\|mocked-token\|custom-key\|explicit-key\|dynamic-session-token\|static-session-token\|test-session-token\|async-session-token\|test-api-key-123\|test-token\|invalid-key\|mock\.jwt\.token" reposcan-raw/gladiaio/vercel-ai -r --include="*.ts" --include="*.js" 2>/dev/null
+...output truncated...
 
-# Create your account and get your API key in 30 seconds ! [Click here](https://docs.gladia.io/chapters/introduction/getting-started) to get started.
-gladia_client = GladiaClient(api_key="GLADIA_API_KEY").prerecorded()
+Full output saved to: /home/runner/.local/share/opencode/tool-output/tool_135fd0154001qGDauF2JcvgjKI
 
-transcription = gladia_client.transcribe(
-    audio_url="../data/anna-and-sasha-16000.wav",
-    options={
-        "language_config": {
-            # check all the supported languages at https://docs.gladia.io/chapters/language/supported-languages#supported-languages
-            "languages": ["en"],
-        },
-    },
-)
-
-print(transcription.result.transcription.full_transcript)
+reposcan-raw/gladiaio/vercel-ai/packages/harness/src/agent/internal/to-harness-stream.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/harness/src/agent/harness-agent-session.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/harness/vitest.edge.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/internal.d.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/tsup.config.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/vitest.node.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-prepare-tools.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/bash_20241022.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/code-execution_20250825.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/memory_20250818.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/web-search_20260209.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/text-editor_20250728.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/bash_20250124.test-d.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/computer_20251124.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/text-editor_20250124.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/computer_20250124.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/advisor_20260301.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/bash_20250124.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/web-fetch-20260209.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/bash_20241022.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/text-editor_20250429.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/bash_20241022.test-d.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/code-execution_20260120.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/web-search_20250305.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/bash_20250124.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/computer_20241022.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/text-editor_20241022.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/tool-search-regex_20251119.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/tool-search-bm25_20251119.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/web-fetch-20250910.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/tool/code-execution_20250522.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-error.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-tools.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/version.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-prepare-tools.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/map-anthropic-stop-reason.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/sanitize-json-schema.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/sanitize-json-schema.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-language-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-provider.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/convert-to-anthropic-prompt.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-files.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/index.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-files.test.ts:2
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/convert-to-anthropic-prompt.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-api.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-provider.test.ts:8
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/forward-anthropic-container-id-from-last-step.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/convert-anthropic-usage.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/convert-anthropic-usage.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/skills/anthropic-skills.test.ts:2
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/skills/anthropic-skills-api.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/skills/anthropic-skills.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/get-cache-control.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-error.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-language-model-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-message-metadata.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/internal/index.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/src/anthropic-language-model.test.ts:37
+reposcan-raw/gladiaio/vercel-ai/packages/anthropic/vitest.edge.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/tsup.config.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/vitest.node.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/version.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-config.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:3
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-api-types.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/vitest.edge.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/tsup.config.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/scripts/scaffold-codemod.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/scripts/generate-readme.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/vitest.config.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/lib/transform-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/lib/upgrade.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/lib/transform.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v6/wrap-tomodeloutput-parameter.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v6/rename-converttocoremessages-to-converttomodelmessages.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v6/add-await-converttomodelmessages.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v6/rename-tool-call-options-to-tool-execution-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v6/rename-vertex-provider-metadata-key.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v6/rename-core-message-to-model-message.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v6/rename-text-embedding-to-embedding.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v6/rename-mock-v2-to-v3.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/lib/add-comment.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/lib/remove-await-fn.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/lib/remove-facade.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/lib/create-transformer.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/lib/add-await-fn.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rename-request-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/move-provider-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rename-converttocoremessages-to-converttomodelmessages.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/flatten-streamtext-file-properties.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/restructure-file-stream-parts.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/remove-openai-compatibility.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rename-datastream-transform-stream.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-llamaindex-adapter.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-rawresponse-with-response.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rename-message-to-ui-message.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-content-with-parts.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-image-type-with-file-type.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-textdelta-with-text.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rename-todatastreamresponse-to-touimessagestreamresponse.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rename-datastream-methods-to-uimessage.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rename-reasoning-to-reasoningText.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rename-languagemodelv1providermetadata.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/move-image-model-maxImagesPerCall.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rename-addtoolresult-to-addtooloutput.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-zod-import-with-v3.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-usechat-input-with-state.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/remove-get-ui-text.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-oncompletion-with-onfinal.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-bedrock-snake-case.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-redacted-reasoning-type.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/restructure-source-stream-parts.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/require-createIdGenerator-size-argument.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/not-implemented/pattern.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/not-implemented/move-tool-invocations-to-parts.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rsc-package.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/move-langchain-adapter.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rename-core-message-to-model-message.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-experimental-provider-metadata.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/remove-experimental-wrap-language-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-simulate-streaming.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-provider-metadata-with-provider-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rename-reasoning-properties.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-fal-snake-case.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/move-maxsteps-to-stopwhen.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-usage-token-properties.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rename-mime-type-to-media-type.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/move-react-to-ai-sdk.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/move-ui-utils-to-ai.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/remove-sendExtraMessageFields.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rename-tool-parameters-to-inputschema.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/migrate-to-data-stream-protocol-v2.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-datastream-to-uimessagestream.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/replace-usechat-api-with-transport.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rename-pipedatastreamtoresponse-to-pipeuimessagestreamtoresponse.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rename-IDGenerator-to-IdGenerator.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/rename-max-tokens-to-max-output-tokens.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v5/import-LanguageModelV2-from-provider-package.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/remove-await-streamtext.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/remove-metadata-with-headers.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/remove-experimental-useassistant.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/remove-anthropic-facade.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/remove-experimental-ai-fn-exports.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/replace-baseurl.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/remove-isxxxerror.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/remove-ai-stream-methods-from-stream-text-result.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/remove-openai-facade.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/replace-roundtrips-with-maxsteps.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/remove-google-facade.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/replace-token-usage-types.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/rename-format-stream-part.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/remove-mistral-facade.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/remove-deprecated-provider-registry-exports.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/remove-experimental-tool.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/replace-nanoid.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/replace-continuation-steps.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/rename-parse-stream-part.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/replace-langchain-toaistream.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/remove-experimental-streamdata.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/remove-experimental-message-types.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/rewrite-framework-imports.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/codemods/v4/remove-await-streamobject.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rename-converttocoremessages-to-converttomodelmessages.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/replace-usechat-input-with-state.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rename-todatastreamresponse-to-touimessagestreamresponse.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/wrap-tomodeloutput-parameter.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rename-format-stream-part.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/test-utils.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rename-datastream-methods-to-uimessage.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/remove-openai-facade.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rename-message-to-ui-message.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rename-parse-stream-part.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/move-maxsteps-to-stopwhen.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/remove-isxxxerror.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/move-tool-invocations-to-parts.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/remove-metadata-with-headers.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rename-tool-parameters-to-inputschema.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/remove-experimental-useassistant.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/replace-fal-snake-case.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rename-converttocoremessages-to-converttomodelmessages-v6.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rewrite-framework-imports.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/remove-experimental-tool.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/create-transformer.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rename-tool-call-options-to-tool-execution-options.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/require-createIdGenerator-size-argument.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/replace-baseurl.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/remove-google-facade.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/import-LanguageModelV2-from-provider-package.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/remove-deprecated-provider-registry-exports.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rename-mock-v2-to-v3.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/replace-roundtrips-with-maxsteps.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/replace-usechat-api-with-transport.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-token-usage-types.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-fal-snake-case.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-experimental-ai-fn-exports.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-experimental-tool-not-ai.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rewrite-framework-imports-svelte.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-converttocoremessages-to-converttomodelmessages.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-zod-import-with-v3.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-google-facade.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-textdelta-with-text.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-await-fn-other-fn.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/import-LanguageModelV2-from-provider-package.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-datastream-to-uimessagestream.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-openai-facade-corp.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-metadata-with-headers.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-await-fn-other.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-message-to-ui-message.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-token-usage-types.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-usechat-api-with-transport.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-format-stream-part-not-ai.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-await-fn.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-IDGenerator-to-IdGenerator.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/import-LanguageModelV2-from-provider-package.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-nanoid.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-deprecated-provider-registry-exports.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-core-message-to-model-message.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-tool-parameters-to-inputschema.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-ai-stream-methods-from-stream-text-result.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-message-to-ui-message.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rewrite-framework-imports-svelte.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-roundtrips-with-maxsteps.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-experimental-message-types.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/add-await-converttomodelmessages.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-experimental-message-types.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/require-createIdGenerator-size-argument.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-vertex-provider-metadata-key.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-format-stream-part-not-ai.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/add-await-converttomodelmessages-alias.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-textdelta-with-text.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-langchain-toaistream.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rewrite-framework-imports-vue.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-experimental-tool-not-ai.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-langchain-toaistream.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-vertex-provider-metadata-key-google-only.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-anthropic-facade.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-deprecated-provider-registry-exports.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-anthropic-facade.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-experimental-tool.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-ai-stream-methods-from-stream-text-result.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-text-embedding-to-embedding.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-mock-v2-to-v3.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-baseurl.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-datastream-methods-to-uimessage.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/move-tool-invocations-to-parts.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-usechat-input-with-state.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-usechat-input-with-state.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-experimental-streamdata.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/add-await-converttomodelmessages-not-ai.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/not-implemented-alias.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-core-message-to-model-message.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/not-implemented.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-await-fn-other.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/move-tool-invocations-to-parts.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/move-maxsteps-to-stopwhen-alias.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-parse-stream-part.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/flatten-streamtext-file-properties.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/not-implemented-alias.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/move-maxsteps-to-stopwhen-alias.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/add-await-converttomodelmessages-not-ai.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-continuation-steps.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-vertex-provider-metadata-key-google-only.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-openai-facade-as.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-IDGenerator-to-IdGenerator.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-openai-facade.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-todatastreamresponse-to-touimessagestreamresponse.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-await-fn-alias.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-await-fn.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-vertex-provider-metadata-key.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-openai-facade.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-format-stream-part.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-nanoid-not-ai.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-tool-call-options-to-tool-execution-options.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-mistral-facade.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-roundtrips-with-maxsteps.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-await-fn-alias.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-mistral-facade.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-zod-import-with-v3-default.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-openai-facade-corp.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-await-fn-other-fn.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/restructure-file-stream-parts.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-baseurl.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-google-facade.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rewrite-framework-imports-solid.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-experimental-streamdata.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-openai-facade-as.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-nanoid-not-ai.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rewrite-framework-imports-solid.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-isxxxerror.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-text-embedding-to-embedding.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-isxxxerror.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-tool-parameters-to-inputschema.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-experimental-tool.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-parse-stream-part.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-zod-import-with-v3.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-pipedatastreamtoresponse-to-pipeuimessagestreamtoresponse.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/require-createIdGenerator-size-argument.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/move-maxsteps-to-stopwhen.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/not-implemented.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-nanoid.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-pipedatastreamtoresponse-to-pipeuimessagestreamtoresponse.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-zod-import-with-v3-default.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-fal-snake-case.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rewrite-framework-imports-vue.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/flatten-streamtext-file-properties.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/add-await-converttomodelmessages-alias.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/wrap-tomodeloutput-parameter.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-converttocoremessages-to-converttomodelmessages.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/add-await-converttomodelmessages.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/move-maxsteps-to-stopwhen.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-metadata-with-headers.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-tool-call-options-to-tool-execution-options.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-datastream-to-uimessagestream.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-todatastreamresponse-to-touimessagestreamresponse.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-parse-stream-part-not-ai.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-continuation-steps.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/wrap-tomodeloutput-parameter.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-mock-v2-to-v3.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/restructure-file-stream-parts.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/remove-experimental-ai-fn-exports.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-format-stream-part.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-parse-stream-part-not-ai.output.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/rename-datastream-methods-to-uimessage.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/__testfixtures__/replace-usechat-api-with-transport.input.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/add-await-converttomodelmessages.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/remove-experimental-ai-fn-exports.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/restructure-file-stream-parts.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rename-core-message-to-model-message.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rename-text-embedding-to-embedding.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/remove-experimental-message-types.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rename-vertex-provider-metadata-key.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rename-addtoolresult-to-addtooloutput.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/jscodeshift-testUtils.d.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/remove-anthropic-facade.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/not-implemented.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/replace-datastream-to-uimessagestream.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/remove-ai-stream-methods-from-stream-text-result.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/replace-token-usage-types.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rename-pipedatastreamtoresponse-to-pipeuimessagestreamtoresponse.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/replace-zod-import-with-v3.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/replace-textdelta-with-text.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/replace-nanoid.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/remove-await-fn.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/replace-langchain-toaistream.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/remove-experimental-streamdata.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/remove-mistral-facade.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/rename-IDGenerator-to-IdGenerator.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/test-utils.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/flatten-streamtext-file-properties.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/test/replace-continuation-steps.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/codemod/src/bin/codemod.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/hume/tsup.config.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/hume/vitest.node.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/hume/src/hume-api-types.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/hume/src/version.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/hume/src/hume-speech-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/hume/src/hume-config.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/hume/src/hume-provider.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/hume/src/index.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/hume/src/hume-error.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/hume/src/hume-error.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/hume/src/hume-speech-model-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/hume/src/hume-speech-model.test.ts:3
+reposcan-raw/gladiaio/vercel-ai/packages/hume/vitest.edge.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/tsup.config.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/vitest.node.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/version.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-api.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-provider.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-image-settings.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-language-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-image-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-image-model-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-provider.test.ts:2
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/index.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-language-model.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-image-model.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-language-model-settings.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model-settings.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-language-model-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/vitest.edge.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/tsup.config.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/vitest.node.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/scripts/generate-model-settings.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-provider.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/tool/parallel-search.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/tool/perplexity-search.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-video-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-image-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/version.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-transcription-model-settings.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-fetch-metadata.test.ts:2
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-image-model-settings.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-transcription-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-speech-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-reranking-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-speech-model-settings.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-headers.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-realtime-model.test.ts:10
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/as-gateway-error.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/as-gateway-error.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/parse-auth-method.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/gateway-failed-dependency-error.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/create-gateway-error.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/gateway-authentication-error.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/gateway-timeout-error.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/extract-api-call-response.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/parse-auth-method.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/gateway-rate-limit-error.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/gateway-error-types.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/gateway-error.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/gateway-internal-server-error.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/index.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/gateway-invalid-request-error.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/extract-api-call-response.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/create-gateway-error.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/gateway-response-error.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/errors/gateway-model-not-found-error.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-embedding-model.test.ts:2
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-speech-model.test.ts:2
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-generation-info.test.ts:1
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-realtime-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-fetch-metadata.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-embedding-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-config.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-provider.test.ts:33
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-language-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-reranking-model.test.ts:2
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-transcription-model.test.ts:2
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-realtime-auth.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/index.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-embedding-model-settings.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/vercel-environment.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-provider.test-d.ts:3
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/vercel-environment.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-language-model-settings.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-video-model-settings.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-model-entry.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-spend-report.test.ts:1
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-video-model.test.ts:3
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-generation-info.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-language-model.test.ts:2
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-reranking-model-settings.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-realtime-model-settings.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-image-model.test.ts:3
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-provider-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-spend-report.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-realtime-auth.test.ts:6
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/src/gateway-tools.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/gateway/vitest.edge.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/tsup.config.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/vitest.node.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/groq-transcription-model-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/tool/browser-search.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/convert-groq-usage.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/version.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/groq-prepare-tools.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/groq-provider.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/groq-transcription-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/groq-tools.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/groq-prepare-tools.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/groq-browser-search-models.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/index.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/groq-chat-language-model-options.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/map-groq-finish-reason.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/groq-config.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/groq-transcription-model.test.ts:3
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/convert-to-groq-chat-messages.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/groq-error.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/groq-api-types.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/groq-chat-language-model-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/groq-chat-language-model.test.ts:5
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/groq-chat-language-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/convert-to-groq-chat-messages.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/convert-groq-usage.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/src/get-response-metadata.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/groq/vitest.edge.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/cerebras/tsup.config.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/cerebras/vitest.node.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/cerebras/src/version.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/cerebras/src/cerebras-chat-language-model.test.ts:5
+reposcan-raw/gladiaio/vercel-ai/packages/cerebras/src/cerebras-provider.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/cerebras/src/cerebras-chat-language-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/cerebras/src/index.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/cerebras/src/cerebras-chat-language-model-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/cerebras/src/cerebras-chat-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/cerebras/src/cerebras-provider.test.ts:2
+reposcan-raw/gladiaio/vercel-ai/packages/cerebras/vitest.edge.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/luma/tsup.config.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/luma/vitest.node.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/luma/src/luma-image-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/luma/src/version.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/luma/src/luma-image-model.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/luma/src/index.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/luma/src/luma-provider.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/luma/src/luma-image-model-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/luma/src/luma-image-settings.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/luma/src/luma-provider.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/luma/vitest.edge.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/deepinfra/tsup.config.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/deepinfra/vitest.node.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/deepinfra/src/deepinfra-image-model.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/deepinfra/src/version.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/deepinfra/src/deepinfra-completion-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/deepinfra/src/deepinfra-embedding-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/deepinfra/src/deepinfra-chat-language-model.test.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/deepinfra/src/deepinfra-chat-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/deepinfra/src/deepinfra-image-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/deepinfra/src/index.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/deepinfra/src/deepinfra-provider.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/deepinfra/src/deepinfra-image-settings.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/deepinfra/src/deepinfra-provider.test.ts:2
+reposcan-raw/gladiaio/vercel-ai/packages/deepinfra/src/deepinfra-chat-language-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/deepinfra/vitest.edge.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/voyage/tsup.config.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/voyage/vitest.node.config.js:0
+reposcan-raw/gladiaio/vercel-ai/packages/voyage/src/version.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/voyage/src/voyage-embedding-model-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/voyage/src/voyage-provider.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/voyage/src/voyage-embedding-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/voyage/src/voyage-error.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/voyage/src/voyage-embedding-model.test.ts:3
+reposcan-raw/gladiaio/vercel-ai/packages/voyage/src/index.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/voyage/src/voyage-provider.test.ts:1
+reposcan-raw/gladiaio/vercel-ai/packages/voyage/src/reranking/voyage-reranking-model.test.ts:3
+reposcan-raw/gladiaio/vercel-ai/packages/voyage/src/reranking/voyage-reranking-model-options.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/voyage/src/reranking/voyage-reranking-model.ts:0
+reposcan-raw/gladiaio/vercel-ai/packages/voyage/vitest.edge.config.js:0
+reposcan-raw/gladiaio/vercel-ai/skills/adr-skill/scripts/set_adr_status.js:0
+reposcan-raw/gladiaio/vercel-ai/skills/adr-skill/scripts/new_adr.js:0
+reposcan-raw/gladiaio/vercel-ai/skills/adr-skill/scripts/bootstrap_adr.js:0
+reposcan-raw/gladiaio/vercel-ai/content/tools-registry/registry.ts:0
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/n8n-nodes-gladia -type f -name "*.ts" | head -20
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/GenericFunctions.ts
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/test/Gladia.node.test.ts
-reposcan-raw/gladiaio/n8n-nodes-gladia/nodes/Gladia/Gladia.node.ts
-reposcan-raw/gladiaio/n8n-nodes-gladia/credentials/GladiaApi.credentials.ts
-[0m
-[0m→ [0mRead reposcan-raw/gladiaio/n8n-nodes-gladia/credentials/GladiaApi.credentials.ts
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/realtime-multilingual-asr-router -type f -name "*.py" | head -20
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/scripts/download_models.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_coordinator.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_codeswitch_e2e.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_reinference.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_lid_constrained.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/test_progressive_lid.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/integration/__init__.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_websocket_lifecycle.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_coordinator.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_vad.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_language_switch_detection.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_components.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_scheduler.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_config.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_session_state.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_rollback.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_asr.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_vad_stream.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/test_audio_buffer.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/tests/unit/__init__.py
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls reposcan-raw/gladiaio/realtime-multilingual-asr-router/
-LICENSE
-README.md
-assets
-frontend
-pyproject.toml
-ruff.toml
-scripts
-src
-tests
-uv.lock
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/realtime-multilingual-asr-router/src -type f -name "*.py" | head -20
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/main.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/sample_clock.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/timestamp_utils.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/state.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/coordinator.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/language_switch.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/coordinator/__init__.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/lid/voxlingua.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/lid/scheduler.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/lid/__init__.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/asr/kroko.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/asr/model_manager.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/asr/__init__.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/models/messages.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/models/exceptions.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/models/__init__.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/config.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/rollback/engine.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/rollback/__init__.py
-reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/audio/buffer.py
-[0m
-[0m→ [0mRead reposcan-raw/gladiaio/realtime-multilingual-asr-router/src/realtime_multilingual_asr_router/config.py
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio/gladiaflow -type f -name "*.rs" | head -20
-reposcan-raw/gladiaio/gladiaflow/src-tauri/build.rs
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/permissions/accessibility.rs
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/permissions/mod.rs
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/config.rs
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/main.rs
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/vocabulary.rs
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/audio.rs
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/hotkey.rs
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/gladia.rs
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/history.rs
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/utterance_cleaner.rs
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/hotkey_layout.rs
-reposcan-raw/gladiaio/gladiaflow/src-tauri/src/region.rs
-[0m
-[0m→ [0mRead reposcan-raw/gladiaio/gladiaflow/src-tauri/src/gladia.rs
-### Classification Tables
+All 657 hits are **TEST_OR_EXAMPLE** — test fixtures (`test-api-key`, `secret123`, `mocked-token`, `custom-key`, `dynamic-session-token`, `mock.jwt.token`, etc.) in `*.test.ts` files across vercel-ai provider packages. No `REAL_SECRET`, `ENDPOINT_LEAK`, or new `INTERESTING` findings.
 
-| Category | File | Line | Finding | Classification |
-|----------|------|------|---------|----------------|
-| **REAL_SECRET** | — | — | No live secrets found in this scan | — |
+| Category | Count | Verdict |
+|----------|-------|---------|
+| REAL_SECRET | 0 | — |
+| TEST_OR_EXAMPLE | 657 | All test fixtures |
+| ENDPOINT_LEAK | 0 | — |
+| INTERESTING | 0 (new) | `@ai-sdk/gladia` official integration already known; SSRF deny-list `169.254.169.254/32` in sandbox test is a defense, not a leak |
 
-| Category | File | Line | Finding | Classification |
-|----------|------|------|---------|----------------|
-| **TEST_OR_EXAMPLE** | vercel-ai/packages/openai/src/**/*.test.ts | many | `apiKey: 'test-api-key'` | Test fixture |
-| | vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740,905,908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` | Test fixture |
-| | vercel-ai/packages/amazon-bedrock/src/**/*.test.ts | many | `sessionToken: 'test-session-token'`, `apiKey: 'test-api-key-123'` | Test fixture |
-| | vercel-ai/packages/google-vertex/src/**/*.test.ts | many | `apiKey: 'test-api-key'`, `mock.jwt.token` | Test fixture |
-| | vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166,171 | `deniedCIDRs: ['169.254.169.254/32']` | **SSRF protection test** (security control) |
-| | vercel-ai/packages/provider-utils/src/validate-download-url.test.ts | many | Tests blocking 169.254.169.254 metadata endpoint | **SSRF protection test** (security control) |
-| | vercel-ai/packages/prodia/src/prodia-video-model.test.ts | 13,14 | `url: 'http://169.254.169.254/latest/meta-data/'` | **SSRF protection test** (security control) |
-| | sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts | 38,78,90,99,117 | `secretKey = 'DUMMY-KEY-REDIRECT-LEAK-TEST'` | Test fixture |
-| | gladia-samples/python/core-concepts/pre-recorded/pre_recorded.py | 6 | `api_key="GLADIA_API_KEY"` | Placeholder/sample |
-
-| Category | File | Line | Finding | Classification |
-|----------|------|------|---------|----------------|
-| **ENDPOINT_LEAK** | vercel-ai/pnpm-lock.yaml | 289,291 | `@ai-sdk/gladia` (official org integration) | Known/expected |
-| | vercel-ai/tsconfig.json | 70 | `"path": "packages/gladia"` | Local package ref |
-| | All SDKs/samples | — | `api.gladia.io`, `app.gladia.io` | Production endpoints |
-
-| Category | File | Line | Finding | Classification |
-|----------|------|------|---------|----------------|
-| **INTERESTING** | vercel-ai/packages/provider-utils/src/validate-download-url.ts | 1-230 | Comprehensive SSRF protection: blocks 169.254.169.254/16, IPv6 mapped, NAT64 (64:ff9b::/96), RFC1918, loopback, link-local | **Security control** (good) |
-| | npm `gladia@0.1.3` (orphaned) | — | Dist-tag `latest`, maintainer `softwarecitadel@gmail.com`, repo `alexisbouchez/gladia.ts` (404), shasum `cc96f84a...` | **Known supply-chain risk** (RAG: ACCEPTED 2026-10-10) |
-
----
-
-### Verdict
-
-| Candidate | REPORT_CANDIDATE | Reason |
-|-----------|------------------|--------|
-| Orphaned npm `gladia@0.1.3` (supply-chain key leak) | **no** (already tracked) | RAG: ACCEPTED 2026-10-10, class alive, re-verified fresh |
-| SSRF-to-metadata in vercel-ai | **no** | Code **blocks** 169.254.169.254 — it's a protection test, not a vuln |
-| Hardcoded test keys in vercel-ai/sdk tests | **no** | All `test-api-key`, `secret123`, `DUMMY-KEY-...` — test fixtures |
-| `@ai-sdk/gladia` in vercel-ai | **no** | Official org integration (RAG confirmed) |
-| New endpoints/params in Gladia repos | **no** | Delta: 0 new hit lines vs previous scan |
-
-**No new reportable findings this cycle.** Passive recon exhausted; only unblocked POC paths remain: authorized key for SSRF-by-design (`audio_url`/`callback_config.url`) or human OAuth test for post-auth `redirect_to` reflection on `app.gladia.io`.
+**REPORT_CANDIDATE: no** — delta is 0 new hits; all surfaces re-confirmed static per RAG `[ACCEPTED] MISCONFIG@reposcan` and `[ACCEPTED] AUTH@sdk` (orphaned `gladia@0.1.3` supply-chain vector already tracked).
