@@ -1,5 +1,5 @@
-===== TRIAGE 2026-10-12 18:02:27 UTC =====
+===== TRIAGE 2026-10-13 00:50:54 UTC =====
 [0m
 > build · nemotron-3-ultra-free
 [0m
-No leads were provided in your message. Please share the leads you want me to evaluate against the 7-Question Gate.
+No leads or probe results were provided in your message. Please share the hunt bot output (the LEADS list and PROBE RESULTS) so I can triage each against the 7-Question Gate.
