@@ -1439,3 +1439,27 @@
 - LEARN: ACCEPTED MISCONFIG @ app.gladia.io: CSP confirmed fresh — 0 form-action directives (grep-count=0); enables /signin form-action reflection (gap confirmed, not ov
 - LEARN: ACCEPTED SSRF @ api.gladia.io: spec+RAG frozen — SSRF-by-design surface persists (AUTH_HELPED)
 - LEARN: ACCEPTED OATH @ app.gladia.io: /signin?redirect_to reflection alive byte-fresh — 0 CSP form-action directives (gap confirmed); post-auth honoring sole unverifie
+
+## RANKED HYPOTHESES 2026-10-13 00:36:27 UTC
+- [97] npm: Orphaned npm package impersonates official SDK and leaks raw API key in WebSocket URL query
+- [97] npm: Orphaned npm gladia@0.1.3 impersonates official SDK and leaks raw API key in WebSocket URL query at dist-tag latest
+- [55] app.gladia.io: Signup session cookie deserialization trust allows signup flow manipulation and arbitrary email injection
+- NEXT(hypotheses-mimo.txt): PROBE: POST https://app.gladia.io/signup with intent=google, capture signup_session cookie, base64-decode, modify step=complete&email=test@attacker.com, replay 
+- NEXT(hypotheses-bigpickle.txt): HUMAN: Submit the locked gladia@0.1.3 orphaned-impersonation report via https://gladia.io/bug-bounty-report (301→www→302→Google Forms, Google SSO auth-gated) — 
+- NEXT(hypotheses-nemotron3.txt): HUMAN: Submit the locked gladia@0.1.3 orphaned-impersonation report via https://gladia.io/bug-bounty-report (301→www→302→Google Forms, Google SSO auth-gated)
+- LEARN: ACCEPTED AUTH @ sdk: orphaned npm gladia@0.1.3 at dist-tag latest leaks raw API key in WebSocket URL query — supply-chain key theft vector confirmed alive via s
+- LEARN: ACCEPTED SSRF @ api.gladia.io: spec+RAG frozen — SSRF-by-design surface persists (AUTH_HELPED)
+- LEARN: ACCEPTED OTHER @ app.gladia.io: no new surface this cycle, re-confirmed static — /signin?redirect_to reflection byte-fresh, CSP 0 form-action directives gap con
+- LEARN: ACCEPTED OTHER @ sdk: official @gladiaio/sdk@2.1.0 uses secure session-init flow (POST /v2/live → session URL) — no raw key in WebSocket query; 14+ @gladia.io m
+- LEARN: ACCEPTED OTHER @ npm gladia@0.1.3: class alive, re-verified fresh this cycle — dist-tag latest=0.1.3, description "Official", GitHub API user+repo alexisbouchez
+- LEARN: REJECTED MISCONFIG @ api.gladia.io: NO_DRIFT re-confirmed by fresh probes this cycle — openapi 200/125680B (dynamic-example band)/14 paths/7 webhooks/1 server, 
+- LEARN: REJECTED MISCONFIG @ api.gladia.io: per-instance codegen fingerprint remains falsified — new etag suffix `W/"1eaf0-GG2qYXV92Co2n1o7XtWfAag92aA"` while structura
+- LEARN: ACCEPTED SSRF @ api.gladia.io: spec frozen, GET /v2/pre-recorded 401/144B NestJS key-gated fresh — SSRF-by-design surface persists (AUTH_HELPED).
+- LEARN: ACCEPTED OATH @ app.gladia.io: /signin?redirect_to reflection alive byte-fresh this cycle (200/27448B, action="/signin?redirect_to=https%3A%2F%2Fevil.example.co
+- LEARN: ACCEPTED OTHER @ npm gladia@0.1.3: class alive, re-verified fresh this cycle — dist-tag latest=0.1.3, shasum cc96f84a… unchanged, GitHub API user+repo alexisbou
+- LEARN: REJECTED MISCONFIG @ api.gladia.io: NO_DRIFT re-confirmed fresh this cycle — openapi 200/125680B (dynamic-example band)/14 paths/7 webhooks/1 server, /health 15
+- LEARN: REJECTED MISCONFIG @ api.gladia.io: per-instance codegen fingerprint remains falsified — new etag suffix with structural identity intact; etag rotates via dynam
+- LEARN: ACCEPTED MISCONFIG @ api.gladia.io: /v2/live/health undocumented key-gated endpoint confirmed informational only — 401 NestJS, not in OpenAPI 14-path spec, prop
+- LEARN: ACCEPTED MISCONFIG @ app.gladia.io: CSP confirmed fresh — 0 form-action directives (grep-count=0); enables /signin form-action reflection (gap confirmed, not ov
+- LEARN: ACCEPTED SSRF @ api.gladia.io: spec+RAG frozen — SSRF-by-design surface persists (AUTH_HELPED)
+- LEARN: ACCEPTED OATH @ app.gladia.io: /signin?redirect_to reflection alive byte-fresh — 0 CSP form-action directives (gap confirmed); post-auth honoring sole unverifie
