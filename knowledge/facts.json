@@ -49,14 +49,14 @@
  },
  "OTHER@api.gladia.io": {
   "first_seen": "2026-08-08",
-  "last_seen": "2026-10-11",
-  "reason": "NO_DRIFT re-confirmed fresh this cycle \u2014 OpenAPI 14 paths/7 webhooks identical, SSRF-by-design via audio_url + callback_config.url persists (AUTH_HELPED)",
+  "last_seen": "2026-10-13",
+  "reason": "no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec (14 paths, 7 webhooks identical)",
   "verdict": "ACCEPTED"
  },
  "OTHER@app.gladia.io": {
   "first_seen": "2026-09-30",
   "last_seen": "2026-10-13",
-  "reason": "no new surface this cycle, re-confirmed static \u2014 /signin?redirect_to reflection byte-fresh, CSP 0 form-action directives gap confirmed, OAuth post-auth chain uses state+PKCE not redirect_to reflection",
+  "reason": "no new surface this cycle, re-confirmed static \u2014 /signin?redirect_to reflection byte-fresh, CSP 0 form-action directives gap confirmed",
   "verdict": "ACCEPTED"
  },
  "OTHER@gladia": {
