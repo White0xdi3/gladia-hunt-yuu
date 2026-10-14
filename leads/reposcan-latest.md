@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-14 06:13:09 UTC =====
+===== REPOSCAN 2026-10-14 07:34:18 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5694 code/config files scanned, 657 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,29 +46,68 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-### Classification Tables
+[0m$ [0mls -la reposcan-raw/gladiaio/
+total 60
+drwxr-xr-x 15 runner runner 4096 Oct 14 07:33 .
+drwxr-xr-x  4 runner runner 4096 Oct 14 07:33 ..
+drwxr-xr-x  9 runner runner 4096 Oct 14 07:33 compare-stt
+drwxr-xr-x  9 runner runner 4096 Oct 14 07:33 docs
+drwxr-xr-x  7 runner runner 4096 Oct 14 07:33 gladia-cli
+drwxr-xr-x 11 runner runner 4096 Oct 14 07:33 gladia-quiz-app
+drwxr-xr-x 11 runner runner 4096 Oct 14 07:33 gladia-samples
+drwxr-xr-x  9 runner runner 4096 Oct 14 07:33 gladiaflow
+drwxr-xr-x  7 runner runner 4096 Oct 14 07:33 n8n-nodes-gladia
+drwxr-xr-x  8 runner runner 4096 Oct 14 07:33 normalization
+drwxr-xr-x 12 runner runner 4096 Oct 14 07:33 num2words2
+drwxr-xr-x  9 runner runner 4096 Oct 14 07:33 realtime-multilingual-asr-router
+drwxr-xr-x 10 runner runner 4096 Oct 14 07:33 sdk
+drwxr-xr-x  7 runner runner 4096 Oct 14 07:33 skills
+drwxr-xr-x 18 runner runner 4096 Oct 14 07:33 vercel-ai
+[0m
+[0m✱ [0mGrep "gladia"[90m in reposcan-raw/gladiaio/sdk · 14 matches[0m
+Based on the scan data and knowledge base, here's the triage:
 
-| Category | File | Line | Classification | Notes |
-|----------|------|------|----------------|-------|
-| **TEST_OR_EXAMPLE** | `packages/mcp/src/tool/oauth.test.ts` | 740, 905, 908 | TEST_OR_EXAMPLE | `secret123`, `access123`, `refresh123` — obvious test fixtures |
-| **TEST_OR_EXAMPLE** | `packages/mcp/src/tool/mcp-http-transport.test.ts` | 409, 411 | TEST_OR_EXAMPLE | `expired-access-token`, `rotating-refresh-token` |
-| **TEST_OR_EXAMPLE** | `packages/openai/**/*.test.ts` | 14-3310 | TEST_OR_EXAMPLE | All `test-api-key` across 12 files |
-| **TEST_OR_EXAMPLE** | `packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | TEST_OR_EXAMPLE | `test-api-key` |
-| **TEST_OR_EXAMPLE** | `packages/togetherai/src/*.test.ts` | 99, 112, 165 | TEST_OR_EXAMPLE | `custom-key`, `explicit-key`, `test-api-key` |
-| **TEST_OR_EXAMPLE** | `packages/google-vertex/src/*.test.ts` | 120-419 | TEST_OR_EXAMPLE | `test-api-key`, `mocked-token`, `mock.jwt.token`, `invalid-key` |
-| **TEST_OR_EXAMPLE** | `packages/amazon-bedrock/src/*.test.ts` | 100-442 | TEST_OR_EXAMPLE | `test-session-token`, `dynamic-session-token`, `static-session-token`, `test-api-key-123`, `test-token` |
-| **TEST_OR_EXAMPLE** | `packages/amazon-bedrock/src/amazon-bedrock-provider.ts` | 48 | TEST_OR_EXAMPLE | Documentation placeholder `your-api-key-here` |
-| **INTERESTING** | `packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | INTERESTING | Explicit deny of `169.254.169.254/32` (cloud metadata IP) — security control present |
-| **ENDPOINT_LEAK** | `pnpm-lock.yaml`, `tsconfig.json`, `analyze-providers.ts`, `.github/tigent.yml` | 289, 291, 2368, 70, 21, 30 | ENDPOINT_LEAK (benign) | `@ai-sdk/gladia` internal package references — confirmed official org integration per RAG |
+---
 
-### Verdict
+### CLASSIFICATION TABLES
+
+#### TEST_OR_EXAMPLE (all 657 hits — test fixtures only)
+| File | Line | Pattern | Classification |
+|------|------|---------|----------------|
+| `vercel-ai/packages/*/src/**/*.test.ts` | 400+ lines | `apiKey: 'test-api-key'`, `'secret123'`, `'access123'`, `'refresh123'`, `'expired-access-token'`, `'rotating-refresh-token'`, `'mocked-token'`, `'mock.jwt.token'`, `'invalid-key'`, `'dynamic-session-token'`, `'static-session-token'`, `'async-session-token'`, `'test-api-key-123'`, `'test-session-token'`, `'test-token'`, `'custom-key'`, `'explicit-key'` | **TEST_OR_EXAMPLE** — hardcoded test values in unit/integration tests |
+| `vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | `deny: ['169.254.169.254/32']` | **TEST_OR_EXAMPLE** — SSRF deny-list in sandbox tests (defensive, not leak) |
+
+#### INTERESTING (config / supply-chain)
+| File | Line | Finding | Notes |
+|------|------|---------|-------|
+| `vercel-ai/pnpm-lock.yaml` | 289, 291, 2368 | `@ai-sdk/gladia` linked as local workspace package (`link:../../packages/gladia`) | Official Vercel AI SDK integration for Gladia (per RAG: `@ai-sdk/gladia` = official org integration) |
+| `vercel-ai/tsconfig.json` | 70 | `"path": "packages/gladia"` | Local package resolution for Gladia provider |
+| `vercel-ai/tools/analyze-downloads/src/analyze-providers.ts` | 21 | `'@ai-sdk/gladia'` in provider list | Download analytics for Gladia provider |
+| `vercel-ai/.github/tigent.yml` | 30 | Provider list includes `provider/gladia` (implied by context) | CI provider matrix |
+
+#### ENDPOINT_LEAK — **NONE** (no internal/dev/staging URLs beyond test deny-lists)
+
+#### REAL_SECRET — **NONE** (all secrets are test fixtures with no signs of life)
+
+---
+
+### VERDICT LIST
 
 | Candidate | REPORT_CANDIDATE | Reason |
 |-----------|------------------|--------|
-| Hardcoded secrets in test files | **no** | All `test-api-key`, `secret123`, `mocked-token` etc. are obvious test fixtures |
-| `@ai-sdk/gladia` internal references | **no** | Confirmed official Vercel AI SDK integration (RAG: `vercel-ai @ai-sdk/gladia = official org integration`) |
-| Cloud metadata IP deny rules | **no** | Security control, not a vulnerability |
-| Orphaned `gladia@0.1.3` npm package | **already accepted** | RAG: `AUTH@sdk` — supply-chain key theft vector confirmed alive (dist-tag latest=0.1.3, orphaned maintainer) |
-| **Delta since last scan** | **no** | 0 new hit lines — no new findings |
+| Test API keys in vercel-ai test suites | **no** | All `test-api-key`, `secret123`, `access123`, etc. are static test fixtures |
+| `169.254.169.254/32` in sandbox deny-list | **no** | Defensive SSRF mitigation in test code, not a leak |
+| `@ai-sdk/gladia` workspace package | **no** | Official Vercel AI SDK integration (confirmed in RAG) |
+| Orphaned npm `gladia@0.1.3` (alexisbouchez) | **no** | **Already ACCEPTED in RAG** (2026-10-10) — supply-chain key theft vector, but not new this scan |
+| `/signin?redirect_to` reflection + CSP gap | **no** | **Already ACCEPTED in RAG** (2026-08-07) — alive but known |
+| SSRF-by-design on api.gladia.io | **no** | **Already ACCEPTED in RAG** (AUTH_HELPED) — frozen surface |
 
-**Summary**: No new reportable findings this cycle. The only live class remains the orphaned `gladia@0.1.3` npm package (already tracked in RAG). Passive recon exhausted — next cycle requires authorized key (SSRF) or human OAuth test (post-auth `redirect_to`).
+---
+
+### SUMMARY
+**0 new reportable candidates this cycle.** Delta = 0 new hit lines. All findings are either:
+- Previously accepted/known (orphaned SDK, OAuth redirect_to, SSRF surface)
+- Test fixtures with no production relevance
+- Legitimate defensive code (SSRF deny-lists)
+
+**Next action**: No passive probes needed. Current RAG covers all live classes. Await authorized key for SSRF POC or human OAuth flow test for post-auth `redirect_to` validation.
