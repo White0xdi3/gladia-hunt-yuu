@@ -61,7 +61,7 @@
  },
  "OTHER@gladia": {
   "first_seen": "2026-09-30",
-  "last_seen": "2026-10-07",
+  "last_seen": "2026-10-14",
   "reason": "no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec and inventory timestamps",
   "verdict": "ACCEPTED"
  },

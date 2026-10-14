@@ -10,7 +10,7 @@
 - [ACCEPTED] OAUTH@app.gladia.io: /signin?redirect_to reflection alive byte-fresh — 0 CSP form-action directives (gap confirmed); post-auth honoring sole unverified gate (HUMAN_ONLY) (first 2026-08-07, last 2026-10-14)
 - [ACCEPTED] OTHER@api.gladia.io: no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec (14 paths, 7 webhooks identical) (first 2026-08-08, last 2026-10-14)
 - [ACCEPTED] OTHER@app.gladia.io: no new surface this cycle, re-confirmed static — /signin?redirect_to reflection byte-fresh, CSP 0 form-action directives gap confirmed (first 2026-09-30, last 2026-10-14)
-- [ACCEPTED] OTHER@gladia: no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec and inventory timestamps (first 2026-09-30, last 2026-10-07)
+- [ACCEPTED] OTHER@gladia: no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec and inventory timestamps (first 2026-09-30, last 2026-10-14)
 - [ACCEPTED] OTHER@gladia.io: bug-bounty-report endpoint redirects to Google Forms (auth-gated via Google SSO) — confirmed submission channel for reports (first 2026-08-11, last 2026-10-11)
 - [ACCEPTED] OTHER@program: passive recon exhausted — no class newly proven dead or alive this cycle; POC unblocked only by authorized key (SSRF) or HUMAN OAuth test (post-auth redirect_to). (first 2026-08-11, last 2026-08-11)
 - [ACCEPTED] OTHER@sdk: class alive, re-verified fresh this cycle — dist-tag latest=0.1.3, shasum cc96f84a… unchanged, GitHub API user+repo alexisbouchez 404 (orphaned/irrevocable) (first 2026-08-07, last 2026-10-14)
