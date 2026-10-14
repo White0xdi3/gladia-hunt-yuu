@@ -1352,3 +1352,17 @@
   - | SSRF (audio_url/callback) | **HOLD** | Needs valid API key (AUTH_HELPED) |
   - | **npm gladia@0.1.3 impersonation + key leak** | **VALID** | **Fully proven passively — report ready** |
   - | WS token in URL | **HOLD** | Needs valid API key (AUTH_HELPED) |
+
+- 12 lead(s) marked VALID at 2026-10-14 12:11:13 UTC
+  - | **Q2 Attacker reachable?** | PARTIAL — All endpoints are **key-gated** (401 without `x-gladia-key`). Attacker needs a valid API key. |
+  - | **Q4 Provable without invasive testing?** | **NO** — Requires `AUTH_HELPED` (valid `x-gladia-key`). Spec confirms `format:uri` with **no scheme allowlist**; `/v1/models` confirms FR/US egress; 7 web
+  - | **Q7 Triager would accept?** | YES — **But only with valid key for PoC**. |
+  - **VERDICT: HOLD** — Cannot prove without valid API key.
+  - **VERDICT: VALID** — **Report-ready**
+  - | **Q4 Provable without invasive testing?** | **NO** — Requires **HUMAN_ONLY** (valid Google SSO session). Passive reflection confirmed; post-auth `Location` header unobserved. |
+  - | **Q2 Attacker reachable?** | PARTIAL — Token issued after `POST /v2/live` with valid `x-gladia-key`. Token in `wss://api.gladia.io/v2/live?token=<uuid>` leaks via Referer, proxy logs, browser histor
+  - | **Q2 Attacker reachable?** | PARTIAL — Key-gated + needs valid transcription UUID from another account. |
+  - | **Q4 Provable without invasive testing?** | **NO** — Requires `AUTH_HELPED` with **two valid API keys** (different accounts). |
+  - | **SSRF via audio_url/video_url/callback_url** | **HOLD** | `[NEXT] PROBE (AUTH_HELPED)` — POST `/v2/pre-recorded` with metadata URL + valid key |
+  - | **npm `gladia@0.1.3` impersonation + key-in-URL** | **VALID** | **REPORT NOW** — Passive proof complete; submit via Gladia Bug Bounty form |
+  - | IDOR on `/{id}/file` | **HOLD** | `[NEXT] PROBE (AUTH_HELPED)` — Requires two valid keys |
