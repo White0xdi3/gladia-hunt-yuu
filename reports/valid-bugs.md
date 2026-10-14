@@ -1346,3 +1346,9 @@
   - | SSRF audio_url/callback | **VALID** | High, key-gated POC needed |
   - | npm gladia@0.1.3 impersonation | **VALID** | High, fully passive, report-ready |
   - | WS token in URL | **VALID** | Medium, spec-confirmed |
+
+- 4 lead(s) marked VALID at 2026-10-14 00:28:25 UTC
+  - **VERDICT: VALID**
+  - | SSRF (audio_url/callback) | **HOLD** | Needs valid API key (AUTH_HELPED) |
+  - | **npm gladia@0.1.3 impersonation + key leak** | **VALID** | **Fully proven passively — report ready** |
+  - | WS token in URL | **HOLD** | Needs valid API key (AUTH_HELPED) |

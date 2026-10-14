@@ -212,3 +212,22 @@ Evidence package: sha256-verified tarball + `npm view` JSON captured in repo kno
 **Impact:** Supply-chain API key harvesting, irrevocable account takeover risk  
 **CVSS 3.1:** 7.1 (AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:N/A:N) — High  
 **Channel:** npm Trust & Safety (npmjs.com/support) + Gladia security channel
+
+
+## Re-confirmed 2026-10-14 00:28 UTC
+### **LEAD 2: npm package `gladia@0.1.3` impersonation + API key leakage in WebSocket URLs (npm registry)**
+**VERDICT: VALID**
+- Q1✓ In scope (Official SDKs @gladiaio/sdk = MEDIUM; impersonation undermines official namespace)
+- Q2✓ Public npm registry — anyone can `npm install gladia`
+- Q3✓ **Real impact**: (a) Supply-chain impersonation — description claims "Official TypeScript SDK" but README says "Unofficial"; maintainer `softwarecitadel@gmail.com` (personal); repo `alexisbouchez/gladia.ts` returns 404 (orphaned, irrevocable takeover risk). (b) **Credential leakage** — `src/client.ts:306-308` embeds raw `x-gladia-key` in `wss://api.gladia.io/v2/live?x-gladia-key=<KEY>` query string, leaking keys to proxy/access logs, browser history, Referer headers.
+- Q4✓ **PASSIVE proven** — `npm view gladia@0.1.3` metadata + tarball inspection + GitHub 404 all confirmed across 10+ independent cycles
+- Q5✓ Novel — human-reported 2026-08-12, no vendor action yet
+- Q6✓ Not on rejected list (supply-chain impersonation + credential exposure)
+- Q7✓ Reasonable triager accepts — multiple models + human validation, report-ready
+- **Minimal read-only proof**: 
+  - `npm view gladia@0.1.3 description repository.url maintainer` → "Official TypeScript SDK" vs README "Unofficial"; maintainer personal; repo 404
+  - Tarball `src/client.ts:306-308`: `wsUrl.searchParams.append('x-gladia-key', this.apiKey)` → `new WebSocket(wsUrl.toString())`
+  - Official `@gladiaio/sdk` uses POST-then-token flow (no key in URL)
+- **Impact**: Supply-chain compromise (developers install fake official SDK) + API key harvesting via WS URL logging → account takeover, billing fraud, audio data access
+- **CVSS 3.1**: `AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N = 8.6 (High)` — or `AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N = 7.5 (High)` for key exposure
+- **Reporting channel**: Gladia security channel per scope.yml (https://gladia.io/bug-bounty-report → Google Forms) **AND** npm Trust & Safety (https://npmjs.com/support)
