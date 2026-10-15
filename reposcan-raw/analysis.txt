@@ -1,104 +1,80 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/vercel-ai/
-total 1624
-drwxr-xr-x 18 runner runner    4096 Oct 15 01:27 .
-drwxr-xr-x 15 runner runner    4096 Oct 15 01:27 ..
-drwxr-xr-x  2 runner runner    4096 Oct 15 01:27 .agents
-drwxr-xr-x  2 runner runner   28672 Oct 15 01:27 .changeset
-drwxr-xr-x  2 runner runner    4096 Oct 15 01:27 .claude
-drwxr-xr-x  2 runner runner    4096 Oct 15 01:27 .cursor
-drwxr-xr-x  7 runner runner    4096 Oct 15 01:27 .git
-drwxr-xr-x  6 runner runner    4096 Oct 15 01:27 .github
--rw-r--r--  1 runner runner     261 Oct 15 01:27 .gitignore
-drwxr-xr-x  2 runner runner    4096 Oct 15 01:27 .husky
--rw-r--r--  1 runner runner     381 Oct 15 01:27 .kodiak.toml
--rw-r--r--  1 runner runner     122 Oct 15 01:27 .npmrc
--rw-r--r--  1 runner runner    1119 Oct 15 01:27 .oxfmtrc.jsonc
--rw-r--r--  1 runner runner    8967 Oct 15 01:27 .oxlintrc.json
-drwxr-xr-x  2 runner runner    4096 Oct 15 01:27 .vscode
--rw-r--r--  1 runner runner   12684 Oct 15 01:27 AGENTS.md
--rw-r--r--  1 runner runner    2807 Oct 15 01:27 CHANGELOG.md
-lrwxrwxrwx  1 runner runner       9 Oct 15 01:27 CLAUDE.md -> AGENTS.md
--rw-r--r--  1 runner runner     111 Oct 15 01:27 CODE_OF_CONDUCT.md
--rw-r--r--  1 runner runner    7250 Oct 15 01:27 CONTRIBUTING.md
--rw-r--r--  1 runner runner     552 Oct 15 01:27 LICENSE
-lrwxrwxrwx  1 runner runner      22 Oct 15 01:27 README.md -> packages/ai/README.md
-
-drwxr-xr-x  2 runner runner    4096 Oct 15 01:27 architecture
-drwxr-xr-x  2 runner runner    4096 Oct 15 01:27 assets
-drwxr-xr-x  6 runner runner    4096 Oct 15 01:27 content
-drwxr-xr-x  3 runner runner    4096 Oct 15 01:27 contributing
-drwxr-xr-x 27 runner runner    4096 Oct 15 01:27 examples
--rw-r--r--  1 runner runner    2818 Oct 15 01:27 package.json
-drwxr-xr-x 68 runner runner    4096 Oct 15 01:27 packages
--rw-r--r--  1 runner runner 1474217 Oct 15 01:27 pnpm-lock.yaml
--rw-r--r--  1 runner runner     185 Oct 15 01:27 pnpm-workspace.yaml
-drwxr-xr-x 11 runner runner    4096 Oct 15 01:27 skills
--rw-r--r--  1 runner runner     228 Oct 15 01:27 socket.yaml
-drwxr-xr-x  6 runner runner    4096 Oct 15 01:27 tools
--rw-r--r--  1 runner runner    3216 Oct 15 01:27 tsconfig.json
--rw-r--r--  1 runner runner    1335 Oct 15 01:27 tsconfig.with-examples.json
--rw-r--r--  1 runner runner    2705 Oct 15 01:27 turbo.json
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw/gladiaio -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/shopify-mcp/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/repro-test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/image-content/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-ui/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
 [0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [limit=30, offset=160][0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts[90m [offset=735, limit=30][0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts[90m [limit=20, offset=405][0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json[90m [offset=30, limit=20][0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml[90m [offset=285, limit=30][0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml[90m [limit=30, offset=2360][0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/tools/analyze-downloads/src/analyze-providers.ts[90m [limit=30, offset=15][0m
-**CLASSIFICATION TABLE**
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "169.254.169.254" reposcan-raw/gladiaio/ --include="*.ts" --include="*.js" --include="*.json" --include="*.yaml" --include="*.yml"
+reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:        deniedCIDRs: ['169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:          subnets: { deny: ['169.254.169.254/32'] },
+reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:      download({ url: new URL('http://169.254.169.254/latest/meta-data/') }),
+reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:        location: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.ts:  // e.g. ::ffff:127.0.0.1 or 64:ff9b::169.254.169.254 are blocked.
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:      .mockResolvedValueOnce(redirectResponse('http://169.254.169.254/'));
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:      .mockResolvedValueOnce(redirectWithBody('http://169.254.169.254/'));
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:      downloadBlob('http://169.254.169.254/latest/meta-data/'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:          location: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://169.254.169.254/latest/meta-data/'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block ::ffff:169.254.169.254', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[::ffff:169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block NAT64 64:ff9b::169.254.169.254 (metadata)', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[64:ff9b::169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:    it('should block NAT64 local-use 64:ff9b:1::169.254.169.254', () => {
+reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:        validateDownloadUrl('http://[64:ff9b:1::169.254.169.254]/file'),
+reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['10.5.0.0/16', '169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:    deniedCIDRs: ['169.254.169.254/32'],
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:            url: 'http://169.254.169.254/latest/meta-data/',
+reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:        server.calls.some(call => call.requestUrl.includes('169.254.169.254')),
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts:    await client.list({ url: 'http://169.254.169.254/latest/meta-data/?offset=20' })
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/build-list-url.test.ts:    expect(buildListUrl('/v2/live', { url: 'http://169.254.169.254/latest/meta-data/' })).toBe(
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.list.test.ts:    await client.list({ url: 'http://169.254.169.254/latest/meta-data/?offset=20' })
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "gladia@0.1.3\|alexisbouchez" reposcan-raw/gladiaio/ --include="*.json" --include="*.yaml" --include="*.yml" --include="*.toml" --include="*.lock"
+(no output)
+[0m
+### Classification Table
 
-| Category | File | Line | Pattern | Classification | Notes |
-|----------|------|------|---------|----------------|-------|
-| **INTERESTING** | pnpm-lock.yaml | 289-291 | `@ai-sdk/gladia` workspace:* | INTERESTING | Official Vercel AI SDK provider for Gladia (local package) |
-| **INTERESTING** | pnpm-lock.yaml | 2368 | `packages/gladia` | INTERESTING | Local Gladia provider package in Vercel AI SDK monorepo |
-| **INTERESTING** | tsconfig.json | 70 | `"path": "packages/gladia"` | INTERESTING | TypeScript path mapping for Gladia provider |
-| **INTERESTING** | analyze-providers.ts | 21 | `'@ai-sdk/gladia'` | INTERESTING | Download analytics tracks Gladia as provider |
-| **INTERESTING** | .github/tigent.yml | 30 | `provider/gladia` in provider list | INTERESTING | CI provider matrix includes Gladia |
-| **INTERESTING** | vercel-sandbox.test.ts | 166, 171 | `deniedCIDRs: ['169.254.169.254/32']` | INTERESTING | **SSRF protection test** - explicitly blocks cloud metadata IP |
-| **TEST_OR_EXAMPLE** | oauth.test.ts | 740 | `client_secret: 'secret123'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | oauth.test.ts | 905 | `access_token: 'access123'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | oauth.test.ts | 908 | `refresh_token: 'refresh123'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | mcp-http-transport.test.ts | 409 | `access_token: 'expired-access-token'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | mcp-http-transport.test.ts | 411 | `refresh_token: 'rotating-refresh-token'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | openai-provider.test.ts | 48,66,84 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | openai-files.test.ts | 40,61,78 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | openai-image-model.test.ts | 14,114 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | openai-chat-language-model.test.ts | 113,778,3310 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | openai-completion-language-model.test.ts | 45,246,381 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | openai-speech-model.test.ts | 10,54 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | openai-embedding-model.test.ts | 13,137 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | openai-skills.test.ts | 12 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | openai-transcription-model.test.ts | 17,73 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | assemblyai-transcription-model.test.ts | 13,277 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | togetherai-provider.test.ts | 99,112,165 | `apiKey: 'custom-key'`, `'explicit-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | togetherai-reranking-model.test.ts | 7 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | google-vertex-provider.test.ts | 120 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | google-vertex-provider-base.test.ts | 187,405,419 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | google-vertex-auth-google-auth-library.test.ts | 5,21 | `token: 'mocked-token'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | google-vertex-auth-edge.test.ts | 68,150 | `access_token: 'mock.jwt.token'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | google-vertex-auth-edge.test.ts | 134 | `private_key: 'invalid-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | google-vertex-provider-edge.test.ts | 95 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | amazon-bedrock-provider.test.ts | 128,152,158 | `sessionToken: 'dynamic-session-token'`, `'static-session-token'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | amazon-bedrock-provider.ts | 48 | `apiKey: 'your-api-key-here'` | TEST_OR_EXAMPLE | Doc comment placeholder |
-| **TEST_OR_EXAMPLE** | amazon-bedrock-sigv4-fetch.test.ts | 100,331,442 | `sessionToken: 'test-session-token'`, `'async-session-token'`, `'test-api-key-123'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | bedrock-mantle-provider.test.ts | 209 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | amazon-bedrock-reranking-model.test.ts | 55 | `nextToken: 'test-token'` | TEST_OR_EXAMPLE | Test fixture |
-| **TEST_OR_EXAMPLE** | openai-compaction.1.json | 36 | `encrypted_content: "gAAAAAB..."` | TEST_OR_EXAMPLE | OpenAI response fixture (base64-encoded test data) |
+| Category | File | Line | Evidence | Classification |
+|----------|------|------|----------|----------------|
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166, 171 | `deniedCIDRs: ['169.254.169.254/32']` | SSRF protection test config |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740, 905, 908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` | Obvious test fixtures |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409, 411 | `access_token: 'expired-access-token'`, `refresh_token: 'rotating-refresh-token'` | Test fixtures |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/openai/src/**/*.test.ts | 48-3310 | `apiKey: 'test-api-key'` (40+ occurrences) | Test fixtures |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13, 277 | `apiKey: 'test-api-key'` | Test fixtures |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/togetherai/src/*.test.ts | 99, 112, 165, 7 | `apiKey: 'custom-key'`, `'test-api-key'`, `'explicit-key'` | Test fixtures |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/google-vertex/src/*.test.ts | 120, 187, 405, 419, 5, 21, 68, 134, 150, 95 | `apiKey: 'test-api-key'`, `'mocked-token'`, `'mock.jwt.token'`, `'invalid-key'` | Test fixtures |
+| **TEST_OR_EXAMPLE** | vercel-ai/packages/amazon-bedrock/src/*.test.ts | 100, 128, 152, 158, 331, 442, 209, 55 | `sessionToken: 'test-session-token'`, `'dynamic-session-token'`, `'static-session-token'`, `'async-session-token'`, `'test-api-key-123'`, `'test-token'` | Test fixtures |
+| **INTERESTING** | vercel-ai/packages/provider-utils/src/validate-download-url.ts | ~comment | `// e.g. ::ffff:127.0.0.1 or 64:ff9b::169.254.169.254 are blocked` | SSRF mitigation logic in prod code |
+| **INTERESTING** | vercel-ai/pnpm-lock.yaml | 289, 291, 2368 | `@ai-sdk/gladia` linked as local package | Official Vercel AI SDK integration |
+| **ENDPOINT_LEAK** | (none) | - | No internal/staging URLs found | - |
+| **REAL_SECRET** | (none) | - | No live credentials found | - |
 
----
-
-**VERDICT**
+### Verdict List
 
 | Candidate | REPORT_CANDIDATE | Reason |
 |-----------|------------------|--------|
-| `@ai-sdk/gladia` in Vercel AI SDK | **no** | Official integration, local workspace package, not a leak |
-| SSRF protection test (169.254.169.254/32) | **no** | Positive security control verified in test |
-| All hardcoded "keys" in test files | **no** | All are `test-api-key`, `secret123`, `mocked-token` etc. — obvious test fixtures |
-| openai-compaction.1.json encrypted_content | **no** | Test fixture for OpenAI response compaction |
-| npm `gladia@0.1.3` (orphaned) | **no** | Already tracked in KB as [ACCEPTED] OTHER@sdk (supply-chain vector, not new) |
+| Hardcoded API keys in test files | **no** | All `test-api-key`, `secret123`, `access123`, `mocked-token` etc. are obvious test fixtures in `*.test.ts` files |
+| `@ai-sdk/gladia` in vercel-ai | **no** | Official Vercel AI SDK provider integration (confirmed in RAG) |
+| SSRF protection (169.254.169.254 blocking) | **no** | Defensive control — tests verify metadata endpoint is blocked |
+| Orphaned npm `gladia@0.1.3` | **no** | Already tracked in RAG as ACCEPTED supply-chain vector (npm registry only, not in repos) |
 
-**SUMMARY**: Zero reportable findings this scan. All hits are test fixtures, workspace config, or known/intended integrations. The SSRF protection test in `vercel-sandbox.test.ts` is a **positive signal** (metadata IP explicitly blocked).
+**Summary**: 0 reportable findings this cycle. All hits are test fixtures or defensive SSRF controls. The vercel-ai repo is a dependency consumer (Vercel AI SDK), not Gladia core surface.
