@@ -3803,3 +3803,49 @@ testability: AUTH_HELPED
 [RISK] api.gladia.io: 73 reason: frozen spec but dual SSRF vectors (audio_url + webhook callback_config.url) both AUTH_HELPED to 169.254.169.254 → cloud credential theft critical if key obtained
 [RISK] app.gladia.io: 68 reason: unauthed redirect_to reflection + 0 form-action CSP gap live; OAuth hardened with state+PKCE; signup_session cookie deserialization trust untested → potential auth bypass
 [RISK] sdk: 97 reason: orphaned gladia@0.1.3 at dist-tag latest impersonates official SDK and leaks raw API key in WebSocket URL query → supply-chain key theft for any misinstalled package; official @gladiaio/sdk hardened (SLSA) but namespace confusion persists
+## 2026-10-15 18:17:21 UTC [app] (model mimo)
+[PRIO] sdk (npm gladia@0.1.3), 8.30, attack=9 business=8 tech=7 gate=10 cloud=6 fresh=9
+[PRIO] app.gladia.io, 7.75, attack=8 business=8 tech=9 gate=10 cloud=3 fresh=6
+[PRIO] api.gladia.io, 7.20, attack=9 business=9 tech=8 gate=2 cloud=7 fresh=5
+[PRIO] gladia.io, 3.70, attack=2 business=3 tech=2 gate=10 cloud=1 fresh=5
+[HYP] Orphaned npm gladia@0.1.3 supply-chain key theft enables downstream SSRF to cloud metadata
+class: AUTH
+asset: sdk
+confidence: 97
+reasoning: npm gladia@0.1.3 at dist-tag latest leaks raw API key in WebSocket URL query (wsUrl.searchParams.append('x-gladia-key', this.apiKey) line 307); stolen key enables AUTH_HELPED SSRF via api.gladia.io audio_url or callback_config.url to 169.254.169.254
+evidence_needed: Chain demonstration: install gladia@0.1.3, extract key from WS URL, use key to trigger SSRF to IMDS
+verify_steps: PASSIVE: npm pack gladia@0.1.3 && tar -xzf gladia-0.1.3.tgz && grep -n "x-gladia-key" package/src/client.ts; AUTH_HELPED: use extracted key to POST /v2/pre-recorded with audio_url=http://169.254.169.254/latest/meta-data/
+impact: Supply-chain key theft → cloud metadata → IAM credentials → full cloud takeover; Critical
+testability: PASSIVE then AUTH_HELPED
+[HYP] Signup session cookie deserialization allows arbitrary email injection via Google OAuth flow
+class: AUTH
+asset: app.gladia.io
+confidence: 55
+reasoning: POST /signup with intent=google sets HttpOnly cookie signup_session=base64url({"email":null,"step":"signup_with_google","method":"google_sso","gaUserId":null}); no integrity signature observed; attacker-controlled cookie could skip steps or inject arbitrary email
+evidence_needed: Tamper signup_session cookie (step=complete, email=victim@target.com) and complete Google OAuth to test account creation with arbitrary email
+verify_steps: AUTH_HELPED: POST https://app.gladia.io/signup with intent=google, capture signup_session cookie, base64-decode, modify step=complete&email=victim@target.com, replay through Google OAuth callback (requires HUMAN Google auth)
+impact: Account creation with arbitrary email → pre-account takeover / identity confusion; Medium
+testability: AUTH_HELPED
+[HYP] Webhook callback_config.url SSRF to cloud metadata via format:uri validation bypass
+class: SSRF
+asset: api.gladia.io
+confidence: 78
+reasoning: OpenAPI spec defines callback_config.url with format:uri only (no scheme allowlist) for /v2/pre-recorded and /v2/live; audio_url SSRF already confirmed AUTH_HELPED; webhook delivery runs server-side fetch with same validation gap; spec frozen NO_DRIFT confirms persistence
+evidence_needed: With authorized key, POST webhook registration with callback_config.url=http://169.254.169.254/latest/meta-data/ proves SSRF reach to IMDS
+verify_steps: AUTH_HELPED: POST https://api.gladia.io/v2/pre-recorded with x-gladia-key header and body {"audio_url":"https://example.com/audio.wav","callback_config":{"url":"http://169.254.169.254/latest/meta-data/iam/security-credentials/"}} observe callback fetch timing/DNS
+impact: Cloud metadata → IAM credentials → full cloud takeover, cross-tenant data access; Critical
+testability: AUTH_HELPED
+[PARKED] None dropped — all three hypotheses have confidence ≥40, classes not on REJECTED list (AUTH@sdk ACCEPTED, SSRF@api.gladia.io ACCEPTED, AUTH@app.gladia.io REJECTED is for return-to cookie not signup_session), and concrete verify_steps defined.
+[FINAL] 1. Orphaned npm gladia@0.1.3 supply-chain key theft enables downstream SSRF to cloud metadata (confidence 97, AUTH @ sdk, PASSIVE then AUTH_HELPED)
+[FINAL] 2. Webhook callback_config.url SSRF to cloud metadata via format:uri validation bypass (confidence 78, SSRF @ api.gladia.io, AUTH_HELPED)
+[FINAL] 3. Signup session cookie deserialization allows arbitrary email injection via Google OAuth flow (confidence 55, AUTH @ app.gladia.io, AUTH_HELPED)
+[NEXT] HUMAN: Submit the locked gladia@0.1.3 orphaned-impersonation report via https://gladia.io/bug-bounty-report (301→www→302→Google Forms, Google SSO auth-gated)
+[LEARN] ACCEPTED AUTH @ sdk: orphaned npm gladia@0.1.3 at dist-tag latest leaks raw API key in WebSocket URL query — supply-chain key theft vector confirmed alive via static analysis (npm pack + grep)
+[LEARN] ACCEPTED SSRF @ api.gladia.io: spec+RAG frozen — SSRF-by-design surface persists (AUTH_HELPED)
+[LEARN] ACCEPTED OAUTH @ app.gladia.io: /signin?redirect_to reflection alive byte-fresh — 0 CSP form-action directives (gap confirmed); post-auth honoring sole unverified gate (HUMAN_ONLY)
+[LEARN] ACCEPTED MISCONFIG @ app.gladia.io: CSP confirmed fresh — 0 form-action directives (grep-count=0); enables /signin form-action reflection (gap confirmed, not oversight)
+[LEARN] ACCEPTED OTHER @ sdk: class alive, re-verified fresh this cycle — dist-tag latest=0.1.3, shasum cc96f84a… unchanged, GitHub API user+repo alexisbouchez 404 (orphaned/irrevocable)
+[LEARN] ACCEPTED OTHER @ api.gladia.io: no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec (14 paths, 7 webhooks identical)
+[RISK] api.gladia.io: 73 reason: frozen spec but dual SSRF vectors (audio_url + webhook callback_config.url) both AUTH_HELPED to 169.254.169.254 → cloud credential theft critical if key obtained
+[RISK] app.gladia.io: 68 reason: unauthed redirect_to reflection + 0 form-action CSP gap live; OAuth hardened with state+PKCE; signup_session cookie deserialization trust untested → potential auth bypass
+[RISK] sdk: 97 reason: orphaned gladia@0.1.3 at dist-tag latest impersonates official SDK and leaks raw API key in WebSocket URL query → supply-chain key theft for any misinstalled package; official @gladiaio/sdk hardened (SLSA) but namespace confusion persists
