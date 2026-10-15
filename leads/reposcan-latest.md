@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-15 07:25:11 UTC =====
+===== REPOSCAN 2026-10-15 10:03:48 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5694 code/config files scanned, 657 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -68,56 +68,98 @@ reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
 reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
 [0m
-[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [limit=30, offset=160][0m
-Based on my analysis of the grep hits from the `gladiaio/vercel-ai` repository (a fork of Vercel AI SDK with Gladia integration), here's the classification:
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "gladia" reposcan-raw/gladiaio/vercel-ai --include="*.ts" --include="*.js" --include="*.json" | grep -v test | grep -v ".test." | head -30
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/tsconfig.json:      "path": "../../packages/gladia"
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/basic.ts:import { gladia } from '@ai-sdk/gladia';
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/basic.ts:    model: gladia.transcription(),
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/url.ts:import { gladia } from '@ai-sdk/gladia';
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/url.ts:    model: gladia.transcription(),
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/string.ts:import { gladia } from '@ai-sdk/gladia';
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/string.ts:    model: gladia.transcription(),
+reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/package.json:    "@ai-sdk/gladia": "workspace:*",
+reposcan-raw/gladiaio/vercel-ai/tools/analyze-downloads/src/analyze-providers.ts:    '@ai-sdk/gladia',
+reposcan-raw/gladiaio/vercel-ai/tsconfig.json:      "path": "packages/gladia"
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:import { GladiaTranscriptionModel } from './gladia-transcription-model';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:        'x-gladia-key': loadApiKey({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:      `ai-sdk/gladia/${VERSION}`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:      provider: `gladia.transcription`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:      url: ({ path }) => `https://api.gladia.io${path}`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:export const gladia = createGladia();
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:export { createGladia, gladia } from './gladia-provider';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:export type { GladiaProvider, GladiaProviderSettings } from './gladia-provider';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:export type { GladiaTranscriptionModelOptions } from './gladia-transcription-model-options';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:// https://docs.gladia.io/api-reference/v2/pre-recorded/init
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:export const gladiaTranscriptionModelOptionsSchema = z.object({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:  typeof gladiaTranscriptionModelOptionsSchema
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:export const gladiaErrorDataSchema = z.object({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:export type GladiaErrorData = z.infer<typeof gladiaErrorDataSchema>;
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:export const gladiaFailedResponseHandler = createJsonErrorResponseHandler({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:  errorSchema: gladiaErrorDataSchema,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:import type { GladiaConfig } from './gladia-config';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:import { gladiaFailedResponseHandler } from './gladia-error';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:import { gladiaTranscriptionModelOptionsSchema } from './gladia-transcription-model-options';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:import type { GladiaTranscriptionInitiateAPITypes } from './gladia-api-types';
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts
+[0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts
+import {
+  AISDKError,
+  type TranscriptionModelV4,
+  type SharedV4Warning,
+} from '@ai-sdk/provider';
+import {
+  combineHeaders,
+  convertBase64ToUint8Array,
+  createJsonResponseHandler,
+  mediaTypeToExtension,
+  delay,
+  getFromApi,
+  isSameOrigin,
+  parseProviderOptions,
+  postFormDataToApi,
+  postJsonToApi,
+  serializeModelOptions,
+  WORKFLOW_SERIALIZE,
+  WORKFLOW_DESERIALIZE,
+} from '@ai-sdk/provider-utils';
+import { z } from 'zod/v4';
+import type { GladiaConfig } from './gladia-config';
+import { gladiaFailedResponseHandler } from './gladia-error';
+import { gladiaTranscriptionModelOptionsSchema } from './gladia-transcription-model-options';
+import type { GladiaTranscriptionInitiateAPITypes } from './gladia-api-types';
 
----
+interface GladiaTranscriptionModelConfig extends GladiaConfig {
+  _internal?: {
+    currentDate?: () => Date;
+  };
+}
 
-### **REAL_SECRET** — *None found*
+export class GladiaTranscriptionModel implements TranscriptionModelV4 {
+  readonly specificationVersion = 'v4';
 
-All credential-like strings are test fixtures with obvious placeholder patterns (`test-api-key`, `secret123`, `mocked-token`, etc.).
+  get provider(): string {
+    return this.config.provider;
+  }
 
----
+  static [WORKFLOW_SERIALIZE](model: GladiaTranscriptionModel) {
+    return serializeModelOptions({
+      modelId: model.modelId,
+      config: model.config,
+    });
+  }
 
-### **TEST_OR_EXAMPLE** — *630+ hits across test files*
+  static [WORKFLOW_DESERIALIZE](options: {
+    modelId: 'default';
+    config: GladiaTranscriptionModelConfig;
+  }) {
+    return new GladiaTranscriptionModel(options.modelId, options.config);
+  }
 
-| File | Line | Pattern | Classification |
-|------|------|---------|----------------|
-| `packages/mcp/src/tool/oauth.test.ts` | 740, 905, 908 | `secret123`, `access123`, `refresh123` | Test fixture |
-| `packages/mcp/src/tool/mcp-http-transport.test.ts` | 409, 411 | `expired-access-token`, `rotating-refresh-token` | Test fixture |
-| `packages/openai/src/**/*.test.ts` | 48–3310 | `test-api-key` (50+ occurrences) | Test fixture |
-| `packages/assemblyai/src/assemblyai-transcription-model.test.ts` | 13, 277 | `test-api-key` | Test fixture |
-| `packages/togetherai/src/**/*.test.ts` | 99, 112, 165 | `custom-key`, `explicit-key`, `test-api-key` | Test fixture |
-| `packages/google-vertex/src/**/*.test.ts` | 120–419 | `test-api-key`, `mocked-token`, `mock.jwt.token`, `invalid-key` | Test fixture |
-| `packages/amazon-bedrock/src/**/*.test.ts` | 100–442 | `dynamic-session-token`, `static-session-token`, `test-session-token`, `async-session-token`, `test-api-key-123` | Test fixture |
-| `packages/openai/src/responses/__fixtures__/openai-compaction.1.json` | 36 | `encrypted_content: "gAAAAABplLP7..."` | Test fixture (base64) |
+  constructor(
+    readonly modelId: string,
+    private readonly config: GladiaTranscriptionModelConfig,
+  ) {}
 
----
-
-### **ENDPOINT_LEAK** — *None found*
-
-No internal/dev/staging URLs or non-public API endpoints exposed.
-
----
-
-### **INTERESTING** — *3 items*
-
-| File | Line | Finding | Significance |
-|------|------|---------|--------------|
-| `pnpm-lock.yaml` | 289, 291, 2368 | `@ai-sdk/gladia` linked as local package `packages/gladia` | **Official Gladia provider for Vercel AI SDK** — confirms `@ai-sdk/gladia` is the blessed integration (not the orphaned `gladia@0.1.3` on npm) |
-| `tsconfig.json` | 70 | `"path": "packages/gladia"` | Local package structure for the provider |
-| `packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | `deniedCIDRs: ['169.254.169.254/32']` | **Security control** — sandbox explicitly blocks cloud metadata IP (good practice, not a vuln) |
-| `tools/analyze-downloads/src/analyze-providers.ts` | 21 | `'@ai-sdk/gladia'` in provider list | Download analytics tracking for the Gladia provider |
-
----
-
-### **VERDICT**
-
-| Candidate | REPORT_CANDIDATE | Reason |
-|-----------|------------------|--------|
-| Orphaned `gladia@0.1.3` on npm (from prior knowledge) | **YES** | Supply-chain: `latest` dist-tag points to personal repo `alexisbouchez/gladia.ts` (404), leaks API key in WS URL — **already tracked in KB as ACCEPTED** |
-| `@ai-sdk/gladia` in vercel-ai | **NO** | Official integration, local package, no secrets |
-| Sandbox CIDR deny `169.254.169.254/32` | **NO** | Defensive security control |
-| All test fixtures | **NO** | Obvious placeholders, no signs of life |
-
-**No new reportable findings this cycle.** The vercel-ai repo is a clean fork with proper test hygiene. The only live supply-chain risk remains the orphaned `gladia@0.1.3` package (already documented in KB).
+  private async getArgs({
+    providerOptions,
