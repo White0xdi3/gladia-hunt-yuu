@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-14 23:58:34 UTC =====
+===== REPOSCAN 2026-10-15 01:28:41 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5694 code/config files scanned, 657 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,38 +46,104 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-### Classification Tables
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && ls -la reposcan-raw/gladiaio/vercel-ai/
+total 1624
+drwxr-xr-x 18 runner runner    4096 Oct 15 01:27 .
+drwxr-xr-x 15 runner runner    4096 Oct 15 01:27 ..
+drwxr-xr-x  2 runner runner    4096 Oct 15 01:27 .agents
+drwxr-xr-x  2 runner runner   28672 Oct 15 01:27 .changeset
+drwxr-xr-x  2 runner runner    4096 Oct 15 01:27 .claude
+drwxr-xr-x  2 runner runner    4096 Oct 15 01:27 .cursor
+drwxr-xr-x  7 runner runner    4096 Oct 15 01:27 .git
+drwxr-xr-x  6 runner runner    4096 Oct 15 01:27 .github
+-rw-r--r--  1 runner runner     261 Oct 15 01:27 .gitignore
+drwxr-xr-x  2 runner runner    4096 Oct 15 01:27 .husky
+-rw-r--r--  1 runner runner     381 Oct 15 01:27 .kodiak.toml
+-rw-r--r--  1 runner runner     122 Oct 15 01:27 .npmrc
+-rw-r--r--  1 runner runner    1119 Oct 15 01:27 .oxfmtrc.jsonc
+-rw-r--r--  1 runner runner    8967 Oct 15 01:27 .oxlintrc.json
+drwxr-xr-x  2 runner runner    4096 Oct 15 01:27 .vscode
+-rw-r--r--  1 runner runner   12684 Oct 15 01:27 AGENTS.md
+-rw-r--r--  1 runner runner    2807 Oct 15 01:27 CHANGELOG.md
+lrwxrwxrwx  1 runner runner       9 Oct 15 01:27 CLAUDE.md -> AGENTS.md
+-rw-r--r--  1 runner runner     111 Oct 15 01:27 CODE_OF_CONDUCT.md
+-rw-r--r--  1 runner runner    7250 Oct 15 01:27 CONTRIBUTING.md
+-rw-r--r--  1 runner runner     552 Oct 15 01:27 LICENSE
+lrwxrwxrwx  1 runner runner      22 Oct 15 01:27 README.md -> packages/ai/README.md
 
-#### TEST_OR_EXAMPLE (all test fixtures, mocks, docs)
-| File | Line | Pattern | Classification |
-|------|------|---------|----------------|
-| `packages/mcp/src/tool/oauth.test.ts` | 740, 905, 908 | `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'` | TEST_OR_EXAMPLE |
-| `packages/mcp/src/tool/mcp-http-transport.test.ts` | 409, 411 | `access_token: 'expired-access-token'`, `refresh_token: 'rotating-refresh-token'` | TEST_OR_EXAMPLE |
-| `packages/openai/**/*.test.ts` | 30+ occurrences | `apiKey: 'test-api-key'`, `createOpenAI({ apiKey: 'test-api-key' })` | TEST_OR_EXAMPLE |
-| `packages/assemblyai/**/*.test.ts` | 13, 277 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE |
-| `packages/togetherai/**/*.test.ts` | 99, 112, 165, 7 | `apiKey: 'custom-key'`, `'explicit-key'`, `'test-api-key'` | TEST_OR_EXAMPLE |
-| `packages/google-vertex/**/*.test.ts` | 120, 187, 405, 419, 5, 21, 68, 134, 150, 95 | `apiKey: 'test-api-key'`, `token: 'mocked-token'`, `access_token: 'mock.jwt.token'`, `private_key: 'invalid-key'` | TEST_OR_EXAMPLE |
-| `packages/amazon-bedrock/**/*.test.ts` | 128, 152, 158, 48, 100, 331, 442, 209 | `sessionToken: 'dynamic-session-token'`, `'static-session-token'`, `'test-session-token'`, `'async-session-token'`, `apiKey: 'your-api-key-here'` (doc comment), `apiKey: 'test-api-key-123'` | TEST_OR_EXAMPLE |
-| `pnpm-lock.yaml`, `tsconfig.json`, `analyze-providers.ts`, `.github/tigent.yml` | — | Dependency/config references to `@ai-sdk/gladia` | ENDPOINT_LEAK (internal package ref) |
+drwxr-xr-x  2 runner runner    4096 Oct 15 01:27 architecture
+drwxr-xr-x  2 runner runner    4096 Oct 15 01:27 assets
+drwxr-xr-x  6 runner runner    4096 Oct 15 01:27 content
+drwxr-xr-x  3 runner runner    4096 Oct 15 01:27 contributing
+drwxr-xr-x 27 runner runner    4096 Oct 15 01:27 examples
+-rw-r--r--  1 runner runner    2818 Oct 15 01:27 package.json
+drwxr-xr-x 68 runner runner    4096 Oct 15 01:27 packages
+-rw-r--r--  1 runner runner 1474217 Oct 15 01:27 pnpm-lock.yaml
+-rw-r--r--  1 runner runner     185 Oct 15 01:27 pnpm-workspace.yaml
+drwxr-xr-x 11 runner runner    4096 Oct 15 01:27 skills
+-rw-r--r--  1 runner runner     228 Oct 15 01:27 socket.yaml
+drwxr-xr-x  6 runner runner    4096 Oct 15 01:27 tools
+-rw-r--r--  1 runner runner    3216 Oct 15 01:27 tsconfig.json
+-rw-r--r--  1 runner runner    1335 Oct 15 01:27 tsconfig.with-examples.json
+-rw-r--r--  1 runner runner    2705 Oct 15 01:27 turbo.json
+[0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts[90m [limit=30, offset=160][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts[90m [offset=735, limit=30][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts[90m [limit=20, offset=405][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/packages/openai/src/responses/__fixtures__/openai-compaction.1.json[90m [offset=30, limit=20][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml[90m [offset=285, limit=30][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml[90m [limit=30, offset=2360][0m
+[0m→ [0mRead reposcan-raw/gladiaio/vercel-ai/tools/analyze-downloads/src/analyze-providers.ts[90m [limit=30, offset=15][0m
+**CLASSIFICATION TABLE**
 
-#### INTERESTING (security-relevant config)
-| File | Line | Finding |
-|------|------|---------|
-| `packages/sandbox-vercel/src/vercel-sandbox.test.ts` | 166, 171 | Explicit deny of `169.254.169.254/32` (cloud metadata IP) — SSRF mitigation test |
+| Category | File | Line | Pattern | Classification | Notes |
+|----------|------|------|---------|----------------|-------|
+| **INTERESTING** | pnpm-lock.yaml | 289-291 | `@ai-sdk/gladia` workspace:* | INTERESTING | Official Vercel AI SDK provider for Gladia (local package) |
+| **INTERESTING** | pnpm-lock.yaml | 2368 | `packages/gladia` | INTERESTING | Local Gladia provider package in Vercel AI SDK monorepo |
+| **INTERESTING** | tsconfig.json | 70 | `"path": "packages/gladia"` | INTERESTING | TypeScript path mapping for Gladia provider |
+| **INTERESTING** | analyze-providers.ts | 21 | `'@ai-sdk/gladia'` | INTERESTING | Download analytics tracks Gladia as provider |
+| **INTERESTING** | .github/tigent.yml | 30 | `provider/gladia` in provider list | INTERESTING | CI provider matrix includes Gladia |
+| **INTERESTING** | vercel-sandbox.test.ts | 166, 171 | `deniedCIDRs: ['169.254.169.254/32']` | INTERESTING | **SSRF protection test** - explicitly blocks cloud metadata IP |
+| **TEST_OR_EXAMPLE** | oauth.test.ts | 740 | `client_secret: 'secret123'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | oauth.test.ts | 905 | `access_token: 'access123'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | oauth.test.ts | 908 | `refresh_token: 'refresh123'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | mcp-http-transport.test.ts | 409 | `access_token: 'expired-access-token'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | mcp-http-transport.test.ts | 411 | `refresh_token: 'rotating-refresh-token'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | openai-provider.test.ts | 48,66,84 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | openai-files.test.ts | 40,61,78 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | openai-image-model.test.ts | 14,114 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | openai-chat-language-model.test.ts | 113,778,3310 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | openai-completion-language-model.test.ts | 45,246,381 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | openai-speech-model.test.ts | 10,54 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | openai-embedding-model.test.ts | 13,137 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | openai-skills.test.ts | 12 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | openai-transcription-model.test.ts | 17,73 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | assemblyai-transcription-model.test.ts | 13,277 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | togetherai-provider.test.ts | 99,112,165 | `apiKey: 'custom-key'`, `'explicit-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | togetherai-reranking-model.test.ts | 7 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | google-vertex-provider.test.ts | 120 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | google-vertex-provider-base.test.ts | 187,405,419 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | google-vertex-auth-google-auth-library.test.ts | 5,21 | `token: 'mocked-token'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | google-vertex-auth-edge.test.ts | 68,150 | `access_token: 'mock.jwt.token'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | google-vertex-auth-edge.test.ts | 134 | `private_key: 'invalid-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | google-vertex-provider-edge.test.ts | 95 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | amazon-bedrock-provider.test.ts | 128,152,158 | `sessionToken: 'dynamic-session-token'`, `'static-session-token'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | amazon-bedrock-provider.ts | 48 | `apiKey: 'your-api-key-here'` | TEST_OR_EXAMPLE | Doc comment placeholder |
+| **TEST_OR_EXAMPLE** | amazon-bedrock-sigv4-fetch.test.ts | 100,331,442 | `sessionToken: 'test-session-token'`, `'async-session-token'`, `'test-api-key-123'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | bedrock-mantle-provider.test.ts | 209 | `apiKey: 'test-api-key'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | amazon-bedrock-reranking-model.test.ts | 55 | `nextToken: 'test-token'` | TEST_OR_EXAMPLE | Test fixture |
+| **TEST_OR_EXAMPLE** | openai-compaction.1.json | 36 | `encrypted_content: "gAAAAAB..."` | TEST_OR_EXAMPLE | OpenAI response fixture (base64-encoded test data) |
 
 ---
 
-### Verdict
+**VERDICT**
 
-| Category | Count | REPORT_CANDIDATE |
-|----------|-------|------------------|
-| REAL_SECRET | 0 | **no** |
-| TEST_OR_EXAMPLE | 50+ | no |
-| ENDPOINT_LEAK | 4 | no (internal pkg refs) |
-| INTERESTING | 1 | no (defensive SSRF test) |
+| Candidate | REPORT_CANDIDATE | Reason |
+|-----------|------------------|--------|
+| `@ai-sdk/gladia` in Vercel AI SDK | **no** | Official integration, local workspace package, not a leak |
+| SSRF protection test (169.254.169.254/32) | **no** | Positive security control verified in test |
+| All hardcoded "keys" in test files | **no** | All are `test-api-key`, `secret123`, `mocked-token` etc. — obvious test fixtures |
+| openai-compaction.1.json encrypted_content | **no** | Test fixture for OpenAI response compaction |
+| npm `gladia@0.1.3` (orphaned) | **no** | Already tracked in KB as [ACCEPTED] OTHER@sdk (supply-chain vector, not new) |
 
-**Overall: REPORT_CANDIDATE: no** — Zero live secrets. All hits are test fixtures, mocks, documentation examples, or security-hardening test config (denylist for 169.254.169.254). The `@ai-sdk/gladia` reference in vercel-ai is the official integration (per RAG). Orphaned `gladia@0.1.3` npm package already tracked as ACCEPTED supply-chain vector.
-
----
-
-[NEXT] PROBE: None — passive recon exhausted; no new surface.
+**SUMMARY**: Zero reportable findings this scan. All hits are test fixtures, workspace config, or known/intended integrations. The SSRF protection test in `vercel-sandbox.test.ts` is a **positive signal** (metadata IP explicitly blocked).
