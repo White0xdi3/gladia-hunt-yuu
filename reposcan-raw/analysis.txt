@@ -1,47 +1,4 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-### Classification Tables
-
-#### TEST_OR_EXAMPLE (all test/fixture data — not reportable)
-| File | Line | Pattern | SHA256(prefix) |
-|------|------|---------|----------------|
-| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts | 740 | client_secret: 'secret123' | `e3b0c4...` |
-| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts | 905 | access_token: 'access123' | `e3b0c4...` |
-| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/oauth.test.ts | 908 | refresh_token: 'refresh123' | `e3b0c4...` |
-| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 409 | access_token: 'expired-access-token' | `e3b0c4...` |
-| reposcan-raw/gladiaio/vercel-ai/packages/mcp/src/tool/mcp-http-transport.test.ts | 411 | refresh_token: 'rotating-refresh-token' | `e3b0c4...` |
-| reposcan-raw/gladiaio/vercel-ai/packages/openai/src/**/*.test.ts | multiple | apiKey: 'test-api-key' | `e3b0c4...` |
-| reposcan-raw/gladiaio/vercel-ai/packages/assemblyai/src/assemblyai-transcription-model.test.ts | 13,277 | apiKey: 'test-api-key' | `e3b0c4...` |
-| reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test.ts | 99,112,165 | apiKey: 'custom-key'/'explicit-key'/'test-api-key' | `e3b0c4...` |
-| reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/reranking/togetherai-reranking-model.test.ts | 7 | apiKey: 'test-api-key' | `e3b0c4...` |
-| reposcan-raw/gladiaio/vercel-ai/packages/google-vertex/src/**/*.test.ts | multiple | apiKey: 'test-api-key' | `e3b0c4...` |
-| reposcan-raw/gladiaio/vercel-ai/packages/amazon-bedrock/src/**/*.test.ts | multiple | sessionToken: 'test-session-token' / apiKey: 'test-api-key-123' | `e3b0c4...` |
-
-#### INTERESTING (security-relevant configs, SSRF defenses)
-| File | Line | Finding |
-|------|------|---------|
-| reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 166 | `deniedCIDRs: ['169.254.169.254/32']` — explicit cloud metadata IP block in SSRF protection test |
-| reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts | 171 | `subnets: { deny: ['169.254.169.254/32'] }` — duplicate subnet deny for metadata service |
-| reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml | 289,291,2368 | `@ai-sdk/gladia` linked as local package — official Vercel AI SDK integration confirmed |
-| reposcan-raw/gladiaio/vercel-ai/.github/tigent.yml | 30 | Provider list includes gladia among 11 AI providers — supply-chain visibility |
-
-#### ENDPOINT_LEAK / REAL_SECRET
-| File | Line | Finding | SHA256(prefix) |
-|------|------|---------|----------------|
-| *(none found in this delta)* | | | |
-
----
-
-### Verdict List
-
-| Candidate | Category | REPORT_CANDIDATE | Rationale |
-|-----------|----------|------------------|-----------|
-| Test API keys (test-api-key, secret123, etc.) | TEST_OR_EXAMPLE | **no** | All obviously fake/fixture values in test files |
-| `deniedCIDRs: ['169.254.169.254/32']` | INTERESTING | **no** | Defensive SSRF control — not a vulnerability |
-| `@ai-sdk/gladia` in vercel-ai | INTERESTING | **no** | Official org integration (per RAG), not supply-chain risk |
-| No hardcoded live secrets, cloud metadata leaks, or internal endpoints found | — | **no** | Delta shows 0 new hit lines vs previous scan |
-
----
-
-**Summary**: This scan cycle yields **no reportable findings**. All hits are either test fixtures or defensive security configurations (SSRF metadata IP blocking). The `@ai-sdk/gladia` package is confirmed as an official Vercel AI SDK integration, not an orphaned/impersonated package. No live credentials, SSRF vectors, or endpoint leaks detected in the delta.
+[91m[1mError: [0m{"message":"Streaming response failed: [503] Upstream error from Nvidia: Service temporarily overloaded","type":"server_error"}
