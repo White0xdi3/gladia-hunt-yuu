@@ -13,7 +13,7 @@
  },
  "AUTH@sdk": {
   "first_seen": "2026-10-10",
-  "last_seen": "2026-10-14",
+  "last_seen": "2026-10-15",
   "reason": "orphaned npm gladia@0.1.3 at dist-tag latest leaks raw API key in WebSocket URL query \u2014 supply-chain key theft vector confirmed alive via static analysis (npm pack + grep)",
   "verdict": "ACCEPTED"
  },
