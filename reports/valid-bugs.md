@@ -1366,3 +1366,14 @@
   - | **SSRF via audio_url/video_url/callback_url** | **HOLD** | `[NEXT] PROBE (AUTH_HELPED)` — POST `/v2/pre-recorded` with metadata URL + valid key |
   - | **npm `gladia@0.1.3` impersonation + key-in-URL** | **VALID** | **REPORT NOW** — Passive proof complete; submit via Gladia Bug Bounty form |
   - | IDOR on `/{id}/file` | **HOLD** | `[NEXT] PROBE (AUTH_HELPED)` — Requires two valid keys |
+
+- 9 lead(s) marked VALID at 2026-10-15 00:02:08 UTC
+  - | **Q2 Reachable** | NO — All endpoints return 401 without valid `x-gladia-key` (probe: 401). Requires AUTH_HELPED. No unauthenticated/low-priv access. |
+  - | **Q4 Passive proof** | NO — Requires valid API key + POST with internal URLs. Cannot prove with GET/HEAD only. |
+  - **VERDICT: HOLD** — Requires AUTH_HELPED (valid x-gladia-key). No passive proof possible.
+  - **VALID (npm venue)** — Report to npm Trust & Safety (impersonation + abandoned package).
+  - | **Q2 Reachable** | NO — Requires valid `x-gladia-key` (401 without) + valid transcription ID from another user. AUTH_HELPED + cross-account test needed. |
+  - **VERDICT: HOLD** — Requires AUTH_HELPED with valid key + cross-account test.
+  - | **Q2 Reachable** | PARTIAL — Token issued after POST /v2/live with valid key. Requires AUTH_HELPED to obtain token. Once in URL, leaks via Referer, logs, history. |
+  - | **Q7 Triager accept** | HOLD — Design flaw confirmed (token in URL), but exploitation needs valid key. |
+  - | **Q2 Reachable** | NO — Requires valid `x-gladia-key` (401 without). AUTH_HELPED. |
