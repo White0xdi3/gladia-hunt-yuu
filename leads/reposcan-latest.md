@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-15 22:17:45 UTC =====
+===== REPOSCAN 2026-10-15 22:25:28 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5696 code/config files scanned, 660 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -48,118 +48,118 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 [0m$ [0mls -la reposcan-raw/gladiaio/
 total 60
-drwxr-xr-x 15 runner runner 4096 Oct 15 22:14 .
-drwxr-xr-x  4 runner runner 4096 Oct 15 22:14 ..
-drwxr-xr-x  9 runner runner 4096 Oct 15 22:14 compare-stt
-drwxr-xr-x  9 runner runner 4096 Oct 15 22:14 docs
-drwxr-xr-x  7 runner runner 4096 Oct 15 22:14 gladia-cli
-drwxr-xr-x 11 runner runner 4096 Oct 15 22:14 gladia-quiz-app
-drwxr-xr-x 11 runner runner 4096 Oct 15 22:14 gladia-samples
-drwxr-xr-x  9 runner runner 4096 Oct 15 22:14 gladiaflow
-drwxr-xr-x  7 runner runner 4096 Oct 15 22:14 n8n-nodes-gladia
-drwxr-xr-x  8 runner runner 4096 Oct 15 22:14 normalization
-drwxr-xr-x 12 runner runner 4096 Oct 15 22:14 num2words2
-drwxr-xr-x  9 runner runner 4096 Oct 15 22:14 realtime-multilingual-asr-router
-drwxr-xr-x 10 runner runner 4096 Oct 15 22:14 sdk
-drwxr-xr-x  7 runner runner 4096 Oct 15 22:14 skills
-drwxr-xr-x 18 runner runner 4096 Oct 15 22:14 vercel-ai
+drwxr-xr-x 15 runner runner 4096 Oct 15 22:24 .
+drwxr-xr-x  4 runner runner 4096 Oct 15 22:24 ..
+drwxr-xr-x  9 runner runner 4096 Oct 15 22:24 compare-stt
+drwxr-xr-x  9 runner runner 4096 Oct 15 22:24 docs
+drwxr-xr-x  7 runner runner 4096 Oct 15 22:24 gladia-cli
+drwxr-xr-x 11 runner runner 4096 Oct 15 22:24 gladia-quiz-app
+drwxr-xr-x 11 runner runner 4096 Oct 15 22:24 gladia-samples
+drwxr-xr-x  9 runner runner 4096 Oct 15 22:24 gladiaflow
+drwxr-xr-x  7 runner runner 4096 Oct 15 22:24 n8n-nodes-gladia
+drwxr-xr-x  8 runner runner 4096 Oct 15 22:24 normalization
+drwxr-xr-x 12 runner runner 4096 Oct 15 22:24 num2words2
+drwxr-xr-x  9 runner runner 4096 Oct 15 22:24 realtime-multilingual-asr-router
+drwxr-xr-x 10 runner runner 4096 Oct 15 22:24 sdk
+drwxr-xr-x  7 runner runner 4096 Oct 15 22:24 skills
+drwxr-xr-x 18 runner runner 4096 Oct 15 22:24 vercel-ai
 [0m
-[0m$ [0mls -la reposcan-raw/gladiaio/vercel-ai/packages/
-total 272
-drwxr-xr-x 68 runner runner 4096 Oct 15 22:14 .
-drwxr-xr-x 18 runner runner 4096 Oct 15 22:14 ..
-drwxr-xr-x  6 runner runner 4096 Oct 15 22:14 ai
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 alibaba
-drwxr-xr-x  5 runner runner 4096 Oct 15 22:14 amazon-bedrock
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 angular
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 anthropic
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 anthropic-aws
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 assemblyai
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 azure
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 baseten
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 black-forest-labs
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 bytedance
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 cerebras
-drwxr-xr-x  4 runner runner 4096 Oct 15 22:14 codemod
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 cohere
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 deepgram
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 deepinfra
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 deepseek
-drwxr-xr-x  5 runner runner 4096 Oct 15 22:14 devtools
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 elevenlabs
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 fal
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 fireworks
-drwxr-xr-x  4 runner runner 4096 Oct 15 22:14 gateway
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 gladia
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 google
-drwxr-xr-x  6 runner runner 4096 Oct 15 22:14 google-vertex
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 groq
-drwxr-xr-x  6 runner runner 4096 Oct 15 22:14 harness
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 harness-claude-code
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 harness-codex
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 harness-pi
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 huggingface
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 hume
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 klingai
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 langchain
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 llamaindex
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 lmnt
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 luma
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 mcp
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 mistral
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 moonshotai
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 open-responses
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 openai
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 openai-compatible
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 otel
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 perplexity
-drwxr-xr-x  4 runner runner 4096 Oct 15 22:14 policy-opa
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 prodia
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 provider
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 provider-utils
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 quiverai
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 react
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 replicate
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 revai
-drwxr-xr-x  5 runner runner 4096 Oct 15 22:14 rsc
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 sandbox-just-bash
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 sandbox-vercel
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 svelte
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 test-server
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 togetherai
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 tui
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 valibot
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 vercel
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 voyage
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 vue
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 workflow
-drwxr-xr-x  3 runner runner 4096 Oct 15 22:14 xai
+[0m$ [0mgrep -r "gladia" reposcan-raw/gladiaio/vercel-ai/packages/gladia/ 2>/dev/null | head -50
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:# @ai-sdk/gladia
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- 7948763: fix(provider/gladia): Invalid `model` param removed
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- 7948763: fix(provider/gladia): Invalid `model` parameter being passed
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:  fix(provider/gladia): `experimental_transcribe` fails with valid Buffer
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- 84d4b2b: fix (provider/gladia): correct workspace dependencies
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- cf822aa: feat(providers/gladia): add transcribe
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- 84d4b2b: fix (provider/gladia): correct workspace dependencies
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/CHANGELOG.md:- cf822aa: feat(providers/gladia): add transcribe
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:import { GladiaTranscriptionModel } from './gladia-transcription-model';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:        'x-gladia-key': loadApiKey({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:      `ai-sdk/gladia/${VERSION}`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:      provider: `gladia.transcription`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:      url: ({ path }) => `https://api.gladia.io${path}`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:export const gladia = createGladia();
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:export { createGladia, gladia } from './gladia-provider';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:export type { GladiaProvider, GladiaProviderSettings } from './gladia-provider';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:export type { GladiaTranscriptionModelOptions } from './gladia-transcription-model-options';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:// https://docs.gladia.io/api-reference/v2/pre-recorded/init
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:export const gladiaTranscriptionModelOptionsSchema = z.object({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:  typeof gladiaTranscriptionModelOptionsSchema
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:export const gladiaErrorDataSchema = z.object({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:export type GladiaErrorData = z.infer<typeof gladiaErrorDataSchema>;
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:export const gladiaFailedResponseHandler = createJsonErrorResponseHandler({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:  errorSchema: gladiaErrorDataSchema,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:import { GladiaTranscriptionModel } from './gladia-transcription-model';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:import { createGladia } from './gladia-provider';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:  fs.readFileSync('src/__fixtures__/gladia-upload.json', 'utf8'),
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:  fs.readFileSync('src/__fixtures__/gladia-initiate.json', 'utf8'),
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:  fs.readFileSync('src/__fixtures__/gladia-result.json', 'utf8'),
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:  'https://api.gladia.io/v2/upload': {
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:  'https://api.gladia.io/v2/pre-recorded': {},
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:  server.urls['https://api.gladia.io/v2/pre-recorded'].response = {
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:      server.urls['https://api.gladia.io/v2/pre-recorded'].response = {
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:      expect(pollCall!.requestHeaders['x-gladia-key']).toBeUndefined();
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:        'x-gladia-key': 'test-api-key',
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:        `ai-sdk/gladia/0.0.0-test`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:        url: ({ path }) => `https://api.gladia.io${path}`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:        url: ({ path }) => `https://api.gladia.io${path}`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.test.ts:        url: ({ path }) => `https://api.gladia.io${path}`,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:import type { GladiaConfig } from './gladia-config';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:import { gladiaFailedResponseHandler } from './gladia-error';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:import { gladiaTranscriptionModelOptionsSchema } from './gladia-transcription-model-options';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:import type { GladiaTranscriptionInitiateAPITypes } from './gladia-api-types';
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:    const gladiaOptions = await parseProviderOptions({
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:      provider: 'gladia',
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:      schema: gladiaTranscriptionModelOptionsSchema,
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:    if (gladiaOptions) {
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:      body.context_prompt = gladiaOptions.contextPrompt ?? undefined;
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:      body.custom_vocabulary = gladiaOptions.customVocabulary ?? undefined;
+reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:      body.detect_language = gladiaOptions.detectLanguage ?? undefined;
 [0m
-[0m$ [0mls -la reposcan-raw/gladiaio/vercel-ai/packages/gladia/
-total 72
-drwxr-xr-x  3 runner runner  4096 Oct 15 22:14 .
-drwxr-xr-x 68 runner runner  4096 Oct 15 22:14 ..
--rw-r--r--  1 runner runner 26407 Oct 15 22:14 CHANGELOG.md
--rw-r--r--  1 runner runner  1376 Oct 15 22:14 README.md
--rw-r--r--  1 runner runner  2030 Oct 15 22:14 package.json
-drwxr-xr-x  4 runner runner  4096 Oct 15 22:14 src
--rw-r--r--  1 runner runner   139 Oct 15 22:14 tsconfig.build.json
--rw-r--r--  1 runner runner   404 Oct 15 22:14 tsconfig.json
--rw-r--r--  1 runner runner   337 Oct 15 22:14 tsup.config.ts
--rw-r--r--  1 runner runner   119 Oct 15 22:14 turbo.json
--rw-r--r--  1 runner runner   328 Oct 15 22:14 vitest.edge.config.js
--rw-r--r--  1 runner runner   320 Oct 15 22:14 vitest.node.config.js
-[0m
-[0m$ [0mcat reposcan-raw/gladiaio/vercel-ai/packages/gladia/package.json
-{
-  "name": "@ai-sdk/gladia",
-  "version": "3.0.0-canary.48",
-  "type": "module",
-  "license": "Apache-2.0",
-  "sideEffects": false,
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist/**/*",
-    "docs/**/*",
-    "src",
+[0m$ [0mgrep -r "api.gladia.io\|x-gladia-key\|gladia.key\|GLADIA" reposcan-raw/gladiaio/sdk/ 2>/dev/null | head -50
+reposcan-raw/gladiaio/sdk/.github/workflows/ci.yml:  GLADIA_API_KEY: ${{ secrets.GLADIA_API_KEY }}
+reposcan-raw/gladiaio/sdk/.github/workflows/update-openapi-types.yml:            https://api.gladia.io/openapi.json
+reposcan-raw/gladiaio/sdk/README.md:The generator (`packages/generator`) is central to this repo. It fetches the Gladia [OpenAPI schema](https://api.gladia.io/openapi.json) and produces typed definitions for each SDK:
+reposcan-raw/gladiaio/sdk/README.md:OpenAPI schema (api.gladia.io/openapi.json)
+reposcan-raw/gladiaio/sdk/README.md:   This fetches the latest OpenAPI schema from `https://api.gladia.io/openapi.json`, runs the generator for both Live V2 and PreRecorded V2, and auto-formats the output.
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:  it('appends SDK version to any provided X-GLADIA-VERSION value', () => {
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:      httpHeaders: { 'X-GLADIA-VERSION': 'MyApp/1.2.3' },
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:  it('injects x-gladia-key when apiKey is set', () => {
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-key']).toBe('key-123')
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-key']).toBe('abc')
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/client.test.ts:    expect(httpHeaders['x-gladia-key']).toBe('abc')
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts: * x-gladia-key must not be forwarded on cross-origin redirects.
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:  it('does not forward x-gladia-key when HttpClient follows a cross-origin redirect', async () => {
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:        'x-gladia-key': secretKey,
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(originCaptured[0]?.headers['x-gladia-key']).toBe(secretKey)
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-key']).toBeUndefined()
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:  it('does not forward x-gladia-key when preRecorded.getFile follows a cross-origin redirect', async () => {
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-key']).toBeUndefined()
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:  it('does not forward x-gladia-key when live.getFile follows a cross-origin redirect', async () => {
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-key']).toBeUndefined()
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:  it('does not send x-gladia-key when the initial request targets another origin', async () => {
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:        'x-gladia-key': secretKey,
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(captured[0]?.headers['x-gladia-key']).toBeUndefined()
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.redirect.test.ts:    expect(apiCaptured[0]?.headers['x-gladia-key']).toBe(secretKey)
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.test.ts:    it.each(['https://api.gladia.io', 'https://api.gladia.io/'])(
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.test.ts:          'https://api.gladia.io/v2/live/abc-123'
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/network/httpClient.ts:const CROSS_ORIGIN_SENSITIVE_HEADERS = new Set(['x-gladia-key', 'authorization', 'cookie'])
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts:  first: 'https://api.gladia.io/v2/live?offset=0&limit=20',
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts:  current: 'https://api.gladia.io/v2/live?offset=0&limit=20',
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts:    apiUrl: 'https://api.gladia.io',
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts:    httpHeaders: { 'x-gladia-key': 'test-key' },
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts:    const parsed = new URL(String(url), 'https://api.gladia.io')
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts:    const next = 'https://api.gladia.io/v2/live?offset=20&limit=20&status=done'
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts:    apiUrl: 'https://api.gladia.io',
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts:    httpHeaders: { 'x-gladia-key': 'test-key' },
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts:      url: 'wss://api.gladia.io/v2/live/ws?token=created',
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.start-session.test.ts:    expect(createSessionSpy).toHaveBeenCalledWith('wss://api.gladia.io/v2/live/ws?token=created')
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts:      url: 'wss://api.gladia.io/v2/live/ws?token=created',
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts:      url: 'wss://api.gladia.io/v2/live/ws?token=abc',
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts:      url: 'wss://api.gladia.io/v2/live/ws?token=abc',
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts:        url: 'wss://api.gladia.io/v2/live/ws?token=abc',
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts:    expect(mockCreateSession).toHaveBeenCalledWith('wss://api.gladia.io/v2/live/ws?token=created')
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/session.test.ts:      url: 'wss://api.gladia.io/v2/live/ws?token=created',
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/build-list-url.test.ts:    const next = 'https://api.gladia.io/v2/pre-recorded?status=done&offset=20&limit=20'
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/build-list-url.test.ts:    expect(buildListUrl('/v2/live', { url: 'https://api.gladia.io/v2/live' })).toBe('/v2/live')
+reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/build-list-url.test.ts:        url: 'https://api.gladia.io/v2/transcription?status=done&offset=20&limit=20',
