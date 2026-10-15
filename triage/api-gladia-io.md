@@ -30,3 +30,10 @@
 **Impact:** Unauthorized live transcription sessions, real-time audio access  
 **CVSS 3.1:** 6.5 (AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N) — Medium  
 **Channel:** Gladia security channel
+
+
+## Re-confirmed 2026-10-15 10:11 UTC
+**VERDICT: VALID**  
+**Proof steps (passive, done):**  
+1. GET `https://api.gladia.io/openapi.json` → `InitStreamingResponse.url` schema shows `wss://api.gladia.io/v2/live?token=<uuid>`  
+2. Token is bearer-equivalent for live transcription session (audio stream access)

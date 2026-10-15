@@ -240,3 +240,12 @@ Evidence package: sha256-verified tarball + `npm view` JSON captured in repo kno
 2. `curl -s https://api.github.com/repos/alexisbouchez/gladia.ts` → **HTTP 404** (user+repo orphaned)  
 3. Tarball inspection: `src/client.ts:306-308` → `searchParams.append('x-gladia-key', this.apiKey); new WebSocket(wsUrl.toString())`  
 4. Contrast: Official `@gladiaio/sdk` uses POST `/v2/live` → short-lived `session.url` (no key in URL)
+
+
+## Re-confirmed 2026-10-15 10:11 UTC
+**VERDICT: VALID**  
+**Proof steps (passive, done):**  
+1. `npm view gladia@0.1.3` → description="Official TypeScript SDK for Gladia", maintainer=softwarecitadel@gmail.com, repo=github.com/alexisbouchez/gladia.ts  
+2. Tarball sha256 `3b23ec7d7a763abc04c52db232d157a982fd3bd969c9f703af3eecad5fa802f2` → `src/client.ts:306-308` embeds `x-gladia-key` in `wss://api.gladia.io/v2/live?x-gladia-key=<KEY>`  
+3. GitHub API `https://api.github.com/repos/alexisbouchez/gladia.ts` → HTTP 404 (user+repo 404 = orphaned)  
+4. Official SDK is `@gladiaio/sdk@1.1.0` under `gladiaio` org

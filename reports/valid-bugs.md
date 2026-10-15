@@ -1377,3 +1377,12 @@
   - | **Q2 Reachable** | PARTIAL — Token issued after POST /v2/live with valid key. Requires AUTH_HELPED to obtain token. Once in URL, leaks via Referer, logs, history. |
   - | **Q7 Triager accept** | HOLD — Design flaw confirmed (token in URL), but exploitation needs valid key. |
   - | **Q2 Reachable** | NO — Requires valid `x-gladia-key` (401 without). AUTH_HELPED. |
+
+- 7 lead(s) marked VALID at 2026-10-15 10:11:37 UTC
+  - **VERDICT: VALID**
+  - **VERDICT: VALID**
+  - **VERDICT: HOLD** — Needs authorized dual-key test. [NEXT] PROBE (AUTH_HELPED): With two valid keys (user A, user B), POST `/v2/pre-recorded` as A, then GET `/v2/pre-recorded/{id}/file` as B; observe 
+  - **VERDICT: HOLD** — Low-impact, auth-gated. [NEXT] PROBE (AUTH_HELPED): `GET /v1/history?custom_metadata[__proto__][x]=1`, `?custom_metadata[$ne]=null`, `?date[gt]=...` with valid key; observe 400/500
+  - | 1. SSRF audio_url/callback_url | **HOLD** | Auth-gated; needs valid key for POC |
+  - | 2. npm `gladia@0.1.3` impersonation | **VALID** | Passive proof complete; supply-chain + key-in-URL |
+  - | 4. WS token in URL query param | **VALID** | Passive proof via OpenAPI spec; design flaw |
