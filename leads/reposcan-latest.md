@@ -1,7 +1,7 @@
 
-===== REPOSCAN 2026-10-16 12:57:01 UTC =====
+===== REPOSCAN 2026-10-16 17:41:29 UTC =====
 ## Grep hits:
-SCAN SUMMARY: 5696 code/config files scanned, 660 hits
+SCAN SUMMARY: 5699 code/config files scanned, 661 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:291: version: link:../../packages/gladia
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:2368: packages/gladia:
@@ -46,3 +46,4 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
+[91m[1mError: [0mUpstream request failed: Endpoint is unavailable.
