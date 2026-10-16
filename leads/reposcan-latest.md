@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-16 01:21:59 UTC =====
+===== REPOSCAN 2026-10-16 01:26:48 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5696 code/config files scanned, 660 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,24 +46,4 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-### Classification Table
-
-| Category | Files/Lines | Count |
-|----------|-------------|-------|
-| **TEST_OR_EXAMPLE** | All `apiKey: 'test-api-key'`, `client_secret: 'secret123'`, `access_token: 'access123'`, `refresh_token: 'refresh123'`, `sessionToken: 'test-session-token'` in test files under `packages/*/src/**/*.test.ts` | 50+ |
-| **ENDPOINT_LEAK** | None | 0 |
-| **REAL_SECRET** | None | 0 |
-| **INTERESTING** | `packages/sandbox-vercel/src/vercel-sandbox.test.ts:166,171` — explicit `deny: ['169.254.169.254/32']` SSRF protection for cloud metadata endpoint | 2 |
-
----
-
-### Verdict
-
-| Candidate | REPORT_CANDIDATE | Reason |
-|-----------|------------------|--------|
-| Test fixture secrets (50+ occurrences) | **no** | Obvious placeholders (`test-api-key`, `secret123`, `access123`) in `*.test.ts` files |
-| SSRF metadata IP deny list (`169.254.169.254/32`) | **no** | Defensive control, not a vulnerability — confirms SSRF awareness in sandbox |
-| `@ai-sdk/gladia` lockfile/package refs | **no** | Official Vercel AI SDK integration per RAG, not supply-chain issue |
-| `gladia` npm package (0.1.3) | **already tracked** | RAG: [ACCEPTED] AUTH@sdk — orphaned `gladia@0.1.3` at `latest` dist-tag leaks API key in WS URL (separate from `@gladiaio/sdk`) |
-
-**No new reportable findings this scan.** All hits are test fixtures or known/configured surfaces.
+[91m[1mError: [0m{"message":"Streaming response failed: [503] Upstream error from Nvidia: Service temporarily overloaded","type":"server_error"}
