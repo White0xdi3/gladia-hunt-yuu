@@ -1,4 +1,4 @@
-## 2026-10-15 22:13:50 UTC [sdk] (model mimo)
+## 2026-10-16 01:20:38 UTC [gladia] (model mimo)
 [PRIO] sdk, 8.30, attack=9 business=8 tech=7 gate=10 cloud=6 fresh=9
 [PRIO] app.gladia.io, 7.75, attack=8 business=8 tech=9 gate=10 cloud=3 fresh=6
 [PRIO] api.gladia.io, 7.20, attack=9 business=9 tech=8 gate=2 cloud=7 fresh=5
@@ -41,6 +41,7 @@ testability: AUTH_HELPED
 [LEARN] ACCEPTED MISCONFIG @ app.gladia.io: CSP confirmed fresh — 0 form-action directives (grep-count=0); enables /signin form-action reflection (gap confirmed, not oversight)
 [LEARN] ACCEPTED OTHER @ sdk: class alive, re-verified fresh this cycle — dist-tag latest=0.1.3, shasum cc96f84a… unchanged, GitHub API user+repo alexisbouchez 404 (orphaned/irrevocable)
 [LEARN] ACCEPTED OTHER @ api.gladia.io: no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec (14 paths, 7 webhooks identical)
+[LEARN] ACCEPTED OTHER @ gladia: no new surface this cycle, re-confirmed static via NO_DRIFT OpenAPI spec and inventory timestamps
 [RISK] api.gladia.io: 73 reason: frozen spec but dual SSRF vectors (audio_url + webhook callback_config.url) both AUTH_HELPED to 169.254.169.254 → cloud credential theft critical if key obtained
 [RISK] app.gladia.io: 68 reason: unauthed redirect_to reflection + 0 form-action CSP gap live; OAuth hardened with state+PKCE; signup_session cookie deserialization trust untested → potential auth bypass
 [RISK] sdk: 97 reason: orphaned gladia@0.1.3 at dist-tag latest impersonates official SDK and leaks raw API key in WebSocket URL query → supply-chain key theft for any misinstalled package; official @gladiaio/sdk hardened (SLSA) but namespace confusion persists
