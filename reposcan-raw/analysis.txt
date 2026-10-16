@@ -1,4 +1,3 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[91m[1mError: [0m{"message":"Streaming response failed: [503] Upstream error from Nvidia: Service temporarily overloaded","type":"server_error"}
