@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-17 17:12:36 UTC =====
+===== REPOSCAN 2026-10-17 17:17:31 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5699 code/config files scanned, 661 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,120 +46,22 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/shopify-mcp/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/repro-test.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/image-content/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-ui/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
-reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
+[0m$ [0mls -la reposcan-raw/gladiaio/
+total 60
+drwxr-xr-x 15 runner runner 4096 Oct 17 17:15 .
+drwxr-xr-x  4 runner runner 4096 Oct 17 17:15 ..
+drwxr-xr-x  9 runner runner 4096 Oct 17 17:15 compare-stt
+drwxr-xr-x  9 runner runner 4096 Oct 17 17:15 docs
+drwxr-xr-x  7 runner runner 4096 Oct 17 17:15 gladia-cli
+drwxr-xr-x 11 runner runner 4096 Oct 17 17:15 gladia-quiz-app
+drwxr-xr-x 11 runner runner 4096 Oct 17 17:15 gladia-samples
+drwxr-xr-x  9 runner runner 4096 Oct 17 17:15 gladiaflow
+drwxr-xr-x  7 runner runner 4096 Oct 17 17:15 n8n-nodes-gladia
+drwxr-xr-x  8 runner runner 4096 Oct 17 17:15 normalization
+drwxr-xr-x 12 runner runner 4096 Oct 17 17:15 num2words2
+drwxr-xr-x  9 runner runner 4096 Oct 17 17:15 realtime-multilingual-asr-router
+drwxr-xr-x 10 runner runner 4096 Oct 17 17:15 sdk
+drwxr-xr-x  7 runner runner 4096 Oct 17 17:15 skills
+drwxr-xr-x 18 runner runner 4096 Oct 17 17:15 vercel-ai
 [0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -r "gladia" reposcan-raw/gladiaio/vercel-ai --include="*.ts" --include="*.json" --include="*.yaml" | grep -v test | grep -v ".test." | head -30
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/tsconfig.json:      "path": "../../packages/gladia"
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/basic.ts:import { gladia } from '@ai-sdk/gladia';
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/basic.ts:    model: gladia.transcription(),
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/url.ts:import { gladia } from '@ai-sdk/gladia';
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/url.ts:    model: gladia.transcription(),
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/string.ts:import { gladia } from '@ai-sdk/gladia';
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/src/transcribe/gladia/string.ts:    model: gladia.transcription(),
-reposcan-raw/gladiaio/vercel-ai/examples/ai-functions/package.json:    "@ai-sdk/gladia": "workspace:*",
-reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:      '@ai-sdk/gladia':
-reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:        version: link:../../packages/gladia
-reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:  packages/gladia:
-reposcan-raw/gladiaio/vercel-ai/tools/analyze-downloads/src/analyze-providers.ts:    '@ai-sdk/gladia',
-reposcan-raw/gladiaio/vercel-ai/tsconfig.json:      "path": "packages/gladia"
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:import { GladiaTranscriptionModel } from './gladia-transcription-model';
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:        'x-gladia-key': loadApiKey({
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:      `ai-sdk/gladia/${VERSION}`,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:      provider: `gladia.transcription`,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:      url: ({ path }) => `https://api.gladia.io${path}`,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-provider.ts:export const gladia = createGladia();
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:export { createGladia, gladia } from './gladia-provider';
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:export type { GladiaProvider, GladiaProviderSettings } from './gladia-provider';
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/index.ts:export type { GladiaTranscriptionModelOptions } from './gladia-transcription-model-options';
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:// https://docs.gladia.io/api-reference/v2/pre-recorded/init
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:export const gladiaTranscriptionModelOptionsSchema = z.object({
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model-options.ts:  typeof gladiaTranscriptionModelOptionsSchema
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:export const gladiaErrorDataSchema = z.object({
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:export type GladiaErrorData = z.infer<typeof gladiaErrorDataSchema>;
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:export const gladiaFailedResponseHandler = createJsonErrorResponseHandler({
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-error.ts:  errorSchema: gladiaErrorDataSchema,
-reposcan-raw/gladiaio/vercel-ai/packages/gladia/src/gladia-transcription-model.ts:import type { GladiaConfig } from './gladia-config';
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && grep -rn "169.254.169.254" reposcan-raw/
-reposcan-raw/grep-hits.txt:8:reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:166: deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/grep-hits.txt:9:reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:171: subnets: { deny: ['169.254.169.254/32'] },
-reposcan-raw/grep-hits.prev.txt:8:reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:166: deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/grep-hits.prev.txt:9:reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:171: subnets: { deny: ['169.254.169.254/32'] },
-reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:166:        deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/src/vercel-sandbox.test.ts:171:          subnets: { deny: ['169.254.169.254/32'] },
-reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/README.md:48:    subnets: { deny: ['169.254.169.254/32'] },
-reposcan-raw/gladiaio/vercel-ai/packages/sandbox-vercel/README.md:72:  deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:14:      download({ url: new URL('http://169.254.169.254/latest/meta-data/') }),
-reposcan-raw/gladiaio/vercel-ai/packages/ai/src/util/download/download.test.ts:38:        location: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.ts:203:  // e.g. ::ffff:127.0.0.1 or 64:ff9b::169.254.169.254 are blocked.
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:79:      .mockResolvedValueOnce(redirectResponse('http://169.254.169.254/'));
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/fetch-with-validated-redirects.test.ts:108:      .mockResolvedValueOnce(redirectWithBody('http://169.254.169.254/'));
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:237:      downloadBlob('http://169.254.169.254/latest/meta-data/'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/download-blob.test.ts:261:          location: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:131:        validateDownloadUrl('http://169.254.169.254/latest/meta-data/'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:184:    it('should block ::ffff:169.254.169.254', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:186:        validateDownloadUrl('http://[::ffff:169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:268:    it('should block NAT64 64:ff9b::169.254.169.254 (metadata)', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:270:        validateDownloadUrl('http://[64:ff9b::169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:274:    it('should block NAT64 local-use 64:ff9b:1::169.254.169.254', () => {
-reposcan-raw/gladiaio/vercel-ai/packages/provider-utils/src/validate-download-url.test.ts:276:        validateDownloadUrl('http://[64:ff9b:1::169.254.169.254]/file'),
-reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:68:    deniedCIDRs: ['10.5.0.0/16', '169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/harness/src/v1/harness-v1-network-sandbox-session.test-d.ts:77:    deniedCIDRs: ['169.254.169.254/32'],
-reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:462:            url: 'http://169.254.169.254/latest/meta-data/',
-reposcan-raw/gladiaio/vercel-ai/packages/prodia/src/prodia-video-model.test.ts:470:        server.calls.some(call => call.requestUrl.includes('169.254.169.254')),
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts:105:    await client.list({ url: 'http://169.254.169.254/latest/meta-data/?offset=20' })
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/build-list-url.test.ts:40:    expect(buildListUrl('/v2/live', { url: 'http://169.254.169.254/latest/meta-data/' })).toBe(
-reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/prerecorded/client.list.test.ts:105:    await client.list({ url: 'http://169.254.169.254/latest/meta-data/?offset=20' })
-reposcan-raw/gladiaio/sdk/packages/sdk-python/tests/v2/core/test_build_list_endpoint.py:56:  assert live.build_list_endpoint({"url": "http://169.254.169.254/latest/meta-data/"}) == "/v2/live"
-[0m
-[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && cat reposcan-raw/gladiaio/sdk/packages/sdk-js/src/v2/live/client.list.test.ts | head -120
-import { beforeEach, describe, expect, it, vi } from 'vitest'
-import type { InternalGladiaClientOptions } from '../../internal_types.js'
-import { HttpClient } from '../../network/httpClient.js'
-import { LiveV2Client } from './client.js'
-import type { LiveV2ListResponse } from './generated-types.js'
-
-const listResponse: LiveV2ListResponse = {
-  first: 'https://api.gladia.io/v2/live?offset=0&limit=20',
-  current: 'https://api.gladia.io/v2/live?offset=0&limit=20',
-  next: null,
-  items: [],
-}
-
-function makeOptions(
-  overrides: Partial<InternalGladiaClientOptions> = {}
-): InternalGladiaClientOptions {
-  return {
-    apiKey: 'test-key',
-    apiUrl: 'https://api.gladia.io',
-    httpHeaders: { 'x-gladia-key': 'test-key' },
-    httpRetry: { maxAttempts: 1, statusCodes: [], delay: () => 0 },
-    httpTimeout: 10_000,
-    wsRetry: {
-      maxAttemptsPerConnection: 1,
-      closeCodes: [],
-      delay: () => 0,
-      maxConnections: 1,
-    },
-    wsTimeout: 10_000,
-    prerecordedTimeouts: {
+[91m[1mError: [0m{"message":"Streaming response failed: [503] Upstream error from Nvidia: Service temporarily overloaded","type":"server_error"}
