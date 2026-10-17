@@ -1,4 +1,26 @@
 [0m
 > build · nemotron-3-ultra-free
 [0m
+[0m$ [0mcd /home/runner/work/gladia-hunt-yuu/gladia-hunt-yuu && find reposcan-raw -name "*.ts" -o -name "*.js" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" | head -20
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/tsconfig.json
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/server-instructions/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/http/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/shopify-mcp/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/repro-test.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/image-content/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/provider-metadata/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-ui/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-with-auth/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation-multi-step/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/elicitation/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/client.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/mcp-prompts/server.ts
+reposcan-raw/gladiaio/vercel-ai/examples/mcp/src/output-schema/client.ts
+[0m
 [91m[1mError: [0m{"message":"Streaming response failed: [503] Upstream error from Nvidia: Service temporarily overloaded","type":"server_error"}
