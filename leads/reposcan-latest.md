@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-17 00:09:41 UTC =====
+===== REPOSCAN 2026-10-17 04:21:08 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5699 code/config files scanned, 661 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
@@ -46,3 +46,4 @@ reposcan-raw/gladiaio/vercel-ai/packages/togetherai/src/togetherai-provider.test
 [0m
 > build · nemotron-3-ultra-free
 [0m
+[91m[1mError: [0m{"message":"Streaming response failed: [503] Upstream error from Nvidia: Service temporarily overloaded","type":"server_error"}
