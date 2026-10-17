@@ -1,5 +1,5 @@
 
-===== REPOSCAN 2026-10-17 04:21:08 UTC =====
+===== REPOSCAN 2026-10-17 04:36:06 UTC =====
 ## Grep hits:
 SCAN SUMMARY: 5699 code/config files scanned, 661 hits
 reposcan-raw/gladiaio/vercel-ai/pnpm-lock.yaml:289: '@ai-sdk/gladia':
