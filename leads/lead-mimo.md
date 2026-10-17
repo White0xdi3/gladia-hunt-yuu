@@ -3988,3 +3988,4 @@ testability: AUTH_HELPED
 [RISK] app.gladia.io: 68 reason: unauthed redirect_to reflection + 0 form-action CSP gap live; OAuth hardened with state+PKCE; signup_session cookie deserialization trust untested → potential auth bypass
 [RISK] sdk: 97 reason: orphaned gladia@0.1.3 at dist-tag latest impersonates official SDK and leaks raw API key in WebSocket URL query → supply-chain key theft for any misinstalled package; official @gladiaio/sdk hardened (SLSA) but namespace confusion persists
 ## 2026-10-17 09:18:25 UTC [sdk] (model mimo)
+## 2026-10-17 13:42:51 UTC [gladia] (model mimo)
