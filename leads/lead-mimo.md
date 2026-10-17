@@ -3989,3 +3989,4 @@ testability: AUTH_HELPED
 [RISK] sdk: 97 reason: orphaned gladia@0.1.3 at dist-tag latest impersonates official SDK and leaks raw API key in WebSocket URL query → supply-chain key theft for any misinstalled package; official @gladiaio/sdk hardened (SLSA) but namespace confusion persists
 ## 2026-10-17 09:18:25 UTC [sdk] (model mimo)
 ## 2026-10-17 13:42:51 UTC [gladia] (model mimo)
+## 2026-10-17 17:09:05 UTC [api] (model mimo)
