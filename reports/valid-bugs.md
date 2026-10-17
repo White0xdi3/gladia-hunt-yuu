@@ -1386,3 +1386,12 @@
   - | 1. SSRF audio_url/callback_url | **HOLD** | Auth-gated; needs valid key for POC |
   - | 2. npm `gladia@0.1.3` impersonation | **VALID** | Passive proof complete; supply-chain + key-in-URL |
   - | 4. WS token in URL query param | **VALID** | Passive proof via OpenAPI spec; design flaw |
+
+- 7 lead(s) marked VALID at 2026-10-17 17:23:55 UTC
+  - - **VERDICT**: **HOLD** — High-confidence hypothesis, but cannot be proven without valid API key. Minimal proof step: `POST /v2/pre-recorded -H "x-gladia-key: <KEY>" -d '{"audio_url":"http://169.254.1
+  - - **VERDICT**: **VALID** — Minimal proof: `GET https://api.gladia.io/openapi.json` → observe `InitStreamingResponse.url` schema. Impact: High (token theft → ATO on live sessions). CVSS 3.1: 7.5 (AV:N/
+  - - **VERDICT**: **HOLD** — Cannot confirm post-auth honoring without valid session. Proof step: Complete Google OAuth with `?redirect_to=https://evil.example.com`, observe final 302 Location (HUMAN_ONL
+  - - **VERDICT**: **HOLD** — High impact if true, but unprovable without two valid accounts. Proof: `GET /v2/transcription/{other_id}/file` with own key (AUTH_HELPED). CVSS 3.1: 8.7 (AV:N/AC:L/PR:L/UI:N/
+  - | F1 SSRF audio_url/callback_url | **HOLD** | Requires valid API key (AUTH_HELPED) |
+  - | F2 WebSocket token in URL | **VALID** | Spec-confirmed design flaw, passive proof exists |
+  - | F9 IDOR file download | **HOLD** | Needs two valid accounts (AUTH_HELPED) |
